@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitit.SDK.Client", "src\Splitit.SDK.Client\Splitit.SDK.Client.csproj", "{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splitit.SDK.Client", "src\Splitit.SDK.Client\Splitit.SDK.Client.csproj", "{B1D61744-985B-4705-8DCE-BE99B09B305E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D61744-985B-4705-8DCE-BE99B09B305E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D61744-985B-4705-8DCE-BE99B09B305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D61744-985B-4705-8DCE-BE99B09B305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D61744-985B-4705-8DCE-BE99B09B305E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -12,7 +12,7 @@ OpenAPI spec version: 1.0.0
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0A0BFEC-A627-4D76-BB2B-D8CA21C74621}</ProjectGuid>
+    <ProjectGuid>{B1D61744-985B-4705-8DCE-BE99B09B305E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Splitit.SDK.Client</RootNamespace>
