@@ -123,48 +123,8 @@ namespace Splitit.SDK.Client.Portable.Client
             _globalConfiguration = new GlobalConfiguration();
 			_sandboxConfiguration = new GlobalConfiguration(basePath: "https://webapi.sandbox.splitit.com");
 			
-			ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-			
-			SetAllowUnsafeHeaderParsing20();
         }
 		
-		// Needed due to error Exception when calling *Api: Error calling *: Specified value has invalid Control characters.
-		// http://www.windows-tech.info/13/9e7b0a842e03e1ed.php
-		public static bool SetAllowUnsafeHeaderParsing20()
-        {
-			try{
-				//Get the assembly that contains the internal class
-				Assembly aNetAssembly = Assembly.GetAssembly(typeof(System.Net.Configuration.SettingsSection));
-				if (aNetAssembly != null)
-				{
-					//Use the assembly in order to get the internal type for the internal class
-					Type aSettingsType = aNetAssembly.GetType("System.Net.Configuration.SettingsSectionInternal");
-					if (aSettingsType != null)
-					{
-						//Use the internal static property to get an instance of the internal settings class.
-						//If the static instance isn't created allready the property will create it for us.
-						object anInstance = aSettingsType.InvokeMember("Section",
-						BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null, new object[] { });
-
-						if (anInstance != null)
-						{
-							//Locate the private bool field that tells the framework is unsafe header parsing should be allowed or not
-							FieldInfo aUseUnsafeHeaderParsing = aSettingsType.GetField("useUnsafeHeaderParsing", BindingFlags.NonPublic | BindingFlags.Instance);
-							if (aUseUnsafeHeaderParsing != null)
-							{
-								aUseUnsafeHeaderParsing.SetValue(anInstance, true);
-								return true;
-							}
-						}
-					}
-				}
-			} catch(Exception ex){
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-			}
-            return false;
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class

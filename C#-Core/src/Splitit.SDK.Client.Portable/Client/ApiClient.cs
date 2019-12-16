@@ -20,6 +20,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
+using System.Reflection;
 
 namespace Splitit.SDK.Client.Portable.Client
 {

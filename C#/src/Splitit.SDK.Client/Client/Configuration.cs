@@ -127,7 +127,7 @@ namespace Splitit.SDK.Client.Client
             _globalConfiguration = new GlobalConfiguration();
 			_sandboxConfiguration = new GlobalConfiguration(basePath: "https://webapi.sandbox.splitit.com");
 			
-			ServicePointManager.Expect100Continue = true;
+            ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 			
 			SetAllowUnsafeHeaderParsing20();
