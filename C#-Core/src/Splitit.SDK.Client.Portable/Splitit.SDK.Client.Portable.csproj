@@ -12,7 +12,7 @@ OpenAPI spec version: 1.0.0
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33E19E13-B901-4A9A-A23C-0DE0A7C3D302}</ProjectGuid>
+    <ProjectGuid>{E968B419-B805-48D1-84CA-0C529B35E8F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Splitit.SDK.Client.Portable</RootNamespace>

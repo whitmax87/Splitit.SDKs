@@ -635,6 +635,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -795,6 +796,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -955,6 +957,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1115,6 +1118,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1275,6 +1279,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1435,6 +1440,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1595,6 +1601,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1755,6 +1762,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1915,6 +1923,7 @@ namespace Splitit.SDK.Client.Portable.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
