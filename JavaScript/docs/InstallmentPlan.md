@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlan
+# SplititJsSdk.InstallmentPlan
 
 ## Properties
 
@@ -15,15 +15,11 @@ Name | Type | Description | Notes
 **consumer** | [**ConsumerData**](ConsumerData.md) |  | [optional] 
 **activeCard** | [**CardData**](CardData.md) |  | [optional] 
 **fraudCheck** | [**FraudCheck**](FraudCheck.md) |  | [optional] 
-**terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **merchant** | [**MerchantRef**](MerchantRef.md) |  | [optional] 
 **refOrderNumber** | **String** |  | [optional] 
 **purchaseMethod** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **strategy** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **delayResolution** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
-**keepNonApprovedPlanLive** | **String** |  | 
-**extendPlanLiveTimeOnPaymentRequest** | **String** |  | 
-**extendPlanLiveTimeOnApprovalRequest** | **String** |  | 
 **extendedParams** | **{String: String}** |  | [optional] 
 **isFullCaptured** | **Boolean** |  | 
 **isChargedBack** | **Boolean** |  | 

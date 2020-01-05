@@ -1,4 +1,4 @@
-# SplititWebApiPublic.Installment
+# SplititJsSdk.Installment
 
 ## Properties
 

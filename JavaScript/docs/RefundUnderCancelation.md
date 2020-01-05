@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RefundUnderCancelation
+# SplititJsSdk.RefundUnderCancelation
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RedirectUrls
+# SplititJsSdk.RedirectUrls
 
 ## Properties
 

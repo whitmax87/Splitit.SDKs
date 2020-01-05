@@ -1,4 +1,4 @@
-# SplititWebApiPublic.VerifyPaymentResponse
+# SplititJsSdk.VerifyPaymentResponse
 
 ## Properties
 

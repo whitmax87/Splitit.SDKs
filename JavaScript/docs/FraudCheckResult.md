@@ -1,4 +1,4 @@
-# SplititWebApiPublic.FraudCheckResult
+# SplititJsSdk.FraudCheckResult
 
 ## Enum
 

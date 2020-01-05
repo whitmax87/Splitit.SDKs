@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RefundStrategy
+# SplititJsSdk.RefundStrategy
 
 ## Enum
 

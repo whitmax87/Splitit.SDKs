@@ -1,4 +1,4 @@
-# SplititWebApiPublic.TransactionInfo
+# SplititJsSdk.TransactionInfo
 
 ## Properties
 

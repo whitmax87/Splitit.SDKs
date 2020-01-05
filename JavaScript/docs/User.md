@@ -1,4 +1,4 @@
-# SplititWebApiPublic.User
+# SplititJsSdk.User
 
 ## Properties
 

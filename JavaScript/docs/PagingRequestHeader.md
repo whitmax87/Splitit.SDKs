@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PagingRequestHeader
+# SplititJsSdk.PagingRequestHeader
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RelationsLoad
+# SplititJsSdk.RelationsLoad
 
 ## Properties
 

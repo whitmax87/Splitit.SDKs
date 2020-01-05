@@ -1,4 +1,4 @@
-# SplititWebApiPublic.CurrencyAllOf
+# SplititJsSdk.CurrencyAllOf
 
 ## Properties
 

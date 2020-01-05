@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ItemData
+# SplititJsSdk.ItemData
 
 ## Properties
 

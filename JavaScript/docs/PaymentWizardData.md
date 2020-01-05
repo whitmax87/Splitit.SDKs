@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PaymentWizardData
+# SplititJsSdk.PaymentWizardData
 
 ## Properties
 

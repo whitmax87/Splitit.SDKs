@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RefundInstallmentPlanResponse
+# SplititJsSdk.RefundInstallmentPlanResponse
 
 ## Properties
 

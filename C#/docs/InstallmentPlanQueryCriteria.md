@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MerchantId** | **long?** |  | 
 **CurrencyId** | **long?** |  | 
-**TerminalId** | **string** |  | [optional] 
 **InstallmentPlanId** | **long?** |  | 
 **InstallmentPlanNumber** | **string** |  | [optional] 
 **RefOrderNumber** | **string** |  | [optional] 
@@ -17,6 +16,7 @@ Name | Type | Description | Notes
 **PisMemberId** | **long?** |  | 
 **AnyFilter** | **string** |  | [optional] 
 **Eula** | **bool?** |  | 
+**ShowChargebackPlans** | **bool?** |  | 
 **InitiatedStatuses** | [**InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **FraudCheckResult** | **FraudCheckResult** |  | [optional] 
 **InstallmentsPlanStatuses** | [**List&lt;InstallmentPlanStatus&gt;**](InstallmentPlanStatus.md) |  | [optional] 

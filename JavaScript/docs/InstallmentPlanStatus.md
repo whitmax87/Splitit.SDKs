@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlanStatus
+# SplititJsSdk.InstallmentPlanStatus
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PlanApprovalEvidence
+# SplititJsSdk.PlanApprovalEvidence
 
 ## Properties
 

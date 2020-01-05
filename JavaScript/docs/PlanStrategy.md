@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PlanStrategy
+# SplititJsSdk.PlanStrategy
 
 ## Enum
 

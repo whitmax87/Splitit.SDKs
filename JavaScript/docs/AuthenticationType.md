@@ -1,4 +1,4 @@
-# SplititWebApiPublic.AuthenticationType
+# SplititJsSdk.AuthenticationType
 
 ## Enum
 

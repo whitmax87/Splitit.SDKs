@@ -1,10 +1,9 @@
-# SplititWebApiPublic.UpdateInstallmentPlanRequest
+# SplititJsSdk.UpdateInstallmentPlanRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**requestHeader** | [**RequestHeader**](RequestHeader.md) |  | [optional] 
 **installmentPlanNumber** | **String** |  | [optional] 
 **planData** | [**PlanData**](PlanData.md) |  | [optional] 
 **cartData** | [**CartData**](CartData.md) |  | [optional] 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ConsumerData
+# SplititJsSdk.ConsumerData
 
 ## Properties
 

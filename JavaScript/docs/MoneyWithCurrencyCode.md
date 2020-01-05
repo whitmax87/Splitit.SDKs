@@ -1,4 +1,4 @@
-# SplititWebApiPublic.MoneyWithCurrencyCode
+# SplititJsSdk.MoneyWithCurrencyCode
 
 ## Properties
 

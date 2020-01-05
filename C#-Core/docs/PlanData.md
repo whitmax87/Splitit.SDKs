@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **Strategy** | **PlanStrategy** |  | [optional] 
 **ExtendedParams** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **FirstChargeDate** | **DateTime?** |  | [optional] 
-**Terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **AutoCapture** | **bool?** |  | [optional] 
 **IsFunded** | **bool?** |  | [optional] 
 **Attempt3DSecure** | **Object** |  | [optional] 

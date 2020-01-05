@@ -1,4 +1,4 @@
-# SplititWebApiPublic.Error
+# SplititJsSdk.Error
 
 ## Properties
 

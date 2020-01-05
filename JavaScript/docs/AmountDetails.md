@@ -1,4 +1,4 @@
-# SplititWebApiPublic.AmountDetails
+# SplititJsSdk.AmountDetails
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.LoginResponse
+# SplititJsSdk.LoginResponse
 
 ## Properties
 

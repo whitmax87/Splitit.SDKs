@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlanQueryCriteria
+# SplititJsSdk.InstallmentPlanQueryCriteria
 
 ## Properties
 
@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchantId** | **Number** |  | 
 **currencyId** | **Number** |  | 
-**terminalId** | **String** |  | [optional] 
 **installmentPlanId** | **Number** |  | 
 **installmentPlanNumber** | **String** |  | [optional] 
 **refOrderNumber** | **String** |  | [optional] 
@@ -18,6 +17,7 @@ Name | Type | Description | Notes
 **pisMemberId** | **Number** |  | 
 **anyFilter** | **String** |  | [optional] 
 **eula** | **Boolean** |  | 
+**showChargebackPlans** | **Boolean** |  | 
 **initiatedStatuses** | [**InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **fraudCheckResult** | [**FraudCheckResult**](FraudCheckResult.md) |  | [optional] 
 **installmentsPlanStatuses** | [**[InstallmentPlanStatus]**](InstallmentPlanStatus.md) |  | [optional] 

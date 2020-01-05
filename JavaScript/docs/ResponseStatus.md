@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ResponseStatus
+# SplititJsSdk.ResponseStatus
 
 ## Properties
 

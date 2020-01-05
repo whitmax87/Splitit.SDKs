@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PaymentToken
+# SplititJsSdk.PaymentToken
 
 ## Properties
 

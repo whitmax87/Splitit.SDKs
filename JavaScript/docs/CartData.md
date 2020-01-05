@@ -1,4 +1,4 @@
-# SplititWebApiPublic.CartData
+# SplititJsSdk.CartData
 
 ## Properties
 

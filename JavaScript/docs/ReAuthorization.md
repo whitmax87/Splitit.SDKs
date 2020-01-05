@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ReAuthorization
+# SplititJsSdk.ReAuthorization
 
 ## Properties
 

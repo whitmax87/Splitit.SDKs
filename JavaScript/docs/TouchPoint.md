@@ -1,4 +1,4 @@
-# SplititWebApiPublic.TouchPoint
+# SplititJsSdk.TouchPoint
 
 ## Properties
 

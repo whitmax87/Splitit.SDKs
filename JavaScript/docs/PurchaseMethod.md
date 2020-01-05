@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PurchaseMethod
+# SplititJsSdk.PurchaseMethod
 
 ## Enum
 

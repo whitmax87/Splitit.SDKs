@@ -1,4 +1,4 @@
-# SplititWebApiPublic.MerchantRef
+# SplititJsSdk.MerchantRef
 
 ## Properties
 

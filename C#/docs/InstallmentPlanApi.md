@@ -1,6 +1,6 @@
 # Splitit.SDK.Client.Api.InstallmentPlanApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**InstallmentPlanCancel**](InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**InstallmentPlanCreate**](InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
 [**InstallmentPlanGet**](InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
+[**InstallmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 [**InstallmentPlanStartInstallments**](InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -235,6 +236,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInstallmentsPlanResponse**](GetInstallmentsPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplanget3dsecureparameters"></a>
+# **InstallmentPlanGet3DSecureParameters**
+> Get3DSecureParametersResponse InstallmentPlanGet3DSecureParameters (Get3DSecureParametersRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanGet3DSecureParametersExample
+    {
+        public void main()
+        {
+            var apiInstance = new InstallmentPlanApi();
+            var request = new Get3DSecureParametersRequest(); // Get3DSecureParametersRequest | 
+
+            try
+            {
+                Get3DSecureParametersResponse result = apiInstance.InstallmentPlanGet3DSecureParameters(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanGet3DSecureParameters: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**Get3DSecureParametersRequest**](Get3DSecureParametersRequest.md)|  | 
+
+### Return type
+
+[**Get3DSecureParametersResponse**](Get3DSecureParametersResponse.md)
 
 ### Authorization
 

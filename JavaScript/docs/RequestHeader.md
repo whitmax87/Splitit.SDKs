@@ -1,4 +1,4 @@
-# SplititWebApiPublic.RequestHeader
+# SplititJsSdk.RequestHeader
 
 ## Properties
 

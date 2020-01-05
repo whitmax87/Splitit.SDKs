@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ExternalAuth
+# SplititJsSdk.ExternalAuth
 
 ## Properties
 

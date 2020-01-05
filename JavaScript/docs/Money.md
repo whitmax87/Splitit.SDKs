@@ -1,4 +1,4 @@
-# SplititWebApiPublic.Money
+# SplititJsSdk.Money
 
 ## Properties
 

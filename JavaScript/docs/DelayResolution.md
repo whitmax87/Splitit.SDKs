@@ -1,4 +1,4 @@
-# SplititWebApiPublic.DelayResolution
+# SplititJsSdk.DelayResolution
 
 ## Enum
 
@@ -12,5 +12,9 @@
 * `PendingMidIssueResolution` (value: `"PendingMidIssueResolution"`)
 
 * `PendingSuspiciousReview` (value: `"PendingSuspiciousReview"`)
+
+* `DefaultedInCollection` (value: `"DefaultedInCollection"`)
+
+* `DefaultedPermanently` (value: `"DefaultedPermanently"`)
 
 

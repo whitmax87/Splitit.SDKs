@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlanInitiatedStatuses
+# SplititJsSdk.InstallmentPlanInitiatedStatuses
 
 ## Properties
 

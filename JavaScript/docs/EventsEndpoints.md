@@ -1,4 +1,4 @@
-# SplititWebApiPublic.EventsEndpoints
+# SplititJsSdk.EventsEndpoints
 
 ## Properties
 

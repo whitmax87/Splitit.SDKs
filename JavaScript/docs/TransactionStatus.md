@@ -1,4 +1,4 @@
-# SplititWebApiPublic.TransactionStatus
+# SplititJsSdk.TransactionStatus
 
 ## Enum
 

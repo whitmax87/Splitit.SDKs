@@ -3,7 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RequestHeader** | [**RequestHeader**](RequestHeader.md) |  | [optional] 
 **InstallmentPlanNumber** | **string** |  | [optional] 
 **PlanData** | [**PlanData**](PlanData.md) |  | [optional] 
 **CartData** | [**CartData**](CartData.md) |  | [optional] 

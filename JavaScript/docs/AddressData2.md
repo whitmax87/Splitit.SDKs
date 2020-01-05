@@ -1,4 +1,4 @@
-# SplititWebApiPublic.AddressData2
+# SplititJsSdk.AddressData2
 
 ## Properties
 

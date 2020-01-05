@@ -1,6 +1,6 @@
-# SplititWebApiPublic.LoginApi
+# SplititJsSdk.LoginApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,9 +18,9 @@ Method | HTTP request | Description
 ### Example
 
 ```javascript
-import SplititWebApiPublic from 'splitit_web_api_public';
+import SplititJsSdk from 'splitit_js_sdk';
 
-let apiInstance = new SplititWebApiPublic.LoginApi();
+let apiInstance = new SplititJsSdk.LoginApi();
 let opts = {
   'userName': "userName_example", // String | 
   'password': "password_example" // String | 
@@ -65,10 +65,10 @@ No authorization required
 ### Example
 
 ```javascript
-import SplititWebApiPublic from 'splitit_web_api_public';
+import SplititJsSdk from 'splitit_js_sdk';
 
-let apiInstance = new SplititWebApiPublic.LoginApi();
-let request = new SplititWebApiPublic.LoginRequest(); // LoginRequest | 
+let apiInstance = new SplititJsSdk.LoginApi();
+let request = new SplititJsSdk.LoginRequest(); // LoginRequest | 
 apiInstance.loginPost(request, (error, data, response) => {
   if (error) {
     console.error(error);

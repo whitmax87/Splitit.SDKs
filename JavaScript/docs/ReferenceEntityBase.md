@@ -1,4 +1,4 @@
-# SplititWebApiPublic.ReferenceEntityBase
+# SplititJsSdk.ReferenceEntityBase
 
 ## Properties
 

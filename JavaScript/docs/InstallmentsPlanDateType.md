@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentsPlanDateType
+# SplititJsSdk.InstallmentsPlanDateType
 
 ## Enum
 

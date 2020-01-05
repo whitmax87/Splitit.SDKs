@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlanCancelationReason
+# SplititJsSdk.InstallmentPlanCancelationReason
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InstallmentPlanDateInfo
+# SplititJsSdk.InstallmentPlanDateInfo
 
 ## Properties
 

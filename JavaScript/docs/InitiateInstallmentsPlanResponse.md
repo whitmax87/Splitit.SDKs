@@ -1,4 +1,4 @@
-# SplititWebApiPublic.InitiateInstallmentsPlanResponse
+# SplititJsSdk.InitiateInstallmentsPlanResponse
 
 ## Properties
 

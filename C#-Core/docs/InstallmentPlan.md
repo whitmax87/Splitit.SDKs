@@ -14,15 +14,11 @@ Name | Type | Description | Notes
 **Consumer** | [**ConsumerData**](ConsumerData.md) |  | [optional] 
 **ActiveCard** | [**CardData**](CardData.md) |  | [optional] 
 **FraudCheck** | [**FraudCheck**](FraudCheck.md) |  | [optional] 
-**Terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **Merchant** | [**MerchantRef**](MerchantRef.md) |  | [optional] 
 **RefOrderNumber** | **string** |  | [optional] 
 **PurchaseMethod** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **Strategy** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **DelayResolution** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
-**KeepNonApprovedPlanLive** | **string** |  | 
-**ExtendPlanLiveTimeOnPaymentRequest** | **string** |  | 
-**ExtendPlanLiveTimeOnApprovalRequest** | **string** |  | 
 **ExtendedParams** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **IsFullCaptured** | **bool?** |  | 
 **IsChargedBack** | **bool?** |  | 

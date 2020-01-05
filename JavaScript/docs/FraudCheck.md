@@ -1,4 +1,4 @@
-# SplititWebApiPublic.FraudCheck
+# SplititJsSdk.FraudCheck
 
 ## Properties
 

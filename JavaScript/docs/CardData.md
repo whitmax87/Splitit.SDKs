@@ -1,4 +1,4 @@
-# SplititWebApiPublic.CardData
+# SplititJsSdk.CardData
 
 ## Properties
 

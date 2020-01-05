@@ -1,4 +1,4 @@
-# SplititWebApiPublic.UpdateInstallmentPlanRequestAllOf
+# SplititJsSdk.UpdateInstallmentPlanRequestAllOf
 
 ## Properties
 

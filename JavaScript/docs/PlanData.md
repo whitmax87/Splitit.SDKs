@@ -1,4 +1,4 @@
-# SplititWebApiPublic.PlanData
+# SplititJsSdk.PlanData
 
 ## Properties
 
@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **strategy** | [**PlanStrategy**](PlanStrategy.md) |  | [optional] 
 **extendedParams** | **{String: String}** |  | [optional] 
 **firstChargeDate** | **Date** |  | [optional] 
-**terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **autoCapture** | **Boolean** |  | [optional] 
 **isFunded** | **Boolean** |  | [optional] 
 **attempt3DSecure** | [**Object**](.md) |  | [optional] 

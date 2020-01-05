@@ -1,6 +1,6 @@
-# SplititWebApiPublic.CreateInstallmentPlanApi
+# SplititJsSdk.CreateInstallmentPlanApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,9 +17,9 @@ Method | HTTP request | Description
 ### Example
 
 ```javascript
-import SplititWebApiPublic from 'splitit_web_api_public';
+import SplititJsSdk from 'splitit_js_sdk';
 
-let apiInstance = new SplititWebApiPublic.CreateInstallmentPlanApi();
+let apiInstance = new SplititJsSdk.CreateInstallmentPlanApi();
 let opts = {
   'amountBeforeFees': 3.4, // Number | 
   'apiKey': "apiKey_example", // String | 

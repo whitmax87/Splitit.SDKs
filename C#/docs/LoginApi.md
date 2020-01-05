@@ -1,6 +1,6 @@
 # Splitit.SDK.Client.Api.LoginApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

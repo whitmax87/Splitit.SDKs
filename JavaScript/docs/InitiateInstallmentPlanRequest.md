@@ -1,10 +1,9 @@
-# SplititWebApiPublic.InitiateInstallmentPlanRequest
+# SplititJsSdk.InitiateInstallmentPlanRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**requestHeader** | [**RequestHeader**](RequestHeader.md) |  | [optional] 
 **planData** | [**PlanData**](PlanData.md) |  | [optional] 
 **cartData** | [**CartData**](CartData.md) |  | [optional] 
 **consumerData** | [**ConsumerData**](ConsumerData.md) |  | [optional] 
