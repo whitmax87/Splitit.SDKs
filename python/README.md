@@ -45,38 +45,59 @@ import splitit_sdk_client
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-from __future__ import print_function
-import time
 import splitit_sdk_client
 from splitit_sdk_client.rest import ApiException
 from splitit_sdk_client.configuration import Configuration
 from pprint import pprint
+import traceback
 
 # Set API keys for production and sandbox environments
-Configuration.production().setApiKey("XXXXXXXXXXXXXXXXXXX")
-Configuration.sandbox().setApiKey("XXXXXXXXXXXXXXXXXXXX")
+Configuration.production().setApiKey("_YOUR_API_KEY_")
+Configuration.sandbox().setApiKey("_YOUR_SANDBOX_API_KEY_")
 
-# Instantiate LoginApi
-loginApi = splitit_sdk_client.LoginApi(configuration=Configuration.sandbox()) # if no configuration is passed, production() environment is used by default
-loginRequest = splitit_sdk_client.LoginRequest(user_name="XXXXXXXXXXXX", password="XXXXXXXXXXXXXX")
-response = loginApi.login_post(request=loginRequest)
+try:
+    # Instantiate LoginApi
+    loginApi = splitit_sdk_client.LoginApi(configuration=Configuration.sandbox()) # if no configuration is passed, production() environment is used by default
+    loginRequest = splitit_sdk_client.LoginRequest(user_name="_YOUR_USERNAME_", password="_YOUR_PASSWORD_")
+    response = loginApi.login_post(request=loginRequest)
 
-installmentPlanApi = splitit_sdk_client.InstallmentPlanApi(
-    configuration=Configuration.sandbox(), 
-    session_id=response.session_id)
+    installmentPlanApi = splitit_sdk_client.InstallmentPlanApi(
+        configuration=Configuration.sandbox(), # Also change to production before deployment, or omit the parameter.
+        session_id=response.session_id)
 
-initiateRequest = splitit_sdk_client.InitiateInstallmentPlanRequest(
-    plan_data=splitit_sdk_client.PlanData(number_of_installments=3, amount=splitit_sdk_client.MoneyWithCurrencyCode(value=1000, currency_code="USD")),
-    billing_address=splitit_sdk_client.AddressData(address_line="260 Madison avenue", address_line2="Apt.1", city="New York", country="USA", zip="10016"),
-    consumer_data=splitit_sdk_client.ConsumerData(full_name="John Smith", email="j.smith@fake.com", phone_number="434-555-3232", culture_name="en-us", is_locked=False, is_data_restricted=False)
-)
-initiateResponse = installmentPlanApi.installment_plan_initiate(initiateRequest)
-pprint(initiateResponse)
+    initiateRequest = splitit_sdk_client.InitiateInstallmentPlanRequest(
+        plan_data=splitit_sdk_client.PlanData(number_of_installments=3, amount=splitit_sdk_client.MoneyWithCurrencyCode(value=1000, currency_code="USD")),
+        billing_address=splitit_sdk_client.AddressData(address_line="260 Madison avenue", address_line2="Apt.1", city="New York", country="USA", zip="10016"),
+        consumer_data=splitit_sdk_client.ConsumerData(full_name="John Smith", email="j.smith@fake.com", phone_number="434-555-3232", culture_name="en-us", is_locked=False, is_data_restricted=False)
+    )
+    initiateResponse = installmentPlanApi.installment_plan_initiate(initiateRequest)
+    print("Calling /Initiate...")
+    pprint(initiateResponse.response_header)
+
+    card_num = "411111111111111" # try changing card number to something invalid to simulate API exception
+
+    createRequest = splitit_sdk_client.CreateInstallmentPlanRequest(
+        credit_card_details=splitit_sdk_client.CardData(card_number=card_num, card_cvv="123", card_holder_full_name="John Smith", card_exp_month=11, card_exp_year=2022),
+        plan_approval_evidence=splitit_sdk_client.PlanApprovalEvidence(are_terms_and_conditions_approved=True),
+        installment_plan_number=initiateResponse.installment_plan.installment_plan_number
+    )
+
+    createResponse = installmentPlanApi.installment_plan_create(createRequest)
+    print("Calling /Create...")
+    pprint(createResponse.response_header)
+except Exception as e:
+    print("Error has ocurred:")
+    pprint(e)
+    print("Stack trace:")
+    traceback.print_exc()
+    print("===================")
+    print()
+
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -85,6 +106,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installment_plan_cancel**](docs/InstallmentPlanApi.md#installment_plan_cancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installment_plan_create**](docs/InstallmentPlanApi.md#installment_plan_create) | **POST** /api/InstallmentPlan/Create | 
 *InstallmentPlanApi* | [**installment_plan_get**](docs/InstallmentPlanApi.md#installment_plan_get) | **POST** /api/InstallmentPlan/Get | 
+*InstallmentPlanApi* | [**installment_plan_get3_d_secure_parameters**](docs/InstallmentPlanApi.md#installment_plan_get3_d_secure_parameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installment_plan_initiate**](docs/InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installment_plan_refund**](docs/InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installment_plan_start_installments**](docs/InstallmentPlanApi.md#installment_plan_start_installments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -111,6 +133,8 @@ Class | Method | HTTP request | Description
  - [ExternalAuth](docs/ExternalAuth.md)
  - [FraudCheck](docs/FraudCheck.md)
  - [FraudCheckResult](docs/FraudCheckResult.md)
+ - [Get3DSecureParametersRequest](docs/Get3DSecureParametersRequest.md)
+ - [Get3DSecureParametersResponse](docs/Get3DSecureParametersResponse.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/GetInstallmentsPlanSearchCriteriaRequest.md)
  - [InitiateInstallmentPlanRequest](docs/InitiateInstallmentPlanRequest.md)
@@ -167,7 +191,6 @@ Class | Method | HTTP request | Description
  - [LoginResponse](docs/LoginResponse.md)
  - [MerchantRef](docs/MerchantRef.md)
  - [RefundInstallmentPlanResponse](docs/RefundInstallmentPlanResponse.md)
- - [TerminalRef](docs/TerminalRef.md)
  - [UpdateInstallmentPlanRequest](docs/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/UpdateInstallmentsPlanResponse.md)
 

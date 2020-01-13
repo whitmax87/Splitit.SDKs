@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **strategy** | [**\SplititSdkClient\Model\PlanStrategy**](PlanStrategy.md) |  | [optional] 
 **extended_params** | **map[string,string]** |  | [optional] 
 **first_charge_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**terminal** | [**\SplititSdkClient\Model\TerminalRef**](TerminalRef.md) |  | [optional] 
 **auto_capture** | **bool** |  | [optional] 
 **is_funded** | **bool** |  | [optional] 
 **attempt3_d_secure** | **object** |  | [optional] 

@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_header** | [**\SplititSdkClient\Model\RequestHeader**](RequestHeader.md) |  | [optional] 
 **installment_plan_number** | **string** |  | [optional] 
 **refund_under_cancelation** | [**\SplititSdkClient\Model\RefundUnderCancelation**](RefundUnderCancelation.md) |  | 
 **cancelation_reason** | [**\SplititSdkClient\Model\InstallmentPlanCancelationReason**](InstallmentPlanCancelationReason.md) |  | 

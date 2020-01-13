@@ -14,15 +14,11 @@ Name | Type | Description | Notes
 **consumer** | [**ConsumerData**](ConsumerData.md) |  | [optional] 
 **active_card** | [**CardData**](CardData.md) |  | [optional] 
 **fraud_check** | [**FraudCheck**](FraudCheck.md) |  | [optional] 
-**terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **merchant** | [**MerchantRef**](MerchantRef.md) |  | [optional] 
 **ref_order_number** | **str** |  | [optional] 
 **purchase_method** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **strategy** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **delay_resolution** | [**ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
-**keep_non_approved_plan_live** | **str** |  | 
-**extend_plan_live_time_on_payment_request** | **str** |  | 
-**extend_plan_live_time_on_approval_request** | **str** |  | 
 **extended_params** | **dict(str, str)** |  | [optional] 
 **is_full_captured** | **bool** |  | 
 **is_charged_back** | **bool** |  | 

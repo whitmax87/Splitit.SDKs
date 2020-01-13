@@ -1,6 +1,6 @@
 # splitit_sdk_client.CreateInstallmentPlanApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

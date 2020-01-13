@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **int** |  | 
 **currency_id** | **int** |  | 
-**terminal_id** | **string** |  | [optional] 
 **installment_plan_id** | **int** |  | 
 **installment_plan_number** | **string** |  | [optional] 
 **ref_order_number** | **string** |  | [optional] 
@@ -17,6 +16,7 @@ Name | Type | Description | Notes
 **pis_member_id** | **int** |  | 
 **any_filter** | **string** |  | [optional] 
 **eula** | **bool** |  | 
+**show_chargeback_plans** | **bool** |  | 
 **initiated_statuses** | [**\SplititSdkClient\Model\InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **fraud_check_result** | [**\SplititSdkClient\Model\FraudCheckResult**](FraudCheckResult.md) |  | [optional] 
 **installments_plan_statuses** | [**\SplititSdkClient\Model\InstallmentPlanStatus[]**](InstallmentPlanStatus.md) |  | [optional] 

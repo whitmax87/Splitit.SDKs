@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **strategy** | [**PlanStrategy**](PlanStrategy.md) |  | [optional] 
 **extended_params** | **dict(str, str)** |  | [optional] 
 **first_charge_date** | **datetime** |  | [optional] 
-**terminal** | [**TerminalRef**](TerminalRef.md) |  | [optional] 
 **auto_capture** | **bool** |  | [optional] 
 **is_funded** | **bool** |  | [optional] 
 **attempt3_d_secure** | **object** |  | [optional] 

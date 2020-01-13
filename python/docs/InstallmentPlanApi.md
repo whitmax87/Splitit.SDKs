@@ -1,6 +1,6 @@
 # splitit_sdk_client.InstallmentPlanApi
 
-All URIs are relative to *https://webapi.splitit.com*
+All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**installment_plan_cancel**](InstallmentPlanApi.md#installment_plan_cancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**installment_plan_create**](InstallmentPlanApi.md#installment_plan_create) | **POST** /api/InstallmentPlan/Create | 
 [**installment_plan_get**](InstallmentPlanApi.md#installment_plan_get) | **POST** /api/InstallmentPlan/Get | 
+[**installment_plan_get3_d_secure_parameters**](InstallmentPlanApi.md#installment_plan_get3_d_secure_parameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installment_plan_initiate**](InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installment_plan_refund**](InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
 [**installment_plan_start_installments**](InstallmentPlanApi.md#installment_plan_start_installments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -183,6 +184,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInstallmentsPlanResponse**](GetInstallmentsPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_get3_d_secure_parameters**
+> Get3DSecureParametersResponse installment_plan_get3_d_secure_parameters(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit_sdk_client
+from splitit_sdk_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit_sdk_client.InstallmentPlanApi()
+request = splitit_sdk_client.Get3DSecureParametersRequest() # Get3DSecureParametersRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get3_d_secure_parameters(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get3_d_secure_parameters: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**Get3DSecureParametersRequest**](Get3DSecureParametersRequest.md)|  | 
+
+### Return type
+
+[**Get3DSecureParametersResponse**](Get3DSecureParametersResponse.md)
 
 ### Authorization
 

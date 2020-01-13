@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_header** | [**RequestHeader**](RequestHeader.md) |  | [optional] 
 **plan_data** | [**PlanData**](PlanData.md) |  | [optional] 
 **cart_data** | [**CartData**](CartData.md) |  | [optional] 
 **consumer_data** | [**ConsumerData**](ConsumerData.md) |  | [optional] 

@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_header** | [**\SplititSdkClient\Model\RequestHeader**](RequestHeader.md) |  | [optional] 
 **plan_data** | [**\SplititSdkClient\Model\PlanData**](PlanData.md) |  | [optional] 
 **cart_data** | [**\SplititSdkClient\Model\CartData**](CartData.md) |  | [optional] 
 **consumer_data** | [**\SplititSdkClient\Model\ConsumerData**](ConsumerData.md) |  | [optional] 

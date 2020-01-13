@@ -14,15 +14,11 @@ Name | Type | Description | Notes
 **consumer** | [**\SplititSdkClient\Model\ConsumerData**](ConsumerData.md) |  | [optional] 
 **active_card** | [**\SplititSdkClient\Model\CardData**](CardData.md) |  | [optional] 
 **fraud_check** | [**\SplititSdkClient\Model\FraudCheck**](FraudCheck.md) |  | [optional] 
-**terminal** | [**\SplititSdkClient\Model\TerminalRef**](TerminalRef.md) |  | [optional] 
 **merchant** | [**\SplititSdkClient\Model\MerchantRef**](MerchantRef.md) |  | [optional] 
 **ref_order_number** | **string** |  | [optional] 
 **purchase_method** | [**\SplititSdkClient\Model\ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **strategy** | [**\SplititSdkClient\Model\ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **delay_resolution** | [**\SplititSdkClient\Model\ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
-**keep_non_approved_plan_live** | **string** |  | 
-**extend_plan_live_time_on_payment_request** | **string** |  | 
-**extend_plan_live_time_on_approval_request** | **string** |  | 
 **extended_params** | **map[string,string]** |  | [optional] 
 **is_full_captured** | **bool** |  | 
 **is_charged_back** | **bool** |  | 

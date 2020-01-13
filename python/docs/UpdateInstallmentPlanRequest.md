@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_header** | [**RequestHeader**](RequestHeader.md) |  | [optional] 
 **installment_plan_number** | **str** |  | [optional] 
 **plan_data** | [**PlanData**](PlanData.md) |  | [optional] 
 **cart_data** | [**CartData**](CartData.md) |  | [optional] 
