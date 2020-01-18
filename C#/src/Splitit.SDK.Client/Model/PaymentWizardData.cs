@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Splitit.SDK.Client.Client.SwaggerDateConverter;
 
 namespace Splitit.SDK.Client.Model
@@ -28,7 +26,7 @@ namespace Splitit.SDK.Client.Model
     /// PaymentWizardData
     /// </summary>
     [DataContract]
-    public partial class PaymentWizardData :  IEquatable<PaymentWizardData>, IValidatableObject
+    public partial class PaymentWizardData :  IEquatable<PaymentWizardData>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentWizardData" /> class.
@@ -45,7 +43,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="successAsyncUrl">successAsyncUrl.</param>
         /// <param name="viewName">viewName.</param>
         /// <param name="isOpenedInIframe">isOpenedInIframe (required).</param>
-        public PaymentWizardData(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?))
+        /// <param name="paymentFormMessage">paymentFormMessage.</param>
+        public PaymentWizardData(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string))
         {
             // to ensure "isOpenedInIframe" is required (not null)
             if (isOpenedInIframe == null)
@@ -62,6 +61,7 @@ namespace Splitit.SDK.Client.Model
             this.CancelExitURL = cancelExitURL;
             this.SuccessAsyncUrl = successAsyncUrl;
             this.ViewName = viewName;
+            this.PaymentFormMessage = paymentFormMessage;
         }
 
         
@@ -108,6 +108,12 @@ namespace Splitit.SDK.Client.Model
         public bool? IsOpenedInIframe { get; set; }
 
         /// <summary>
+        /// Gets or Sets PaymentFormMessage
+        /// </summary>
+        [DataMember(Name="PaymentFormMessage", EmitDefaultValue=false)]
+        public string PaymentFormMessage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,6 +128,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  SuccessAsyncUrl: ").Append(SuccessAsyncUrl).Append("\n");
             sb.Append("  ViewName: ").Append(ViewName).Append("\n");
             sb.Append("  IsOpenedInIframe: ").Append(IsOpenedInIframe).Append("\n");
+            sb.Append("  PaymentFormMessage: ").Append(PaymentFormMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -190,6 +197,11 @@ namespace Splitit.SDK.Client.Model
                     this.IsOpenedInIframe == input.IsOpenedInIframe ||
                     (this.IsOpenedInIframe != null &&
                     this.IsOpenedInIframe.Equals(input.IsOpenedInIframe))
+                ) && 
+                (
+                    this.PaymentFormMessage == input.PaymentFormMessage ||
+                    (this.PaymentFormMessage != null &&
+                    this.PaymentFormMessage.Equals(input.PaymentFormMessage))
                 );
         }
 
@@ -216,18 +228,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ViewName.GetHashCode();
                 if (this.IsOpenedInIframe != null)
                     hashCode = hashCode * 59 + this.IsOpenedInIframe.GetHashCode();
+                if (this.PaymentFormMessage != null)
+                    hashCode = hashCode * 59 + this.PaymentFormMessage.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

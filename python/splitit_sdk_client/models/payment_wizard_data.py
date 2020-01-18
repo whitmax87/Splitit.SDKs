@@ -37,7 +37,8 @@ class PaymentWizardData(object):
         'cancel_exit_url': 'str',
         'success_async_url': 'str',
         'view_name': 'str',
-        'is_opened_in_iframe': 'bool'
+        'is_opened_in_iframe': 'bool',
+        'payment_form_message': 'str'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class PaymentWizardData(object):
         'cancel_exit_url': 'CancelExitURL',
         'success_async_url': 'SuccessAsyncUrl',
         'view_name': 'ViewName',
-        'is_opened_in_iframe': 'IsOpenedInIframe'
+        'is_opened_in_iframe': 'IsOpenedInIframe',
+        'payment_form_message': 'PaymentFormMessage'
     }
 
-    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None):  # noqa: E501
+    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, payment_form_message=None):  # noqa: E501
         """PaymentWizardData - a model defined in Swagger"""  # noqa: E501
 
         self._requested_number_of_installments = None
@@ -60,6 +62,7 @@ class PaymentWizardData(object):
         self._success_async_url = None
         self._view_name = None
         self._is_opened_in_iframe = None
+        self._payment_form_message = None
         self.discriminator = None
 
         if requested_number_of_installments is not None:
@@ -75,6 +78,8 @@ class PaymentWizardData(object):
         if view_name is not None:
             self.view_name = view_name
         self.is_opened_in_iframe = is_opened_in_iframe
+        if payment_form_message is not None:
+            self.payment_form_message = payment_form_message
 
     @property
     def requested_number_of_installments(self):
@@ -224,6 +229,27 @@ class PaymentWizardData(object):
             raise ValueError("Invalid value for `is_opened_in_iframe`, must not be `None`")  # noqa: E501
 
         self._is_opened_in_iframe = is_opened_in_iframe
+
+    @property
+    def payment_form_message(self):
+        """Gets the payment_form_message of this PaymentWizardData.  # noqa: E501
+
+
+        :return: The payment_form_message of this PaymentWizardData.  # noqa: E501
+        :rtype: str
+        """
+        return self._payment_form_message
+
+    @payment_form_message.setter
+    def payment_form_message(self, payment_form_message):
+        """Sets the payment_form_message of this PaymentWizardData.
+
+
+        :param payment_form_message: The payment_form_message of this PaymentWizardData.  # noqa: E501
+        :type: str
+        """
+
+        self._payment_form_message = payment_form_message
 
     def to_dict(self):
         """Returns the model properties as a dict"""

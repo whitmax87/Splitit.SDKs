@@ -83,7 +83,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.0.0/python'
+        self.user_agent = 'Swagger-Codegen/1.3.5/python'
 
         self.session_id = session_id
 
@@ -121,7 +121,7 @@ class ApiClient(object):
 
         # header parameters
         header_params = header_params or {}
-        header_params['Splitit-SDK'] = 'Python-1.0.0'
+        header_params['Splitit-SDK'] = 'Python-1.3.5'
         header_params.update(self.default_headers)
         if self.cookie:
             header_params['Cookie'] = self.cookie

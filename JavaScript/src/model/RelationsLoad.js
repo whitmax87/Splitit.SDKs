@@ -17,7 +17,7 @@ import InstallmentPlanActivityStatus from './InstallmentPlanActivityStatus';
 /**
  * The RelationsLoad model module.
  * @module model/RelationsLoad
- * @version 1.1.0
+ * @version 1.3.5
  */
 class RelationsLoad {
     /**

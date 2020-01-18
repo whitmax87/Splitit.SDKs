@@ -17,7 +17,7 @@ import TouchPoint from './TouchPoint';
 /**
  * The LoginRequest model module.
  * @module model/LoginRequest
- * @version 1.1.0
+ * @version 1.3.5
  */
 class LoginRequest {
     /**

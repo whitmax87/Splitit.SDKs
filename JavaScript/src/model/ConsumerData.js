@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The ConsumerData model module.
  * @module model/ConsumerData
- * @version 1.1.0
+ * @version 1.3.5
  */
 class ConsumerData {
     /**

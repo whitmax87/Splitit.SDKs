@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
+[**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -221,6 +222,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Get3DSecureParametersResponse**](Get3DSecureParametersResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+- **Accept**: text/plain, application/json, text/json
+
+
+## installmentPlanGetExtended
+
+> GetInstallmentsPlanExtendedResponse installmentPlanGetExtended(request)
+
+
+
+### Example
+
+```javascript
+import SplititJsSdk from 'splitit_js_sdk';
+
+let apiInstance = new SplititJsSdk.InstallmentPlanApi();
+let request = new SplititJsSdk.GetInstallmentsPlanSearchCriteriaRequest(); // GetInstallmentsPlanSearchCriteriaRequest | 
+apiInstance.installmentPlanGetExtended(request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetInstallmentsPlanSearchCriteriaRequest**](GetInstallmentsPlanSearchCriteriaRequest.md)|  | 
+
+### Return type
+
+[**GetInstallmentsPlanExtendedResponse**](GetInstallmentsPlanExtendedResponse.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ import CreateInstallmentPlanRequest from '../model/CreateInstallmentPlanRequest'
 import CreateInstallmentsPlanResponse from '../model/CreateInstallmentsPlanResponse';
 import Get3DSecureParametersRequest from '../model/Get3DSecureParametersRequest';
 import Get3DSecureParametersResponse from '../model/Get3DSecureParametersResponse';
+import GetInstallmentsPlanExtendedResponse from '../model/GetInstallmentsPlanExtendedResponse';
 import GetInstallmentsPlanResponse from '../model/GetInstallmentsPlanResponse';
 import GetInstallmentsPlanSearchCriteriaRequest from '../model/GetInstallmentsPlanSearchCriteriaRequest';
 import InitiateInstallmentPlanRequest from '../model/InitiateInstallmentPlanRequest';
@@ -35,7 +36,7 @@ import VerifyPaymentResponse from '../model/VerifyPaymentResponse';
 /**
 * InstallmentPlan service.
 * @module api/InstallmentPlanApi
-* @version 1.1.0
+* @version 1.3.5
 */
 export default class InstallmentPlanApi {
 
@@ -246,6 +247,46 @@ export default class InstallmentPlanApi {
       let returnType = Get3DSecureParametersResponse;
       return this.apiClient.callApi(
         '/api/InstallmentPlan/Get3DSecureParameters', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the installmentPlanGetExtended operation.
+     * @callback module:api/InstallmentPlanApi~installmentPlanGetExtendedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetInstallmentsPlanExtendedResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/GetInstallmentsPlanSearchCriteriaRequest} request 
+     * @param {module:api/InstallmentPlanApi~installmentPlanGetExtendedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetInstallmentsPlanExtendedResponse}
+     */
+    installmentPlanGetExtended(request, callback) {
+      let postBody = request;
+      // verify the required parameter 'request' is set
+      if (request === undefined || request === null) {
+        throw new Error("Missing the required parameter 'request' when calling installmentPlanGetExtended");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json'];
+      let accepts = ['text/plain', 'application/json', 'text/json'];
+      let returnType = GetInstallmentsPlanExtendedResponse;
+      return this.apiClient.callApi(
+        '/api/InstallmentPlan/GetExtended', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

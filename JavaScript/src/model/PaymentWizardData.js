@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentWizardData model module.
  * @module model/PaymentWizardData
- * @version 1.1.0
+ * @version 1.3.5
  */
 class PaymentWizardData {
     /**
@@ -70,6 +70,9 @@ class PaymentWizardData {
             if (data.hasOwnProperty('IsOpenedInIframe')) {
                 obj['IsOpenedInIframe'] = ApiClient.convertToType(data['IsOpenedInIframe'], 'Boolean');
             }
+            if (data.hasOwnProperty('PaymentFormMessage')) {
+                obj['PaymentFormMessage'] = ApiClient.convertToType(data['PaymentFormMessage'], 'String');
+            }
         }
         return obj;
     }
@@ -111,6 +114,11 @@ PaymentWizardData.prototype['ViewName'] = undefined;
  * @member {Boolean} IsOpenedInIframe
  */
 PaymentWizardData.prototype['IsOpenedInIframe'] = undefined;
+
+/**
+ * @member {String} PaymentFormMessage
+ */
+PaymentWizardData.prototype['PaymentFormMessage'] = undefined;
 
 
 

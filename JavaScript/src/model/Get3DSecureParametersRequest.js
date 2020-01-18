@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Get3DSecureParametersRequest model module.
  * @module model/Get3DSecureParametersRequest
- * @version 1.1.0
+ * @version 1.3.5
  */
 class Get3DSecureParametersRequest {
     /**

@@ -19,6 +19,7 @@ import AmountDetails from './model/AmountDetails';
 import AmountDetails2 from './model/AmountDetails2';
 import ApproveInstallmentPlanRequest from './model/ApproveInstallmentPlanRequest';
 import AuthenticationType from './model/AuthenticationType';
+import BuRef from './model/BuRef';
 import CancelInstallmentPlanRequest from './model/CancelInstallmentPlanRequest';
 import CardData from './model/CardData';
 import CartData from './model/CartData';
@@ -32,11 +33,15 @@ import CurrencyAllOf from './model/CurrencyAllOf';
 import DelayResolution from './model/DelayResolution';
 import Error from './model/Error';
 import EventsEndpoints from './model/EventsEndpoints';
+import ExtendedInstallmentPlan from './model/ExtendedInstallmentPlan';
+import ExtendedInstallmentPlanAllOf from './model/ExtendedInstallmentPlanAllOf';
 import ExternalAuth from './model/ExternalAuth';
 import FraudCheck from './model/FraudCheck';
 import FraudCheckResult from './model/FraudCheckResult';
 import Get3DSecureParametersRequest from './model/Get3DSecureParametersRequest';
 import Get3DSecureParametersResponse from './model/Get3DSecureParametersResponse';
+import GetInstallmentsPlanExtendedResponse from './model/GetInstallmentsPlanExtendedResponse';
+import GetInstallmentsPlanExtendedResponseAllOf from './model/GetInstallmentsPlanExtendedResponseAllOf';
 import GetInstallmentsPlanResponse from './model/GetInstallmentsPlanResponse';
 import GetInstallmentsPlanSearchCriteriaRequest from './model/GetInstallmentsPlanSearchCriteriaRequest';
 import InitiateInstallmentPlanRequest from './model/InitiateInstallmentPlanRequest';
@@ -128,7 +133,7 @@ import LoginApi from './api/LoginApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.0
+* @version 1.3.5
 */
 export {
     /**
@@ -172,6 +177,12 @@ export {
      * @property {module:model/AuthenticationType}
      */
     AuthenticationType,
+
+    /**
+     * The BuRef model constructor.
+     * @property {module:model/BuRef}
+     */
+    BuRef,
 
     /**
      * The CancelInstallmentPlanRequest model constructor.
@@ -252,6 +263,18 @@ export {
     EventsEndpoints,
 
     /**
+     * The ExtendedInstallmentPlan model constructor.
+     * @property {module:model/ExtendedInstallmentPlan}
+     */
+    ExtendedInstallmentPlan,
+
+    /**
+     * The ExtendedInstallmentPlanAllOf model constructor.
+     * @property {module:model/ExtendedInstallmentPlanAllOf}
+     */
+    ExtendedInstallmentPlanAllOf,
+
+    /**
      * The ExternalAuth model constructor.
      * @property {module:model/ExternalAuth}
      */
@@ -280,6 +303,18 @@ export {
      * @property {module:model/Get3DSecureParametersResponse}
      */
     Get3DSecureParametersResponse,
+
+    /**
+     * The GetInstallmentsPlanExtendedResponse model constructor.
+     * @property {module:model/GetInstallmentsPlanExtendedResponse}
+     */
+    GetInstallmentsPlanExtendedResponse,
+
+    /**
+     * The GetInstallmentsPlanExtendedResponseAllOf model constructor.
+     * @property {module:model/GetInstallmentsPlanExtendedResponseAllOf}
+     */
+    GetInstallmentsPlanExtendedResponseAllOf,
 
     /**
      * The GetInstallmentsPlanResponse model constructor.

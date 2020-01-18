@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **success_async_url** | **str** |  | [optional] 
 **view_name** | **str** |  | [optional] 
 **is_opened_in_iframe** | **bool** |  | 
+**payment_form_message** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

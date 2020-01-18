@@ -33,6 +33,9 @@ import {
     Get3DSecureParametersResponse,
     Get3DSecureParametersResponseFromJSON,
     Get3DSecureParametersResponseToJSON,
+    GetInstallmentsPlanExtendedResponse,
+    GetInstallmentsPlanExtendedResponseFromJSON,
+    GetInstallmentsPlanExtendedResponseToJSON,
     GetInstallmentsPlanResponse,
     GetInstallmentsPlanResponseFromJSON,
     GetInstallmentsPlanResponseToJSON,
@@ -89,6 +92,10 @@ export interface InstallmentPlanGetRequest {
 
 export interface InstallmentPlanGet3DSecureParametersRequest {
     request: Get3DSecureParametersRequest;
+}
+
+export interface InstallmentPlanGetExtendedRequest {
+    request: GetInstallmentsPlanSearchCriteriaRequest;
 }
 
 export interface InstallmentPlanInitiateRequest {
@@ -268,6 +275,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanGet3DSecureParameters(requestParameters: InstallmentPlanGet3DSecureParametersRequest): Promise<Get3DSecureParametersResponse> {
         const response = await this.installmentPlanGet3DSecureParametersRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanGetExtendedRaw(requestParameters: InstallmentPlanGetExtendedRequest): Promise<runtime.ApiResponse<GetInstallmentsPlanExtendedResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetExtended.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetExtended`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetInstallmentsPlanSearchCriteriaRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetInstallmentsPlanExtendedResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetExtended(requestParameters: InstallmentPlanGetExtendedRequest): Promise<GetInstallmentsPlanExtendedResponse> {
+        const response = await this.installmentPlanGetExtendedRaw(requestParameters);
         return await response.value();
     }
 

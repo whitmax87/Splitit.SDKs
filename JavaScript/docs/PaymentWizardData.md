@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **successAsyncUrl** | **String** |  | [optional] 
 **viewName** | **String** |  | [optional] 
 **isOpenedInIframe** | **Boolean** |  | 
+**paymentFormMessage** | **String** |  | [optional] 
 
 

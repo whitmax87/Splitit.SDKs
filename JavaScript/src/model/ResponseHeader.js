@@ -17,7 +17,7 @@ import Error from './Error';
 /**
  * The ResponseHeader model module.
  * @module model/ResponseHeader
- * @version 1.1.0
+ * @version 1.3.5
  */
 class ResponseHeader {
     /**

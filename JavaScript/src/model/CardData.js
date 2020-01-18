@@ -18,7 +18,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The CardData model module.
  * @module model/CardData
- * @version 1.1.0
+ * @version 1.3.5
  */
 class CardData {
     /**

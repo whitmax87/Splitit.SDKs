@@ -17,7 +17,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The TransactionResult model module.
  * @module model/TransactionResult
- * @version 1.1.0
+ * @version 1.3.5
  */
 class TransactionResult {
     /**

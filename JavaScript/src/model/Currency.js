@@ -18,7 +18,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The Currency model module.
  * @module model/Currency
- * @version 1.1.0
+ * @version 1.3.5
  */
 class Currency {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstallmentPlanInitiatedStatuses model module.
  * @module model/InstallmentPlanInitiatedStatuses
- * @version 1.1.0
+ * @version 1.3.5
  */
 class InstallmentPlanInitiatedStatuses {
     /**

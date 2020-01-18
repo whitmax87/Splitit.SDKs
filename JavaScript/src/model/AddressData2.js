@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AddressData2 model module.
  * @module model/AddressData2
- * @version 1.1.0
+ * @version 1.3.5
  */
 class AddressData2 {
     /**

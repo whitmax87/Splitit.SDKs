@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Splitit.SDK.Client.Client;
 using Splitit.SDK.Client.Model;
 
@@ -129,6 +129,27 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>ApiResponse of Get3DSecureParametersResponse</returns>
         ApiResponse<Get3DSecureParametersResponse> InstallmentPlanGet3DSecureParametersWithHttpInfo (Get3DSecureParametersRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>GetInstallmentsPlanExtendedResponse</returns>
+        GetInstallmentsPlanExtendedResponse InstallmentPlanGetExtended (GetInstallmentsPlanSearchCriteriaRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of GetInstallmentsPlanExtendedResponse</returns>
+        ApiResponse<GetInstallmentsPlanExtendedResponse> InstallmentPlanGetExtendedWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request);
         /// <summary>
         /// 
         /// </summary>
@@ -341,6 +362,27 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (Get3DSecureParametersResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<Get3DSecureParametersResponse>> InstallmentPlanGet3DSecureParametersAsyncWithHttpInfo (Get3DSecureParametersRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetInstallmentsPlanExtendedResponse</returns>
+        System.Threading.Tasks.Task<GetInstallmentsPlanExtendedResponse> InstallmentPlanGetExtendedAsync (GetInstallmentsPlanSearchCriteriaRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInstallmentsPlanExtendedResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetInstallmentsPlanExtendedResponse>> InstallmentPlanGetExtendedAsyncWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request);
         /// <summary>
         /// 
         /// </summary>
@@ -568,7 +610,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanApprove");
 
-            var localVarPath = "/api/InstallmentPlan/Approve";
+            var localVarPath = "./api/InstallmentPlan/Approve";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -620,7 +662,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -650,7 +692,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanApprove");
 
-            var localVarPath = "/api/InstallmentPlan/Approve";
+            var localVarPath = "./api/InstallmentPlan/Approve";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -702,7 +744,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -731,7 +773,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCancel");
 
-            var localVarPath = "/api/InstallmentPlan/Cancel";
+            var localVarPath = "./api/InstallmentPlan/Cancel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -783,7 +825,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -813,7 +855,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCancel");
 
-            var localVarPath = "/api/InstallmentPlan/Cancel";
+            var localVarPath = "./api/InstallmentPlan/Cancel";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -865,7 +907,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -894,7 +936,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCreate");
 
-            var localVarPath = "/api/InstallmentPlan/Create";
+            var localVarPath = "./api/InstallmentPlan/Create";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -946,7 +988,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<CreateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (CreateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentsPlanResponse)));
         }
 
@@ -976,7 +1018,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCreate");
 
-            var localVarPath = "/api/InstallmentPlan/Create";
+            var localVarPath = "./api/InstallmentPlan/Create";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1028,7 +1070,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<CreateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (CreateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentsPlanResponse)));
         }
 
@@ -1057,7 +1099,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet");
 
-            var localVarPath = "/api/InstallmentPlan/Get";
+            var localVarPath = "./api/InstallmentPlan/Get";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1109,7 +1151,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<GetInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GetInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanResponse)));
         }
 
@@ -1139,7 +1181,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet");
 
-            var localVarPath = "/api/InstallmentPlan/Get";
+            var localVarPath = "./api/InstallmentPlan/Get";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1191,7 +1233,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<GetInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GetInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanResponse)));
         }
 
@@ -1220,7 +1262,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet3DSecureParameters");
 
-            var localVarPath = "/api/InstallmentPlan/Get3DSecureParameters";
+            var localVarPath = "./api/InstallmentPlan/Get3DSecureParameters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1272,7 +1314,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<Get3DSecureParametersResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Get3DSecureParametersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Get3DSecureParametersResponse)));
         }
 
@@ -1302,7 +1344,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet3DSecureParameters");
 
-            var localVarPath = "/api/InstallmentPlan/Get3DSecureParameters";
+            var localVarPath = "./api/InstallmentPlan/Get3DSecureParameters";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1354,8 +1396,171 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<Get3DSecureParametersResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Get3DSecureParametersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Get3DSecureParametersResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>GetInstallmentsPlanExtendedResponse</returns>
+        public GetInstallmentsPlanExtendedResponse InstallmentPlanGetExtended (GetInstallmentsPlanSearchCriteriaRequest request)
+        {
+             ApiResponse<GetInstallmentsPlanExtendedResponse> localVarResponse = InstallmentPlanGetExtendedWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of GetInstallmentsPlanExtendedResponse</returns>
+        public ApiResponse< GetInstallmentsPlanExtendedResponse > InstallmentPlanGetExtendedWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetExtended");
+
+            var localVarPath = "./api/InstallmentPlan/GetExtended";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InstallmentPlanGetExtended", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetInstallmentsPlanExtendedResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetInstallmentsPlanExtendedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanExtendedResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetInstallmentsPlanExtendedResponse</returns>
+        public async System.Threading.Tasks.Task<GetInstallmentsPlanExtendedResponse> InstallmentPlanGetExtendedAsync (GetInstallmentsPlanSearchCriteriaRequest request)
+        {
+             ApiResponse<GetInstallmentsPlanExtendedResponse> localVarResponse = await InstallmentPlanGetExtendedAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInstallmentsPlanExtendedResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetInstallmentsPlanExtendedResponse>> InstallmentPlanGetExtendedAsyncWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetExtended");
+
+            var localVarPath = "./api/InstallmentPlan/GetExtended";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InstallmentPlanGetExtended", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetInstallmentsPlanExtendedResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetInstallmentsPlanExtendedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanExtendedResponse)));
         }
 
         /// <summary>
@@ -1383,7 +1588,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanInitiate");
 
-            var localVarPath = "/api/InstallmentPlan/Initiate";
+            var localVarPath = "./api/InstallmentPlan/Initiate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1435,7 +1640,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InitiateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InitiateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiateInstallmentsPlanResponse)));
         }
 
@@ -1465,7 +1670,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanInitiate");
 
-            var localVarPath = "/api/InstallmentPlan/Initiate";
+            var localVarPath = "./api/InstallmentPlan/Initiate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1517,7 +1722,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InitiateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InitiateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiateInstallmentsPlanResponse)));
         }
 
@@ -1546,7 +1751,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanRefund");
 
-            var localVarPath = "/api/InstallmentPlan/Refund";
+            var localVarPath = "./api/InstallmentPlan/Refund";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1598,7 +1803,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<RefundInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (RefundInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RefundInstallmentPlanResponse)));
         }
 
@@ -1628,7 +1833,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanRefund");
 
-            var localVarPath = "/api/InstallmentPlan/Refund";
+            var localVarPath = "./api/InstallmentPlan/Refund";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1680,7 +1885,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<RefundInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (RefundInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RefundInstallmentPlanResponse)));
         }
 
@@ -1709,7 +1914,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanStartInstallments");
 
-            var localVarPath = "/api/InstallmentPlan/StartInstallments";
+            var localVarPath = "./api/InstallmentPlan/StartInstallments";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1761,7 +1966,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -1791,7 +1996,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanStartInstallments");
 
-            var localVarPath = "/api/InstallmentPlan/StartInstallments";
+            var localVarPath = "./api/InstallmentPlan/StartInstallments";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1843,7 +2048,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
         }
 
@@ -1872,7 +2077,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanUpdate");
 
-            var localVarPath = "/api/InstallmentPlan/Update";
+            var localVarPath = "./api/InstallmentPlan/Update";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1924,7 +2129,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<UpdateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (UpdateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateInstallmentsPlanResponse)));
         }
 
@@ -1954,7 +2159,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanUpdate");
 
-            var localVarPath = "/api/InstallmentPlan/Update";
+            var localVarPath = "./api/InstallmentPlan/Update";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2006,7 +2211,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<UpdateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (UpdateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateInstallmentsPlanResponse)));
         }
 
@@ -2035,7 +2240,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanVerifyPayment");
 
-            var localVarPath = "/api/InstallmentPlan/Get/VerifyPayment";
+            var localVarPath = "./api/InstallmentPlan/Get/VerifyPayment";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2087,7 +2292,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<VerifyPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (VerifyPaymentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VerifyPaymentResponse)));
         }
 
@@ -2117,7 +2322,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanVerifyPayment");
 
-            var localVarPath = "/api/InstallmentPlan/Get/VerifyPayment";
+            var localVarPath = "./api/InstallmentPlan/Get/VerifyPayment";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2169,7 +2374,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<VerifyPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (VerifyPaymentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VerifyPaymentResponse)));
         }
 

@@ -19,7 +19,7 @@ import TransactionResult from './TransactionResult';
 /**
  * The ReAuthorization model module.
  * @module model/ReAuthorization
- * @version 1.1.0
+ * @version 1.3.5
  */
 class ReAuthorization {
     /**

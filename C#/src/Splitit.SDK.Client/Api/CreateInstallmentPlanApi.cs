@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Splitit.SDK.Client.Client;
 using Splitit.SDK.Client.Model;
 
@@ -277,7 +277,7 @@ namespace Splitit.SDK.Client.Api
         public ApiResponse< CreateInstallmentPlanLegacyResponse > CreateInstallmentPlanGetWithHttpInfo (decimal? amountBeforeFees = null, string apiKey = null, string avsAddress = null, string avsZip = null, string cardCvv = null, string cardExpMonth = null, string cardExpYear = null, string cardHolder = null, string cardNumber = null, int? cardTypeId = null, string consumerFullName = null, int? countryId = null, string email = null, int? installmentNumber = null, string paramX = null, string sessionId = null)
         {
 
-            var localVarPath = "/api/CreateInstallmentPlan";
+            var localVarPath = "./api/CreateInstallmentPlan";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -332,7 +332,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<CreateInstallmentPlanLegacyResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (CreateInstallmentPlanLegacyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentPlanLegacyResponse)));
         }
 
@@ -389,7 +389,7 @@ namespace Splitit.SDK.Client.Api
         public async System.Threading.Tasks.Task<ApiResponse<CreateInstallmentPlanLegacyResponse>> CreateInstallmentPlanGetAsyncWithHttpInfo (decimal? amountBeforeFees = null, string apiKey = null, string avsAddress = null, string avsZip = null, string cardCvv = null, string cardExpMonth = null, string cardExpYear = null, string cardHolder = null, string cardNumber = null, int? cardTypeId = null, string consumerFullName = null, int? countryId = null, string email = null, int? installmentNumber = null, string paramX = null, string sessionId = null)
         {
 
-            var localVarPath = "/api/CreateInstallmentPlan";
+            var localVarPath = "./api/CreateInstallmentPlan";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -444,7 +444,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<CreateInstallmentPlanLegacyResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (CreateInstallmentPlanLegacyResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentPlanLegacyResponse)));
         }
 

@@ -31,7 +31,7 @@ namespace Splitit.SDK.Client.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.1.0";
+        public const string Version = "1.3.5";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -60,11 +60,7 @@ namespace Splitit.SDK.Client.Client
                     string.Format("Error calling {0}: {1}", methodName, response.Content),
                     response.Content);
             }
-            if (status == 0)
-            {
-                return new ApiException(status,
-                    string.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage);
-            }
+            
             return null;
         };
 
@@ -116,58 +112,18 @@ namespace Splitit.SDK.Client.Client
             _globalConfiguration = new GlobalConfiguration();
 			_sandboxConfiguration = new GlobalConfiguration(basePath: "https://webapi.sandbox.splitit.com");
 			
-            ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-			
-			SetAllowUnsafeHeaderParsing20();
         }
 		
-		// Needed due to error Exception when calling *Api: Error calling *: Specified value has invalid Control characters.
-		// http://www.windows-tech.info/13/9e7b0a842e03e1ed.php
-		public static bool SetAllowUnsafeHeaderParsing20()
-        {
-			try{
-				//Get the assembly that contains the internal class
-				Assembly aNetAssembly = Assembly.GetAssembly(typeof(System.Net.Configuration.SettingsSection));
-				if (aNetAssembly != null)
-				{
-					//Use the assembly in order to get the internal type for the internal class
-					Type aSettingsType = aNetAssembly.GetType("System.Net.Configuration.SettingsSectionInternal");
-					if (aSettingsType != null)
-					{
-						//Use the internal static property to get an instance of the internal settings class.
-						//If the static instance isn't created allready the property will create it for us.
-						object anInstance = aSettingsType.InvokeMember("Section",
-						BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null, new object[] { });
-
-						if (anInstance != null)
-						{
-							//Locate the private bool field that tells the framework is unsafe header parsing should be allowed or not
-							FieldInfo aUseUnsafeHeaderParsing = aSettingsType.GetField("useUnsafeHeaderParsing", BindingFlags.NonPublic | BindingFlags.Instance);
-							if (aUseUnsafeHeaderParsing != null)
-							{
-								aUseUnsafeHeaderParsing.SetValue(anInstance, true);
-								return true;
-							}
-						}
-					}
-				}
-			} catch(Exception ex){
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-			}
-            return false;
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
         public Configuration(string basePath = null)
         {
-            UserAgent = "Swagger-Codegen/1.1.0/csharp";
+            UserAgent = "Swagger-Codegen/1.3.5/csharp";
             BasePath = basePath ?? "https://webapi.production.splitit.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
-            DefaultHeader["Splitit-SDK"] = "CSharp-1.1.0";
+            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.3.5";
             ApiKey = null;
 
             // Setting Timeout has side effects (forces ApiClient creation).
@@ -217,9 +173,8 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         public virtual int Timeout
         {
-            
-            get { return ApiClient.RestClient.Timeout; }
-            set { ApiClient.RestClient.Timeout = value; }
+            get { return (int)ApiClient.RestClient.Timeout.GetValueOrDefault(TimeSpan.FromSeconds(0)).TotalMilliseconds; }
+            set { ApiClient.RestClient.Timeout = TimeSpan.FromMilliseconds(value); }
         }
 
         /// <summary>
@@ -349,10 +304,9 @@ namespace Splitit.SDK.Client.Client
         public static String ToDebugReport()
         {
             String report = "C# SDK (Splitit.SDK.Client) Debug Report:\n";
-            report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: 1.0.0\n";
-            report += "    SDK Package Version: 1.1.0\n";
+            report += "    SDK Package Version: 1.3.5\n";
 
             return report;
         }

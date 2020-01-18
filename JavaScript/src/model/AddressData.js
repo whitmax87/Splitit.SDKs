@@ -17,7 +17,7 @@ import AddressData2 from './AddressData2';
 /**
  * The AddressData model module.
  * @module model/AddressData
- * @version 1.1.0
+ * @version 1.3.5
  */
 class AddressData {
     /**

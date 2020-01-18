@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InitiateInstallmentsPlanResponseAllOf model module.
  * @module model/InitiateInstallmentsPlanResponseAllOf
- * @version 1.1.0
+ * @version 1.3.5
  */
 class InitiateInstallmentsPlanResponseAllOf {
     /**

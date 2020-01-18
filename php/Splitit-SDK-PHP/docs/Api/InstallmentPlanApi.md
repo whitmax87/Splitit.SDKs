@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
+[**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -239,6 +240,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\Get3DSecureParametersResponse**](../Model/Get3DSecureParametersResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanGetExtended**
+> \SplititSdkClient\Model\GetInstallmentsPlanExtendedResponse installmentPlanGetExtended($request)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$request = new \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest(); // \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanGetExtended($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanGetExtended: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest**](../Model/GetInstallmentsPlanSearchCriteriaRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\GetInstallmentsPlanExtendedResponse**](../Model/GetInstallmentsPlanExtendedResponse.md)
 
 ### Authorization
 

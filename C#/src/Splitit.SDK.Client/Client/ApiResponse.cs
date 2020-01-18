@@ -12,6 +12,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Splitit.SDK.Client.Model;
+using System.Reflection;
 
 namespace Splitit.SDK.Client.Client
 {

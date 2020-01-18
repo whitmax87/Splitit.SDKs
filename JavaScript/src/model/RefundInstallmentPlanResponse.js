@@ -21,7 +21,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The RefundInstallmentPlanResponse model module.
  * @module model/RefundInstallmentPlanResponse
- * @version 1.1.0
+ * @version 1.3.5
  */
 class RefundInstallmentPlanResponse {
     /**

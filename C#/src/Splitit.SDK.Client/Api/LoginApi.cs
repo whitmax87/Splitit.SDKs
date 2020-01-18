@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Splitit.SDK.Client.Client;
 using Splitit.SDK.Client.Model;
 
@@ -235,7 +235,7 @@ namespace Splitit.SDK.Client.Api
         public ApiResponse< LoginResponse > LoginGetWithHttpInfo (string userName = null, string password = null)
         {
 
-            var localVarPath = "/api/Login";
+            var localVarPath = "./api/Login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -276,7 +276,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
         }
 
@@ -305,7 +305,7 @@ namespace Splitit.SDK.Client.Api
         public async System.Threading.Tasks.Task<ApiResponse<LoginResponse>> LoginGetAsyncWithHttpInfo (string userName = null, string password = null)
         {
 
-            var localVarPath = "/api/Login";
+            var localVarPath = "./api/Login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -346,7 +346,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
         }
 
@@ -375,7 +375,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling LoginApi->LoginPost");
 
-            var localVarPath = "/api/Login";
+            var localVarPath = "./api/Login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -426,7 +426,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
         }
 
@@ -456,7 +456,7 @@ namespace Splitit.SDK.Client.Api
             if (request == null)
                 throw new ApiException(400, "Missing required parameter 'request' when calling LoginApi->LoginPost");
 
-            var localVarPath = "/api/Login";
+            var localVarPath = "./api/Login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -507,7 +507,7 @@ namespace Splitit.SDK.Client.Api
             }
 
             return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
         }
 

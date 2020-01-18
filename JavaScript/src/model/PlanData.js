@@ -20,7 +20,7 @@ import TestModes from './TestModes';
 /**
  * The PlanData model module.
  * @module model/PlanData
- * @version 1.1.0
+ * @version 1.3.5
  */
 class PlanData {
     /**

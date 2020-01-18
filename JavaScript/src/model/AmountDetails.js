@@ -17,7 +17,7 @@ import AmountDetails2 from './AmountDetails2';
 /**
  * The AmountDetails model module.
  * @module model/AmountDetails
- * @version 1.1.0
+ * @version 1.3.5
  */
 class AmountDetails {
     /**

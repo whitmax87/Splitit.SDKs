@@ -14,12 +14,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.IO;
-using System.Web;
 using System.Linq;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
-using RestSharp;
+using RestSharp.Portable;
+using RestSharp.Portable.HttpClient;
+using System.Reflection;
 
 namespace Splitit.SDK.Client.Client
 {
@@ -54,6 +55,7 @@ namespace Splitit.SDK.Client.Client
         {
             Configuration = Splitit.SDK.Client.Client.Configuration.Default;
             RestClient = new RestClient("https://webapi.production.splitit.com");
+            RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace Splitit.SDK.Client.Client
             Configuration = config ?? Splitit.SDK.Client.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
+            RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
@@ -79,6 +82,7 @@ namespace Splitit.SDK.Client.Client
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
+            RestClient.IgnoreResponseStatusCode = true;
             Configuration = Client.Configuration.Default;
         }
 
@@ -108,12 +112,14 @@ namespace Splitit.SDK.Client.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
         {
             var request = new RestRequest(path, method);
+            // disable ResetSharp.Portable built-in serialization
+            request.Serializer = null;
 
             // add path parameter, if any
             foreach(var param in pathParams)
@@ -134,12 +140,12 @@ namespace Splitit.SDK.Client.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                request.AddFile(param.Value);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
             {
-                request.AddParameter(contentType, postBody, ParameterType.RequestBody);
+                request.AddParameter(new Parameter { Value = postBody, Type = ParameterType.RequestBody, ContentType = contentType });
             }
 
             return request;
@@ -159,7 +165,7 @@ namespace Splitit.SDK.Client.Client
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
         public Object CallApi(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -169,13 +175,13 @@ namespace Splitit.SDK.Client.Client
                 pathParams, contentType);
 
             // set timeout
+            RestClient.Timeout = TimeSpan.FromMilliseconds(Configuration.Timeout);
             
-            RestClient.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
 
             InterceptRequest(request);
-            var response = RestClient.Execute(request);
+            var response = RestClient.Execute(request).Result;
             InterceptResponse(request, response);
 
             return (Object) response;
@@ -194,7 +200,7 @@ namespace Splitit.SDK.Client.Client
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
         public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -203,7 +209,7 @@ namespace Splitit.SDK.Client.Client
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
             InterceptRequest(request);
-            var response = await RestClient.ExecuteTaskAsync(request);
+            var response = await RestClient.Execute(request);
             InterceptResponse(request, response);
             return (Object)response;
         }
@@ -276,7 +282,7 @@ namespace Splitit.SDK.Client.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IList<Parameter> headers = response.Headers;
+            IHttpHeaders headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;

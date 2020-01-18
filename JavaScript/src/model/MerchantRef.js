@@ -17,7 +17,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The MerchantRef model module.
  * @module model/MerchantRef
- * @version 1.1.0
+ * @version 1.3.5
  */
 class MerchantRef {
     /**
