@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResponseError model module.
  * @module model/ResponseError
- * @version 1.3.5
+ * @version 1.3.10
  */
 class ResponseError {
     /**

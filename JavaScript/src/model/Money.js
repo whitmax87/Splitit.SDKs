@@ -17,7 +17,7 @@ import Currency from './Currency';
 /**
  * The Money model module.
  * @module model/Money
- * @version 1.3.5
+ * @version 1.3.10
  */
 class Money {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReferenceEntityBase model module.
  * @module model/ReferenceEntityBase
- * @version 1.3.5
+ * @version 1.3.10
  */
 class ReferenceEntityBase {
     /**

@@ -26,7 +26,7 @@ import RedirectUrls from './RedirectUrls';
 /**
  * The CreateInstallmentPlanRequest model module.
  * @module model/CreateInstallmentPlanRequest
- * @version 1.3.5
+ * @version 1.3.10
  */
 class CreateInstallmentPlanRequest {
     /**

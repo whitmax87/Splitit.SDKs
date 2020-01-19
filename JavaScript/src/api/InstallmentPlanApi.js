@@ -36,7 +36,7 @@ import VerifyPaymentResponse from '../model/VerifyPaymentResponse';
 /**
 * InstallmentPlan service.
 * @module api/InstallmentPlanApi
-* @version 1.3.5
+* @version 1.3.10
 */
 export default class InstallmentPlanApi {
 

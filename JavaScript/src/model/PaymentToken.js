@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentToken model module.
  * @module model/PaymentToken
- * @version 1.3.5
+ * @version 1.3.10
  */
 class PaymentToken {
     /**

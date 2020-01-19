@@ -18,7 +18,7 @@ import TouchPoint from './TouchPoint';
 /**
  * The RequestHeader model module.
  * @module model/RequestHeader
- * @version 1.3.5
+ * @version 1.3.10
  */
 class RequestHeader {
     /**

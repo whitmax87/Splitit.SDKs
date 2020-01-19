@@ -20,7 +20,7 @@ import TransactionResult from './TransactionResult';
 /**
  * The Installment model module.
  * @module model/Installment
- * @version 1.3.5
+ * @version 1.3.10
  */
 class Installment {
     /**

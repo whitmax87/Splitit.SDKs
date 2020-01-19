@@ -17,7 +17,7 @@ import InstallmentsPlanDateType from './InstallmentsPlanDateType';
 /**
  * The InstallmentPlanDateInfo model module.
  * @module model/InstallmentPlanDateInfo
- * @version 1.3.5
+ * @version 1.3.10
  */
 class InstallmentPlanDateInfo {
     /**

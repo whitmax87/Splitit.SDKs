@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApproveInstallmentPlanRequest model module.
  * @module model/ApproveInstallmentPlanRequest
- * @version 1.3.5
+ * @version 1.3.10
  */
 class ApproveInstallmentPlanRequest {
     /**

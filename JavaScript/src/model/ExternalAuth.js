@@ -17,7 +17,7 @@ import MoneyWithCurrencyCode from './MoneyWithCurrencyCode';
 /**
  * The ExternalAuth model module.
  * @module model/ExternalAuth
- * @version 1.3.5
+ * @version 1.3.10
  */
 class ExternalAuth {
     /**

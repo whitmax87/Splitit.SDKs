@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlanApprovalEvidence model module.
  * @module model/PlanApprovalEvidence
- * @version 1.3.5
+ * @version 1.3.10
  */
 class PlanApprovalEvidence {
     /**

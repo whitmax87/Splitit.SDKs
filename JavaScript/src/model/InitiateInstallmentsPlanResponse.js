@@ -20,7 +20,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The InitiateInstallmentsPlanResponse model module.
  * @module model/InitiateInstallmentsPlanResponse
- * @version 1.3.5
+ * @version 1.3.10
  */
 class InitiateInstallmentsPlanResponse {
     /**
