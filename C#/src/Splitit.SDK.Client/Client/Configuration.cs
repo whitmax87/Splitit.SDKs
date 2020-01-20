@@ -31,7 +31,7 @@ namespace Splitit.SDK.Client.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.3.10";
+        public const string Version = "1.3.11";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -120,10 +120,10 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         public Configuration(string basePath = null)
         {
-            UserAgent = "Swagger-Codegen/1.3.10/csharp";
+            UserAgent = "Swagger-Codegen/1.3.11/csharp";
             BasePath = basePath ?? "https://webapi.production.splitit.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
-            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.3.10";
+            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.3.11";
             ApiKey = null;
 
             // Setting Timeout has side effects (forces ApiClient creation).
@@ -171,11 +171,7 @@ namespace Splitit.SDK.Client.Client
         /// <summary>
         /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
         /// </summary>
-        public virtual int Timeout
-        {
-            get { return (int)ApiClient.RestClient.Timeout.GetValueOrDefault(TimeSpan.FromSeconds(0)).TotalMilliseconds; }
-            set { ApiClient.RestClient.Timeout = TimeSpan.FromMilliseconds(value); }
-        }
+        public virtual int Timeout { get; set; }
 
         /// <summary>
         /// Gets or sets the HTTP user agent.
@@ -305,7 +301,7 @@ namespace Splitit.SDK.Client.Client
         {
             String report = "C# SDK (Splitit.SDK.Client) Debug Report:\n";
             report += "    Version of the API: 1.0.0\n";
-            report += "    SDK Package Version: 1.3.10\n";
+            report += "    SDK Package Version: 1.3.11\n";
 
             return report;
         }

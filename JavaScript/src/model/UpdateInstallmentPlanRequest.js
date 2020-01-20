@@ -28,7 +28,7 @@ import UpdateInstallmentPlanRequestAllOf from './UpdateInstallmentPlanRequestAll
 /**
  * The UpdateInstallmentPlanRequest model module.
  * @module model/UpdateInstallmentPlanRequest
- * @version 1.3.10
+ * @version 1.3.11
  */
 class UpdateInstallmentPlanRequest {
     /**

@@ -17,7 +17,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The LoginResponse2 model module.
  * @module model/LoginResponse2
- * @version 1.3.10
+ * @version 1.3.11
  */
 class LoginResponse2 {
     /**

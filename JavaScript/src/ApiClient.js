@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 1.3.10
+* @version 1.3.11
 */
 
 /**
@@ -345,7 +345,7 @@ class ApiClient {
         // set header parameters
         request.set(this.defaultHeaders)
             .set(this.normalizeParams(headerParams))
-            .set("Splitit-SDK", "JS-1.3.10");
+            .set("Splitit-SDK", "JS-1.3.11");
 
         // set requestAgent if it is set by user
         if (this.requestAgent) {

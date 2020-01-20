@@ -17,7 +17,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The BuRef model module.
  * @module model/BuRef
- * @version 1.3.10
+ * @version 1.3.11
  */
 class BuRef {
     /**

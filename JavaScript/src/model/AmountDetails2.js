@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AmountDetails2 model module.
  * @module model/AmountDetails2
- * @version 1.3.10
+ * @version 1.3.11
  */
 class AmountDetails2 {
     /**

@@ -17,7 +17,7 @@ import ExtendedInstallmentPlan from './ExtendedInstallmentPlan';
 /**
  * The GetInstallmentsPlanExtendedResponseAllOf model module.
  * @module model/GetInstallmentsPlanExtendedResponseAllOf
- * @version 1.3.10
+ * @version 1.3.11
  */
 class GetInstallmentsPlanExtendedResponseAllOf {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TouchPoint model module.
  * @module model/TouchPoint
- * @version 1.3.10
+ * @version 1.3.11
  */
 class TouchPoint {
     /**

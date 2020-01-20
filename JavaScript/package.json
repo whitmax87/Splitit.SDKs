@@ -1,6 +1,6 @@
 {
   "name": "splitit_js_sdk",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "description": "Splitit Javascript SDK",
   "license": "Unlicense",
   "main": "dist/index.js",

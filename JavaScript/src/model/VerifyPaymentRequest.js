@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VerifyPaymentRequest model module.
  * @module model/VerifyPaymentRequest
- * @version 1.3.10
+ * @version 1.3.11
  */
 class VerifyPaymentRequest {
     /**

@@ -25,7 +25,7 @@ import TestModes from './TestModes';
 /**
  * The InstallmentPlan model module.
  * @module model/InstallmentPlan
- * @version 1.3.10
+ * @version 1.3.11
  */
 class InstallmentPlan {
     /**

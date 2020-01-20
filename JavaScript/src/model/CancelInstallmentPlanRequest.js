@@ -18,7 +18,7 @@ import RefundUnderCancelation from './RefundUnderCancelation';
 /**
  * The CancelInstallmentPlanRequest model module.
  * @module model/CancelInstallmentPlanRequest
- * @version 1.3.10
+ * @version 1.3.11
  */
 class CancelInstallmentPlanRequest {
     /**

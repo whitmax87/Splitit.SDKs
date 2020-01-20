@@ -20,7 +20,7 @@ import ResponseStatus from './ResponseStatus';
 /**
  * The LoginResponse model module.
  * @module model/LoginResponse
- * @version 1.3.10
+ * @version 1.3.11
  */
 class LoginResponse {
     /**

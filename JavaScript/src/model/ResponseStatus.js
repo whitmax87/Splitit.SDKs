@@ -17,7 +17,7 @@ import ResponseError from './ResponseError';
 /**
  * The ResponseStatus model module.
  * @module model/ResponseStatus
- * @version 1.3.10
+ * @version 1.3.11
  */
 class ResponseStatus {
     /**

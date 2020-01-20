@@ -28,7 +28,7 @@ import TestModes from './TestModes';
 /**
  * The ExtendedInstallmentPlan model module.
  * @module model/ExtendedInstallmentPlan
- * @version 1.3.10
+ * @version 1.3.11
  */
 class ExtendedInstallmentPlan {
     /**

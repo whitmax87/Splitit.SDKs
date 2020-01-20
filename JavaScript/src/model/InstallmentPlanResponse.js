@@ -18,7 +18,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The InstallmentPlanResponse model module.
  * @module model/InstallmentPlanResponse
- * @version 1.3.10
+ * @version 1.3.11
  */
 class InstallmentPlanResponse {
     /**

@@ -133,7 +133,7 @@ import LoginApi from './api/LoginApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.3.10
+* @version 1.3.11
 */
 export {
     /**

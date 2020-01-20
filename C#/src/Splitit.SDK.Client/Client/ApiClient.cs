@@ -170,9 +170,13 @@ namespace Splitit.SDK.Client.Client
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
         {
+
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
+
+            RestClient = new RestClient(Configuration.BasePath);
+            RestClient.IgnoreResponseStatusCode = true;
 
             // set timeout
             RestClient.Timeout = TimeSpan.FromMilliseconds(Configuration.Timeout);

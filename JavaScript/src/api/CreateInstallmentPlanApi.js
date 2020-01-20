@@ -18,7 +18,7 @@ import CreateInstallmentPlanLegacyResponse from '../model/CreateInstallmentPlanL
 /**
 * CreateInstallmentPlan service.
 * @module api/CreateInstallmentPlanApi
-* @version 1.3.10
+* @version 1.3.11
 */
 export default class CreateInstallmentPlanApi {
 

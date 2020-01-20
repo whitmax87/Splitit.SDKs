@@ -17,7 +17,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The CreateInstallmentPlanLegacyResponse model module.
  * @module model/CreateInstallmentPlanLegacyResponse
- * @version 1.3.10
+ * @version 1.3.11
  */
 class CreateInstallmentPlanLegacyResponse {
     /**

@@ -17,7 +17,7 @@ import Money from './Money';
 /**
  * The RefundInstallmentPlanResponseAllOf model module.
  * @module model/RefundInstallmentPlanResponseAllOf
- * @version 1.3.10
+ * @version 1.3.11
  */
 class RefundInstallmentPlanResponseAllOf {
     /**

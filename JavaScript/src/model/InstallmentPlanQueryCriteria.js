@@ -23,7 +23,7 @@ import TransactionInfo from './TransactionInfo';
 /**
  * The InstallmentPlanQueryCriteria model module.
  * @module model/InstallmentPlanQueryCriteria
- * @version 1.3.10
+ * @version 1.3.11
  */
 class InstallmentPlanQueryCriteria {
     /**
