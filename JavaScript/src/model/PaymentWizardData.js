@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentWizardData model module.
  * @module model/PaymentWizardData
- * @version 1.3.11
+ * @version 1.3.12
  */
 class PaymentWizardData {
     /**

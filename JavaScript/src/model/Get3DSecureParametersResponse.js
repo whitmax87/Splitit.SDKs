@@ -17,7 +17,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The Get3DSecureParametersResponse model module.
  * @module model/Get3DSecureParametersResponse
- * @version 1.3.11
+ * @version 1.3.12
  */
 class Get3DSecureParametersResponse {
     /**

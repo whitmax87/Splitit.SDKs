@@ -19,7 +19,7 @@ import LoginResponse from '../model/LoginResponse';
 /**
 * Login service.
 * @module api/LoginApi
-* @version 1.3.11
+* @version 1.3.12
 */
 export default class LoginApi {
 

@@ -19,7 +19,7 @@ import RelationsLoad from './RelationsLoad';
 /**
  * The GetInstallmentsPlanSearchCriteriaRequest model module.
  * @module model/GetInstallmentsPlanSearchCriteriaRequest
- * @version 1.3.11
+ * @version 1.3.12
  */
 class GetInstallmentsPlanSearchCriteriaRequest {
     /**

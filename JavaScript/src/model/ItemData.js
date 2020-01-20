@@ -17,7 +17,7 @@ import MoneyWithCurrencyCode from './MoneyWithCurrencyCode';
 /**
  * The ItemData model module.
  * @module model/ItemData
- * @version 1.3.11
+ * @version 1.3.12
  */
 class ItemData {
     /**

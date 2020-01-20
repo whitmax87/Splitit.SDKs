@@ -17,7 +17,7 @@ import BuRef from './BuRef';
 /**
  * The ExtendedInstallmentPlanAllOf model module.
  * @module model/ExtendedInstallmentPlanAllOf
- * @version 1.3.11
+ * @version 1.3.12
  */
 class ExtendedInstallmentPlanAllOf {
     /**

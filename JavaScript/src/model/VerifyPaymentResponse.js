@@ -17,7 +17,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The VerifyPaymentResponse model module.
  * @module model/VerifyPaymentResponse
- * @version 1.3.11
+ * @version 1.3.12
  */
 class VerifyPaymentResponse {
     /**

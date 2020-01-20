@@ -21,7 +21,7 @@ import ResponseHeader from './ResponseHeader';
 /**
  * The GetInstallmentsPlanExtendedResponse model module.
  * @module model/GetInstallmentsPlanExtendedResponse
- * @version 1.3.11
+ * @version 1.3.12
  */
 class GetInstallmentsPlanExtendedResponse {
     /**

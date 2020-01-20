@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StartInstallmentsRequest model module.
  * @module model/StartInstallmentsRequest
- * @version 1.3.11
+ * @version 1.3.12
  */
 class StartInstallmentsRequest {
     /**

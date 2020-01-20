@@ -18,7 +18,7 @@ import RefundStrategy from './RefundStrategy';
 /**
  * The RefundPlanRequest model module.
  * @module model/RefundPlanRequest
- * @version 1.3.11
+ * @version 1.3.12
  */
 class RefundPlanRequest {
     /**

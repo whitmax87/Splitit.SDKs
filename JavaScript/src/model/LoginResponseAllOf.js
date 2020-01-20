@@ -17,7 +17,7 @@ import ResponseStatus from './ResponseStatus';
 /**
  * The LoginResponseAllOf model module.
  * @module model/LoginResponseAllOf
- * @version 1.3.11
+ * @version 1.3.12
  */
 class LoginResponseAllOf {
     /**

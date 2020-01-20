@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagingResponseHeader model module.
  * @module model/PagingResponseHeader
- * @version 1.3.11
+ * @version 1.3.12
  */
 class PagingResponseHeader {
     /**

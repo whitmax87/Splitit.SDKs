@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventsEndpoints model module.
  * @module model/EventsEndpoints
- * @version 1.3.11
+ * @version 1.3.12
  */
 class EventsEndpoints {
     /**

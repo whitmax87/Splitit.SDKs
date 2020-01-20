@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateInstallmentPlanRequestAllOf model module.
  * @module model/UpdateInstallmentPlanRequestAllOf
- * @version 1.3.11
+ * @version 1.3.12
  */
 class UpdateInstallmentPlanRequestAllOf {
     /**

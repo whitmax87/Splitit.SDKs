@@ -17,7 +17,7 @@ import ReferenceEntityBase from './ReferenceEntityBase';
 /**
  * The FraudCheck model module.
  * @module model/FraudCheck
- * @version 1.3.11
+ * @version 1.3.12
  */
 class FraudCheck {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedirectUrls model module.
  * @module model/RedirectUrls
- * @version 1.3.11
+ * @version 1.3.12
  */
 class RedirectUrls {
     /**

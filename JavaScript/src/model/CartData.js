@@ -18,7 +18,7 @@ import ItemData from './ItemData';
 /**
  * The CartData model module.
  * @module model/CartData
- * @version 1.3.11
+ * @version 1.3.12
  */
 class CartData {
     /**
