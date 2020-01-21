@@ -1,0 +1,18 @@
+{
+  "name": "splitit-sdk",
+  "version": "1.0.4",
+  "description": "Splitit SDK",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "deploy": "tsc && npm publish"
+  },
+  "author": "SplititSDK",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "~3.7.3"
+  },
+  "dependencies": {
+    "fetch": "~1.1.0"
+  }
+}
