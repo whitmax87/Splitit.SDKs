@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
@@ -37,6 +37,9 @@ export interface InstallmentPlanRefundRequest {
 }
 export interface InstallmentPlanStartInstallmentsRequest {
     request: StartInstallmentsRequest;
+}
+export interface InstallmentPlanTermsAndConditionsRequest {
+    request: TermsAndConditionsGetRequest;
 }
 export interface InstallmentPlanUpdateRequest {
     request: UpdateInstallmentPlanRequest;
@@ -102,6 +105,12 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     /**
      */
     installmentPlanStartInstallments(requestParameters: InstallmentPlanStartInstallmentsRequest): Promise<InstallmentPlanResponse>;
+    /**
+     */
+    installmentPlanTermsAndConditionsRaw(requestParameters: InstallmentPlanTermsAndConditionsRequest): Promise<runtime.ApiResponse<TermsAndConditionsGetResponse>>;
+    /**
+     */
+    installmentPlanTermsAndConditions(requestParameters: InstallmentPlanTermsAndConditionsRequest): Promise<TermsAndConditionsGetResponse>;
     /**
      */
     installmentPlanUpdateRaw(requestParameters: InstallmentPlanUpdateRequest): Promise<runtime.ApiResponse<UpdateInstallmentsPlanResponse>>;

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 [**InstallmentPlanStartInstallments**](InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
+[**InstallmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 [**InstallmentPlanUpdate**](InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 [**InstallmentPlanVerifyPayment**](InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 
@@ -527,6 +528,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InstallmentPlanResponse**](InstallmentPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplantermsandconditions"></a>
+# **InstallmentPlanTermsAndConditions**
+> TermsAndConditionsGetResponse InstallmentPlanTermsAndConditions (TermsAndConditionsGetRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanTermsAndConditionsExample
+    {
+        public void main()
+        {
+            var apiInstance = new InstallmentPlanApi();
+            var request = new TermsAndConditionsGetRequest(); // TermsAndConditionsGetRequest | 
+
+            try
+            {
+                TermsAndConditionsGetResponse result = apiInstance.InstallmentPlanTermsAndConditions(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanTermsAndConditions: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**TermsAndConditionsGetRequest**](TermsAndConditionsGetRequest.md)|  | 
+
+### Return type
+
+[**TermsAndConditionsGetResponse**](TermsAndConditionsGetResponse.md)
 
 ### Authorization
 

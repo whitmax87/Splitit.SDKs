@@ -60,6 +60,12 @@ import {
     StartInstallmentsRequest,
     StartInstallmentsRequestFromJSON,
     StartInstallmentsRequestToJSON,
+    TermsAndConditionsGetRequest,
+    TermsAndConditionsGetRequestFromJSON,
+    TermsAndConditionsGetRequestToJSON,
+    TermsAndConditionsGetResponse,
+    TermsAndConditionsGetResponseFromJSON,
+    TermsAndConditionsGetResponseToJSON,
     UpdateInstallmentPlanRequest,
     UpdateInstallmentPlanRequestFromJSON,
     UpdateInstallmentPlanRequestToJSON,
@@ -108,6 +114,10 @@ export interface InstallmentPlanRefundRequest {
 
 export interface InstallmentPlanStartInstallmentsRequest {
     request: StartInstallmentsRequest;
+}
+
+export interface InstallmentPlanTermsAndConditionsRequest {
+    request: TermsAndConditionsGetRequest;
 }
 
 export interface InstallmentPlanUpdateRequest {
@@ -399,6 +409,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanStartInstallments(requestParameters: InstallmentPlanStartInstallmentsRequest): Promise<InstallmentPlanResponse> {
         const response = await this.installmentPlanStartInstallmentsRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanTermsAndConditionsRaw(requestParameters: InstallmentPlanTermsAndConditionsRequest): Promise<runtime.ApiResponse<TermsAndConditionsGetResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanTermsAndConditions.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/TermsAndConditions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TermsAndConditionsGetRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TermsAndConditionsGetResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanTermsAndConditions(requestParameters: InstallmentPlanTermsAndConditionsRequest): Promise<TermsAndConditionsGetResponse> {
+        const response = await this.installmentPlanTermsAndConditionsRaw(requestParameters);
         return await response.value();
     }
 

@@ -477,6 +477,50 @@ var InstallmentPlanApi = /** @class */ (function (_super) {
     };
     /**
      */
+    InstallmentPlanApi.prototype.installmentPlanTermsAndConditionsRaw = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.request === null || requestParameters.request === undefined) {
+                            throw new runtime.RequiredError('request', 'Required parameter requestParameters.request was null or undefined when calling installmentPlanTermsAndConditions.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json-patch+json';
+                        return [4 /*yield*/, this.request({
+                                path: "/api/InstallmentPlan/TermsAndConditions",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: models_1.TermsAndConditionsGetRequestToJSON(requestParameters.request),
+                            })];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.TermsAndConditionsGetResponseFromJSON(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    InstallmentPlanApi.prototype.installmentPlanTermsAndConditions = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.installmentPlanTermsAndConditionsRaw(requestParameters)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
     InstallmentPlanApi.prototype.installmentPlanUpdateRaw = function (requestParameters) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
