@@ -27,7 +27,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new CreateInstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new CreateInstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var amountBeforeFees = 8.14;  // decimal? |  (optional) 
             var apiKey = apiKey_example;  // string |  (optional) 
             var avsAddress = avsAddress_example;  // string |  (optional) 
@@ -86,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 

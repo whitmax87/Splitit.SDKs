@@ -38,7 +38,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new ApproveInstallmentPlanRequest(); // ApproveInstallmentPlanRequest | 
 
             try
@@ -67,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -96,7 +104,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new CancelInstallmentPlanRequest(); // CancelInstallmentPlanRequest | 
 
             try
@@ -125,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -154,7 +170,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new CreateInstallmentPlanRequest(); // CreateInstallmentPlanRequest | 
 
             try
@@ -183,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -212,7 +236,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new GetInstallmentsPlanSearchCriteriaRequest(); // GetInstallmentsPlanSearchCriteriaRequest | 
 
             try
@@ -241,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -270,7 +302,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new Get3DSecureParametersRequest(); // Get3DSecureParametersRequest | 
 
             try
@@ -299,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -328,7 +368,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new GetInstallmentsPlanSearchCriteriaRequest(); // GetInstallmentsPlanSearchCriteriaRequest | 
 
             try
@@ -357,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -386,7 +434,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new InitiateInstallmentPlanRequest(); // InitiateInstallmentPlanRequest | 
 
             try
@@ -415,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -444,7 +500,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new RefundPlanRequest(); // RefundPlanRequest | 
 
             try
@@ -473,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -502,7 +566,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new StartInstallmentsRequest(); // StartInstallmentsRequest | 
 
             try
@@ -531,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -560,7 +632,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new TermsAndConditionsGetRequest(); // TermsAndConditionsGetRequest | 
 
             try
@@ -589,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -618,7 +698,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new UpdateInstallmentPlanRequest(); // UpdateInstallmentPlanRequest | 
 
             try
@@ -647,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
@@ -676,7 +764,15 @@ namespace Example
     {
         public void main()
         {
-            var apiInstance = new InstallmentPlanApi();
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
             var request = new VerifyPaymentRequest(); // VerifyPaymentRequest | 
 
             try
@@ -705,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 ### HTTP request headers
 
