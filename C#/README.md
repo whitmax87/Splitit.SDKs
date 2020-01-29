@@ -61,7 +61,7 @@ namespace Example
 
         public static void TestApi()
         {
-			Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
 
             var loginApi = new LoginApi(Configuration.Sandbox);
             var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
