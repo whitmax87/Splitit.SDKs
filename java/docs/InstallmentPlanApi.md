@@ -29,9 +29,19 @@ Method | HTTP request | Description
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 ApproveInstallmentPlanRequest request = new ApproveInstallmentPlanRequest(); // ApproveInstallmentPlanRequest | 
 try {
     InstallmentPlanResponse result = apiInstance.installmentPlanApprove(request);
@@ -72,9 +82,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 CancelInstallmentPlanRequest request = new CancelInstallmentPlanRequest(); // CancelInstallmentPlanRequest | 
 try {
     InstallmentPlanResponse result = apiInstance.installmentPlanCancel(request);
@@ -115,9 +135,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 CreateInstallmentPlanRequest request = new CreateInstallmentPlanRequest(); // CreateInstallmentPlanRequest | 
 try {
     CreateInstallmentsPlanResponse result = apiInstance.installmentPlanCreate(request);
@@ -158,9 +188,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 GetInstallmentsPlanSearchCriteriaRequest request = new GetInstallmentsPlanSearchCriteriaRequest(); // GetInstallmentsPlanSearchCriteriaRequest | 
 try {
     GetInstallmentsPlanResponse result = apiInstance.installmentPlanGet(request);
@@ -201,9 +241,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 Get3DSecureParametersRequest request = new Get3DSecureParametersRequest(); // Get3DSecureParametersRequest | 
 try {
     Get3DSecureParametersResponse result = apiInstance.installmentPlanGet3DSecureParameters(request);
@@ -244,9 +294,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 GetInstallmentsPlanSearchCriteriaRequest request = new GetInstallmentsPlanSearchCriteriaRequest(); // GetInstallmentsPlanSearchCriteriaRequest | 
 try {
     GetInstallmentsPlanExtendedResponse result = apiInstance.installmentPlanGetExtended(request);
@@ -287,9 +347,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 InitiateInstallmentPlanRequest request = new InitiateInstallmentPlanRequest(); // InitiateInstallmentPlanRequest | 
 try {
     InitiateInstallmentsPlanResponse result = apiInstance.installmentPlanInitiate(request);
@@ -330,9 +400,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 RefundPlanRequest request = new RefundPlanRequest(); // RefundPlanRequest | 
 try {
     RefundInstallmentPlanResponse result = apiInstance.installmentPlanRefund(request);
@@ -373,9 +453,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 StartInstallmentsRequest request = new StartInstallmentsRequest(); // StartInstallmentsRequest | 
 try {
     InstallmentPlanResponse result = apiInstance.installmentPlanStartInstallments(request);
@@ -416,9 +506,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 TermsAndConditionsGetRequest request = new TermsAndConditionsGetRequest(); // TermsAndConditionsGetRequest | 
 try {
     TermsAndConditionsGetResponse result = apiInstance.installmentPlanTermsAndConditions(request);
@@ -459,9 +559,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 UpdateInstallmentPlanRequest request = new UpdateInstallmentPlanRequest(); // UpdateInstallmentPlanRequest | 
 try {
     UpdateInstallmentsPlanResponse result = apiInstance.installmentPlanUpdate(request);
@@ -502,9 +612,19 @@ No authorization required
 // Import classes:
 //import com.splitit.ApiException;
 //import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
 
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
 
-InstallmentPlanApi apiInstance = new InstallmentPlanApi();
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
 VerifyPaymentRequest request = new VerifyPaymentRequest(); // VerifyPaymentRequest | 
 try {
     VerifyPaymentResponse result = apiInstance.installmentPlanVerifyPayment(request);
