@@ -13,19 +13,54 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import {
-    TermsAndConditions2,
-    TermsAndConditions2FromJSON,
-    TermsAndConditions2FromJSONTyped,
-    TermsAndConditions2ToJSON,
-} from './';
-
 /**
  * 
  * @export
  * @interface TermsAndConditions
  */
-export interface TermsAndConditions extends TermsAndConditions2 {
+export interface TermsAndConditions {
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    agreement?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    importantNote?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    fullContent?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    privacyPolicy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowAuthHoldDefine?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowBudgetManagement?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowCardTypeDetails?: string;
 }
 
 export function TermsAndConditionsFromJSON(json: any): TermsAndConditions {
@@ -33,11 +68,38 @@ export function TermsAndConditionsFromJSON(json: any): TermsAndConditions {
 }
 
 export function TermsAndConditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TermsAndConditions {
-    return json;
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'agreement': !exists(json, 'Agreement') ? undefined : json['Agreement'],
+        'importantNote': !exists(json, 'ImportantNote') ? undefined : json['ImportantNote'],
+        'fullContent': !exists(json, 'FullContent') ? undefined : json['FullContent'],
+        'privacyPolicy': !exists(json, 'PrivacyPolicy') ? undefined : json['PrivacyPolicy'],
+        'whatYouNeedToKnowAuthHoldDefine': !exists(json, 'WhatYouNeedToKnow_AuthHoldDefine') ? undefined : json['WhatYouNeedToKnow_AuthHoldDefine'],
+        'whatYouNeedToKnowBudgetManagement': !exists(json, 'WhatYouNeedToKnow_BudgetManagement') ? undefined : json['WhatYouNeedToKnow_BudgetManagement'],
+        'whatYouNeedToKnowCardTypeDetails': !exists(json, 'WhatYouNeedToKnow_CardTypeDetails') ? undefined : json['WhatYouNeedToKnow_CardTypeDetails'],
+    };
 }
 
 export function TermsAndConditionsToJSON(value?: TermsAndConditions | null): any {
-    return value;
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'Agreement': value.agreement,
+        'ImportantNote': value.importantNote,
+        'FullContent': value.fullContent,
+        'PrivacyPolicy': value.privacyPolicy,
+        'WhatYouNeedToKnow_AuthHoldDefine': value.whatYouNeedToKnowAuthHoldDefine,
+        'WhatYouNeedToKnow_BudgetManagement': value.whatYouNeedToKnowBudgetManagement,
+        'WhatYouNeedToKnow_CardTypeDetails': value.whatYouNeedToKnowCardTypeDetails,
+    };
 }
 
 

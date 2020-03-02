@@ -42,6 +42,12 @@ export interface InitiateInstallmentsPlanResponseAllOf {
      * @type {string}
      * @memberof InitiateInstallmentsPlanResponseAllOf
      */
+    privacyPolicyUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponseAllOf
+     */
     installmentPlanInfoUrl?: string;
     /**
      * 
@@ -64,6 +70,7 @@ export function InitiateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ig
         'checkoutUrl': !exists(json, 'CheckoutUrl') ? undefined : json['CheckoutUrl'],
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
+        'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !exists(json, 'PublicToken') ? undefined : json['PublicToken'],
     };
@@ -81,6 +88,7 @@ export function InitiateInstallmentsPlanResponseAllOfToJSON(value?: InitiateInst
         'CheckoutUrl': value.checkoutUrl,
         'ApprovalUrl': value.approvalUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
+        'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
     };

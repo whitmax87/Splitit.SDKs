@@ -33,10 +33,14 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="code">code.</param>
         /// <param name="version">version.</param>
-        public TouchPoint(string code = default(string), string version = default(string))
+        /// <param name="subVersion">subVersion.</param>
+        /// <param name="versionedTouchpointId">versionedTouchpointId.</param>
+        public TouchPoint(string code = default(string), string version = default(string), string subVersion = default(string), long? versionedTouchpointId = default(long?))
         {
             this.Code = code;
             this.Version = version;
+            this.SubVersion = subVersion;
+            this.VersionedTouchpointId = versionedTouchpointId;
         }
 
         
@@ -53,6 +57,18 @@ namespace Splitit.SDK.Client.Model
         public string Version { get; set; }
 
         /// <summary>
+        /// Gets or Sets SubVersion
+        /// </summary>
+        [DataMember(Name="SubVersion", EmitDefaultValue=false)]
+        public string SubVersion { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VersionedTouchpointId
+        /// </summary>
+        [DataMember(Name="VersionedTouchpointId", EmitDefaultValue=false)]
+        public long? VersionedTouchpointId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +78,8 @@ namespace Splitit.SDK.Client.Model
             sb.Append("class TouchPoint {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  SubVersion: ").Append(SubVersion).Append("\n");
+            sb.Append("  VersionedTouchpointId: ").Append(VersionedTouchpointId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +123,16 @@ namespace Splitit.SDK.Client.Model
                     this.Version == input.Version ||
                     (this.Version != null &&
                     this.Version.Equals(input.Version))
+                ) && 
+                (
+                    this.SubVersion == input.SubVersion ||
+                    (this.SubVersion != null &&
+                    this.SubVersion.Equals(input.SubVersion))
+                ) && 
+                (
+                    this.VersionedTouchpointId == input.VersionedTouchpointId ||
+                    (this.VersionedTouchpointId != null &&
+                    this.VersionedTouchpointId.Equals(input.VersionedTouchpointId))
                 );
         }
 
@@ -121,6 +149,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Version != null)
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.SubVersion != null)
+                    hashCode = hashCode * 59 + this.SubVersion.GetHashCode();
+                if (this.VersionedTouchpointId != null)
+                    hashCode = hashCode * 59 + this.VersionedTouchpointId.GetHashCode();
                 return hashCode;
             }
         }

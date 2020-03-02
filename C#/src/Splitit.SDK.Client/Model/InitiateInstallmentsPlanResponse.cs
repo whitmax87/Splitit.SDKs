@@ -36,15 +36,17 @@ namespace Splitit.SDK.Client.Model
         /// <param name="checkoutUrl">checkoutUrl.</param>
         /// <param name="approvalUrl">approvalUrl.</param>
         /// <param name="termsAndConditionsUrl">termsAndConditionsUrl.</param>
+        /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
         /// <param name="installmentPlanInfoUrl">installmentPlanInfoUrl.</param>
         /// <param name="publicToken">publicToken.</param>
-        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string))
+        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string privacyPolicyUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
             this.CheckoutUrl = checkoutUrl;
             this.ApprovalUrl = approvalUrl;
             this.TermsAndConditionsUrl = termsAndConditionsUrl;
+            this.PrivacyPolicyUrl = privacyPolicyUrl;
             this.InstallmentPlanInfoUrl = installmentPlanInfoUrl;
             this.PublicToken = publicToken;
         }
@@ -81,6 +83,12 @@ namespace Splitit.SDK.Client.Model
         public string TermsAndConditionsUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets PrivacyPolicyUrl
+        /// </summary>
+        [DataMember(Name="PrivacyPolicyUrl", EmitDefaultValue=false)]
+        public string PrivacyPolicyUrl { get; set; }
+
+        /// <summary>
         /// Gets or Sets InstallmentPlanInfoUrl
         /// </summary>
         [DataMember(Name="InstallmentPlanInfoUrl", EmitDefaultValue=false)]
@@ -105,6 +113,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  CheckoutUrl: ").Append(CheckoutUrl).Append("\n");
             sb.Append("  ApprovalUrl: ").Append(ApprovalUrl).Append("\n");
             sb.Append("  TermsAndConditionsUrl: ").Append(TermsAndConditionsUrl).Append("\n");
+            sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  InstallmentPlanInfoUrl: ").Append(InstallmentPlanInfoUrl).Append("\n");
             sb.Append("  PublicToken: ").Append(PublicToken).Append("\n");
             sb.Append("}\n");
@@ -167,6 +176,11 @@ namespace Splitit.SDK.Client.Model
                     this.TermsAndConditionsUrl.Equals(input.TermsAndConditionsUrl))
                 ) && 
                 (
+                    this.PrivacyPolicyUrl == input.PrivacyPolicyUrl ||
+                    (this.PrivacyPolicyUrl != null &&
+                    this.PrivacyPolicyUrl.Equals(input.PrivacyPolicyUrl))
+                ) && 
+                (
                     this.InstallmentPlanInfoUrl == input.InstallmentPlanInfoUrl ||
                     (this.InstallmentPlanInfoUrl != null &&
                     this.InstallmentPlanInfoUrl.Equals(input.InstallmentPlanInfoUrl))
@@ -197,6 +211,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ApprovalUrl.GetHashCode();
                 if (this.TermsAndConditionsUrl != null)
                     hashCode = hashCode * 59 + this.TermsAndConditionsUrl.GetHashCode();
+                if (this.PrivacyPolicyUrl != null)
+                    hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
                 if (this.InstallmentPlanInfoUrl != null)
                     hashCode = hashCode * 59 + this.InstallmentPlanInfoUrl.GetHashCode();
                 if (this.PublicToken != null)

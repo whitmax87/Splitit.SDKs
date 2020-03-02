@@ -87,7 +87,7 @@ public class ApiClient {
 
         json = new JSON();
 
-        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.3.15");
+        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.3.16");
         this.defaultHeaderMap.put("User-Agent", "Splitit-SDK-Java");        
     }
 

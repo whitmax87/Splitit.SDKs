@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ConsumerData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-31T20:28:26.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-02T08:02:37.421Z")
 public class ConsumerData   {
   @SerializedName("Id")
   private String id = null;

@@ -27,6 +27,18 @@ export interface TouchPoint {
      * @memberof TouchPoint
      */
     version?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TouchPoint
+     */
+    subVersion?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof TouchPoint
+     */
+    versionedTouchpointId?: number;
 }
 export declare function TouchPointFromJSON(json: any): TouchPoint;
 export declare function TouchPointFromJSONTyped(json: any, ignoreDiscriminator: boolean): TouchPoint;

@@ -27,13 +27,19 @@ import java.io.IOException;
 /**
  * TouchPoint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-31T20:28:26.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-02T08:02:37.421Z")
 public class TouchPoint   {
   @SerializedName("Code")
   private String code = null;
 
   @SerializedName("Version")
   private String version = null;
+
+  @SerializedName("SubVersion")
+  private String subVersion = null;
+
+  @SerializedName("VersionedTouchpointId")
+  private Long versionedTouchpointId = null;
 
   public TouchPoint code(String code) {
     this.code = code;
@@ -71,6 +77,42 @@ public class TouchPoint   {
     this.version = version;
   }
 
+  public TouchPoint subVersion(String subVersion) {
+    this.subVersion = subVersion;
+    return this;
+  }
+
+   /**
+   * Get subVersion
+   * @return subVersion
+  **/
+  @ApiModelProperty(value = "")
+  public String getSubVersion() {
+    return subVersion;
+  }
+
+  public void setSubVersion(String subVersion) {
+    this.subVersion = subVersion;
+  }
+
+  public TouchPoint versionedTouchpointId(Long versionedTouchpointId) {
+    this.versionedTouchpointId = versionedTouchpointId;
+    return this;
+  }
+
+   /**
+   * Get versionedTouchpointId
+   * @return versionedTouchpointId
+  **/
+  @ApiModelProperty(value = "")
+  public Long getVersionedTouchpointId() {
+    return versionedTouchpointId;
+  }
+
+  public void setVersionedTouchpointId(Long versionedTouchpointId) {
+    this.versionedTouchpointId = versionedTouchpointId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,12 +124,14 @@ public class TouchPoint   {
     }
     TouchPoint touchPoint = (TouchPoint) o;
     return Objects.equals(this.code, touchPoint.code) &&
-        Objects.equals(this.version, touchPoint.version);
+        Objects.equals(this.version, touchPoint.version) &&
+        Objects.equals(this.subVersion, touchPoint.subVersion) &&
+        Objects.equals(this.versionedTouchpointId, touchPoint.versionedTouchpointId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, version);
+    return Objects.hash(code, version, subVersion, versionedTouchpointId);
   }
 
 
@@ -98,6 +142,8 @@ public class TouchPoint   {
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    subVersion: ").append(toIndentedString(subVersion)).append("\n");
+    sb.append("    versionedTouchpointId: ").append(toIndentedString(versionedTouchpointId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

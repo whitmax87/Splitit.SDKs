@@ -32,25 +32,35 @@ class TouchPoint(object):
     """
     swagger_types = {
         'code': 'str',
-        'version': 'str'
+        'version': 'str',
+        'sub_version': 'str',
+        'versioned_touchpoint_id': 'int'
     }
 
     attribute_map = {
         'code': 'Code',
-        'version': 'Version'
+        'version': 'Version',
+        'sub_version': 'SubVersion',
+        'versioned_touchpoint_id': 'VersionedTouchpointId'
     }
 
-    def __init__(self, code=None, version=None):  # noqa: E501
+    def __init__(self, code=None, version=None, sub_version=None, versioned_touchpoint_id=None):  # noqa: E501
         """TouchPoint - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._version = None
+        self._sub_version = None
+        self._versioned_touchpoint_id = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
         if version is not None:
             self.version = version
+        if sub_version is not None:
+            self.sub_version = sub_version
+        if versioned_touchpoint_id is not None:
+            self.versioned_touchpoint_id = versioned_touchpoint_id
 
     @property
     def code(self):
@@ -93,6 +103,48 @@ class TouchPoint(object):
         """
 
         self._version = version
+
+    @property
+    def sub_version(self):
+        """Gets the sub_version of this TouchPoint.  # noqa: E501
+
+
+        :return: The sub_version of this TouchPoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._sub_version
+
+    @sub_version.setter
+    def sub_version(self, sub_version):
+        """Sets the sub_version of this TouchPoint.
+
+
+        :param sub_version: The sub_version of this TouchPoint.  # noqa: E501
+        :type: str
+        """
+
+        self._sub_version = sub_version
+
+    @property
+    def versioned_touchpoint_id(self):
+        """Gets the versioned_touchpoint_id of this TouchPoint.  # noqa: E501
+
+
+        :return: The versioned_touchpoint_id of this TouchPoint.  # noqa: E501
+        :rtype: int
+        """
+        return self._versioned_touchpoint_id
+
+    @versioned_touchpoint_id.setter
+    def versioned_touchpoint_id(self, versioned_touchpoint_id):
+        """Sets the versioned_touchpoint_id of this TouchPoint.
+
+
+        :param versioned_touchpoint_id: The versioned_touchpoint_id of this TouchPoint.  # noqa: E501
+        :type: int
+        """
+
+        self._versioned_touchpoint_id = versioned_touchpoint_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

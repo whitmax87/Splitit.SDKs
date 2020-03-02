@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **checkout_url** | **str** |  | [optional] 
 **approval_url** | **str** |  | [optional] 
 **terms_and_conditions_url** | **str** |  | [optional] 
+**privacy_policy_url** | **str** |  | [optional] 
 **installment_plan_info_url** | **str** |  | [optional] 
 **public_token** | **str** |  | [optional] 
 

@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-01-31T20:28:26.626Z
-- SDK Version: 1.3.15
+  - Build date: 2020-03-02T08:02:37.421Z
+- SDK Version: 1.3.16
 
 ## Requirements
 
@@ -112,6 +112,7 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*InfrastructureApi* | [**infrastructureGetResources**](docs/InfrastructureApi.md#infrastructureGetResources) | **POST** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/InstallmentPlanApi.md#installmentPlanApprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
@@ -148,6 +149,9 @@ Class | Method | HTTP request | Description
  - [Get3DSecureParametersResponse](docs/Get3DSecureParametersResponse.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/GetInstallmentsPlanSearchCriteriaRequest.md)
+ - [GetResourcesRequest](docs/GetResourcesRequest.md)
+ - [GetResourcesRequestContext](docs/GetResourcesRequestContext.md)
+ - [GetResourcesResponse](docs/GetResourcesResponse.md)
  - [InitiateInstallmentPlanRequest](docs/InitiateInstallmentPlanRequest.md)
  - [Installment](docs/Installment.md)
  - [InstallmentPlan](docs/InstallmentPlan.md)
@@ -184,7 +188,8 @@ Class | Method | HTTP request | Description
  - [ResponseHeader](docs/ResponseHeader.md)
  - [ResponseStatus](docs/ResponseStatus.md)
  - [StartInstallmentsRequest](docs/StartInstallmentsRequest.md)
- - [TermsAndConditions2](docs/TermsAndConditions2.md)
+ - [SystemTextCategory](docs/SystemTextCategory.md)
+ - [TermsAndConditions](docs/TermsAndConditions.md)
  - [TermsAndConditionsGetRequest](docs/TermsAndConditionsGetRequest.md)
  - [TermsAndConditionsGetResponse](docs/TermsAndConditionsGetResponse.md)
  - [TestModes](docs/TestModes.md)
@@ -208,7 +213,6 @@ Class | Method | HTTP request | Description
  - [LoginResponse](docs/LoginResponse.md)
  - [MerchantRef](docs/MerchantRef.md)
  - [RefundInstallmentPlanResponse](docs/RefundInstallmentPlanResponse.md)
- - [TermsAndConditions](docs/TermsAndConditions.md)
  - [UpdateInstallmentPlanRequest](docs/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/UpdateInstallmentsPlanResponse.md)
 

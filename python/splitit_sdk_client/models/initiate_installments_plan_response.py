@@ -36,6 +36,7 @@ class InitiateInstallmentsPlanResponse(object):
         'checkout_url': 'str',
         'approval_url': 'str',
         'terms_and_conditions_url': 'str',
+        'privacy_policy_url': 'str',
         'installment_plan_info_url': 'str',
         'public_token': 'str'
     }
@@ -46,11 +47,12 @@ class InitiateInstallmentsPlanResponse(object):
         'checkout_url': 'CheckoutUrl',
         'approval_url': 'ApprovalUrl',
         'terms_and_conditions_url': 'TermsAndConditionsUrl',
+        'privacy_policy_url': 'PrivacyPolicyUrl',
         'installment_plan_info_url': 'InstallmentPlanInfoUrl',
         'public_token': 'PublicToken'
     }
 
-    def __init__(self, response_header=None, installment_plan=None, checkout_url=None, approval_url=None, terms_and_conditions_url=None, installment_plan_info_url=None, public_token=None):  # noqa: E501
+    def __init__(self, response_header=None, installment_plan=None, checkout_url=None, approval_url=None, terms_and_conditions_url=None, privacy_policy_url=None, installment_plan_info_url=None, public_token=None):  # noqa: E501
         """InitiateInstallmentsPlanResponse - a model defined in Swagger"""  # noqa: E501
 
         self._response_header = None
@@ -58,6 +60,7 @@ class InitiateInstallmentsPlanResponse(object):
         self._checkout_url = None
         self._approval_url = None
         self._terms_and_conditions_url = None
+        self._privacy_policy_url = None
         self._installment_plan_info_url = None
         self._public_token = None
         self.discriminator = None
@@ -72,6 +75,8 @@ class InitiateInstallmentsPlanResponse(object):
             self.approval_url = approval_url
         if terms_and_conditions_url is not None:
             self.terms_and_conditions_url = terms_and_conditions_url
+        if privacy_policy_url is not None:
+            self.privacy_policy_url = privacy_policy_url
         if installment_plan_info_url is not None:
             self.installment_plan_info_url = installment_plan_info_url
         if public_token is not None:
@@ -181,6 +186,27 @@ class InitiateInstallmentsPlanResponse(object):
         """
 
         self._terms_and_conditions_url = terms_and_conditions_url
+
+    @property
+    def privacy_policy_url(self):
+        """Gets the privacy_policy_url of this InitiateInstallmentsPlanResponse.  # noqa: E501
+
+
+        :return: The privacy_policy_url of this InitiateInstallmentsPlanResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._privacy_policy_url
+
+    @privacy_policy_url.setter
+    def privacy_policy_url(self, privacy_policy_url):
+        """Sets the privacy_policy_url of this InitiateInstallmentsPlanResponse.
+
+
+        :param privacy_policy_url: The privacy_policy_url of this InitiateInstallmentsPlanResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._privacy_policy_url = privacy_policy_url
 
     @property
     def installment_plan_info_url(self):

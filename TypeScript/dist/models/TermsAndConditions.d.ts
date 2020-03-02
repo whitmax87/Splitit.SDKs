@@ -9,13 +9,54 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TermsAndConditions2 } from './';
 /**
  *
  * @export
  * @interface TermsAndConditions
  */
-export interface TermsAndConditions extends TermsAndConditions2 {
+export interface TermsAndConditions {
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    agreement?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    importantNote?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    fullContent?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    privacyPolicy?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowAuthHoldDefine?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowBudgetManagement?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TermsAndConditions
+     */
+    whatYouNeedToKnowCardTypeDetails?: string;
 }
 export declare function TermsAndConditionsFromJSON(json: any): TermsAndConditions;
 export declare function TermsAndConditionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): TermsAndConditions;

@@ -4,5 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./CreateInstallmentPlanApi"));
+__export(require("./InfrastructureApi"));
 __export(require("./InstallmentPlanApi"));
 __export(require("./LoginApi"));

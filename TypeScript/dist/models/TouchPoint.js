@@ -25,6 +25,8 @@ function TouchPointFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'code': !runtime_1.exists(json, 'Code') ? undefined : json['Code'],
         'version': !runtime_1.exists(json, 'Version') ? undefined : json['Version'],
+        'subVersion': !runtime_1.exists(json, 'SubVersion') ? undefined : json['SubVersion'],
+        'versionedTouchpointId': !runtime_1.exists(json, 'VersionedTouchpointId') ? undefined : json['VersionedTouchpointId'],
     };
 }
 exports.TouchPointFromJSONTyped = TouchPointFromJSONTyped;
@@ -38,6 +40,8 @@ function TouchPointToJSON(value) {
     return {
         'Code': value.code,
         'Version': value.version,
+        'SubVersion': value.subVersion,
+        'VersionedTouchpointId': value.versionedTouchpointId,
     };
 }
 exports.TouchPointToJSON = TouchPointToJSON;

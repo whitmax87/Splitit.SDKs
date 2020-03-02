@@ -13,15 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var runtime_1 = require("../runtime");
 function TermsAndConditionsFromJSON(json) {
     return TermsAndConditionsFromJSONTyped(json, false);
 }
 exports.TermsAndConditionsFromJSON = TermsAndConditionsFromJSON;
 function TermsAndConditionsFromJSONTyped(json, ignoreDiscriminator) {
-    return json;
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        'agreement': !runtime_1.exists(json, 'Agreement') ? undefined : json['Agreement'],
+        'importantNote': !runtime_1.exists(json, 'ImportantNote') ? undefined : json['ImportantNote'],
+        'fullContent': !runtime_1.exists(json, 'FullContent') ? undefined : json['FullContent'],
+        'privacyPolicy': !runtime_1.exists(json, 'PrivacyPolicy') ? undefined : json['PrivacyPolicy'],
+        'whatYouNeedToKnowAuthHoldDefine': !runtime_1.exists(json, 'WhatYouNeedToKnow_AuthHoldDefine') ? undefined : json['WhatYouNeedToKnow_AuthHoldDefine'],
+        'whatYouNeedToKnowBudgetManagement': !runtime_1.exists(json, 'WhatYouNeedToKnow_BudgetManagement') ? undefined : json['WhatYouNeedToKnow_BudgetManagement'],
+        'whatYouNeedToKnowCardTypeDetails': !runtime_1.exists(json, 'WhatYouNeedToKnow_CardTypeDetails') ? undefined : json['WhatYouNeedToKnow_CardTypeDetails'],
+    };
 }
 exports.TermsAndConditionsFromJSONTyped = TermsAndConditionsFromJSONTyped;
 function TermsAndConditionsToJSON(value) {
-    return value;
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        'Agreement': value.agreement,
+        'ImportantNote': value.importantNote,
+        'FullContent': value.fullContent,
+        'PrivacyPolicy': value.privacyPolicy,
+        'WhatYouNeedToKnow_AuthHoldDefine': value.whatYouNeedToKnowAuthHoldDefine,
+        'WhatYouNeedToKnow_BudgetManagement': value.whatYouNeedToKnowBudgetManagement,
+        'WhatYouNeedToKnow_CardTypeDetails': value.whatYouNeedToKnowCardTypeDetails,
+    };
 }
 exports.TermsAndConditionsToJSON = TermsAndConditionsToJSON;

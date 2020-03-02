@@ -73,6 +73,12 @@ export interface InitiateInstallmentsPlanResponse {
      * @type {string}
      * @memberof InitiateInstallmentsPlanResponse
      */
+    privacyPolicyUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponse
+     */
     installmentPlanInfoUrl?: string;
     /**
      * 
@@ -97,6 +103,7 @@ export function InitiateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreD
         'checkoutUrl': !exists(json, 'CheckoutUrl') ? undefined : json['CheckoutUrl'],
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
+        'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !exists(json, 'PublicToken') ? undefined : json['PublicToken'],
     };
@@ -116,6 +123,7 @@ export function InitiateInstallmentsPlanResponseToJSON(value?: InitiateInstallme
         'CheckoutUrl': value.checkoutUrl,
         'ApprovalUrl': value.approvalUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
+        'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
     };

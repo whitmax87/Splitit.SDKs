@@ -38,6 +38,12 @@ export interface InitiateInstallmentsPlanResponseAllOf {
      * @type {string}
      * @memberof InitiateInstallmentsPlanResponseAllOf
      */
+    privacyPolicyUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponseAllOf
+     */
     installmentPlanInfoUrl?: string;
     /**
      *

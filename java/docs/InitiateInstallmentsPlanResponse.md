@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **checkoutUrl** | **String** |  |  [optional]
 **approvalUrl** | **String** |  |  [optional]
 **termsAndConditionsUrl** | **String** |  |  [optional]
+**privacyPolicyUrl** | **String** |  |  [optional]
 **installmentPlanInfoUrl** | **String** |  |  [optional]
 **publicToken** | **String** |  |  [optional]
 

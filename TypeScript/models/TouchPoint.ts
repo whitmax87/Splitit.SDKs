@@ -31,6 +31,18 @@ export interface TouchPoint {
      * @memberof TouchPoint
      */
     version?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TouchPoint
+     */
+    subVersion?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TouchPoint
+     */
+    versionedTouchpointId?: number;
 }
 
 export function TouchPointFromJSON(json: any): TouchPoint {
@@ -45,6 +57,8 @@ export function TouchPointFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         
         'code': !exists(json, 'Code') ? undefined : json['Code'],
         'version': !exists(json, 'Version') ? undefined : json['Version'],
+        'subVersion': !exists(json, 'SubVersion') ? undefined : json['SubVersion'],
+        'versionedTouchpointId': !exists(json, 'VersionedTouchpointId') ? undefined : json['VersionedTouchpointId'],
     };
 }
 
@@ -59,6 +73,8 @@ export function TouchPointToJSON(value?: TouchPoint | null): any {
         
         'Code': value.code,
         'Version': value.version,
+        'SubVersion': value.subVersion,
+        'VersionedTouchpointId': value.versionedTouchpointId,
     };
 }
 

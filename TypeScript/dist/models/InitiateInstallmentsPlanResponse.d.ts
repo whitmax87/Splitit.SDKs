@@ -51,6 +51,12 @@ export interface InitiateInstallmentsPlanResponse {
      * @type {string}
      * @memberof InitiateInstallmentsPlanResponse
      */
+    privacyPolicyUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponse
+     */
     installmentPlanInfoUrl?: string;
     /**
      *

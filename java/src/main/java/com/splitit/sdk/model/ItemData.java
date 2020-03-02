@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * ItemData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-01-31T20:28:26.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-02T08:02:37.421Z")
 public class ItemData   {
   @SerializedName("Name")
   private String name = null;

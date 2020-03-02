@@ -29,6 +29,7 @@ function InitiateInstallmentsPlanResponseFromJSONTyped(json, ignoreDiscriminator
         'checkoutUrl': !runtime_1.exists(json, 'CheckoutUrl') ? undefined : json['CheckoutUrl'],
         'approvalUrl': !runtime_1.exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
         'termsAndConditionsUrl': !runtime_1.exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
+        'privacyPolicyUrl': !runtime_1.exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !runtime_1.exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !runtime_1.exists(json, 'PublicToken') ? undefined : json['PublicToken'],
     };
@@ -47,6 +48,7 @@ function InitiateInstallmentsPlanResponseToJSON(value) {
         'CheckoutUrl': value.checkoutUrl,
         'ApprovalUrl': value.approvalUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
+        'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
     };
