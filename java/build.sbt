@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.splitit",
     name := "splitit-java-sdk",
-    version := "1.3.16",
+    version := "1.3.17",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
