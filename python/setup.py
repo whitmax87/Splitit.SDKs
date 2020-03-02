@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "splitit-sdk-client"
-VERSION = "1.3.17"
+VERSION = "1.3.32"
 # To install the library, run the following
 #
 # python setup.py install
