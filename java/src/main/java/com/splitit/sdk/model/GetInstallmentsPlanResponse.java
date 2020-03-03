@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * GetInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-02T09:45:27.608Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-03T20:39:04.906Z")
 public class GetInstallmentsPlanResponse   {
   @SerializedName("PlansList")
   private List<InstallmentPlan> plansList = null;

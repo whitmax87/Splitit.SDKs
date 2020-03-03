@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InstallmentPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-02T09:45:27.608Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-03T20:39:04.906Z")
 public class InstallmentPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
