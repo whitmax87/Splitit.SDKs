@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
+[**installmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -326,6 +327,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInstallmentsPlanExtendedResponse**](GetInstallmentsPlanExtendedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+<a name="installmentPlanGetInitiatedInstallmentPlanRequest"></a>
+# **installmentPlanGetInitiatedInstallmentPlanRequest**
+> GetInitiatedInstallmentPlanResponse installmentPlanGetInitiatedInstallmentPlanRequest(request)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.splitit.ApiException;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
+
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
+
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
+GetInitiatedInstallmentPlanRequest request = new GetInitiatedInstallmentPlanRequest(); // GetInitiatedInstallmentPlanRequest | 
+try {
+    GetInitiatedInstallmentPlanResponse result = apiInstance.installmentPlanGetInitiatedInstallmentPlanRequest(request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstallmentPlanApi#installmentPlanGetInitiatedInstallmentPlanRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetInitiatedInstallmentPlanRequest**](GetInitiatedInstallmentPlanRequest.md)|  |
+
+### Return type
+
+[**GetInitiatedInstallmentPlanResponse**](GetInitiatedInstallmentPlanResponse.md)
 
 ### Authorization
 

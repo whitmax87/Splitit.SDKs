@@ -40,6 +40,7 @@ import java.util.Map;
 public class InfrastructureApi {
     private ApiClient apiClient;
     private String sessionId;
+    private String culture;
 
     public InfrastructureApi() {
         this(Configuration.production());
@@ -54,6 +55,10 @@ public class InfrastructureApi {
         return this;
     }
 
+    public void setCulture(String culture) {
+        this.culture = culture;
+    }
+
     /**
      * Build call for infrastructureGetResources
      * @param request  (required)
@@ -63,7 +68,7 @@ public class InfrastructureApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call infrastructureGetResourcesCall(GetResourcesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 

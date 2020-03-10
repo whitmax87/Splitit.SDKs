@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * FraudCheck
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-03T20:48:28.448Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-10T18:07:01.900Z")
 public class FraudCheck   {
   @SerializedName("FraudCheckResult")
   private ReferenceEntityBase fraudCheckResult = null;

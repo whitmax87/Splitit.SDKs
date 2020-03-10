@@ -126,6 +126,8 @@ namespace Splitit.SDK.Client.Api
 		private string _apiKey;
 		private string _sessionId;
 
+        public string Culture { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginApi"/> class
         /// using Configuration object
@@ -403,7 +405,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -484,7 +486,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else

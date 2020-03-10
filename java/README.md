@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-03-03T20:48:28.448Z
-- SDK Version: 1.3.33
+  - Build date: 2020-03-10T18:07:01.900Z
+- SDK Version: 1.3.34
 
 ## Requirements
 
@@ -51,6 +51,7 @@ public class SimpleFlowExample {
             System.out.println("");
 
             InstallmentPlanApi installmentPlanApi = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResult.getSessionId());
+            //installmentPlanApi.setCulture("de-DE"); -> optionally set culture for subsequent API calls.
             
             System.out.println("Invoking installmentPlanInitiate...");
             InitiateInstallmentsPlanResponse initResponse = installmentPlanApi.installmentPlanInitiate(new InitiateInstallmentPlanRequest()
@@ -119,6 +120,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
+*InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -131,12 +133,16 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AddressData2](docs/AddressData2.md)
+ - [Agent](docs/Agent.md)
  - [AmountDetails2](docs/AmountDetails2.md)
  - [ApproveInstallmentPlanRequest](docs/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/AuthenticationType.md)
+ - [BankDetails](docs/BankDetails.md)
  - [CancelInstallmentPlanRequest](docs/CancelInstallmentPlanRequest.md)
  - [CardData](docs/CardData.md)
  - [CartData](docs/CartData.md)
+ - [ContactPerson](docs/ContactPerson.md)
+ - [ContactPersonType](docs/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/CreateInstallmentPlanLegacyResponse.md)
  - [CreateInstallmentPlanRequest](docs/CreateInstallmentPlanRequest.md)
  - [DelayResolution](docs/DelayResolution.md)
@@ -147,6 +153,8 @@ Class | Method | HTTP request | Description
  - [FraudCheckResult](docs/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Get3DSecureParametersRequest.md)
  - [Get3DSecureParametersResponse](docs/Get3DSecureParametersResponse.md)
+ - [GetInitiatedInstallmentPlanRequest](docs/GetInitiatedInstallmentPlanRequest.md)
+ - [GetInitiatedInstallmentPlanResponse](docs/GetInitiatedInstallmentPlanResponse.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/GetInstallmentsPlanSearchCriteriaRequest.md)
  - [GetResourcesRequest](docs/GetResourcesRequest.md)
@@ -166,6 +174,8 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/ItemData.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse2](docs/LoginResponse2.md)
+ - [Merchant](docs/Merchant.md)
+ - [MerchantVertical](docs/MerchantVertical.md)
  - [Money](docs/Money.md)
  - [MoneyWithCurrencyCode](docs/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/PagingRequestHeader.md)
@@ -187,6 +197,8 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/ResponseError.md)
  - [ResponseHeader](docs/ResponseHeader.md)
  - [ResponseStatus](docs/ResponseStatus.md)
+ - [SalesAssociate](docs/SalesAssociate.md)
+ - [SplititEntity](docs/SplititEntity.md)
  - [StartInstallmentsRequest](docs/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/SystemTextCategory.md)
  - [TermsAndConditions](docs/TermsAndConditions.md)
@@ -204,6 +216,7 @@ Class | Method | HTTP request | Description
  - [AddressData](docs/AddressData.md)
  - [AmountDetails](docs/AmountDetails.md)
  - [BuRef](docs/BuRef.md)
+ - [BusinessUnitRef](docs/BusinessUnitRef.md)
  - [ConsumerData](docs/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Currency.md)
@@ -212,6 +225,7 @@ Class | Method | HTTP request | Description
  - [InitiateInstallmentsPlanResponse](docs/InitiateInstallmentsPlanResponse.md)
  - [LoginResponse](docs/LoginResponse.md)
  - [MerchantRef](docs/MerchantRef.md)
+ - [PaymentWizardDataResponse](docs/PaymentWizardDataResponse.md)
  - [RefundInstallmentPlanResponse](docs/RefundInstallmentPlanResponse.md)
  - [UpdateInstallmentPlanRequest](docs/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/UpdateInstallmentsPlanResponse.md)

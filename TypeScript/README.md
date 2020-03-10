@@ -45,6 +45,8 @@ export function testSplititApi() {
             var planApi = new splititApi.InstallmentPlanApi(
                 splititApi.Configuration.serverSide("_YOUR_API_KEY_", data.sessionId!));
 
+            // planApi.setCulture('de-DE'); -> explicitely set culture for all subsequent API calls.
+
             const initRequest: splititApi.InitiateInstallmentPlanRequest = {
                 planData: <splititApi.PlanData>{
                     amount: <splititApi.MoneyWithCurrencyCode>{ value: 1000, currencyCode: "USD" },
@@ -114,6 +116,7 @@ export function testSplititApi() {
 
         var planApi = new splititApi.InstallmentPlanApi(
             splititApi.Configuration.serverSide("_YOUR_API_KEY_", data.sessionId));
+        // planApi.setCulture('de-DE'); -> explicitely set culture for all subsequent API calls.
         var initRequest = splititApi.InitiateInstallmentPlanRequestFromJSONTyped({
             PlanData: {
                 NumberOfInstallments: 3,

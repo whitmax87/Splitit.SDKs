@@ -27,10 +27,15 @@ export class BaseAPI {
 
     private middleware: Middleware[];
 	private _configuration: Configuration;
+    private _culture?: string;
 
     constructor(protected configuration = new Configuration()) {
         this.middleware = configuration.middleware;
 		this._configuration = configuration;
+    }
+
+    setCulture(culture: string) {
+        this._culture = culture;
     }
 
     withMiddleware<T extends BaseAPI>(this: T, ...middlewares: Middleware[]) {
@@ -79,13 +84,17 @@ export class BaseAPI {
             if (this._configuration.touchPoint) {
                 context.body.RequestHeader.TouchPoint = this._configuration.touchPoint;
             }
+
+            if (this._culture){
+                context.body.RequestHeader.CultureName = this._culture;
+            }
         }
 		
         const body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
 	    ? context.body
 	    : JSON.stringify(context.body);
 
-        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.3.33"});
+        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.3.34"});
         const init = {
             method: context.method,
             headers: headers,

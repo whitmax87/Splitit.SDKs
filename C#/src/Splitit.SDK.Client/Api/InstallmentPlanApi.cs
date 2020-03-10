@@ -158,6 +158,27 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
+        /// <returns>GetInitiatedInstallmentPlanResponse</returns>
+        GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of GetInitiatedInstallmentPlanResponse</returns>
+        ApiResponse<GetInitiatedInstallmentPlanResponse> InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo (GetInitiatedInstallmentPlanRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
         /// <returns>InitiateInstallmentsPlanResponse</returns>
         InitiateInstallmentsPlanResponse InstallmentPlanInitiate (InitiateInstallmentPlanRequest request);
 
@@ -412,6 +433,27 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
+        /// <returns>Task of GetInitiatedInstallmentPlanResponse</returns>
+        System.Threading.Tasks.Task<GetInitiatedInstallmentPlanResponse> InstallmentPlanGetInitiatedInstallmentPlanRequestAsync (GetInitiatedInstallmentPlanRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInitiatedInstallmentPlanResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetInitiatedInstallmentPlanResponse>> InstallmentPlanGetInitiatedInstallmentPlanRequestAsyncWithHttpInfo (GetInitiatedInstallmentPlanRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
         /// <returns>Task of InitiateInstallmentsPlanResponse</returns>
         System.Threading.Tasks.Task<InitiateInstallmentsPlanResponse> InstallmentPlanInitiateAsync (InitiateInstallmentPlanRequest request);
 
@@ -541,6 +583,8 @@ namespace Splitit.SDK.Client.Api
         private Splitit.SDK.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 		private string _apiKey;
 		private string _sessionId;
+
+        public string Culture { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InstallmentPlanApi"/> class
@@ -681,7 +725,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -763,7 +807,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -844,7 +888,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -926,7 +970,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1007,7 +1051,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1089,7 +1133,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1170,7 +1214,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1252,7 +1296,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1333,7 +1377,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1415,7 +1459,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1496,7 +1540,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1578,7 +1622,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1603,6 +1647,169 @@ namespace Splitit.SDK.Client.Api
             return new ApiResponse<GetInstallmentsPlanExtendedResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GetInstallmentsPlanExtendedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanExtendedResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>GetInitiatedInstallmentPlanResponse</returns>
+        public GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request)
+        {
+             ApiResponse<GetInitiatedInstallmentPlanResponse> localVarResponse = InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>ApiResponse of GetInitiatedInstallmentPlanResponse</returns>
+        public ApiResponse< GetInitiatedInstallmentPlanResponse > InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo (GetInitiatedInstallmentPlanRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetInitiatedInstallmentPlanRequest");
+
+            var localVarPath = "./api/InstallmentPlan/GetInitiatedInstallmentPlanRequest";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InstallmentPlanGetInitiatedInstallmentPlanRequest", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetInitiatedInstallmentPlanResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetInitiatedInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInitiatedInstallmentPlanResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetInitiatedInstallmentPlanResponse</returns>
+        public async System.Threading.Tasks.Task<GetInitiatedInstallmentPlanResponse> InstallmentPlanGetInitiatedInstallmentPlanRequestAsync (GetInitiatedInstallmentPlanRequest request)
+        {
+             ApiResponse<GetInitiatedInstallmentPlanResponse> localVarResponse = await InstallmentPlanGetInitiatedInstallmentPlanRequestAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInitiatedInstallmentPlanResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetInitiatedInstallmentPlanResponse>> InstallmentPlanGetInitiatedInstallmentPlanRequestAsyncWithHttpInfo (GetInitiatedInstallmentPlanRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetInitiatedInstallmentPlanRequest");
+
+            var localVarPath = "./api/InstallmentPlan/GetInitiatedInstallmentPlanRequest";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InstallmentPlanGetInitiatedInstallmentPlanRequest", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetInitiatedInstallmentPlanResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetInitiatedInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInitiatedInstallmentPlanResponse)));
         }
 
         /// <summary>
@@ -1659,7 +1866,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1741,7 +1948,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1822,7 +2029,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1904,7 +2111,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -1985,7 +2192,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2067,7 +2274,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2148,7 +2355,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2230,7 +2437,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2311,7 +2518,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2393,7 +2600,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2474,7 +2681,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else
@@ -2556,7 +2763,7 @@ namespace Splitit.SDK.Client.Api
 
             if (request != null && request.GetType() != typeof(byte[]))
             {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, request: request);
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
                 localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
             else

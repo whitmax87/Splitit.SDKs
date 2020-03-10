@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
@@ -28,6 +28,9 @@ export interface InstallmentPlanGet3DSecureParametersRequest {
 }
 export interface InstallmentPlanGetExtendedRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
+}
+export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
+    request: GetInitiatedInstallmentPlanRequest;
 }
 export interface InstallmentPlanInitiateRequest {
     request: InitiateInstallmentPlanRequest;
@@ -87,6 +90,12 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     /**
      */
     installmentPlanGetExtended(requestParameters: InstallmentPlanGetExtendedRequest): Promise<GetInstallmentsPlanExtendedResponse>;
+    /**
+     */
+    installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<runtime.ApiResponse<GetInitiatedInstallmentPlanResponse>>;
+    /**
+     */
+    installmentPlanGetInitiatedInstallmentPlanRequest(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<GetInitiatedInstallmentPlanResponse>;
     /**
      */
     installmentPlanInitiateRaw(requestParameters: InstallmentPlanInitiateRequest): Promise<runtime.ApiResponse<InitiateInstallmentsPlanResponse>>;

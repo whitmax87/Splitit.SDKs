@@ -33,6 +33,12 @@ import {
     Get3DSecureParametersResponse,
     Get3DSecureParametersResponseFromJSON,
     Get3DSecureParametersResponseToJSON,
+    GetInitiatedInstallmentPlanRequest,
+    GetInitiatedInstallmentPlanRequestFromJSON,
+    GetInitiatedInstallmentPlanRequestToJSON,
+    GetInitiatedInstallmentPlanResponse,
+    GetInitiatedInstallmentPlanResponseFromJSON,
+    GetInitiatedInstallmentPlanResponseToJSON,
     GetInstallmentsPlanExtendedResponse,
     GetInstallmentsPlanExtendedResponseFromJSON,
     GetInstallmentsPlanExtendedResponseToJSON,
@@ -102,6 +108,10 @@ export interface InstallmentPlanGet3DSecureParametersRequest {
 
 export interface InstallmentPlanGetExtendedRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
+}
+
+export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
+    request: GetInitiatedInstallmentPlanRequest;
 }
 
 export interface InstallmentPlanInitiateRequest {
@@ -316,6 +326,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanGetExtended(requestParameters: InstallmentPlanGetExtendedRequest): Promise<GetInstallmentsPlanExtendedResponse> {
         const response = await this.installmentPlanGetExtendedRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<runtime.ApiResponse<GetInitiatedInstallmentPlanResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetInitiatedInstallmentPlanRequest.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetInitiatedInstallmentPlanRequest`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetInitiatedInstallmentPlanRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetInitiatedInstallmentPlanResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetInitiatedInstallmentPlanRequest(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<GetInitiatedInstallmentPlanResponse> {
+        const response = await this.installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters);
         return await response.value();
     }
 

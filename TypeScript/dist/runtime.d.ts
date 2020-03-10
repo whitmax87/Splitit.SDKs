@@ -19,7 +19,9 @@ export declare class BaseAPI {
     protected configuration: Configuration;
     private middleware;
     private _configuration;
+    private _culture?;
     constructor(configuration?: Configuration);
+    setCulture(culture: string): void;
     withMiddleware<T extends BaseAPI>(this: T, ...middlewares: Middleware[]): T;
     withPreMiddleware<T extends BaseAPI>(this: T, ...preMiddlewares: Array<Middleware['pre']>): T;
     withPostMiddleware<T extends BaseAPI>(this: T, ...postMiddlewares: Array<Middleware['post']>): T;

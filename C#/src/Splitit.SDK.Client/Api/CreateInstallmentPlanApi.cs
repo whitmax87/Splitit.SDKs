@@ -140,6 +140,8 @@ namespace Splitit.SDK.Client.Api
 		private string _apiKey;
 		private string _sessionId;
 
+        public string Culture { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInstallmentPlanApi"/> class
         /// using Configuration object

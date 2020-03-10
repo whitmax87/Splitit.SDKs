@@ -131,6 +131,9 @@ var BaseAPI = /** @class */ (function () {
         this.middleware = configuration.middleware;
         this._configuration = configuration;
     }
+    BaseAPI.prototype.setCulture = function (culture) {
+        this._culture = culture;
+    };
     BaseAPI.prototype.withMiddleware = function () {
         var _a;
         var middlewares = [];
@@ -193,11 +196,14 @@ var BaseAPI = /** @class */ (function () {
             if (this._configuration.touchPoint) {
                 context.body.RequestHeader.TouchPoint = this._configuration.touchPoint;
             }
+            if (this._culture) {
+                context.body.RequestHeader.CultureName = this._culture;
+            }
         }
         var body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
-        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.3.33" });
+        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.3.34" });
         var init = {
             method: context.method,
             headers: headers,

@@ -7,7 +7,7 @@ public abstract class RequestWithHeader {
     @SerializedName("RequestHeader")
     private RequestHeader requestHeader = null;
 
-    public static void setAuthFor(Object instance, String sessionId, String apiKey){
+    public static void setAuthFor(Object instance, String sessionId, String apiKey, String culture){
         if (instance instanceof RequestWithHeader && sessionId != null && !sessionId.isEmpty() && apiKey != null && !apiKey.isEmpty()){
             RequestWithHeader reqWithHeaderInstance = (RequestWithHeader)instance;
 
@@ -17,6 +17,7 @@ public abstract class RequestWithHeader {
 
             reqWithHeaderInstance.requestHeader.setSessionId(sessionId);
             reqWithHeaderInstance.requestHeader.setApiKey(apiKey);
+            reqWithHeaderInstance.requestHeader.setCultureName(culture);
         }
     }
 }

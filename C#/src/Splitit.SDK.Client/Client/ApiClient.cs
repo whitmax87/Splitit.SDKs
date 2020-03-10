@@ -527,7 +527,7 @@ namespace Splitit.SDK.Client.Client
             return parameters;
         }
 		
-		public void InjectAuthIfNotExists(string apiKey, string sessionId, object request)
+		public void InjectAuthIfNotExists(string apiKey, string sessionId, string culture, object request)
         {
             if (request != null && apiKey != null && sessionId != null)
             {
@@ -544,7 +544,8 @@ namespace Splitit.SDK.Client.Client
                         {
                             ApiKey = this.Configuration.ApiKey,
                             TouchPoint = this.Configuration.TouchPoint,
-                            SessionId = sessionId
+                            SessionId = sessionId,
+                            CultureName = culture
                         });
                     }
                 }

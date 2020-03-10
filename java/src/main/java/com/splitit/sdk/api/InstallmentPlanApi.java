@@ -34,6 +34,8 @@ import com.splitit.sdk.model.CreateInstallmentPlanRequest;
 import com.splitit.sdk.model.CreateInstallmentsPlanResponse;
 import com.splitit.sdk.model.Get3DSecureParametersRequest;
 import com.splitit.sdk.model.Get3DSecureParametersResponse;
+import com.splitit.sdk.model.GetInitiatedInstallmentPlanRequest;
+import com.splitit.sdk.model.GetInitiatedInstallmentPlanResponse;
 import com.splitit.sdk.model.GetInstallmentsPlanExtendedResponse;
 import com.splitit.sdk.model.GetInstallmentsPlanResponse;
 import com.splitit.sdk.model.GetInstallmentsPlanSearchCriteriaRequest;
@@ -59,6 +61,7 @@ import java.util.Map;
 public class InstallmentPlanApi {
     private ApiClient apiClient;
     private String sessionId;
+    private String culture;
 
     public InstallmentPlanApi() {
         this(Configuration.production());
@@ -73,6 +76,10 @@ public class InstallmentPlanApi {
         return this;
     }
 
+    public void setCulture(String culture) {
+        this.culture = culture;
+    }
+
     /**
      * Build call for installmentPlanApprove
      * @param request  (required)
@@ -82,7 +89,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanApproveCall(ApproveInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -206,7 +213,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanCancelCall(CancelInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -330,7 +337,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanCreateCall(CreateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -454,7 +461,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetCall(GetInstallmentsPlanSearchCriteriaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -578,7 +585,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGet3DSecureParametersCall(Get3DSecureParametersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -702,7 +709,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetExtendedCall(GetInstallmentsPlanSearchCriteriaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -818,6 +825,130 @@ public class InstallmentPlanApi {
         return call;
     }
     /**
+     * Build call for installmentPlanGetInitiatedInstallmentPlanRequest
+     * @param request  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetInitiatedInstallmentPlanRequestCall(GetInitiatedInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
+        
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/api/InstallmentPlan/GetInitiatedInstallmentPlanRequest";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/plain", "application/json", "text/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json-patch+json", "application/json", "text/json", "application/_*+json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(GetInitiatedInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling installmentPlanGetInitiatedInstallmentPlanRequest(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedInstallmentPlanRequestCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return GetInitiatedInstallmentPlanResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetInitiatedInstallmentPlanResponse installmentPlanGetInitiatedInstallmentPlanRequest(GetInitiatedInstallmentPlanRequest request) throws ApiException {
+        ApiResponse<GetInitiatedInstallmentPlanResponse> resp = installmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return ApiResponse&lt;GetInitiatedInstallmentPlanResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetInitiatedInstallmentPlanResponse> installmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo(GetInitiatedInstallmentPlanRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<GetInitiatedInstallmentPlanResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetInitiatedInstallmentPlanRequestAsync(GetInitiatedInstallmentPlanRequest request, final ApiCallback<GetInitiatedInstallmentPlanResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetInitiatedInstallmentPlanResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for installmentPlanInitiate
      * @param request  (required)
      * @param progressListener Progress listener
@@ -826,7 +957,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanInitiateCall(InitiateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -950,7 +1081,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanRefundCall(RefundPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -1074,7 +1205,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanStartInstallmentsCall(StartInstallmentsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -1198,7 +1329,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanTermsAndConditionsCall(TermsAndConditionsGetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -1322,7 +1453,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanUpdateCall(UpdateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
@@ -1446,7 +1577,7 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanVerifyPaymentCall(VerifyPaymentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 

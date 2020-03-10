@@ -40,6 +40,7 @@ import java.util.Map;
 public class LoginApi {
     private ApiClient apiClient;
     private String sessionId;
+    private String culture;
 
     public LoginApi() {
         this(Configuration.production());
@@ -52,6 +53,10 @@ public class LoginApi {
     public LoginApi withSessionId(String sessionId){
         this.sessionId = sessionId;
         return this;
+    }
+
+    public void setCulture(String culture) {
+        this.culture = culture;
     }
 
     /**
@@ -198,7 +203,7 @@ public class LoginApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call loginPostCall(LoginRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey());
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
         
         Object localVarPostBody = request;
 
