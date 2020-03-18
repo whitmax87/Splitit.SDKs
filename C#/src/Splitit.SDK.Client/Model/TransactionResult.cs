@@ -46,42 +46,10 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isChargeback">isChargeback (required).</param>
         public TransactionResult(string gatewayTransactionId = default(string), long? splititTransactionId = default(long?), string gatewayResultCode = default(string), string gatewayResultMessage = default(string), ReferenceEntityBase operationType = default(ReferenceEntityBase), bool? gatewayResult = default(bool?), DateTime? gatewayTransactionDate = default(DateTime?), bool? isChargeback = default(bool?))
         {
-            // to ensure "splititTransactionId" is required (not null)
-            if (splititTransactionId == null)
-            {
-                throw new InvalidDataException("splititTransactionId is a required property for TransactionResult and cannot be null");
-            }
-            else
-            {
-                this.SplititTransactionId = splititTransactionId;
-            }
-            // to ensure "gatewayResult" is required (not null)
-            if (gatewayResult == null)
-            {
-                throw new InvalidDataException("gatewayResult is a required property for TransactionResult and cannot be null");
-            }
-            else
-            {
-                this.GatewayResult = gatewayResult;
-            }
-            // to ensure "gatewayTransactionDate" is required (not null)
-            if (gatewayTransactionDate == null)
-            {
-                throw new InvalidDataException("gatewayTransactionDate is a required property for TransactionResult and cannot be null");
-            }
-            else
-            {
-                this.GatewayTransactionDate = gatewayTransactionDate;
-            }
-            // to ensure "isChargeback" is required (not null)
-            if (isChargeback == null)
-            {
-                throw new InvalidDataException("isChargeback is a required property for TransactionResult and cannot be null");
-            }
-            else
-            {
-                this.IsChargeback = isChargeback;
-            }
+            this.SplititTransactionId = splititTransactionId;
+            this.GatewayResult = gatewayResult;
+            this.GatewayTransactionDate = gatewayTransactionDate;
+            this.IsChargeback = isChargeback;
             this.GatewayTransactionId = gatewayTransactionId;
             this.GatewayResultCode = gatewayResultCode;
             this.GatewayResultMessage = gatewayResultMessage;

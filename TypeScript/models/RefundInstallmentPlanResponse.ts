@@ -41,19 +41,7 @@ import {
  * @export
  * @interface RefundInstallmentPlanResponse
  */
-export interface RefundInstallmentPlanResponse {
-    /**
-     * 
-     * @type {ResponseHeader}
-     * @memberof RefundInstallmentPlanResponse
-     */
-    responseHeader?: ResponseHeader;
-    /**
-     * 
-     * @type {InstallmentPlan}
-     * @memberof RefundInstallmentPlanResponse
-     */
-    installmentPlan?: InstallmentPlan;
+export interface RefundInstallmentPlanResponse extends InstallmentPlanResponse {
     /**
      * 
      * @type {Money}
@@ -71,9 +59,7 @@ export function RefundInstallmentPlanResponseFromJSONTyped(json: any, ignoreDisc
         return json;
     }
     return {
-        
-        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
-        'installmentPlan': !exists(json, 'InstallmentPlan') ? undefined : InstallmentPlanFromJSON(json['InstallmentPlan']),
+        ...InstallmentPlanResponseFromJSONTyped(json, ignoreDiscriminator),
         'currentRefundAmount': !exists(json, 'CurrentRefundAmount') ? undefined : MoneyFromJSON(json['CurrentRefundAmount']),
     };
 }
@@ -86,9 +72,7 @@ export function RefundInstallmentPlanResponseToJSON(value?: RefundInstallmentPla
         return null;
     }
     return {
-        
-        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
-        'InstallmentPlan': InstallmentPlanToJSON(value.installmentPlan),
+        ...InstallmentPlanResponseToJSON(value),
         'CurrentRefundAmount': MoneyToJSON(value.currentRefundAmount),
     };
 }

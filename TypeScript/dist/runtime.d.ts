@@ -68,17 +68,17 @@ export declare class Configuration {
     static setTouchPoint(touchPoint: TouchPoint): void;
     static serverSide(apiKey: string, sessionId: string): Configuration;
     static clientSide(publicToken: string): Configuration;
-    get basePath(): string;
-    get fetchApi(): FetchAPI;
-    get middleware(): Middleware[];
-    get queryParamsStringify(): (params: HTTPQuery) => string;
-    get username(): string | undefined;
-    get password(): string | undefined;
-    get apiKey(): string | undefined;
-    get touchPoint(): TouchPoint | undefined;
-    get accessToken(): string | undefined;
-    get headers(): HTTPHeaders | undefined;
-    get credentials(): RequestCredentials | undefined;
+    readonly basePath: string;
+    readonly fetchApi: FetchAPI;
+    readonly middleware: Middleware[];
+    readonly queryParamsStringify: (params: HTTPQuery) => string;
+    readonly username: string | undefined;
+    readonly password: string | undefined;
+    readonly apiKey: string | undefined;
+    readonly touchPoint: TouchPoint | undefined;
+    readonly accessToken: string | undefined;
+    readonly headers: HTTPHeaders | undefined;
+    readonly credentials: RequestCredentials | undefined;
 }
 export declare type Json = any;
 export declare type HTTPMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS';

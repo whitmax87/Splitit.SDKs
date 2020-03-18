@@ -42,15 +42,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="symbol">symbol.</param>
         public Currency(long? id = default(long?), string code = default(string), string description = default(string), string symbol = default(string))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new InvalidDataException("id is a required property for Currency and cannot be null");
-            }
-            else
-            {
-                this.Id = id;
-            }
+            this.Id = id;
             this.Code = code;
             this.Description = description;
             this.Symbol = symbol;

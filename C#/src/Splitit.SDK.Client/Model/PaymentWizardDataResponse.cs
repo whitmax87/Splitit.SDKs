@@ -57,69 +57,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="paymentFormMessages">paymentFormMessages.</param>
         public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), Currency currencyDisplay = default(Currency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), string logoURL = default(string), List<string> paymentFormMessages = default(List<string>))
         {
-            // to ensure "isOpenedInIframe" is required (not null)
-            if (isOpenedInIframe == null)
-            {
-                throw new InvalidDataException("isOpenedInIframe is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.IsOpenedInIframe = isOpenedInIframe;
-            }
-            // to ensure "forceDisplayImportantNotes" is required (not null)
-            if (forceDisplayImportantNotes == null)
-            {
-                throw new InvalidDataException("forceDisplayImportantNotes is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
-            }
-            // to ensure "showShopperDetailsExpendedOnStart" is required (not null)
-            if (showShopperDetailsExpendedOnStart == null)
-            {
-                throw new InvalidDataException("showShopperDetailsExpendedOnStart is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.ShowShopperDetailsExpendedOnStart = showShopperDetailsExpendedOnStart;
-            }
-            // to ensure "showPaymentScheduleRequiredCredit" is required (not null)
-            if (showPaymentScheduleRequiredCredit == null)
-            {
-                throw new InvalidDataException("showPaymentScheduleRequiredCredit is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.ShowPaymentScheduleRequiredCredit = showPaymentScheduleRequiredCredit;
-            }
-            // to ensure "isShopperEmailMandatory" is required (not null)
-            if (isShopperEmailMandatory == null)
-            {
-                throw new InvalidDataException("isShopperEmailMandatory is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.IsShopperEmailMandatory = isShopperEmailMandatory;
-            }
-            // to ensure "isShopperPhoneMandatory" is required (not null)
-            if (isShopperPhoneMandatory == null)
-            {
-                throw new InvalidDataException("isShopperPhoneMandatory is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.IsShopperPhoneMandatory = isShopperPhoneMandatory;
-            }
-            // to ensure "addressIsReadonly" is required (not null)
-            if (addressIsReadonly == null)
-            {
-                throw new InvalidDataException("addressIsReadonly is a required property for PaymentWizardDataResponse and cannot be null");
-            }
-            else
-            {
-                this.AddressIsReadonly = addressIsReadonly;
-            }
+            this.IsOpenedInIframe = isOpenedInIframe;
+            this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
+            this.ShowShopperDetailsExpendedOnStart = showShopperDetailsExpendedOnStart;
+            this.ShowPaymentScheduleRequiredCredit = showPaymentScheduleRequiredCredit;
+            this.IsShopperEmailMandatory = isShopperEmailMandatory;
+            this.IsShopperPhoneMandatory = isShopperPhoneMandatory;
+            this.AddressIsReadonly = addressIsReadonly;
             this.RequestedNumberOfInstallments = requestedNumberOfInstallments;
             this.SuccessExitURL = successExitURL;
             this.ErrorExitURL = errorExitURL;

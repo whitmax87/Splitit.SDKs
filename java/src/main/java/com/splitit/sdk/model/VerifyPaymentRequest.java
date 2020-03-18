@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * VerifyPaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-10T18:07:01.900Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-18T12:53:32.515Z")
 public class VerifyPaymentRequest   extends RequestWithHeader  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;

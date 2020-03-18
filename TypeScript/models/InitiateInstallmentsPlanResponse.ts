@@ -37,19 +37,7 @@ import {
  * @export
  * @interface InitiateInstallmentsPlanResponse
  */
-export interface InitiateInstallmentsPlanResponse {
-    /**
-     * 
-     * @type {ResponseHeader}
-     * @memberof InitiateInstallmentsPlanResponse
-     */
-    responseHeader?: ResponseHeader;
-    /**
-     * 
-     * @type {InstallmentPlan}
-     * @memberof InitiateInstallmentsPlanResponse
-     */
-    installmentPlan?: InstallmentPlan;
+export interface InitiateInstallmentsPlanResponse extends InstallmentPlanResponse {
     /**
      * 
      * @type {string}
@@ -97,9 +85,7 @@ export function InitiateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreD
         return json;
     }
     return {
-        
-        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
-        'installmentPlan': !exists(json, 'InstallmentPlan') ? undefined : InstallmentPlanFromJSON(json['InstallmentPlan']),
+        ...InstallmentPlanResponseFromJSONTyped(json, ignoreDiscriminator),
         'checkoutUrl': !exists(json, 'CheckoutUrl') ? undefined : json['CheckoutUrl'],
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
@@ -117,9 +103,7 @@ export function InitiateInstallmentsPlanResponseToJSON(value?: InitiateInstallme
         return null;
     }
     return {
-        
-        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
-        'InstallmentPlan': InstallmentPlanToJSON(value.installmentPlan),
+        ...InstallmentPlanResponseToJSON(value),
         'CheckoutUrl': value.checkoutUrl,
         'ApprovalUrl': value.approvalUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,

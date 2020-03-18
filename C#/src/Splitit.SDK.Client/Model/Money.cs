@@ -40,15 +40,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="currency">currency.</param>
         public Money(decimal? value = default(decimal?), Currency currency = default(Currency))
         {
-            // to ensure "value" is required (not null)
-            if (value == null)
-            {
-                throw new InvalidDataException("value is a required property for Money and cannot be null");
-            }
-            else
-            {
-                this.Value = value;
-            }
+            this.Value = value;
             this.Currency = currency;
         }
 

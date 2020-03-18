@@ -12,6 +12,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
 var _1 = require("./");
@@ -23,19 +34,7 @@ function UpdateInstallmentPlanRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
-    return {
-        'installmentPlanNumber': !runtime_1.exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
-        'planData': !runtime_1.exists(json, 'PlanData') ? undefined : _1.PlanDataFromJSON(json['PlanData']),
-        'cartData': !runtime_1.exists(json, 'CartData') ? undefined : _1.CartDataFromJSON(json['CartData']),
-        'consumerData': !runtime_1.exists(json, 'ConsumerData') ? undefined : _1.ConsumerDataFromJSON(json['ConsumerData']),
-        'billingAddress': !runtime_1.exists(json, 'BillingAddress') ? undefined : _1.AddressDataFromJSON(json['BillingAddress']),
-        'creditCardDetails': !runtime_1.exists(json, 'CreditCardDetails') ? undefined : _1.CardDataFromJSON(json['CreditCardDetails']),
-        'paymentToken': !runtime_1.exists(json, 'PaymentToken') ? undefined : _1.PaymentTokenFromJSON(json['PaymentToken']),
-        'planApprovalEvidence': !runtime_1.exists(json, 'PlanApprovalEvidence') ? undefined : _1.PlanApprovalEvidenceFromJSON(json['PlanApprovalEvidence']),
-        'redirectUrls': !runtime_1.exists(json, 'RedirectUrls') ? undefined : _1.RedirectUrlsFromJSON(json['RedirectUrls']),
-        'eventsEndpoints': !runtime_1.exists(json, 'EventsEndpoints') ? undefined : _1.EventsEndpointsFromJSON(json['EventsEndpoints']),
-        'externalAuth': !runtime_1.exists(json, 'ExternalAuth') ? undefined : _1.ExternalAuthFromJSON(json['ExternalAuth']),
-    };
+    return __assign({}, _1.CreateInstallmentPlanRequestFromJSONTyped(json, ignoreDiscriminator), { 'installmentPlanNumber': !runtime_1.exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'] });
 }
 exports.UpdateInstallmentPlanRequestFromJSONTyped = UpdateInstallmentPlanRequestFromJSONTyped;
 function UpdateInstallmentPlanRequestToJSON(value) {
@@ -45,18 +44,6 @@ function UpdateInstallmentPlanRequestToJSON(value) {
     if (value === null) {
         return null;
     }
-    return {
-        'InstallmentPlanNumber': value.installmentPlanNumber,
-        'PlanData': _1.PlanDataToJSON(value.planData),
-        'CartData': _1.CartDataToJSON(value.cartData),
-        'ConsumerData': _1.ConsumerDataToJSON(value.consumerData),
-        'BillingAddress': _1.AddressDataToJSON(value.billingAddress),
-        'CreditCardDetails': _1.CardDataToJSON(value.creditCardDetails),
-        'PaymentToken': _1.PaymentTokenToJSON(value.paymentToken),
-        'PlanApprovalEvidence': _1.PlanApprovalEvidenceToJSON(value.planApprovalEvidence),
-        'RedirectUrls': _1.RedirectUrlsToJSON(value.redirectUrls),
-        'EventsEndpoints': _1.EventsEndpointsToJSON(value.eventsEndpoints),
-        'ExternalAuth': _1.ExternalAuthToJSON(value.externalAuth),
-    };
+    return __assign({}, _1.CreateInstallmentPlanRequestToJSON(value), { 'InstallmentPlanNumber': value.installmentPlanNumber });
 }
 exports.UpdateInstallmentPlanRequestToJSON = UpdateInstallmentPlanRequestToJSON;

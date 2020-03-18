@@ -41,15 +41,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="areTermsAndConditionsApproved">areTermsAndConditionsApproved (required).</param>
         public ApproveInstallmentPlanRequest(string installmentPlanNumber = default(string), string customerSignaturePngAsBase64 = default(string), bool? areTermsAndConditionsApproved = default(bool?))
         {
-            // to ensure "areTermsAndConditionsApproved" is required (not null)
-            if (areTermsAndConditionsApproved == null)
-            {
-                throw new InvalidDataException("areTermsAndConditionsApproved is a required property for ApproveInstallmentPlanRequest and cannot be null");
-            }
-            else
-            {
-                this.AreTermsAndConditionsApproved = areTermsAndConditionsApproved;
-            }
+            this.AreTermsAndConditionsApproved = areTermsAndConditionsApproved;
             this.InstallmentPlanNumber = installmentPlanNumber;
             this.CustomerSignaturePngAsBase64 = customerSignaturePngAsBase64;
         }

@@ -9,25 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InstallmentPlan, ResponseHeader } from './';
+import { InstallmentPlanResponse } from './';
 /**
  *
  * @export
  * @interface InitiateInstallmentsPlanResponse
  */
-export interface InitiateInstallmentsPlanResponse {
-    /**
-     *
-     * @type {ResponseHeader}
-     * @memberof InitiateInstallmentsPlanResponse
-     */
-    responseHeader?: ResponseHeader;
-    /**
-     *
-     * @type {InstallmentPlan}
-     * @memberof InitiateInstallmentsPlanResponse
-     */
-    installmentPlan?: InstallmentPlan;
+export interface InitiateInstallmentsPlanResponse extends InstallmentPlanResponse {
     /**
      *
      * @type {string}

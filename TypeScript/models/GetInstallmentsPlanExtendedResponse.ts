@@ -41,25 +41,13 @@ import {
  * @export
  * @interface GetInstallmentsPlanExtendedResponse
  */
-export interface GetInstallmentsPlanExtendedResponse {
+export interface GetInstallmentsPlanExtendedResponse extends GetInstallmentsPlanResponse {
     /**
      * 
      * @type {Array<ExtendedInstallmentPlan>}
      * @memberof GetInstallmentsPlanExtendedResponse
      */
     plansList?: Array<ExtendedInstallmentPlan>;
-    /**
-     * 
-     * @type {ResponseHeader}
-     * @memberof GetInstallmentsPlanExtendedResponse
-     */
-    responseHeader?: ResponseHeader;
-    /**
-     * 
-     * @type {PagingResponseHeader}
-     * @memberof GetInstallmentsPlanExtendedResponse
-     */
-    pagingResponseHeader?: PagingResponseHeader;
 }
 
 export function GetInstallmentsPlanExtendedResponseFromJSON(json: any): GetInstallmentsPlanExtendedResponse {
@@ -71,10 +59,8 @@ export function GetInstallmentsPlanExtendedResponseFromJSONTyped(json: any, igno
         return json;
     }
     return {
-        
+        ...GetInstallmentsPlanResponseFromJSONTyped(json, ignoreDiscriminator),
         'plansList': !exists(json, 'PlansList') ? undefined : ((json['PlansList'] as Array<any>).map(ExtendedInstallmentPlanFromJSON)),
-        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
-        'pagingResponseHeader': !exists(json, 'PagingResponseHeader') ? undefined : PagingResponseHeaderFromJSON(json['PagingResponseHeader']),
     };
 }
 
@@ -86,10 +72,8 @@ export function GetInstallmentsPlanExtendedResponseToJSON(value?: GetInstallment
         return null;
     }
     return {
-        
+        ...GetInstallmentsPlanResponseToJSON(value),
         'PlansList': value.plansList === undefined ? undefined : ((value.plansList as Array<any>).map(ExtendedInstallmentPlanToJSON)),
-        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
-        'PagingResponseHeader': PagingResponseHeaderToJSON(value.pagingResponseHeader),
     };
 }
 

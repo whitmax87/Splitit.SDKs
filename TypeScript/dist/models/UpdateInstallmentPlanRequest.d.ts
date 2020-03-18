@@ -9,79 +9,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AddressData, CardData, CartData, ConsumerData, EventsEndpoints, ExternalAuth, PaymentToken, PlanApprovalEvidence, PlanData, RedirectUrls } from './';
+import { CreateInstallmentPlanRequest } from './';
 /**
  *
  * @export
  * @interface UpdateInstallmentPlanRequest
  */
-export interface UpdateInstallmentPlanRequest {
+export interface UpdateInstallmentPlanRequest extends CreateInstallmentPlanRequest {
     /**
      *
      * @type {string}
      * @memberof UpdateInstallmentPlanRequest
      */
     installmentPlanNumber?: string;
-    /**
-     *
-     * @type {PlanData}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    planData?: PlanData;
-    /**
-     *
-     * @type {CartData}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    cartData?: CartData;
-    /**
-     *
-     * @type {ConsumerData}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    consumerData?: ConsumerData;
-    /**
-     *
-     * @type {AddressData}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    billingAddress?: AddressData;
-    /**
-     *
-     * @type {CardData}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    creditCardDetails?: CardData;
-    /**
-     *
-     * @type {PaymentToken}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    paymentToken?: PaymentToken;
-    /**
-     *
-     * @type {PlanApprovalEvidence}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    planApprovalEvidence?: PlanApprovalEvidence;
-    /**
-     *
-     * @type {RedirectUrls}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    redirectUrls?: RedirectUrls;
-    /**
-     *
-     * @type {EventsEndpoints}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    eventsEndpoints?: EventsEndpoints;
-    /**
-     *
-     * @type {ExternalAuth}
-     * @memberof UpdateInstallmentPlanRequest
-     */
-    externalAuth?: ExternalAuth;
 }
 export declare function UpdateInstallmentPlanRequestFromJSON(json: any): UpdateInstallmentPlanRequest;
 export declare function UpdateInstallmentPlanRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInstallmentPlanRequest;

@@ -40,24 +40,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="take">take (required).</param>
         public PagingRequestHeader(int? skip = default(int?), int? take = default(int?))
         {
-            // to ensure "skip" is required (not null)
-            if (skip == null)
-            {
-                throw new InvalidDataException("skip is a required property for PagingRequestHeader and cannot be null");
-            }
-            else
-            {
-                this.Skip = skip;
-            }
-            // to ensure "take" is required (not null)
-            if (take == null)
-            {
-                throw new InvalidDataException("take is a required property for PagingRequestHeader and cannot be null");
-            }
-            else
-            {
-                this.Take = take;
-            }
+            this.Skip = skip;
+            this.Take = take;
         }
 
         

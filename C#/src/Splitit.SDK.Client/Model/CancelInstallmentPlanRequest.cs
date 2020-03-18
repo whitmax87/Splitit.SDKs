@@ -52,33 +52,9 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isExecutedUnattended">isExecutedUnattended (required).</param>
         public CancelInstallmentPlanRequest(string installmentPlanNumber = default(string), RefundUnderCancelation refundUnderCancelation = default(RefundUnderCancelation), InstallmentPlanCancelationReason cancelationReason = default(InstallmentPlanCancelationReason), bool? isExecutedUnattended = default(bool?))
         {
-            // to ensure "refundUnderCancelation" is required (not null)
-            if (refundUnderCancelation == null)
-            {
-                throw new InvalidDataException("refundUnderCancelation is a required property for CancelInstallmentPlanRequest and cannot be null");
-            }
-            else
-            {
-                this.RefundUnderCancelation = refundUnderCancelation;
-            }
-            // to ensure "cancelationReason" is required (not null)
-            if (cancelationReason == null)
-            {
-                throw new InvalidDataException("cancelationReason is a required property for CancelInstallmentPlanRequest and cannot be null");
-            }
-            else
-            {
-                this.CancelationReason = cancelationReason;
-            }
-            // to ensure "isExecutedUnattended" is required (not null)
-            if (isExecutedUnattended == null)
-            {
-                throw new InvalidDataException("isExecutedUnattended is a required property for CancelInstallmentPlanRequest and cannot be null");
-            }
-            else
-            {
-                this.IsExecutedUnattended = isExecutedUnattended;
-            }
+            this.RefundUnderCancelation = refundUnderCancelation;
+            this.CancelationReason = cancelationReason;
+            this.IsExecutedUnattended = isExecutedUnattended;
             this.InstallmentPlanNumber = installmentPlanNumber;
         }
 

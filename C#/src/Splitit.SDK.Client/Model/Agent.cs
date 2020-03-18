@@ -51,15 +51,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="fullName">fullName.</param>
         public Agent(long? pisUserId = default(long?), string id = default(string), string agentNumber = default(string), string email = default(string), string userName = default(string), string firstName = default(string), string lastName = default(string), string jobTitle = default(string), string phoneNumber = default(string), string mobileNumber = default(string), string workPhoneNumber = default(string), string faxNumber = default(string), string fullName = default(string))
         {
-            // to ensure "pisUserId" is required (not null)
-            if (pisUserId == null)
-            {
-                throw new InvalidDataException("pisUserId is a required property for Agent and cannot be null");
-            }
-            else
-            {
-                this.PisUserId = pisUserId;
-            }
+            this.PisUserId = pisUserId;
             this.Id = id;
             this.AgentNumber = agentNumber;
             this.Email = email;

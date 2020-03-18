@@ -50,24 +50,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="businessUnit">businessUnit.</param>
         public ContactPerson(long? id = default(long?), string fullName = default(string), ContactPersonType type = default(ContactPersonType), string emailAddress = default(string), string mobilePhoneNumber = default(string), string officePhoneNumber = default(string), BusinessUnitRef businessUnit = default(BusinessUnitRef))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new InvalidDataException("id is a required property for ContactPerson and cannot be null");
-            }
-            else
-            {
-                this.Id = id;
-            }
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new InvalidDataException("type is a required property for ContactPerson and cannot be null");
-            }
-            else
-            {
-                this.Type = type;
-            }
+            this.Id = id;
+            this.Type = type;
             this.FullName = fullName;
             this.EmailAddress = emailAddress;
             this.MobilePhoneNumber = mobilePhoneNumber;

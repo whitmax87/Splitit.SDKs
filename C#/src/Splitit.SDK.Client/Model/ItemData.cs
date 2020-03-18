@@ -43,15 +43,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="description">description.</param>
         public ItemData(string name = default(string), string sku = default(string), MoneyWithCurrencyCode price = default(MoneyWithCurrencyCode), decimal? quantity = default(decimal?), string description = default(string))
         {
-            // to ensure "quantity" is required (not null)
-            if (quantity == null)
-            {
-                throw new InvalidDataException("quantity is a required property for ItemData and cannot be null");
-            }
-            else
-            {
-                this.Quantity = quantity;
-            }
+            this.Quantity = quantity;
             this.Name = name;
             this.Sku = sku;
             this.Price = price;

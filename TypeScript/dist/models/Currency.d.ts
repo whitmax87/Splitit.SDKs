@@ -9,30 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ReferenceEntityBase } from './';
 /**
  *
  * @export
  * @interface Currency
  */
-export interface Currency {
-    /**
-     *
-     * @type {number}
-     * @memberof Currency
-     */
-    id: number;
-    /**
-     *
-     * @type {string}
-     * @memberof Currency
-     */
-    code?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof Currency
-     */
-    description?: string;
+export interface Currency extends ReferenceEntityBase {
     /**
      *
      * @type {string}

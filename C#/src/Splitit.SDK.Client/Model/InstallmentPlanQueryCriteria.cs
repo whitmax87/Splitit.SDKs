@@ -64,69 +64,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="dateInfo">dateInfo.</param>
         public InstallmentPlanQueryCriteria(long? merchantId = default(long?), long? currencyId = default(long?), long? installmentPlanId = default(long?), string installmentPlanNumber = default(string), string refOrderNumber = default(string), decimal? installmentPlanAmount = default(decimal?), string cardNumber = default(string), string consumerName = default(string), string consumerEmail = default(string), string cardHolder = default(string), long? pisMemberId = default(long?), string anyFilter = default(string), bool? eula = default(bool?), bool? showChargebackPlans = default(bool?), InstallmentPlanInitiatedStatuses initiatedStatuses = default(InstallmentPlanInitiatedStatuses), FraudCheckResult? fraudCheckResult = default(FraudCheckResult?), List<InstallmentPlanStatus> installmentsPlanStatuses = default(List<InstallmentPlanStatus>), List<TestModes> testModes = default(List<TestModes>), List<DelayResolution> delayResolutions = default(List<DelayResolution>), TransactionInfo transactionInformation = default(TransactionInfo), InstallmentPlanDateInfo dateInfo = default(InstallmentPlanDateInfo))
         {
-            // to ensure "merchantId" is required (not null)
-            if (merchantId == null)
-            {
-                throw new InvalidDataException("merchantId is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.MerchantId = merchantId;
-            }
-            // to ensure "currencyId" is required (not null)
-            if (currencyId == null)
-            {
-                throw new InvalidDataException("currencyId is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.CurrencyId = currencyId;
-            }
-            // to ensure "installmentPlanId" is required (not null)
-            if (installmentPlanId == null)
-            {
-                throw new InvalidDataException("installmentPlanId is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.InstallmentPlanId = installmentPlanId;
-            }
-            // to ensure "installmentPlanAmount" is required (not null)
-            if (installmentPlanAmount == null)
-            {
-                throw new InvalidDataException("installmentPlanAmount is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.InstallmentPlanAmount = installmentPlanAmount;
-            }
-            // to ensure "pisMemberId" is required (not null)
-            if (pisMemberId == null)
-            {
-                throw new InvalidDataException("pisMemberId is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.PisMemberId = pisMemberId;
-            }
-            // to ensure "eula" is required (not null)
-            if (eula == null)
-            {
-                throw new InvalidDataException("eula is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.Eula = eula;
-            }
-            // to ensure "showChargebackPlans" is required (not null)
-            if (showChargebackPlans == null)
-            {
-                throw new InvalidDataException("showChargebackPlans is a required property for InstallmentPlanQueryCriteria and cannot be null");
-            }
-            else
-            {
-                this.ShowChargebackPlans = showChargebackPlans;
-            }
+            this.MerchantId = merchantId;
+            this.CurrencyId = currencyId;
+            this.InstallmentPlanId = installmentPlanId;
+            this.InstallmentPlanAmount = installmentPlanAmount;
+            this.PisMemberId = pisMemberId;
+            this.Eula = eula;
+            this.ShowChargebackPlans = showChargebackPlans;
             this.InstallmentPlanNumber = installmentPlanNumber;
             this.RefOrderNumber = refOrderNumber;
             this.CardNumber = cardNumber;

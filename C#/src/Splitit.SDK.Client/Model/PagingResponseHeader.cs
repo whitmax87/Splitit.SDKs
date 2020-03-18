@@ -39,15 +39,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="totalNumber">totalNumber (required).</param>
         public PagingResponseHeader(long? totalNumber = default(long?))
         {
-            // to ensure "totalNumber" is required (not null)
-            if (totalNumber == null)
-            {
-                throw new InvalidDataException("totalNumber is a required property for PagingResponseHeader and cannot be null");
-            }
-            else
-            {
-                this.TotalNumber = totalNumber;
-            }
+            this.TotalNumber = totalNumber;
         }
 
         

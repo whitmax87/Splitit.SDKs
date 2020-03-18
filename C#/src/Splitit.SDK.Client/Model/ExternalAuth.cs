@@ -42,15 +42,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="transactionFullLog">transactionFullLog.</param>
         public ExternalAuth(string uniqueGatewayAuthID = default(string), DateTime? date = default(DateTime?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), string transactionFullLog = default(string))
         {
-            // to ensure "date" is required (not null)
-            if (date == null)
-            {
-                throw new InvalidDataException("date is a required property for ExternalAuth and cannot be null");
-            }
-            else
-            {
-                this.Date = date;
-            }
+            this.Date = date;
             this.UniqueGatewayAuthID = uniqueGatewayAuthID;
             this.Amount = amount;
             this.TransactionFullLog = transactionFullLog;

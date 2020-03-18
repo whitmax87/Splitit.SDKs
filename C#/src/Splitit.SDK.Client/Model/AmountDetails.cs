@@ -41,33 +41,9 @@ namespace Splitit.SDK.Client.Model
         /// <param name="shipping">shipping (required).</param>
         public AmountDetails(decimal? subTotal = default(decimal?), decimal? tax = default(decimal?), decimal? shipping = default(decimal?))
         {
-            // to ensure "subTotal" is required (not null)
-            if (subTotal == null)
-            {
-                throw new InvalidDataException("subTotal is a required property for AmountDetails and cannot be null");
-            }
-            else
-            {
-                this.SubTotal = subTotal;
-            }
-            // to ensure "tax" is required (not null)
-            if (tax == null)
-            {
-                throw new InvalidDataException("tax is a required property for AmountDetails and cannot be null");
-            }
-            else
-            {
-                this.Tax = tax;
-            }
-            // to ensure "shipping" is required (not null)
-            if (shipping == null)
-            {
-                throw new InvalidDataException("shipping is a required property for AmountDetails and cannot be null");
-            }
-            else
-            {
-                this.Shipping = shipping;
-            }
+            this.SubTotal = subTotal;
+            this.Tax = tax;
+            this.Shipping = shipping;
         }
 
         

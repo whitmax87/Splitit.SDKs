@@ -51,42 +51,10 @@ namespace Splitit.SDK.Client.Model
         /// <param name="responseHeader">responseHeader.</param>
         public CreateInstallmentPlanLegacyResponse(string apiKey = default(string), int? installmentPlanStatus = default(int?), int? result = default(int?), string paymentGateway = default(string), string email = default(string), string consumerFullName = default(string), string paramX = default(string), int? installmentNumber = default(int?), decimal? amount = default(decimal?), string currencyName = default(string), string currencySymbol = default(string), string installmentPlanNumber = default(string), ResponseHeader responseHeader = default(ResponseHeader))
         {
-            // to ensure "installmentPlanStatus" is required (not null)
-            if (installmentPlanStatus == null)
-            {
-                throw new InvalidDataException("installmentPlanStatus is a required property for CreateInstallmentPlanLegacyResponse and cannot be null");
-            }
-            else
-            {
-                this.InstallmentPlanStatus = installmentPlanStatus;
-            }
-            // to ensure "result" is required (not null)
-            if (result == null)
-            {
-                throw new InvalidDataException("result is a required property for CreateInstallmentPlanLegacyResponse and cannot be null");
-            }
-            else
-            {
-                this.Result = result;
-            }
-            // to ensure "installmentNumber" is required (not null)
-            if (installmentNumber == null)
-            {
-                throw new InvalidDataException("installmentNumber is a required property for CreateInstallmentPlanLegacyResponse and cannot be null");
-            }
-            else
-            {
-                this.InstallmentNumber = installmentNumber;
-            }
-            // to ensure "amount" is required (not null)
-            if (amount == null)
-            {
-                throw new InvalidDataException("amount is a required property for CreateInstallmentPlanLegacyResponse and cannot be null");
-            }
-            else
-            {
-                this.Amount = amount;
-            }
+            this.InstallmentPlanStatus = installmentPlanStatus;
+            this.Result = result;
+            this.InstallmentNumber = installmentNumber;
+            this.Amount = amount;
             this.ApiKey = apiKey;
             this.PaymentGateway = paymentGateway;
             this.Email = email;

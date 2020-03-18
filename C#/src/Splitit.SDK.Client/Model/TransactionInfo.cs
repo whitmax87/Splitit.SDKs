@@ -51,24 +51,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="transactionStatus">transactionStatus (required).</param>
         public TransactionInfo(string transactionId = default(string), TransactionType transactionType = default(TransactionType), TransactionStatus transactionStatus = default(TransactionStatus))
         {
-            // to ensure "transactionType" is required (not null)
-            if (transactionType == null)
-            {
-                throw new InvalidDataException("transactionType is a required property for TransactionInfo and cannot be null");
-            }
-            else
-            {
-                this.TransactionType = transactionType;
-            }
-            // to ensure "transactionStatus" is required (not null)
-            if (transactionStatus == null)
-            {
-                throw new InvalidDataException("transactionStatus is a required property for TransactionInfo and cannot be null");
-            }
-            else
-            {
-                this.TransactionStatus = transactionStatus;
-            }
+            this.TransactionType = transactionType;
+            this.TransactionStatus = transactionStatus;
             this.TransactionId = transactionId;
         }
 

@@ -41,15 +41,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="shopperApprovalDateTime">shopperApprovalDateTime.</param>
         public PlanApprovalEvidence(string customerSignaturePngAsBase64 = default(string), bool? areTermsAndConditionsApproved = default(bool?), DateTime? shopperApprovalDateTime = default(DateTime?))
         {
-            // to ensure "areTermsAndConditionsApproved" is required (not null)
-            if (areTermsAndConditionsApproved == null)
-            {
-                throw new InvalidDataException("areTermsAndConditionsApproved is a required property for PlanApprovalEvidence and cannot be null");
-            }
-            else
-            {
-                this.AreTermsAndConditionsApproved = areTermsAndConditionsApproved;
-            }
+            this.AreTermsAndConditionsApproved = areTermsAndConditionsApproved;
             this.CustomerSignaturePngAsBase64 = customerSignaturePngAsBase64;
             this.ShopperApprovalDateTime = shopperApprovalDateTime;
         }

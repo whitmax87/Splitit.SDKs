@@ -50,33 +50,9 @@ namespace Splitit.SDK.Client.Model
         /// <param name="result">result.</param>
         public Installment(int? installmentNumber = default(int?), Money amount = default(Money), Money originalAmount = default(Money), Money refundAmount = default(Money), DateTime? processDateTime = default(DateTime?), bool? isRefund = default(bool?), Money requiredCredit = default(Money), DateTime? createdDateTime = default(DateTime?), ReferenceEntityBase status = default(ReferenceEntityBase), List<TransactionResult> transactionResults = default(List<TransactionResult>), CardData cardDetails = default(CardData), bool? result = default(bool?))
         {
-            // to ensure "installmentNumber" is required (not null)
-            if (installmentNumber == null)
-            {
-                throw new InvalidDataException("installmentNumber is a required property for Installment and cannot be null");
-            }
-            else
-            {
-                this.InstallmentNumber = installmentNumber;
-            }
-            // to ensure "isRefund" is required (not null)
-            if (isRefund == null)
-            {
-                throw new InvalidDataException("isRefund is a required property for Installment and cannot be null");
-            }
-            else
-            {
-                this.IsRefund = isRefund;
-            }
-            // to ensure "createdDateTime" is required (not null)
-            if (createdDateTime == null)
-            {
-                throw new InvalidDataException("createdDateTime is a required property for Installment and cannot be null");
-            }
-            else
-            {
-                this.CreatedDateTime = createdDateTime;
-            }
+            this.InstallmentNumber = installmentNumber;
+            this.IsRefund = isRefund;
+            this.CreatedDateTime = createdDateTime;
             this.Amount = amount;
             this.OriginalAmount = originalAmount;
             this.RefundAmount = refundAmount;

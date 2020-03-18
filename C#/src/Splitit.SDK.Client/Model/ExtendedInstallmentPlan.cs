@@ -65,78 +65,14 @@ namespace Splitit.SDK.Client.Model
         /// <param name="shopperPaymentRequestTime">shopperPaymentRequestTime.</param>
         public ExtendedInstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment> installments = default(List<Installment>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), BuRef businessUnit = default(BuRef), DateTime? shopperPaymentRequestTime = default(DateTime?))
         {
-            // to ensure "numberOfInstallments" is required (not null)
-            if (numberOfInstallments == null)
-            {
-                throw new InvalidDataException("numberOfInstallments is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.NumberOfInstallments = numberOfInstallments;
-            }
-            // to ensure "numberOfProcessedInstallments" is required (not null)
-            if (numberOfProcessedInstallments == null)
-            {
-                throw new InvalidDataException("numberOfProcessedInstallments is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
-            }
-            // to ensure "isFullCaptured" is required (not null)
-            if (isFullCaptured == null)
-            {
-                throw new InvalidDataException("isFullCaptured is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.IsFullCaptured = isFullCaptured;
-            }
-            // to ensure "isChargedBack" is required (not null)
-            if (isChargedBack == null)
-            {
-                throw new InvalidDataException("isChargedBack is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.IsChargedBack = isChargedBack;
-            }
-            // to ensure "arePaymentsOnHold" is required (not null)
-            if (arePaymentsOnHold == null)
-            {
-                throw new InvalidDataException("arePaymentsOnHold is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.ArePaymentsOnHold = arePaymentsOnHold;
-            }
-            // to ensure "scpFundingPercent" is required (not null)
-            if (scpFundingPercent == null)
-            {
-                throw new InvalidDataException("scpFundingPercent is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.ScpFundingPercent = scpFundingPercent;
-            }
-            // to ensure "testMode" is required (not null)
-            if (testMode == null)
-            {
-                throw new InvalidDataException("testMode is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.TestMode = testMode;
-            }
-            // to ensure "creationDateTime" is required (not null)
-            if (creationDateTime == null)
-            {
-                throw new InvalidDataException("creationDateTime is a required property for ExtendedInstallmentPlan and cannot be null");
-            }
-            else
-            {
-                this.CreationDateTime = creationDateTime;
-            }
+            this.NumberOfInstallments = numberOfInstallments;
+            this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
+            this.IsFullCaptured = isFullCaptured;
+            this.IsChargedBack = isChargedBack;
+            this.ArePaymentsOnHold = arePaymentsOnHold;
+            this.ScpFundingPercent = scpFundingPercent;
+            this.TestMode = testMode;
+            this.CreationDateTime = creationDateTime;
             this.InstallmentPlanNumber = installmentPlanNumber;
             this.InstallmentPlanStatus = installmentPlanStatus;
             this.Amount = amount;

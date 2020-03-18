@@ -40,15 +40,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="errors">errors.</param>
         public ResponseHeader(bool? succeeded = default(bool?), List<Error> errors = default(List<Error>))
         {
-            // to ensure "succeeded" is required (not null)
-            if (succeeded == null)
-            {
-                throw new InvalidDataException("succeeded is a required property for ResponseHeader and cannot be null");
-            }
-            else
-            {
-                this.Succeeded = succeeded;
-            }
+            this.Succeeded = succeeded;
             this.Errors = errors;
         }
 

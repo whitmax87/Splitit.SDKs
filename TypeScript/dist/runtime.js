@@ -37,11 +37,10 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -203,7 +202,7 @@ var BaseAPI = /** @class */ (function () {
         var body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
-        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.3.34" });
+        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.4.0" });
         var init = {
             method: context.method,
             headers: headers,
@@ -389,7 +388,7 @@ exports.querystring = querystring;
 function mapValues(data, fn) {
     return Object.keys(data).reduce(function (acc, key) {
         var _a;
-        return (__assign(__assign({}, acc), (_a = {}, _a[key] = fn(data[key]), _a)));
+        return (__assign({}, acc, (_a = {}, _a[key] = fn(data[key]), _a)));
     }, {});
 }
 exports.mapValues = mapValues;

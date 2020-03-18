@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-10T18:07:01.900Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-18T12:53:32.515Z")
 public class PaymentWizardDataResponse   {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;

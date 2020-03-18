@@ -41,15 +41,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="originalAmountPaid">originalAmountPaid.</param>
         public VerifyPaymentResponse(ResponseHeader responseHeader = default(ResponseHeader), bool? isPaid = default(bool?), decimal? originalAmountPaid = default(decimal?))
         {
-            // to ensure "isPaid" is required (not null)
-            if (isPaid == null)
-            {
-                throw new InvalidDataException("isPaid is a required property for VerifyPaymentResponse and cannot be null");
-            }
-            else
-            {
-                this.IsPaid = isPaid;
-            }
+            this.IsPaid = isPaid;
             this.ResponseHeader = responseHeader;
             this.OriginalAmountPaid = originalAmountPaid;
         }

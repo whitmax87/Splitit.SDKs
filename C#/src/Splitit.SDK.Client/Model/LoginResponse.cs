@@ -42,15 +42,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="responseStatus">responseStatus.</param>
         public LoginResponse(ResponseHeader responseHeader = default(ResponseHeader), string sessionId = default(string), int? result = default(int?), ResponseStatus responseStatus = default(ResponseStatus))
         {
-            // to ensure "result" is required (not null)
-            if (result == null)
-            {
-                throw new InvalidDataException("result is a required property for LoginResponse and cannot be null");
-            }
-            else
-            {
-                this.Result = result;
-            }
+            this.Result = result;
             this.ResponseHeader = responseHeader;
             this.SessionId = sessionId;
             this.ResponseStatus = responseStatus;

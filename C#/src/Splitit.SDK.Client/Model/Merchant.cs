@@ -90,78 +90,14 @@ namespace Splitit.SDK.Client.Model
         /// <param name="financialContact">financialContact.</param>
         public Merchant(long? id = default(long?), string name = default(string), string address = default(string), string splititMerchantId = default(string), string crmId = default(string), string businessLegalName = default(string), string businessDBAName = default(string), long? businessUnitId = default(long?), int? onBoardingStatus = default(int?), MerchantVertical vertical = default(MerchantVertical), string email = default(string), string websiteUrl = default(string), byte[] logoImageFileContent = default(byte[]), string logoImageFileExt = default(string), string logoImageUrl = default(string), DateTime? createdDateTime = default(DateTime?), List<Currency> transactionCurrencies = default(List<Currency>), List<Currency> accountCurrencies = default(List<Currency>), bool? accountCurrencyIsTransactionCurrencies = default(bool?), AddressData billingAddress = default(AddressData), string vatTaxId = default(string), string registeredCountryOfBusinessId = default(string), string registeredCountryOfBusinessCode = default(string), string registeredStateOfBusinessId = default(string), string registeredStateOfBusinessCode = default(string), string merchantCountryId = default(string), string merchantCountryCode = default(string), string merchantStateId = default(string), string merchantStateCode = default(string), BankDetails bankDetails = default(BankDetails), SalesAssociate salesAssociate = default(SalesAssociate), Agent partner = default(Agent), SplititEntity splititCurrentEntity = default(SplititEntity), SplititEntity splititSigningEntity = default(SplititEntity), ContactPerson businessContact = default(ContactPerson), ContactPerson technicalContact = default(ContactPerson), ContactPerson financialContact = default(ContactPerson))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new InvalidDataException("id is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.Id = id;
-            }
-            // to ensure "businessUnitId" is required (not null)
-            if (businessUnitId == null)
-            {
-                throw new InvalidDataException("businessUnitId is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.BusinessUnitId = businessUnitId;
-            }
-            // to ensure "onBoardingStatus" is required (not null)
-            if (onBoardingStatus == null)
-            {
-                throw new InvalidDataException("onBoardingStatus is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.OnBoardingStatus = onBoardingStatus;
-            }
-            // to ensure "vertical" is required (not null)
-            if (vertical == null)
-            {
-                throw new InvalidDataException("vertical is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.Vertical = vertical;
-            }
-            // to ensure "createdDateTime" is required (not null)
-            if (createdDateTime == null)
-            {
-                throw new InvalidDataException("createdDateTime is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.CreatedDateTime = createdDateTime;
-            }
-            // to ensure "accountCurrencyIsTransactionCurrencies" is required (not null)
-            if (accountCurrencyIsTransactionCurrencies == null)
-            {
-                throw new InvalidDataException("accountCurrencyIsTransactionCurrencies is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.AccountCurrencyIsTransactionCurrencies = accountCurrencyIsTransactionCurrencies;
-            }
-            // to ensure "splititCurrentEntity" is required (not null)
-            if (splititCurrentEntity == null)
-            {
-                throw new InvalidDataException("splititCurrentEntity is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.SplititCurrentEntity = splititCurrentEntity;
-            }
-            // to ensure "splititSigningEntity" is required (not null)
-            if (splititSigningEntity == null)
-            {
-                throw new InvalidDataException("splititSigningEntity is a required property for Merchant and cannot be null");
-            }
-            else
-            {
-                this.SplititSigningEntity = splititSigningEntity;
-            }
+            this.Id = id;
+            this.BusinessUnitId = businessUnitId;
+            this.OnBoardingStatus = onBoardingStatus;
+            this.Vertical = vertical;
+            this.CreatedDateTime = createdDateTime;
+            this.AccountCurrencyIsTransactionCurrencies = accountCurrencyIsTransactionCurrencies;
+            this.SplititCurrentEntity = splititCurrentEntity;
+            this.SplititSigningEntity = splititSigningEntity;
             this.Name = name;
             this.Address = address;
             this.SplititMerchantId = splititMerchantId;

@@ -39,15 +39,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="showInitiatedPlansPaymentRequestSent">showInitiatedPlansPaymentRequestSent (required).</param>
         public InstallmentPlanInitiatedStatuses(bool? showInitiatedPlansPaymentRequestSent = default(bool?))
         {
-            // to ensure "showInitiatedPlansPaymentRequestSent" is required (not null)
-            if (showInitiatedPlansPaymentRequestSent == null)
-            {
-                throw new InvalidDataException("showInitiatedPlansPaymentRequestSent is a required property for InstallmentPlanInitiatedStatuses and cannot be null");
-            }
-            else
-            {
-                this.ShowInitiatedPlansPaymentRequestSent = showInitiatedPlansPaymentRequestSent;
-            }
+            this.ShowInitiatedPlansPaymentRequestSent = showInitiatedPlansPaymentRequestSent;
         }
 
         

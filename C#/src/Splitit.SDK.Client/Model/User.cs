@@ -47,24 +47,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isDataRestricted">isDataRestricted (required).</param>
         public User(string id = default(string), string userName = default(string), string fullName = default(string), string email = default(string), string phoneNumber = default(string), string cultureName = default(string), string roleName = default(string), bool? isLocked = default(bool?), bool? isDataRestricted = default(bool?))
         {
-            // to ensure "isLocked" is required (not null)
-            if (isLocked == null)
-            {
-                throw new InvalidDataException("isLocked is a required property for User and cannot be null");
-            }
-            else
-            {
-                this.IsLocked = isLocked;
-            }
-            // to ensure "isDataRestricted" is required (not null)
-            if (isDataRestricted == null)
-            {
-                throw new InvalidDataException("isDataRestricted is a required property for User and cannot be null");
-            }
-            else
-            {
-                this.IsDataRestricted = isDataRestricted;
-            }
+            this.IsLocked = isLocked;
+            this.IsDataRestricted = isDataRestricted;
             this.Id = id;
             this.UserName = userName;
             this.FullName = fullName;

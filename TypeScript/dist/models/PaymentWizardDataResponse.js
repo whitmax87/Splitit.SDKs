@@ -12,6 +12,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
 var _1 = require("./");
@@ -23,27 +34,7 @@ function PaymentWizardDataResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
-    return {
-        'requestedNumberOfInstallments': !runtime_1.exists(json, 'RequestedNumberOfInstallments') ? undefined : json['RequestedNumberOfInstallments'],
-        'successExitURL': !runtime_1.exists(json, 'SuccessExitURL') ? undefined : json['SuccessExitURL'],
-        'errorExitURL': !runtime_1.exists(json, 'ErrorExitURL') ? undefined : json['ErrorExitURL'],
-        'cancelExitURL': !runtime_1.exists(json, 'CancelExitURL') ? undefined : json['CancelExitURL'],
-        'successAsyncUrl': !runtime_1.exists(json, 'SuccessAsyncUrl') ? undefined : json['SuccessAsyncUrl'],
-        'viewName': !runtime_1.exists(json, 'ViewName') ? undefined : json['ViewName'],
-        'isOpenedInIframe': json['IsOpenedInIframe'],
-        'paymentFormMessage': !runtime_1.exists(json, 'PaymentFormMessage') ? undefined : json['PaymentFormMessage'],
-        'showAddressElements': !runtime_1.exists(json, 'ShowAddressElements') ? undefined : json['ShowAddressElements'],
-        'currencyDisplay': !runtime_1.exists(json, 'CurrencyDisplay') ? undefined : _1.CurrencyFromJSON(json['CurrencyDisplay']),
-        'forceDisplayImportantNotes': json['ForceDisplayImportantNotes'],
-        'showShopperDetailsExpendedOnStart': json['ShowShopperDetailsExpendedOnStart'],
-        'showPaymentScheduleRequiredCredit': json['ShowPaymentScheduleRequiredCredit'],
-        'isShopperEmailMandatory': json['IsShopperEmailMandatory'],
-        'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'],
-        'numberOfInstallmentsSelectionsOption': !runtime_1.exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
-        'addressIsReadonly': json['AddressIsReadonly'],
-        'logoURL': !runtime_1.exists(json, 'LogoURL') ? undefined : json['LogoURL'],
-        'paymentFormMessages': !runtime_1.exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
-    };
+    return __assign({}, _1.PaymentWizardDataFromJSONTyped(json, ignoreDiscriminator), { 'showAddressElements': !runtime_1.exists(json, 'ShowAddressElements') ? undefined : json['ShowAddressElements'], 'currencyDisplay': !runtime_1.exists(json, 'CurrencyDisplay') ? undefined : _1.CurrencyFromJSON(json['CurrencyDisplay']), 'forceDisplayImportantNotes': json['ForceDisplayImportantNotes'], 'showShopperDetailsExpendedOnStart': json['ShowShopperDetailsExpendedOnStart'], 'showPaymentScheduleRequiredCredit': json['ShowPaymentScheduleRequiredCredit'], 'isShopperEmailMandatory': json['IsShopperEmailMandatory'], 'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'], 'numberOfInstallmentsSelectionsOption': !runtime_1.exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'], 'addressIsReadonly': json['AddressIsReadonly'], 'logoURL': !runtime_1.exists(json, 'LogoURL') ? undefined : json['LogoURL'], 'paymentFormMessages': !runtime_1.exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'] });
 }
 exports.PaymentWizardDataResponseFromJSONTyped = PaymentWizardDataResponseFromJSONTyped;
 function PaymentWizardDataResponseToJSON(value) {
@@ -53,26 +44,6 @@ function PaymentWizardDataResponseToJSON(value) {
     if (value === null) {
         return null;
     }
-    return {
-        'RequestedNumberOfInstallments': value.requestedNumberOfInstallments,
-        'SuccessExitURL': value.successExitURL,
-        'ErrorExitURL': value.errorExitURL,
-        'CancelExitURL': value.cancelExitURL,
-        'SuccessAsyncUrl': value.successAsyncUrl,
-        'ViewName': value.viewName,
-        'IsOpenedInIframe': value.isOpenedInIframe,
-        'PaymentFormMessage': value.paymentFormMessage,
-        'ShowAddressElements': value.showAddressElements,
-        'CurrencyDisplay': _1.CurrencyToJSON(value.currencyDisplay),
-        'ForceDisplayImportantNotes': value.forceDisplayImportantNotes,
-        'ShowShopperDetailsExpendedOnStart': value.showShopperDetailsExpendedOnStart,
-        'ShowPaymentScheduleRequiredCredit': value.showPaymentScheduleRequiredCredit,
-        'IsShopperEmailMandatory': value.isShopperEmailMandatory,
-        'IsShopperPhoneMandatory': value.isShopperPhoneMandatory,
-        'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
-        'AddressIsReadonly': value.addressIsReadonly,
-        'LogoURL': value.logoURL,
-        'PaymentFormMessages': value.paymentFormMessages,
-    };
+    return __assign({}, _1.PaymentWizardDataToJSON(value), { 'ShowAddressElements': value.showAddressElements, 'CurrencyDisplay': _1.CurrencyToJSON(value.currencyDisplay), 'ForceDisplayImportantNotes': value.forceDisplayImportantNotes, 'ShowShopperDetailsExpendedOnStart': value.showShopperDetailsExpendedOnStart, 'ShowPaymentScheduleRequiredCredit': value.showPaymentScheduleRequiredCredit, 'IsShopperEmailMandatory': value.isShopperEmailMandatory, 'IsShopperPhoneMandatory': value.isShopperPhoneMandatory, 'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption, 'AddressIsReadonly': value.addressIsReadonly, 'LogoURL': value.logoURL, 'PaymentFormMessages': value.paymentFormMessages });
 }
 exports.PaymentWizardDataResponseToJSON = PaymentWizardDataResponseToJSON;

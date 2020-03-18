@@ -50,24 +50,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="secureAuthorizations">secureAuthorizations (required).</param>
         public RelationsLoad(InstallmentPlanActivityStatus installments = default(InstallmentPlanActivityStatus), InstallmentPlanActivityStatus secureAuthorizations = default(InstallmentPlanActivityStatus))
         {
-            // to ensure "installments" is required (not null)
-            if (installments == null)
-            {
-                throw new InvalidDataException("installments is a required property for RelationsLoad and cannot be null");
-            }
-            else
-            {
-                this.Installments = installments;
-            }
-            // to ensure "secureAuthorizations" is required (not null)
-            if (secureAuthorizations == null)
-            {
-                throw new InvalidDataException("secureAuthorizations is a required property for RelationsLoad and cannot be null");
-            }
-            else
-            {
-                this.SecureAuthorizations = secureAuthorizations;
-            }
+            this.Installments = installments;
+            this.SecureAuthorizations = secureAuthorizations;
         }
 
         

@@ -41,15 +41,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="description">description.</param>
         public ReferenceEntityBase(long? id = default(long?), string code = default(string), string description = default(string))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
-            {
-                throw new InvalidDataException("id is a required property for ReferenceEntityBase and cannot be null");
-            }
-            else
-            {
-                this.Id = id;
-            }
+            this.Id = id;
             this.Code = code;
             this.Description = description;
         }

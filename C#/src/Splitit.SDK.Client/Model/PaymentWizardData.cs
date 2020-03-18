@@ -46,15 +46,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="paymentFormMessage">paymentFormMessage.</param>
         public PaymentWizardData(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string))
         {
-            // to ensure "isOpenedInIframe" is required (not null)
-            if (isOpenedInIframe == null)
-            {
-                throw new InvalidDataException("isOpenedInIframe is a required property for PaymentWizardData and cannot be null");
-            }
-            else
-            {
-                this.IsOpenedInIframe = isOpenedInIframe;
-            }
+            this.IsOpenedInIframe = isOpenedInIframe;
             this.RequestedNumberOfInstallments = requestedNumberOfInstallments;
             this.SuccessExitURL = successExitURL;
             this.ErrorExitURL = errorExitURL;

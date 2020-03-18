@@ -47,24 +47,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="allDates">allDates (required).</param>
         public InstallmentPlanDateInfo(InstallmentsPlanDateType installmentsPlanDateType = default(InstallmentsPlanDateType), string startDate = default(string), string endDate = default(string), bool? allDates = default(bool?))
         {
-            // to ensure "installmentsPlanDateType" is required (not null)
-            if (installmentsPlanDateType == null)
-            {
-                throw new InvalidDataException("installmentsPlanDateType is a required property for InstallmentPlanDateInfo and cannot be null");
-            }
-            else
-            {
-                this.InstallmentsPlanDateType = installmentsPlanDateType;
-            }
-            // to ensure "allDates" is required (not null)
-            if (allDates == null)
-            {
-                throw new InvalidDataException("allDates is a required property for InstallmentPlanDateInfo and cannot be null");
-            }
-            else
-            {
-                this.AllDates = allDates;
-            }
+            this.InstallmentsPlanDateType = installmentsPlanDateType;
+            this.AllDates = allDates;
             this.StartDate = startDate;
             this.EndDate = endDate;
         }
