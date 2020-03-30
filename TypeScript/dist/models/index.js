@@ -16,6 +16,7 @@ __export(require("./BusinessUnitRef"));
 __export(require("./CancelInstallmentPlanRequest"));
 __export(require("./CardData"));
 __export(require("./CartData"));
+__export(require("./ChargebackRequest"));
 __export(require("./ConsumerData"));
 __export(require("./ContactPerson"));
 __export(require("./ContactPersonType"));

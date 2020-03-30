@@ -33,6 +33,7 @@ var MerchantVertical;
     MerchantVertical["Speciality"] = "Speciality";
     MerchantVertical["MedicalHealth"] = "MedicalHealth";
     MerchantVertical["SportingGoods"] = "SportingGoods";
+    MerchantVertical["HousewareHomefurnishings"] = "Houseware_Homefurnishings";
 })(MerchantVertical = exports.MerchantVertical || (exports.MerchantVertical = {}));
 function MerchantVerticalFromJSON(json) {
     return MerchantVerticalFromJSONTyped(json, false);

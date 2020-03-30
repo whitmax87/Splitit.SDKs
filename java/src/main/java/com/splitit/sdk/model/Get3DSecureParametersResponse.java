@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Get3DSecureParametersResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-18T12:53:32.515Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-30T13:13:50.751Z")
 public class Get3DSecureParametersResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;

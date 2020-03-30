@@ -30,5 +30,7 @@
 
 * `SPORTINGGOODS` (value: `"SportingGoods"`)
 
+* `HOUSEWARE_HOMEFURNISHINGS` (value: `"Houseware_Homefurnishings"`)
+
 
 

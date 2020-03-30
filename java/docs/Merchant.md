@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **businessDBAName** | **String** |  |  [optional]
 **businessUnitId** | **Long** |  | 
 **onBoardingStatus** | **Integer** |  | 
+**declaredAnnualVolumeUSD** | [**BigDecimal**](BigDecimal.md) |  | 
+**declaredAOVUSD** | [**BigDecimal**](BigDecimal.md) |  | 
 **vertical** | [**MerchantVertical**](MerchantVertical.md) |  | 
 **email** | **String** |  |  [optional]
 **websiteUrl** | **String** |  |  [optional]

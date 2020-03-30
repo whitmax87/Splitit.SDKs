@@ -21,6 +21,9 @@ import {
     CancelInstallmentPlanRequest,
     CancelInstallmentPlanRequestFromJSON,
     CancelInstallmentPlanRequestToJSON,
+    ChargebackRequest,
+    ChargebackRequestFromJSON,
+    ChargebackRequestToJSON,
     CreateInstallmentPlanRequest,
     CreateInstallmentPlanRequestFromJSON,
     CreateInstallmentPlanRequestToJSON,
@@ -92,6 +95,10 @@ export interface InstallmentPlanApproveRequest {
 
 export interface InstallmentPlanCancelRequest {
     request: CancelInstallmentPlanRequest;
+}
+
+export interface InstallmentPlanChargeBackRequest {
+    request: ChargebackRequest;
 }
 
 export interface InstallmentPlanCreateRequest {
@@ -202,6 +209,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanCancel(requestParameters: InstallmentPlanCancelRequest): Promise<InstallmentPlanResponse> {
         const response = await this.installmentPlanCancelRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanChargeBackRaw(requestParameters: InstallmentPlanChargeBackRequest): Promise<runtime.ApiResponse<InstallmentPlanResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanChargeBack.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/ChargeBack`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ChargebackRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InstallmentPlanResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanChargeBack(requestParameters: InstallmentPlanChargeBackRequest): Promise<InstallmentPlanResponse> {
+        const response = await this.installmentPlanChargeBackRaw(requestParameters);
         return await response.value();
     }
 

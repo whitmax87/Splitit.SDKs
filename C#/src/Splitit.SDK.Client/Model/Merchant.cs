@@ -60,6 +60,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="businessDBAName">businessDBAName.</param>
         /// <param name="businessUnitId">businessUnitId (required).</param>
         /// <param name="onBoardingStatus">onBoardingStatus (required).</param>
+        /// <param name="declaredAnnualVolumeUSD">declaredAnnualVolumeUSD (required).</param>
+        /// <param name="declaredAOVUSD">declaredAOVUSD (required).</param>
         /// <param name="vertical">vertical (required).</param>
         /// <param name="email">email.</param>
         /// <param name="websiteUrl">websiteUrl.</param>
@@ -88,11 +90,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="businessContact">businessContact.</param>
         /// <param name="technicalContact">technicalContact.</param>
         /// <param name="financialContact">financialContact.</param>
-        public Merchant(long? id = default(long?), string name = default(string), string address = default(string), string splititMerchantId = default(string), string crmId = default(string), string businessLegalName = default(string), string businessDBAName = default(string), long? businessUnitId = default(long?), int? onBoardingStatus = default(int?), MerchantVertical vertical = default(MerchantVertical), string email = default(string), string websiteUrl = default(string), byte[] logoImageFileContent = default(byte[]), string logoImageFileExt = default(string), string logoImageUrl = default(string), DateTime? createdDateTime = default(DateTime?), List<Currency> transactionCurrencies = default(List<Currency>), List<Currency> accountCurrencies = default(List<Currency>), bool? accountCurrencyIsTransactionCurrencies = default(bool?), AddressData billingAddress = default(AddressData), string vatTaxId = default(string), string registeredCountryOfBusinessId = default(string), string registeredCountryOfBusinessCode = default(string), string registeredStateOfBusinessId = default(string), string registeredStateOfBusinessCode = default(string), string merchantCountryId = default(string), string merchantCountryCode = default(string), string merchantStateId = default(string), string merchantStateCode = default(string), BankDetails bankDetails = default(BankDetails), SalesAssociate salesAssociate = default(SalesAssociate), Agent partner = default(Agent), SplititEntity splititCurrentEntity = default(SplititEntity), SplititEntity splititSigningEntity = default(SplititEntity), ContactPerson businessContact = default(ContactPerson), ContactPerson technicalContact = default(ContactPerson), ContactPerson financialContact = default(ContactPerson))
+        public Merchant(long? id = default(long?), string name = default(string), string address = default(string), string splititMerchantId = default(string), string crmId = default(string), string businessLegalName = default(string), string businessDBAName = default(string), long? businessUnitId = default(long?), int? onBoardingStatus = default(int?), decimal? declaredAnnualVolumeUSD = default(decimal?), decimal? declaredAOVUSD = default(decimal?), MerchantVertical vertical = default(MerchantVertical), string email = default(string), string websiteUrl = default(string), byte[] logoImageFileContent = default(byte[]), string logoImageFileExt = default(string), string logoImageUrl = default(string), DateTime? createdDateTime = default(DateTime?), List<Currency> transactionCurrencies = default(List<Currency>), List<Currency> accountCurrencies = default(List<Currency>), bool? accountCurrencyIsTransactionCurrencies = default(bool?), AddressData billingAddress = default(AddressData), string vatTaxId = default(string), string registeredCountryOfBusinessId = default(string), string registeredCountryOfBusinessCode = default(string), string registeredStateOfBusinessId = default(string), string registeredStateOfBusinessCode = default(string), string merchantCountryId = default(string), string merchantCountryCode = default(string), string merchantStateId = default(string), string merchantStateCode = default(string), BankDetails bankDetails = default(BankDetails), SalesAssociate salesAssociate = default(SalesAssociate), Agent partner = default(Agent), SplititEntity splititCurrentEntity = default(SplititEntity), SplititEntity splititSigningEntity = default(SplititEntity), ContactPerson businessContact = default(ContactPerson), ContactPerson technicalContact = default(ContactPerson), ContactPerson financialContact = default(ContactPerson))
         {
             this.Id = id;
             this.BusinessUnitId = businessUnitId;
             this.OnBoardingStatus = onBoardingStatus;
+            this.DeclaredAnnualVolumeUSD = declaredAnnualVolumeUSD;
+            this.DeclaredAOVUSD = declaredAOVUSD;
             this.Vertical = vertical;
             this.CreatedDateTime = createdDateTime;
             this.AccountCurrencyIsTransactionCurrencies = accountCurrencyIsTransactionCurrencies;
@@ -183,6 +187,18 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="OnBoardingStatus", EmitDefaultValue=false)]
         public int? OnBoardingStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeclaredAnnualVolumeUSD
+        /// </summary>
+        [DataMember(Name="DeclaredAnnualVolumeUSD", EmitDefaultValue=false)]
+        public decimal? DeclaredAnnualVolumeUSD { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeclaredAOVUSD
+        /// </summary>
+        [DataMember(Name="DeclaredAOVUSD", EmitDefaultValue=false)]
+        public decimal? DeclaredAOVUSD { get; set; }
 
 
         /// <summary>
@@ -354,6 +370,8 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  BusinessDBAName: ").Append(BusinessDBAName).Append("\n");
             sb.Append("  BusinessUnitId: ").Append(BusinessUnitId).Append("\n");
             sb.Append("  OnBoardingStatus: ").Append(OnBoardingStatus).Append("\n");
+            sb.Append("  DeclaredAnnualVolumeUSD: ").Append(DeclaredAnnualVolumeUSD).Append("\n");
+            sb.Append("  DeclaredAOVUSD: ").Append(DeclaredAOVUSD).Append("\n");
             sb.Append("  Vertical: ").Append(Vertical).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  WebsiteUrl: ").Append(WebsiteUrl).Append("\n");
@@ -460,6 +478,16 @@ namespace Splitit.SDK.Client.Model
                     this.OnBoardingStatus == input.OnBoardingStatus ||
                     (this.OnBoardingStatus != null &&
                     this.OnBoardingStatus.Equals(input.OnBoardingStatus))
+                ) && 
+                (
+                    this.DeclaredAnnualVolumeUSD == input.DeclaredAnnualVolumeUSD ||
+                    (this.DeclaredAnnualVolumeUSD != null &&
+                    this.DeclaredAnnualVolumeUSD.Equals(input.DeclaredAnnualVolumeUSD))
+                ) && 
+                (
+                    this.DeclaredAOVUSD == input.DeclaredAOVUSD ||
+                    (this.DeclaredAOVUSD != null &&
+                    this.DeclaredAOVUSD.Equals(input.DeclaredAOVUSD))
                 ) && 
                 (
                     this.Vertical == input.Vertical ||
@@ -630,6 +658,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.BusinessUnitId.GetHashCode();
                 if (this.OnBoardingStatus != null)
                     hashCode = hashCode * 59 + this.OnBoardingStatus.GetHashCode();
+                if (this.DeclaredAnnualVolumeUSD != null)
+                    hashCode = hashCode * 59 + this.DeclaredAnnualVolumeUSD.GetHashCode();
+                if (this.DeclaredAOVUSD != null)
+                    hashCode = hashCode * 59 + this.DeclaredAOVUSD.GetHashCode();
                 if (this.Vertical != null)
                     hashCode = hashCode * 59 + this.Vertical.GetHashCode();
                 if (this.Email != null)

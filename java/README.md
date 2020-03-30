@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-03-18T12:53:32.515Z
-- SDK Version: 1.4.0
+  - Build date: 2020-03-30T13:13:50.751Z
+- SDK Version: 1.4.1
 
 ## Requirements
 
@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *InfrastructureApi* | [**infrastructureGetResources**](docs/InfrastructureApi.md#infrastructureGetResources) | **POST** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/InstallmentPlanApi.md#installmentPlanApprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
+*InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
@@ -141,6 +142,7 @@ Class | Method | HTTP request | Description
  - [CancelInstallmentPlanRequest](docs/CancelInstallmentPlanRequest.md)
  - [CardData](docs/CardData.md)
  - [CartData](docs/CartData.md)
+ - [ChargebackRequest](docs/ChargebackRequest.md)
  - [ContactPerson](docs/ContactPerson.md)
  - [ContactPersonType](docs/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/CreateInstallmentPlanLegacyResponse.md)

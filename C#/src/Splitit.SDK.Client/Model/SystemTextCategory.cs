@@ -155,7 +155,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum FlexFields for value: FlexFields
         /// </summary>
         [EnumMember(Value = "FlexFields")]
-        FlexFields = 21
+        FlexFields = 21,
+        
+        /// <summary>
+        /// Enum MessagingSystem for value: MessagingSystem
+        /// </summary>
+        [EnumMember(Value = "MessagingSystem")]
+        MessagingSystem = 22
     }
 
 }

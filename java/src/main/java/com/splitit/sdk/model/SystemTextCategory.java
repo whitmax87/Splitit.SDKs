@@ -70,7 +70,9 @@ public enum SystemTextCategory {
   
   POS("POS"),
   
-  FLEXFIELDS("FlexFields");
+  FLEXFIELDS("FlexFields"),
+  
+  MESSAGINGSYSTEM("MessagingSystem");
 
   private String value;
 

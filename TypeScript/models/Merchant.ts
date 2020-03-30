@@ -110,6 +110,18 @@ export interface Merchant {
     onBoardingStatus: number;
     /**
      * 
+     * @type {number}
+     * @memberof Merchant
+     */
+    declaredAnnualVolumeUSD: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Merchant
+     */
+    declaredAOVUSD: number;
+    /**
+     * 
      * @type {MerchantVertical}
      * @memberof Merchant
      */
@@ -297,6 +309,8 @@ export function MerchantFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
         'businessDBAName': !exists(json, 'BusinessDBAName') ? undefined : json['BusinessDBAName'],
         'businessUnitId': json['BusinessUnitId'],
         'onBoardingStatus': json['OnBoardingStatus'],
+        'declaredAnnualVolumeUSD': json['DeclaredAnnualVolumeUSD'],
+        'declaredAOVUSD': json['DeclaredAOVUSD'],
         'vertical': MerchantVerticalFromJSON(json['Vertical']),
         'email': !exists(json, 'Email') ? undefined : json['Email'],
         'websiteUrl': !exists(json, 'WebsiteUrl') ? undefined : json['WebsiteUrl'],
@@ -346,6 +360,8 @@ export function MerchantToJSON(value?: Merchant | null): any {
         'BusinessDBAName': value.businessDBAName,
         'BusinessUnitId': value.businessUnitId,
         'OnBoardingStatus': value.onBoardingStatus,
+        'DeclaredAnnualVolumeUSD': value.declaredAnnualVolumeUSD,
+        'DeclaredAOVUSD': value.declaredAOVUSD,
         'Vertical': MerchantVerticalToJSON(value.vertical),
         'Email': value.email,
         'WebsiteUrl': value.websiteUrl,

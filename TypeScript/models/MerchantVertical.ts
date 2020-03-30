@@ -30,7 +30,8 @@ export enum MerchantVertical {
     HardwareHomeImprovement = 'HardwareHomeImprovement',
     Speciality = 'Speciality',
     MedicalHealth = 'MedicalHealth',
-    SportingGoods = 'SportingGoods'
+    SportingGoods = 'SportingGoods',
+    HousewareHomefurnishings = 'Houseware_Homefurnishings'
 }
 
 export function MerchantVerticalFromJSON(json: any): MerchantVertical {

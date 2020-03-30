@@ -54,7 +54,9 @@ public enum MerchantVertical {
   
   MEDICALHEALTH("MedicalHealth"),
   
-  SPORTINGGOODS("SportingGoods");
+  SPORTINGGOODS("SportingGoods"),
+  
+  HOUSEWARE_HOMEFURNISHINGS("Houseware_Homefurnishings");
 
   private String value;
 

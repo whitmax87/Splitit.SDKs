@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InstallmentPlanApprove**](InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 [**InstallmentPlanCancel**](InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
+[**InstallmentPlanChargeBack**](InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**InstallmentPlanCreate**](InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
 [**InstallmentPlanGet**](InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 [**InstallmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
@@ -135,6 +136,72 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**CancelInstallmentPlanRequest**](CancelInstallmentPlanRequest.md)|  | 
+
+### Return type
+
+[**InstallmentPlanResponse**](InstallmentPlanResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplanchargeback"></a>
+# **InstallmentPlanChargeBack**
+> InstallmentPlanResponse InstallmentPlanChargeBack (ChargebackRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanChargeBackExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new ChargebackRequest(); // ChargebackRequest | 
+
+            try
+            {
+                InstallmentPlanResponse result = apiInstance.InstallmentPlanChargeBack(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanChargeBack: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**ChargebackRequest**](ChargebackRequest.md)|  | 
 
 ### Return type
 

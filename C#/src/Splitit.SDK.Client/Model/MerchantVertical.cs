@@ -107,7 +107,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum SportingGoods for value: SportingGoods
         /// </summary>
         [EnumMember(Value = "SportingGoods")]
-        SportingGoods = 13
+        SportingGoods = 13,
+        
+        /// <summary>
+        /// Enum HousewareHomefurnishings for value: Houseware_Homefurnishings
+        /// </summary>
+        [EnumMember(Value = "Houseware_Homefurnishings")]
+        HousewareHomefurnishings = 14
     }
 
 }

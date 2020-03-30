@@ -41,6 +41,7 @@ var SystemTextCategory;
     SystemTextCategory["SMSContent"] = "SMSContent";
     SystemTextCategory["POS"] = "POS";
     SystemTextCategory["FlexFields"] = "FlexFields";
+    SystemTextCategory["MessagingSystem"] = "MessagingSystem";
 })(SystemTextCategory = exports.SystemTextCategory || (exports.SystemTextCategory = {}));
 function SystemTextCategoryFromJSON(json) {
     return SystemTextCategoryFromJSONTyped(json, false);

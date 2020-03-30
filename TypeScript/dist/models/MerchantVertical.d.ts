@@ -27,7 +27,8 @@ export declare enum MerchantVertical {
     HardwareHomeImprovement = "HardwareHomeImprovement",
     Speciality = "Speciality",
     MedicalHealth = "MedicalHealth",
-    SportingGoods = "SportingGoods"
+    SportingGoods = "SportingGoods",
+    HousewareHomefurnishings = "Houseware_Homefurnishings"
 }
 export declare function MerchantVerticalFromJSON(json: any): MerchantVertical;
 export declare function MerchantVerticalFromJSONTyped(json: any, ignoreDiscriminator: boolean): MerchantVertical;

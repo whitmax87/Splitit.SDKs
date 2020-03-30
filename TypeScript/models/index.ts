@@ -11,6 +11,7 @@ export * from './BusinessUnitRef';
 export * from './CancelInstallmentPlanRequest';
 export * from './CardData';
 export * from './CartData';
+export * from './ChargebackRequest';
 export * from './ConsumerData';
 export * from './ContactPerson';
 export * from './ContactPersonType';

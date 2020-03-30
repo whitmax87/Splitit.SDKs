@@ -46,5 +46,7 @@
 
 * `FLEXFIELDS` (value: `"FlexFields"`)
 
+* `MESSAGINGSYSTEM` (value: `"MessagingSystem"`)
+
 
 

@@ -72,6 +72,18 @@ export interface Merchant {
     onBoardingStatus: number;
     /**
      *
+     * @type {number}
+     * @memberof Merchant
+     */
+    declaredAnnualVolumeUSD: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Merchant
+     */
+    declaredAOVUSD: number;
+    /**
+     *
      * @type {MerchantVertical}
      * @memberof Merchant
      */

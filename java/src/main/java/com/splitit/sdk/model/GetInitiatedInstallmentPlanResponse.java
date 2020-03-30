@@ -35,7 +35,7 @@ import java.io.IOException;
 /**
  * GetInitiatedInstallmentPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-18T12:53:32.515Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-30T13:13:50.751Z")
 public class GetInitiatedInstallmentPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;

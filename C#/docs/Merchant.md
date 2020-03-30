@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **BusinessDBAName** | **string** |  | [optional] 
 **BusinessUnitId** | **long?** |  | 
 **OnBoardingStatus** | **int?** |  | 
+**DeclaredAnnualVolumeUSD** | **decimal?** |  | 
+**DeclaredAOVUSD** | **decimal?** |  | 
 **Vertical** | **MerchantVertical** |  | 
 **Email** | **string** |  | [optional] 
 **WebsiteUrl** | **string** |  | [optional] 

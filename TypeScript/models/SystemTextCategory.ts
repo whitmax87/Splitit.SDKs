@@ -38,7 +38,8 @@ export enum SystemTextCategory {
     ShopperSplititAccount = 'ShopperSplititAccount',
     SMSContent = 'SMSContent',
     POS = 'POS',
-    FlexFields = 'FlexFields'
+    FlexFields = 'FlexFields',
+    MessagingSystem = 'MessagingSystem'
 }
 
 export function SystemTextCategoryFromJSON(json: any): SystemTextCategory {

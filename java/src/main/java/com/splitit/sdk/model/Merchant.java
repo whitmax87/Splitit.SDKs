@@ -31,6 +31,7 @@ import com.splitit.sdk.model.SplititEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.threeten.bp.OffsetDateTime;
@@ -38,7 +39,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Merchant
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-18T12:53:32.515Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-30T13:13:50.751Z")
 public class Merchant   {
   @SerializedName("Id")
   private Long id = null;
@@ -66,6 +67,12 @@ public class Merchant   {
 
   @SerializedName("OnBoardingStatus")
   private Integer onBoardingStatus = null;
+
+  @SerializedName("DeclaredAnnualVolumeUSD")
+  private BigDecimal declaredAnnualVolumeUSD = null;
+
+  @SerializedName("DeclaredAOVUSD")
+  private BigDecimal declaredAOVUSD = null;
 
   @SerializedName("Vertical")
   private MerchantVertical vertical = null;
@@ -311,6 +318,42 @@ public class Merchant   {
 
   public void setOnBoardingStatus(Integer onBoardingStatus) {
     this.onBoardingStatus = onBoardingStatus;
+  }
+
+  public Merchant declaredAnnualVolumeUSD(BigDecimal declaredAnnualVolumeUSD) {
+    this.declaredAnnualVolumeUSD = declaredAnnualVolumeUSD;
+    return this;
+  }
+
+   /**
+   * Get declaredAnnualVolumeUSD
+   * @return declaredAnnualVolumeUSD
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getDeclaredAnnualVolumeUSD() {
+    return declaredAnnualVolumeUSD;
+  }
+
+  public void setDeclaredAnnualVolumeUSD(BigDecimal declaredAnnualVolumeUSD) {
+    this.declaredAnnualVolumeUSD = declaredAnnualVolumeUSD;
+  }
+
+  public Merchant declaredAOVUSD(BigDecimal declaredAOVUSD) {
+    this.declaredAOVUSD = declaredAOVUSD;
+    return this;
+  }
+
+   /**
+   * Get declaredAOVUSD
+   * @return declaredAOVUSD
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getDeclaredAOVUSD() {
+    return declaredAOVUSD;
+  }
+
+  public void setDeclaredAOVUSD(BigDecimal declaredAOVUSD) {
+    this.declaredAOVUSD = declaredAOVUSD;
   }
 
   public Merchant vertical(MerchantVertical vertical) {
@@ -852,6 +895,8 @@ public class Merchant   {
         Objects.equals(this.businessDBAName, merchant.businessDBAName) &&
         Objects.equals(this.businessUnitId, merchant.businessUnitId) &&
         Objects.equals(this.onBoardingStatus, merchant.onBoardingStatus) &&
+        Objects.equals(this.declaredAnnualVolumeUSD, merchant.declaredAnnualVolumeUSD) &&
+        Objects.equals(this.declaredAOVUSD, merchant.declaredAOVUSD) &&
         Objects.equals(this.vertical, merchant.vertical) &&
         Objects.equals(this.email, merchant.email) &&
         Objects.equals(this.websiteUrl, merchant.websiteUrl) &&
@@ -884,7 +929,7 @@ public class Merchant   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, splititMerchantId, crmId, businessLegalName, businessDBAName, businessUnitId, onBoardingStatus, vertical, email, websiteUrl, Arrays.hashCode(logoImageFileContent), logoImageFileExt, logoImageUrl, createdDateTime, transactionCurrencies, accountCurrencies, accountCurrencyIsTransactionCurrencies, billingAddress, vatTaxId, registeredCountryOfBusinessId, registeredCountryOfBusinessCode, registeredStateOfBusinessId, registeredStateOfBusinessCode, merchantCountryId, merchantCountryCode, merchantStateId, merchantStateCode, bankDetails, salesAssociate, partner, splititCurrentEntity, splititSigningEntity, businessContact, technicalContact, financialContact);
+    return Objects.hash(id, name, address, splititMerchantId, crmId, businessLegalName, businessDBAName, businessUnitId, onBoardingStatus, declaredAnnualVolumeUSD, declaredAOVUSD, vertical, email, websiteUrl, Arrays.hashCode(logoImageFileContent), logoImageFileExt, logoImageUrl, createdDateTime, transactionCurrencies, accountCurrencies, accountCurrencyIsTransactionCurrencies, billingAddress, vatTaxId, registeredCountryOfBusinessId, registeredCountryOfBusinessCode, registeredStateOfBusinessId, registeredStateOfBusinessCode, merchantCountryId, merchantCountryCode, merchantStateId, merchantStateCode, bankDetails, salesAssociate, partner, splititCurrentEntity, splititSigningEntity, businessContact, technicalContact, financialContact);
   }
 
 
@@ -902,6 +947,8 @@ public class Merchant   {
     sb.append("    businessDBAName: ").append(toIndentedString(businessDBAName)).append("\n");
     sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
     sb.append("    onBoardingStatus: ").append(toIndentedString(onBoardingStatus)).append("\n");
+    sb.append("    declaredAnnualVolumeUSD: ").append(toIndentedString(declaredAnnualVolumeUSD)).append("\n");
+    sb.append("    declaredAOVUSD: ").append(toIndentedString(declaredAOVUSD)).append("\n");
     sb.append("    vertical: ").append(toIndentedString(vertical)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");

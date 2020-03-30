@@ -10,12 +10,15 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
 export interface InstallmentPlanCancelRequest {
     request: CancelInstallmentPlanRequest;
+}
+export interface InstallmentPlanChargeBackRequest {
+    request: ChargebackRequest;
 }
 export interface InstallmentPlanCreateRequest {
     request: CreateInstallmentPlanRequest;
@@ -66,6 +69,12 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     /**
      */
     installmentPlanCancel(requestParameters: InstallmentPlanCancelRequest): Promise<InstallmentPlanResponse>;
+    /**
+     */
+    installmentPlanChargeBackRaw(requestParameters: InstallmentPlanChargeBackRequest): Promise<runtime.ApiResponse<InstallmentPlanResponse>>;
+    /**
+     */
+    installmentPlanChargeBack(requestParameters: InstallmentPlanChargeBackRequest): Promise<InstallmentPlanResponse>;
     /**
      */
     installmentPlanCreateRaw(requestParameters: InstallmentPlanCreateRequest): Promise<runtime.ApiResponse<CreateInstallmentsPlanResponse>>;
