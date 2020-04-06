@@ -12,17 +12,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
 var _1 = require("./");
@@ -34,7 +23,11 @@ function GetInstallmentsPlanExtendedResponseFromJSONTyped(json, ignoreDiscrimina
     if ((json === undefined) || (json === null)) {
         return json;
     }
-    return __assign({}, _1.GetInstallmentsPlanResponseFromJSONTyped(json, ignoreDiscriminator), { 'plansList': !runtime_1.exists(json, 'PlansList') ? undefined : (json['PlansList'].map(_1.ExtendedInstallmentPlanFromJSON)) });
+    return {
+        'plansList': !runtime_1.exists(json, 'PlansList') ? undefined : (json['PlansList'].map(_1.ExtendedInstallmentPlanFromJSON)),
+        'responseHeader': !runtime_1.exists(json, 'ResponseHeader') ? undefined : _1.ResponseHeaderFromJSON(json['ResponseHeader']),
+        'pagingResponseHeader': !runtime_1.exists(json, 'PagingResponseHeader') ? undefined : _1.PagingResponseHeaderFromJSON(json['PagingResponseHeader']),
+    };
 }
 exports.GetInstallmentsPlanExtendedResponseFromJSONTyped = GetInstallmentsPlanExtendedResponseFromJSONTyped;
 function GetInstallmentsPlanExtendedResponseToJSON(value) {
@@ -44,6 +37,10 @@ function GetInstallmentsPlanExtendedResponseToJSON(value) {
     if (value === null) {
         return null;
     }
-    return __assign({}, _1.GetInstallmentsPlanResponseToJSON(value), { 'PlansList': value.plansList === undefined ? undefined : (value.plansList.map(_1.ExtendedInstallmentPlanToJSON)) });
+    return {
+        'PlansList': value.plansList === undefined ? undefined : (value.plansList.map(_1.ExtendedInstallmentPlanToJSON)),
+        'ResponseHeader': _1.ResponseHeaderToJSON(value.responseHeader),
+        'PagingResponseHeader': _1.PagingResponseHeaderToJSON(value.pagingResponseHeader),
+    };
 }
 exports.GetInstallmentsPlanExtendedResponseToJSON = GetInstallmentsPlanExtendedResponseToJSON;

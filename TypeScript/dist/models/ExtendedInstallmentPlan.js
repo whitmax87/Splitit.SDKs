@@ -12,17 +12,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
 var _1 = require("./");
@@ -34,7 +23,35 @@ function ExtendedInstallmentPlanFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
-    return __assign({}, _1.InstallmentPlanFromJSONTyped(json, ignoreDiscriminator), { 'businessUnit': !runtime_1.exists(json, 'BusinessUnit') ? undefined : _1.BuRefFromJSON(json['BusinessUnit']), 'shopperPaymentRequestTime': !runtime_1.exists(json, 'ShopperPaymentRequestTime') ? undefined : (new Date(json['ShopperPaymentRequestTime'])) });
+    return {
+        'installmentPlanNumber': !runtime_1.exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
+        'installmentPlanStatus': !runtime_1.exists(json, 'InstallmentPlanStatus') ? undefined : _1.ReferenceEntityBaseFromJSON(json['InstallmentPlanStatus']),
+        'amount': !runtime_1.exists(json, 'Amount') ? undefined : _1.MoneyFromJSON(json['Amount']),
+        'outstandingAmount': !runtime_1.exists(json, 'OutstandingAmount') ? undefined : _1.MoneyFromJSON(json['OutstandingAmount']),
+        'numberOfInstallments': json['NumberOfInstallments'],
+        'numberOfProcessedInstallments': json['NumberOfProcessedInstallments'],
+        'originalAmount': !runtime_1.exists(json, 'OriginalAmount') ? undefined : _1.MoneyFromJSON(json['OriginalAmount']),
+        'refundAmount': !runtime_1.exists(json, 'RefundAmount') ? undefined : _1.MoneyFromJSON(json['RefundAmount']),
+        'consumer': !runtime_1.exists(json, 'Consumer') ? undefined : _1.ConsumerDataFromJSON(json['Consumer']),
+        'activeCard': !runtime_1.exists(json, 'ActiveCard') ? undefined : _1.CardDataFromJSON(json['ActiveCard']),
+        'fraudCheck': !runtime_1.exists(json, 'FraudCheck') ? undefined : _1.FraudCheckFromJSON(json['FraudCheck']),
+        'merchant': !runtime_1.exists(json, 'Merchant') ? undefined : _1.MerchantRefFromJSON(json['Merchant']),
+        'refOrderNumber': !runtime_1.exists(json, 'RefOrderNumber') ? undefined : json['RefOrderNumber'],
+        'purchaseMethod': !runtime_1.exists(json, 'PurchaseMethod') ? undefined : _1.ReferenceEntityBaseFromJSON(json['PurchaseMethod']),
+        'strategy': !runtime_1.exists(json, 'Strategy') ? undefined : _1.ReferenceEntityBaseFromJSON(json['Strategy']),
+        'delayResolution': !runtime_1.exists(json, 'DelayResolution') ? undefined : _1.ReferenceEntityBaseFromJSON(json['DelayResolution']),
+        'extendedParams': !runtime_1.exists(json, 'ExtendedParams') ? undefined : json['ExtendedParams'],
+        'isFullCaptured': json['IsFullCaptured'],
+        'isChargedBack': json['IsChargedBack'],
+        'arePaymentsOnHold': json['ArePaymentsOnHold'],
+        'scpFundingPercent': json['ScpFundingPercent'],
+        'testMode': _1.TestModesFromJSON(json['TestMode']),
+        'creationDateTime': (new Date(json['CreationDateTime'])),
+        'installments': !runtime_1.exists(json, 'Installments') ? undefined : (json['Installments'].map(_1.InstallmentFromJSON)),
+        'secureAuthorizations': !runtime_1.exists(json, 'SecureAuthorizations') ? undefined : (json['SecureAuthorizations'].map(_1.ReAuthorizationFromJSON)),
+        'businessUnit': !runtime_1.exists(json, 'BusinessUnit') ? undefined : _1.BuRefFromJSON(json['BusinessUnit']),
+        'shopperPaymentRequestTime': !runtime_1.exists(json, 'ShopperPaymentRequestTime') ? undefined : (new Date(json['ShopperPaymentRequestTime'])),
+    };
 }
 exports.ExtendedInstallmentPlanFromJSONTyped = ExtendedInstallmentPlanFromJSONTyped;
 function ExtendedInstallmentPlanToJSON(value) {
@@ -44,6 +61,34 @@ function ExtendedInstallmentPlanToJSON(value) {
     if (value === null) {
         return null;
     }
-    return __assign({}, _1.InstallmentPlanToJSON(value), { 'BusinessUnit': _1.BuRefToJSON(value.businessUnit), 'ShopperPaymentRequestTime': value.shopperPaymentRequestTime === undefined ? undefined : (value.shopperPaymentRequestTime.toISOString()) });
+    return {
+        'InstallmentPlanNumber': value.installmentPlanNumber,
+        'InstallmentPlanStatus': _1.ReferenceEntityBaseToJSON(value.installmentPlanStatus),
+        'Amount': _1.MoneyToJSON(value.amount),
+        'OutstandingAmount': _1.MoneyToJSON(value.outstandingAmount),
+        'NumberOfInstallments': value.numberOfInstallments,
+        'NumberOfProcessedInstallments': value.numberOfProcessedInstallments,
+        'OriginalAmount': _1.MoneyToJSON(value.originalAmount),
+        'RefundAmount': _1.MoneyToJSON(value.refundAmount),
+        'Consumer': _1.ConsumerDataToJSON(value.consumer),
+        'ActiveCard': _1.CardDataToJSON(value.activeCard),
+        'FraudCheck': _1.FraudCheckToJSON(value.fraudCheck),
+        'Merchant': _1.MerchantRefToJSON(value.merchant),
+        'RefOrderNumber': value.refOrderNumber,
+        'PurchaseMethod': _1.ReferenceEntityBaseToJSON(value.purchaseMethod),
+        'Strategy': _1.ReferenceEntityBaseToJSON(value.strategy),
+        'DelayResolution': _1.ReferenceEntityBaseToJSON(value.delayResolution),
+        'ExtendedParams': value.extendedParams,
+        'IsFullCaptured': value.isFullCaptured,
+        'IsChargedBack': value.isChargedBack,
+        'ArePaymentsOnHold': value.arePaymentsOnHold,
+        'ScpFundingPercent': value.scpFundingPercent,
+        'TestMode': _1.TestModesToJSON(value.testMode),
+        'CreationDateTime': (value.creationDateTime.toISOString()),
+        'Installments': value.installments === undefined ? undefined : (value.installments.map(_1.InstallmentToJSON)),
+        'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : (value.secureAuthorizations.map(_1.ReAuthorizationToJSON)),
+        'BusinessUnit': _1.BuRefToJSON(value.businessUnit),
+        'ShopperPaymentRequestTime': value.shopperPaymentRequestTime === undefined ? undefined : (value.shopperPaymentRequestTime.toISOString()),
+    };
 }
 exports.ExtendedInstallmentPlanToJSON = ExtendedInstallmentPlanToJSON;

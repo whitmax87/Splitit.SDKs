@@ -37,7 +37,19 @@ import {
  * @export
  * @interface LoginResponse
  */
-export interface LoginResponse extends LoginResponse2 {
+export interface LoginResponse {
+    /**
+     * 
+     * @type {ResponseHeader}
+     * @memberof LoginResponse
+     */
+    responseHeader?: ResponseHeader;
+    /**
+     * 
+     * @type {string}
+     * @memberof LoginResponse
+     */
+    sessionId?: string;
     /**
      * 
      * @type {number}
@@ -61,7 +73,9 @@ export function LoginResponseFromJSONTyped(json: any, ignoreDiscriminator: boole
         return json;
     }
     return {
-        ...LoginResponse2FromJSONTyped(json, ignoreDiscriminator),
+        
+        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
+        'sessionId': !exists(json, 'SessionId') ? undefined : json['SessionId'],
         'result': json['Result'],
         'responseStatus': !exists(json, 'ResponseStatus') ? undefined : ResponseStatusFromJSON(json['ResponseStatus']),
     };
@@ -75,7 +89,9 @@ export function LoginResponseToJSON(value?: LoginResponse | null): any {
         return null;
     }
     return {
-        ...LoginResponse2ToJSON(value),
+        
+        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
+        'SessionId': value.sessionId,
         'Result': value.result,
         'ResponseStatus': ResponseStatusToJSON(value.responseStatus),
     };

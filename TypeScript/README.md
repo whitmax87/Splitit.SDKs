@@ -1,7 +1,7 @@
-## Splitit SDK for Typescript
+## Splitit SDK for Typescript (browser)
 
 Environment
-* Webpack
+* Webpack / browser
 
 Dependencies
 * "fetch": "~1.1.0"
@@ -18,6 +18,8 @@ npm install splitit-sdk --save
 
 ## Getting Started
 
+Note: this library is intended for browser use only, therefore call to login and initiate API must be done server-side to keep your credentials safe.
+Once the PublicToken is obtained, it can be used to invoke further API methods.
 Please follow the [installation](#installation) instruction and add the following TypeScript code:
 
 ```TypeScript
@@ -28,70 +30,28 @@ export function testSplititApi() {
 
     splititApi.Configuration.setSandbox();
 
-    var loginApi = new splititApi.LoginApi();
+    // Obtain PublicToken via server-side call using one of the libraries available [here](https://github.com/Splitit/Splitit.SDKs).
 
-    const loginRequest: splititApi.LoginRequest = {
-        userName: "_YOUR_USERNAME_",
-        password: "_YOUR_PASSWORD_"
-    }
+    const publicToken = "TOKEN_OBTAINED_SERVER_SIDE";
+    const installmentPlanNumber = "PLAN_NUMBER_OBTAINED_SERVER_SIDE";
 
-    console.log(loginRequest);
+    var planApi = new splititApi.InstallmentPlanApi(
+        splititApi.Configuration.clientSide(publicToken));
 
-    loginApi.loginPost({ request: loginRequest })
-        .then(data => {
-            console.log('Login response:');
-            console.log(data);
+    const createRequest: splititApi.CreateInstallmentPlanRequest = {
+        creditCardDetails: <splititApi.CardData>{
+            cardNumber: "411111111111111",
+            cardCvv: "123",
+            cardHolderFullName: "John Smith",
+            cardExpMonth: "12",
+            cardExpYear: "2022"
+        },
+        installmentPlanNumber: installmentPlanNumber
+    };
 
-            var planApi = new splititApi.InstallmentPlanApi(
-                splititApi.Configuration.serverSide("_YOUR_API_KEY_", data.sessionId!));
-
-            // planApi.setCulture('de-DE'); -> explicitely set culture for all subsequent API calls.
-
-            const initRequest: splititApi.InitiateInstallmentPlanRequest = {
-                planData: <splititApi.PlanData>{
-                    amount: <splititApi.MoneyWithCurrencyCode>{ value: 1000, currencyCode: "USD" },
-                    numberOfInstallments: 3
-                },
-                billingAddress: <splititApi.AddressData>{
-                    addressLine: "260 Madison Avenue.",
-                    addressLine2: "Appartment 1",
-                    city: "New York",
-                    state: "NY",
-                    country: "USA",
-                    zip: "10016"
-                },
-                consumerData: <splititApi.ConsumerData>{
-                    fullName: "John Smith",
-                    email: "JohnS@splitit.com",
-                    phoneNumber: "1-844-775-4848",
-                    cultureName: "en-us"
-                }
-            };
-
-            console.log("/Initiate request + response:");
-            console.log(initRequest);
-            planApi.installmentPlanInitiate({ request: initRequest })
-                .then(data => {
-                    const createRequest: splititApi.CreateInstallmentPlanRequest = {
-                        creditCardDetails: <splititApi.CardData>{
-                            cardNumber: "411111111111111",
-                            cardCvv: "123",
-                            cardHolderFullName: "John Smith",
-                            cardExpMonth: "12",
-                            cardExpYear: "2022"
-                        },
-                        installmentPlanNumber: data.installmentPlan!.installmentPlanNumber
-                    };
-
-                    planApi.installmentPlanCreate({ request: createRequest })
-                        .then(data => console.log(data))
-                        .catch(err => console.error(err));
-                })
-                .catch(err => console.error(err));
-        })
-        .catch(err => {
-            console.error(err);
-        });
+    planApi.installmentPlanCreate({ request: createRequest })
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
 }
 ```
 
@@ -104,70 +64,30 @@ export function testSplititApi() {
     var splititApi = require('splitit-sdk');
     splititApi.Configuration.setSandbox();
 
-    var loginApi = new splititApi.LoginApi();
-    var loginRequest = splititApi.LoginRequestFromJSONTyped({
-        UserName: "_YOUR_USERNAME_",
-        Password: "_YOUR_PASSWORD_"
+    var publicToken = "TOKEN_OBTAINED_SERVER_SIDE";
+    var installmentPlanNumber = "PLAN_NUMBER_OBTAINED_SERVER_SIDE";
+
+    var planApi = new splititApi.InstallmentPlanApi(
+            splititApi.Configuration.clientSide(publicToken));
+
+    var createRequest = splititApi.CreateInstallmentPlanRequestFromJSONTyped({
+        CreditCardDetails: {
+            CardNumber: "411111111111111",
+            CardCvv: "123",
+            CardHolderFullName: "John Smith",
+            CardExpMonth: "12",
+            CardExpYear: "2022"
+        },
+        InstallmentPlanNumber: installmentPlanNumber
     });
-
-    loginApi.loginPost({ request: loginRequest }).then(function (data) {
-        console.log("Login request result:");
+    
+    planApi.installmentPlanCreate({ request: createRequest }).then(function (data) {
         console.log({ data });
-
-        var planApi = new splititApi.InstallmentPlanApi(
-            splititApi.Configuration.serverSide("_YOUR_API_KEY_", data.sessionId));
-        // planApi.setCulture('de-DE'); -> explicitely set culture for all subsequent API calls.
-        var initRequest = splititApi.InitiateInstallmentPlanRequestFromJSONTyped({
-            PlanData: {
-                NumberOfInstallments: 3,
-                Amount: { Value: 1000, CurrencyCode: "USD" }
-            },
-            BillingAddress: {
-                AddressLine: "260 Madison Avenue.",
-                AddressLine2: "Appartment 1",
-                City: "New York",
-                State: "NY",
-                Country: "USA",
-                Zip: "10016"
-            },
-            ConsumerData: {
-                FullName: "John Smith",
-                Email: "JohnS@splitit.com",
-                PhoneNumber: "1-844-775-4848",
-                CultureName: "en-us"
-            }
-        });
-
-        console.log("/Initiate request result:");
-        planApi.installmentPlanInitiate({ request: initRequest }).then(function (data) {
-            console.log({ data });
-
-            var createRequest = splititApi.CreateInstallmentPlanRequestFromJSONTyped({
-                CreditCardDetails: {
-                    CardNumber: "411111111111111",
-                    CardCvv: "123",
-                    CardHolderFullName: "John Smith",
-                    CardExpMonth: "12",
-                    CardExpYear: "2022"
-                },
-                InstallmentPlanNumber: data.installmentPlan.installmentPlanNumber
-            });
-            
-            planApi.installmentPlanCreate({ request: createRequest }).then(function (data) {
-                console.log({ data });
-            }).catch(err => {
-                console.error(err);
-            });
-        }).catch(err => {
-            console.error(err);
-        });
-    })
-    .catch(err => {
+    }).catch(err => {
         console.error(err);
     });
 }
 ```
-
 
 For detailed information on request and response procedures, please visit [Splitit Web API documentation](https://documenter.getpostman.com/view/795699/RWaNQSJH?version=latest)
 

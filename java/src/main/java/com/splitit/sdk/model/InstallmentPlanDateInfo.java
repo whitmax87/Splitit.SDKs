@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * InstallmentPlanDateInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-03-30T13:13:50.751Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-06T10:45:35.240Z")
 public class InstallmentPlanDateInfo   {
   @SerializedName("InstallmentsPlanDateType")
   private InstallmentsPlanDateType installmentsPlanDateType = null;

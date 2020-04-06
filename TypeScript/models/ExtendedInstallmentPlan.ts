@@ -69,7 +69,157 @@ import {
  * @export
  * @interface ExtendedInstallmentPlan
  */
-export interface ExtendedInstallmentPlan extends InstallmentPlan {
+export interface ExtendedInstallmentPlan {
+    /**
+     * 
+     * @type {string}
+     * @memberof ExtendedInstallmentPlan
+     */
+    installmentPlanNumber?: string;
+    /**
+     * 
+     * @type {ReferenceEntityBase}
+     * @memberof ExtendedInstallmentPlan
+     */
+    installmentPlanStatus?: ReferenceEntityBase;
+    /**
+     * 
+     * @type {Money}
+     * @memberof ExtendedInstallmentPlan
+     */
+    amount?: Money;
+    /**
+     * 
+     * @type {Money}
+     * @memberof ExtendedInstallmentPlan
+     */
+    outstandingAmount?: Money;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExtendedInstallmentPlan
+     */
+    numberOfInstallments: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExtendedInstallmentPlan
+     */
+    numberOfProcessedInstallments: number;
+    /**
+     * 
+     * @type {Money}
+     * @memberof ExtendedInstallmentPlan
+     */
+    originalAmount?: Money;
+    /**
+     * 
+     * @type {Money}
+     * @memberof ExtendedInstallmentPlan
+     */
+    refundAmount?: Money;
+    /**
+     * 
+     * @type {ConsumerData}
+     * @memberof ExtendedInstallmentPlan
+     */
+    consumer?: ConsumerData;
+    /**
+     * 
+     * @type {CardData}
+     * @memberof ExtendedInstallmentPlan
+     */
+    activeCard?: CardData;
+    /**
+     * 
+     * @type {FraudCheck}
+     * @memberof ExtendedInstallmentPlan
+     */
+    fraudCheck?: FraudCheck;
+    /**
+     * 
+     * @type {MerchantRef}
+     * @memberof ExtendedInstallmentPlan
+     */
+    merchant?: MerchantRef;
+    /**
+     * 
+     * @type {string}
+     * @memberof ExtendedInstallmentPlan
+     */
+    refOrderNumber?: string;
+    /**
+     * 
+     * @type {ReferenceEntityBase}
+     * @memberof ExtendedInstallmentPlan
+     */
+    purchaseMethod?: ReferenceEntityBase;
+    /**
+     * 
+     * @type {ReferenceEntityBase}
+     * @memberof ExtendedInstallmentPlan
+     */
+    strategy?: ReferenceEntityBase;
+    /**
+     * 
+     * @type {ReferenceEntityBase}
+     * @memberof ExtendedInstallmentPlan
+     */
+    delayResolution?: ReferenceEntityBase;
+    /**
+     * 
+     * @type {{ [key: string]: string; }}
+     * @memberof ExtendedInstallmentPlan
+     */
+    extendedParams?: { [key: string]: string; };
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExtendedInstallmentPlan
+     */
+    isFullCaptured: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExtendedInstallmentPlan
+     */
+    isChargedBack: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ExtendedInstallmentPlan
+     */
+    arePaymentsOnHold: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof ExtendedInstallmentPlan
+     */
+    scpFundingPercent: number;
+    /**
+     * 
+     * @type {TestModes}
+     * @memberof ExtendedInstallmentPlan
+     */
+    testMode: TestModes;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ExtendedInstallmentPlan
+     */
+    creationDateTime: Date;
+    /**
+     * 
+     * @type {Array<Installment>}
+     * @memberof ExtendedInstallmentPlan
+     */
+    installments?: Array<Installment>;
+    /**
+     * 
+     * @type {Array<ReAuthorization>}
+     * @memberof ExtendedInstallmentPlan
+     */
+    secureAuthorizations?: Array<ReAuthorization>;
     /**
      * 
      * @type {BuRef}
@@ -93,7 +243,32 @@ export function ExtendedInstallmentPlanFromJSONTyped(json: any, ignoreDiscrimina
         return json;
     }
     return {
-        ...InstallmentPlanFromJSONTyped(json, ignoreDiscriminator),
+        
+        'installmentPlanNumber': !exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
+        'installmentPlanStatus': !exists(json, 'InstallmentPlanStatus') ? undefined : ReferenceEntityBaseFromJSON(json['InstallmentPlanStatus']),
+        'amount': !exists(json, 'Amount') ? undefined : MoneyFromJSON(json['Amount']),
+        'outstandingAmount': !exists(json, 'OutstandingAmount') ? undefined : MoneyFromJSON(json['OutstandingAmount']),
+        'numberOfInstallments': json['NumberOfInstallments'],
+        'numberOfProcessedInstallments': json['NumberOfProcessedInstallments'],
+        'originalAmount': !exists(json, 'OriginalAmount') ? undefined : MoneyFromJSON(json['OriginalAmount']),
+        'refundAmount': !exists(json, 'RefundAmount') ? undefined : MoneyFromJSON(json['RefundAmount']),
+        'consumer': !exists(json, 'Consumer') ? undefined : ConsumerDataFromJSON(json['Consumer']),
+        'activeCard': !exists(json, 'ActiveCard') ? undefined : CardDataFromJSON(json['ActiveCard']),
+        'fraudCheck': !exists(json, 'FraudCheck') ? undefined : FraudCheckFromJSON(json['FraudCheck']),
+        'merchant': !exists(json, 'Merchant') ? undefined : MerchantRefFromJSON(json['Merchant']),
+        'refOrderNumber': !exists(json, 'RefOrderNumber') ? undefined : json['RefOrderNumber'],
+        'purchaseMethod': !exists(json, 'PurchaseMethod') ? undefined : ReferenceEntityBaseFromJSON(json['PurchaseMethod']),
+        'strategy': !exists(json, 'Strategy') ? undefined : ReferenceEntityBaseFromJSON(json['Strategy']),
+        'delayResolution': !exists(json, 'DelayResolution') ? undefined : ReferenceEntityBaseFromJSON(json['DelayResolution']),
+        'extendedParams': !exists(json, 'ExtendedParams') ? undefined : json['ExtendedParams'],
+        'isFullCaptured': json['IsFullCaptured'],
+        'isChargedBack': json['IsChargedBack'],
+        'arePaymentsOnHold': json['ArePaymentsOnHold'],
+        'scpFundingPercent': json['ScpFundingPercent'],
+        'testMode': TestModesFromJSON(json['TestMode']),
+        'creationDateTime': (new Date(json['CreationDateTime'])),
+        'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(InstallmentFromJSON)),
+        'secureAuthorizations': !exists(json, 'SecureAuthorizations') ? undefined : ((json['SecureAuthorizations'] as Array<any>).map(ReAuthorizationFromJSON)),
         'businessUnit': !exists(json, 'BusinessUnit') ? undefined : BuRefFromJSON(json['BusinessUnit']),
         'shopperPaymentRequestTime': !exists(json, 'ShopperPaymentRequestTime') ? undefined : (new Date(json['ShopperPaymentRequestTime'])),
     };
@@ -107,7 +282,32 @@ export function ExtendedInstallmentPlanToJSON(value?: ExtendedInstallmentPlan | 
         return null;
     }
     return {
-        ...InstallmentPlanToJSON(value),
+        
+        'InstallmentPlanNumber': value.installmentPlanNumber,
+        'InstallmentPlanStatus': ReferenceEntityBaseToJSON(value.installmentPlanStatus),
+        'Amount': MoneyToJSON(value.amount),
+        'OutstandingAmount': MoneyToJSON(value.outstandingAmount),
+        'NumberOfInstallments': value.numberOfInstallments,
+        'NumberOfProcessedInstallments': value.numberOfProcessedInstallments,
+        'OriginalAmount': MoneyToJSON(value.originalAmount),
+        'RefundAmount': MoneyToJSON(value.refundAmount),
+        'Consumer': ConsumerDataToJSON(value.consumer),
+        'ActiveCard': CardDataToJSON(value.activeCard),
+        'FraudCheck': FraudCheckToJSON(value.fraudCheck),
+        'Merchant': MerchantRefToJSON(value.merchant),
+        'RefOrderNumber': value.refOrderNumber,
+        'PurchaseMethod': ReferenceEntityBaseToJSON(value.purchaseMethod),
+        'Strategy': ReferenceEntityBaseToJSON(value.strategy),
+        'DelayResolution': ReferenceEntityBaseToJSON(value.delayResolution),
+        'ExtendedParams': value.extendedParams,
+        'IsFullCaptured': value.isFullCaptured,
+        'IsChargedBack': value.isChargedBack,
+        'ArePaymentsOnHold': value.arePaymentsOnHold,
+        'ScpFundingPercent': value.scpFundingPercent,
+        'TestMode': TestModesToJSON(value.testMode),
+        'CreationDateTime': (value.creationDateTime.toISOString()),
+        'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(InstallmentToJSON)),
+        'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : ((value.secureAuthorizations as Array<any>).map(ReAuthorizationToJSON)),
         'BusinessUnit': BuRefToJSON(value.businessUnit),
         'ShopperPaymentRequestTime': value.shopperPaymentRequestTime === undefined ? undefined : (value.shopperPaymentRequestTime.toISOString()),
     };

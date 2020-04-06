@@ -1,0 +1,24 @@
+{
+    "name": "splitit-sdk-nodejs",
+    "version": "1.4.2",
+    "description": "Splitit SDK for NodeJS",
+    "main": "dist/api.js",
+    "types": "dist/api.d.ts",
+    "scripts": {
+        "clean": "rm -Rf node_modules/ *.js",
+        "build": "tsc"
+    },
+    "author": "SplititSDK",
+    "license": "MIT",
+    "dependencies": {
+        "bluebird": "^3.5.0",
+        "request": "^2.81.0",
+        "@types/bluebird": "*",
+        "@types/request": "*",
+        "rewire": "^3.0.2"
+    },
+    "devDependencies": {
+        "typescript": "~3.7.3",
+        "@types/node": "^13.11.0"
+    }
+}

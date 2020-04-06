@@ -9,13 +9,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { LoginResponse2, ResponseStatus } from './';
+import { ResponseHeader, ResponseStatus } from './';
 /**
  *
  * @export
  * @interface LoginResponse
  */
-export interface LoginResponse extends LoginResponse2 {
+export interface LoginResponse {
+    /**
+     *
+     * @type {ResponseHeader}
+     * @memberof LoginResponse
+     */
+    responseHeader?: ResponseHeader;
+    /**
+     *
+     * @type {string}
+     * @memberof LoginResponse
+     */
+    sessionId?: string;
     /**
      *
      * @type {number}

@@ -12,17 +12,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
 var _1 = require("./");
@@ -34,7 +23,11 @@ function CreateInstallmentsPlanResponseFromJSONTyped(json, ignoreDiscriminator) 
     if ((json === undefined) || (json === null)) {
         return json;
     }
-    return __assign({}, _1.InstallmentPlanResponseFromJSONTyped(json, ignoreDiscriminator), { 'approvalUrl': !runtime_1.exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'] });
+    return {
+        'responseHeader': !runtime_1.exists(json, 'ResponseHeader') ? undefined : _1.ResponseHeaderFromJSON(json['ResponseHeader']),
+        'installmentPlan': !runtime_1.exists(json, 'InstallmentPlan') ? undefined : _1.InstallmentPlanFromJSON(json['InstallmentPlan']),
+        'approvalUrl': !runtime_1.exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
+    };
 }
 exports.CreateInstallmentsPlanResponseFromJSONTyped = CreateInstallmentsPlanResponseFromJSONTyped;
 function CreateInstallmentsPlanResponseToJSON(value) {
@@ -44,6 +37,10 @@ function CreateInstallmentsPlanResponseToJSON(value) {
     if (value === null) {
         return null;
     }
-    return __assign({}, _1.InstallmentPlanResponseToJSON(value), { 'ApprovalUrl': value.approvalUrl });
+    return {
+        'ResponseHeader': _1.ResponseHeaderToJSON(value.responseHeader),
+        'InstallmentPlan': _1.InstallmentPlanToJSON(value.installmentPlan),
+        'ApprovalUrl': value.approvalUrl,
+    };
 }
 exports.CreateInstallmentsPlanResponseToJSON = CreateInstallmentsPlanResponseToJSON;

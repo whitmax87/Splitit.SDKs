@@ -33,7 +33,55 @@ import {
  * @export
  * @interface PaymentWizardDataResponse
  */
-export interface PaymentWizardDataResponse extends PaymentWizardData {
+export interface PaymentWizardDataResponse {
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    requestedNumberOfInstallments?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    successExitURL?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    errorExitURL?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    cancelExitURL?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    successAsyncUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    viewName?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    isOpenedInIframe: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    paymentFormMessage?: string;
     /**
      * 
      * @type {string}
@@ -111,7 +159,15 @@ export function PaymentWizardDataResponseFromJSONTyped(json: any, ignoreDiscrimi
         return json;
     }
     return {
-        ...PaymentWizardDataFromJSONTyped(json, ignoreDiscriminator),
+        
+        'requestedNumberOfInstallments': !exists(json, 'RequestedNumberOfInstallments') ? undefined : json['RequestedNumberOfInstallments'],
+        'successExitURL': !exists(json, 'SuccessExitURL') ? undefined : json['SuccessExitURL'],
+        'errorExitURL': !exists(json, 'ErrorExitURL') ? undefined : json['ErrorExitURL'],
+        'cancelExitURL': !exists(json, 'CancelExitURL') ? undefined : json['CancelExitURL'],
+        'successAsyncUrl': !exists(json, 'SuccessAsyncUrl') ? undefined : json['SuccessAsyncUrl'],
+        'viewName': !exists(json, 'ViewName') ? undefined : json['ViewName'],
+        'isOpenedInIframe': json['IsOpenedInIframe'],
+        'paymentFormMessage': !exists(json, 'PaymentFormMessage') ? undefined : json['PaymentFormMessage'],
         'showAddressElements': !exists(json, 'ShowAddressElements') ? undefined : json['ShowAddressElements'],
         'currencyDisplay': !exists(json, 'CurrencyDisplay') ? undefined : CurrencyFromJSON(json['CurrencyDisplay']),
         'forceDisplayImportantNotes': json['ForceDisplayImportantNotes'],
@@ -134,7 +190,15 @@ export function PaymentWizardDataResponseToJSON(value?: PaymentWizardDataRespons
         return null;
     }
     return {
-        ...PaymentWizardDataToJSON(value),
+        
+        'RequestedNumberOfInstallments': value.requestedNumberOfInstallments,
+        'SuccessExitURL': value.successExitURL,
+        'ErrorExitURL': value.errorExitURL,
+        'CancelExitURL': value.cancelExitURL,
+        'SuccessAsyncUrl': value.successAsyncUrl,
+        'ViewName': value.viewName,
+        'IsOpenedInIframe': value.isOpenedInIframe,
+        'PaymentFormMessage': value.paymentFormMessage,
         'ShowAddressElements': value.showAddressElements,
         'CurrencyDisplay': CurrencyToJSON(value.currencyDisplay),
         'ForceDisplayImportantNotes': value.forceDisplayImportantNotes,

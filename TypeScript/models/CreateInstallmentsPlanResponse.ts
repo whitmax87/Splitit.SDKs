@@ -37,7 +37,19 @@ import {
  * @export
  * @interface CreateInstallmentsPlanResponse
  */
-export interface CreateInstallmentsPlanResponse extends InstallmentPlanResponse {
+export interface CreateInstallmentsPlanResponse {
+    /**
+     * 
+     * @type {ResponseHeader}
+     * @memberof CreateInstallmentsPlanResponse
+     */
+    responseHeader?: ResponseHeader;
+    /**
+     * 
+     * @type {InstallmentPlan}
+     * @memberof CreateInstallmentsPlanResponse
+     */
+    installmentPlan?: InstallmentPlan;
     /**
      * 
      * @type {string}
@@ -55,7 +67,9 @@ export function CreateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreDis
         return json;
     }
     return {
-        ...InstallmentPlanResponseFromJSONTyped(json, ignoreDiscriminator),
+        
+        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
+        'installmentPlan': !exists(json, 'InstallmentPlan') ? undefined : InstallmentPlanFromJSON(json['InstallmentPlan']),
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
     };
 }
@@ -68,7 +82,9 @@ export function CreateInstallmentsPlanResponseToJSON(value?: CreateInstallmentsP
         return null;
     }
     return {
-        ...InstallmentPlanResponseToJSON(value),
+        
+        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
+        'InstallmentPlan': InstallmentPlanToJSON(value.installmentPlan),
         'ApprovalUrl': value.approvalUrl,
     };
 }

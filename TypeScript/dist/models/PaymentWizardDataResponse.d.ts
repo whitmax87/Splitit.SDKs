@@ -9,13 +9,61 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Currency, PaymentWizardData } from './';
+import { Currency } from './';
 /**
  *
  * @export
  * @interface PaymentWizardDataResponse
  */
-export interface PaymentWizardDataResponse extends PaymentWizardData {
+export interface PaymentWizardDataResponse {
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    requestedNumberOfInstallments?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    successExitURL?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    errorExitURL?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    cancelExitURL?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    successAsyncUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    viewName?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    isOpenedInIframe: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    paymentFormMessage?: string;
     /**
      *
      * @type {string}

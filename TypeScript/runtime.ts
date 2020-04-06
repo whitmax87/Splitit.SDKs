@@ -94,7 +94,7 @@ export class BaseAPI {
 	    ? context.body
 	    : JSON.stringify(context.body);
 
-        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.4.1"});
+        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.4.2"});
         const init = {
             method: context.method,
             headers: headers,
@@ -191,10 +191,7 @@ export class Configuration {
     }
 
     static serverSide(apiKey: string, sessionId: string): Configuration {
-        return new Configuration({
-            apiKey: apiKey,
-            accessToken: sessionId
-        });
+        throw "Unsupported method. For server side code, please use our NodeJS package. For list of available languages supported, visit https://github.com/Splitit/Splitit.SDKs";
     }
 
     static clientSide(publicToken: string): Configuration {

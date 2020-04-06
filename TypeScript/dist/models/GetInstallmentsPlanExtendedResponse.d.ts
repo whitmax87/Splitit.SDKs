@@ -9,19 +9,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ExtendedInstallmentPlan, GetInstallmentsPlanResponse } from './';
+import { ExtendedInstallmentPlan, PagingResponseHeader, ResponseHeader } from './';
 /**
  *
  * @export
  * @interface GetInstallmentsPlanExtendedResponse
  */
-export interface GetInstallmentsPlanExtendedResponse extends GetInstallmentsPlanResponse {
+export interface GetInstallmentsPlanExtendedResponse {
     /**
      *
      * @type {Array<ExtendedInstallmentPlan>}
      * @memberof GetInstallmentsPlanExtendedResponse
      */
     plansList?: Array<ExtendedInstallmentPlan>;
+    /**
+     *
+     * @type {ResponseHeader}
+     * @memberof GetInstallmentsPlanExtendedResponse
+     */
+    responseHeader?: ResponseHeader;
+    /**
+     *
+     * @type {PagingResponseHeader}
+     * @memberof GetInstallmentsPlanExtendedResponse
+     */
+    pagingResponseHeader?: PagingResponseHeader;
 }
 export declare function GetInstallmentsPlanExtendedResponseFromJSON(json: any): GetInstallmentsPlanExtendedResponse;
 export declare function GetInstallmentsPlanExtendedResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetInstallmentsPlanExtendedResponse;

@@ -69,13 +69,73 @@ import {
  * @export
  * @interface UpdateInstallmentPlanRequest
  */
-export interface UpdateInstallmentPlanRequest extends CreateInstallmentPlanRequest {
+export interface UpdateInstallmentPlanRequest {
     /**
      * 
      * @type {string}
      * @memberof UpdateInstallmentPlanRequest
      */
     installmentPlanNumber?: string;
+    /**
+     * 
+     * @type {PlanData}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    planData?: PlanData;
+    /**
+     * 
+     * @type {CartData}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    cartData?: CartData;
+    /**
+     * 
+     * @type {ConsumerData}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    consumerData?: ConsumerData;
+    /**
+     * 
+     * @type {AddressData}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    billingAddress?: AddressData;
+    /**
+     * 
+     * @type {CardData}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    creditCardDetails?: CardData;
+    /**
+     * 
+     * @type {PaymentToken}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    paymentToken?: PaymentToken;
+    /**
+     * 
+     * @type {PlanApprovalEvidence}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    planApprovalEvidence?: PlanApprovalEvidence;
+    /**
+     * 
+     * @type {RedirectUrls}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    redirectUrls?: RedirectUrls;
+    /**
+     * 
+     * @type {EventsEndpoints}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    eventsEndpoints?: EventsEndpoints;
+    /**
+     * 
+     * @type {ExternalAuth}
+     * @memberof UpdateInstallmentPlanRequest
+     */
+    externalAuth?: ExternalAuth;
 }
 
 export function UpdateInstallmentPlanRequestFromJSON(json: any): UpdateInstallmentPlanRequest {
@@ -87,8 +147,18 @@ export function UpdateInstallmentPlanRequestFromJSONTyped(json: any, ignoreDiscr
         return json;
     }
     return {
-        ...CreateInstallmentPlanRequestFromJSONTyped(json, ignoreDiscriminator),
+        
         'installmentPlanNumber': !exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
+        'planData': !exists(json, 'PlanData') ? undefined : PlanDataFromJSON(json['PlanData']),
+        'cartData': !exists(json, 'CartData') ? undefined : CartDataFromJSON(json['CartData']),
+        'consumerData': !exists(json, 'ConsumerData') ? undefined : ConsumerDataFromJSON(json['ConsumerData']),
+        'billingAddress': !exists(json, 'BillingAddress') ? undefined : AddressDataFromJSON(json['BillingAddress']),
+        'creditCardDetails': !exists(json, 'CreditCardDetails') ? undefined : CardDataFromJSON(json['CreditCardDetails']),
+        'paymentToken': !exists(json, 'PaymentToken') ? undefined : PaymentTokenFromJSON(json['PaymentToken']),
+        'planApprovalEvidence': !exists(json, 'PlanApprovalEvidence') ? undefined : PlanApprovalEvidenceFromJSON(json['PlanApprovalEvidence']),
+        'redirectUrls': !exists(json, 'RedirectUrls') ? undefined : RedirectUrlsFromJSON(json['RedirectUrls']),
+        'eventsEndpoints': !exists(json, 'EventsEndpoints') ? undefined : EventsEndpointsFromJSON(json['EventsEndpoints']),
+        'externalAuth': !exists(json, 'ExternalAuth') ? undefined : ExternalAuthFromJSON(json['ExternalAuth']),
     };
 }
 
@@ -100,8 +170,18 @@ export function UpdateInstallmentPlanRequestToJSON(value?: UpdateInstallmentPlan
         return null;
     }
     return {
-        ...CreateInstallmentPlanRequestToJSON(value),
+        
         'InstallmentPlanNumber': value.installmentPlanNumber,
+        'PlanData': PlanDataToJSON(value.planData),
+        'CartData': CartDataToJSON(value.cartData),
+        'ConsumerData': ConsumerDataToJSON(value.consumerData),
+        'BillingAddress': AddressDataToJSON(value.billingAddress),
+        'CreditCardDetails': CardDataToJSON(value.creditCardDetails),
+        'PaymentToken': PaymentTokenToJSON(value.paymentToken),
+        'PlanApprovalEvidence': PlanApprovalEvidenceToJSON(value.planApprovalEvidence),
+        'RedirectUrls': RedirectUrlsToJSON(value.redirectUrls),
+        'EventsEndpoints': EventsEndpointsToJSON(value.eventsEndpoints),
+        'ExternalAuth': ExternalAuthToJSON(value.externalAuth),
     };
 }
 

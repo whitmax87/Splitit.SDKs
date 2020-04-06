@@ -9,13 +9,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InstallmentPlanResponse, Money } from './';
+import { InstallmentPlan, Money, ResponseHeader } from './';
 /**
  *
  * @export
  * @interface RefundInstallmentPlanResponse
  */
-export interface RefundInstallmentPlanResponse extends InstallmentPlanResponse {
+export interface RefundInstallmentPlanResponse {
+    /**
+     *
+     * @type {ResponseHeader}
+     * @memberof RefundInstallmentPlanResponse
+     */
+    responseHeader?: ResponseHeader;
+    /**
+     *
+     * @type {InstallmentPlan}
+     * @memberof RefundInstallmentPlanResponse
+     */
+    installmentPlan?: InstallmentPlan;
     /**
      *
      * @type {Money}

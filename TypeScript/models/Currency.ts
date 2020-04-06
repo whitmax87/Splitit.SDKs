@@ -29,7 +29,25 @@ import {
  * @export
  * @interface Currency
  */
-export interface Currency extends ReferenceEntityBase {
+export interface Currency {
+    /**
+     * 
+     * @type {number}
+     * @memberof Currency
+     */
+    id: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Currency
+     */
+    code?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Currency
+     */
+    description?: string;
     /**
      * 
      * @type {string}
@@ -47,7 +65,10 @@ export function CurrencyFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
         return json;
     }
     return {
-        ...ReferenceEntityBaseFromJSONTyped(json, ignoreDiscriminator),
+        
+        'id': json['Id'],
+        'code': !exists(json, 'Code') ? undefined : json['Code'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
         'symbol': !exists(json, 'Symbol') ? undefined : json['Symbol'],
     };
 }
@@ -60,7 +81,10 @@ export function CurrencyToJSON(value?: Currency | null): any {
         return null;
     }
     return {
-        ...ReferenceEntityBaseToJSON(value),
+        
+        'Id': value.id,
+        'Code': value.code,
+        'Description': value.description,
         'Symbol': value.symbol,
     };
 }

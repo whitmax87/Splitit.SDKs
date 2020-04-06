@@ -202,7 +202,7 @@ var BaseAPI = /** @class */ (function () {
         var body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
-        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.4.1" });
+        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.4.2" });
         var init = {
             method: context.method,
             headers: headers,
@@ -258,10 +258,7 @@ var Configuration = /** @class */ (function () {
         Configuration._touchPoint = touchPoint;
     };
     Configuration.serverSide = function (apiKey, sessionId) {
-        return new Configuration({
-            apiKey: apiKey,
-            accessToken: sessionId
-        });
+        throw "Unsupported method. For server side code, please use our NodeJS package. For list of available languages supported, visit https://github.com/Splitit/Splitit.SDKs";
     };
     Configuration.clientSide = function (publicToken) {
         return new Configuration({
