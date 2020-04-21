@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * RelationsLoad
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-06T10:45:35.240Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-21T07:57:36.416Z")
 public class RelationsLoad   {
   @SerializedName("Installments")
   private InstallmentPlanActivityStatus installments = null;

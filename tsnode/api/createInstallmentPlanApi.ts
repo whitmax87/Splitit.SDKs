@@ -36,7 +36,7 @@ export class CreateInstallmentPlanApi {
     constructor(config: Configuration) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.4.2"
+            "Splitit-SDK": "NodeJS-1.4.3"
         };
     }
 
