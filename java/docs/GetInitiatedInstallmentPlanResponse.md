@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **planData** | [**PlanData**](PlanData.md) |  |  [optional]
 **cartData** | [**CartData**](CartData.md) |  |  [optional]
 **consumerData** | [**ConsumerData**](ConsumerData.md) |  |  [optional]
-**merchantData** | [**Merchant**](Merchant.md) |  |  [optional]
+**merchantData** | [**MerchantRef**](MerchantRef.md) |  |  [optional]
 **billingAddress** | [**AddressData**](AddressData.md) |  |  [optional]
 **paymentWizardDataResponse** | [**PaymentWizardDataResponse**](PaymentWizardDataResponse.md) |  |  [optional]
 **errorIndicator** | [**Error**](Error.md) |  |  [optional]

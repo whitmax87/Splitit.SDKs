@@ -7,3 +7,4 @@ __export(require("./CreateInstallmentPlanApi"));
 __export(require("./InfrastructureApi"));
 __export(require("./InstallmentPlanApi"));
 __export(require("./LoginApi"));
+__export(require("./TouchPointsApi"));

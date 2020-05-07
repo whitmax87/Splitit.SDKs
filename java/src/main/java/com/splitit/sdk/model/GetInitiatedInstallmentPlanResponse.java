@@ -24,7 +24,7 @@ import com.splitit.sdk.model.AddressData;
 import com.splitit.sdk.model.CartData;
 import com.splitit.sdk.model.ConsumerData;
 import com.splitit.sdk.model.Error;
-import com.splitit.sdk.model.Merchant;
+import com.splitit.sdk.model.MerchantRef;
 import com.splitit.sdk.model.PaymentWizardDataResponse;
 import com.splitit.sdk.model.PlanData;
 import com.splitit.sdk.model.ResponseHeader;
@@ -35,7 +35,7 @@ import java.io.IOException;
 /**
  * GetInitiatedInstallmentPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-21T07:57:36.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:13:41.756Z")
 public class GetInitiatedInstallmentPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -53,7 +53,7 @@ public class GetInitiatedInstallmentPlanResponse   {
   private ConsumerData consumerData = null;
 
   @SerializedName("MerchantData")
-  private Merchant merchantData = null;
+  private MerchantRef merchantData = null;
 
   @SerializedName("BillingAddress")
   private AddressData billingAddress = null;
@@ -154,7 +154,7 @@ public class GetInitiatedInstallmentPlanResponse   {
     this.consumerData = consumerData;
   }
 
-  public GetInitiatedInstallmentPlanResponse merchantData(Merchant merchantData) {
+  public GetInitiatedInstallmentPlanResponse merchantData(MerchantRef merchantData) {
     this.merchantData = merchantData;
     return this;
   }
@@ -164,11 +164,11 @@ public class GetInitiatedInstallmentPlanResponse   {
    * @return merchantData
   **/
   @ApiModelProperty(value = "")
-  public Merchant getMerchantData() {
+  public MerchantRef getMerchantData() {
     return merchantData;
   }
 
-  public void setMerchantData(Merchant merchantData) {
+  public void setMerchantData(MerchantRef merchantData) {
     this.merchantData = merchantData;
   }
 

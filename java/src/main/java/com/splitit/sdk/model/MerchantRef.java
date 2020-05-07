@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * MerchantRef
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-21T07:57:36.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:13:41.756Z")
 public class MerchantRef   {
   @SerializedName("Id")
   private Long id = null;
@@ -38,6 +38,9 @@ public class MerchantRef   {
 
   @SerializedName("Description")
   private String description = null;
+
+  @SerializedName("Name")
+  private String name = null;
 
   public MerchantRef id(Long id) {
     this.id = id;
@@ -93,6 +96,24 @@ public class MerchantRef   {
     this.description = description;
   }
 
+  public MerchantRef name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +126,13 @@ public class MerchantRef   {
     MerchantRef merchantRef = (MerchantRef) o;
     return Objects.equals(this.id, merchantRef.id) &&
         Objects.equals(this.code, merchantRef.code) &&
-        Objects.equals(this.description, merchantRef.description);
+        Objects.equals(this.description, merchantRef.description) &&
+        Objects.equals(this.name, merchantRef.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, code, description);
+    return Objects.hash(id, code, description, name);
   }
 
 
@@ -122,6 +144,7 @@ public class MerchantRef   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -39,11 +39,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="id">id (required).</param>
         /// <param name="code">code.</param>
         /// <param name="description">description.</param>
-        public MerchantRef(long? id = default(long?), string code = default(string), string description = default(string))
+        /// <param name="name">name.</param>
+        public MerchantRef(long? id = default(long?), string code = default(string), string description = default(string), string name = default(string))
         {
             this.Id = id;
             this.Code = code;
             this.Description = description;
+            this.Name = name;
         }
 
         
@@ -66,6 +68,12 @@ namespace Splitit.SDK.Client.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name="Name", EmitDefaultValue=false)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,6 +84,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +133,11 @@ namespace Splitit.SDK.Client.Model
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
+                ) && 
+                (
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -142,6 +156,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

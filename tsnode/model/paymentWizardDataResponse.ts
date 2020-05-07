@@ -34,6 +34,9 @@ export class PaymentWizardDataResponse {
     'numberOfInstallmentsSelectionsOption'?: string;
     'addressIsReadonly': boolean;
     'logoURL'?: string;
+    'privacyPolicyUrl'?: string;
+    'termsAndConditionsUrl'?: string;
+    'learnMoreUrl'?: string;
     'paymentFormMessages'?: Array<string>;
 
     static discriminator: string | undefined = undefined;
@@ -127,6 +130,21 @@ export class PaymentWizardDataResponse {
         {
             "name": "logoURL",
             "baseName": "LogoURL",
+            "type": "string"
+        },
+        {
+            "name": "privacyPolicyUrl",
+            "baseName": "PrivacyPolicyUrl",
+            "type": "string"
+        },
+        {
+            "name": "termsAndConditionsUrl",
+            "baseName": "TermsAndConditionsUrl",
+            "type": "string"
+        },
+        {
+            "name": "learnMoreUrl",
+            "baseName": "LearnMoreUrl",
             "type": "string"
         },
         {

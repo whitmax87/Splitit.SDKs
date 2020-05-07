@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **numberOfInstallmentsSelectionsOption** | **String** |  |  [optional]
 **addressIsReadonly** | **Boolean** |  | 
 **logoURL** | **String** |  |  [optional]
+**privacyPolicyUrl** | **String** |  |  [optional]
+**termsAndConditionsUrl** | **String** |  |  [optional]
+**learnMoreUrl** | **String** |  |  [optional]
 **paymentFormMessages** | **List&lt;String&gt;** |  |  [optional]
 
 

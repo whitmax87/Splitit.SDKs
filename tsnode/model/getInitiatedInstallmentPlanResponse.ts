@@ -14,7 +14,7 @@ import { RequestFile } from '../api';
 import { AddressData } from './addressData';
 import { CartData } from './cartData';
 import { ConsumerData } from './consumerData';
-import { Merchant } from './merchant';
+import { MerchantRef } from './merchantRef';
 import { PaymentWizardDataResponse } from './paymentWizardDataResponse';
 import { PlanData } from './planData';
 import { ResponseHeader } from './responseHeader';
@@ -25,7 +25,7 @@ export class GetInitiatedInstallmentPlanResponse {
     'planData'?: PlanData;
     'cartData'?: CartData;
     'consumerData'?: ConsumerData;
-    'merchantData'?: Merchant;
+    'merchantData'?: MerchantRef;
     'billingAddress'?: AddressData;
     'paymentWizardDataResponse'?: PaymentWizardDataResponse;
     'errorIndicator'?: Error;
@@ -61,7 +61,7 @@ export class GetInitiatedInstallmentPlanResponse {
         {
             "name": "merchantData",
             "baseName": "MerchantData",
-            "type": "Merchant"
+            "type": "MerchantRef"
         },
         {
             "name": "billingAddress",

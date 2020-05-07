@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-21T07:57:36.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:13:41.756Z")
 public class PaymentWizardDataResponse   {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -86,6 +86,15 @@ public class PaymentWizardDataResponse   {
 
   @SerializedName("LogoURL")
   private String logoURL = null;
+
+  @SerializedName("PrivacyPolicyUrl")
+  private String privacyPolicyUrl = null;
+
+  @SerializedName("TermsAndConditionsUrl")
+  private String termsAndConditionsUrl = null;
+
+  @SerializedName("LearnMoreUrl")
+  private String learnMoreUrl = null;
 
   @SerializedName("PaymentFormMessages")
   private List<String> paymentFormMessages = null;
@@ -414,6 +423,60 @@ public class PaymentWizardDataResponse   {
     this.logoURL = logoURL;
   }
 
+  public PaymentWizardDataResponse privacyPolicyUrl(String privacyPolicyUrl) {
+    this.privacyPolicyUrl = privacyPolicyUrl;
+    return this;
+  }
+
+   /**
+   * Get privacyPolicyUrl
+   * @return privacyPolicyUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getPrivacyPolicyUrl() {
+    return privacyPolicyUrl;
+  }
+
+  public void setPrivacyPolicyUrl(String privacyPolicyUrl) {
+    this.privacyPolicyUrl = privacyPolicyUrl;
+  }
+
+  public PaymentWizardDataResponse termsAndConditionsUrl(String termsAndConditionsUrl) {
+    this.termsAndConditionsUrl = termsAndConditionsUrl;
+    return this;
+  }
+
+   /**
+   * Get termsAndConditionsUrl
+   * @return termsAndConditionsUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getTermsAndConditionsUrl() {
+    return termsAndConditionsUrl;
+  }
+
+  public void setTermsAndConditionsUrl(String termsAndConditionsUrl) {
+    this.termsAndConditionsUrl = termsAndConditionsUrl;
+  }
+
+  public PaymentWizardDataResponse learnMoreUrl(String learnMoreUrl) {
+    this.learnMoreUrl = learnMoreUrl;
+    return this;
+  }
+
+   /**
+   * Get learnMoreUrl
+   * @return learnMoreUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getLearnMoreUrl() {
+    return learnMoreUrl;
+  }
+
+  public void setLearnMoreUrl(String learnMoreUrl) {
+    this.learnMoreUrl = learnMoreUrl;
+  }
+
   public PaymentWizardDataResponse paymentFormMessages(List<String> paymentFormMessages) {
     this.paymentFormMessages = paymentFormMessages;
     return this;
@@ -468,12 +531,15 @@ public class PaymentWizardDataResponse   {
         Objects.equals(this.numberOfInstallmentsSelectionsOption, paymentWizardDataResponse.numberOfInstallmentsSelectionsOption) &&
         Objects.equals(this.addressIsReadonly, paymentWizardDataResponse.addressIsReadonly) &&
         Objects.equals(this.logoURL, paymentWizardDataResponse.logoURL) &&
+        Objects.equals(this.privacyPolicyUrl, paymentWizardDataResponse.privacyPolicyUrl) &&
+        Objects.equals(this.termsAndConditionsUrl, paymentWizardDataResponse.termsAndConditionsUrl) &&
+        Objects.equals(this.learnMoreUrl, paymentWizardDataResponse.learnMoreUrl) &&
         Objects.equals(this.paymentFormMessages, paymentWizardDataResponse.paymentFormMessages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, addressIsReadonly, logoURL, paymentFormMessages);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, addressIsReadonly, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, paymentFormMessages);
   }
 
 
@@ -500,6 +566,9 @@ public class PaymentWizardDataResponse   {
     sb.append("    numberOfInstallmentsSelectionsOption: ").append(toIndentedString(numberOfInstallmentsSelectionsOption)).append("\n");
     sb.append("    addressIsReadonly: ").append(toIndentedString(addressIsReadonly)).append("\n");
     sb.append("    logoURL: ").append(toIndentedString(logoURL)).append("\n");
+    sb.append("    privacyPolicyUrl: ").append(toIndentedString(privacyPolicyUrl)).append("\n");
+    sb.append("    termsAndConditionsUrl: ").append(toIndentedString(termsAndConditionsUrl)).append("\n");
+    sb.append("    learnMoreUrl: ").append(toIndentedString(learnMoreUrl)).append("\n");
     sb.append("    paymentFormMessages: ").append(toIndentedString(paymentFormMessages)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -3,21 +3,16 @@ export const BASE_PATH_SANDBOX = "https://webapi.sandbox.splitit.com".replace(/\
 
 export * from './addressData';
 export * from './addressData2';
-export * from './agent';
 export * from './amountDetails';
 export * from './amountDetails2';
 export * from './approveInstallmentPlanRequest';
 export * from './authenticationType';
-export * from './bankDetails';
 export * from './buRef';
-export * from './businessUnitRef';
 export * from './cancelInstallmentPlanRequest';
 export * from './cardData';
 export * from './cartData';
 export * from './chargebackRequest';
 export * from './consumerData';
-export * from './contactPerson';
-export * from './contactPersonType';
 export * from './createInstallmentPlanLegacyResponse';
 export * from './createInstallmentPlanRequest';
 export * from './createInstallmentsPlanResponse';
@@ -29,6 +24,7 @@ export * from './eventsEndpoints';
 export * from './extendedInstallmentPlan';
 export * from './extendedInstallmentPlanAllOf';
 export * from './externalAuth';
+export * from './flexFieldsDataResponse';
 export * from './fraudCheck';
 export * from './fraudCheckResult';
 export * from './get3DSecureParametersRequest';
@@ -60,9 +56,8 @@ export * from './loginRequest';
 export * from './loginResponse';
 export * from './loginResponse2';
 export * from './loginResponseAllOf';
-export * from './merchant';
 export * from './merchantRef';
-export * from './merchantVertical';
+export * from './merchantRefAllOf';
 export * from './modelError';
 export * from './money';
 export * from './moneyWithCurrencyCode';
@@ -75,6 +70,8 @@ export * from './paymentWizardDataResponseAllOf';
 export * from './planApprovalEvidence';
 export * from './planData';
 export * from './planStrategy';
+export * from './publicTokenRequest';
+export * from './publicTokenResponse';
 export * from './purchaseMethod';
 export * from './reAuthorization';
 export * from './redirectUrls';
@@ -89,8 +86,6 @@ export * from './requestHeader';
 export * from './responseError';
 export * from './responseHeader';
 export * from './responseStatus';
-export * from './salesAssociate';
-export * from './splititEntity';
 export * from './startInstallmentsRequest';
 export * from './systemTextCategory';
 export * from './termsAndConditions';
@@ -113,21 +108,16 @@ import localVarRequest = require('request');
 
 import { AddressData } from './addressData';
 import { AddressData2 } from './addressData2';
-import { Agent } from './agent';
 import { AmountDetails } from './amountDetails';
 import { AmountDetails2 } from './amountDetails2';
 import { ApproveInstallmentPlanRequest } from './approveInstallmentPlanRequest';
 import { AuthenticationType } from './authenticationType';
-import { BankDetails } from './bankDetails';
 import { BuRef } from './buRef';
-import { BusinessUnitRef } from './businessUnitRef';
 import { CancelInstallmentPlanRequest } from './cancelInstallmentPlanRequest';
 import { CardData } from './cardData';
 import { CartData } from './cartData';
 import { ChargebackRequest } from './chargebackRequest';
 import { ConsumerData } from './consumerData';
-import { ContactPerson } from './contactPerson';
-import { ContactPersonType } from './contactPersonType';
 import { CreateInstallmentPlanLegacyResponse } from './createInstallmentPlanLegacyResponse';
 import { CreateInstallmentPlanRequest } from './createInstallmentPlanRequest';
 import { CreateInstallmentsPlanResponse } from './createInstallmentsPlanResponse';
@@ -139,6 +129,7 @@ import { EventsEndpoints } from './eventsEndpoints';
 import { ExtendedInstallmentPlan } from './extendedInstallmentPlan';
 import { ExtendedInstallmentPlanAllOf } from './extendedInstallmentPlanAllOf';
 import { ExternalAuth } from './externalAuth';
+import { FlexFieldsDataResponse } from './flexFieldsDataResponse';
 import { FraudCheck } from './fraudCheck';
 import { FraudCheckResult } from './fraudCheckResult';
 import { Get3DSecureParametersRequest } from './get3DSecureParametersRequest';
@@ -170,9 +161,8 @@ import { LoginRequest } from './loginRequest';
 import { LoginResponse } from './loginResponse';
 import { LoginResponse2 } from './loginResponse2';
 import { LoginResponseAllOf } from './loginResponseAllOf';
-import { Merchant } from './merchant';
 import { MerchantRef } from './merchantRef';
-import { MerchantVertical } from './merchantVertical';
+import { MerchantRefAllOf } from './merchantRefAllOf';
 import { ModelError } from './modelError';
 import { Money } from './money';
 import { MoneyWithCurrencyCode } from './moneyWithCurrencyCode';
@@ -185,6 +175,8 @@ import { PaymentWizardDataResponseAllOf } from './paymentWizardDataResponseAllOf
 import { PlanApprovalEvidence } from './planApprovalEvidence';
 import { PlanData } from './planData';
 import { PlanStrategy } from './planStrategy';
+import { PublicTokenRequest } from './publicTokenRequest';
+import { PublicTokenResponse } from './publicTokenResponse';
 import { PurchaseMethod } from './purchaseMethod';
 import { ReAuthorization } from './reAuthorization';
 import { RedirectUrls } from './redirectUrls';
@@ -199,8 +191,6 @@ import { RequestHeader } from './requestHeader';
 import { ResponseError } from './responseError';
 import { ResponseHeader } from './responseHeader';
 import { ResponseStatus } from './responseStatus';
-import { SalesAssociate } from './salesAssociate';
-import { SplititEntity } from './splititEntity';
 import { StartInstallmentsRequest } from './startInstallmentsRequest';
 import { SystemTextCategory } from './systemTextCategory';
 import { TermsAndConditions } from './termsAndConditions';
@@ -233,19 +223,16 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AuthenticationType": AuthenticationType,
-        "ContactPersonType": ContactPersonType,
         "DelayResolution": DelayResolution,
         "FraudCheckResult": FraudCheckResult,
         "InstallmentPlanActivityStatus": InstallmentPlanActivityStatus,
         "InstallmentPlanCancelationReason": InstallmentPlanCancelationReason,
         "InstallmentPlanStatus": InstallmentPlanStatus,
         "InstallmentsPlanDateType": InstallmentsPlanDateType,
-        "MerchantVertical": MerchantVertical,
         "PlanStrategy": PlanStrategy,
         "PurchaseMethod": PurchaseMethod,
         "RefundStrategy": RefundStrategy,
         "RefundUnderCancelation": RefundUnderCancelation,
-        "SplititEntity": SplititEntity,
         "SystemTextCategory": SystemTextCategory,
         "TestModes": TestModes,
         "TransactionStatus": TransactionStatus,
@@ -255,19 +242,15 @@ let enumsMap: {[index: string]: any} = {
 let typeMap: {[index: string]: any} = {
     "AddressData": AddressData,
     "AddressData2": AddressData2,
-    "Agent": Agent,
     "AmountDetails": AmountDetails,
     "AmountDetails2": AmountDetails2,
     "ApproveInstallmentPlanRequest": ApproveInstallmentPlanRequest,
-    "BankDetails": BankDetails,
     "BuRef": BuRef,
-    "BusinessUnitRef": BusinessUnitRef,
     "CancelInstallmentPlanRequest": CancelInstallmentPlanRequest,
     "CardData": CardData,
     "CartData": CartData,
     "ChargebackRequest": ChargebackRequest,
     "ConsumerData": ConsumerData,
-    "ContactPerson": ContactPerson,
     "CreateInstallmentPlanLegacyResponse": CreateInstallmentPlanLegacyResponse,
     "CreateInstallmentPlanRequest": CreateInstallmentPlanRequest,
     "CreateInstallmentsPlanResponse": CreateInstallmentsPlanResponse,
@@ -278,6 +261,7 @@ let typeMap: {[index: string]: any} = {
     "ExtendedInstallmentPlan": ExtendedInstallmentPlan,
     "ExtendedInstallmentPlanAllOf": ExtendedInstallmentPlanAllOf,
     "ExternalAuth": ExternalAuth,
+    "FlexFieldsDataResponse": FlexFieldsDataResponse,
     "FraudCheck": FraudCheck,
     "Get3DSecureParametersRequest": Get3DSecureParametersRequest,
     "Get3DSecureParametersResponse": Get3DSecureParametersResponse,
@@ -304,8 +288,8 @@ let typeMap: {[index: string]: any} = {
     "LoginResponse": LoginResponse,
     "LoginResponse2": LoginResponse2,
     "LoginResponseAllOf": LoginResponseAllOf,
-    "Merchant": Merchant,
     "MerchantRef": MerchantRef,
+    "MerchantRefAllOf": MerchantRefAllOf,
     "ModelError": ModelError,
     "Money": Money,
     "MoneyWithCurrencyCode": MoneyWithCurrencyCode,
@@ -317,6 +301,8 @@ let typeMap: {[index: string]: any} = {
     "PaymentWizardDataResponseAllOf": PaymentWizardDataResponseAllOf,
     "PlanApprovalEvidence": PlanApprovalEvidence,
     "PlanData": PlanData,
+    "PublicTokenRequest": PublicTokenRequest,
+    "PublicTokenResponse": PublicTokenResponse,
     "ReAuthorization": ReAuthorization,
     "RedirectUrls": RedirectUrls,
     "ReferenceEntityBase": ReferenceEntityBase,
@@ -328,7 +314,6 @@ let typeMap: {[index: string]: any} = {
     "ResponseError": ResponseError,
     "ResponseHeader": ResponseHeader,
     "ResponseStatus": ResponseStatus,
-    "SalesAssociate": SalesAssociate,
     "StartInstallmentsRequest": StartInstallmentsRequest,
     "TermsAndConditions": TermsAndConditions,
     "TermsAndConditionsGetRequest": TermsAndConditionsGetRequest,

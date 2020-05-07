@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**installmentPlanCancel**](InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**installmentPlanChargeBack**](InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
+[**installmentPlanCreatePublicToken**](InstallmentPlanApi.md#installmentPlanCreatePublicToken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
@@ -222,6 +223,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateInstallmentsPlanResponse**](CreateInstallmentsPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+<a name="installmentPlanCreatePublicToken"></a>
+# **installmentPlanCreatePublicToken**
+> PublicTokenResponse installmentPlanCreatePublicToken(request)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.splitit.ApiException;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
+
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
+
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
+PublicTokenRequest request = new PublicTokenRequest(); // PublicTokenRequest | 
+try {
+    PublicTokenResponse result = apiInstance.installmentPlanCreatePublicToken(request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstallmentPlanApi#installmentPlanCreatePublicToken");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**PublicTokenRequest**](PublicTokenRequest.md)|  |
+
+### Return type
+
+[**PublicTokenResponse**](PublicTokenResponse.md)
 
 ### Authorization
 

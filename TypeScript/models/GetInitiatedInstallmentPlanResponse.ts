@@ -26,10 +26,10 @@ import {
     ConsumerDataFromJSON,
     ConsumerDataFromJSONTyped,
     ConsumerDataToJSON,
-    Merchant,
-    MerchantFromJSON,
-    MerchantFromJSONTyped,
-    MerchantToJSON,
+    MerchantRef,
+    MerchantRefFromJSON,
+    MerchantRefFromJSONTyped,
+    MerchantRefToJSON,
     PaymentWizardDataResponse,
     PaymentWizardDataResponseFromJSON,
     PaymentWizardDataResponseFromJSONTyped,
@@ -82,10 +82,10 @@ export interface GetInitiatedInstallmentPlanResponse {
     consumerData?: ConsumerData;
     /**
      * 
-     * @type {Merchant}
+     * @type {MerchantRef}
      * @memberof GetInitiatedInstallmentPlanResponse
      */
-    merchantData?: Merchant;
+    merchantData?: MerchantRef;
     /**
      * 
      * @type {AddressData}
@@ -121,7 +121,7 @@ export function GetInitiatedInstallmentPlanResponseFromJSONTyped(json: any, igno
         'planData': !exists(json, 'PlanData') ? undefined : PlanDataFromJSON(json['PlanData']),
         'cartData': !exists(json, 'CartData') ? undefined : CartDataFromJSON(json['CartData']),
         'consumerData': !exists(json, 'ConsumerData') ? undefined : ConsumerDataFromJSON(json['ConsumerData']),
-        'merchantData': !exists(json, 'MerchantData') ? undefined : MerchantFromJSON(json['MerchantData']),
+        'merchantData': !exists(json, 'MerchantData') ? undefined : MerchantRefFromJSON(json['MerchantData']),
         'billingAddress': !exists(json, 'BillingAddress') ? undefined : AddressDataFromJSON(json['BillingAddress']),
         'paymentWizardDataResponse': !exists(json, 'PaymentWizardDataResponse') ? undefined : PaymentWizardDataResponseFromJSON(json['PaymentWizardDataResponse']),
         'errorIndicator': !exists(json, 'ErrorIndicator') ? undefined : json['ErrorIndicator'],
@@ -142,7 +142,7 @@ export function GetInitiatedInstallmentPlanResponseToJSON(value?: GetInitiatedIn
         'PlanData': PlanDataToJSON(value.planData),
         'CartData': CartDataToJSON(value.cartData),
         'ConsumerData': ConsumerDataToJSON(value.consumerData),
-        'MerchantData': MerchantToJSON(value.merchantData),
+        'MerchantData': MerchantRefToJSON(value.merchantData),
         'BillingAddress': AddressDataToJSON(value.billingAddress),
         'PaymentWizardDataResponse': PaymentWizardDataResponseToJSON(value.paymentWizardDataResponse),
         'ErrorIndicator': value.errorIndicator,

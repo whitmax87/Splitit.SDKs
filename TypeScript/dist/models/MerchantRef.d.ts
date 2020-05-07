@@ -9,13 +9,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ReferenceEntityBase } from './';
 /**
  *
  * @export
  * @interface MerchantRef
  */
-export interface MerchantRef extends ReferenceEntityBase {
+export interface MerchantRef {
+    /**
+     *
+     * @type {number}
+     * @memberof MerchantRef
+     */
+    id: number;
+    /**
+     *
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    code?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    name?: string;
 }
 export declare function MerchantRefFromJSON(json: any): MerchantRef;
 export declare function MerchantRefFromJSONTyped(json: any, ignoreDiscriminator: boolean): MerchantRef;

@@ -45,6 +45,37 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>ApiResponse of GetResourcesResponse</returns>
         ApiResponse<GetResourcesResponse> InfrastructureGetResourcesWithHttpInfo (GetResourcesRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>GetResourcesResponse</returns>
+        GetResourcesResponse InfrastructureGetResources2 (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>ApiResponse of GetResourcesResponse</returns>
+        ApiResponse<GetResourcesResponse> InfrastructureGetResources2WithHttpInfo (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -68,6 +99,37 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (GetResourcesResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetResourcesResponse>> InfrastructureGetResourcesAsyncWithHttpInfo (GetResourcesRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>Task of GetResourcesResponse</returns>
+        System.Threading.Tasks.Task<GetResourcesResponse> InfrastructureGetResources2Async (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>Task of ApiResponse (GetResourcesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetResourcesResponse>> InfrastructureGetResources2AsyncWithHttpInfo (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null);
         #endregion Asynchronous Operations
     }
 
@@ -322,6 +384,169 @@ namespace Splitit.SDK.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("InfrastructureGetResources", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetResourcesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetResourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetResourcesResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>GetResourcesResponse</returns>
+        public GetResourcesResponse InfrastructureGetResources2 (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null)
+        {
+             ApiResponse<GetResourcesResponse> localVarResponse = InfrastructureGetResources2WithHttpInfo(apiKey, sessionId, merchantCode, cultureName, touchPointCode, systemTextCategories);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>ApiResponse of GetResourcesResponse</returns>
+        public ApiResponse< GetResourcesResponse > InfrastructureGetResources2WithHttpInfo (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null)
+        {
+
+            var localVarPath = "./api/Infrastructure/GetResources";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (apiKey != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "apiKey", apiKey)); // query parameter
+            if (sessionId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionId", sessionId)); // query parameter
+            if (merchantCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "merchantCode", merchantCode)); // query parameter
+            if (cultureName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cultureName", cultureName)); // query parameter
+            if (touchPointCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "touchPointCode", touchPointCode)); // query parameter
+            if (systemTextCategories != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "systemTextCategories", systemTextCategories)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InfrastructureGetResources2", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetResourcesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (GetResourcesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetResourcesResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>Task of GetResourcesResponse</returns>
+        public async System.Threading.Tasks.Task<GetResourcesResponse> InfrastructureGetResources2Async (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null)
+        {
+             ApiResponse<GetResourcesResponse> localVarResponse = await InfrastructureGetResources2AsyncWithHttpInfo(apiKey, sessionId, merchantCode, cultureName, touchPointCode, systemTextCategories);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="apiKey"> (optional)</param>
+        /// <param name="sessionId"> (optional)</param>
+        /// <param name="merchantCode"> (optional)</param>
+        /// <param name="cultureName"> (optional)</param>
+        /// <param name="touchPointCode"> (optional)</param>
+        /// <param name="systemTextCategories"> (optional)</param>
+        /// <returns>Task of ApiResponse (GetResourcesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetResourcesResponse>> InfrastructureGetResources2AsyncWithHttpInfo (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null)
+        {
+
+            var localVarPath = "./api/Infrastructure/GetResources";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (apiKey != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "apiKey", apiKey)); // query parameter
+            if (sessionId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionId", sessionId)); // query parameter
+            if (merchantCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "merchantCode", merchantCode)); // query parameter
+            if (cultureName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cultureName", cultureName)); // query parameter
+            if (touchPointCode != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "touchPointCode", touchPointCode)); // query parameter
+            if (systemTextCategories != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "systemTextCategories", systemTextCategories)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("InfrastructureGetResources2", localVarResponse);
                 if (exception != null) throw exception;
             }
 

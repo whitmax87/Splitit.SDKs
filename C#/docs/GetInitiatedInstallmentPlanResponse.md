@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **PlanData** | [**PlanData**](PlanData.md) |  | [optional] 
 **CartData** | [**CartData**](CartData.md) |  | [optional] 
 **ConsumerData** | [**ConsumerData**](ConsumerData.md) |  | [optional] 
-**MerchantData** | [**Merchant**](Merchant.md) |  | [optional] 
+**MerchantData** | [**MerchantRef**](MerchantRef.md) |  | [optional] 
 **BillingAddress** | [**AddressData**](AddressData.md) |  | [optional] 
 **PaymentWizardDataResponse** | [**PaymentWizardDataResponse**](PaymentWizardDataResponse.md) |  | [optional] 
 **ErrorIndicator** | [**Error**](Error.md) |  | [optional] 

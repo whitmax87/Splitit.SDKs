@@ -78,6 +78,24 @@ export interface PaymentWizardDataResponseAllOf {
     logoURL?: string;
     /**
      *
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    privacyPolicyUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    termsAndConditionsUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    learnMoreUrl?: string;
+    /**
+     *
      * @type {Array<string>}
      * @memberof PaymentWizardDataResponseAllOf
      */

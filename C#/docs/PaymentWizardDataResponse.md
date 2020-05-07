@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **NumberOfInstallmentsSelectionsOption** | **string** |  | [optional] 
 **AddressIsReadonly** | **bool?** |  | 
 **LogoURL** | **string** |  | [optional] 
+**PrivacyPolicyUrl** | **string** |  | [optional] 
+**TermsAndConditionsUrl** | **string** |  | [optional] 
+**LearnMoreUrl** | **string** |  | [optional] 
 **PaymentFormMessages** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -21,10 +21,22 @@ import {
     GetResourcesResponse,
     GetResourcesResponseFromJSON,
     GetResourcesResponseToJSON,
+    SystemTextCategory,
+    SystemTextCategoryFromJSON,
+    SystemTextCategoryToJSON,
 } from '../models';
 
 export interface InfrastructureGetResourcesRequest {
     request: GetResourcesRequest;
+}
+
+export interface InfrastructureGetResources2Request {
+    apiKey?: string | null;
+    sessionId?: string | null;
+    merchantCode?: string | null;
+    cultureName?: string | null;
+    touchPointCode?: string | null;
+    systemTextCategories?: Array<SystemTextCategory> | null;
 }
 
 /**
@@ -60,6 +72,54 @@ export class InfrastructureApi extends runtime.BaseAPI {
      */
     async infrastructureGetResources(requestParameters: InfrastructureGetResourcesRequest): Promise<GetResourcesResponse> {
         const response = await this.infrastructureGetResourcesRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async infrastructureGetResources2Raw(requestParameters: InfrastructureGetResources2Request): Promise<runtime.ApiResponse<GetResourcesResponse>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        if (requestParameters.apiKey !== undefined) {
+            queryParameters['apiKey'] = requestParameters.apiKey;
+        }
+
+        if (requestParameters.sessionId !== undefined) {
+            queryParameters['sessionId'] = requestParameters.sessionId;
+        }
+
+        if (requestParameters.merchantCode !== undefined) {
+            queryParameters['merchantCode'] = requestParameters.merchantCode;
+        }
+
+        if (requestParameters.cultureName !== undefined) {
+            queryParameters['cultureName'] = requestParameters.cultureName;
+        }
+
+        if (requestParameters.touchPointCode !== undefined) {
+            queryParameters['touchPointCode'] = requestParameters.touchPointCode;
+        }
+
+        if (requestParameters.systemTextCategories) {
+            queryParameters['systemTextCategories'] = requestParameters.systemTextCategories;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/Infrastructure/GetResources`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetResourcesResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async infrastructureGetResources2(requestParameters: InfrastructureGetResources2Request): Promise<GetResourcesResponse> {
+        const response = await this.infrastructureGetResources2Raw(requestParameters);
         return await response.value();
     }
 

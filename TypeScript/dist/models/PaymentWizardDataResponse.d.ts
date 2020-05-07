@@ -126,6 +126,24 @@ export interface PaymentWizardDataResponse {
     logoURL?: string;
     /**
      *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    privacyPolicyUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    termsAndConditionsUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponse
+     */
+    learnMoreUrl?: string;
+    /**
+     *
      * @type {Array<string>}
      * @memberof PaymentWizardDataResponse
      */

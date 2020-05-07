@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+    MerchantRefAllOf,
+    MerchantRefAllOfFromJSON,
+    MerchantRefAllOfFromJSONTyped,
+    MerchantRefAllOfToJSON,
     ReferenceEntityBase,
     ReferenceEntityBaseFromJSON,
     ReferenceEntityBaseFromJSONTyped,
@@ -25,7 +29,31 @@ import {
  * @export
  * @interface MerchantRef
  */
-export interface MerchantRef extends ReferenceEntityBase {
+export interface MerchantRef {
+    /**
+     * 
+     * @type {number}
+     * @memberof MerchantRef
+     */
+    id: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    code?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MerchantRef
+     */
+    name?: string;
 }
 
 export function MerchantRefFromJSON(json: any): MerchantRef {
@@ -33,11 +61,32 @@ export function MerchantRefFromJSON(json: any): MerchantRef {
 }
 
 export function MerchantRefFromJSONTyped(json: any, ignoreDiscriminator: boolean): MerchantRef {
-    return json;
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        
+        'id': json['Id'],
+        'code': !exists(json, 'Code') ? undefined : json['Code'],
+        'description': !exists(json, 'Description') ? undefined : json['Description'],
+        'name': !exists(json, 'Name') ? undefined : json['Name'],
+    };
 }
 
 export function MerchantRefToJSON(value?: MerchantRef | null): any {
-    return value;
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        
+        'Id': value.id,
+        'Code': value.code,
+        'Description': value.description,
+        'Name': value.name,
+    };
 }
 
 

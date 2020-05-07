@@ -60,6 +60,12 @@ import {
     InstallmentPlanResponse,
     InstallmentPlanResponseFromJSON,
     InstallmentPlanResponseToJSON,
+    PublicTokenRequest,
+    PublicTokenRequestFromJSON,
+    PublicTokenRequestToJSON,
+    PublicTokenResponse,
+    PublicTokenResponseFromJSON,
+    PublicTokenResponseToJSON,
     RefundInstallmentPlanResponse,
     RefundInstallmentPlanResponseFromJSON,
     RefundInstallmentPlanResponseToJSON,
@@ -103,6 +109,10 @@ export interface InstallmentPlanChargeBackRequest {
 
 export interface InstallmentPlanCreateRequest {
     request: CreateInstallmentPlanRequest;
+}
+
+export interface InstallmentPlanCreatePublicTokenRequest {
+    request: PublicTokenRequest;
 }
 
 export interface InstallmentPlanGetRequest {
@@ -271,6 +281,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanCreate(requestParameters: InstallmentPlanCreateRequest): Promise<CreateInstallmentsPlanResponse> {
         const response = await this.installmentPlanCreateRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanCreatePublicTokenRaw(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<runtime.ApiResponse<PublicTokenResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanCreatePublicToken.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/CreatePublicToken`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PublicTokenRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PublicTokenResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanCreatePublicToken(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<PublicTokenResponse> {
+        const response = await this.installmentPlanCreatePublicTokenRaw(requestParameters);
         return await response.value();
     }
 

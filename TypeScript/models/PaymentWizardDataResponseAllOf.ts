@@ -88,6 +88,24 @@ export interface PaymentWizardDataResponseAllOf {
     logoURL?: string;
     /**
      * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    privacyPolicyUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    termsAndConditionsUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    learnMoreUrl?: string;
+    /**
+     * 
      * @type {Array<string>}
      * @memberof PaymentWizardDataResponseAllOf
      */
@@ -114,6 +132,9 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'logoURL': !exists(json, 'LogoURL') ? undefined : json['LogoURL'],
+        'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
+        'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
+        'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
         'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
     };
 }
@@ -137,6 +158,9 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'AddressIsReadonly': value.addressIsReadonly,
         'LogoURL': value.logoURL,
+        'PrivacyPolicyUrl': value.privacyPolicyUrl,
+        'TermsAndConditionsUrl': value.termsAndConditionsUrl,
+        'LearnMoreUrl': value.learnMoreUrl,
         'PaymentFormMessages': value.paymentFormMessages,
     };
 }

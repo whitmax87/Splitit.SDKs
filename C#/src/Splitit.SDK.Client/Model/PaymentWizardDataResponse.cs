@@ -54,8 +54,11 @@ namespace Splitit.SDK.Client.Model
         /// <param name="numberOfInstallmentsSelectionsOption">numberOfInstallmentsSelectionsOption.</param>
         /// <param name="addressIsReadonly">addressIsReadonly (required).</param>
         /// <param name="logoURL">logoURL.</param>
+        /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
+        /// <param name="termsAndConditionsUrl">termsAndConditionsUrl.</param>
+        /// <param name="learnMoreUrl">learnMoreUrl.</param>
         /// <param name="paymentFormMessages">paymentFormMessages.</param>
-        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), Currency currencyDisplay = default(Currency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), string logoURL = default(string), List<string> paymentFormMessages = default(List<string>))
+        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), Currency currencyDisplay = default(Currency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<string> paymentFormMessages = default(List<string>))
         {
             this.IsOpenedInIframe = isOpenedInIframe;
             this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
@@ -75,6 +78,9 @@ namespace Splitit.SDK.Client.Model
             this.CurrencyDisplay = currencyDisplay;
             this.NumberOfInstallmentsSelectionsOption = numberOfInstallmentsSelectionsOption;
             this.LogoURL = logoURL;
+            this.PrivacyPolicyUrl = privacyPolicyUrl;
+            this.TermsAndConditionsUrl = termsAndConditionsUrl;
+            this.LearnMoreUrl = learnMoreUrl;
             this.PaymentFormMessages = paymentFormMessages;
         }
 
@@ -188,6 +194,24 @@ namespace Splitit.SDK.Client.Model
         public string LogoURL { get; set; }
 
         /// <summary>
+        /// Gets or Sets PrivacyPolicyUrl
+        /// </summary>
+        [DataMember(Name="PrivacyPolicyUrl", EmitDefaultValue=false)]
+        public string PrivacyPolicyUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TermsAndConditionsUrl
+        /// </summary>
+        [DataMember(Name="TermsAndConditionsUrl", EmitDefaultValue=false)]
+        public string TermsAndConditionsUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LearnMoreUrl
+        /// </summary>
+        [DataMember(Name="LearnMoreUrl", EmitDefaultValue=false)]
+        public string LearnMoreUrl { get; set; }
+
+        /// <summary>
         /// Gets or Sets PaymentFormMessages
         /// </summary>
         [DataMember(Name="PaymentFormMessages", EmitDefaultValue=false)]
@@ -219,6 +243,9 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  NumberOfInstallmentsSelectionsOption: ").Append(NumberOfInstallmentsSelectionsOption).Append("\n");
             sb.Append("  AddressIsReadonly: ").Append(AddressIsReadonly).Append("\n");
             sb.Append("  LogoURL: ").Append(LogoURL).Append("\n");
+            sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
+            sb.Append("  TermsAndConditionsUrl: ").Append(TermsAndConditionsUrl).Append("\n");
+            sb.Append("  LearnMoreUrl: ").Append(LearnMoreUrl).Append("\n");
             sb.Append("  PaymentFormMessages: ").Append(PaymentFormMessages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -345,6 +372,21 @@ namespace Splitit.SDK.Client.Model
                     this.LogoURL.Equals(input.LogoURL))
                 ) && 
                 (
+                    this.PrivacyPolicyUrl == input.PrivacyPolicyUrl ||
+                    (this.PrivacyPolicyUrl != null &&
+                    this.PrivacyPolicyUrl.Equals(input.PrivacyPolicyUrl))
+                ) && 
+                (
+                    this.TermsAndConditionsUrl == input.TermsAndConditionsUrl ||
+                    (this.TermsAndConditionsUrl != null &&
+                    this.TermsAndConditionsUrl.Equals(input.TermsAndConditionsUrl))
+                ) && 
+                (
+                    this.LearnMoreUrl == input.LearnMoreUrl ||
+                    (this.LearnMoreUrl != null &&
+                    this.LearnMoreUrl.Equals(input.LearnMoreUrl))
+                ) && 
+                (
                     this.PaymentFormMessages == input.PaymentFormMessages ||
                     this.PaymentFormMessages != null &&
                     this.PaymentFormMessages.SequenceEqual(input.PaymentFormMessages)
@@ -396,6 +438,12 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.AddressIsReadonly.GetHashCode();
                 if (this.LogoURL != null)
                     hashCode = hashCode * 59 + this.LogoURL.GetHashCode();
+                if (this.PrivacyPolicyUrl != null)
+                    hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
+                if (this.TermsAndConditionsUrl != null)
+                    hashCode = hashCode * 59 + this.TermsAndConditionsUrl.GetHashCode();
+                if (this.LearnMoreUrl != null)
+                    hashCode = hashCode * 59 + this.LearnMoreUrl.GetHashCode();
                 if (this.PaymentFormMessages != null)
                     hashCode = hashCode * 59 + this.PaymentFormMessages.GetHashCode();
                 return hashCode;

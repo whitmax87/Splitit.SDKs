@@ -34,6 +34,9 @@ function PaymentWizardDataResponseAllOfFromJSONTyped(json, ignoreDiscriminator) 
         'numberOfInstallmentsSelectionsOption': !runtime_1.exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'logoURL': !runtime_1.exists(json, 'LogoURL') ? undefined : json['LogoURL'],
+        'privacyPolicyUrl': !runtime_1.exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
+        'termsAndConditionsUrl': !runtime_1.exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
+        'learnMoreUrl': !runtime_1.exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
         'paymentFormMessages': !runtime_1.exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
     };
 }
@@ -56,6 +59,9 @@ function PaymentWizardDataResponseAllOfToJSON(value) {
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'AddressIsReadonly': value.addressIsReadonly,
         'LogoURL': value.logoURL,
+        'PrivacyPolicyUrl': value.privacyPolicyUrl,
+        'TermsAndConditionsUrl': value.termsAndConditionsUrl,
+        'LearnMoreUrl': value.learnMoreUrl,
         'PaymentFormMessages': value.paymentFormMessages,
     };
 }

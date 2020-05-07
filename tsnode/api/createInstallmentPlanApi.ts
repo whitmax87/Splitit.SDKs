@@ -28,16 +28,18 @@ import { Configuration } from '../runtime';
 
 export class CreateInstallmentPlanApi {
     protected _config: Configuration;
+    protected _sessionId?: string;
     protected _culture?: string;
     protected _defaultHeaders : any = {};
 
     protected interceptors: Interceptor[] = [];
 
-    constructor(config: Configuration) {
+    constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.4.3"
+            "Splitit-SDK": "NodeJS-1.4.4"
         };
+        this._sessionId = sessionId;
     }
 
     get defaultHeaders() {
@@ -165,14 +167,14 @@ export class CreateInstallmentPlanApi {
             json: true,
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 

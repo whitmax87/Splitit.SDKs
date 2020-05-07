@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AddressData, CartData, ConsumerData, Merchant, PaymentWizardDataResponse, PlanData, ResponseHeader } from './';
+import { AddressData, CartData, ConsumerData, MerchantRef, PaymentWizardDataResponse, PlanData, ResponseHeader } from './';
 /**
  *
  * @export
@@ -48,10 +48,10 @@ export interface GetInitiatedInstallmentPlanResponse {
     consumerData?: ConsumerData;
     /**
      *
-     * @type {Merchant}
+     * @type {MerchantRef}
      * @memberof GetInitiatedInstallmentPlanResponse
      */
-    merchantData?: Merchant;
+    merchantData?: MerchantRef;
     /**
      *
      * @type {AddressData}

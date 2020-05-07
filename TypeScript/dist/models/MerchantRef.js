@@ -13,15 +13,35 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+var runtime_1 = require("../runtime");
 function MerchantRefFromJSON(json) {
     return MerchantRefFromJSONTyped(json, false);
 }
 exports.MerchantRefFromJSON = MerchantRefFromJSON;
 function MerchantRefFromJSONTyped(json, ignoreDiscriminator) {
-    return json;
+    if ((json === undefined) || (json === null)) {
+        return json;
+    }
+    return {
+        'id': json['Id'],
+        'code': !runtime_1.exists(json, 'Code') ? undefined : json['Code'],
+        'description': !runtime_1.exists(json, 'Description') ? undefined : json['Description'],
+        'name': !runtime_1.exists(json, 'Name') ? undefined : json['Name'],
+    };
 }
 exports.MerchantRefFromJSONTyped = MerchantRefFromJSONTyped;
 function MerchantRefToJSON(value) {
-    return value;
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+    return {
+        'Id': value.id,
+        'Code': value.code,
+        'Description': value.description,
+        'Name': value.name,
+    };
 }
 exports.MerchantRefToJSON = MerchantRefToJSON;

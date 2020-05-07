@@ -40,7 +40,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="billingAddress">billingAddress.</param>
         /// <param name="paymentWizardDataResponse">paymentWizardDataResponse.</param>
         /// <param name="errorIndicator">errorIndicator.</param>
-        public GetInitiatedInstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), string installmentPlanNumber = default(string), PlanData planData = default(PlanData), CartData cartData = default(CartData), ConsumerData consumerData = default(ConsumerData), Merchant merchantData = default(Merchant), AddressData billingAddress = default(AddressData), PaymentWizardDataResponse paymentWizardDataResponse = default(PaymentWizardDataResponse), Error errorIndicator = default(Error))
+        public GetInitiatedInstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), string installmentPlanNumber = default(string), PlanData planData = default(PlanData), CartData cartData = default(CartData), ConsumerData consumerData = default(ConsumerData), MerchantRef merchantData = default(MerchantRef), AddressData billingAddress = default(AddressData), PaymentWizardDataResponse paymentWizardDataResponse = default(PaymentWizardDataResponse), Error errorIndicator = default(Error))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlanNumber = installmentPlanNumber;
@@ -88,7 +88,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets MerchantData
         /// </summary>
         [DataMember(Name="MerchantData", EmitDefaultValue=false)]
-        public Merchant MerchantData { get; set; }
+        public MerchantRef MerchantData { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingAddress

@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-04-21T07:57:36.416Z
-- SDK Version: 1.4.3
+  - Build date: 2020-05-07T22:13:41.756Z
+- SDK Version: 1.4.4
 
 ## Requirements
 
@@ -114,10 +114,12 @@ All URIs are relative to *https://webapi.production.splitit.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *InfrastructureApi* | [**infrastructureGetResources**](docs/InfrastructureApi.md#infrastructureGetResources) | **POST** /api/Infrastructure/GetResources | 
+*InfrastructureApi* | [**infrastructureGetResources2**](docs/InfrastructureApi.md#infrastructureGetResources2) | **GET** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/InstallmentPlanApi.md#installmentPlanApprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
+*InstallmentPlanApi* | [**installmentPlanCreatePublicToken**](docs/InstallmentPlanApi.md#installmentPlanCreatePublicToken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
@@ -129,28 +131,26 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /api/Login | 
+*TouchPointsApi* | [**touchPointsFlexFieldsData**](docs/TouchPointsApi.md#touchPointsFlexFieldsData) | **GET** /api/TouchPoints/SetupData/FlexFieldsData | 
 
 
 ## Documentation for Models
 
  - [AddressData2](docs/AddressData2.md)
- - [Agent](docs/Agent.md)
  - [AmountDetails2](docs/AmountDetails2.md)
  - [ApproveInstallmentPlanRequest](docs/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/AuthenticationType.md)
- - [BankDetails](docs/BankDetails.md)
  - [CancelInstallmentPlanRequest](docs/CancelInstallmentPlanRequest.md)
  - [CardData](docs/CardData.md)
  - [CartData](docs/CartData.md)
  - [ChargebackRequest](docs/ChargebackRequest.md)
- - [ContactPerson](docs/ContactPerson.md)
- - [ContactPersonType](docs/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/CreateInstallmentPlanLegacyResponse.md)
  - [CreateInstallmentPlanRequest](docs/CreateInstallmentPlanRequest.md)
  - [DelayResolution](docs/DelayResolution.md)
  - [Error](docs/Error.md)
  - [EventsEndpoints](docs/EventsEndpoints.md)
  - [ExternalAuth](docs/ExternalAuth.md)
+ - [FlexFieldsDataResponse](docs/FlexFieldsDataResponse.md)
  - [FraudCheck](docs/FraudCheck.md)
  - [FraudCheckResult](docs/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Get3DSecureParametersRequest.md)
@@ -176,8 +176,6 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/ItemData.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse2](docs/LoginResponse2.md)
- - [Merchant](docs/Merchant.md)
- - [MerchantVertical](docs/MerchantVertical.md)
  - [Money](docs/Money.md)
  - [MoneyWithCurrencyCode](docs/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/PagingRequestHeader.md)
@@ -187,6 +185,8 @@ Class | Method | HTTP request | Description
  - [PlanApprovalEvidence](docs/PlanApprovalEvidence.md)
  - [PlanData](docs/PlanData.md)
  - [PlanStrategy](docs/PlanStrategy.md)
+ - [PublicTokenRequest](docs/PublicTokenRequest.md)
+ - [PublicTokenResponse](docs/PublicTokenResponse.md)
  - [PurchaseMethod](docs/PurchaseMethod.md)
  - [ReAuthorization](docs/ReAuthorization.md)
  - [RedirectUrls](docs/RedirectUrls.md)
@@ -199,8 +199,6 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/ResponseError.md)
  - [ResponseHeader](docs/ResponseHeader.md)
  - [ResponseStatus](docs/ResponseStatus.md)
- - [SalesAssociate](docs/SalesAssociate.md)
- - [SplititEntity](docs/SplititEntity.md)
  - [StartInstallmentsRequest](docs/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/SystemTextCategory.md)
  - [TermsAndConditions](docs/TermsAndConditions.md)
@@ -218,7 +216,6 @@ Class | Method | HTTP request | Description
  - [AddressData](docs/AddressData.md)
  - [AmountDetails](docs/AmountDetails.md)
  - [BuRef](docs/BuRef.md)
- - [BusinessUnitRef](docs/BusinessUnitRef.md)
  - [ConsumerData](docs/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Currency.md)

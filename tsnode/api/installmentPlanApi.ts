@@ -29,6 +29,8 @@ import { GetInstallmentsPlanSearchCriteriaRequest } from '../model/getInstallmen
 import { InitiateInstallmentPlanRequest } from '../model/initiateInstallmentPlanRequest';
 import { InitiateInstallmentsPlanResponse } from '../model/initiateInstallmentsPlanResponse';
 import { InstallmentPlanResponse } from '../model/installmentPlanResponse';
+import { PublicTokenRequest } from '../model/publicTokenRequest';
+import { PublicTokenResponse } from '../model/publicTokenResponse';
 import { RefundInstallmentPlanResponse } from '../model/refundInstallmentPlanResponse';
 import { RefundPlanRequest } from '../model/refundPlanRequest';
 import { StartInstallmentsRequest } from '../model/startInstallmentsRequest';
@@ -51,16 +53,18 @@ import { Configuration } from '../runtime';
 
 export class InstallmentPlanApi {
     protected _config: Configuration;
+    protected _sessionId?: string;
     protected _culture?: string;
     protected _defaultHeaders : any = {};
 
     protected interceptors: Interceptor[] = [];
 
-    constructor(config: Configuration) {
+    constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.4.3"
+            "Splitit-SDK": "NodeJS-1.4.4"
         };
+        this._sessionId = sessionId;
     }
 
     get defaultHeaders() {
@@ -115,14 +119,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "ApproveInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -201,14 +205,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "CancelInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -287,14 +291,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "ChargebackRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -373,14 +377,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "CreateInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -408,6 +412,92 @@ export class InstallmentPlanApi {
                         reject(error);
                     } else {
                         body = ObjectSerializer.deserialize(body, "CreateInstallmentsPlanResponse");
+
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            if (body && body.responseHeader && !body.responseHeader.succeeded){
+                                reject(body.responseHeader);
+                            } else {
+                                resolve({ response: response, body: body });
+                            }                            
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
+     * @param request 
+     */
+    public async installmentPlanCreatePublicToken (request: PublicTokenRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PublicTokenResponse;  }> {
+        const localVarPath = this.basePath + '/api/InstallmentPlan/CreatePublicToken';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['text/plain', 'application/json', 'text/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new Error('Required parameter request was null or undefined when calling installmentPlanCreatePublicToken.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: false,
+            json: true,
+            body: ObjectSerializer.serialize(request, "PublicTokenRequest")
+        };
+
+        if (this._config.touchPoint || this._sessionId){
+            localVarRequestOptions.body.requestHeader = {};
+            if (this._config.touchPoint){
+                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
+            }
+
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
+                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
+            }
+
+            if (this._culture){
+                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
+            }
+        }
+
+        let interceptorPromise = Promise.resolve();
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: PublicTokenResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "PublicTokenResponse");
 
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             if (body && body.responseHeader && !body.responseHeader.succeeded){
@@ -459,14 +549,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "GetInstallmentsPlanSearchCriteriaRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -545,14 +635,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "Get3DSecureParametersRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -631,14 +721,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "GetInstallmentsPlanSearchCriteriaRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -717,14 +807,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "GetInitiatedInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -803,14 +893,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "InitiateInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -889,14 +979,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "RefundPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -975,14 +1065,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "StartInstallmentsRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -1061,14 +1151,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "TermsAndConditionsGetRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -1147,14 +1237,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "UpdateInstallmentPlanRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 
@@ -1233,14 +1323,14 @@ export class InstallmentPlanApi {
             body: ObjectSerializer.serialize(request, "VerifyPaymentRequest")
         };
 
-        if (this._config.touchPoint || this._config.sessionId){
+        if (this._config.touchPoint || this._sessionId){
             localVarRequestOptions.body.requestHeader = {};
             if (this._config.touchPoint){
                 localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
             }
 
-            if (this._config.sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._config.sessionId;
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
                 localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
             }
 

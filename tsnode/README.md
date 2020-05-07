@@ -106,5 +106,54 @@ app.listen(port, err => {
 });
 ```
 
+## Flex Fields
+
+Commong usage for NodeJS SDK is in making necessary server-side requests as part of FlexFields product integration.
+The code below is an example of how SDK wrappers can be used to simplify acquiring public token and verifying payment.
+For more information, please visit [FlexFields documentation](https://hosted.production.splitit.com/#nodejs).
+
+```TypeScript
+app.get('/get-token', async (req, res) => {
+  try{
+
+    splititApi.Configuration.sandbox.addApiKey("YOUR_API_KEY");
+    var env = splititApi.Configuration.sandbox;
+
+    var result:any = {};
+
+    var flexFields = await splititApi.FlexFields.authenticate(env, "YOUR_USERNAME", "YOUR_PASSWORD");
+    result.token = await flexFields.getPublicToken(1000, "USD");
+  
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify(result, null, 4));
+  } catch(e){
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify({ error: e }, null, 4));
+  }
+});
+
+app.post('/verify-payment', async (req, res) => {
+  try{
+    splititApi.Configuration.sandbox.addApiKey("YOUR_API_KEY");
+
+    var env = splititApi.Configuration.sandbox;
+    var flexFields = await splititApi.FlexFields.authenticate(env, "YOUR_USERNAME", "YOUR_PASSWORD");
+    var ok = await flexFields.verifyPayment(req.body.installmentPlanNumber, 1000);
+
+    if (!ok){
+      // Do something if payment is not verified
+    } else {
+      // Return success code
+    }
+
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify(result, null, 4));
+  } catch(e){
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify({ error: e }, null, 4));
+  }
+})
+```
+
 For detailed information on request and response procedures, please visit [Splitit Web API documentation](https://documenter.getpostman.com/view/795699/RWaNQSJH?version=latest)
 

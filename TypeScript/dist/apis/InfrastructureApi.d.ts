@@ -10,9 +10,17 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { GetResourcesRequest, GetResourcesResponse } from '../models';
+import { GetResourcesRequest, GetResourcesResponse, SystemTextCategory } from '../models';
 export interface InfrastructureGetResourcesRequest {
     request: GetResourcesRequest;
+}
+export interface InfrastructureGetResources2Request {
+    apiKey?: string | null;
+    sessionId?: string | null;
+    merchantCode?: string | null;
+    cultureName?: string | null;
+    touchPointCode?: string | null;
+    systemTextCategories?: Array<SystemTextCategory> | null;
 }
 /**
  * no description
@@ -24,4 +32,10 @@ export declare class InfrastructureApi extends runtime.BaseAPI {
     /**
      */
     infrastructureGetResources(requestParameters: InfrastructureGetResourcesRequest): Promise<GetResourcesResponse>;
+    /**
+     */
+    infrastructureGetResources2Raw(requestParameters: InfrastructureGetResources2Request): Promise<runtime.ApiResponse<GetResourcesResponse>>;
+    /**
+     */
+    infrastructureGetResources2(requestParameters: InfrastructureGetResources2Request): Promise<GetResourcesResponse>;
 }

@@ -11,17 +11,41 @@
  */
 
 import { RequestFile } from '../api';
+import { MerchantRefAllOf } from './merchantRefAllOf';
 import { ReferenceEntityBase } from './referenceEntityBase';
 
-export class MerchantRef extends ReferenceEntityBase {
+export class MerchantRef {
+    'id': number;
+    'code'?: string;
+    'description'?: string;
+    'name'?: string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
+        {
+            "name": "id",
+            "baseName": "Id",
+            "type": "number"
+        },
+        {
+            "name": "code",
+            "baseName": "Code",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "baseName": "Description",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "baseName": "Name",
+            "type": "string"
+        }    ];
 
     static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(MerchantRef.attributeTypeMap);
+        return MerchantRef.attributeTypeMap;
     }
 }
 
