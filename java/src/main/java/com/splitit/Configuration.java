@@ -13,7 +13,7 @@
 
 package com.splitit;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T14:31:21.835Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
 public class Configuration {
     private static String _sandboxApiKey;
     private static String _productionApiKey;

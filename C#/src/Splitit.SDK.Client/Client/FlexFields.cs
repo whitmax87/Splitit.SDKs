@@ -66,7 +66,7 @@ namespace Splitit.SDK.Client.Client
             return this;
         }
 
-        public FlexFields AddDeferredCapture(
+        public FlexFields AddCaptureSettings(
             bool? autoCapture = null, 
             decimal? firstInstallmentAmount = null,
             string currencyCode = null,

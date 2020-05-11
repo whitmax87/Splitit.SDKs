@@ -61,7 +61,7 @@ export class FlexFields
         return this;
     }
 
-    public addDeferredCapture(
+    public addCaptureSettings(
         autoCapture?: boolean, 
         firstInstallmentAmount?: number,
         currencyCode?: string,
