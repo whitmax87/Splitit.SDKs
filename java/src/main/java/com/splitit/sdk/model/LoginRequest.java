@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * LoginRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-07T22:13:41.756Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T14:31:21.835Z")
 public class LoginRequest   extends RequestWithHeader  {
   @SerializedName("UserName")
   private String userName = null;

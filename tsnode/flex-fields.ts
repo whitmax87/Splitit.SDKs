@@ -5,10 +5,16 @@ import {Configuration} from './runtime';
 export class FlexFields
 {
     private _configuration: Configuration;
-    private _sessionId?: string;
+
+    private _request: model.InitiateInstallmentPlanRequest;
+    private _api?: api.InstallmentPlanApi;
 
     constructor(configuration: Configuration){
         this._configuration = configuration;
+
+        this._request = {
+            planData: {}
+        };
     }
 
     public static async authenticate(env: Configuration, username: string, password: string, apiKey?: string) : Promise<FlexFields> {
@@ -17,30 +23,70 @@ export class FlexFields
         }
 
         let ff = new FlexFields(env);
-        ff._sessionId = await ff.getSessionId(username, password);
+        let sessionId = await ff.getSessionId(username, password);
+        ff._api = new api.InstallmentPlanApi(env, sessionId);
         return ff;
     }
 
-    public async getPublicToken(amount: number, currencyCode: string, culture?: string) : Promise<string> {
-        var installmentPlanApi = new api.InstallmentPlanApi(this._configuration, this._sessionId);
+    public addCulture(culture: string){
+        this._api!.setCulture(culture);
+        return this;
+    }
 
-        if (culture != null)
+    public addInstallments(installmentOptions: Array<number>, defaultNumInstallments?: number) : FlexFields
+    {
+        this._request.planData!.numberOfInstallments = defaultNumInstallments;
+
+        if (this._request.paymentWizardData == null)
         {
-            installmentPlanApi.setCulture(culture);
+            this._request.paymentWizardData = <model.PaymentWizardData>{};
         }
 
-        var claimTokenResponse = await installmentPlanApi.installmentPlanCreatePublicToken(<model.PublicTokenRequest>{
-            amount: <model.MoneyWithCurrencyCode>{ value: amount, currencyCode: currencyCode }
-        });
+        this._request.paymentWizardData.requestedNumberOfInstallments = installmentOptions.join(',');
+        return this;
+    }
 
-        return claimTokenResponse.body.publicToken!;
+    public addBillingInformation(billingAddress: model.AddressData, consumerData: model.ConsumerData) : FlexFields
+    {
+        this._request.billingAddress = billingAddress;
+        this._request.consumerData = consumerData;
+        return this;
+    }
+
+    public add3DSecure(redirectUrls: model.RedirectUrls) : FlexFields
+    {
+        let attempt3d = <any>true;
+        this._request.planData!.attempt3DSecure = attempt3d;
+        this._request.redirectUrls = redirectUrls;
+        return this;
+    }
+
+    public addDeferredCapture(
+        autoCapture?: boolean, 
+        firstInstallmentAmount?: number,
+        currencyCode?: string,
+        firstChargeDate?: Date) : FlexFields
+    {
+        this._request.planData!.autoCapture = autoCapture;
+        
+        if (firstInstallmentAmount != null){
+            this._request.planData!.firstInstallmentAmount = <model.MoneyWithCurrencyCode>{ value: firstInstallmentAmount, currencyCode: currencyCode };
+        }
+        
+        this._request.planData!.firstChargeDate = firstChargeDate;
+        return this;
+    }
+
+    public async getPublicToken(amount: number, currencyCode: string) : Promise<string> {
+        this._request.planData!.amount = <model.MoneyWithCurrencyCode>{ value: amount, currencyCode: currencyCode };
+        var initPlanResponse = await this._api!.installmentPlanInitiate(this._request);
+
+        return initPlanResponse.body.publicToken!;
     }
 
     public async verifyPayment(planNumber: string, orderAmount: number) : Promise<boolean>
     {
-        var installmentPlanApi = new api.InstallmentPlanApi(this._configuration, this._sessionId);
-
-        var paymentVerificationResponse = await installmentPlanApi.installmentPlanVerifyPayment(<model.VerifyPaymentRequest>{ 
+        var paymentVerificationResponse = await this._api!.installmentPlanVerifyPayment(<model.VerifyPaymentRequest>{ 
             installmentPlanNumber: planNumber 
         });
         

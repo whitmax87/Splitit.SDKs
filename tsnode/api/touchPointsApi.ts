@@ -37,7 +37,7 @@ export class TouchPointsApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.4.4"
+            "Splitit-SDK": "NodeJS-1.4.5"
         };
         this._sessionId = sessionId;
     }
