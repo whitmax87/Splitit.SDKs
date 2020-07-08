@@ -26,10 +26,10 @@ import {
     FraudCheckFromJSON,
     FraudCheckFromJSONTyped,
     FraudCheckToJSON,
-    Installment,
-    InstallmentFromJSON,
-    InstallmentFromJSONTyped,
-    InstallmentToJSON,
+    Installment2,
+    Installment2FromJSON,
+    Installment2FromJSONTyped,
+    Installment2ToJSON,
     MerchantRef,
     MerchantRefFromJSON,
     MerchantRefFromJSONTyped,
@@ -198,10 +198,10 @@ export interface InstallmentPlan {
     creationDateTime: Date;
     /**
      * 
-     * @type {Array<Installment>}
+     * @type {Array<Installment2>}
      * @memberof InstallmentPlan
      */
-    installments?: Array<Installment>;
+    installments?: Array<Installment2>;
     /**
      * 
      * @type {Array<ReAuthorization>}
@@ -243,7 +243,7 @@ export function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boo
         'scpFundingPercent': json['ScpFundingPercent'],
         'testMode': TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
-        'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(InstallmentFromJSON)),
+        'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(Installment2FromJSON)),
         'secureAuthorizations': !exists(json, 'SecureAuthorizations') ? undefined : ((json['SecureAuthorizations'] as Array<any>).map(ReAuthorizationFromJSON)),
     };
 }
@@ -280,7 +280,7 @@ export function InstallmentPlanToJSON(value?: InstallmentPlan | null): any {
         'ScpFundingPercent': value.scpFundingPercent,
         'TestMode': TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
-        'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(InstallmentToJSON)),
+        'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : ((value.secureAuthorizations as Array<any>).map(ReAuthorizationToJSON)),
     };
 }

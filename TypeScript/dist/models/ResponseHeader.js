@@ -25,6 +25,7 @@ function ResponseHeaderFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'succeeded': json['Succeeded'],
         'errors': !runtime_1.exists(json, 'Errors') ? undefined : json['Errors'],
+        'traceId': !runtime_1.exists(json, 'TraceId') ? undefined : json['TraceId'],
     };
 }
 exports.ResponseHeaderFromJSONTyped = ResponseHeaderFromJSONTyped;
@@ -38,6 +39,7 @@ function ResponseHeaderToJSON(value) {
     return {
         'Succeeded': value.succeeded,
         'Errors': value.errors,
+        'TraceId': value.traceId,
     };
 }
 exports.ResponseHeaderToJSON = ResponseHeaderToJSON;

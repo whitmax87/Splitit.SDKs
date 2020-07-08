@@ -37,5 +37,8 @@ export enum SystemTextCategory {
     SMSContent = <any> 'SMSContent',
     POS = <any> 'POS',
     FlexFields = <any> 'FlexFields',
-    MessagingSystem = <any> 'MessagingSystem'
+    MessagingSystem = <any> 'MessagingSystem',
+    PaymentFormV3 = <any> 'PaymentFormV3',
+    HowSplititWorks = <any> 'HowSplititWorks',
+    UpstreamMessaging = <any> 'UpstreamMessaging'
 }

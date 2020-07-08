@@ -66,7 +66,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="creationDateTime">creationDateTime (required).</param>
         /// <param name="installments">installments.</param>
         /// <param name="secureAuthorizations">secureAuthorizations.</param>
-        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment> installments = default(List<Installment>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>))
+        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>))
         {
             this.NumberOfInstallments = numberOfInstallments;
             this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
@@ -233,7 +233,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets Installments
         /// </summary>
         [DataMember(Name="Installments", EmitDefaultValue=false)]
-        public List<Installment> Installments { get; set; }
+        public List<Installment2> Installments { get; set; }
 
         /// <summary>
         /// Gets or Sets SecureAuthorizations

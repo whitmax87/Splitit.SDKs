@@ -38,10 +38,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="succeeded">succeeded (required).</param>
         /// <param name="errors">errors.</param>
-        public ResponseHeader(bool? succeeded = default(bool?), List<Error> errors = default(List<Error>))
+        /// <param name="traceId">traceId.</param>
+        public ResponseHeader(bool? succeeded = default(bool?), List<Error> errors = default(List<Error>), string traceId = default(string))
         {
             this.Succeeded = succeeded;
             this.Errors = errors;
+            this.TraceId = traceId;
         }
 
         
@@ -58,6 +60,12 @@ namespace Splitit.SDK.Client.Model
         public List<Error> Errors { get; set; }
 
         /// <summary>
+        /// Gets or Sets TraceId
+        /// </summary>
+        [DataMember(Name="TraceId", EmitDefaultValue=false)]
+        public string TraceId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +75,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("class ResponseHeader {\n");
             sb.Append("  Succeeded: ").Append(Succeeded).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("  TraceId: ").Append(TraceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +119,11 @@ namespace Splitit.SDK.Client.Model
                     this.Errors == input.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(input.Errors)
+                ) && 
+                (
+                    this.TraceId == input.TraceId ||
+                    (this.TraceId != null &&
+                    this.TraceId.Equals(input.TraceId))
                 );
         }
 
@@ -126,6 +140,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Succeeded.GetHashCode();
                 if (this.Errors != null)
                     hashCode = hashCode * 59 + this.Errors.GetHashCode();
+                if (this.TraceId != null)
+                    hashCode = hashCode * 59 + this.TraceId.GetHashCode();
                 return hashCode;
             }
         }

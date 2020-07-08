@@ -36,6 +36,12 @@ import {
     Get3DSecureParametersResponse,
     Get3DSecureParametersResponseFromJSON,
     Get3DSecureParametersResponseToJSON,
+    GetFraudStatusDisplayRequest,
+    GetFraudStatusDisplayRequestFromJSON,
+    GetFraudStatusDisplayRequestToJSON,
+    GetFraudStatusDisplayResponse,
+    GetFraudStatusDisplayResponseFromJSON,
+    GetFraudStatusDisplayResponseToJSON,
     GetInitiatedInstallmentPlanRequest,
     GetInitiatedInstallmentPlanRequestFromJSON,
     GetInitiatedInstallmentPlanRequestToJSON,
@@ -60,12 +66,12 @@ import {
     InstallmentPlanResponse,
     InstallmentPlanResponseFromJSON,
     InstallmentPlanResponseToJSON,
-    PublicTokenRequest,
-    PublicTokenRequestFromJSON,
-    PublicTokenRequestToJSON,
-    PublicTokenResponse,
-    PublicTokenResponseFromJSON,
-    PublicTokenResponseToJSON,
+    LearnMoreDetailsRequest,
+    LearnMoreDetailsRequestFromJSON,
+    LearnMoreDetailsRequestToJSON,
+    LearnMoreDetailsResponse,
+    LearnMoreDetailsResponseFromJSON,
+    LearnMoreDetailsResponseToJSON,
     RefundInstallmentPlanResponse,
     RefundInstallmentPlanResponseFromJSON,
     RefundInstallmentPlanResponseToJSON,
@@ -111,10 +117,6 @@ export interface InstallmentPlanCreateRequest {
     request: CreateInstallmentPlanRequest;
 }
 
-export interface InstallmentPlanCreatePublicTokenRequest {
-    request: PublicTokenRequest;
-}
-
 export interface InstallmentPlanGetRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
 }
@@ -127,8 +129,16 @@ export interface InstallmentPlanGetExtendedRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
 }
 
+export interface InstallmentPlanGetFraudStatusDisplayRequest {
+    request: GetFraudStatusDisplayRequest;
+}
+
 export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
     request: GetInitiatedInstallmentPlanRequest;
+}
+
+export interface InstallmentPlanGetLearnMoreDetailsRequest {
+    request: LearnMoreDetailsRequest;
 }
 
 export interface InstallmentPlanInitiateRequest {
@@ -286,37 +296,6 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
 
     /**
      */
-    async installmentPlanCreatePublicTokenRaw(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<runtime.ApiResponse<PublicTokenResponse>> {
-        if (requestParameters.request === null || requestParameters.request === undefined) {
-            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanCreatePublicToken.');
-        }
-
-        const queryParameters: runtime.HTTPQuery = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json-patch+json';
-
-        const response = await this.request({
-            path: `/api/InstallmentPlan/CreatePublicToken`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: PublicTokenRequestToJSON(requestParameters.request),
-        });
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => PublicTokenResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async installmentPlanCreatePublicToken(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<PublicTokenResponse> {
-        const response = await this.installmentPlanCreatePublicTokenRaw(requestParameters);
-        return await response.value();
-    }
-
-    /**
-     */
     async installmentPlanGetRaw(requestParameters: InstallmentPlanGetRequest): Promise<runtime.ApiResponse<GetInstallmentsPlanResponse>> {
         if (requestParameters.request === null || requestParameters.request === undefined) {
             throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGet.');
@@ -410,6 +389,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
 
     /**
      */
+    async installmentPlanGetFraudStatusDisplayRaw(requestParameters: InstallmentPlanGetFraudStatusDisplayRequest): Promise<runtime.ApiResponse<GetFraudStatusDisplayResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetFraudStatusDisplay.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetFraudStatusDisplay`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetFraudStatusDisplayRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetFraudStatusDisplayResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetFraudStatusDisplay(requestParameters: InstallmentPlanGetFraudStatusDisplayRequest): Promise<GetFraudStatusDisplayResponse> {
+        const response = await this.installmentPlanGetFraudStatusDisplayRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
     async installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<runtime.ApiResponse<GetInitiatedInstallmentPlanResponse>> {
         if (requestParameters.request === null || requestParameters.request === undefined) {
             throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetInitiatedInstallmentPlanRequest.');
@@ -436,6 +446,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanGetInitiatedInstallmentPlanRequest(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<GetInitiatedInstallmentPlanResponse> {
         const response = await this.installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanGetLearnMoreDetailsRaw(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<runtime.ApiResponse<LearnMoreDetailsResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetLearnMoreDetails.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetLearnMoreDetails`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: LearnMoreDetailsRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => LearnMoreDetailsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse> {
+        const response = await this.installmentPlanGetLearnMoreDetailsRaw(requestParameters);
         return await response.value();
     }
 

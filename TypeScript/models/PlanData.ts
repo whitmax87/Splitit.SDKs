@@ -106,10 +106,10 @@ export interface PlanData {
     isFunded?: boolean;
     /**
      * 
-     * @type {object}
+     * @type {boolean}
      * @memberof PlanData
      */
-    attempt3DSecure?: object;
+    attempt3DSecure?: boolean;
 }
 
 export function PlanDataFromJSON(json: any): PlanData {

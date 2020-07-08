@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * PlanData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class PlanData   {
   @SerializedName("NumberOfInstallments")
   private Integer numberOfInstallments = null;
@@ -71,7 +71,7 @@ public class PlanData   {
   private Boolean isFunded = null;
 
   @SerializedName("Attempt3DSecure")
-  private Object attempt3DSecure = null;
+  private Boolean attempt3DSecure = null;
 
   public PlanData numberOfInstallments(Integer numberOfInstallments) {
     this.numberOfInstallments = numberOfInstallments;
@@ -279,7 +279,7 @@ public class PlanData   {
     this.isFunded = isFunded;
   }
 
-  public PlanData attempt3DSecure(Object attempt3DSecure) {
+  public PlanData attempt3DSecure(Boolean attempt3DSecure) {
     this.attempt3DSecure = attempt3DSecure;
     return this;
   }
@@ -289,11 +289,11 @@ public class PlanData   {
    * @return attempt3DSecure
   **/
   @ApiModelProperty(value = "")
-  public Object getAttempt3DSecure() {
+  public Boolean isAttempt3DSecure() {
     return attempt3DSecure;
   }
 
-  public void setAttempt3DSecure(Object attempt3DSecure) {
+  public void setAttempt3DSecure(Boolean attempt3DSecure) {
     this.attempt3DSecure = attempt3DSecure;
   }
 

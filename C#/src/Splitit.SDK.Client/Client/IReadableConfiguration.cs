@@ -20,12 +20,6 @@ namespace Splitit.SDK.Client.Client
     public interface IReadableConfiguration
     {
         /// <summary>
-        /// Gets the access token.
-        /// </summary>
-        /// <value>Access token.</value>
-        string AccessToken { get; }
-
-        /// <summary>
         /// Gets the API key.
         /// </summary>
         /// <value>API key.</value>
@@ -68,17 +62,5 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         /// <value>User agent.</value>
         string UserAgent { get; }
-
-        /// <summary>
-        /// Gets the username.
-        /// </summary>
-        /// <value>Username.</value>
-        string Username { get; }
-
-        /// <summary>
-        /// Gets the password.
-        /// </summary>
-        /// <value>Password.</value>
-        string Password { get; }
     }
 }

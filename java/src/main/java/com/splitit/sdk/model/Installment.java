@@ -20,77 +20,46 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.splitit.sdk.model.CardData;
-import com.splitit.sdk.model.Money;
-import com.splitit.sdk.model.ReferenceEntityBase;
-import com.splitit.sdk.model.TransactionResult;
+import com.splitit.sdk.model.MoneyWithCurrencyCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * Installment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class Installment   {
-  @SerializedName("InstallmentNumber")
-  private Integer installmentNumber = null;
+  @SerializedName("Date")
+  private OffsetDateTime date = null;
 
   @SerializedName("Amount")
-  private Money amount = null;
+  private MoneyWithCurrencyCode amount = null;
 
-  @SerializedName("OriginalAmount")
-  private Money originalAmount = null;
+  @SerializedName("HeldAmount")
+  private BigDecimal heldAmount = null;
 
-  @SerializedName("RefundAmount")
-  private Money refundAmount = null;
-
-  @SerializedName("ProcessDateTime")
-  private OffsetDateTime processDateTime = null;
-
-  @SerializedName("IsRefund")
-  private Boolean isRefund = null;
-
-  @SerializedName("RequiredCredit")
-  private Money requiredCredit = null;
-
-  @SerializedName("CreatedDateTime")
-  private OffsetDateTime createdDateTime = null;
-
-  @SerializedName("Status")
-  private ReferenceEntityBase status = null;
-
-  @SerializedName("TransactionResults")
-  private List<TransactionResult> transactionResults = null;
-
-  @SerializedName("CardDetails")
-  private CardData cardDetails = null;
-
-  @SerializedName("Result")
-  private Boolean result = null;
-
-  public Installment installmentNumber(Integer installmentNumber) {
-    this.installmentNumber = installmentNumber;
+  public Installment date(OffsetDateTime date) {
+    this.date = date;
     return this;
   }
 
    /**
-   * Get installmentNumber
-   * @return installmentNumber
+   * Get date
+   * @return date
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getInstallmentNumber() {
-    return installmentNumber;
+  @ApiModelProperty(value = "")
+  public OffsetDateTime getDate() {
+    return date;
   }
 
-  public void setInstallmentNumber(Integer installmentNumber) {
-    this.installmentNumber = installmentNumber;
+  public void setDate(OffsetDateTime date) {
+    this.date = date;
   }
 
-  public Installment amount(Money amount) {
+  public Installment amount(MoneyWithCurrencyCode amount) {
     this.amount = amount;
     return this;
   }
@@ -100,200 +69,30 @@ public class Installment   {
    * @return amount
   **/
   @ApiModelProperty(value = "")
-  public Money getAmount() {
+  public MoneyWithCurrencyCode getAmount() {
     return amount;
   }
 
-  public void setAmount(Money amount) {
+  public void setAmount(MoneyWithCurrencyCode amount) {
     this.amount = amount;
   }
 
-  public Installment originalAmount(Money originalAmount) {
-    this.originalAmount = originalAmount;
+  public Installment heldAmount(BigDecimal heldAmount) {
+    this.heldAmount = heldAmount;
     return this;
   }
 
    /**
-   * Get originalAmount
-   * @return originalAmount
-  **/
-  @ApiModelProperty(value = "")
-  public Money getOriginalAmount() {
-    return originalAmount;
-  }
-
-  public void setOriginalAmount(Money originalAmount) {
-    this.originalAmount = originalAmount;
-  }
-
-  public Installment refundAmount(Money refundAmount) {
-    this.refundAmount = refundAmount;
-    return this;
-  }
-
-   /**
-   * Get refundAmount
-   * @return refundAmount
-  **/
-  @ApiModelProperty(value = "")
-  public Money getRefundAmount() {
-    return refundAmount;
-  }
-
-  public void setRefundAmount(Money refundAmount) {
-    this.refundAmount = refundAmount;
-  }
-
-  public Installment processDateTime(OffsetDateTime processDateTime) {
-    this.processDateTime = processDateTime;
-    return this;
-  }
-
-   /**
-   * Get processDateTime
-   * @return processDateTime
-  **/
-  @ApiModelProperty(value = "")
-  public OffsetDateTime getProcessDateTime() {
-    return processDateTime;
-  }
-
-  public void setProcessDateTime(OffsetDateTime processDateTime) {
-    this.processDateTime = processDateTime;
-  }
-
-  public Installment isRefund(Boolean isRefund) {
-    this.isRefund = isRefund;
-    return this;
-  }
-
-   /**
-   * Get isRefund
-   * @return isRefund
+   * Get heldAmount
+   * @return heldAmount
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isIsRefund() {
-    return isRefund;
+  public BigDecimal getHeldAmount() {
+    return heldAmount;
   }
 
-  public void setIsRefund(Boolean isRefund) {
-    this.isRefund = isRefund;
-  }
-
-  public Installment requiredCredit(Money requiredCredit) {
-    this.requiredCredit = requiredCredit;
-    return this;
-  }
-
-   /**
-   * Get requiredCredit
-   * @return requiredCredit
-  **/
-  @ApiModelProperty(value = "")
-  public Money getRequiredCredit() {
-    return requiredCredit;
-  }
-
-  public void setRequiredCredit(Money requiredCredit) {
-    this.requiredCredit = requiredCredit;
-  }
-
-  public Installment createdDateTime(OffsetDateTime createdDateTime) {
-    this.createdDateTime = createdDateTime;
-    return this;
-  }
-
-   /**
-   * Get createdDateTime
-   * @return createdDateTime
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public OffsetDateTime getCreatedDateTime() {
-    return createdDateTime;
-  }
-
-  public void setCreatedDateTime(OffsetDateTime createdDateTime) {
-    this.createdDateTime = createdDateTime;
-  }
-
-  public Installment status(ReferenceEntityBase status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Get status
-   * @return status
-  **/
-  @ApiModelProperty(value = "")
-  public ReferenceEntityBase getStatus() {
-    return status;
-  }
-
-  public void setStatus(ReferenceEntityBase status) {
-    this.status = status;
-  }
-
-  public Installment transactionResults(List<TransactionResult> transactionResults) {
-    this.transactionResults = transactionResults;
-    return this;
-  }
-
-  public Installment addTransactionResultsItem(TransactionResult transactionResultsItem) {
-    if (this.transactionResults == null) {
-      this.transactionResults = new ArrayList<TransactionResult>();
-    }
-    this.transactionResults.add(transactionResultsItem);
-    return this;
-  }
-
-   /**
-   * Get transactionResults
-   * @return transactionResults
-  **/
-  @ApiModelProperty(value = "")
-  public List<TransactionResult> getTransactionResults() {
-    return transactionResults;
-  }
-
-  public void setTransactionResults(List<TransactionResult> transactionResults) {
-    this.transactionResults = transactionResults;
-  }
-
-  public Installment cardDetails(CardData cardDetails) {
-    this.cardDetails = cardDetails;
-    return this;
-  }
-
-   /**
-   * Get cardDetails
-   * @return cardDetails
-  **/
-  @ApiModelProperty(value = "")
-  public CardData getCardDetails() {
-    return cardDetails;
-  }
-
-  public void setCardDetails(CardData cardDetails) {
-    this.cardDetails = cardDetails;
-  }
-
-  public Installment result(Boolean result) {
-    this.result = result;
-    return this;
-  }
-
-   /**
-   * Get result
-   * @return result
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isResult() {
-    return result;
-  }
-
-  public void setResult(Boolean result) {
-    this.result = result;
+  public void setHeldAmount(BigDecimal heldAmount) {
+    this.heldAmount = heldAmount;
   }
 
 
@@ -306,23 +105,14 @@ public class Installment   {
       return false;
     }
     Installment installment = (Installment) o;
-    return Objects.equals(this.installmentNumber, installment.installmentNumber) &&
+    return Objects.equals(this.date, installment.date) &&
         Objects.equals(this.amount, installment.amount) &&
-        Objects.equals(this.originalAmount, installment.originalAmount) &&
-        Objects.equals(this.refundAmount, installment.refundAmount) &&
-        Objects.equals(this.processDateTime, installment.processDateTime) &&
-        Objects.equals(this.isRefund, installment.isRefund) &&
-        Objects.equals(this.requiredCredit, installment.requiredCredit) &&
-        Objects.equals(this.createdDateTime, installment.createdDateTime) &&
-        Objects.equals(this.status, installment.status) &&
-        Objects.equals(this.transactionResults, installment.transactionResults) &&
-        Objects.equals(this.cardDetails, installment.cardDetails) &&
-        Objects.equals(this.result, installment.result);
+        Objects.equals(this.heldAmount, installment.heldAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(installmentNumber, amount, originalAmount, refundAmount, processDateTime, isRefund, requiredCredit, createdDateTime, status, transactionResults, cardDetails, result);
+    return Objects.hash(date, amount, heldAmount);
   }
 
 
@@ -331,18 +121,9 @@ public class Installment   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Installment {\n");
     
-    sb.append("    installmentNumber: ").append(toIndentedString(installmentNumber)).append("\n");
+    sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    originalAmount: ").append(toIndentedString(originalAmount)).append("\n");
-    sb.append("    refundAmount: ").append(toIndentedString(refundAmount)).append("\n");
-    sb.append("    processDateTime: ").append(toIndentedString(processDateTime)).append("\n");
-    sb.append("    isRefund: ").append(toIndentedString(isRefund)).append("\n");
-    sb.append("    requiredCredit: ").append(toIndentedString(requiredCredit)).append("\n");
-    sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    transactionResults: ").append(toIndentedString(transactionResults)).append("\n");
-    sb.append("    cardDetails: ").append(toIndentedString(cardDetails)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    heldAmount: ").append(toIndentedString(heldAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

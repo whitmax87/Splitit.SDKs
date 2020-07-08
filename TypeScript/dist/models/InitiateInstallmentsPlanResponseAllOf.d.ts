@@ -51,6 +51,12 @@ export interface InitiateInstallmentsPlanResponseAllOf {
      * @memberof InitiateInstallmentsPlanResponseAllOf
      */
     publicToken?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponseAllOf
+     */
+    learnMoreUrl?: string;
 }
 export declare function InitiateInstallmentsPlanResponseAllOfFromJSON(json: any): InitiateInstallmentsPlanResponseAllOf;
 export declare function InitiateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ignoreDiscriminator: boolean): InitiateInstallmentsPlanResponseAllOf;

@@ -55,6 +55,12 @@ export interface InitiateInstallmentsPlanResponseAllOf {
      * @memberof InitiateInstallmentsPlanResponseAllOf
      */
     publicToken?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponseAllOf
+     */
+    learnMoreUrl?: string;
 }
 
 export function InitiateInstallmentsPlanResponseAllOfFromJSON(json: any): InitiateInstallmentsPlanResponseAllOf {
@@ -73,6 +79,7 @@ export function InitiateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ig
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !exists(json, 'PublicToken') ? undefined : json['PublicToken'],
+        'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
     };
 }
 
@@ -91,6 +98,7 @@ export function InitiateInstallmentsPlanResponseAllOfToJSON(value?: InitiateInst
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
+        'LearnMoreUrl': value.learnMoreUrl,
     };
 }
 

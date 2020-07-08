@@ -21,11 +21,15 @@ Name | Type | Description | Notes
 **isShopperPhoneMandatory** | **Boolean** |  | 
 **numberOfInstallmentsSelectionsOption** | **String** |  |  [optional]
 **addressIsReadonly** | **Boolean** |  | 
+**phoneIsReadOnly** | **Boolean** |  | 
+**emailIsReadOnly** | **Boolean** |  | 
 **logoURL** | **String** |  |  [optional]
 **privacyPolicyUrl** | **String** |  |  [optional]
 **termsAndConditionsUrl** | **String** |  |  [optional]
 **learnMoreUrl** | **String** |  |  [optional]
-**paymentFormMessages** | **List&lt;String&gt;** |  |  [optional]
+**paymentFormMessages** | [**List&lt;PaymentFormMessage&gt;**](PaymentFormMessage.md) |  |  [optional]
+**displayProperties** | **Map&lt;String, String&gt;** |  |  [optional]
+**termsAndConditions** | [**TermsAndConditions**](TermsAndConditions.md) |  |  [optional]
 
 
 

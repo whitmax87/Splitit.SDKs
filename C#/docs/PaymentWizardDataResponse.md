@@ -20,11 +20,15 @@ Name | Type | Description | Notes
 **IsShopperPhoneMandatory** | **bool?** |  | 
 **NumberOfInstallmentsSelectionsOption** | **string** |  | [optional] 
 **AddressIsReadonly** | **bool?** |  | 
+**PhoneIsReadOnly** | **bool?** |  | 
+**EmailIsReadOnly** | **bool?** |  | 
 **LogoURL** | **string** |  | [optional] 
 **PrivacyPolicyUrl** | **string** |  | [optional] 
 **TermsAndConditionsUrl** | **string** |  | [optional] 
 **LearnMoreUrl** | **string** |  | [optional] 
-**PaymentFormMessages** | **List&lt;string&gt;** |  | [optional] 
+**PaymentFormMessages** | [**List&lt;PaymentFormMessage&gt;**](PaymentFormMessage.md) |  | [optional] 
+**DisplayProperties** | **Dictionary&lt;string, string&gt;** |  | [optional] 
+**TermsAndConditions** | [**TermsAndConditions**](TermsAndConditions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

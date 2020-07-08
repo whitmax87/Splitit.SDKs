@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-05-11T20:40:03.319Z
-- SDK Version: 1.4.6
+  - Build date: 2020-07-08T07:06:50.696Z
+- SDK Version: 1.5.0
 
 ## Requirements
 
@@ -113,17 +113,19 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*InfoApi* | [**infoGetLearnMoreDetails**](docs/InfoApi.md#infoGetLearnMoreDetails) | **POST** /api/Merchant/GetLearnMoreDetails | 
 *InfrastructureApi* | [**infrastructureGetResources**](docs/InfrastructureApi.md#infrastructureGetResources) | **POST** /api/Infrastructure/GetResources | 
 *InfrastructureApi* | [**infrastructureGetResources2**](docs/InfrastructureApi.md#infrastructureGetResources2) | **GET** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/InstallmentPlanApi.md#installmentPlanApprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
-*InstallmentPlanApi* | [**installmentPlanCreatePublicToken**](docs/InstallmentPlanApi.md#installmentPlanCreatePublicToken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
+*InstallmentPlanApi* | [**installmentPlanGetFraudStatusDisplay**](docs/InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 *InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+*InstallmentPlanApi* | [**installmentPlanGetLearnMoreDetails**](docs/InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -131,7 +133,6 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /api/Login | 
-*TouchPointsApi* | [**touchPointsFlexFieldsData**](docs/TouchPointsApi.md#touchPointsFlexFieldsData) | **GET** /api/TouchPoints/SetupData/FlexFieldsData | 
 
 
 ## Documentation for Models
@@ -150,11 +151,12 @@ Class | Method | HTTP request | Description
  - [Error](docs/Error.md)
  - [EventsEndpoints](docs/EventsEndpoints.md)
  - [ExternalAuth](docs/ExternalAuth.md)
- - [FlexFieldsDataResponse](docs/FlexFieldsDataResponse.md)
  - [FraudCheck](docs/FraudCheck.md)
  - [FraudCheckResult](docs/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Get3DSecureParametersRequest.md)
  - [Get3DSecureParametersResponse](docs/Get3DSecureParametersResponse.md)
+ - [GetFraudStatusDisplayRequest](docs/GetFraudStatusDisplayRequest.md)
+ - [GetFraudStatusDisplayResponse](docs/GetFraudStatusDisplayResponse.md)
  - [GetInitiatedInstallmentPlanRequest](docs/GetInitiatedInstallmentPlanRequest.md)
  - [GetInitiatedInstallmentPlanResponse](docs/GetInitiatedInstallmentPlanResponse.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
@@ -164,6 +166,7 @@ Class | Method | HTTP request | Description
  - [GetResourcesResponse](docs/GetResourcesResponse.md)
  - [InitiateInstallmentPlanRequest](docs/InitiateInstallmentPlanRequest.md)
  - [Installment](docs/Installment.md)
+ - [Installment2](docs/Installment2.md)
  - [InstallmentPlan](docs/InstallmentPlan.md)
  - [InstallmentPlanActivityStatus](docs/InstallmentPlanActivityStatus.md)
  - [InstallmentPlanCancelationReason](docs/InstallmentPlanCancelationReason.md)
@@ -174,19 +177,21 @@ Class | Method | HTTP request | Description
  - [InstallmentPlanStatus](docs/InstallmentPlanStatus.md)
  - [InstallmentsPlanDateType](docs/InstallmentsPlanDateType.md)
  - [ItemData](docs/ItemData.md)
+ - [LearnMoreDetailsRequest](docs/LearnMoreDetailsRequest.md)
+ - [LearnMoreDetailsResponse](docs/LearnMoreDetailsResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse2](docs/LoginResponse2.md)
  - [Money](docs/Money.md)
  - [MoneyWithCurrencyCode](docs/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/PagingRequestHeader.md)
  - [PagingResponseHeader](docs/PagingResponseHeader.md)
+ - [PaymentFormMessage](docs/PaymentFormMessage.md)
+ - [PaymentFormMessageType](docs/PaymentFormMessageType.md)
  - [PaymentToken](docs/PaymentToken.md)
  - [PaymentWizardData](docs/PaymentWizardData.md)
  - [PlanApprovalEvidence](docs/PlanApprovalEvidence.md)
  - [PlanData](docs/PlanData.md)
  - [PlanStrategy](docs/PlanStrategy.md)
- - [PublicTokenRequest](docs/PublicTokenRequest.md)
- - [PublicTokenResponse](docs/PublicTokenResponse.md)
  - [PurchaseMethod](docs/PurchaseMethod.md)
  - [ReAuthorization](docs/ReAuthorization.md)
  - [RedirectUrls](docs/RedirectUrls.md)

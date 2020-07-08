@@ -12,6 +12,8 @@
 
 import { RequestFile } from '../api';
 import { Currency } from './currency';
+import { PaymentFormMessage } from './paymentFormMessage';
+import { TermsAndConditions } from './termsAndConditions';
 
 export class PaymentWizardDataResponseAllOf {
     'showAddressElements'?: string;
@@ -23,11 +25,15 @@ export class PaymentWizardDataResponseAllOf {
     'isShopperPhoneMandatory': boolean;
     'numberOfInstallmentsSelectionsOption'?: string;
     'addressIsReadonly': boolean;
+    'phoneIsReadOnly': boolean;
+    'emailIsReadOnly': boolean;
     'logoURL'?: string;
     'privacyPolicyUrl'?: string;
     'termsAndConditionsUrl'?: string;
     'learnMoreUrl'?: string;
-    'paymentFormMessages'?: Array<string>;
+    'paymentFormMessages'?: Array<PaymentFormMessage>;
+    'displayProperties'?: { [key: string]: string; };
+    'termsAndConditions'?: TermsAndConditions;
 
     static discriminator: string | undefined = undefined;
 
@@ -78,6 +84,16 @@ export class PaymentWizardDataResponseAllOf {
             "type": "boolean"
         },
         {
+            "name": "phoneIsReadOnly",
+            "baseName": "PhoneIsReadOnly",
+            "type": "boolean"
+        },
+        {
+            "name": "emailIsReadOnly",
+            "baseName": "EmailIsReadOnly",
+            "type": "boolean"
+        },
+        {
             "name": "logoURL",
             "baseName": "LogoURL",
             "type": "string"
@@ -100,7 +116,17 @@ export class PaymentWizardDataResponseAllOf {
         {
             "name": "paymentFormMessages",
             "baseName": "PaymentFormMessages",
-            "type": "Array<string>"
+            "type": "Array<PaymentFormMessage>"
+        },
+        {
+            "name": "displayProperties",
+            "baseName": "DisplayProperties",
+            "type": "{ [key: string]: string; }"
+        },
+        {
+            "name": "termsAndConditions",
+            "baseName": "TermsAndConditions",
+            "type": "TermsAndConditions"
         }    ];
 
     static getAttributeTypeMap() {

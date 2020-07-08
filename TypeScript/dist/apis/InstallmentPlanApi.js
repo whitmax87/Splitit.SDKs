@@ -256,50 +256,6 @@ var InstallmentPlanApi = /** @class */ (function (_super) {
     };
     /**
      */
-    InstallmentPlanApi.prototype.installmentPlanCreatePublicTokenRaw = function (requestParameters) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParameters, headerParameters, response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (requestParameters.request === null || requestParameters.request === undefined) {
-                            throw new runtime.RequiredError('request', 'Required parameter requestParameters.request was null or undefined when calling installmentPlanCreatePublicToken.');
-                        }
-                        queryParameters = {};
-                        headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/json-patch+json';
-                        return [4 /*yield*/, this.request({
-                                path: "/api/InstallmentPlan/CreatePublicToken",
-                                method: 'POST',
-                                headers: headerParameters,
-                                query: queryParameters,
-                                body: models_1.PublicTokenRequestToJSON(requestParameters.request),
-                            })];
-                    case 1:
-                        response = _a.sent();
-                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.PublicTokenResponseFromJSON(jsonValue); })];
-                }
-            });
-        });
-    };
-    /**
-     */
-    InstallmentPlanApi.prototype.installmentPlanCreatePublicToken = function (requestParameters) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.installmentPlanCreatePublicTokenRaw(requestParameters)];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.value()];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    /**
-     */
     InstallmentPlanApi.prototype.installmentPlanGetRaw = function (requestParameters) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
@@ -432,6 +388,50 @@ var InstallmentPlanApi = /** @class */ (function (_super) {
     };
     /**
      */
+    InstallmentPlanApi.prototype.installmentPlanGetFraudStatusDisplayRaw = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.request === null || requestParameters.request === undefined) {
+                            throw new runtime.RequiredError('request', 'Required parameter requestParameters.request was null or undefined when calling installmentPlanGetFraudStatusDisplay.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json-patch+json';
+                        return [4 /*yield*/, this.request({
+                                path: "/api/InstallmentPlan/GetFraudStatusDisplay",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: models_1.GetFraudStatusDisplayRequestToJSON(requestParameters.request),
+                            })];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.GetFraudStatusDisplayResponseFromJSON(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    InstallmentPlanApi.prototype.installmentPlanGetFraudStatusDisplay = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.installmentPlanGetFraudStatusDisplayRaw(requestParameters)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
     InstallmentPlanApi.prototype.installmentPlanGetInitiatedInstallmentPlanRequestRaw = function (requestParameters) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
@@ -466,6 +466,50 @@ var InstallmentPlanApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     */
+    InstallmentPlanApi.prototype.installmentPlanGetLearnMoreDetailsRaw = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.request === null || requestParameters.request === undefined) {
+                            throw new runtime.RequiredError('request', 'Required parameter requestParameters.request was null or undefined when calling installmentPlanGetLearnMoreDetails.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json-patch+json';
+                        return [4 /*yield*/, this.request({
+                                path: "/api/InstallmentPlan/GetLearnMoreDetails",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: models_1.LearnMoreDetailsRequestToJSON(requestParameters.request),
+                            })];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) { return models_1.LearnMoreDetailsResponseFromJSON(jsonValue); })];
+                }
+            });
+        });
+    };
+    /**
+     */
+    InstallmentPlanApi.prototype.installmentPlanGetLearnMoreDetails = function (requestParameters) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.installmentPlanGetLearnMoreDetailsRaw(requestParameters)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

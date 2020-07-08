@@ -39,7 +39,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
         /// <param name="installmentPlanInfoUrl">installmentPlanInfoUrl.</param>
         /// <param name="publicToken">publicToken.</param>
-        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string privacyPolicyUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string))
+        /// <param name="learnMoreUrl">learnMoreUrl.</param>
+        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string privacyPolicyUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string), string learnMoreUrl = default(string))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
@@ -49,6 +50,7 @@ namespace Splitit.SDK.Client.Model
             this.PrivacyPolicyUrl = privacyPolicyUrl;
             this.InstallmentPlanInfoUrl = installmentPlanInfoUrl;
             this.PublicToken = publicToken;
+            this.LearnMoreUrl = learnMoreUrl;
         }
 
         
@@ -101,6 +103,12 @@ namespace Splitit.SDK.Client.Model
         public string PublicToken { get; set; }
 
         /// <summary>
+        /// Gets or Sets LearnMoreUrl
+        /// </summary>
+        [DataMember(Name="LearnMoreUrl", EmitDefaultValue=false)]
+        public string LearnMoreUrl { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -116,6 +124,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  InstallmentPlanInfoUrl: ").Append(InstallmentPlanInfoUrl).Append("\n");
             sb.Append("  PublicToken: ").Append(PublicToken).Append("\n");
+            sb.Append("  LearnMoreUrl: ").Append(LearnMoreUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +198,11 @@ namespace Splitit.SDK.Client.Model
                     this.PublicToken == input.PublicToken ||
                     (this.PublicToken != null &&
                     this.PublicToken.Equals(input.PublicToken))
+                ) && 
+                (
+                    this.LearnMoreUrl == input.LearnMoreUrl ||
+                    (this.LearnMoreUrl != null &&
+                    this.LearnMoreUrl.Equals(input.LearnMoreUrl))
                 );
         }
 
@@ -217,6 +231,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.InstallmentPlanInfoUrl.GetHashCode();
                 if (this.PublicToken != null)
                     hashCode = hashCode * 59 + this.PublicToken.GetHashCode();
+                if (this.LearnMoreUrl != null)
+                    hashCode = hashCode * 59 + this.LearnMoreUrl.GetHashCode();
                 return hashCode;
             }
         }

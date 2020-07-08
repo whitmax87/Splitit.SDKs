@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **scpFundingPercent** | [**BigDecimal**](BigDecimal.md) |  | 
 **testMode** | [**TestModes**](TestModes.md) |  | 
 **creationDateTime** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**installments** | [**List&lt;Installment&gt;**](Installment.md) |  |  [optional]
+**installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  |  [optional]
 **secureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  |  [optional]
 
 

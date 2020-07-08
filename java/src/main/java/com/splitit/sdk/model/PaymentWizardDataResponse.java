@@ -21,17 +21,21 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.Currency;
+import com.splitit.sdk.model.PaymentFormMessage;
 import com.splitit.sdk.model.PaymentWizardData;
+import com.splitit.sdk.model.TermsAndConditions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class PaymentWizardDataResponse   {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -84,6 +88,12 @@ public class PaymentWizardDataResponse   {
   @SerializedName("AddressIsReadonly")
   private Boolean addressIsReadonly = null;
 
+  @SerializedName("PhoneIsReadOnly")
+  private Boolean phoneIsReadOnly = null;
+
+  @SerializedName("EmailIsReadOnly")
+  private Boolean emailIsReadOnly = null;
+
   @SerializedName("LogoURL")
   private String logoURL = null;
 
@@ -97,7 +107,13 @@ public class PaymentWizardDataResponse   {
   private String learnMoreUrl = null;
 
   @SerializedName("PaymentFormMessages")
-  private List<String> paymentFormMessages = null;
+  private List<PaymentFormMessage> paymentFormMessages = null;
+
+  @SerializedName("DisplayProperties")
+  private Map<String, String> displayProperties = null;
+
+  @SerializedName("TermsAndConditions")
+  private TermsAndConditions termsAndConditions = null;
 
   public PaymentWizardDataResponse requestedNumberOfInstallments(String requestedNumberOfInstallments) {
     this.requestedNumberOfInstallments = requestedNumberOfInstallments;
@@ -405,6 +421,42 @@ public class PaymentWizardDataResponse   {
     this.addressIsReadonly = addressIsReadonly;
   }
 
+  public PaymentWizardDataResponse phoneIsReadOnly(Boolean phoneIsReadOnly) {
+    this.phoneIsReadOnly = phoneIsReadOnly;
+    return this;
+  }
+
+   /**
+   * Get phoneIsReadOnly
+   * @return phoneIsReadOnly
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isPhoneIsReadOnly() {
+    return phoneIsReadOnly;
+  }
+
+  public void setPhoneIsReadOnly(Boolean phoneIsReadOnly) {
+    this.phoneIsReadOnly = phoneIsReadOnly;
+  }
+
+  public PaymentWizardDataResponse emailIsReadOnly(Boolean emailIsReadOnly) {
+    this.emailIsReadOnly = emailIsReadOnly;
+    return this;
+  }
+
+   /**
+   * Get emailIsReadOnly
+   * @return emailIsReadOnly
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isEmailIsReadOnly() {
+    return emailIsReadOnly;
+  }
+
+  public void setEmailIsReadOnly(Boolean emailIsReadOnly) {
+    this.emailIsReadOnly = emailIsReadOnly;
+  }
+
   public PaymentWizardDataResponse logoURL(String logoURL) {
     this.logoURL = logoURL;
     return this;
@@ -477,14 +529,14 @@ public class PaymentWizardDataResponse   {
     this.learnMoreUrl = learnMoreUrl;
   }
 
-  public PaymentWizardDataResponse paymentFormMessages(List<String> paymentFormMessages) {
+  public PaymentWizardDataResponse paymentFormMessages(List<PaymentFormMessage> paymentFormMessages) {
     this.paymentFormMessages = paymentFormMessages;
     return this;
   }
 
-  public PaymentWizardDataResponse addPaymentFormMessagesItem(String paymentFormMessagesItem) {
+  public PaymentWizardDataResponse addPaymentFormMessagesItem(PaymentFormMessage paymentFormMessagesItem) {
     if (this.paymentFormMessages == null) {
-      this.paymentFormMessages = new ArrayList<String>();
+      this.paymentFormMessages = new ArrayList<PaymentFormMessage>();
     }
     this.paymentFormMessages.add(paymentFormMessagesItem);
     return this;
@@ -495,12 +547,56 @@ public class PaymentWizardDataResponse   {
    * @return paymentFormMessages
   **/
   @ApiModelProperty(value = "")
-  public List<String> getPaymentFormMessages() {
+  public List<PaymentFormMessage> getPaymentFormMessages() {
     return paymentFormMessages;
   }
 
-  public void setPaymentFormMessages(List<String> paymentFormMessages) {
+  public void setPaymentFormMessages(List<PaymentFormMessage> paymentFormMessages) {
     this.paymentFormMessages = paymentFormMessages;
+  }
+
+  public PaymentWizardDataResponse displayProperties(Map<String, String> displayProperties) {
+    this.displayProperties = displayProperties;
+    return this;
+  }
+
+  public PaymentWizardDataResponse putDisplayPropertiesItem(String key, String displayPropertiesItem) {
+    if (this.displayProperties == null) {
+      this.displayProperties = new HashMap<String, String>();
+    }
+    this.displayProperties.put(key, displayPropertiesItem);
+    return this;
+  }
+
+   /**
+   * Get displayProperties
+   * @return displayProperties
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, String> getDisplayProperties() {
+    return displayProperties;
+  }
+
+  public void setDisplayProperties(Map<String, String> displayProperties) {
+    this.displayProperties = displayProperties;
+  }
+
+  public PaymentWizardDataResponse termsAndConditions(TermsAndConditions termsAndConditions) {
+    this.termsAndConditions = termsAndConditions;
+    return this;
+  }
+
+   /**
+   * Get termsAndConditions
+   * @return termsAndConditions
+  **/
+  @ApiModelProperty(value = "")
+  public TermsAndConditions getTermsAndConditions() {
+    return termsAndConditions;
+  }
+
+  public void setTermsAndConditions(TermsAndConditions termsAndConditions) {
+    this.termsAndConditions = termsAndConditions;
   }
 
 
@@ -530,16 +626,20 @@ public class PaymentWizardDataResponse   {
         Objects.equals(this.isShopperPhoneMandatory, paymentWizardDataResponse.isShopperPhoneMandatory) &&
         Objects.equals(this.numberOfInstallmentsSelectionsOption, paymentWizardDataResponse.numberOfInstallmentsSelectionsOption) &&
         Objects.equals(this.addressIsReadonly, paymentWizardDataResponse.addressIsReadonly) &&
+        Objects.equals(this.phoneIsReadOnly, paymentWizardDataResponse.phoneIsReadOnly) &&
+        Objects.equals(this.emailIsReadOnly, paymentWizardDataResponse.emailIsReadOnly) &&
         Objects.equals(this.logoURL, paymentWizardDataResponse.logoURL) &&
         Objects.equals(this.privacyPolicyUrl, paymentWizardDataResponse.privacyPolicyUrl) &&
         Objects.equals(this.termsAndConditionsUrl, paymentWizardDataResponse.termsAndConditionsUrl) &&
         Objects.equals(this.learnMoreUrl, paymentWizardDataResponse.learnMoreUrl) &&
-        Objects.equals(this.paymentFormMessages, paymentWizardDataResponse.paymentFormMessages);
+        Objects.equals(this.paymentFormMessages, paymentWizardDataResponse.paymentFormMessages) &&
+        Objects.equals(this.displayProperties, paymentWizardDataResponse.displayProperties) &&
+        Objects.equals(this.termsAndConditions, paymentWizardDataResponse.termsAndConditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, addressIsReadonly, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, paymentFormMessages);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, paymentFormMessages, displayProperties, termsAndConditions);
   }
 
 
@@ -565,11 +665,15 @@ public class PaymentWizardDataResponse   {
     sb.append("    isShopperPhoneMandatory: ").append(toIndentedString(isShopperPhoneMandatory)).append("\n");
     sb.append("    numberOfInstallmentsSelectionsOption: ").append(toIndentedString(numberOfInstallmentsSelectionsOption)).append("\n");
     sb.append("    addressIsReadonly: ").append(toIndentedString(addressIsReadonly)).append("\n");
+    sb.append("    phoneIsReadOnly: ").append(toIndentedString(phoneIsReadOnly)).append("\n");
+    sb.append("    emailIsReadOnly: ").append(toIndentedString(emailIsReadOnly)).append("\n");
     sb.append("    logoURL: ").append(toIndentedString(logoURL)).append("\n");
     sb.append("    privacyPolicyUrl: ").append(toIndentedString(privacyPolicyUrl)).append("\n");
     sb.append("    termsAndConditionsUrl: ").append(toIndentedString(termsAndConditionsUrl)).append("\n");
     sb.append("    learnMoreUrl: ").append(toIndentedString(learnMoreUrl)).append("\n");
     sb.append("    paymentFormMessages: ").append(toIndentedString(paymentFormMessages)).append("\n");
+    sb.append("    displayProperties: ").append(toIndentedString(displayProperties)).append("\n");
+    sb.append("    termsAndConditions: ").append(toIndentedString(termsAndConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

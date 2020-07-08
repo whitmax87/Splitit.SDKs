@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **firstChargeDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **autoCapture** | **Boolean** |  |  [optional]
 **isFunded** | **Boolean** |  |  [optional]
-**attempt3DSecure** | **Object** |  |  [optional]
+**attempt3DSecure** | **Boolean** |  |  [optional]
 
 
 

@@ -13,7 +13,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
 
 namespace Splitit.SDK.Client.Client
 {
@@ -33,10 +32,6 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         /// <value>The base path</value>
         String GetBasePath();
-        
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        ExceptionFactory ExceptionFactory { get; set; }
+
     }
 }

@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ScpFundingPercent** | **decimal?** |  | 
 **TestMode** | [**TestModes**](TestModes.md) |  | 
 **CreationDateTime** | **DateTime?** |  | 
-**Installments** | [**List&lt;Installment&gt;**](Installment.md) |  | [optional] 
+**Installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  | [optional] 
 **SecureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  | [optional] 
 **BusinessUnit** | [**BuRef**](BuRef.md) |  | [optional] 
 **ShopperPaymentRequestTime** | **DateTime?** |  | [optional] 

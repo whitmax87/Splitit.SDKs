@@ -27,6 +27,12 @@ export interface ResponseHeader {
      * @memberof ResponseHeader
      */
     errors?: Array<Error>;
+    /**
+     *
+     * @type {string}
+     * @memberof ResponseHeader
+     */
+    traceId?: string;
 }
 export declare function ResponseHeaderFromJSON(json: any): ResponseHeader;
 export declare function ResponseHeaderFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResponseHeader;

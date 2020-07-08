@@ -14,7 +14,7 @@ import { RequestFile } from '../api';
 import { CardData } from './cardData';
 import { ConsumerData } from './consumerData';
 import { FraudCheck } from './fraudCheck';
-import { Installment } from './installment';
+import { Installment2 } from './installment2';
 import { MerchantRef } from './merchantRef';
 import { Money } from './money';
 import { ReAuthorization } from './reAuthorization';
@@ -45,7 +45,7 @@ export class InstallmentPlan {
     'scpFundingPercent': number;
     'testMode': TestModes;
     'creationDateTime': Date;
-    'installments'?: Array<Installment>;
+    'installments'?: Array<Installment2>;
     'secureAuthorizations'?: Array<ReAuthorization>;
 
     static discriminator: string | undefined = undefined;
@@ -169,7 +169,7 @@ export class InstallmentPlan {
         {
             "name": "installments",
             "baseName": "Installments",
-            "type": "Array<Installment>"
+            "type": "Array<Installment2>"
         },
         {
             "name": "secureAuthorizations",

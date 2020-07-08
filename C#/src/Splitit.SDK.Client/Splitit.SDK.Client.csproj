@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
-    <Version>1.4.6</Version>
+    <Version>1.5.0</Version>
     <Authors>SplititSDK</Authors>
     <Title>Splitit C# SDK</Title>
     <PackageDescription>C# SDK for Splitit Web API.</PackageDescription>
@@ -12,10 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.8" />
-    <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.8" />
     <PackageReference Include="JsonSubTypes" Version="1.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />

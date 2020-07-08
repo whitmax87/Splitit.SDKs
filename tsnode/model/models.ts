@@ -24,11 +24,12 @@ export * from './eventsEndpoints';
 export * from './extendedInstallmentPlan';
 export * from './extendedInstallmentPlanAllOf';
 export * from './externalAuth';
-export * from './flexFieldsDataResponse';
 export * from './fraudCheck';
 export * from './fraudCheckResult';
 export * from './get3DSecureParametersRequest';
 export * from './get3DSecureParametersResponse';
+export * from './getFraudStatusDisplayRequest';
+export * from './getFraudStatusDisplayResponse';
 export * from './getInitiatedInstallmentPlanRequest';
 export * from './getInitiatedInstallmentPlanResponse';
 export * from './getInstallmentsPlanExtendedResponse';
@@ -42,6 +43,7 @@ export * from './initiateInstallmentPlanRequest';
 export * from './initiateInstallmentsPlanResponse';
 export * from './initiateInstallmentsPlanResponseAllOf';
 export * from './installment';
+export * from './installment2';
 export * from './installmentPlan';
 export * from './installmentPlanActivityStatus';
 export * from './installmentPlanCancelationReason';
@@ -52,6 +54,8 @@ export * from './installmentPlanResponse';
 export * from './installmentPlanStatus';
 export * from './installmentsPlanDateType';
 export * from './itemData';
+export * from './learnMoreDetailsRequest';
+export * from './learnMoreDetailsResponse';
 export * from './loginRequest';
 export * from './loginResponse';
 export * from './loginResponse2';
@@ -63,6 +67,8 @@ export * from './money';
 export * from './moneyWithCurrencyCode';
 export * from './pagingRequestHeader';
 export * from './pagingResponseHeader';
+export * from './paymentFormMessage';
+export * from './paymentFormMessageType';
 export * from './paymentToken';
 export * from './paymentWizardData';
 export * from './paymentWizardDataResponse';
@@ -70,8 +76,6 @@ export * from './paymentWizardDataResponseAllOf';
 export * from './planApprovalEvidence';
 export * from './planData';
 export * from './planStrategy';
-export * from './publicTokenRequest';
-export * from './publicTokenResponse';
 export * from './purchaseMethod';
 export * from './reAuthorization';
 export * from './redirectUrls';
@@ -129,11 +133,12 @@ import { EventsEndpoints } from './eventsEndpoints';
 import { ExtendedInstallmentPlan } from './extendedInstallmentPlan';
 import { ExtendedInstallmentPlanAllOf } from './extendedInstallmentPlanAllOf';
 import { ExternalAuth } from './externalAuth';
-import { FlexFieldsDataResponse } from './flexFieldsDataResponse';
 import { FraudCheck } from './fraudCheck';
 import { FraudCheckResult } from './fraudCheckResult';
 import { Get3DSecureParametersRequest } from './get3DSecureParametersRequest';
 import { Get3DSecureParametersResponse } from './get3DSecureParametersResponse';
+import { GetFraudStatusDisplayRequest } from './getFraudStatusDisplayRequest';
+import { GetFraudStatusDisplayResponse } from './getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from './getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from './getInitiatedInstallmentPlanResponse';
 import { GetInstallmentsPlanExtendedResponse } from './getInstallmentsPlanExtendedResponse';
@@ -147,6 +152,7 @@ import { InitiateInstallmentPlanRequest } from './initiateInstallmentPlanRequest
 import { InitiateInstallmentsPlanResponse } from './initiateInstallmentsPlanResponse';
 import { InitiateInstallmentsPlanResponseAllOf } from './initiateInstallmentsPlanResponseAllOf';
 import { Installment } from './installment';
+import { Installment2 } from './installment2';
 import { InstallmentPlan } from './installmentPlan';
 import { InstallmentPlanActivityStatus } from './installmentPlanActivityStatus';
 import { InstallmentPlanCancelationReason } from './installmentPlanCancelationReason';
@@ -157,6 +163,8 @@ import { InstallmentPlanResponse } from './installmentPlanResponse';
 import { InstallmentPlanStatus } from './installmentPlanStatus';
 import { InstallmentsPlanDateType } from './installmentsPlanDateType';
 import { ItemData } from './itemData';
+import { LearnMoreDetailsRequest } from './learnMoreDetailsRequest';
+import { LearnMoreDetailsResponse } from './learnMoreDetailsResponse';
 import { LoginRequest } from './loginRequest';
 import { LoginResponse } from './loginResponse';
 import { LoginResponse2 } from './loginResponse2';
@@ -168,6 +176,8 @@ import { Money } from './money';
 import { MoneyWithCurrencyCode } from './moneyWithCurrencyCode';
 import { PagingRequestHeader } from './pagingRequestHeader';
 import { PagingResponseHeader } from './pagingResponseHeader';
+import { PaymentFormMessage } from './paymentFormMessage';
+import { PaymentFormMessageType } from './paymentFormMessageType';
 import { PaymentToken } from './paymentToken';
 import { PaymentWizardData } from './paymentWizardData';
 import { PaymentWizardDataResponse } from './paymentWizardDataResponse';
@@ -175,8 +185,6 @@ import { PaymentWizardDataResponseAllOf } from './paymentWizardDataResponseAllOf
 import { PlanApprovalEvidence } from './planApprovalEvidence';
 import { PlanData } from './planData';
 import { PlanStrategy } from './planStrategy';
-import { PublicTokenRequest } from './publicTokenRequest';
-import { PublicTokenResponse } from './publicTokenResponse';
 import { PurchaseMethod } from './purchaseMethod';
 import { ReAuthorization } from './reAuthorization';
 import { RedirectUrls } from './redirectUrls';
@@ -229,6 +237,7 @@ let enumsMap: {[index: string]: any} = {
         "InstallmentPlanCancelationReason": InstallmentPlanCancelationReason,
         "InstallmentPlanStatus": InstallmentPlanStatus,
         "InstallmentsPlanDateType": InstallmentsPlanDateType,
+        "PaymentFormMessageType": PaymentFormMessageType,
         "PlanStrategy": PlanStrategy,
         "PurchaseMethod": PurchaseMethod,
         "RefundStrategy": RefundStrategy,
@@ -261,10 +270,11 @@ let typeMap: {[index: string]: any} = {
     "ExtendedInstallmentPlan": ExtendedInstallmentPlan,
     "ExtendedInstallmentPlanAllOf": ExtendedInstallmentPlanAllOf,
     "ExternalAuth": ExternalAuth,
-    "FlexFieldsDataResponse": FlexFieldsDataResponse,
     "FraudCheck": FraudCheck,
     "Get3DSecureParametersRequest": Get3DSecureParametersRequest,
     "Get3DSecureParametersResponse": Get3DSecureParametersResponse,
+    "GetFraudStatusDisplayRequest": GetFraudStatusDisplayRequest,
+    "GetFraudStatusDisplayResponse": GetFraudStatusDisplayResponse,
     "GetInitiatedInstallmentPlanRequest": GetInitiatedInstallmentPlanRequest,
     "GetInitiatedInstallmentPlanResponse": GetInitiatedInstallmentPlanResponse,
     "GetInstallmentsPlanExtendedResponse": GetInstallmentsPlanExtendedResponse,
@@ -278,12 +288,15 @@ let typeMap: {[index: string]: any} = {
     "InitiateInstallmentsPlanResponse": InitiateInstallmentsPlanResponse,
     "InitiateInstallmentsPlanResponseAllOf": InitiateInstallmentsPlanResponseAllOf,
     "Installment": Installment,
+    "Installment2": Installment2,
     "InstallmentPlan": InstallmentPlan,
     "InstallmentPlanDateInfo": InstallmentPlanDateInfo,
     "InstallmentPlanInitiatedStatuses": InstallmentPlanInitiatedStatuses,
     "InstallmentPlanQueryCriteria": InstallmentPlanQueryCriteria,
     "InstallmentPlanResponse": InstallmentPlanResponse,
     "ItemData": ItemData,
+    "LearnMoreDetailsRequest": LearnMoreDetailsRequest,
+    "LearnMoreDetailsResponse": LearnMoreDetailsResponse,
     "LoginRequest": LoginRequest,
     "LoginResponse": LoginResponse,
     "LoginResponse2": LoginResponse2,
@@ -295,14 +308,13 @@ let typeMap: {[index: string]: any} = {
     "MoneyWithCurrencyCode": MoneyWithCurrencyCode,
     "PagingRequestHeader": PagingRequestHeader,
     "PagingResponseHeader": PagingResponseHeader,
+    "PaymentFormMessage": PaymentFormMessage,
     "PaymentToken": PaymentToken,
     "PaymentWizardData": PaymentWizardData,
     "PaymentWizardDataResponse": PaymentWizardDataResponse,
     "PaymentWizardDataResponseAllOf": PaymentWizardDataResponseAllOf,
     "PlanApprovalEvidence": PlanApprovalEvidence,
     "PlanData": PlanData,
-    "PublicTokenRequest": PublicTokenRequest,
-    "PublicTokenResponse": PublicTokenResponse,
     "ReAuthorization": ReAuthorization,
     "RedirectUrls": RedirectUrls,
     "ReferenceEntityBase": ReferenceEntityBase,

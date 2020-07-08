@@ -18,6 +18,10 @@ import {
     CurrencyFromJSON,
     CurrencyFromJSONTyped,
     CurrencyToJSON,
+    PaymentFormMessage,
+    PaymentFormMessageFromJSON,
+    PaymentFormMessageFromJSONTyped,
+    PaymentFormMessageToJSON,
     PaymentWizardData,
     PaymentWizardDataFromJSON,
     PaymentWizardDataFromJSONTyped,
@@ -26,6 +30,10 @@ import {
     PaymentWizardDataResponseAllOfFromJSON,
     PaymentWizardDataResponseAllOfFromJSONTyped,
     PaymentWizardDataResponseAllOfToJSON,
+    TermsAndConditions,
+    TermsAndConditionsFromJSON,
+    TermsAndConditionsFromJSONTyped,
+    TermsAndConditionsToJSON,
 } from './';
 
 /**
@@ -138,6 +146,18 @@ export interface PaymentWizardDataResponse {
     addressIsReadonly: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    phoneIsReadOnly: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    emailIsReadOnly: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
@@ -162,10 +182,22 @@ export interface PaymentWizardDataResponse {
     learnMoreUrl?: string;
     /**
      * 
-     * @type {Array<string>}
+     * @type {Array<PaymentFormMessage>}
      * @memberof PaymentWizardDataResponse
      */
-    paymentFormMessages?: Array<string>;
+    paymentFormMessages?: Array<PaymentFormMessage>;
+    /**
+     * 
+     * @type {{ [key: string]: string; }}
+     * @memberof PaymentWizardDataResponse
+     */
+    displayProperties?: { [key: string]: string; };
+    /**
+     * 
+     * @type {TermsAndConditions}
+     * @memberof PaymentWizardDataResponse
+     */
+    termsAndConditions?: TermsAndConditions;
 }
 
 export function PaymentWizardDataResponseFromJSON(json: any): PaymentWizardDataResponse {
@@ -195,11 +227,15 @@ export function PaymentWizardDataResponseFromJSONTyped(json: any, ignoreDiscrimi
         'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'],
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'addressIsReadonly': json['AddressIsReadonly'],
+        'phoneIsReadOnly': json['PhoneIsReadOnly'],
+        'emailIsReadOnly': json['EmailIsReadOnly'],
         'logoURL': !exists(json, 'LogoURL') ? undefined : json['LogoURL'],
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
         'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
-        'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
+        'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : ((json['PaymentFormMessages'] as Array<any>).map(PaymentFormMessageFromJSON)),
+        'displayProperties': !exists(json, 'DisplayProperties') ? undefined : json['DisplayProperties'],
+        'termsAndConditions': !exists(json, 'TermsAndConditions') ? undefined : TermsAndConditionsFromJSON(json['TermsAndConditions']),
     };
 }
 
@@ -229,11 +265,15 @@ export function PaymentWizardDataResponseToJSON(value?: PaymentWizardDataRespons
         'IsShopperPhoneMandatory': value.isShopperPhoneMandatory,
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'AddressIsReadonly': value.addressIsReadonly,
+        'PhoneIsReadOnly': value.phoneIsReadOnly,
+        'EmailIsReadOnly': value.emailIsReadOnly,
         'LogoURL': value.logoURL,
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
         'LearnMoreUrl': value.learnMoreUrl,
-        'PaymentFormMessages': value.paymentFormMessages,
+        'PaymentFormMessages': value.paymentFormMessages === undefined ? undefined : ((value.paymentFormMessages as Array<any>).map(PaymentFormMessageToJSON)),
+        'DisplayProperties': value.displayProperties,
+        'TermsAndConditions': TermsAndConditionsToJSON(value.termsAndConditions),
     };
 }
 

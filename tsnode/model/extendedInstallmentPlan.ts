@@ -16,7 +16,7 @@ import { CardData } from './cardData';
 import { ConsumerData } from './consumerData';
 import { ExtendedInstallmentPlanAllOf } from './extendedInstallmentPlanAllOf';
 import { FraudCheck } from './fraudCheck';
-import { Installment } from './installment';
+import { Installment2 } from './installment2';
 import { InstallmentPlan } from './installmentPlan';
 import { MerchantRef } from './merchantRef';
 import { Money } from './money';
@@ -48,7 +48,7 @@ export class ExtendedInstallmentPlan {
     'scpFundingPercent': number;
     'testMode': TestModes;
     'creationDateTime': Date;
-    'installments'?: Array<Installment>;
+    'installments'?: Array<Installment2>;
     'secureAuthorizations'?: Array<ReAuthorization>;
     'businessUnit'?: BuRef;
     'shopperPaymentRequestTime'?: Date;
@@ -174,7 +174,7 @@ export class ExtendedInstallmentPlan {
         {
             "name": "installments",
             "baseName": "Installments",
-            "type": "Array<Installment>"
+            "type": "Array<Installment2>"
         },
         {
             "name": "secureAuthorizations",

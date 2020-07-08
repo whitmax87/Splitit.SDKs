@@ -27,6 +27,7 @@ var DelayResolution;
     DelayResolution["PendingSuspiciousReview"] = "PendingSuspiciousReview";
     DelayResolution["DefaultedInCollection"] = "DefaultedInCollection";
     DelayResolution["DefaultedPermanently"] = "DefaultedPermanently";
+    DelayResolution["DefaultedCollectedFromMerchant"] = "DefaultedCollectedFromMerchant";
 })(DelayResolution = exports.DelayResolution || (exports.DelayResolution = {}));
 function DelayResolutionFromJSON(json) {
     return DelayResolutionFromJSONTyped(json, false);

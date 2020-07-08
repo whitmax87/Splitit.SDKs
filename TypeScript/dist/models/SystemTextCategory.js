@@ -42,6 +42,9 @@ var SystemTextCategory;
     SystemTextCategory["POS"] = "POS";
     SystemTextCategory["FlexFields"] = "FlexFields";
     SystemTextCategory["MessagingSystem"] = "MessagingSystem";
+    SystemTextCategory["PaymentFormV3"] = "PaymentFormV3";
+    SystemTextCategory["HowSplititWorks"] = "HowSplititWorks";
+    SystemTextCategory["UpstreamMessaging"] = "UpstreamMessaging";
 })(SystemTextCategory = exports.SystemTextCategory || (exports.SystemTextCategory = {}));
 function SystemTextCategoryFromJSON(json) {
     return SystemTextCategoryFromJSONTyped(json, false);

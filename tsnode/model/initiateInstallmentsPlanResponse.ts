@@ -25,6 +25,7 @@ export class InitiateInstallmentsPlanResponse {
     'privacyPolicyUrl'?: string;
     'installmentPlanInfoUrl'?: string;
     'publicToken'?: string;
+    'learnMoreUrl'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -67,6 +68,11 @@ export class InitiateInstallmentsPlanResponse {
         {
             "name": "publicToken",
             "baseName": "PublicToken",
+            "type": "string"
+        },
+        {
+            "name": "learnMoreUrl",
+            "baseName": "LearnMoreUrl",
             "type": "string"
         }    ];
 

@@ -36,106 +36,34 @@ namespace Splitit.SDK.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Installment" /> class.
         /// </summary>
-        /// <param name="installmentNumber">installmentNumber (required).</param>
+        /// <param name="date">date.</param>
         /// <param name="amount">amount.</param>
-        /// <param name="originalAmount">originalAmount.</param>
-        /// <param name="refundAmount">refundAmount.</param>
-        /// <param name="processDateTime">processDateTime.</param>
-        /// <param name="isRefund">isRefund (required).</param>
-        /// <param name="requiredCredit">requiredCredit.</param>
-        /// <param name="createdDateTime">createdDateTime (required).</param>
-        /// <param name="status">status.</param>
-        /// <param name="transactionResults">transactionResults.</param>
-        /// <param name="cardDetails">cardDetails.</param>
-        /// <param name="result">result.</param>
-        public Installment(int? installmentNumber = default(int?), Money amount = default(Money), Money originalAmount = default(Money), Money refundAmount = default(Money), DateTime? processDateTime = default(DateTime?), bool? isRefund = default(bool?), Money requiredCredit = default(Money), DateTime? createdDateTime = default(DateTime?), ReferenceEntityBase status = default(ReferenceEntityBase), List<TransactionResult> transactionResults = default(List<TransactionResult>), CardData cardDetails = default(CardData), bool? result = default(bool?))
+        /// <param name="heldAmount">heldAmount (required).</param>
+        public Installment(DateTime? date = default(DateTime?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), decimal? heldAmount = default(decimal?))
         {
-            this.InstallmentNumber = installmentNumber;
-            this.IsRefund = isRefund;
-            this.CreatedDateTime = createdDateTime;
+            this.HeldAmount = heldAmount;
+            this.Date = date;
             this.Amount = amount;
-            this.OriginalAmount = originalAmount;
-            this.RefundAmount = refundAmount;
-            this.ProcessDateTime = processDateTime;
-            this.RequiredCredit = requiredCredit;
-            this.Status = status;
-            this.TransactionResults = transactionResults;
-            this.CardDetails = cardDetails;
-            this.Result = result;
         }
 
         
         /// <summary>
-        /// Gets or Sets InstallmentNumber
+        /// Gets or Sets Date
         /// </summary>
-        [DataMember(Name="InstallmentNumber", EmitDefaultValue=false)]
-        public int? InstallmentNumber { get; set; }
+        [DataMember(Name="Date", EmitDefaultValue=false)]
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name="Amount", EmitDefaultValue=false)]
-        public Money Amount { get; set; }
+        public MoneyWithCurrencyCode Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets OriginalAmount
+        /// Gets or Sets HeldAmount
         /// </summary>
-        [DataMember(Name="OriginalAmount", EmitDefaultValue=false)]
-        public Money OriginalAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RefundAmount
-        /// </summary>
-        [DataMember(Name="RefundAmount", EmitDefaultValue=false)]
-        public Money RefundAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProcessDateTime
-        /// </summary>
-        [DataMember(Name="ProcessDateTime", EmitDefaultValue=false)]
-        public DateTime? ProcessDateTime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsRefund
-        /// </summary>
-        [DataMember(Name="IsRefund", EmitDefaultValue=false)]
-        public bool? IsRefund { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RequiredCredit
-        /// </summary>
-        [DataMember(Name="RequiredCredit", EmitDefaultValue=false)]
-        public Money RequiredCredit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedDateTime
-        /// </summary>
-        [DataMember(Name="CreatedDateTime", EmitDefaultValue=false)]
-        public DateTime? CreatedDateTime { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Status
-        /// </summary>
-        [DataMember(Name="Status", EmitDefaultValue=false)]
-        public ReferenceEntityBase Status { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TransactionResults
-        /// </summary>
-        [DataMember(Name="TransactionResults", EmitDefaultValue=false)]
-        public List<TransactionResult> TransactionResults { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CardDetails
-        /// </summary>
-        [DataMember(Name="CardDetails", EmitDefaultValue=false)]
-        public CardData CardDetails { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Result
-        /// </summary>
-        [DataMember(Name="Result", EmitDefaultValue=false)]
-        public bool? Result { get; set; }
+        [DataMember(Name="HeldAmount", EmitDefaultValue=false)]
+        public decimal? HeldAmount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -145,18 +73,9 @@ namespace Splitit.SDK.Client.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Installment {\n");
-            sb.Append("  InstallmentNumber: ").Append(InstallmentNumber).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  OriginalAmount: ").Append(OriginalAmount).Append("\n");
-            sb.Append("  RefundAmount: ").Append(RefundAmount).Append("\n");
-            sb.Append("  ProcessDateTime: ").Append(ProcessDateTime).Append("\n");
-            sb.Append("  IsRefund: ").Append(IsRefund).Append("\n");
-            sb.Append("  RequiredCredit: ").Append(RequiredCredit).Append("\n");
-            sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  TransactionResults: ").Append(TransactionResults).Append("\n");
-            sb.Append("  CardDetails: ").Append(CardDetails).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("  HeldAmount: ").Append(HeldAmount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -192,9 +111,9 @@ namespace Splitit.SDK.Client.Model
 
             return 
                 (
-                    this.InstallmentNumber == input.InstallmentNumber ||
-                    (this.InstallmentNumber != null &&
-                    this.InstallmentNumber.Equals(input.InstallmentNumber))
+                    this.Date == input.Date ||
+                    (this.Date != null &&
+                    this.Date.Equals(input.Date))
                 ) && 
                 (
                     this.Amount == input.Amount ||
@@ -202,54 +121,9 @@ namespace Splitit.SDK.Client.Model
                     this.Amount.Equals(input.Amount))
                 ) && 
                 (
-                    this.OriginalAmount == input.OriginalAmount ||
-                    (this.OriginalAmount != null &&
-                    this.OriginalAmount.Equals(input.OriginalAmount))
-                ) && 
-                (
-                    this.RefundAmount == input.RefundAmount ||
-                    (this.RefundAmount != null &&
-                    this.RefundAmount.Equals(input.RefundAmount))
-                ) && 
-                (
-                    this.ProcessDateTime == input.ProcessDateTime ||
-                    (this.ProcessDateTime != null &&
-                    this.ProcessDateTime.Equals(input.ProcessDateTime))
-                ) && 
-                (
-                    this.IsRefund == input.IsRefund ||
-                    (this.IsRefund != null &&
-                    this.IsRefund.Equals(input.IsRefund))
-                ) && 
-                (
-                    this.RequiredCredit == input.RequiredCredit ||
-                    (this.RequiredCredit != null &&
-                    this.RequiredCredit.Equals(input.RequiredCredit))
-                ) && 
-                (
-                    this.CreatedDateTime == input.CreatedDateTime ||
-                    (this.CreatedDateTime != null &&
-                    this.CreatedDateTime.Equals(input.CreatedDateTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TransactionResults == input.TransactionResults ||
-                    this.TransactionResults != null &&
-                    this.TransactionResults.SequenceEqual(input.TransactionResults)
-                ) && 
-                (
-                    this.CardDetails == input.CardDetails ||
-                    (this.CardDetails != null &&
-                    this.CardDetails.Equals(input.CardDetails))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
+                    this.HeldAmount == input.HeldAmount ||
+                    (this.HeldAmount != null &&
+                    this.HeldAmount.Equals(input.HeldAmount))
                 );
         }
 
@@ -262,30 +136,12 @@ namespace Splitit.SDK.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstallmentNumber != null)
-                    hashCode = hashCode * 59 + this.InstallmentNumber.GetHashCode();
+                if (this.Date != null)
+                    hashCode = hashCode * 59 + this.Date.GetHashCode();
                 if (this.Amount != null)
                     hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.OriginalAmount != null)
-                    hashCode = hashCode * 59 + this.OriginalAmount.GetHashCode();
-                if (this.RefundAmount != null)
-                    hashCode = hashCode * 59 + this.RefundAmount.GetHashCode();
-                if (this.ProcessDateTime != null)
-                    hashCode = hashCode * 59 + this.ProcessDateTime.GetHashCode();
-                if (this.IsRefund != null)
-                    hashCode = hashCode * 59 + this.IsRefund.GetHashCode();
-                if (this.RequiredCredit != null)
-                    hashCode = hashCode * 59 + this.RequiredCredit.GetHashCode();
-                if (this.CreatedDateTime != null)
-                    hashCode = hashCode * 59 + this.CreatedDateTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TransactionResults != null)
-                    hashCode = hashCode * 59 + this.TransactionResults.GetHashCode();
-                if (this.CardDetails != null)
-                    hashCode = hashCode * 59 + this.CardDetails.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.HeldAmount != null)
+                    hashCode = hashCode * 59 + this.HeldAmount.GetHashCode();
                 return hashCode;
             }
         }

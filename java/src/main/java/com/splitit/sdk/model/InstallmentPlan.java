@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.CardData;
 import com.splitit.sdk.model.ConsumerData;
 import com.splitit.sdk.model.FraudCheck;
-import com.splitit.sdk.model.Installment;
+import com.splitit.sdk.model.Installment2;
 import com.splitit.sdk.model.MerchantRef;
 import com.splitit.sdk.model.Money;
 import com.splitit.sdk.model.ReAuthorization;
@@ -42,7 +42,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class InstallmentPlan   {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
@@ -114,7 +114,7 @@ public class InstallmentPlan   {
   private OffsetDateTime creationDateTime = null;
 
   @SerializedName("Installments")
-  private List<Installment> installments = null;
+  private List<Installment2> installments = null;
 
   @SerializedName("SecureAuthorizations")
   private List<ReAuthorization> secureAuthorizations = null;
@@ -541,14 +541,14 @@ public class InstallmentPlan   {
     this.creationDateTime = creationDateTime;
   }
 
-  public InstallmentPlan installments(List<Installment> installments) {
+  public InstallmentPlan installments(List<Installment2> installments) {
     this.installments = installments;
     return this;
   }
 
-  public InstallmentPlan addInstallmentsItem(Installment installmentsItem) {
+  public InstallmentPlan addInstallmentsItem(Installment2 installmentsItem) {
     if (this.installments == null) {
-      this.installments = new ArrayList<Installment>();
+      this.installments = new ArrayList<Installment2>();
     }
     this.installments.add(installmentsItem);
     return this;
@@ -559,11 +559,11 @@ public class InstallmentPlan   {
    * @return installments
   **/
   @ApiModelProperty(value = "")
-  public List<Installment> getInstallments() {
+  public List<Installment2> getInstallments() {
     return installments;
   }
 
-  public void setInstallments(List<Installment> installments) {
+  public void setInstallments(List<Installment2> installments) {
     this.installments = installments;
   }
 

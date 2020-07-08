@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**InstallmentPlanCancel**](InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**InstallmentPlanChargeBack**](InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**InstallmentPlanCreate**](InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
-[**InstallmentPlanCreatePublicToken**](InstallmentPlanApi.md#installmentplancreatepublictoken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 [**InstallmentPlanGet**](InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 [**InstallmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**InstallmentPlanGetExtended**](InstallmentPlanApi.md#installmentplangetextended) | **POST** /api/InstallmentPlan/GetExtended | 
+[**InstallmentPlanGetFraudStatusDisplay**](InstallmentPlanApi.md#installmentplangetfraudstatusdisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**InstallmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**InstallmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentplangetlearnmoredetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 [**InstallmentPlanStartInstallments**](InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -285,72 +286,6 @@ Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="installmentplancreatepublictoken"></a>
-# **InstallmentPlanCreatePublicToken**
-> PublicTokenResponse InstallmentPlanCreatePublicToken (PublicTokenRequest request)
-
-
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using Splitit.SDK.Client.Api;
-using Splitit.SDK.Client.Client;
-using Splitit.SDK.Client.Model;
-
-namespace Example
-{
-    public class InstallmentPlanCreatePublicTokenExample
-    {
-        public void main()
-        {
-            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
-
-            var loginApi = new LoginApi(Configuration.Sandbox);
-            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
-
-            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
-            var loginResult = loginApi.LoginPost(request);
-            
-            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
-            var request = new PublicTokenRequest(); // PublicTokenRequest | 
-
-            try
-            {
-                PublicTokenResponse result = apiInstance.InstallmentPlanCreatePublicToken(request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanCreatePublicToken: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**PublicTokenRequest**](PublicTokenRequest.md)|  | 
-
-### Return type
-
-[**PublicTokenResponse**](PublicTokenResponse.md)
-
-### Authorization
-
-Authorization is done through SessionId obtained from LoginApi and ApiKey.
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="installmentplanget"></a>
 # **InstallmentPlanGet**
 > GetInstallmentsPlanResponse InstallmentPlanGet (GetInstallmentsPlanSearchCriteriaRequest request)
@@ -549,6 +484,72 @@ Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="installmentplangetfraudstatusdisplay"></a>
+# **InstallmentPlanGetFraudStatusDisplay**
+> GetFraudStatusDisplayResponse InstallmentPlanGetFraudStatusDisplay (GetFraudStatusDisplayRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanGetFraudStatusDisplayExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new GetFraudStatusDisplayRequest(); // GetFraudStatusDisplayRequest | 
+
+            try
+            {
+                GetFraudStatusDisplayResponse result = apiInstance.InstallmentPlanGetFraudStatusDisplay(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanGetFraudStatusDisplay: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetFraudStatusDisplayRequest**](GetFraudStatusDisplayRequest.md)|  | 
+
+### Return type
+
+[**GetFraudStatusDisplayResponse**](GetFraudStatusDisplayResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="installmentplangetinitiatedinstallmentplanrequest"></a>
 # **InstallmentPlanGetInitiatedInstallmentPlanRequest**
 > GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request)
@@ -603,6 +604,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInitiatedInstallmentPlanResponse**](GetInitiatedInstallmentPlanResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplangetlearnmoredetails"></a>
+# **InstallmentPlanGetLearnMoreDetails**
+> LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanGetLearnMoreDetailsExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new LearnMoreDetailsRequest(); // LearnMoreDetailsRequest | 
+
+            try
+            {
+                LearnMoreDetailsResponse result = apiInstance.InstallmentPlanGetLearnMoreDetails(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanGetLearnMoreDetails: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**LearnMoreDetailsRequest**](LearnMoreDetailsRequest.md)|  | 
+
+### Return type
+
+[**LearnMoreDetailsResponse**](LearnMoreDetailsResponse.md)
 
 ### Authorization
 

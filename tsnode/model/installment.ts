@@ -11,87 +11,30 @@
  */
 
 import { RequestFile } from '../api';
-import { CardData } from './cardData';
-import { Money } from './money';
-import { ReferenceEntityBase } from './referenceEntityBase';
-import { TransactionResult } from './transactionResult';
+import { MoneyWithCurrencyCode } from './moneyWithCurrencyCode';
 
 export class Installment {
-    'installmentNumber': number;
-    'amount'?: Money;
-    'originalAmount'?: Money;
-    'refundAmount'?: Money;
-    'processDateTime'?: Date;
-    'isRefund': boolean;
-    'requiredCredit'?: Money;
-    'createdDateTime': Date;
-    'status'?: ReferenceEntityBase;
-    'transactionResults'?: Array<TransactionResult>;
-    'cardDetails'?: CardData;
-    'result'?: boolean;
+    'date'?: Date;
+    'amount'?: MoneyWithCurrencyCode;
+    'heldAmount': number;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "installmentNumber",
-            "baseName": "InstallmentNumber",
-            "type": "number"
+            "name": "date",
+            "baseName": "Date",
+            "type": "Date"
         },
         {
             "name": "amount",
             "baseName": "Amount",
-            "type": "Money"
+            "type": "MoneyWithCurrencyCode"
         },
         {
-            "name": "originalAmount",
-            "baseName": "OriginalAmount",
-            "type": "Money"
-        },
-        {
-            "name": "refundAmount",
-            "baseName": "RefundAmount",
-            "type": "Money"
-        },
-        {
-            "name": "processDateTime",
-            "baseName": "ProcessDateTime",
-            "type": "Date"
-        },
-        {
-            "name": "isRefund",
-            "baseName": "IsRefund",
-            "type": "boolean"
-        },
-        {
-            "name": "requiredCredit",
-            "baseName": "RequiredCredit",
-            "type": "Money"
-        },
-        {
-            "name": "createdDateTime",
-            "baseName": "CreatedDateTime",
-            "type": "Date"
-        },
-        {
-            "name": "status",
-            "baseName": "Status",
-            "type": "ReferenceEntityBase"
-        },
-        {
-            "name": "transactionResults",
-            "baseName": "TransactionResults",
-            "type": "Array<TransactionResult>"
-        },
-        {
-            "name": "cardDetails",
-            "baseName": "CardDetails",
-            "type": "CardData"
-        },
-        {
-            "name": "result",
-            "baseName": "Result",
-            "type": "boolean"
+            "name": "heldAmount",
+            "baseName": "HeldAmount",
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {

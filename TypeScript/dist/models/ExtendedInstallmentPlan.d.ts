@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BuRef, CardData, ConsumerData, FraudCheck, Installment, MerchantRef, Money, ReAuthorization, ReferenceEntityBase, TestModes } from './';
+import { BuRef, CardData, ConsumerData, FraudCheck, Installment2, MerchantRef, Money, ReAuthorization, ReferenceEntityBase, TestModes } from './';
 /**
  *
  * @export
@@ -158,10 +158,10 @@ export interface ExtendedInstallmentPlan {
     creationDateTime: Date;
     /**
      *
-     * @type {Array<Installment>}
+     * @type {Array<Installment2>}
      * @memberof ExtendedInstallmentPlan
      */
-    installments?: Array<Installment>;
+    installments?: Array<Installment2>;
     /**
      *
      * @type {Array<ReAuthorization>}

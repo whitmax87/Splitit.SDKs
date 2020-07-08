@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * InitiateInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class InitiateInstallmentsPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -55,6 +55,9 @@ public class InitiateInstallmentsPlanResponse   {
 
   @SerializedName("PublicToken")
   private String publicToken = null;
+
+  @SerializedName("LearnMoreUrl")
+  private String learnMoreUrl = null;
 
   public InitiateInstallmentsPlanResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -200,6 +203,24 @@ public class InitiateInstallmentsPlanResponse   {
     this.publicToken = publicToken;
   }
 
+  public InitiateInstallmentsPlanResponse learnMoreUrl(String learnMoreUrl) {
+    this.learnMoreUrl = learnMoreUrl;
+    return this;
+  }
+
+   /**
+   * Get learnMoreUrl
+   * @return learnMoreUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getLearnMoreUrl() {
+    return learnMoreUrl;
+  }
+
+  public void setLearnMoreUrl(String learnMoreUrl) {
+    this.learnMoreUrl = learnMoreUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +238,13 @@ public class InitiateInstallmentsPlanResponse   {
         Objects.equals(this.termsAndConditionsUrl, initiateInstallmentsPlanResponse.termsAndConditionsUrl) &&
         Objects.equals(this.privacyPolicyUrl, initiateInstallmentsPlanResponse.privacyPolicyUrl) &&
         Objects.equals(this.installmentPlanInfoUrl, initiateInstallmentsPlanResponse.installmentPlanInfoUrl) &&
-        Objects.equals(this.publicToken, initiateInstallmentsPlanResponse.publicToken);
+        Objects.equals(this.publicToken, initiateInstallmentsPlanResponse.publicToken) &&
+        Objects.equals(this.learnMoreUrl, initiateInstallmentsPlanResponse.learnMoreUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan, checkoutUrl, approvalUrl, termsAndConditionsUrl, privacyPolicyUrl, installmentPlanInfoUrl, publicToken);
+    return Objects.hash(responseHeader, installmentPlan, checkoutUrl, approvalUrl, termsAndConditionsUrl, privacyPolicyUrl, installmentPlanInfoUrl, publicToken, learnMoreUrl);
   }
 
 
@@ -239,6 +261,7 @@ public class InitiateInstallmentsPlanResponse   {
     sb.append("    privacyPolicyUrl: ").append(toIndentedString(privacyPolicyUrl)).append("\n");
     sb.append("    installmentPlanInfoUrl: ").append(toIndentedString(installmentPlanInfoUrl)).append("\n");
     sb.append("    publicToken: ").append(toIndentedString(publicToken)).append("\n");
+    sb.append("    learnMoreUrl: ").append(toIndentedString(learnMoreUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

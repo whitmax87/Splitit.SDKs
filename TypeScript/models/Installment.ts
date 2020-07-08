@@ -14,22 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    CardData,
-    CardDataFromJSON,
-    CardDataFromJSONTyped,
-    CardDataToJSON,
-    Money,
-    MoneyFromJSON,
-    MoneyFromJSONTyped,
-    MoneyToJSON,
-    ReferenceEntityBase,
-    ReferenceEntityBaseFromJSON,
-    ReferenceEntityBaseFromJSONTyped,
-    ReferenceEntityBaseToJSON,
-    TransactionResult,
-    TransactionResultFromJSON,
-    TransactionResultFromJSONTyped,
-    TransactionResultToJSON,
+    MoneyWithCurrencyCode,
+    MoneyWithCurrencyCodeFromJSON,
+    MoneyWithCurrencyCodeFromJSONTyped,
+    MoneyWithCurrencyCodeToJSON,
 } from './';
 
 /**
@@ -40,76 +28,22 @@ import {
 export interface Installment {
     /**
      * 
+     * @type {Date}
+     * @memberof Installment
+     */
+    date?: Date;
+    /**
+     * 
+     * @type {MoneyWithCurrencyCode}
+     * @memberof Installment
+     */
+    amount?: MoneyWithCurrencyCode;
+    /**
+     * 
      * @type {number}
      * @memberof Installment
      */
-    installmentNumber: number;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Installment
-     */
-    amount?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Installment
-     */
-    originalAmount?: Money;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Installment
-     */
-    refundAmount?: Money;
-    /**
-     * 
-     * @type {Date}
-     * @memberof Installment
-     */
-    processDateTime?: Date;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Installment
-     */
-    isRefund: boolean;
-    /**
-     * 
-     * @type {Money}
-     * @memberof Installment
-     */
-    requiredCredit?: Money;
-    /**
-     * 
-     * @type {Date}
-     * @memberof Installment
-     */
-    createdDateTime: Date;
-    /**
-     * 
-     * @type {ReferenceEntityBase}
-     * @memberof Installment
-     */
-    status?: ReferenceEntityBase;
-    /**
-     * 
-     * @type {Array<TransactionResult>}
-     * @memberof Installment
-     */
-    transactionResults?: Array<TransactionResult>;
-    /**
-     * 
-     * @type {CardData}
-     * @memberof Installment
-     */
-    cardDetails?: CardData;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Installment
-     */
-    result?: boolean;
+    heldAmount: number;
 }
 
 export function InstallmentFromJSON(json: any): Installment {
@@ -122,18 +56,9 @@ export function InstallmentFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
-        'installmentNumber': json['InstallmentNumber'],
-        'amount': !exists(json, 'Amount') ? undefined : MoneyFromJSON(json['Amount']),
-        'originalAmount': !exists(json, 'OriginalAmount') ? undefined : MoneyFromJSON(json['OriginalAmount']),
-        'refundAmount': !exists(json, 'RefundAmount') ? undefined : MoneyFromJSON(json['RefundAmount']),
-        'processDateTime': !exists(json, 'ProcessDateTime') ? undefined : (new Date(json['ProcessDateTime'])),
-        'isRefund': json['IsRefund'],
-        'requiredCredit': !exists(json, 'RequiredCredit') ? undefined : MoneyFromJSON(json['RequiredCredit']),
-        'createdDateTime': (new Date(json['CreatedDateTime'])),
-        'status': !exists(json, 'Status') ? undefined : ReferenceEntityBaseFromJSON(json['Status']),
-        'transactionResults': !exists(json, 'TransactionResults') ? undefined : ((json['TransactionResults'] as Array<any>).map(TransactionResultFromJSON)),
-        'cardDetails': !exists(json, 'CardDetails') ? undefined : CardDataFromJSON(json['CardDetails']),
-        'result': !exists(json, 'Result') ? undefined : json['Result'],
+        'date': !exists(json, 'Date') ? undefined : (new Date(json['Date'])),
+        'amount': !exists(json, 'Amount') ? undefined : MoneyWithCurrencyCodeFromJSON(json['Amount']),
+        'heldAmount': json['HeldAmount'],
     };
 }
 
@@ -146,18 +71,9 @@ export function InstallmentToJSON(value?: Installment | null): any {
     }
     return {
         
-        'InstallmentNumber': value.installmentNumber,
-        'Amount': MoneyToJSON(value.amount),
-        'OriginalAmount': MoneyToJSON(value.originalAmount),
-        'RefundAmount': MoneyToJSON(value.refundAmount),
-        'ProcessDateTime': value.processDateTime === undefined ? undefined : (value.processDateTime.toISOString()),
-        'IsRefund': value.isRefund,
-        'RequiredCredit': MoneyToJSON(value.requiredCredit),
-        'CreatedDateTime': (value.createdDateTime.toISOString()),
-        'Status': ReferenceEntityBaseToJSON(value.status),
-        'TransactionResults': value.transactionResults === undefined ? undefined : ((value.transactionResults as Array<any>).map(TransactionResultToJSON)),
-        'CardDetails': CardDataToJSON(value.cardDetails),
-        'Result': value.result,
+        'Date': value.date === undefined ? undefined : (value.date.toISOString()),
+        'Amount': MoneyWithCurrencyCodeToJSON(value.amount),
+        'HeldAmount': value.heldAmount,
     };
 }
 

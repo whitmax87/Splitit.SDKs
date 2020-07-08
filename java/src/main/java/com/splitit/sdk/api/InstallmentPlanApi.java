@@ -35,6 +35,8 @@ import com.splitit.sdk.model.CreateInstallmentPlanRequest;
 import com.splitit.sdk.model.CreateInstallmentsPlanResponse;
 import com.splitit.sdk.model.Get3DSecureParametersRequest;
 import com.splitit.sdk.model.Get3DSecureParametersResponse;
+import com.splitit.sdk.model.GetFraudStatusDisplayRequest;
+import com.splitit.sdk.model.GetFraudStatusDisplayResponse;
 import com.splitit.sdk.model.GetInitiatedInstallmentPlanRequest;
 import com.splitit.sdk.model.GetInitiatedInstallmentPlanResponse;
 import com.splitit.sdk.model.GetInstallmentsPlanExtendedResponse;
@@ -43,8 +45,8 @@ import com.splitit.sdk.model.GetInstallmentsPlanSearchCriteriaRequest;
 import com.splitit.sdk.model.InitiateInstallmentPlanRequest;
 import com.splitit.sdk.model.InitiateInstallmentsPlanResponse;
 import com.splitit.sdk.model.InstallmentPlanResponse;
-import com.splitit.sdk.model.PublicTokenRequest;
-import com.splitit.sdk.model.PublicTokenResponse;
+import com.splitit.sdk.model.LearnMoreDetailsRequest;
+import com.splitit.sdk.model.LearnMoreDetailsResponse;
 import com.splitit.sdk.model.RefundInstallmentPlanResponse;
 import com.splitit.sdk.model.RefundPlanRequest;
 import com.splitit.sdk.model.StartInstallmentsRequest;
@@ -580,130 +582,6 @@ public class InstallmentPlanApi {
         return call;
     }
     /**
-     * Build call for installmentPlanCreatePublicToken
-     * @param request  (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call installmentPlanCreatePublicTokenCall(PublicTokenRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
-        Object localVarPostBody = request;
-
-        // create path and map variables
-        String localVarPath = "/api/InstallmentPlan/CreatePublicToken";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "text/plain", "application/json", "text/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json-patch+json", "application/json", "text/json", "application/_*+json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call installmentPlanCreatePublicTokenValidateBeforeCall(PublicTokenRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling installmentPlanCreatePublicToken(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = installmentPlanCreatePublicTokenCall(request, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * 
-     * 
-     * @param request  (required)
-     * @return PublicTokenResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PublicTokenResponse installmentPlanCreatePublicToken(PublicTokenRequest request) throws ApiException {
-        ApiResponse<PublicTokenResponse> resp = installmentPlanCreatePublicTokenWithHttpInfo(request);
-        return resp.getData();
-    }
-
-    /**
-     * 
-     * 
-     * @param request  (required)
-     * @return ApiResponse&lt;PublicTokenResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PublicTokenResponse> installmentPlanCreatePublicTokenWithHttpInfo(PublicTokenRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = installmentPlanCreatePublicTokenValidateBeforeCall(request, null, null);
-        Type localVarReturnType = new TypeToken<PublicTokenResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param request  (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call installmentPlanCreatePublicTokenAsync(PublicTokenRequest request, final ApiCallback<PublicTokenResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = installmentPlanCreatePublicTokenValidateBeforeCall(request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PublicTokenResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for installmentPlanGet
      * @param request  (required)
      * @param progressListener Progress listener
@@ -1076,6 +954,130 @@ public class InstallmentPlanApi {
         return call;
     }
     /**
+     * Build call for installmentPlanGetFraudStatusDisplay
+     * @param request  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetFraudStatusDisplayCall(GetFraudStatusDisplayRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
+        
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/api/InstallmentPlan/GetFraudStatusDisplay";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/plain", "application/json", "text/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json-patch+json", "application/json", "text/json", "application/_*+json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call installmentPlanGetFraudStatusDisplayValidateBeforeCall(GetFraudStatusDisplayRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling installmentPlanGetFraudStatusDisplay(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = installmentPlanGetFraudStatusDisplayCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return GetFraudStatusDisplayResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetFraudStatusDisplayResponse installmentPlanGetFraudStatusDisplay(GetFraudStatusDisplayRequest request) throws ApiException {
+        ApiResponse<GetFraudStatusDisplayResponse> resp = installmentPlanGetFraudStatusDisplayWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return ApiResponse&lt;GetFraudStatusDisplayResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetFraudStatusDisplayResponse> installmentPlanGetFraudStatusDisplayWithHttpInfo(GetFraudStatusDisplayRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = installmentPlanGetFraudStatusDisplayValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<GetFraudStatusDisplayResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetFraudStatusDisplayAsync(GetFraudStatusDisplayRequest request, final ApiCallback<GetFraudStatusDisplayResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanGetFraudStatusDisplayValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetFraudStatusDisplayResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for installmentPlanGetInitiatedInstallmentPlanRequest
      * @param request  (required)
      * @param progressListener Progress listener
@@ -1196,6 +1198,130 @@ public class InstallmentPlanApi {
 
         com.squareup.okhttp.Call call = installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetInitiatedInstallmentPlanResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for installmentPlanGetLearnMoreDetails
+     * @param request  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetLearnMoreDetailsCall(LearnMoreDetailsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
+        
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/api/InstallmentPlan/GetLearnMoreDetails";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/plain", "application/json", "text/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json-patch+json", "application/json", "text/json", "application/_*+json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call installmentPlanGetLearnMoreDetailsValidateBeforeCall(LearnMoreDetailsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling installmentPlanGetLearnMoreDetails(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = installmentPlanGetLearnMoreDetailsCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return LearnMoreDetailsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public LearnMoreDetailsResponse installmentPlanGetLearnMoreDetails(LearnMoreDetailsRequest request) throws ApiException {
+        ApiResponse<LearnMoreDetailsResponse> resp = installmentPlanGetLearnMoreDetailsWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return ApiResponse&lt;LearnMoreDetailsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<LearnMoreDetailsResponse> installmentPlanGetLearnMoreDetailsWithHttpInfo(LearnMoreDetailsRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = installmentPlanGetLearnMoreDetailsValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetLearnMoreDetailsAsync(LearnMoreDetailsRequest request, final ApiCallback<LearnMoreDetailsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanGetLearnMoreDetailsValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

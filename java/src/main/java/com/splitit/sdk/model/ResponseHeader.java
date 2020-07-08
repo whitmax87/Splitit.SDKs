@@ -30,13 +30,16 @@ import java.util.List;
 /**
  * ResponseHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T20:40:03.319Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
 public class ResponseHeader   {
   @SerializedName("Succeeded")
   private Boolean succeeded = null;
 
   @SerializedName("Errors")
   private List<Error> errors = null;
+
+  @SerializedName("TraceId")
+  private String traceId = null;
 
   public ResponseHeader succeeded(Boolean succeeded) {
     this.succeeded = succeeded;
@@ -82,6 +85,24 @@ public class ResponseHeader   {
     this.errors = errors;
   }
 
+  public ResponseHeader traceId(String traceId) {
+    this.traceId = traceId;
+    return this;
+  }
+
+   /**
+   * Get traceId
+   * @return traceId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTraceId() {
+    return traceId;
+  }
+
+  public void setTraceId(String traceId) {
+    this.traceId = traceId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,12 +114,13 @@ public class ResponseHeader   {
     }
     ResponseHeader responseHeader = (ResponseHeader) o;
     return Objects.equals(this.succeeded, responseHeader.succeeded) &&
-        Objects.equals(this.errors, responseHeader.errors);
+        Objects.equals(this.errors, responseHeader.errors) &&
+        Objects.equals(this.traceId, responseHeader.traceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(succeeded, errors);
+    return Objects.hash(succeeded, errors, traceId);
   }
 
 
@@ -109,6 +131,7 @@ public class ResponseHeader   {
     
     sb.append("    succeeded: ").append(toIndentedString(succeeded)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

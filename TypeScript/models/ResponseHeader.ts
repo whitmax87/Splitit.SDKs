@@ -31,6 +31,12 @@ export interface ResponseHeader {
      * @memberof ResponseHeader
      */
     errors?: Array<Error>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResponseHeader
+     */
+    traceId?: string;
 }
 
 export function ResponseHeaderFromJSON(json: any): ResponseHeader {
@@ -45,6 +51,7 @@ export function ResponseHeaderFromJSONTyped(json: any, ignoreDiscriminator: bool
         
         'succeeded': json['Succeeded'],
         'errors': !exists(json, 'Errors') ? undefined : json['Errors'],
+        'traceId': !exists(json, 'TraceId') ? undefined : json['TraceId'],
     };
 }
 
@@ -59,6 +66,7 @@ export function ResponseHeaderToJSON(value?: ResponseHeader | null): any {
         
         'Succeeded': value.succeeded,
         'Errors': value.errors,
+        'TraceId': value.traceId,
     };
 }
 

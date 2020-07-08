@@ -16,10 +16,9 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
-using RestSharp.Portable;
-using RestSharp.Portable.HttpClient;
 using System.Reflection;
 
 namespace Splitit.SDK.Client.Client
@@ -34,19 +33,9 @@ namespace Splitit.SDK.Client.Client
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
 
-        /// <summary>
-        /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(IRestRequest request);
-
-        /// <summary>
-        /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(IRestRequest request, IRestResponse response);
-
+        private static HttpClient _httpClient = new HttpClient();
+        public string BaseAddress { get; set; }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
         /// with default configuration.
@@ -54,8 +43,7 @@ namespace Splitit.SDK.Client.Client
         public ApiClient()
         {
             Configuration = Splitit.SDK.Client.Client.Configuration.Default;
-            RestClient = new RestClient("https://webapi.production.splitit.com");
-            RestClient.IgnoreResponseStatusCode = true;
+            this.BaseAddress = "https://webapi.production.splitit.com";
         }
 
         /// <summary>
@@ -67,8 +55,7 @@ namespace Splitit.SDK.Client.Client
         {
             Configuration = config ?? Splitit.SDK.Client.Client.Configuration.Default;
 
-            RestClient = new RestClient(Configuration.BasePath);
-            RestClient.IgnoreResponseStatusCode = true;
+            this.BaseAddress = Configuration.BasePath;
         }
 
         /// <summary>
@@ -81,17 +68,9 @@ namespace Splitit.SDK.Client.Client
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
-            RestClient = new RestClient(basePath);
-            RestClient.IgnoreResponseStatusCode = true;
+            this.BaseAddress = basePath;
             Configuration = Client.Configuration.Default;
         }
-
-        /// <summary>
-        /// Gets or sets the default API client for making HTTP calls.
-        /// </summary>
-        /// <value>The default API client.</value>
-        [Obsolete("ApiClient.Default is deprecated, please use 'Configuration.Default.ApiClient' instead.")]
-        public static ApiClient Default;
 
         /// <summary>
         /// Gets or sets an instance of the IReadableConfiguration.
@@ -104,92 +83,50 @@ namespace Splitit.SDK.Client.Client
         /// </remarks>
         public IReadableConfiguration Configuration { get; set; }
 
-        /// <summary>
-        /// Gets or sets the RestClient.
-        /// </summary>
-        /// <value>An instance of the RestClient</value>
-        public RestClient RestClient { get; set; }
-
         // Creates and sets up a RestRequest prior to a call.
-        private RestRequest PrepareRequest(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+        private HttpRequestMessage PrepareRequest(
+            String path, HttpMethod method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
+            Dictionary<String, String> pathParams,
             String contentType)
         {
-            var request = new RestRequest(path, method);
-            // disable ResetSharp.Portable built-in serialization
-            request.Serializer = null;
-
-            // add path parameter, if any
-            foreach(var param in pathParams)
-                request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
-
-            // add header parameter, if any
-            foreach(var param in headerParams)
-                request.AddHeader(param.Key, param.Value);
-
-            // add query parameter, if any
-            foreach(var param in queryParams)
-                request.AddQueryParameter(param.Key, param.Value);
-
-            // add form parameter, if any
-            foreach(var param in formParams)
-                request.AddParameter(param.Key, param.Value);
-
-            // add file parameter, if any
-            foreach(var param in fileParams)
+            var request = new HttpRequestMessage();
+            request.Method = method;
+            
+            var fullPath = $"{this.BaseAddress}/{path.TrimStart('.','/').TrimEnd('/')}";
+            if (queryParams != null && queryParams.Any())
             {
-                request.AddFile(param.Value);
+                using(var content = new FormUrlEncodedContent(queryParams)) {
+                    fullPath += "?" + content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                }
             }
 
-            if (postBody != null) // http body (model or byte[]) parameter
+            foreach(var pathParam in pathParams)
             {
-                request.AddParameter(new Parameter { Value = postBody, Type = ParameterType.RequestBody, ContentType = contentType });
+                fullPath = fullPath.Replace("{" + pathParam.Key + "}", pathParam.Value);
+            }
+            request.RequestUri = new Uri(fullPath);
+
+            if (postBody != null)
+            {
+                request.Content = new System.Net.Http.StringContent(
+                    JsonConvert.SerializeObject(postBody, serializerSettings),
+                    Encoding.UTF8, contentType);
+            }
+            else
+            {
+                request.Content = new System.Net.Http.FormUrlEncodedContent(formParams);
+            }
+
+            foreach(var h in headerParams)
+            {
+                request.Headers.Add(h.Key, h.Value);
             }
 
             return request;
         }
 
-        /// <summary>
-        /// Makes the HTTP request (Sync).
-        /// </summary>
-        /// <param name="path">URL path.</param>
-        /// <param name="method">HTTP method.</param>
-        /// <param name="queryParams">Query parameters.</param>
-        /// <param name="postBody">HTTP body (POST request).</param>
-        /// <param name="headerParams">Header parameters.</param>
-        /// <param name="formParams">Form parameters.</param>
-        /// <param name="fileParams">File parameters.</param>
-        /// <param name="pathParams">Path parameters.</param>
-        /// <param name="contentType">Content Type of the request</param>
-        /// <returns>Object</returns>
-        public Object CallApi(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
-        {
-
-            var request = PrepareRequest(
-                path, method, queryParams, postBody, headerParams, formParams, fileParams,
-                pathParams, contentType);
-
-            RestClient = new RestClient(Configuration.BasePath);
-            RestClient.IgnoreResponseStatusCode = true;
-
-            // set timeout
-            RestClient.Timeout = TimeSpan.FromMilliseconds(Configuration.Timeout);
-            
-            // set user agent
-            RestClient.UserAgent = Configuration.UserAgent;
-
-            InterceptRequest(request);
-            var response = RestClient.Execute(request).Result;
-            InterceptResponse(request, response);
-
-            return (Object) response;
-        }
+       
         /// <summary>
         /// Makes the asynchronous HTTP request.
         /// </summary>
@@ -203,19 +140,37 @@ namespace Splitit.SDK.Client.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
-        public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+        public async System.Threading.Tasks.Task<ApiResponse<T>> CallApiAsync<T>(
+            String path, HttpMethod method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
+            Dictionary<String, String> pathParams,
             String contentType)
         {
-            var request = PrepareRequest(
-                path, method, queryParams, postBody, headerParams, formParams, fileParams,
-                pathParams, contentType);
-            InterceptRequest(request);
-            var response = await RestClient.Execute(request);
-            InterceptResponse(request, response);
-            return (Object)response;
+            using (var request = PrepareRequest(
+                path, method, queryParams, postBody, headerParams, formParams,
+                pathParams, contentType))
+            {
+                using(var httpResponse = await _httpClient.SendAsync(request).ConfigureAwait(false))
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    if (httpResponse.IsSuccessStatusCode)        
+                    {
+                        var apiResponse = new ApiResponse<T>(
+                            (int)httpResponse.StatusCode, 
+                            httpResponse.Headers.ToDictionary(p => p.Key, p => string.Join(",", p.Value)), 
+                            JsonConvert.DeserializeObject<T>(content, serializerSettings));
+
+                        return apiResponse;
+                    }
+                    else
+                    {
+                        return new ApiResponse<T>(
+                            (int)httpResponse.StatusCode, 
+                            httpResponse.Headers.ToDictionary(p => p.Key, p => string.Join(",", p.Value ?? new string[]{})), 
+                            default(T));
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -226,20 +181,6 @@ namespace Splitit.SDK.Client.Client
         public string EscapeString(string str)
         {
             return UrlEncode(str);
-        }
-
-        /// <summary>
-        /// Create FileParameter based on Stream.
-        /// </summary>
-        /// <param name="name">Parameter name.</param>
-        /// <param name="stream">Input stream.</param>
-        /// <returns>FileParameter.</returns>
-        public FileParameter ParameterToFile(string name, Stream stream)
-        {
-            if (stream is FileStream)
-                return FileParameter.Create(name, ReadAsBytes(stream), Path.GetFileName(((FileStream)stream).Name));
-            else
-                return FileParameter.Create(name, ReadAsBytes(stream), "no_file_name_provided");
         }
 
         /// <summary>
@@ -276,82 +217,6 @@ namespace Splitit.SDK.Client.Client
             }
             else
                 return Convert.ToString (obj);
-        }
-
-        /// <summary>
-        /// Deserialize the JSON string into a proper object.
-        /// </summary>
-        /// <param name="response">The HTTP response.</param>
-        /// <param name="type">Object type.</param>
-        /// <returns>Object representation of the JSON string.</returns>
-        public object Deserialize(IRestResponse response, Type type)
-        {
-            IHttpHeaders headers = response.Headers;
-            if (type == typeof(byte[])) // return byte array
-            {
-                return response.RawBytes;
-            }
-
-            // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
-            if (type == typeof(Stream))
-            {
-                if (headers != null)
-                {
-                    var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
-                        ? Path.GetTempPath()
-                        : Configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-                    foreach (var header in headers)
-                    {
-                        var match = regex.Match(header.ToString());
-                        if (match.Success)
-                        {
-                            string fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-                            File.WriteAllBytes(fileName, response.RawBytes);
-                            return new FileStream(fileName, FileMode.Open);
-                        }
-                    }
-                }
-                var stream = new MemoryStream(response.RawBytes);
-                return stream;
-            }
-
-            if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
-            {
-                return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
-            }
-
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
-            {
-                return ConvertType(response.Content, type);
-            }
-
-            // at this point, it must be a model (json)
-            try
-            {
-                return JsonConvert.DeserializeObject(response.Content, type, serializerSettings);
-            }
-            catch (Exception e)
-            {
-                throw new ApiException(500, e.Message);
-            }
-        }
-
-        /// <summary>
-        /// Serialize an input (model) into JSON string
-        /// </summary>
-        /// <param name="obj">Object.</param>
-        /// <returns>JSON string.</returns>
-        public String Serialize(object obj)
-        {
-            try
-            {
-                return obj != null ? JsonConvert.SerializeObject(obj) : null;
-            }
-            catch (Exception e)
-            {
-                throw new ApiException(500, e.Message);
-            }
         }
 
         /// <summary>

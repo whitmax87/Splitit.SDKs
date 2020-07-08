@@ -31,7 +31,7 @@ namespace Splitit.SDK.Client.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.4.6";
+        public const string Version = "1.5.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -47,22 +47,6 @@ namespace Splitit.SDK.Client.Client
         private static readonly object GlobalConfigSync = new { };
         private static Configuration _globalConfiguration;
 		private static Configuration _sandboxConfiguration;
-
-        /// <summary>
-        /// Default creation of exceptions for a given method name and response object
-        /// </summary>
-        public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
-        {
-            var status = (int)response.StatusCode;
-            if (status >= 400)
-            {
-                return new ApiException(status,
-                    string.Format("Error calling {0}: {1}", methodName, response.Content),
-                    response.Content);
-            }
-            
-            return null;
-        };
 
         /// <summary>
         /// Gets or sets the default Configuration.
@@ -109,21 +93,19 @@ namespace Splitit.SDK.Client.Client
 
         static Configuration()
         {
-            _globalConfiguration = new GlobalConfiguration();
-			_sandboxConfiguration = new GlobalConfiguration(basePath: "https://webapi.sandbox.splitit.com");
-			
+            _globalConfiguration = new Configuration();
+			_sandboxConfiguration = new Configuration(basePath: "https://webapi.sandbox.splitit.com");
         }
-		
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        public Configuration(string basePath = null)
+        private Configuration(string basePath = null)
         {
-            UserAgent = "Swagger-Codegen/1.4.6/csharp";
+            UserAgent = "Swagger-Codegen/1.5.0/csharp";
             BasePath = basePath ?? "https://webapi.production.splitit.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
-            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.4.6";
+            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.5.0";
             ApiKey = null;
 
             // Setting Timeout has side effects (forces ApiClient creation).
@@ -158,7 +140,7 @@ namespace Splitit.SDK.Client.Client
                 _basePath = value;
                 // pass-through to ApiClient if it's set.
                 if(_apiClient != null) {
-                    _apiClient.RestClient.BaseUrl = new Uri(_basePath);
+                    _apiClient.BaseAddress = _basePath;
                 }
             }
         }
@@ -178,24 +160,6 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         /// <value>Http user agent.</value>
         public virtual string UserAgent { get; set; }
-
-        /// <summary>
-        /// Gets or sets the username (HTTP basic authentication).
-        /// </summary>
-        /// <value>The username.</value>
-        public virtual string Username { get; set; }
-
-        /// <summary>
-        /// Gets or sets the password (HTTP basic authentication).
-        /// </summary>
-        /// <value>The password.</value>
-        public virtual string Password { get; set; }
-
-        /// <summary>
-        /// Gets or sets the access token for OAuth2 authentication.
-        /// </summary>
-        /// <value>The access token.</value>
-        public virtual string AccessToken { get; set; }
 
         /// <summary>
         /// Gets or sets the temporary folder path to store the files downloaded from the server.
@@ -301,7 +265,7 @@ namespace Splitit.SDK.Client.Client
         {
             String report = "C# SDK (Splitit.SDK.Client) Debug Report:\n";
             report += "    Version of the API: 1.0.0\n";
-            report += "    SDK Package Version: 1.4.6\n";
+            report += "    SDK Package Version: 1.5.0\n";
 
             return report;
         }

@@ -47,7 +47,7 @@ function InstallmentPlanFromJSONTyped(json, ignoreDiscriminator) {
         'scpFundingPercent': json['ScpFundingPercent'],
         'testMode': _1.TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
-        'installments': !runtime_1.exists(json, 'Installments') ? undefined : (json['Installments'].map(_1.InstallmentFromJSON)),
+        'installments': !runtime_1.exists(json, 'Installments') ? undefined : (json['Installments'].map(_1.Installment2FromJSON)),
         'secureAuthorizations': !runtime_1.exists(json, 'SecureAuthorizations') ? undefined : (json['SecureAuthorizations'].map(_1.ReAuthorizationFromJSON)),
     };
 }
@@ -83,7 +83,7 @@ function InstallmentPlanToJSON(value) {
         'ScpFundingPercent': value.scpFundingPercent,
         'TestMode': _1.TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
-        'Installments': value.installments === undefined ? undefined : (value.installments.map(_1.InstallmentToJSON)),
+        'Installments': value.installments === undefined ? undefined : (value.installments.map(_1.Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : (value.secureAuthorizations.map(_1.ReAuthorizationToJSON)),
     };
 }

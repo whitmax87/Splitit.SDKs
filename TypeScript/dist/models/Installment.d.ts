@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CardData, Money, ReferenceEntityBase, TransactionResult } from './';
+import { MoneyWithCurrencyCode } from './';
 /**
  *
  * @export
@@ -18,76 +18,22 @@ import { CardData, Money, ReferenceEntityBase, TransactionResult } from './';
 export interface Installment {
     /**
      *
+     * @type {Date}
+     * @memberof Installment
+     */
+    date?: Date;
+    /**
+     *
+     * @type {MoneyWithCurrencyCode}
+     * @memberof Installment
+     */
+    amount?: MoneyWithCurrencyCode;
+    /**
+     *
      * @type {number}
      * @memberof Installment
      */
-    installmentNumber: number;
-    /**
-     *
-     * @type {Money}
-     * @memberof Installment
-     */
-    amount?: Money;
-    /**
-     *
-     * @type {Money}
-     * @memberof Installment
-     */
-    originalAmount?: Money;
-    /**
-     *
-     * @type {Money}
-     * @memberof Installment
-     */
-    refundAmount?: Money;
-    /**
-     *
-     * @type {Date}
-     * @memberof Installment
-     */
-    processDateTime?: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof Installment
-     */
-    isRefund: boolean;
-    /**
-     *
-     * @type {Money}
-     * @memberof Installment
-     */
-    requiredCredit?: Money;
-    /**
-     *
-     * @type {Date}
-     * @memberof Installment
-     */
-    createdDateTime: Date;
-    /**
-     *
-     * @type {ReferenceEntityBase}
-     * @memberof Installment
-     */
-    status?: ReferenceEntityBase;
-    /**
-     *
-     * @type {Array<TransactionResult>}
-     * @memberof Installment
-     */
-    transactionResults?: Array<TransactionResult>;
-    /**
-     *
-     * @type {CardData}
-     * @memberof Installment
-     */
-    cardDetails?: CardData;
-    /**
-     *
-     * @type {boolean}
-     * @memberof Installment
-     */
-    result?: boolean;
+    heldAmount: number;
 }
 export declare function InstallmentFromJSON(json: any): Installment;
 export declare function InstallmentFromJSONTyped(json: any, ignoreDiscriminator: boolean): Installment;

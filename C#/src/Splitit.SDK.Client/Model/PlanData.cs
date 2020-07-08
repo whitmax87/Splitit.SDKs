@@ -58,7 +58,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="autoCapture">autoCapture.</param>
         /// <param name="isFunded">isFunded.</param>
         /// <param name="attempt3DSecure">attempt3DSecure.</param>
-        public PlanData(int? numberOfInstallments = default(int?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), MoneyWithCurrencyCode firstInstallmentAmount = default(MoneyWithCurrencyCode), string refOrderNumber = default(string), TestModes? testMode = default(TestModes?), PurchaseMethod? purchaseMethod = default(PurchaseMethod?), PlanStrategy? strategy = default(PlanStrategy?), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), DateTime? firstChargeDate = default(DateTime?), bool? autoCapture = default(bool?), bool? isFunded = default(bool?), Object attempt3DSecure = default(Object))
+        public PlanData(int? numberOfInstallments = default(int?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), MoneyWithCurrencyCode firstInstallmentAmount = default(MoneyWithCurrencyCode), string refOrderNumber = default(string), TestModes? testMode = default(TestModes?), PurchaseMethod? purchaseMethod = default(PurchaseMethod?), PlanStrategy? strategy = default(PlanStrategy?), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), DateTime? firstChargeDate = default(DateTime?), bool? autoCapture = default(bool?), bool? isFunded = default(bool?), bool? attempt3DSecure = default(bool?))
         {
             this.NumberOfInstallments = numberOfInstallments;
             this.Amount = amount;
@@ -130,7 +130,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets Attempt3DSecure
         /// </summary>
         [DataMember(Name="Attempt3DSecure", EmitDefaultValue=false)]
-        public Object Attempt3DSecure { get; set; }
+        public bool? Attempt3DSecure { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

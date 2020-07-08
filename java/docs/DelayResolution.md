@@ -18,5 +18,7 @@
 
 * `DEFAULTEDPERMANENTLY` (value: `"DefaultedPermanently"`)
 
+* `DEFAULTEDCOLLECTEDFROMMERCHANT` (value: `"DefaultedCollectedFromMerchant"`)
+
 
 

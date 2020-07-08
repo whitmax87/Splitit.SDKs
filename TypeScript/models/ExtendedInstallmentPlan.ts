@@ -34,10 +34,10 @@ import {
     FraudCheckFromJSON,
     FraudCheckFromJSONTyped,
     FraudCheckToJSON,
-    Installment,
-    InstallmentFromJSON,
-    InstallmentFromJSONTyped,
-    InstallmentToJSON,
+    Installment2,
+    Installment2FromJSON,
+    Installment2FromJSONTyped,
+    Installment2ToJSON,
     InstallmentPlan,
     InstallmentPlanFromJSON,
     InstallmentPlanFromJSONTyped,
@@ -210,10 +210,10 @@ export interface ExtendedInstallmentPlan {
     creationDateTime: Date;
     /**
      * 
-     * @type {Array<Installment>}
+     * @type {Array<Installment2>}
      * @memberof ExtendedInstallmentPlan
      */
-    installments?: Array<Installment>;
+    installments?: Array<Installment2>;
     /**
      * 
      * @type {Array<ReAuthorization>}
@@ -267,7 +267,7 @@ export function ExtendedInstallmentPlanFromJSONTyped(json: any, ignoreDiscrimina
         'scpFundingPercent': json['ScpFundingPercent'],
         'testMode': TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
-        'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(InstallmentFromJSON)),
+        'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(Installment2FromJSON)),
         'secureAuthorizations': !exists(json, 'SecureAuthorizations') ? undefined : ((json['SecureAuthorizations'] as Array<any>).map(ReAuthorizationFromJSON)),
         'businessUnit': !exists(json, 'BusinessUnit') ? undefined : BuRefFromJSON(json['BusinessUnit']),
         'shopperPaymentRequestTime': !exists(json, 'ShopperPaymentRequestTime') ? undefined : (new Date(json['ShopperPaymentRequestTime'])),
@@ -306,7 +306,7 @@ export function ExtendedInstallmentPlanToJSON(value?: ExtendedInstallmentPlan | 
         'ScpFundingPercent': value.scpFundingPercent,
         'TestMode': TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
-        'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(InstallmentToJSON)),
+        'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : ((value.secureAuthorizations as Array<any>).map(ReAuthorizationToJSON)),
         'BusinessUnit': BuRefToJSON(value.businessUnit),
         'ShopperPaymentRequestTime': value.shopperPaymentRequestTime === undefined ? undefined : (value.shopperPaymentRequestTime.toISOString()),

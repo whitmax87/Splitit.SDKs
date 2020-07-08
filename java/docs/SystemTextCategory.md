@@ -48,5 +48,11 @@
 
 * `MESSAGINGSYSTEM` (value: `"MessagingSystem"`)
 
+* `PAYMENTFORMV3` (value: `"PaymentFormV3"`)
+
+* `HOWSPLITITWORKS` (value: `"HowSplititWorks"`)
+
+* `UPSTREAMMESSAGING` (value: `"UpstreamMessaging"`)
+
 
 

@@ -86,6 +86,12 @@ export interface InitiateInstallmentsPlanResponse {
      * @memberof InitiateInstallmentsPlanResponse
      */
     publicToken?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof InitiateInstallmentsPlanResponse
+     */
+    learnMoreUrl?: string;
 }
 
 export function InitiateInstallmentsPlanResponseFromJSON(json: any): InitiateInstallmentsPlanResponse {
@@ -106,6 +112,7 @@ export function InitiateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreD
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !exists(json, 'PublicToken') ? undefined : json['PublicToken'],
+        'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
     };
 }
 
@@ -126,6 +133,7 @@ export function InitiateInstallmentsPlanResponseToJSON(value?: InitiateInstallme
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
+        'LearnMoreUrl': value.learnMoreUrl,
     };
 }
 

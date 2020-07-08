@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
 using Splitit.SDK.Client.Client;
 using Splitit.SDK.Client.Model;
 
@@ -34,17 +33,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>InstallmentPlanResponse</returns>
         InstallmentPlanResponse InstallmentPlanApprove (ApproveInstallmentPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        ApiResponse<InstallmentPlanResponse> InstallmentPlanApproveWithHttpInfo (ApproveInstallmentPlanRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -55,17 +44,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>InstallmentPlanResponse</returns>
         InstallmentPlanResponse InstallmentPlanCancel (CancelInstallmentPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        ApiResponse<InstallmentPlanResponse> InstallmentPlanCancelWithHttpInfo (CancelInstallmentPlanRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -76,17 +55,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>InstallmentPlanResponse</returns>
         InstallmentPlanResponse InstallmentPlanChargeBack (ChargebackRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        ApiResponse<InstallmentPlanResponse> InstallmentPlanChargeBackWithHttpInfo (ChargebackRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -97,38 +66,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>CreateInstallmentsPlanResponse</returns>
         CreateInstallmentsPlanResponse InstallmentPlanCreate (CreateInstallmentPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of CreateInstallmentsPlanResponse</returns>
-        ApiResponse<CreateInstallmentsPlanResponse> InstallmentPlanCreateWithHttpInfo (CreateInstallmentPlanRequest request);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>PublicTokenResponse</returns>
-        PublicTokenResponse InstallmentPlanCreatePublicToken (PublicTokenRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of PublicTokenResponse</returns>
-        ApiResponse<PublicTokenResponse> InstallmentPlanCreatePublicTokenWithHttpInfo (PublicTokenRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -139,17 +77,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>GetInstallmentsPlanResponse</returns>
         GetInstallmentsPlanResponse InstallmentPlanGet (GetInstallmentsPlanSearchCriteriaRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInstallmentsPlanResponse</returns>
-        ApiResponse<GetInstallmentsPlanResponse> InstallmentPlanGetWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -160,17 +88,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Get3DSecureParametersResponse</returns>
         Get3DSecureParametersResponse InstallmentPlanGet3DSecureParameters (Get3DSecureParametersRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of Get3DSecureParametersResponse</returns>
-        ApiResponse<Get3DSecureParametersResponse> InstallmentPlanGet3DSecureParametersWithHttpInfo (Get3DSecureParametersRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -181,7 +99,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>GetInstallmentsPlanExtendedResponse</returns>
         GetInstallmentsPlanExtendedResponse InstallmentPlanGetExtended (GetInstallmentsPlanSearchCriteriaRequest request);
-
+       
         /// <summary>
         /// 
         /// </summary>
@@ -190,8 +108,9 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInstallmentsPlanExtendedResponse</returns>
-        ApiResponse<GetInstallmentsPlanExtendedResponse> InstallmentPlanGetExtendedWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request);
+        /// <returns>GetFraudStatusDisplayResponse</returns>
+        GetFraudStatusDisplayResponse InstallmentPlanGetFraudStatusDisplay (GetFraudStatusDisplayRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -202,7 +121,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>GetInitiatedInstallmentPlanResponse</returns>
         GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request);
-
+       
         /// <summary>
         /// 
         /// </summary>
@@ -211,8 +130,9 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInitiatedInstallmentPlanResponse</returns>
-        ApiResponse<GetInitiatedInstallmentPlanResponse> InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo (GetInitiatedInstallmentPlanRequest request);
+        /// <returns>LearnMoreDetailsResponse</returns>
+        LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -223,17 +143,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>InitiateInstallmentsPlanResponse</returns>
         InitiateInstallmentsPlanResponse InstallmentPlanInitiate (InitiateInstallmentPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InitiateInstallmentsPlanResponse</returns>
-        ApiResponse<InitiateInstallmentsPlanResponse> InstallmentPlanInitiateWithHttpInfo (InitiateInstallmentPlanRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -244,17 +154,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>RefundInstallmentPlanResponse</returns>
         RefundInstallmentPlanResponse InstallmentPlanRefund (RefundPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of RefundInstallmentPlanResponse</returns>
-        ApiResponse<RefundInstallmentPlanResponse> InstallmentPlanRefundWithHttpInfo (RefundPlanRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -265,17 +165,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>InstallmentPlanResponse</returns>
         InstallmentPlanResponse InstallmentPlanStartInstallments (StartInstallmentsRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        ApiResponse<InstallmentPlanResponse> InstallmentPlanStartInstallmentsWithHttpInfo (StartInstallmentsRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -286,17 +176,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>TermsAndConditionsGetResponse</returns>
         TermsAndConditionsGetResponse InstallmentPlanTermsAndConditions (TermsAndConditionsGetRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of TermsAndConditionsGetResponse</returns>
-        ApiResponse<TermsAndConditionsGetResponse> InstallmentPlanTermsAndConditionsWithHttpInfo (TermsAndConditionsGetRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -307,17 +187,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>UpdateInstallmentsPlanResponse</returns>
         UpdateInstallmentsPlanResponse InstallmentPlanUpdate (UpdateInstallmentPlanRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of UpdateInstallmentsPlanResponse</returns>
-        ApiResponse<UpdateInstallmentsPlanResponse> InstallmentPlanUpdateWithHttpInfo (UpdateInstallmentPlanRequest request);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -328,17 +198,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>VerifyPaymentResponse</returns>
         VerifyPaymentResponse InstallmentPlanVerifyPayment (VerifyPaymentRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of VerifyPaymentResponse</returns>
-        ApiResponse<VerifyPaymentResponse> InstallmentPlanVerifyPaymentWithHttpInfo (VerifyPaymentRequest request);
+       
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -433,27 +293,6 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
-        /// <returns>Task of PublicTokenResponse</returns>
-        System.Threading.Tasks.Task<PublicTokenResponse> InstallmentPlanCreatePublicTokenAsync (PublicTokenRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (PublicTokenResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PublicTokenResponse>> InstallmentPlanCreatePublicTokenAsyncWithHttpInfo (PublicTokenRequest request);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
         /// <returns>Task of GetInstallmentsPlanResponse</returns>
         System.Threading.Tasks.Task<GetInstallmentsPlanResponse> InstallmentPlanGetAsync (GetInstallmentsPlanSearchCriteriaRequest request);
 
@@ -517,6 +356,27 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
+        /// <returns>Task of GetFraudStatusDisplayResponse</returns>
+        System.Threading.Tasks.Task<GetFraudStatusDisplayResponse> InstallmentPlanGetFraudStatusDisplayAsync (GetFraudStatusDisplayRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetFraudStatusDisplayResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetFraudStatusDisplayResponse>> InstallmentPlanGetFraudStatusDisplayAsyncWithHttpInfo (GetFraudStatusDisplayRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
         /// <returns>Task of GetInitiatedInstallmentPlanResponse</returns>
         System.Threading.Tasks.Task<GetInitiatedInstallmentPlanResponse> InstallmentPlanGetInitiatedInstallmentPlanRequestAsync (GetInitiatedInstallmentPlanRequest request);
 
@@ -530,6 +390,27 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (GetInitiatedInstallmentPlanResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetInitiatedInstallmentPlanResponse>> InstallmentPlanGetInitiatedInstallmentPlanRequestAsyncWithHttpInfo (GetInitiatedInstallmentPlanRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of LearnMoreDetailsResponse</returns>
+        System.Threading.Tasks.Task<LearnMoreDetailsResponse> InstallmentPlanGetLearnMoreDetailsAsync (LearnMoreDetailsRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (LearnMoreDetailsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LearnMoreDetailsResponse>> InstallmentPlanGetLearnMoreDetailsAsyncWithHttpInfo (LearnMoreDetailsRequest request);
         /// <summary>
         /// 
         /// </summary>
@@ -664,7 +545,6 @@ namespace Splitit.SDK.Client.Api
     /// </summary>
     public partial class InstallmentPlanApi : IInstallmentPlanApi
     {
-        private Splitit.SDK.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 		private string _apiKey;
 		private string _sessionId;
 
@@ -683,8 +563,6 @@ namespace Splitit.SDK.Client.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Splitit.SDK.Client.Client.Configuration.DefaultExceptionFactory;
-			
 			this._apiKey = this.Configuration.ApiKey;
         }
 		
@@ -708,7 +586,7 @@ namespace Splitit.SDK.Client.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return this.Configuration.BasePath.ToString();
         }
 
         /// <summary>
@@ -716,22 +594,6 @@ namespace Splitit.SDK.Client.Api
         /// </summary>
         /// <value>An instance of the Configuration</value>
         public Splitit.SDK.Client.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        public Splitit.SDK.Client.Client.ExceptionFactory ExceptionFactory
-        {
-            get
-            {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
-                {
-                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
-                }
-                return _exceptionFactory;
-            }
-            set { _exceptionFactory = value; }
-        }
 
         /// <summary>
         /// Gets the default header.
@@ -763,77 +625,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanApprove (ApproveInstallmentPlanRequest request)
         {
-             ApiResponse<InstallmentPlanResponse> localVarResponse = InstallmentPlanApproveWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        public ApiResponse< InstallmentPlanResponse > InstallmentPlanApproveWithHttpInfo (ApproveInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanApprove");
-
-            var localVarPath = "./api/InstallmentPlan/Approve";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanApprove", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+            return InstallmentPlanApproveAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -867,7 +659,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -892,30 +683,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanApprove", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -926,77 +706,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanCancel (CancelInstallmentPlanRequest request)
         {
-             ApiResponse<InstallmentPlanResponse> localVarResponse = InstallmentPlanCancelWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        public ApiResponse< InstallmentPlanResponse > InstallmentPlanCancelWithHttpInfo (CancelInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCancel");
-
-            var localVarPath = "./api/InstallmentPlan/Cancel";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCancel", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+            return InstallmentPlanCancelAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1030,7 +740,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -1055,30 +764,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCancel", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1089,77 +787,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanChargeBack (ChargebackRequest request)
         {
-             ApiResponse<InstallmentPlanResponse> localVarResponse = InstallmentPlanChargeBackWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        public ApiResponse< InstallmentPlanResponse > InstallmentPlanChargeBackWithHttpInfo (ChargebackRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanChargeBack");
-
-            var localVarPath = "./api/InstallmentPlan/ChargeBack";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanChargeBack", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+            return InstallmentPlanChargeBackAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1193,7 +821,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -1218,30 +845,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanChargeBack", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1252,77 +868,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>CreateInstallmentsPlanResponse</returns>
         public CreateInstallmentsPlanResponse InstallmentPlanCreate (CreateInstallmentPlanRequest request)
         {
-             ApiResponse<CreateInstallmentsPlanResponse> localVarResponse = InstallmentPlanCreateWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of CreateInstallmentsPlanResponse</returns>
-        public ApiResponse< CreateInstallmentsPlanResponse > InstallmentPlanCreateWithHttpInfo (CreateInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCreate");
-
-            var localVarPath = "./api/InstallmentPlan/Create";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCreate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<CreateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (CreateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentsPlanResponse)));
+            return InstallmentPlanCreateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1356,7 +902,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -1381,193 +926,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<CreateInstallmentsPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCreate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<CreateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (CreateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreateInstallmentsPlanResponse)));
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>PublicTokenResponse</returns>
-        public PublicTokenResponse InstallmentPlanCreatePublicToken (PublicTokenRequest request)
-        {
-             ApiResponse<PublicTokenResponse> localVarResponse = InstallmentPlanCreatePublicTokenWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of PublicTokenResponse</returns>
-        public ApiResponse< PublicTokenResponse > InstallmentPlanCreatePublicTokenWithHttpInfo (PublicTokenRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCreatePublicToken");
-
-            var localVarPath = "./api/InstallmentPlan/CreatePublicToken";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCreatePublicToken", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<PublicTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PublicTokenResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicTokenResponse)));
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>Task of PublicTokenResponse</returns>
-        public async System.Threading.Tasks.Task<PublicTokenResponse> InstallmentPlanCreatePublicTokenAsync (PublicTokenRequest request)
-        {
-             ApiResponse<PublicTokenResponse> localVarResponse = await InstallmentPlanCreatePublicTokenAsyncWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>Task of ApiResponse (PublicTokenResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PublicTokenResponse>> InstallmentPlanCreatePublicTokenAsyncWithHttpInfo (PublicTokenRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanCreatePublicToken");
-
-            var localVarPath = "./api/InstallmentPlan/CreatePublicToken";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanCreatePublicToken", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<PublicTokenResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PublicTokenResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicTokenResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1578,77 +949,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInstallmentsPlanResponse</returns>
         public GetInstallmentsPlanResponse InstallmentPlanGet (GetInstallmentsPlanSearchCriteriaRequest request)
         {
-             ApiResponse<GetInstallmentsPlanResponse> localVarResponse = InstallmentPlanGetWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInstallmentsPlanResponse</returns>
-        public ApiResponse< GetInstallmentsPlanResponse > InstallmentPlanGetWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet");
-
-            var localVarPath = "./api/InstallmentPlan/Get";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GetInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanResponse)));
+            return InstallmentPlanGetAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1682,7 +983,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -1707,30 +1007,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetInstallmentsPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GetInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1741,77 +1030,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>Get3DSecureParametersResponse</returns>
         public Get3DSecureParametersResponse InstallmentPlanGet3DSecureParameters (Get3DSecureParametersRequest request)
         {
-             ApiResponse<Get3DSecureParametersResponse> localVarResponse = InstallmentPlanGet3DSecureParametersWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of Get3DSecureParametersResponse</returns>
-        public ApiResponse< Get3DSecureParametersResponse > InstallmentPlanGet3DSecureParametersWithHttpInfo (Get3DSecureParametersRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGet3DSecureParameters");
-
-            var localVarPath = "./api/InstallmentPlan/Get3DSecureParameters";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGet3DSecureParameters", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Get3DSecureParametersResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Get3DSecureParametersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Get3DSecureParametersResponse)));
+            return InstallmentPlanGet3DSecureParametersAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1845,7 +1064,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -1870,30 +1088,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<Get3DSecureParametersResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGet3DSecureParameters", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Get3DSecureParametersResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Get3DSecureParametersResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Get3DSecureParametersResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -1904,77 +1111,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInstallmentsPlanExtendedResponse</returns>
         public GetInstallmentsPlanExtendedResponse InstallmentPlanGetExtended (GetInstallmentsPlanSearchCriteriaRequest request)
         {
-             ApiResponse<GetInstallmentsPlanExtendedResponse> localVarResponse = InstallmentPlanGetExtendedWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInstallmentsPlanExtendedResponse</returns>
-        public ApiResponse< GetInstallmentsPlanExtendedResponse > InstallmentPlanGetExtendedWithHttpInfo (GetInstallmentsPlanSearchCriteriaRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetExtended");
-
-            var localVarPath = "./api/InstallmentPlan/GetExtended";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGetExtended", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GetInstallmentsPlanExtendedResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInstallmentsPlanExtendedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanExtendedResponse)));
+            return InstallmentPlanGetExtendedAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2008,7 +1145,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2033,30 +1169,100 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetInstallmentsPlanExtendedResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+          
+            return localVarResponse;
+        }
 
-            if (ExceptionFactory != null)
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>GetFraudStatusDisplayResponse</returns>
+        public GetFraudStatusDisplayResponse InstallmentPlanGetFraudStatusDisplay (GetFraudStatusDisplayRequest request)
+        {
+            return InstallmentPlanGetFraudStatusDisplayAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetFraudStatusDisplayResponse</returns>
+        public async System.Threading.Tasks.Task<GetFraudStatusDisplayResponse> InstallmentPlanGetFraudStatusDisplayAsync (GetFraudStatusDisplayRequest request)
+        {
+             ApiResponse<GetFraudStatusDisplayResponse> localVarResponse = await InstallmentPlanGetFraudStatusDisplayAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetFraudStatusDisplayResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetFraudStatusDisplayResponse>> InstallmentPlanGetFraudStatusDisplayAsyncWithHttpInfo (GetFraudStatusDisplayRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetFraudStatusDisplay");
+
+            var localVarPath = "./api/InstallmentPlan/GetFraudStatusDisplay";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
             {
-                Exception exception = ExceptionFactory("InstallmentPlanGetExtended", localVarResponse);
-                if (exception != null) throw exception;
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
             }
 
-            return new ApiResponse<GetInstallmentsPlanExtendedResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInstallmentsPlanExtendedResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInstallmentsPlanExtendedResponse)));
+            localVarPostBody = request;
+
+
+
+            // make the HTTP request
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetFraudStatusDisplayResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
+                localVarPathParams, localVarHttpContentType);
+
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2067,77 +1273,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInitiatedInstallmentPlanResponse</returns>
         public GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request)
         {
-             ApiResponse<GetInitiatedInstallmentPlanResponse> localVarResponse = InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of GetInitiatedInstallmentPlanResponse</returns>
-        public ApiResponse< GetInitiatedInstallmentPlanResponse > InstallmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo (GetInitiatedInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetInitiatedInstallmentPlanRequest");
-
-            var localVarPath = "./api/InstallmentPlan/GetInitiatedInstallmentPlanRequest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanGetInitiatedInstallmentPlanRequest", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GetInitiatedInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInitiatedInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInitiatedInstallmentPlanResponse)));
+            return InstallmentPlanGetInitiatedInstallmentPlanRequestAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2171,7 +1307,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2196,30 +1331,100 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetInitiatedInstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+          
+            return localVarResponse;
+        }
 
-            if (ExceptionFactory != null)
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>LearnMoreDetailsResponse</returns>
+        public LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request)
+        {
+            return InstallmentPlanGetLearnMoreDetailsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of LearnMoreDetailsResponse</returns>
+        public async System.Threading.Tasks.Task<LearnMoreDetailsResponse> InstallmentPlanGetLearnMoreDetailsAsync (LearnMoreDetailsRequest request)
+        {
+             ApiResponse<LearnMoreDetailsResponse> localVarResponse = await InstallmentPlanGetLearnMoreDetailsAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (LearnMoreDetailsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<LearnMoreDetailsResponse>> InstallmentPlanGetLearnMoreDetailsAsyncWithHttpInfo (LearnMoreDetailsRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetLearnMoreDetails");
+
+            var localVarPath = "./api/InstallmentPlan/GetLearnMoreDetails";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
             {
-                Exception exception = ExceptionFactory("InstallmentPlanGetInitiatedInstallmentPlanRequest", localVarResponse);
-                if (exception != null) throw exception;
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
             }
 
-            return new ApiResponse<GetInitiatedInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (GetInitiatedInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInitiatedInstallmentPlanResponse)));
+            localVarPostBody = request;
+
+
+
+            // make the HTTP request
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<LearnMoreDetailsResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
+                localVarPathParams, localVarHttpContentType);
+
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2230,77 +1435,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InitiateInstallmentsPlanResponse</returns>
         public InitiateInstallmentsPlanResponse InstallmentPlanInitiate (InitiateInstallmentPlanRequest request)
         {
-             ApiResponse<InitiateInstallmentsPlanResponse> localVarResponse = InstallmentPlanInitiateWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InitiateInstallmentsPlanResponse</returns>
-        public ApiResponse< InitiateInstallmentsPlanResponse > InstallmentPlanInitiateWithHttpInfo (InitiateInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanInitiate");
-
-            var localVarPath = "./api/InstallmentPlan/Initiate";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanInitiate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InitiateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InitiateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiateInstallmentsPlanResponse)));
+            return InstallmentPlanInitiateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2334,7 +1469,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2359,30 +1493,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InitiateInstallmentsPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanInitiate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InitiateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InitiateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InitiateInstallmentsPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2393,77 +1516,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>RefundInstallmentPlanResponse</returns>
         public RefundInstallmentPlanResponse InstallmentPlanRefund (RefundPlanRequest request)
         {
-             ApiResponse<RefundInstallmentPlanResponse> localVarResponse = InstallmentPlanRefundWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of RefundInstallmentPlanResponse</returns>
-        public ApiResponse< RefundInstallmentPlanResponse > InstallmentPlanRefundWithHttpInfo (RefundPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanRefund");
-
-            var localVarPath = "./api/InstallmentPlan/Refund";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanRefund", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<RefundInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (RefundInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RefundInstallmentPlanResponse)));
+            return InstallmentPlanRefundAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2497,7 +1550,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2522,30 +1574,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<RefundInstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanRefund", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<RefundInstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (RefundInstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RefundInstallmentPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2556,77 +1597,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanStartInstallments (StartInstallmentsRequest request)
         {
-             ApiResponse<InstallmentPlanResponse> localVarResponse = InstallmentPlanStartInstallmentsWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of InstallmentPlanResponse</returns>
-        public ApiResponse< InstallmentPlanResponse > InstallmentPlanStartInstallmentsWithHttpInfo (StartInstallmentsRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanStartInstallments");
-
-            var localVarPath = "./api/InstallmentPlan/StartInstallments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanStartInstallments", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+            return InstallmentPlanStartInstallmentsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2660,7 +1631,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2685,30 +1655,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InstallmentPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanStartInstallments", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<InstallmentPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (InstallmentPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InstallmentPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2719,77 +1678,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>TermsAndConditionsGetResponse</returns>
         public TermsAndConditionsGetResponse InstallmentPlanTermsAndConditions (TermsAndConditionsGetRequest request)
         {
-             ApiResponse<TermsAndConditionsGetResponse> localVarResponse = InstallmentPlanTermsAndConditionsWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of TermsAndConditionsGetResponse</returns>
-        public ApiResponse< TermsAndConditionsGetResponse > InstallmentPlanTermsAndConditionsWithHttpInfo (TermsAndConditionsGetRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanTermsAndConditions");
-
-            var localVarPath = "./api/InstallmentPlan/TermsAndConditions";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanTermsAndConditions", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TermsAndConditionsGetResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (TermsAndConditionsGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TermsAndConditionsGetResponse)));
+            return InstallmentPlanTermsAndConditionsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2823,7 +1712,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -2848,30 +1736,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<TermsAndConditionsGetResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanTermsAndConditions", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TermsAndConditionsGetResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (TermsAndConditionsGetResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(TermsAndConditionsGetResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2882,77 +1759,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>UpdateInstallmentsPlanResponse</returns>
         public UpdateInstallmentsPlanResponse InstallmentPlanUpdate (UpdateInstallmentPlanRequest request)
         {
-             ApiResponse<UpdateInstallmentsPlanResponse> localVarResponse = InstallmentPlanUpdateWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of UpdateInstallmentsPlanResponse</returns>
-        public ApiResponse< UpdateInstallmentsPlanResponse > InstallmentPlanUpdateWithHttpInfo (UpdateInstallmentPlanRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanUpdate");
-
-            var localVarPath = "./api/InstallmentPlan/Update";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanUpdate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UpdateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (UpdateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateInstallmentsPlanResponse)));
+            return InstallmentPlanUpdateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -2986,7 +1793,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -3011,30 +1817,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<UpdateInstallmentsPlanResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanUpdate", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UpdateInstallmentsPlanResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (UpdateInstallmentsPlanResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UpdateInstallmentsPlanResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -3045,77 +1840,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>VerifyPaymentResponse</returns>
         public VerifyPaymentResponse InstallmentPlanVerifyPayment (VerifyPaymentRequest request)
         {
-             ApiResponse<VerifyPaymentResponse> localVarResponse = InstallmentPlanVerifyPaymentWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of VerifyPaymentResponse</returns>
-        public ApiResponse< VerifyPaymentResponse > InstallmentPlanVerifyPaymentWithHttpInfo (VerifyPaymentRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanVerifyPayment");
-
-            var localVarPath = "./api/InstallmentPlan/Get/VerifyPayment";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanVerifyPayment", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<VerifyPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (VerifyPaymentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VerifyPaymentResponse)));
+            return InstallmentPlanVerifyPaymentAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -3149,7 +1874,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -3174,30 +1898,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<VerifyPaymentResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("InstallmentPlanVerifyPayment", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<VerifyPaymentResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (VerifyPaymentResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(VerifyPaymentResponse)));
+          
+            return localVarResponse;
         }
 
     }

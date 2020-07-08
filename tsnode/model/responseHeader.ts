@@ -15,6 +15,7 @@ import { RequestFile } from '../api';
 export class ResponseHeader {
     'succeeded': boolean;
     'errors'?: Array<Error>;
+    'traceId'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -28,6 +29,11 @@ export class ResponseHeader {
             "name": "errors",
             "baseName": "Errors",
             "type": "Array<Error>"
+        },
+        {
+            "name": "traceId",
+            "baseName": "TraceId",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

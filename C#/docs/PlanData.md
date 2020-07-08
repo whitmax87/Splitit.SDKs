@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **FirstChargeDate** | **DateTime?** |  | [optional] 
 **AutoCapture** | **bool?** |  | [optional] 
 **IsFunded** | **bool?** |  | [optional] 
-**Attempt3DSecure** | **Object** |  | [optional] 
+**Attempt3DSecure** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

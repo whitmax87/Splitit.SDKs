@@ -72,7 +72,13 @@ public enum SystemTextCategory {
   
   FLEXFIELDS("FlexFields"),
   
-  MESSAGINGSYSTEM("MessagingSystem");
+  MESSAGINGSYSTEM("MessagingSystem"),
+  
+  PAYMENTFORMV3("PaymentFormV3"),
+  
+  HOWSPLITITWORKS("HowSplititWorks"),
+  
+  UPSTREAMMESSAGING("UpstreamMessaging");
 
   private String value;
 

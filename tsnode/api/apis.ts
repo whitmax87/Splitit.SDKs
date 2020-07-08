@@ -1,13 +1,13 @@
 export * from './createInstallmentPlanApi';
 import { CreateInstallmentPlanApi } from './createInstallmentPlanApi';
+export * from './infoApi';
+import { InfoApi } from './infoApi';
 export * from './infrastructureApi';
 import { InfrastructureApi } from './infrastructureApi';
 export * from './installmentPlanApi';
 import { InstallmentPlanApi } from './installmentPlanApi';
 export * from './loginApi';
 import { LoginApi } from './loginApi';
-export * from './touchPointsApi';
-import { TouchPointsApi } from './touchPointsApi';
 import * as fs from 'fs';
 import * as http from 'http';
 
@@ -28,4 +28,4 @@ export interface RequestDetailedFile {
 
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
-export const APIS = [CreateInstallmentPlanApi, InfrastructureApi, InstallmentPlanApi, LoginApi, TouchPointsApi];
+export const APIS = [CreateInstallmentPlanApi, InfoApi, InfrastructureApi, InstallmentPlanApi, LoginApi];

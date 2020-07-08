@@ -18,6 +18,14 @@ import {
     CurrencyFromJSON,
     CurrencyFromJSONTyped,
     CurrencyToJSON,
+    PaymentFormMessage,
+    PaymentFormMessageFromJSON,
+    PaymentFormMessageFromJSONTyped,
+    PaymentFormMessageToJSON,
+    TermsAndConditions,
+    TermsAndConditionsFromJSON,
+    TermsAndConditionsFromJSONTyped,
+    TermsAndConditionsToJSON,
 } from './';
 
 /**
@@ -82,6 +90,18 @@ export interface PaymentWizardDataResponseAllOf {
     addressIsReadonly: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    phoneIsReadOnly: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    emailIsReadOnly: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof PaymentWizardDataResponseAllOf
      */
@@ -106,10 +126,22 @@ export interface PaymentWizardDataResponseAllOf {
     learnMoreUrl?: string;
     /**
      * 
-     * @type {Array<string>}
+     * @type {Array<PaymentFormMessage>}
      * @memberof PaymentWizardDataResponseAllOf
      */
-    paymentFormMessages?: Array<string>;
+    paymentFormMessages?: Array<PaymentFormMessage>;
+    /**
+     * 
+     * @type {{ [key: string]: string; }}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    displayProperties?: { [key: string]: string; };
+    /**
+     * 
+     * @type {TermsAndConditions}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    termsAndConditions?: TermsAndConditions;
 }
 
 export function PaymentWizardDataResponseAllOfFromJSON(json: any): PaymentWizardDataResponseAllOf {
@@ -131,11 +163,15 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'],
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'addressIsReadonly': json['AddressIsReadonly'],
+        'phoneIsReadOnly': json['PhoneIsReadOnly'],
+        'emailIsReadOnly': json['EmailIsReadOnly'],
         'logoURL': !exists(json, 'LogoURL') ? undefined : json['LogoURL'],
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
         'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
-        'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
+        'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : ((json['PaymentFormMessages'] as Array<any>).map(PaymentFormMessageFromJSON)),
+        'displayProperties': !exists(json, 'DisplayProperties') ? undefined : json['DisplayProperties'],
+        'termsAndConditions': !exists(json, 'TermsAndConditions') ? undefined : TermsAndConditionsFromJSON(json['TermsAndConditions']),
     };
 }
 
@@ -157,11 +193,15 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'IsShopperPhoneMandatory': value.isShopperPhoneMandatory,
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'AddressIsReadonly': value.addressIsReadonly,
+        'PhoneIsReadOnly': value.phoneIsReadOnly,
+        'EmailIsReadOnly': value.emailIsReadOnly,
         'LogoURL': value.logoURL,
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
         'LearnMoreUrl': value.learnMoreUrl,
-        'PaymentFormMessages': value.paymentFormMessages,
+        'PaymentFormMessages': value.paymentFormMessages === undefined ? undefined : ((value.paymentFormMessages as Array<any>).map(PaymentFormMessageToJSON)),
+        'DisplayProperties': value.displayProperties,
+        'TermsAndConditions': TermsAndConditionsToJSON(value.termsAndConditions),
     };
 }
 

@@ -42,7 +42,9 @@ public enum DelayResolution {
   
   DEFAULTEDINCOLLECTION("DefaultedInCollection"),
   
-  DEFAULTEDPERMANENTLY("DefaultedPermanently");
+  DEFAULTEDPERMANENTLY("DefaultedPermanently"),
+  
+  DEFAULTEDCOLLECTEDFROMMERCHANT("DefaultedCollectedFromMerchant");
 
   private String value;
 

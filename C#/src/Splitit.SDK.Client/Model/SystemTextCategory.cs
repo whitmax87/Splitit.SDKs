@@ -161,7 +161,25 @@ namespace Splitit.SDK.Client.Model
         /// Enum MessagingSystem for value: MessagingSystem
         /// </summary>
         [EnumMember(Value = "MessagingSystem")]
-        MessagingSystem = 22
+        MessagingSystem = 22,
+        
+        /// <summary>
+        /// Enum PaymentFormV3 for value: PaymentFormV3
+        /// </summary>
+        [EnumMember(Value = "PaymentFormV3")]
+        PaymentFormV3 = 23,
+        
+        /// <summary>
+        /// Enum HowSplititWorks for value: HowSplititWorks
+        /// </summary>
+        [EnumMember(Value = "HowSplititWorks")]
+        HowSplititWorks = 24,
+        
+        /// <summary>
+        /// Enum UpstreamMessaging for value: UpstreamMessaging
+        /// </summary>
+        [EnumMember(Value = "UpstreamMessaging")]
+        UpstreamMessaging = 25
     }
 
 }

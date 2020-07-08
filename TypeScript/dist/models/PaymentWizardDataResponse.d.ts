@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Currency } from './';
+import { Currency, PaymentFormMessage, TermsAndConditions } from './';
 /**
  *
  * @export
@@ -120,6 +120,18 @@ export interface PaymentWizardDataResponse {
     addressIsReadonly: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    phoneIsReadOnly: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    emailIsReadOnly: boolean;
+    /**
+     *
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
@@ -144,10 +156,24 @@ export interface PaymentWizardDataResponse {
     learnMoreUrl?: string;
     /**
      *
-     * @type {Array<string>}
+     * @type {Array<PaymentFormMessage>}
      * @memberof PaymentWizardDataResponse
      */
-    paymentFormMessages?: Array<string>;
+    paymentFormMessages?: Array<PaymentFormMessage>;
+    /**
+     *
+     * @type {{ [key: string]: string; }}
+     * @memberof PaymentWizardDataResponse
+     */
+    displayProperties?: {
+        [key: string]: string;
+    };
+    /**
+     *
+     * @type {TermsAndConditions}
+     * @memberof PaymentWizardDataResponse
+     */
+    termsAndConditions?: TermsAndConditions;
 }
 export declare function PaymentWizardDataResponseFromJSON(json: any): PaymentWizardDataResponse;
 export declare function PaymentWizardDataResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): PaymentWizardDataResponse;

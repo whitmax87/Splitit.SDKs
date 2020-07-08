@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ScpFundingPercent** | **decimal?** |  | 
 **TestMode** | **TestModes** |  | 
 **CreationDateTime** | **DateTime?** |  | 
-**Installments** | [**List&lt;Installment&gt;**](Installment.md) |  | [optional] 
+**Installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  | [optional] 
 **SecureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

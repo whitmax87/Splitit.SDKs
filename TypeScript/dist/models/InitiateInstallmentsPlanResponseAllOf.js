@@ -29,6 +29,7 @@ function InitiateInstallmentsPlanResponseAllOfFromJSONTyped(json, ignoreDiscrimi
         'privacyPolicyUrl': !runtime_1.exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'installmentPlanInfoUrl': !runtime_1.exists(json, 'InstallmentPlanInfoUrl') ? undefined : json['InstallmentPlanInfoUrl'],
         'publicToken': !runtime_1.exists(json, 'PublicToken') ? undefined : json['PublicToken'],
+        'learnMoreUrl': !runtime_1.exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
     };
 }
 exports.InitiateInstallmentsPlanResponseAllOfFromJSONTyped = InitiateInstallmentsPlanResponseAllOfFromJSONTyped;
@@ -46,6 +47,7 @@ function InitiateInstallmentsPlanResponseAllOfToJSON(value) {
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'InstallmentPlanInfoUrl': value.installmentPlanInfoUrl,
         'PublicToken': value.publicToken,
+        'LearnMoreUrl': value.learnMoreUrl,
     };
 }
 exports.InitiateInstallmentsPlanResponseAllOfToJSON = InitiateInstallmentsPlanResponseAllOfToJSON;

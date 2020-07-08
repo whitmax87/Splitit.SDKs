@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
 using Splitit.SDK.Client.Client;
 using Splitit.SDK.Client.Model;
 
@@ -35,18 +34,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="password"> (optional)</param>
         /// <returns>LoginResponse</returns>
         LoginResponse LoginGet (string userName = null, string password = null);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userName"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <returns>ApiResponse of LoginResponse</returns>
-        ApiResponse<LoginResponse> LoginGetWithHttpInfo (string userName = null, string password = null);
+       
         /// <summary>
         /// 
         /// </summary>
@@ -57,17 +45,7 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>LoginResponse</returns>
         LoginResponse LoginPost (LoginRequest request);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of LoginResponse</returns>
-        ApiResponse<LoginResponse> LoginPostWithHttpInfo (LoginRequest request);
+       
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -122,7 +100,6 @@ namespace Splitit.SDK.Client.Api
     /// </summary>
     public partial class LoginApi : ILoginApi
     {
-        private Splitit.SDK.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 		private string _apiKey;
 		private string _sessionId;
 
@@ -141,8 +118,6 @@ namespace Splitit.SDK.Client.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Splitit.SDK.Client.Client.Configuration.DefaultExceptionFactory;
-			
 			this._apiKey = this.Configuration.ApiKey;
         }
 		
@@ -166,7 +141,7 @@ namespace Splitit.SDK.Client.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return this.Configuration.BasePath.ToString();
         }
 
         /// <summary>
@@ -174,22 +149,6 @@ namespace Splitit.SDK.Client.Api
         /// </summary>
         /// <value>An instance of the Configuration</value>
         public Splitit.SDK.Client.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        public Splitit.SDK.Client.Client.ExceptionFactory ExceptionFactory
-        {
-            get
-            {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
-                {
-                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
-                }
-                return _exceptionFactory;
-            }
-            set { _exceptionFactory = value; }
-        }
 
         /// <summary>
         /// Gets the default header.
@@ -222,64 +181,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LoginResponse</returns>
         public LoginResponse LoginGet (string userName = null, string password = null)
         {
-             ApiResponse<LoginResponse> localVarResponse = LoginGetWithHttpInfo(userName, password);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="userName"> (optional)</param>
-        /// <param name="password"> (optional)</param>
-        /// <returns>ApiResponse of LoginResponse</returns>
-        public ApiResponse< LoginResponse > LoginGetWithHttpInfo (string userName = null, string password = null)
-        {
-
-            var localVarPath = "./api/Login";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (userName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "UserName", userName)); // query parameter
-            if (password != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "Password", password)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("LoginGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
+            return LoginGetAsync(userName, password).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -312,7 +214,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -335,21 +236,12 @@ namespace Splitit.SDK.Client.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<LoginResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("LoginGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
+          
+            return localVarResponse;
         }
 
         /// <summary>
@@ -360,76 +252,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LoginResponse</returns>
         public LoginResponse LoginPost (LoginRequest request)
         {
-             ApiResponse<LoginResponse> localVarResponse = LoginPostWithHttpInfo(request);
-             localVarResponse.Validate();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"></param>
-        /// <returns>ApiResponse of LoginResponse</returns>
-        public ApiResponse< LoginResponse > LoginPostWithHttpInfo (LoginRequest request)
-        {
-            // verify the required parameter 'request' is set
-            if (request == null)
-                throw new ApiException(400, "Missing required parameter 'request' when calling LoginApi->LoginPost");
-
-            var localVarPath = "./api/Login";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("LoginPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
+            return LoginPostAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -463,7 +286,6 @@ namespace Splitit.SDK.Client.Api
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
 
             // to determine the Content-Type header
@@ -487,30 +309,19 @@ namespace Splitit.SDK.Client.Api
             if (request != null && request.GetType() != typeof(byte[]))
             {
 				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
-                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
             }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
+
+            localVarPostBody = request;
+
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<LoginResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("LoginPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<LoginResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (LoginResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginResponse)));
+          
+            return localVarResponse;
         }
 
     }

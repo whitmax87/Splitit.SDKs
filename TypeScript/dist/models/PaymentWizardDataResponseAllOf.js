@@ -33,11 +33,15 @@ function PaymentWizardDataResponseAllOfFromJSONTyped(json, ignoreDiscriminator) 
         'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'],
         'numberOfInstallmentsSelectionsOption': !runtime_1.exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'addressIsReadonly': json['AddressIsReadonly'],
+        'phoneIsReadOnly': json['PhoneIsReadOnly'],
+        'emailIsReadOnly': json['EmailIsReadOnly'],
         'logoURL': !runtime_1.exists(json, 'LogoURL') ? undefined : json['LogoURL'],
         'privacyPolicyUrl': !runtime_1.exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'termsAndConditionsUrl': !runtime_1.exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
         'learnMoreUrl': !runtime_1.exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
-        'paymentFormMessages': !runtime_1.exists(json, 'PaymentFormMessages') ? undefined : json['PaymentFormMessages'],
+        'paymentFormMessages': !runtime_1.exists(json, 'PaymentFormMessages') ? undefined : (json['PaymentFormMessages'].map(_1.PaymentFormMessageFromJSON)),
+        'displayProperties': !runtime_1.exists(json, 'DisplayProperties') ? undefined : json['DisplayProperties'],
+        'termsAndConditions': !runtime_1.exists(json, 'TermsAndConditions') ? undefined : _1.TermsAndConditionsFromJSON(json['TermsAndConditions']),
     };
 }
 exports.PaymentWizardDataResponseAllOfFromJSONTyped = PaymentWizardDataResponseAllOfFromJSONTyped;
@@ -58,11 +62,15 @@ function PaymentWizardDataResponseAllOfToJSON(value) {
         'IsShopperPhoneMandatory': value.isShopperPhoneMandatory,
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'AddressIsReadonly': value.addressIsReadonly,
+        'PhoneIsReadOnly': value.phoneIsReadOnly,
+        'EmailIsReadOnly': value.emailIsReadOnly,
         'LogoURL': value.logoURL,
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
         'LearnMoreUrl': value.learnMoreUrl,
-        'PaymentFormMessages': value.paymentFormMessages,
+        'PaymentFormMessages': value.paymentFormMessages === undefined ? undefined : (value.paymentFormMessages.map(_1.PaymentFormMessageToJSON)),
+        'DisplayProperties': value.displayProperties,
+        'TermsAndConditions': _1.TermsAndConditionsToJSON(value.termsAndConditions),
     };
 }
 exports.PaymentWizardDataResponseAllOfToJSON = PaymentWizardDataResponseAllOfToJSON;

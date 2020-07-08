@@ -21,6 +21,8 @@ import { CreateInstallmentPlanRequest } from '../model/createInstallmentPlanRequ
 import { CreateInstallmentsPlanResponse } from '../model/createInstallmentsPlanResponse';
 import { Get3DSecureParametersRequest } from '../model/get3DSecureParametersRequest';
 import { Get3DSecureParametersResponse } from '../model/get3DSecureParametersResponse';
+import { GetFraudStatusDisplayRequest } from '../model/getFraudStatusDisplayRequest';
+import { GetFraudStatusDisplayResponse } from '../model/getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from '../model/getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from '../model/getInitiatedInstallmentPlanResponse';
 import { GetInstallmentsPlanExtendedResponse } from '../model/getInstallmentsPlanExtendedResponse';
@@ -29,8 +31,8 @@ import { GetInstallmentsPlanSearchCriteriaRequest } from '../model/getInstallmen
 import { InitiateInstallmentPlanRequest } from '../model/initiateInstallmentPlanRequest';
 import { InitiateInstallmentsPlanResponse } from '../model/initiateInstallmentsPlanResponse';
 import { InstallmentPlanResponse } from '../model/installmentPlanResponse';
-import { PublicTokenRequest } from '../model/publicTokenRequest';
-import { PublicTokenResponse } from '../model/publicTokenResponse';
+import { LearnMoreDetailsRequest } from '../model/learnMoreDetailsRequest';
+import { LearnMoreDetailsResponse } from '../model/learnMoreDetailsResponse';
 import { RefundInstallmentPlanResponse } from '../model/refundInstallmentPlanResponse';
 import { RefundPlanRequest } from '../model/refundPlanRequest';
 import { StartInstallmentsRequest } from '../model/startInstallmentsRequest';
@@ -62,7 +64,7 @@ export class InstallmentPlanApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.4.6"
+            "Splitit-SDK": "NodeJS-1.5.0"
         };
         this._sessionId = sessionId;
     }
@@ -431,92 +433,6 @@ export class InstallmentPlanApi {
      * 
      * @param request 
      */
-    public async installmentPlanCreatePublicToken (request: PublicTokenRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PublicTokenResponse;  }> {
-        const localVarPath = this.basePath + '/api/InstallmentPlan/CreatePublicToken';
-        let localVarQueryParameters: any = {};
-        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['text/plain', 'application/json', 'text/json'];
-        // give precedence to 'application/json'
-        if (produces.indexOf('application/json') >= 0) {
-            localVarHeaderParams.Accept = 'application/json';
-        } else {
-            localVarHeaderParams.Accept = produces.join(',');
-        }
-        let localVarFormParams: any = {};
-
-        // verify required parameter 'request' is not null or undefined
-        if (request === null || request === undefined) {
-            throw new Error('Required parameter request was null or undefined when calling installmentPlanCreatePublicToken.');
-        }
-
-        (<any>Object).assign(localVarHeaderParams, options.headers);
-
-        let localVarUseFormData = false;
-
-        let localVarRequestOptions: localVarRequest.Options = {
-            method: 'POST',
-            qs: localVarQueryParameters,
-            headers: localVarHeaderParams,
-            uri: localVarPath,
-            useQuerystring: false,
-            json: true,
-            body: ObjectSerializer.serialize(request, "PublicTokenRequest")
-        };
-
-        if (this._config.touchPoint || this._sessionId){
-            localVarRequestOptions.body.requestHeader = {};
-            if (this._config.touchPoint){
-                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
-            }
-
-            if (this._sessionId){
-                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
-                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
-            }
-
-            if (this._culture){
-                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
-            }
-        }
-
-        let interceptorPromise = Promise.resolve();
-        for (const interceptor of this.interceptors) {
-            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
-        }
-
-        return interceptorPromise.then(() => {
-            if (Object.keys(localVarFormParams).length) {
-                if (localVarUseFormData) {
-                    (<any>localVarRequestOptions).formData = localVarFormParams;
-                } else {
-                    localVarRequestOptions.form = localVarFormParams;
-                }
-            }
-            return new Promise<{ response: http.IncomingMessage; body: PublicTokenResponse;  }>((resolve, reject) => {
-                localVarRequest(localVarRequestOptions, (error, response, body) => {
-                    if (error) {
-                        reject(error);
-                    } else {
-                        body = ObjectSerializer.deserialize(body, "PublicTokenResponse");
-
-                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            if (body && body.responseHeader && !body.responseHeader.succeeded){
-                                reject(body.responseHeader);
-                            } else {
-                                resolve({ response: response, body: body });
-                            }                            
-                        } else {
-                            reject(new HttpError(response, body, response.statusCode));
-                        }
-                    }
-                });
-            });
-        });
-    }
-    /**
-     * 
-     * @param request 
-     */
     public async installmentPlanGet (request: GetInstallmentsPlanSearchCriteriaRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetInstallmentsPlanResponse;  }> {
         const localVarPath = this.basePath + '/api/InstallmentPlan/Get';
         let localVarQueryParameters: any = {};
@@ -775,6 +691,92 @@ export class InstallmentPlanApi {
      * 
      * @param request 
      */
+    public async installmentPlanGetFraudStatusDisplay (request: GetFraudStatusDisplayRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetFraudStatusDisplayResponse;  }> {
+        const localVarPath = this.basePath + '/api/InstallmentPlan/GetFraudStatusDisplay';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['text/plain', 'application/json', 'text/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new Error('Required parameter request was null or undefined when calling installmentPlanGetFraudStatusDisplay.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: false,
+            json: true,
+            body: ObjectSerializer.serialize(request, "GetFraudStatusDisplayRequest")
+        };
+
+        if (this._config.touchPoint || this._sessionId){
+            localVarRequestOptions.body.requestHeader = {};
+            if (this._config.touchPoint){
+                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
+            }
+
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
+                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
+            }
+
+            if (this._culture){
+                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
+            }
+        }
+
+        let interceptorPromise = Promise.resolve();
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: GetFraudStatusDisplayResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "GetFraudStatusDisplayResponse");
+
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            if (body && body.responseHeader && !body.responseHeader.succeeded){
+                                reject(body.responseHeader);
+                            } else {
+                                resolve({ response: response, body: body });
+                            }                            
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
+     * @param request 
+     */
     public async installmentPlanGetInitiatedInstallmentPlanRequest (request: GetInitiatedInstallmentPlanRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetInitiatedInstallmentPlanResponse;  }> {
         const localVarPath = this.basePath + '/api/InstallmentPlan/GetInitiatedInstallmentPlanRequest';
         let localVarQueryParameters: any = {};
@@ -842,6 +844,92 @@ export class InstallmentPlanApi {
                         reject(error);
                     } else {
                         body = ObjectSerializer.deserialize(body, "GetInitiatedInstallmentPlanResponse");
+
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            if (body && body.responseHeader && !body.responseHeader.succeeded){
+                                reject(body.responseHeader);
+                            } else {
+                                resolve({ response: response, body: body });
+                            }                            
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
+     * @param request 
+     */
+    public async installmentPlanGetLearnMoreDetails (request: LearnMoreDetailsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LearnMoreDetailsResponse;  }> {
+        const localVarPath = this.basePath + '/api/InstallmentPlan/GetLearnMoreDetails';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['text/plain', 'application/json', 'text/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new Error('Required parameter request was null or undefined when calling installmentPlanGetLearnMoreDetails.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: false,
+            json: true,
+            body: ObjectSerializer.serialize(request, "LearnMoreDetailsRequest")
+        };
+
+        if (this._config.touchPoint || this._sessionId){
+            localVarRequestOptions.body.requestHeader = {};
+            if (this._config.touchPoint){
+                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
+            }
+
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
+                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
+            }
+
+            if (this._culture){
+                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
+            }
+        }
+
+        let interceptorPromise = Promise.resolve();
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: LearnMoreDetailsResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "LearnMoreDetailsResponse");
 
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             if (body && body.responseHeader && !body.responseHeader.succeeded){

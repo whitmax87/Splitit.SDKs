@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, PublicTokenRequest, PublicTokenResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetFraudStatusDisplayRequest, GetFraudStatusDisplayResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, LearnMoreDetailsRequest, LearnMoreDetailsResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
@@ -23,9 +23,6 @@ export interface InstallmentPlanChargeBackRequest {
 export interface InstallmentPlanCreateRequest {
     request: CreateInstallmentPlanRequest;
 }
-export interface InstallmentPlanCreatePublicTokenRequest {
-    request: PublicTokenRequest;
-}
 export interface InstallmentPlanGetRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
 }
@@ -35,8 +32,14 @@ export interface InstallmentPlanGet3DSecureParametersRequest {
 export interface InstallmentPlanGetExtendedRequest {
     request: GetInstallmentsPlanSearchCriteriaRequest;
 }
+export interface InstallmentPlanGetFraudStatusDisplayRequest {
+    request: GetFraudStatusDisplayRequest;
+}
 export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
     request: GetInitiatedInstallmentPlanRequest;
+}
+export interface InstallmentPlanGetLearnMoreDetailsRequest {
+    request: LearnMoreDetailsRequest;
 }
 export interface InstallmentPlanInitiateRequest {
     request: InitiateInstallmentPlanRequest;
@@ -86,12 +89,6 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     installmentPlanCreate(requestParameters: InstallmentPlanCreateRequest): Promise<CreateInstallmentsPlanResponse>;
     /**
      */
-    installmentPlanCreatePublicTokenRaw(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<runtime.ApiResponse<PublicTokenResponse>>;
-    /**
-     */
-    installmentPlanCreatePublicToken(requestParameters: InstallmentPlanCreatePublicTokenRequest): Promise<PublicTokenResponse>;
-    /**
-     */
     installmentPlanGetRaw(requestParameters: InstallmentPlanGetRequest): Promise<runtime.ApiResponse<GetInstallmentsPlanResponse>>;
     /**
      */
@@ -110,10 +107,22 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     installmentPlanGetExtended(requestParameters: InstallmentPlanGetExtendedRequest): Promise<GetInstallmentsPlanExtendedResponse>;
     /**
      */
+    installmentPlanGetFraudStatusDisplayRaw(requestParameters: InstallmentPlanGetFraudStatusDisplayRequest): Promise<runtime.ApiResponse<GetFraudStatusDisplayResponse>>;
+    /**
+     */
+    installmentPlanGetFraudStatusDisplay(requestParameters: InstallmentPlanGetFraudStatusDisplayRequest): Promise<GetFraudStatusDisplayResponse>;
+    /**
+     */
     installmentPlanGetInitiatedInstallmentPlanRequestRaw(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<runtime.ApiResponse<GetInitiatedInstallmentPlanResponse>>;
     /**
      */
     installmentPlanGetInitiatedInstallmentPlanRequest(requestParameters: InstallmentPlanGetInitiatedInstallmentPlanRequestRequest): Promise<GetInitiatedInstallmentPlanResponse>;
+    /**
+     */
+    installmentPlanGetLearnMoreDetailsRaw(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<runtime.ApiResponse<LearnMoreDetailsResponse>>;
+    /**
+     */
+    installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse>;
     /**
      */
     installmentPlanInitiateRaw(requestParameters: InstallmentPlanInitiateRequest): Promise<runtime.ApiResponse<InitiateInstallmentsPlanResponse>>;

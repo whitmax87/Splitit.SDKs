@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **privacyPolicyUrl** | **String** |  |  [optional]
 **installmentPlanInfoUrl** | **String** |  |  [optional]
 **publicToken** | **String** |  |  [optional]
+**learnMoreUrl** | **String** |  |  [optional]
 
 
 

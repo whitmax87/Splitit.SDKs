@@ -24,18 +24,9 @@ function InstallmentFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'installmentNumber': json['InstallmentNumber'],
-        'amount': !runtime_1.exists(json, 'Amount') ? undefined : _1.MoneyFromJSON(json['Amount']),
-        'originalAmount': !runtime_1.exists(json, 'OriginalAmount') ? undefined : _1.MoneyFromJSON(json['OriginalAmount']),
-        'refundAmount': !runtime_1.exists(json, 'RefundAmount') ? undefined : _1.MoneyFromJSON(json['RefundAmount']),
-        'processDateTime': !runtime_1.exists(json, 'ProcessDateTime') ? undefined : (new Date(json['ProcessDateTime'])),
-        'isRefund': json['IsRefund'],
-        'requiredCredit': !runtime_1.exists(json, 'RequiredCredit') ? undefined : _1.MoneyFromJSON(json['RequiredCredit']),
-        'createdDateTime': (new Date(json['CreatedDateTime'])),
-        'status': !runtime_1.exists(json, 'Status') ? undefined : _1.ReferenceEntityBaseFromJSON(json['Status']),
-        'transactionResults': !runtime_1.exists(json, 'TransactionResults') ? undefined : (json['TransactionResults'].map(_1.TransactionResultFromJSON)),
-        'cardDetails': !runtime_1.exists(json, 'CardDetails') ? undefined : _1.CardDataFromJSON(json['CardDetails']),
-        'result': !runtime_1.exists(json, 'Result') ? undefined : json['Result'],
+        'date': !runtime_1.exists(json, 'Date') ? undefined : (new Date(json['Date'])),
+        'amount': !runtime_1.exists(json, 'Amount') ? undefined : _1.MoneyWithCurrencyCodeFromJSON(json['Amount']),
+        'heldAmount': json['HeldAmount'],
     };
 }
 exports.InstallmentFromJSONTyped = InstallmentFromJSONTyped;
@@ -47,18 +38,9 @@ function InstallmentToJSON(value) {
         return null;
     }
     return {
-        'InstallmentNumber': value.installmentNumber,
-        'Amount': _1.MoneyToJSON(value.amount),
-        'OriginalAmount': _1.MoneyToJSON(value.originalAmount),
-        'RefundAmount': _1.MoneyToJSON(value.refundAmount),
-        'ProcessDateTime': value.processDateTime === undefined ? undefined : (value.processDateTime.toISOString()),
-        'IsRefund': value.isRefund,
-        'RequiredCredit': _1.MoneyToJSON(value.requiredCredit),
-        'CreatedDateTime': (value.createdDateTime.toISOString()),
-        'Status': _1.ReferenceEntityBaseToJSON(value.status),
-        'TransactionResults': value.transactionResults === undefined ? undefined : (value.transactionResults.map(_1.TransactionResultToJSON)),
-        'CardDetails': _1.CardDataToJSON(value.cardDetails),
-        'Result': value.result,
+        'Date': value.date === undefined ? undefined : (value.date.toISOString()),
+        'Amount': _1.MoneyWithCurrencyCodeToJSON(value.amount),
+        'HeldAmount': value.heldAmount,
     };
 }
 exports.InstallmentToJSON = InstallmentToJSON;

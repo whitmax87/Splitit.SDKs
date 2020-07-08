@@ -71,7 +71,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum DefaultedPermanently for value: DefaultedPermanently
         /// </summary>
         [EnumMember(Value = "DefaultedPermanently")]
-        DefaultedPermanently = 7
+        DefaultedPermanently = 7,
+        
+        /// <summary>
+        /// Enum DefaultedCollectedFromMerchant for value: DefaultedCollectedFromMerchant
+        /// </summary>
+        [EnumMember(Value = "DefaultedCollectedFromMerchant")]
+        DefaultedCollectedFromMerchant = 8
     }
 
 }

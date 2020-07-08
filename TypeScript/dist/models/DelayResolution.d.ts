@@ -21,7 +21,8 @@ export declare enum DelayResolution {
     PendingMidIssueResolution = "PendingMidIssueResolution",
     PendingSuspiciousReview = "PendingSuspiciousReview",
     DefaultedInCollection = "DefaultedInCollection",
-    DefaultedPermanently = "DefaultedPermanently"
+    DefaultedPermanently = "DefaultedPermanently",
+    DefaultedCollectedFromMerchant = "DefaultedCollectedFromMerchant"
 }
 export declare function DelayResolutionFromJSON(json: any): DelayResolution;
 export declare function DelayResolutionFromJSONTyped(json: any, ignoreDiscriminator: boolean): DelayResolution;

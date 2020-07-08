@@ -28,7 +28,7 @@ export class PlanData {
     'firstChargeDate'?: Date;
     'autoCapture'?: boolean;
     'isFunded'?: boolean;
-    'attempt3DSecure'?: object;
+    'attempt3DSecure'?: boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -91,7 +91,7 @@ export class PlanData {
         {
             "name": "attempt3DSecure",
             "baseName": "Attempt3DSecure",
-            "type": "object"
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {
