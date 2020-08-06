@@ -39,7 +39,8 @@ export declare enum SystemTextCategory {
     MessagingSystem = "MessagingSystem",
     PaymentFormV3 = "PaymentFormV3",
     HowSplititWorks = "HowSplititWorks",
-    UpstreamMessaging = "UpstreamMessaging"
+    UpstreamMessaging = "UpstreamMessaging",
+    Onboarding = "Onboarding"
 }
 export declare function SystemTextCategoryFromJSON(json: any): SystemTextCategory;
 export declare function SystemTextCategoryFromJSONTyped(json: any, ignoreDiscriminator: boolean): SystemTextCategory;

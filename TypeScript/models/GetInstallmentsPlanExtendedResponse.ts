@@ -14,18 +14,14 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    ExtendedInstallmentPlan,
-    ExtendedInstallmentPlanFromJSON,
-    ExtendedInstallmentPlanFromJSONTyped,
-    ExtendedInstallmentPlanToJSON,
-    GetInstallmentsPlanExtendedResponseAllOf,
-    GetInstallmentsPlanExtendedResponseAllOfFromJSON,
-    GetInstallmentsPlanExtendedResponseAllOfFromJSONTyped,
-    GetInstallmentsPlanExtendedResponseAllOfToJSON,
     GetInstallmentsPlanResponse,
     GetInstallmentsPlanResponseFromJSON,
     GetInstallmentsPlanResponseFromJSONTyped,
     GetInstallmentsPlanResponseToJSON,
+    InstallmentPlan,
+    InstallmentPlanFromJSON,
+    InstallmentPlanFromJSONTyped,
+    InstallmentPlanToJSON,
     PagingResponseHeader,
     PagingResponseHeaderFromJSON,
     PagingResponseHeaderFromJSONTyped,
@@ -41,25 +37,7 @@ import {
  * @export
  * @interface GetInstallmentsPlanExtendedResponse
  */
-export interface GetInstallmentsPlanExtendedResponse {
-    /**
-     * 
-     * @type {Array<ExtendedInstallmentPlan>}
-     * @memberof GetInstallmentsPlanExtendedResponse
-     */
-    plansList?: Array<ExtendedInstallmentPlan>;
-    /**
-     * 
-     * @type {ResponseHeader}
-     * @memberof GetInstallmentsPlanExtendedResponse
-     */
-    responseHeader?: ResponseHeader;
-    /**
-     * 
-     * @type {PagingResponseHeader}
-     * @memberof GetInstallmentsPlanExtendedResponse
-     */
-    pagingResponseHeader?: PagingResponseHeader;
+export interface GetInstallmentsPlanExtendedResponse extends GetInstallmentsPlanResponse {
 }
 
 export function GetInstallmentsPlanExtendedResponseFromJSON(json: any): GetInstallmentsPlanExtendedResponse {
@@ -67,30 +45,11 @@ export function GetInstallmentsPlanExtendedResponseFromJSON(json: any): GetInsta
 }
 
 export function GetInstallmentsPlanExtendedResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetInstallmentsPlanExtendedResponse {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'plansList': !exists(json, 'PlansList') ? undefined : ((json['PlansList'] as Array<any>).map(ExtendedInstallmentPlanFromJSON)),
-        'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
-        'pagingResponseHeader': !exists(json, 'PagingResponseHeader') ? undefined : PagingResponseHeaderFromJSON(json['PagingResponseHeader']),
-    };
+    return json;
 }
 
 export function GetInstallmentsPlanExtendedResponseToJSON(value?: GetInstallmentsPlanExtendedResponse | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'PlansList': value.plansList === undefined ? undefined : ((value.plansList as Array<any>).map(ExtendedInstallmentPlanToJSON)),
-        'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
-        'PagingResponseHeader': PagingResponseHeaderToJSON(value.pagingResponseHeader),
-    };
+    return value;
 }
 
 

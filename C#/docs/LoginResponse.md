@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **ResponseHeader** | [**ResponseHeader**](ResponseHeader.md) |  | [optional] 
 **SessionId** | **string** |  | [optional] 
 **Result** | **int?** |  | 
-**ResponseStatus** | [**ResponseStatus**](ResponseStatus.md) |  | [optional] 
+**ResponseStatus** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

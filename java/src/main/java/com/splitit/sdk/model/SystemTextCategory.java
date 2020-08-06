@@ -78,7 +78,9 @@ public enum SystemTextCategory {
   
   HOWSPLITITWORKS("HowSplititWorks"),
   
-  UPSTREAMMESSAGING("UpstreamMessaging");
+  UPSTREAMMESSAGING("UpstreamMessaging"),
+  
+  ONBOARDING("Onboarding");
 
   private String value;
 

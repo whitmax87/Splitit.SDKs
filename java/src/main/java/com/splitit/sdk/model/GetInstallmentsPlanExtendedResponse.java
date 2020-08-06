@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.splitit.sdk.model.ExtendedInstallmentPlan;
 import com.splitit.sdk.model.GetInstallmentsPlanResponse;
+import com.splitit.sdk.model.InstallmentPlan;
 import com.splitit.sdk.model.PagingResponseHeader;
 import com.splitit.sdk.model.ResponseHeader;
 import io.swagger.annotations.ApiModel;
@@ -33,10 +33,10 @@ import java.util.List;
 /**
  * GetInstallmentsPlanExtendedResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T08:36:49.924Z")
 public class GetInstallmentsPlanExtendedResponse   {
   @SerializedName("PlansList")
-  private List<ExtendedInstallmentPlan> plansList = null;
+  private List<InstallmentPlan> plansList = null;
 
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -44,14 +44,14 @@ public class GetInstallmentsPlanExtendedResponse   {
   @SerializedName("PagingResponseHeader")
   private PagingResponseHeader pagingResponseHeader = null;
 
-  public GetInstallmentsPlanExtendedResponse plansList(List<ExtendedInstallmentPlan> plansList) {
+  public GetInstallmentsPlanExtendedResponse plansList(List<InstallmentPlan> plansList) {
     this.plansList = plansList;
     return this;
   }
 
-  public GetInstallmentsPlanExtendedResponse addPlansListItem(ExtendedInstallmentPlan plansListItem) {
+  public GetInstallmentsPlanExtendedResponse addPlansListItem(InstallmentPlan plansListItem) {
     if (this.plansList == null) {
-      this.plansList = new ArrayList<ExtendedInstallmentPlan>();
+      this.plansList = new ArrayList<InstallmentPlan>();
     }
     this.plansList.add(plansListItem);
     return this;
@@ -62,11 +62,11 @@ public class GetInstallmentsPlanExtendedResponse   {
    * @return plansList
   **/
   @ApiModelProperty(value = "")
-  public List<ExtendedInstallmentPlan> getPlansList() {
+  public List<InstallmentPlan> getPlansList() {
     return plansList;
   }
 
-  public void setPlansList(List<ExtendedInstallmentPlan> plansList) {
+  public void setPlansList(List<InstallmentPlan> plansList) {
     this.plansList = plansList;
   }
 

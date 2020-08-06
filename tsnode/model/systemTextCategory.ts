@@ -40,5 +40,6 @@ export enum SystemTextCategory {
     MessagingSystem = <any> 'MessagingSystem',
     PaymentFormV3 = <any> 'PaymentFormV3',
     HowSplititWorks = <any> 'HowSplititWorks',
-    UpstreamMessaging = <any> 'UpstreamMessaging'
+    UpstreamMessaging = <any> 'UpstreamMessaging',
+    Onboarding = <any> 'Onboarding'
 }

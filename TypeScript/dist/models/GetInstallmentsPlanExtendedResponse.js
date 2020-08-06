@@ -13,34 +13,15 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
-var _1 = require("./");
 function GetInstallmentsPlanExtendedResponseFromJSON(json) {
     return GetInstallmentsPlanExtendedResponseFromJSONTyped(json, false);
 }
 exports.GetInstallmentsPlanExtendedResponseFromJSON = GetInstallmentsPlanExtendedResponseFromJSON;
 function GetInstallmentsPlanExtendedResponseFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        'plansList': !runtime_1.exists(json, 'PlansList') ? undefined : (json['PlansList'].map(_1.ExtendedInstallmentPlanFromJSON)),
-        'responseHeader': !runtime_1.exists(json, 'ResponseHeader') ? undefined : _1.ResponseHeaderFromJSON(json['ResponseHeader']),
-        'pagingResponseHeader': !runtime_1.exists(json, 'PagingResponseHeader') ? undefined : _1.PagingResponseHeaderFromJSON(json['PagingResponseHeader']),
-    };
+    return json;
 }
 exports.GetInstallmentsPlanExtendedResponseFromJSONTyped = GetInstallmentsPlanExtendedResponseFromJSONTyped;
 function GetInstallmentsPlanExtendedResponseToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        'PlansList': value.plansList === undefined ? undefined : (value.plansList.map(_1.ExtendedInstallmentPlanToJSON)),
-        'ResponseHeader': _1.ResponseHeaderToJSON(value.responseHeader),
-        'PagingResponseHeader': _1.PagingResponseHeaderToJSON(value.pagingResponseHeader),
-    };
+    return value;
 }
 exports.GetInstallmentsPlanExtendedResponseToJSON = GetInstallmentsPlanExtendedResponseToJSON;

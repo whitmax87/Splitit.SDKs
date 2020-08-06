@@ -40,7 +40,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="sessionId">sessionId.</param>
         /// <param name="result">result (required).</param>
         /// <param name="responseStatus">responseStatus.</param>
-        public LoginResponse(ResponseHeader responseHeader = default(ResponseHeader), string sessionId = default(string), int? result = default(int?), ResponseStatus responseStatus = default(ResponseStatus))
+        public LoginResponse(ResponseHeader responseHeader = default(ResponseHeader), string sessionId = default(string), int? result = default(int?), Object responseStatus = default(Object))
         {
             this.Result = result;
             this.ResponseHeader = responseHeader;
@@ -71,7 +71,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets ResponseStatus
         /// </summary>
         [DataMember(Name="ResponseStatus", EmitDefaultValue=false)]
-        public ResponseStatus ResponseStatus { get; set; }
+        public Object ResponseStatus { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

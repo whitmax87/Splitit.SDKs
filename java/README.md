@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-07-08T07:06:50.696Z
-- SDK Version: 1.5.0
+  - Build date: 2020-08-06T08:36:49.924Z
+- SDK Version: 1.5.1
 
 ## Requirements
 
@@ -220,11 +220,9 @@ Class | Method | HTTP request | Description
  - [VerifyPaymentResponse](docs/VerifyPaymentResponse.md)
  - [AddressData](docs/AddressData.md)
  - [AmountDetails](docs/AmountDetails.md)
- - [BuRef](docs/BuRef.md)
  - [ConsumerData](docs/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Currency.md)
- - [ExtendedInstallmentPlan](docs/ExtendedInstallmentPlan.md)
  - [GetInstallmentsPlanExtendedResponse](docs/GetInstallmentsPlanExtendedResponse.md)
  - [InitiateInstallmentsPlanResponse](docs/InitiateInstallmentsPlanResponse.md)
  - [LoginResponse](docs/LoginResponse.md)

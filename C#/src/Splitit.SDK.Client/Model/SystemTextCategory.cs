@@ -179,7 +179,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum UpstreamMessaging for value: UpstreamMessaging
         /// </summary>
         [EnumMember(Value = "UpstreamMessaging")]
-        UpstreamMessaging = 25
+        UpstreamMessaging = 25,
+        
+        /// <summary>
+        /// Enum Onboarding for value: Onboarding
+        /// </summary>
+        [EnumMember(Value = "Onboarding")]
+        Onboarding = 26
     }
 
 }

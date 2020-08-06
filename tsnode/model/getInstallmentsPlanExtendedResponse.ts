@@ -11,38 +11,20 @@
  */
 
 import { RequestFile } from '../api';
-import { ExtendedInstallmentPlan } from './extendedInstallmentPlan';
-import { GetInstallmentsPlanExtendedResponseAllOf } from './getInstallmentsPlanExtendedResponseAllOf';
 import { GetInstallmentsPlanResponse } from './getInstallmentsPlanResponse';
+import { InstallmentPlan } from './installmentPlan';
 import { PagingResponseHeader } from './pagingResponseHeader';
 import { ResponseHeader } from './responseHeader';
 
-export class GetInstallmentsPlanExtendedResponse {
-    'plansList'?: Array<ExtendedInstallmentPlan>;
-    'responseHeader'?: ResponseHeader;
-    'pagingResponseHeader'?: PagingResponseHeader;
+export class GetInstallmentsPlanExtendedResponse extends GetInstallmentsPlanResponse {
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "plansList",
-            "baseName": "PlansList",
-            "type": "Array<ExtendedInstallmentPlan>"
-        },
-        {
-            "name": "responseHeader",
-            "baseName": "ResponseHeader",
-            "type": "ResponseHeader"
-        },
-        {
-            "name": "pagingResponseHeader",
-            "baseName": "PagingResponseHeader",
-            "type": "PagingResponseHeader"
-        }    ];
+    ];
 
     static getAttributeTypeMap() {
-        return GetInstallmentsPlanExtendedResponse.attributeTypeMap;
+        return super.getAttributeTypeMap().concat(GetInstallmentsPlanExtendedResponse.attributeTypeMap);
     }
 }
 

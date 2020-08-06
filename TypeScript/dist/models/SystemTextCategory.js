@@ -45,6 +45,7 @@ var SystemTextCategory;
     SystemTextCategory["PaymentFormV3"] = "PaymentFormV3";
     SystemTextCategory["HowSplititWorks"] = "HowSplititWorks";
     SystemTextCategory["UpstreamMessaging"] = "UpstreamMessaging";
+    SystemTextCategory["Onboarding"] = "Onboarding";
 })(SystemTextCategory = exports.SystemTextCategory || (exports.SystemTextCategory = {}));
 function SystemTextCategoryFromJSON(json) {
     return SystemTextCategoryFromJSONTyped(json, false);

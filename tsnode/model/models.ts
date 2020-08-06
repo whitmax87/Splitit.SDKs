@@ -7,7 +7,6 @@ export * from './amountDetails';
 export * from './amountDetails2';
 export * from './approveInstallmentPlanRequest';
 export * from './authenticationType';
-export * from './buRef';
 export * from './cancelInstallmentPlanRequest';
 export * from './cardData';
 export * from './cartData';
@@ -21,8 +20,6 @@ export * from './currency';
 export * from './currencyAllOf';
 export * from './delayResolution';
 export * from './eventsEndpoints';
-export * from './extendedInstallmentPlan';
-export * from './extendedInstallmentPlanAllOf';
 export * from './externalAuth';
 export * from './fraudCheck';
 export * from './fraudCheckResult';
@@ -33,7 +30,6 @@ export * from './getFraudStatusDisplayResponse';
 export * from './getInitiatedInstallmentPlanRequest';
 export * from './getInitiatedInstallmentPlanResponse';
 export * from './getInstallmentsPlanExtendedResponse';
-export * from './getInstallmentsPlanExtendedResponseAllOf';
 export * from './getInstallmentsPlanResponse';
 export * from './getInstallmentsPlanSearchCriteriaRequest';
 export * from './getResourcesRequest';
@@ -116,7 +112,6 @@ import { AmountDetails } from './amountDetails';
 import { AmountDetails2 } from './amountDetails2';
 import { ApproveInstallmentPlanRequest } from './approveInstallmentPlanRequest';
 import { AuthenticationType } from './authenticationType';
-import { BuRef } from './buRef';
 import { CancelInstallmentPlanRequest } from './cancelInstallmentPlanRequest';
 import { CardData } from './cardData';
 import { CartData } from './cartData';
@@ -130,8 +125,6 @@ import { Currency } from './currency';
 import { CurrencyAllOf } from './currencyAllOf';
 import { DelayResolution } from './delayResolution';
 import { EventsEndpoints } from './eventsEndpoints';
-import { ExtendedInstallmentPlan } from './extendedInstallmentPlan';
-import { ExtendedInstallmentPlanAllOf } from './extendedInstallmentPlanAllOf';
 import { ExternalAuth } from './externalAuth';
 import { FraudCheck } from './fraudCheck';
 import { FraudCheckResult } from './fraudCheckResult';
@@ -142,7 +135,6 @@ import { GetFraudStatusDisplayResponse } from './getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from './getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from './getInitiatedInstallmentPlanResponse';
 import { GetInstallmentsPlanExtendedResponse } from './getInstallmentsPlanExtendedResponse';
-import { GetInstallmentsPlanExtendedResponseAllOf } from './getInstallmentsPlanExtendedResponseAllOf';
 import { GetInstallmentsPlanResponse } from './getInstallmentsPlanResponse';
 import { GetInstallmentsPlanSearchCriteriaRequest } from './getInstallmentsPlanSearchCriteriaRequest';
 import { GetResourcesRequest } from './getResourcesRequest';
@@ -254,7 +246,6 @@ let typeMap: {[index: string]: any} = {
     "AmountDetails": AmountDetails,
     "AmountDetails2": AmountDetails2,
     "ApproveInstallmentPlanRequest": ApproveInstallmentPlanRequest,
-    "BuRef": BuRef,
     "CancelInstallmentPlanRequest": CancelInstallmentPlanRequest,
     "CardData": CardData,
     "CartData": CartData,
@@ -267,8 +258,6 @@ let typeMap: {[index: string]: any} = {
     "Currency": Currency,
     "CurrencyAllOf": CurrencyAllOf,
     "EventsEndpoints": EventsEndpoints,
-    "ExtendedInstallmentPlan": ExtendedInstallmentPlan,
-    "ExtendedInstallmentPlanAllOf": ExtendedInstallmentPlanAllOf,
     "ExternalAuth": ExternalAuth,
     "FraudCheck": FraudCheck,
     "Get3DSecureParametersRequest": Get3DSecureParametersRequest,
@@ -278,7 +267,6 @@ let typeMap: {[index: string]: any} = {
     "GetInitiatedInstallmentPlanRequest": GetInitiatedInstallmentPlanRequest,
     "GetInitiatedInstallmentPlanResponse": GetInitiatedInstallmentPlanResponse,
     "GetInstallmentsPlanExtendedResponse": GetInstallmentsPlanExtendedResponse,
-    "GetInstallmentsPlanExtendedResponseAllOf": GetInstallmentsPlanExtendedResponseAllOf,
     "GetInstallmentsPlanResponse": GetInstallmentsPlanResponse,
     "GetInstallmentsPlanSearchCriteriaRequest": GetInstallmentsPlanSearchCriteriaRequest,
     "GetResourcesRequest": GetResourcesRequest,

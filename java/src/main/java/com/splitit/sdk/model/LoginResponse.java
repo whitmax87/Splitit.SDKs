@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.LoginResponse2;
 import com.splitit.sdk.model.ResponseHeader;
-import com.splitit.sdk.model.ResponseStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -30,7 +29,7 @@ import java.io.IOException;
 /**
  * LoginResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-08T07:06:50.696Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T08:36:49.924Z")
 public class LoginResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -42,7 +41,7 @@ public class LoginResponse   {
   private Integer result = null;
 
   @SerializedName("ResponseStatus")
-  private ResponseStatus responseStatus = null;
+  private Object responseStatus = null;
 
   public LoginResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -98,7 +97,7 @@ public class LoginResponse   {
     this.result = result;
   }
 
-  public LoginResponse responseStatus(ResponseStatus responseStatus) {
+  public LoginResponse responseStatus(Object responseStatus) {
     this.responseStatus = responseStatus;
     return this;
   }
@@ -108,11 +107,11 @@ public class LoginResponse   {
    * @return responseStatus
   **/
   @ApiModelProperty(value = "")
-  public ResponseStatus getResponseStatus() {
+  public Object getResponseStatus() {
     return responseStatus;
   }
 
-  public void setResponseStatus(ResponseStatus responseStatus) {
+  public void setResponseStatus(Object responseStatus) {
     this.responseStatus = responseStatus;
   }
 

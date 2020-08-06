@@ -34,7 +34,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="plansList">plansList.</param>
         /// <param name="responseHeader">responseHeader.</param>
         /// <param name="pagingResponseHeader">pagingResponseHeader.</param>
-        public GetInstallmentsPlanExtendedResponse(List<ExtendedInstallmentPlan> plansList = default(List<ExtendedInstallmentPlan>), ResponseHeader responseHeader = default(ResponseHeader), PagingResponseHeader pagingResponseHeader = default(PagingResponseHeader))
+        public GetInstallmentsPlanExtendedResponse(List<InstallmentPlan> plansList = default(List<InstallmentPlan>), ResponseHeader responseHeader = default(ResponseHeader), PagingResponseHeader pagingResponseHeader = default(PagingResponseHeader))
         {
             this.PlansList = plansList;
             this.ResponseHeader = responseHeader;
@@ -46,7 +46,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets PlansList
         /// </summary>
         [DataMember(Name="PlansList", EmitDefaultValue=false)]
-        public List<ExtendedInstallmentPlan> PlansList { get; set; }
+        public List<InstallmentPlan> PlansList { get; set; }
 
         /// <summary>
         /// Gets or Sets ResponseHeader

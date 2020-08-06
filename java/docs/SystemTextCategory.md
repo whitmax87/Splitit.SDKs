@@ -54,5 +54,7 @@
 
 * `UPSTREAMMESSAGING` (value: `"UpstreamMessaging"`)
 
+* `ONBOARDING` (value: `"Onboarding"`)
+
 
 
