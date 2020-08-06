@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
-    <Version>1.5.5</Version>
+    <Version>1.5.6</Version>
     <Authors>SplititSDK</Authors>
     <Title>Splitit C# SDK</Title>
     <PackageDescription>C# SDK for Splitit Web API.</PackageDescription>

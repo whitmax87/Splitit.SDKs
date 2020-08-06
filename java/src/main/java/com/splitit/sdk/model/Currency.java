@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Currency
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:17:30.371Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:31:28.486Z")
 public class Currency   {
   @SerializedName("Id")
   private Long id = null;
