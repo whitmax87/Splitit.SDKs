@@ -1,4 +1,3 @@
-
 import * as splititApi from 'splitit-sdk-nodejs'
 import { VerifyPaymentResponse } from 'splitit-sdk-nodejs'
 
@@ -9,7 +8,7 @@ splititApi.Configuration.sandbox.addApiKey(Credentials.apiKey)
 /// </summary>
 class PayWithCCToken {
   planApi: splititApi.InstallmentPlanApi
-  readonly MERCHANT_AMOUNT = 500
+  readonly MERCHANT_AMOUNT = 600
 
   // Authenticate with the api
   async login(userName: string, password: string) {
@@ -27,35 +26,36 @@ class PayWithCCToken {
       // @ts-ignore
       queryCriteria: {
         installmentPlanNumber: oldInstallmentPlanNumber,
-      }
+      },
     })
 
     return getResponse.plansList[0].activeCard.token
   }
-  
+
   // Set a new installment plan for the returning shopper
   async initiateInstallmentPlan() {
     const initRequest: splititApi.InitiateInstallmentPlanRequest = {
       planData: {
-        amount: { value: this.MERCHANT_AMOUNT, currencyCode: "USD" },
-        numberOfInstallments: 3
+        amount: { value: 600, currencyCode: 'USD' },
+        numberOfInstallments: 3,
+        refOrderNumber: 'abc123',
+        autoCapture: true,
       },
       billingAddress: {
-        addressLine: "260 Madison Avenue.",
-        addressLine2: "Appartment 1",
-        city: "New York",
-        state: "NY",
-        country: "USA",
-        zip: "10016",
-      }, // TODO: set actual billing address data
+        addressLine: '260 Madison Avenue.',
+        city: 'New York',
+        state: 'NY',
+        country: 'USA',
+        zip: '10016',
+      }, // TODO: set actual billing address data to pre-fill the from (optional)
       consumerData: {
-        fullName: "John Smith",
-        email: "JohnS@splitit.com",
-        phoneNumber: "1-844-775-4848",
-        cultureName: "en-us",
-        isLocked: false,
+        fullName: 'John Smith',
+        email: 'JohnS@splitit.com',
+        phoneNumber: '1-415-775-4848',
+        cultureName: 'en-us',
         isDataRestricted: false,
-      },  // TODO: set actual consumer data
+        isLocked: false,
+      }, // TODO: set actual consumer data to pre-fill the from (optional)
     }
 
     const { body: initResponse } = await this.planApi.installmentPlanInitiate(initRequest)
@@ -73,10 +73,10 @@ class PayWithCCToken {
     await this.planApi.installmentPlanCreate({
       paymentToken: {
         token: ccToken,
-        type: 'card'
+        type: 'card',
       },
       installmentPlanNumber: newPlanNumber,
-      planApprovalEvidence: { areTermsAndConditionsApproved: true }
+      planApprovalEvidence: { areTermsAndConditionsApproved: true },
     })
   }
 
@@ -87,14 +87,15 @@ class PayWithCCToken {
 
     // Verifies amount payed
     // For Merchant: please fill the value {MERCHANT_AMOUNT} from your session
-    const paymentVerified = verifyResponse.responseHeader?.succeeded 
-      && verifyResponse.isPaid 
-      && verifyResponse.originalAmountPaid === this.MERCHANT_AMOUNT
+    const paymentVerified =
+      verifyResponse.responseHeader?.succeeded &&
+      verifyResponse.isPaid &&
+      verifyResponse.originalAmountPaid === this.MERCHANT_AMOUNT
 
     if (paymentVerified) {
-        // TODO: Success - close order in your system
+      // TODO: Success - close order in your system
     } else {
-        // TODO: call the InstallmentPlanCancel function with the installment plan number
+      // TODO: call the InstallmentPlanCancel function with the installment plan number
     }
   }
 }

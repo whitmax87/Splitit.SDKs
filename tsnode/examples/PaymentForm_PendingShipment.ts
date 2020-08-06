@@ -1,4 +1,3 @@
-
 import * as splititApi from 'splitit-sdk-nodejs'
 import { VerifyPaymentResponse } from 'splitit-sdk-nodejs'
 
@@ -9,7 +8,7 @@ splititApi.Configuration.sandbox.addApiKey(Credentials.apiKey)
 /// </summary>
 class PendingShipment {
   planApi: splititApi.InstallmentPlanApi
-  readonly MERCHANT_AMOUNT = 500
+  readonly MERCHANT_AMOUNT = 600
 
   // Authenticate with the api
   async login(userName: string, password: string) {
@@ -23,35 +22,35 @@ class PendingShipment {
   // Initiates the plan
   async initiateInstallmentPlan() {
     const initRequest: splititApi.InitiateInstallmentPlanRequest = {
-      planData: <splititApi.PlanData>{
-        amount: <splititApi.MoneyWithCurrencyCode>{ value: this.MERCHANT_AMOUNT, currencyCode: "USD" },
+      planData: {
+        amount: { value: 600, currencyCode: 'USD' },
         numberOfInstallments: 3,
+        refOrderNumber: 'abc123',
         autoCapture: false,
       },
       // After user successfully interacts with splitit.com they would be
       // redirected to provided Succeeded URL with InstallmentPlanNumber as
       // a parameter in GET request. It is required to continue the flow.
       redirectUrls: {
-        succeeded: 'https://example.com/success',
-        canceled: 'https://example.com/canceled',
-        failed: 'https://example.com/failed',
+        canceled: 'http://localhost/Canceled',
+        failed: 'http://localhost/Failed',
+        succeeded: 'http://localhost/Succeeded',
       },
       billingAddress: {
-        addressLine: "260 Madison Avenue.",
-        addressLine2: "Appartment 1",
-        city: "New York",
-        state: "NY",
-        country: "USA",
-        zip: "10016",
+        addressLine: '260 Madison Avenue.',
+        city: 'New York',
+        state: 'NY',
+        country: 'USA',
+        zip: '10016',
       }, // TODO: set actual billing address data to pre-fill the from (optional)
       consumerData: {
-        fullName: "John Smith",
-        email: "JohnS@splitit.com",
-        phoneNumber: "1-844-775-4848",
-        cultureName: "en-us",
-        isLocked: false,
+        fullName: 'John Smith',
+        email: 'JohnS@splitit.com',
+        phoneNumber: '1-415-775-4848',
+        cultureName: 'en-us',
         isDataRestricted: false,
-      },  // TODO: set actual consumer data to pre-fill the from (optional)
+        isLocked: false,
+      }, // TODO: set actual consumer data to pre-fill the from (optional)
     }
 
     // initResponse contains urls to which you should redirect your customers (eg. checkoutUrl, termsConditionsUrl, privacyPolicyUrl, learnMoreUrl)
@@ -64,7 +63,6 @@ class PendingShipment {
     } else {
       // For Merchant: show the return error from initResponse.ResponseHeader.Errors
     }
-
   }
 
   // Checks for potential fraud attempts
@@ -74,20 +72,22 @@ class PendingShipment {
 
     // Verifies amount payed
     // TODO: please fill the value {MERCHANT_AMOUNT} from your session
-    const paymentVerified = verifyResponse.responseHeader?.succeeded 
-      && verifyResponse.isPaid 
-      && verifyResponse.originalAmountPaid === this.MERCHANT_AMOUNT
+    const paymentVerified =
+      verifyResponse.responseHeader?.succeeded &&
+      verifyResponse.isPaid &&
+      verifyResponse.originalAmountPaid === this.MERCHANT_AMOUNT
 
     if (paymentVerified) {
       // Start charging the buyer
-      const { body: startInstallmentResponse } = await this.planApi.installmentPlanStartInstallments({ installmentPlanNumber })
+      const { body: startInstallmentResponse } = await this.planApi.installmentPlanStartInstallments({
+        installmentPlanNumber,
+      })
 
       if (startInstallmentResponse.responseHeader.succeeded) {
         // TODO: Success - close order in your system
       }
-    }
-    else {
-        // TODO: call the InstallmentPlanCancel function with the installment plan number
+    } else {
+      // TODO: call the InstallmentPlanCancel function with the installment plan number
     }
   }
 }

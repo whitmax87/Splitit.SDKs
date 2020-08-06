@@ -10,7 +10,7 @@ namespace Splitit.SDK.Example
     class PaymentFormWithCCToken
     {
         InstallmentPlanApi PlanApi { get; set; }
-        const int MERCHANT_AMOUNT = 500;
+        const int MERCHANT_AMOUNT = 600;
 
         // Authenticate with the api
         void Login(string username, string password)
@@ -42,23 +42,25 @@ namespace Splitit.SDK.Example
         {
             var initResponse = PlanApi.InstallmentPlanInitiate(new InitiateInstallmentPlanRequest()
             {
-                PlanData = new PlanData(amount: new MoneyWithCurrencyCode(MERCHANT_AMOUNT, "USD"),
-                    numberOfInstallments: 3),
-                BillingAddress = new AddressData()
+                PlanData = new PlanData
+                {
+                    Amount = new MoneyWithCurrencyCode(600, "USD"), NumberOfInstallments = 3, RefOrderNumber = "abc123",
+                    AutoCapture = true
+                },
+                BillingAddress = new AddressData
                 {
                     AddressLine = "260 Madison Avenue.",
-                    AddressLine2 = "Appartment 1",
                     City = "New York",
                     State = "NY",
                     Country = "USA",
-                    Zip = "10016",
+                    Zip = "10016"
                 }, // TODO: set actual billing address data to pre-fill the from (optional)
-                ConsumerData = new ConsumerData()
+                ConsumerData = new ConsumerData
                 {
                     FullName = "John Smith",
                     Email = "JohnS@splitit.com",
-                    PhoneNumber = "1-844-775-4848",
-                    CultureName = "en-us",
+                    PhoneNumber = "1-415-775-4848",
+                    CultureName = "en-us"
                 }, // TODO: set actual consumer data to pre-fill the form (optional)
             });
             // Use the T&C, PrivacyPolicy and the LearnMore urls

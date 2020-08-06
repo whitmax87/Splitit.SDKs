@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * AmountDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:31:28.486Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
 public class AmountDetails   {
   @SerializedName("SubTotal")
   private BigDecimal subTotal = null;

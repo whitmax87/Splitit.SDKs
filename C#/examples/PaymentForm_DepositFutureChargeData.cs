@@ -11,7 +11,7 @@ namespace Splitit.SDK.Example
     class PaymentFormDepositFutureChargeDate
     {
         InstallmentPlanApi PlanApi { get; set; }
-        const int MERCHANT_AMOUNT = 500;
+        const int MERCHANT_AMOUNT = 600;
 
         // Authenticate with the api
         void Login(string username, string password)
@@ -39,35 +39,36 @@ namespace Splitit.SDK.Example
             {
                 PlanData = new PlanData
                 {
-                    Amount = new MoneyWithCurrencyCode(MERCHANT_AMOUNT, "USD"),
+                    Amount = new MoneyWithCurrencyCode(600, "USD"),
                     NumberOfInstallments = 3,
+                    AutoCapture = true,
                     FirstInstallmentAmount = new MoneyWithCurrencyCode(firstInstallmentAmount, "USD"),
                     FirstChargeDate = firstChargeDate,
                 },
+                PaymentWizardData = new PaymentWizardData(requestedNumberOfInstallments: "2,3,4,5,6"),
                 // After user successfully interacts with splitit.com they would be
                 // redirected to provided Succeeded URL with InstallmentPlanNumber as
                 // a parameter in GET request. It is required to continue the flow.
                 RedirectUrls = new RedirectUrls
                 {
-                    Succeeded = "https://example.com/success",
-                    Canceled = "https://example.com/canceled",
-                    Failed = "https://example.com/failed",
+                    Canceled = "http://localhost/Canceled",
+                    Failed = "http://localhost/Failed",
+                    Succeeded = "http://localhost/Succeeded"
                 },
-                BillingAddress = new AddressData()
+                BillingAddress = new AddressData
                 {
                     AddressLine = "260 Madison Avenue.",
-                    AddressLine2 = "Appartment 1",
                     City = "New York",
                     State = "NY",
                     Country = "USA",
-                    Zip = "10016",
+                    Zip = "10016"
                 }, // TODO: set actual billing address data to pre-fill the from (optional)
-                ConsumerData = new ConsumerData()
+                ConsumerData = new ConsumerData
                 {
                     FullName = "John Smith",
                     Email = "JohnS@splitit.com",
-                    PhoneNumber = "1-844-775-4848",
-                    CultureName = "en-us",
+                    PhoneNumber = "1-415-775-4848",
+                    CultureName = "en-us"
                 }, // TODO: set actual consumer data to pre-fill the form (optional)
             });
             // Use the T&C, PrivacyPolicy and the LearnMore urls
