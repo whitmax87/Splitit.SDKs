@@ -18,7 +18,7 @@ import java.util.List;
 import com.splitit.sdk.model.ResponseHeader;
 import com.splitit.sdk.model.Error;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T08:50:26.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:05:09.667Z")
 public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;

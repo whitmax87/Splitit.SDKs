@@ -13,7 +13,7 @@
 
 package com.splitit;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T08:50:26.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:05:09.667Z")
 public class Pair {
     private String name = "";
     private String value = "";
