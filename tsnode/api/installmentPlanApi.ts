@@ -64,7 +64,7 @@ export class InstallmentPlanApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.5.1"
+            "Splitit-SDK": "NodeJS-1.5.3"
         };
         this._sessionId = sessionId;
     }
