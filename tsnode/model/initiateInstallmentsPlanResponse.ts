@@ -15,10 +15,12 @@ import { InitiateInstallmentsPlanResponseAllOf } from './initiateInstallmentsPla
 import { InstallmentPlan } from './installmentPlan';
 import { InstallmentPlanResponse } from './installmentPlanResponse';
 import { ResponseHeader } from './responseHeader';
+import { TransactionResult } from './transactionResult';
 
 export class InitiateInstallmentsPlanResponse {
     'responseHeader'?: ResponseHeader;
     'installmentPlan'?: InstallmentPlan;
+    'gatewayTransactionResults'?: Array<TransactionResult>;
     'checkoutUrl'?: string;
     'approvalUrl'?: string;
     'termsAndConditionsUrl'?: string;
@@ -39,6 +41,11 @@ export class InitiateInstallmentsPlanResponse {
             "name": "installmentPlan",
             "baseName": "InstallmentPlan",
             "type": "InstallmentPlan"
+        },
+        {
+            "name": "gatewayTransactionResults",
+            "baseName": "GatewayTransactionResults",
+            "type": "Array<TransactionResult>"
         },
         {
             "name": "checkoutUrl",

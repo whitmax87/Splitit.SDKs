@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **refundUnderCancelation** | [**RefundUnderCancelation**](RefundUnderCancelation.md) |  | 
 **cancelationReason** | [**InstallmentPlanCancelationReason**](InstallmentPlanCancelationReason.md) |  | 
 **isExecutedUnattended** | **Boolean** |  | 
+**partialResponseMapping** | **Boolean** |  | 
 
 
 

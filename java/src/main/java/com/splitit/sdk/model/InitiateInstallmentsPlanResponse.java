@@ -23,20 +23,26 @@ import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.InstallmentPlan;
 import com.splitit.sdk.model.InstallmentPlanResponse;
 import com.splitit.sdk.model.ResponseHeader;
+import com.splitit.sdk.model.TransactionResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InitiateInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class InitiateInstallmentsPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
   @SerializedName("InstallmentPlan")
   private InstallmentPlan installmentPlan = null;
+
+  @SerializedName("GatewayTransactionResults")
+  private List<TransactionResult> gatewayTransactionResults = null;
 
   @SerializedName("CheckoutUrl")
   private String checkoutUrl = null;
@@ -93,6 +99,32 @@ public class InitiateInstallmentsPlanResponse   {
 
   public void setInstallmentPlan(InstallmentPlan installmentPlan) {
     this.installmentPlan = installmentPlan;
+  }
+
+  public InitiateInstallmentsPlanResponse gatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+    return this;
+  }
+
+  public InitiateInstallmentsPlanResponse addGatewayTransactionResultsItem(TransactionResult gatewayTransactionResultsItem) {
+    if (this.gatewayTransactionResults == null) {
+      this.gatewayTransactionResults = new ArrayList<TransactionResult>();
+    }
+    this.gatewayTransactionResults.add(gatewayTransactionResultsItem);
+    return this;
+  }
+
+   /**
+   * Get gatewayTransactionResults
+   * @return gatewayTransactionResults
+  **/
+  @ApiModelProperty(value = "")
+  public List<TransactionResult> getGatewayTransactionResults() {
+    return gatewayTransactionResults;
+  }
+
+  public void setGatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
   }
 
   public InitiateInstallmentsPlanResponse checkoutUrl(String checkoutUrl) {
@@ -233,6 +265,7 @@ public class InitiateInstallmentsPlanResponse   {
     InitiateInstallmentsPlanResponse initiateInstallmentsPlanResponse = (InitiateInstallmentsPlanResponse) o;
     return Objects.equals(this.responseHeader, initiateInstallmentsPlanResponse.responseHeader) &&
         Objects.equals(this.installmentPlan, initiateInstallmentsPlanResponse.installmentPlan) &&
+        Objects.equals(this.gatewayTransactionResults, initiateInstallmentsPlanResponse.gatewayTransactionResults) &&
         Objects.equals(this.checkoutUrl, initiateInstallmentsPlanResponse.checkoutUrl) &&
         Objects.equals(this.approvalUrl, initiateInstallmentsPlanResponse.approvalUrl) &&
         Objects.equals(this.termsAndConditionsUrl, initiateInstallmentsPlanResponse.termsAndConditionsUrl) &&
@@ -244,7 +277,7 @@ public class InitiateInstallmentsPlanResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan, checkoutUrl, approvalUrl, termsAndConditionsUrl, privacyPolicyUrl, installmentPlanInfoUrl, publicToken, learnMoreUrl);
+    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults, checkoutUrl, approvalUrl, termsAndConditionsUrl, privacyPolicyUrl, installmentPlanInfoUrl, publicToken, learnMoreUrl);
   }
 
 
@@ -255,6 +288,7 @@ public class InitiateInstallmentsPlanResponse   {
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
+    sb.append("    gatewayTransactionResults: ").append(toIndentedString(gatewayTransactionResults)).append("\n");
     sb.append("    checkoutUrl: ").append(toIndentedString(checkoutUrl)).append("\n");
     sb.append("    approvalUrl: ").append(toIndentedString(approvalUrl)).append("\n");
     sb.append("    termsAndConditionsUrl: ").append(toIndentedString(termsAndConditionsUrl)).append("\n");

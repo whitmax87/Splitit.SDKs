@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InstallmentPlan, ResponseHeader } from './';
+import { InstallmentPlan, ResponseHeader, TransactionResult } from './';
 /**
  *
  * @export
@@ -28,6 +28,12 @@ export interface InstallmentPlanResponse {
      * @memberof InstallmentPlanResponse
      */
     installmentPlan?: InstallmentPlan;
+    /**
+     *
+     * @type {Array<TransactionResult>}
+     * @memberof InstallmentPlanResponse
+     */
+    gatewayTransactionResults?: Array<TransactionResult>;
 }
 export declare function InstallmentPlanResponseFromJSON(json: any): InstallmentPlanResponse;
 export declare function InstallmentPlanResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): InstallmentPlanResponse;

@@ -13,10 +13,12 @@
 import { RequestFile } from '../api';
 import { InstallmentPlan } from './installmentPlan';
 import { ResponseHeader } from './responseHeader';
+import { TransactionResult } from './transactionResult';
 
 export class InstallmentPlanResponse {
     'responseHeader'?: ResponseHeader;
     'installmentPlan'?: InstallmentPlan;
+    'gatewayTransactionResults'?: Array<TransactionResult>;
 
     static discriminator: string | undefined = undefined;
 
@@ -30,6 +32,11 @@ export class InstallmentPlanResponse {
             "name": "installmentPlan",
             "baseName": "InstallmentPlan",
             "type": "InstallmentPlan"
+        },
+        {
+            "name": "gatewayTransactionResults",
+            "baseName": "GatewayTransactionResults",
+            "type": "Array<TransactionResult>"
         }    ];
 
     static getAttributeTypeMap() {

@@ -23,20 +23,26 @@ import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.InstallmentPlan;
 import com.splitit.sdk.model.InstallmentPlanResponse;
 import com.splitit.sdk.model.ResponseHeader;
+import com.splitit.sdk.model.TransactionResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * UpdateInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class UpdateInstallmentsPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
   @SerializedName("InstallmentPlan")
   private InstallmentPlan installmentPlan = null;
+
+  @SerializedName("GatewayTransactionResults")
+  private List<TransactionResult> gatewayTransactionResults = null;
 
   @SerializedName("ApprovalUrl")
   private String approvalUrl = null;
@@ -77,6 +83,32 @@ public class UpdateInstallmentsPlanResponse   {
     this.installmentPlan = installmentPlan;
   }
 
+  public UpdateInstallmentsPlanResponse gatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+    return this;
+  }
+
+  public UpdateInstallmentsPlanResponse addGatewayTransactionResultsItem(TransactionResult gatewayTransactionResultsItem) {
+    if (this.gatewayTransactionResults == null) {
+      this.gatewayTransactionResults = new ArrayList<TransactionResult>();
+    }
+    this.gatewayTransactionResults.add(gatewayTransactionResultsItem);
+    return this;
+  }
+
+   /**
+   * Get gatewayTransactionResults
+   * @return gatewayTransactionResults
+  **/
+  @ApiModelProperty(value = "")
+  public List<TransactionResult> getGatewayTransactionResults() {
+    return gatewayTransactionResults;
+  }
+
+  public void setGatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+  }
+
   public UpdateInstallmentsPlanResponse approvalUrl(String approvalUrl) {
     this.approvalUrl = approvalUrl;
     return this;
@@ -107,12 +139,13 @@ public class UpdateInstallmentsPlanResponse   {
     UpdateInstallmentsPlanResponse updateInstallmentsPlanResponse = (UpdateInstallmentsPlanResponse) o;
     return Objects.equals(this.responseHeader, updateInstallmentsPlanResponse.responseHeader) &&
         Objects.equals(this.installmentPlan, updateInstallmentsPlanResponse.installmentPlan) &&
+        Objects.equals(this.gatewayTransactionResults, updateInstallmentsPlanResponse.gatewayTransactionResults) &&
         Objects.equals(this.approvalUrl, updateInstallmentsPlanResponse.approvalUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan, approvalUrl);
+    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults, approvalUrl);
   }
 
 
@@ -123,6 +156,7 @@ public class UpdateInstallmentsPlanResponse   {
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
+    sb.append("    gatewayTransactionResults: ").append(toIndentedString(gatewayTransactionResults)).append("\n");
     sb.append("    approvalUrl: ").append(toIndentedString(approvalUrl)).append("\n");
     sb.append("}");
     return sb.toString();

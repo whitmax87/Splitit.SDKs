@@ -24,20 +24,26 @@ import com.splitit.sdk.model.InstallmentPlan;
 import com.splitit.sdk.model.InstallmentPlanResponse;
 import com.splitit.sdk.model.Money;
 import com.splitit.sdk.model.ResponseHeader;
+import com.splitit.sdk.model.TransactionResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * RefundInstallmentPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class RefundInstallmentPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
   @SerializedName("InstallmentPlan")
   private InstallmentPlan installmentPlan = null;
+
+  @SerializedName("GatewayTransactionResults")
+  private List<TransactionResult> gatewayTransactionResults = null;
 
   @SerializedName("CurrentRefundAmount")
   private Money currentRefundAmount = null;
@@ -78,6 +84,32 @@ public class RefundInstallmentPlanResponse   {
     this.installmentPlan = installmentPlan;
   }
 
+  public RefundInstallmentPlanResponse gatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+    return this;
+  }
+
+  public RefundInstallmentPlanResponse addGatewayTransactionResultsItem(TransactionResult gatewayTransactionResultsItem) {
+    if (this.gatewayTransactionResults == null) {
+      this.gatewayTransactionResults = new ArrayList<TransactionResult>();
+    }
+    this.gatewayTransactionResults.add(gatewayTransactionResultsItem);
+    return this;
+  }
+
+   /**
+   * Get gatewayTransactionResults
+   * @return gatewayTransactionResults
+  **/
+  @ApiModelProperty(value = "")
+  public List<TransactionResult> getGatewayTransactionResults() {
+    return gatewayTransactionResults;
+  }
+
+  public void setGatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+  }
+
   public RefundInstallmentPlanResponse currentRefundAmount(Money currentRefundAmount) {
     this.currentRefundAmount = currentRefundAmount;
     return this;
@@ -108,12 +140,13 @@ public class RefundInstallmentPlanResponse   {
     RefundInstallmentPlanResponse refundInstallmentPlanResponse = (RefundInstallmentPlanResponse) o;
     return Objects.equals(this.responseHeader, refundInstallmentPlanResponse.responseHeader) &&
         Objects.equals(this.installmentPlan, refundInstallmentPlanResponse.installmentPlan) &&
+        Objects.equals(this.gatewayTransactionResults, refundInstallmentPlanResponse.gatewayTransactionResults) &&
         Objects.equals(this.currentRefundAmount, refundInstallmentPlanResponse.currentRefundAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan, currentRefundAmount);
+    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults, currentRefundAmount);
   }
 
 
@@ -124,6 +157,7 @@ public class RefundInstallmentPlanResponse   {
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
+    sb.append("    gatewayTransactionResults: ").append(toIndentedString(gatewayTransactionResults)).append("\n");
     sb.append("    currentRefundAmount: ").append(toIndentedString(currentRefundAmount)).append("\n");
     sb.append("}");
     return sb.toString();

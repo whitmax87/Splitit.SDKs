@@ -16,6 +16,7 @@ export class ChargebackRequest {
     'transactionIdsToMark'?: Array<number>;
     'transactionIdsToUnmark'?: Array<number>;
     'installmentPlanNumber'?: string;
+    'partialResponseMapping': boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -34,6 +35,11 @@ export class ChargebackRequest {
             "name": "installmentPlanNumber",
             "baseName": "InstallmentPlanNumber",
             "type": "string"
+        },
+        {
+            "name": "partialResponseMapping",
+            "baseName": "PartialResponseMapping",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

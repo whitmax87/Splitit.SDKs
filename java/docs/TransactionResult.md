@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **gatewayResult** | **Boolean** |  | 
 **gatewayTransactionDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **isChargeback** | **Boolean** |  | 
+**avSResult** | [**CardResult**](CardResult.md) |  |  [optional]
+**cvCResult** | [**CardResult**](CardResult.md) |  |  [optional]
 
 
 

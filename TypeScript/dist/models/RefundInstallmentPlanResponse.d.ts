@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InstallmentPlan, Money, ResponseHeader } from './';
+import { InstallmentPlan, Money, ResponseHeader, TransactionResult } from './';
 /**
  *
  * @export
@@ -28,6 +28,12 @@ export interface RefundInstallmentPlanResponse {
      * @memberof RefundInstallmentPlanResponse
      */
     installmentPlan?: InstallmentPlan;
+    /**
+     *
+     * @type {Array<TransactionResult>}
+     * @memberof RefundInstallmentPlanResponse
+     */
+    gatewayTransactionResults?: Array<TransactionResult>;
     /**
      *
      * @type {Money}

@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from '../api';
+import { CardResult } from './cardResult';
 import { ReferenceEntityBase } from './referenceEntityBase';
 
 export class TransactionResult {
@@ -22,6 +23,8 @@ export class TransactionResult {
     'gatewayResult': boolean;
     'gatewayTransactionDate': Date;
     'isChargeback': boolean;
+    'aVSResult'?: CardResult;
+    'cVCResult'?: CardResult;
 
     static discriminator: string | undefined = undefined;
 
@@ -65,6 +68,16 @@ export class TransactionResult {
             "name": "isChargeback",
             "baseName": "IsChargeback",
             "type": "boolean"
+        },
+        {
+            "name": "aVSResult",
+            "baseName": "AVSResult",
+            "type": "CardResult"
+        },
+        {
+            "name": "cVCResult",
+            "baseName": "CVCResult",
+            "type": "CardResult"
         }    ];
 
     static getAttributeTypeMap() {

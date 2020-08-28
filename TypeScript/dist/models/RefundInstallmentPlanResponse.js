@@ -26,6 +26,7 @@ function RefundInstallmentPlanResponseFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'responseHeader': !runtime_1.exists(json, 'ResponseHeader') ? undefined : _1.ResponseHeaderFromJSON(json['ResponseHeader']),
         'installmentPlan': !runtime_1.exists(json, 'InstallmentPlan') ? undefined : _1.InstallmentPlanFromJSON(json['InstallmentPlan']),
+        'gatewayTransactionResults': !runtime_1.exists(json, 'GatewayTransactionResults') ? undefined : (json['GatewayTransactionResults'].map(_1.TransactionResultFromJSON)),
         'currentRefundAmount': !runtime_1.exists(json, 'CurrentRefundAmount') ? undefined : _1.MoneyFromJSON(json['CurrentRefundAmount']),
     };
 }
@@ -40,6 +41,7 @@ function RefundInstallmentPlanResponseToJSON(value) {
     return {
         'ResponseHeader': _1.ResponseHeaderToJSON(value.responseHeader),
         'InstallmentPlan': _1.InstallmentPlanToJSON(value.installmentPlan),
+        'GatewayTransactionResults': value.gatewayTransactionResults === undefined ? undefined : (value.gatewayTransactionResults.map(_1.TransactionResultToJSON)),
         'CurrentRefundAmount': _1.MoneyToJSON(value.currentRefundAmount),
     };
 }

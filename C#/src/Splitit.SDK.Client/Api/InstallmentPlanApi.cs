@@ -141,6 +141,17 @@ namespace Splitit.SDK.Client.Api
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
+        /// <returns>GetInstallmentsScheduleResponse</returns>
+        GetInstallmentsScheduleResponse InstallmentPlanGetSchedules (GetInstallmentSchedulesRequest request);
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
         /// <returns>InitiateInstallmentsPlanResponse</returns>
         InitiateInstallmentsPlanResponse InstallmentPlanInitiate (InitiateInstallmentPlanRequest request);
        
@@ -411,6 +422,27 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (LearnMoreDetailsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<LearnMoreDetailsResponse>> InstallmentPlanGetLearnMoreDetailsAsyncWithHttpInfo (LearnMoreDetailsRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetInstallmentsScheduleResponse</returns>
+        System.Threading.Tasks.Task<GetInstallmentsScheduleResponse> InstallmentPlanGetSchedulesAsync (GetInstallmentSchedulesRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInstallmentsScheduleResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetInstallmentsScheduleResponse>> InstallmentPlanGetSchedulesAsyncWithHttpInfo (GetInstallmentSchedulesRequest request);
         /// <summary>
         /// 
         /// </summary>
@@ -1420,6 +1452,87 @@ namespace Splitit.SDK.Client.Api
 
             // make the HTTP request
             var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<LearnMoreDetailsResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
+                localVarPathParams, localVarHttpContentType);
+
+          
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>GetInstallmentsScheduleResponse</returns>
+        public GetInstallmentsScheduleResponse InstallmentPlanGetSchedules (GetInstallmentSchedulesRequest request)
+        {
+            return InstallmentPlanGetSchedulesAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of GetInstallmentsScheduleResponse</returns>
+        public async System.Threading.Tasks.Task<GetInstallmentsScheduleResponse> InstallmentPlanGetSchedulesAsync (GetInstallmentSchedulesRequest request)
+        {
+             ApiResponse<GetInstallmentsScheduleResponse> localVarResponse = await InstallmentPlanGetSchedulesAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (GetInstallmentsScheduleResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetInstallmentsScheduleResponse>> InstallmentPlanGetSchedulesAsyncWithHttpInfo (GetInstallmentSchedulesRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanGetSchedules");
+
+            var localVarPath = "./api/InstallmentPlan/GetSchedules";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
+            }
+
+            localVarPostBody = request;
+
+
+
+            // make the HTTP request
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetInstallmentsScheduleResponse>(localVarPath,
                 System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 

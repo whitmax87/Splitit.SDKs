@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-08-06T09:53:01.650Z
-- SDK Version: 1.5.10
+  - Build date: 2020-08-28T08:56:41.151Z
+- SDK Version: 1.5.11
 
 ## Requirements
 
@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGetFraudStatusDisplay**](docs/InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 *InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 *InstallmentPlanApi* | [**installmentPlanGetLearnMoreDetails**](docs/InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+*InstallmentPlanApi* | [**installmentPlanGetSchedules**](docs/InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -143,6 +144,7 @@ Class | Method | HTTP request | Description
  - [AuthenticationType](docs/AuthenticationType.md)
  - [CancelInstallmentPlanRequest](docs/CancelInstallmentPlanRequest.md)
  - [CardData](docs/CardData.md)
+ - [CardResult](docs/CardResult.md)
  - [CartData](docs/CartData.md)
  - [ChargebackRequest](docs/ChargebackRequest.md)
  - [CreateInstallmentPlanLegacyResponse](docs/CreateInstallmentPlanLegacyResponse.md)
@@ -159,8 +161,10 @@ Class | Method | HTTP request | Description
  - [GetFraudStatusDisplayResponse](docs/GetFraudStatusDisplayResponse.md)
  - [GetInitiatedInstallmentPlanRequest](docs/GetInitiatedInstallmentPlanRequest.md)
  - [GetInitiatedInstallmentPlanResponse](docs/GetInitiatedInstallmentPlanResponse.md)
+ - [GetInstallmentSchedulesRequest](docs/GetInstallmentSchedulesRequest.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/GetInstallmentsPlanSearchCriteriaRequest.md)
+ - [GetInstallmentsScheduleResponse](docs/GetInstallmentsScheduleResponse.md)
  - [GetResourcesRequest](docs/GetResourcesRequest.md)
  - [GetResourcesRequestContext](docs/GetResourcesRequestContext.md)
  - [GetResourcesResponse](docs/GetResourcesResponse.md)
@@ -204,6 +208,8 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/ResponseError.md)
  - [ResponseHeader](docs/ResponseHeader.md)
  - [ResponseStatus](docs/ResponseStatus.md)
+ - [Schedule](docs/Schedule.md)
+ - [ScheduleElements](docs/ScheduleElements.md)
  - [StartInstallmentsRequest](docs/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/SystemTextCategory.md)
  - [TermsAndConditions](docs/TermsAndConditions.md)

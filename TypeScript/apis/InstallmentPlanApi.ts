@@ -48,6 +48,9 @@ import {
     GetInitiatedInstallmentPlanResponse,
     GetInitiatedInstallmentPlanResponseFromJSON,
     GetInitiatedInstallmentPlanResponseToJSON,
+    GetInstallmentSchedulesRequest,
+    GetInstallmentSchedulesRequestFromJSON,
+    GetInstallmentSchedulesRequestToJSON,
     GetInstallmentsPlanExtendedResponse,
     GetInstallmentsPlanExtendedResponseFromJSON,
     GetInstallmentsPlanExtendedResponseToJSON,
@@ -57,6 +60,9 @@ import {
     GetInstallmentsPlanSearchCriteriaRequest,
     GetInstallmentsPlanSearchCriteriaRequestFromJSON,
     GetInstallmentsPlanSearchCriteriaRequestToJSON,
+    GetInstallmentsScheduleResponse,
+    GetInstallmentsScheduleResponseFromJSON,
+    GetInstallmentsScheduleResponseToJSON,
     InitiateInstallmentPlanRequest,
     InitiateInstallmentPlanRequestFromJSON,
     InitiateInstallmentPlanRequestToJSON,
@@ -139,6 +145,10 @@ export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
 
 export interface InstallmentPlanGetLearnMoreDetailsRequest {
     request: LearnMoreDetailsRequest;
+}
+
+export interface InstallmentPlanGetSchedulesRequest {
+    request: GetInstallmentSchedulesRequest;
 }
 
 export interface InstallmentPlanInitiateRequest {
@@ -477,6 +487,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse> {
         const response = await this.installmentPlanGetLearnMoreDetailsRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanGetSchedulesRaw(requestParameters: InstallmentPlanGetSchedulesRequest): Promise<runtime.ApiResponse<GetInstallmentsScheduleResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetSchedules.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetSchedules`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetInstallmentSchedulesRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetInstallmentsScheduleResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetSchedules(requestParameters: InstallmentPlanGetSchedulesRequest): Promise<GetInstallmentsScheduleResponse> {
+        const response = await this.installmentPlanGetSchedulesRaw(requestParameters);
         return await response.value();
     }
 

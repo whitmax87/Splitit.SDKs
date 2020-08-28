@@ -50,11 +50,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="refundUnderCancelation">refundUnderCancelation (required).</param>
         /// <param name="cancelationReason">cancelationReason (required).</param>
         /// <param name="isExecutedUnattended">isExecutedUnattended (required).</param>
-        public CancelInstallmentPlanRequest(string installmentPlanNumber = default(string), RefundUnderCancelation refundUnderCancelation = default(RefundUnderCancelation), InstallmentPlanCancelationReason cancelationReason = default(InstallmentPlanCancelationReason), bool? isExecutedUnattended = default(bool?))
+        /// <param name="partialResponseMapping">partialResponseMapping (required).</param>
+        public CancelInstallmentPlanRequest(string installmentPlanNumber = default(string), RefundUnderCancelation refundUnderCancelation = default(RefundUnderCancelation), InstallmentPlanCancelationReason cancelationReason = default(InstallmentPlanCancelationReason), bool? isExecutedUnattended = default(bool?), bool? partialResponseMapping = default(bool?))
         {
             this.RefundUnderCancelation = refundUnderCancelation;
             this.CancelationReason = cancelationReason;
             this.IsExecutedUnattended = isExecutedUnattended;
+            this.PartialResponseMapping = partialResponseMapping;
             this.InstallmentPlanNumber = installmentPlanNumber;
         }
 
@@ -76,6 +78,12 @@ namespace Splitit.SDK.Client.Model
         public bool? IsExecutedUnattended { get; set; }
 
         /// <summary>
+        /// Gets or Sets PartialResponseMapping
+        /// </summary>
+        [DataMember(Name="PartialResponseMapping", EmitDefaultValue=false)]
+        public bool? PartialResponseMapping { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -87,6 +95,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  RefundUnderCancelation: ").Append(RefundUnderCancelation).Append("\n");
             sb.Append("  CancelationReason: ").Append(CancelationReason).Append("\n");
             sb.Append("  IsExecutedUnattended: ").Append(IsExecutedUnattended).Append("\n");
+            sb.Append("  PartialResponseMapping: ").Append(PartialResponseMapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +149,11 @@ namespace Splitit.SDK.Client.Model
                     this.IsExecutedUnattended == input.IsExecutedUnattended ||
                     (this.IsExecutedUnattended != null &&
                     this.IsExecutedUnattended.Equals(input.IsExecutedUnattended))
+                ) && 
+                (
+                    this.PartialResponseMapping == input.PartialResponseMapping ||
+                    (this.PartialResponseMapping != null &&
+                    this.PartialResponseMapping.Equals(input.PartialResponseMapping))
                 );
         }
 
@@ -160,6 +174,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.CancelationReason.GetHashCode();
                 if (this.IsExecutedUnattended != null)
                     hashCode = hashCode * 59 + this.IsExecutedUnattended.GetHashCode();
+                if (this.PartialResponseMapping != null)
+                    hashCode = hashCode * 59 + this.PartialResponseMapping.GetHashCode();
                 return hashCode;
             }
         }

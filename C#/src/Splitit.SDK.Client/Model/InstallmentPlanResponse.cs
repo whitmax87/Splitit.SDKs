@@ -33,10 +33,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="responseHeader">responseHeader.</param>
         /// <param name="installmentPlan">installmentPlan.</param>
-        public InstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan))
+        /// <param name="gatewayTransactionResults">gatewayTransactionResults.</param>
+        public InstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), List<TransactionResult> gatewayTransactionResults = default(List<TransactionResult>))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
+            this.GatewayTransactionResults = gatewayTransactionResults;
         }
 
         
@@ -53,6 +55,12 @@ namespace Splitit.SDK.Client.Model
         public InstallmentPlan InstallmentPlan { get; set; }
 
         /// <summary>
+        /// Gets or Sets GatewayTransactionResults
+        /// </summary>
+        [DataMember(Name="GatewayTransactionResults", EmitDefaultValue=false)]
+        public List<TransactionResult> GatewayTransactionResults { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +70,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("class InstallmentPlanResponse {\n");
             sb.Append("  ResponseHeader: ").Append(ResponseHeader).Append("\n");
             sb.Append("  InstallmentPlan: ").Append(InstallmentPlan).Append("\n");
+            sb.Append("  GatewayTransactionResults: ").Append(GatewayTransactionResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +114,11 @@ namespace Splitit.SDK.Client.Model
                     this.InstallmentPlan == input.InstallmentPlan ||
                     (this.InstallmentPlan != null &&
                     this.InstallmentPlan.Equals(input.InstallmentPlan))
+                ) && 
+                (
+                    this.GatewayTransactionResults == input.GatewayTransactionResults ||
+                    this.GatewayTransactionResults != null &&
+                    this.GatewayTransactionResults.SequenceEqual(input.GatewayTransactionResults)
                 );
         }
 
@@ -121,6 +135,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ResponseHeader.GetHashCode();
                 if (this.InstallmentPlan != null)
                     hashCode = hashCode * 59 + this.InstallmentPlan.GetHashCode();
+                if (this.GatewayTransactionResults != null)
+                    hashCode = hashCode * 59 + this.GatewayTransactionResults.GetHashCode();
                 return hashCode;
             }
         }

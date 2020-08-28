@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResponseHeader** | [**ResponseHeader**](ResponseHeader.md) |  | [optional] 
 **InstallmentPlan** | [**InstallmentPlan**](InstallmentPlan.md) |  | [optional] 
+**GatewayTransactionResults** | [**List&lt;TransactionResult&gt;**](TransactionResult.md) |  | [optional] 
 **CheckoutUrl** | **string** |  | [optional] 
 **ApprovalUrl** | **string** |  | [optional] 
 **TermsAndConditionsUrl** | **string** |  | [optional] 

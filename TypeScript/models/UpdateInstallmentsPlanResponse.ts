@@ -30,6 +30,10 @@ import {
     ResponseHeaderFromJSON,
     ResponseHeaderFromJSONTyped,
     ResponseHeaderToJSON,
+    TransactionResult,
+    TransactionResultFromJSON,
+    TransactionResultFromJSONTyped,
+    TransactionResultToJSON,
 } from './';
 
 /**
@@ -52,6 +56,12 @@ export interface UpdateInstallmentsPlanResponse {
     installmentPlan?: InstallmentPlan;
     /**
      * 
+     * @type {Array<TransactionResult>}
+     * @memberof UpdateInstallmentsPlanResponse
+     */
+    gatewayTransactionResults?: Array<TransactionResult>;
+    /**
+     * 
      * @type {string}
      * @memberof UpdateInstallmentsPlanResponse
      */
@@ -70,6 +80,7 @@ export function UpdateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreDis
         
         'responseHeader': !exists(json, 'ResponseHeader') ? undefined : ResponseHeaderFromJSON(json['ResponseHeader']),
         'installmentPlan': !exists(json, 'InstallmentPlan') ? undefined : InstallmentPlanFromJSON(json['InstallmentPlan']),
+        'gatewayTransactionResults': !exists(json, 'GatewayTransactionResults') ? undefined : ((json['GatewayTransactionResults'] as Array<any>).map(TransactionResultFromJSON)),
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
     };
 }
@@ -85,6 +96,7 @@ export function UpdateInstallmentsPlanResponseToJSON(value?: UpdateInstallmentsP
         
         'ResponseHeader': ResponseHeaderToJSON(value.responseHeader),
         'InstallmentPlan': InstallmentPlanToJSON(value.installmentPlan),
+        'GatewayTransactionResults': value.gatewayTransactionResults === undefined ? undefined : ((value.gatewayTransactionResults as Array<any>).map(TransactionResultToJSON)),
         'ApprovalUrl': value.approvalUrl,
     };
 }

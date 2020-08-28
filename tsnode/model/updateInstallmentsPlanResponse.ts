@@ -15,10 +15,12 @@ import { CreateInstallmentsPlanResponseAllOf } from './createInstallmentsPlanRes
 import { InstallmentPlan } from './installmentPlan';
 import { InstallmentPlanResponse } from './installmentPlanResponse';
 import { ResponseHeader } from './responseHeader';
+import { TransactionResult } from './transactionResult';
 
 export class UpdateInstallmentsPlanResponse {
     'responseHeader'?: ResponseHeader;
     'installmentPlan'?: InstallmentPlan;
+    'gatewayTransactionResults'?: Array<TransactionResult>;
     'approvalUrl'?: string;
 
     static discriminator: string | undefined = undefined;
@@ -33,6 +35,11 @@ export class UpdateInstallmentsPlanResponse {
             "name": "installmentPlan",
             "baseName": "InstallmentPlan",
             "type": "InstallmentPlan"
+        },
+        {
+            "name": "gatewayTransactionResults",
+            "baseName": "GatewayTransactionResults",
+            "type": "Array<TransactionResult>"
         },
         {
             "name": "approvalUrl",

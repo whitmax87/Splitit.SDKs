@@ -33,6 +33,12 @@ export interface ChargebackRequest {
      * @memberof ChargebackRequest
      */
     installmentPlanNumber?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof ChargebackRequest
+     */
+    partialResponseMapping: boolean;
 }
 export declare function ChargebackRequestFromJSON(json: any): ChargebackRequest;
 export declare function ChargebackRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): ChargebackRequest;

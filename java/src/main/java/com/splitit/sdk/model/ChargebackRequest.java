@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ChargebackRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class ChargebackRequest   extends RequestWithHeader  {
   @SerializedName("TransactionIdsToMark")
   private List<Long> transactionIdsToMark = null;
@@ -39,6 +39,9 @@ public class ChargebackRequest   extends RequestWithHeader  {
 
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
+
+  @SerializedName("PartialResponseMapping")
+  private Boolean partialResponseMapping = null;
 
   public ChargebackRequest transactionIdsToMark(List<Long> transactionIdsToMark) {
     this.transactionIdsToMark = transactionIdsToMark;
@@ -110,6 +113,24 @@ public class ChargebackRequest   extends RequestWithHeader  {
     this.installmentPlanNumber = installmentPlanNumber;
   }
 
+  public ChargebackRequest partialResponseMapping(Boolean partialResponseMapping) {
+    this.partialResponseMapping = partialResponseMapping;
+    return this;
+  }
+
+   /**
+   * Get partialResponseMapping
+   * @return partialResponseMapping
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isPartialResponseMapping() {
+    return partialResponseMapping;
+  }
+
+  public void setPartialResponseMapping(Boolean partialResponseMapping) {
+    this.partialResponseMapping = partialResponseMapping;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,12 +143,13 @@ public class ChargebackRequest   extends RequestWithHeader  {
     ChargebackRequest chargebackRequest = (ChargebackRequest) o;
     return Objects.equals(this.transactionIdsToMark, chargebackRequest.transactionIdsToMark) &&
         Objects.equals(this.transactionIdsToUnmark, chargebackRequest.transactionIdsToUnmark) &&
-        Objects.equals(this.installmentPlanNumber, chargebackRequest.installmentPlanNumber);
+        Objects.equals(this.installmentPlanNumber, chargebackRequest.installmentPlanNumber) &&
+        Objects.equals(this.partialResponseMapping, chargebackRequest.partialResponseMapping);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionIdsToMark, transactionIdsToUnmark, installmentPlanNumber);
+    return Objects.hash(transactionIdsToMark, transactionIdsToUnmark, installmentPlanNumber, partialResponseMapping);
   }
 
 
@@ -139,6 +161,7 @@ public class ChargebackRequest   extends RequestWithHeader  {
     sb.append("    transactionIdsToMark: ").append(toIndentedString(transactionIdsToMark)).append("\n");
     sb.append("    transactionIdsToUnmark: ").append(toIndentedString(transactionIdsToUnmark)).append("\n");
     sb.append("    installmentPlanNumber: ").append(toIndentedString(installmentPlanNumber)).append("\n");
+    sb.append("    partialResponseMapping: ").append(toIndentedString(partialResponseMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }

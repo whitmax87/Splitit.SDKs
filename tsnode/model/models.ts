@@ -9,6 +9,7 @@ export * from './approveInstallmentPlanRequest';
 export * from './authenticationType';
 export * from './cancelInstallmentPlanRequest';
 export * from './cardData';
+export * from './cardResult';
 export * from './cartData';
 export * from './chargebackRequest';
 export * from './consumerData';
@@ -29,9 +30,11 @@ export * from './getFraudStatusDisplayRequest';
 export * from './getFraudStatusDisplayResponse';
 export * from './getInitiatedInstallmentPlanRequest';
 export * from './getInitiatedInstallmentPlanResponse';
+export * from './getInstallmentSchedulesRequest';
 export * from './getInstallmentsPlanExtendedResponse';
 export * from './getInstallmentsPlanResponse';
 export * from './getInstallmentsPlanSearchCriteriaRequest';
+export * from './getInstallmentsScheduleResponse';
 export * from './getResourcesRequest';
 export * from './getResourcesRequestContext';
 export * from './getResourcesResponse';
@@ -86,6 +89,8 @@ export * from './requestHeader';
 export * from './responseError';
 export * from './responseHeader';
 export * from './responseStatus';
+export * from './schedule';
+export * from './scheduleElements';
 export * from './startInstallmentsRequest';
 export * from './systemTextCategory';
 export * from './termsAndConditions';
@@ -114,6 +119,7 @@ import { ApproveInstallmentPlanRequest } from './approveInstallmentPlanRequest';
 import { AuthenticationType } from './authenticationType';
 import { CancelInstallmentPlanRequest } from './cancelInstallmentPlanRequest';
 import { CardData } from './cardData';
+import { CardResult } from './cardResult';
 import { CartData } from './cartData';
 import { ChargebackRequest } from './chargebackRequest';
 import { ConsumerData } from './consumerData';
@@ -134,9 +140,11 @@ import { GetFraudStatusDisplayRequest } from './getFraudStatusDisplayRequest';
 import { GetFraudStatusDisplayResponse } from './getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from './getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from './getInitiatedInstallmentPlanResponse';
+import { GetInstallmentSchedulesRequest } from './getInstallmentSchedulesRequest';
 import { GetInstallmentsPlanExtendedResponse } from './getInstallmentsPlanExtendedResponse';
 import { GetInstallmentsPlanResponse } from './getInstallmentsPlanResponse';
 import { GetInstallmentsPlanSearchCriteriaRequest } from './getInstallmentsPlanSearchCriteriaRequest';
+import { GetInstallmentsScheduleResponse } from './getInstallmentsScheduleResponse';
 import { GetResourcesRequest } from './getResourcesRequest';
 import { GetResourcesRequestContext } from './getResourcesRequestContext';
 import { GetResourcesResponse } from './getResourcesResponse';
@@ -191,6 +199,8 @@ import { RequestHeader } from './requestHeader';
 import { ResponseError } from './responseError';
 import { ResponseHeader } from './responseHeader';
 import { ResponseStatus } from './responseStatus';
+import { Schedule } from './schedule';
+import { ScheduleElements } from './scheduleElements';
 import { StartInstallmentsRequest } from './startInstallmentsRequest';
 import { SystemTextCategory } from './systemTextCategory';
 import { TermsAndConditions } from './termsAndConditions';
@@ -248,6 +258,7 @@ let typeMap: {[index: string]: any} = {
     "ApproveInstallmentPlanRequest": ApproveInstallmentPlanRequest,
     "CancelInstallmentPlanRequest": CancelInstallmentPlanRequest,
     "CardData": CardData,
+    "CardResult": CardResult,
     "CartData": CartData,
     "ChargebackRequest": ChargebackRequest,
     "ConsumerData": ConsumerData,
@@ -266,9 +277,11 @@ let typeMap: {[index: string]: any} = {
     "GetFraudStatusDisplayResponse": GetFraudStatusDisplayResponse,
     "GetInitiatedInstallmentPlanRequest": GetInitiatedInstallmentPlanRequest,
     "GetInitiatedInstallmentPlanResponse": GetInitiatedInstallmentPlanResponse,
+    "GetInstallmentSchedulesRequest": GetInstallmentSchedulesRequest,
     "GetInstallmentsPlanExtendedResponse": GetInstallmentsPlanExtendedResponse,
     "GetInstallmentsPlanResponse": GetInstallmentsPlanResponse,
     "GetInstallmentsPlanSearchCriteriaRequest": GetInstallmentsPlanSearchCriteriaRequest,
+    "GetInstallmentsScheduleResponse": GetInstallmentsScheduleResponse,
     "GetResourcesRequest": GetResourcesRequest,
     "GetResourcesRequestContext": GetResourcesRequestContext,
     "GetResourcesResponse": GetResourcesResponse,
@@ -314,6 +327,8 @@ let typeMap: {[index: string]: any} = {
     "ResponseError": ResponseError,
     "ResponseHeader": ResponseHeader,
     "ResponseStatus": ResponseStatus,
+    "Schedule": Schedule,
+    "ScheduleElements": ScheduleElements,
     "StartInstallmentsRequest": StartInstallmentsRequest,
     "TermsAndConditions": TermsAndConditions,
     "TermsAndConditionsGetRequest": TermsAndConditionsGetRequest,

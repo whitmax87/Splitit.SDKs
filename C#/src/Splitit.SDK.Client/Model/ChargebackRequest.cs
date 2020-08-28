@@ -31,11 +31,18 @@ namespace Splitit.SDK.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChargebackRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected ChargebackRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargebackRequest" /> class.
+        /// </summary>
         /// <param name="transactionIdsToMark">transactionIdsToMark.</param>
         /// <param name="transactionIdsToUnmark">transactionIdsToUnmark.</param>
         /// <param name="installmentPlanNumber">installmentPlanNumber.</param>
-        public ChargebackRequest(List<long?> transactionIdsToMark = default(List<long?>), List<long?> transactionIdsToUnmark = default(List<long?>), string installmentPlanNumber = default(string))
+        /// <param name="partialResponseMapping">partialResponseMapping (required).</param>
+        public ChargebackRequest(List<long?> transactionIdsToMark = default(List<long?>), List<long?> transactionIdsToUnmark = default(List<long?>), string installmentPlanNumber = default(string), bool? partialResponseMapping = default(bool?))
         {
+            this.PartialResponseMapping = partialResponseMapping;
             this.TransactionIdsToMark = transactionIdsToMark;
             this.TransactionIdsToUnmark = transactionIdsToUnmark;
             this.InstallmentPlanNumber = installmentPlanNumber;
@@ -63,6 +70,12 @@ namespace Splitit.SDK.Client.Model
         public string InstallmentPlanNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets PartialResponseMapping
+        /// </summary>
+        [DataMember(Name="PartialResponseMapping", EmitDefaultValue=false)]
+        public bool? PartialResponseMapping { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -73,6 +86,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  TransactionIdsToMark: ").Append(TransactionIdsToMark).Append("\n");
             sb.Append("  TransactionIdsToUnmark: ").Append(TransactionIdsToUnmark).Append("\n");
             sb.Append("  InstallmentPlanNumber: ").Append(InstallmentPlanNumber).Append("\n");
+            sb.Append("  PartialResponseMapping: ").Append(PartialResponseMapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +135,11 @@ namespace Splitit.SDK.Client.Model
                     this.InstallmentPlanNumber == input.InstallmentPlanNumber ||
                     (this.InstallmentPlanNumber != null &&
                     this.InstallmentPlanNumber.Equals(input.InstallmentPlanNumber))
+                ) && 
+                (
+                    this.PartialResponseMapping == input.PartialResponseMapping ||
+                    (this.PartialResponseMapping != null &&
+                    this.PartialResponseMapping.Equals(input.PartialResponseMapping))
                 );
         }
 
@@ -139,6 +158,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.TransactionIdsToUnmark.GetHashCode();
                 if (this.InstallmentPlanNumber != null)
                     hashCode = hashCode * 59 + this.InstallmentPlanNumber.GetHashCode();
+                if (this.PartialResponseMapping != null)
+                    hashCode = hashCode * 59 + this.PartialResponseMapping.GetHashCode();
                 return hashCode;
             }
         }

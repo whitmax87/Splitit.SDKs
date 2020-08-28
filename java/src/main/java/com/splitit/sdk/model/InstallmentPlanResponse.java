@@ -22,20 +22,26 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.splitit.sdk.model.InstallmentPlan;
 import com.splitit.sdk.model.ResponseHeader;
+import com.splitit.sdk.model.TransactionResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * InstallmentPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class InstallmentPlanResponse   {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
   @SerializedName("InstallmentPlan")
   private InstallmentPlan installmentPlan = null;
+
+  @SerializedName("GatewayTransactionResults")
+  private List<TransactionResult> gatewayTransactionResults = null;
 
   public InstallmentPlanResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -73,6 +79,32 @@ public class InstallmentPlanResponse   {
     this.installmentPlan = installmentPlan;
   }
 
+  public InstallmentPlanResponse gatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+    return this;
+  }
+
+  public InstallmentPlanResponse addGatewayTransactionResultsItem(TransactionResult gatewayTransactionResultsItem) {
+    if (this.gatewayTransactionResults == null) {
+      this.gatewayTransactionResults = new ArrayList<TransactionResult>();
+    }
+    this.gatewayTransactionResults.add(gatewayTransactionResultsItem);
+    return this;
+  }
+
+   /**
+   * Get gatewayTransactionResults
+   * @return gatewayTransactionResults
+  **/
+  @ApiModelProperty(value = "")
+  public List<TransactionResult> getGatewayTransactionResults() {
+    return gatewayTransactionResults;
+  }
+
+  public void setGatewayTransactionResults(List<TransactionResult> gatewayTransactionResults) {
+    this.gatewayTransactionResults = gatewayTransactionResults;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +116,13 @@ public class InstallmentPlanResponse   {
     }
     InstallmentPlanResponse installmentPlanResponse = (InstallmentPlanResponse) o;
     return Objects.equals(this.responseHeader, installmentPlanResponse.responseHeader) &&
-        Objects.equals(this.installmentPlan, installmentPlanResponse.installmentPlan);
+        Objects.equals(this.installmentPlan, installmentPlanResponse.installmentPlan) &&
+        Objects.equals(this.gatewayTransactionResults, installmentPlanResponse.gatewayTransactionResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan);
+    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults);
   }
 
 
@@ -100,6 +133,7 @@ public class InstallmentPlanResponse   {
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
+    sb.append("    gatewayTransactionResults: ").append(toIndentedString(gatewayTransactionResults)).append("\n");
     sb.append("}");
     return sb.toString();
   }

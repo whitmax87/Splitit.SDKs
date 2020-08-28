@@ -26,6 +26,7 @@ function ChargebackRequestFromJSONTyped(json, ignoreDiscriminator) {
         'transactionIdsToMark': !runtime_1.exists(json, 'TransactionIdsToMark') ? undefined : json['TransactionIdsToMark'],
         'transactionIdsToUnmark': !runtime_1.exists(json, 'TransactionIdsToUnmark') ? undefined : json['TransactionIdsToUnmark'],
         'installmentPlanNumber': !runtime_1.exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
+        'partialResponseMapping': json['PartialResponseMapping'],
     };
 }
 exports.ChargebackRequestFromJSONTyped = ChargebackRequestFromJSONTyped;
@@ -40,6 +41,7 @@ function ChargebackRequestToJSON(value) {
         'TransactionIdsToMark': value.transactionIdsToMark,
         'TransactionIdsToUnmark': value.transactionIdsToUnmark,
         'InstallmentPlanNumber': value.installmentPlanNumber,
+        'PartialResponseMapping': value.partialResponseMapping,
     };
 }
 exports.ChargebackRequestToJSON = ChargebackRequestToJSON;

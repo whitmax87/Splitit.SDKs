@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.splitit.sdk.model.CardResult;
 import com.splitit.sdk.model.ReferenceEntityBase;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TransactionResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class TransactionResult   {
   @SerializedName("GatewayTransactionId")
   private String gatewayTransactionId = null;
@@ -54,6 +55,12 @@ public class TransactionResult   {
 
   @SerializedName("IsChargeback")
   private Boolean isChargeback = null;
+
+  @SerializedName("AVSResult")
+  private CardResult avSResult = null;
+
+  @SerializedName("CVCResult")
+  private CardResult cvCResult = null;
 
   public TransactionResult gatewayTransactionId(String gatewayTransactionId) {
     this.gatewayTransactionId = gatewayTransactionId;
@@ -199,6 +206,42 @@ public class TransactionResult   {
     this.isChargeback = isChargeback;
   }
 
+  public TransactionResult avSResult(CardResult avSResult) {
+    this.avSResult = avSResult;
+    return this;
+  }
+
+   /**
+   * Get avSResult
+   * @return avSResult
+  **/
+  @ApiModelProperty(value = "")
+  public CardResult getAvSResult() {
+    return avSResult;
+  }
+
+  public void setAvSResult(CardResult avSResult) {
+    this.avSResult = avSResult;
+  }
+
+  public TransactionResult cvCResult(CardResult cvCResult) {
+    this.cvCResult = cvCResult;
+    return this;
+  }
+
+   /**
+   * Get cvCResult
+   * @return cvCResult
+  **/
+  @ApiModelProperty(value = "")
+  public CardResult getCvCResult() {
+    return cvCResult;
+  }
+
+  public void setCvCResult(CardResult cvCResult) {
+    this.cvCResult = cvCResult;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,12 +259,14 @@ public class TransactionResult   {
         Objects.equals(this.operationType, transactionResult.operationType) &&
         Objects.equals(this.gatewayResult, transactionResult.gatewayResult) &&
         Objects.equals(this.gatewayTransactionDate, transactionResult.gatewayTransactionDate) &&
-        Objects.equals(this.isChargeback, transactionResult.isChargeback);
+        Objects.equals(this.isChargeback, transactionResult.isChargeback) &&
+        Objects.equals(this.avSResult, transactionResult.avSResult) &&
+        Objects.equals(this.cvCResult, transactionResult.cvCResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(gatewayTransactionId, splititTransactionId, gatewayResultCode, gatewayResultMessage, operationType, gatewayResult, gatewayTransactionDate, isChargeback);
+    return Objects.hash(gatewayTransactionId, splititTransactionId, gatewayResultCode, gatewayResultMessage, operationType, gatewayResult, gatewayTransactionDate, isChargeback, avSResult, cvCResult);
   }
 
 
@@ -238,6 +283,8 @@ public class TransactionResult   {
     sb.append("    gatewayResult: ").append(toIndentedString(gatewayResult)).append("\n");
     sb.append("    gatewayTransactionDate: ").append(toIndentedString(gatewayTransactionDate)).append("\n");
     sb.append("    isChargeback: ").append(toIndentedString(isChargeback)).append("\n");
+    sb.append("    avSResult: ").append(toIndentedString(avSResult)).append("\n");
+    sb.append("    cvCResult: ").append(toIndentedString(cvCResult)).append("\n");
     sb.append("}");
     return sb.toString();
   }

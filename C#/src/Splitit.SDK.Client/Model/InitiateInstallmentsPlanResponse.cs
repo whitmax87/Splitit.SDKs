@@ -33,6 +33,7 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="responseHeader">responseHeader.</param>
         /// <param name="installmentPlan">installmentPlan.</param>
+        /// <param name="gatewayTransactionResults">gatewayTransactionResults.</param>
         /// <param name="checkoutUrl">checkoutUrl.</param>
         /// <param name="approvalUrl">approvalUrl.</param>
         /// <param name="termsAndConditionsUrl">termsAndConditionsUrl.</param>
@@ -40,10 +41,11 @@ namespace Splitit.SDK.Client.Model
         /// <param name="installmentPlanInfoUrl">installmentPlanInfoUrl.</param>
         /// <param name="publicToken">publicToken.</param>
         /// <param name="learnMoreUrl">learnMoreUrl.</param>
-        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string privacyPolicyUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string), string learnMoreUrl = default(string))
+        public InitiateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), List<TransactionResult> gatewayTransactionResults = default(List<TransactionResult>), string checkoutUrl = default(string), string approvalUrl = default(string), string termsAndConditionsUrl = default(string), string privacyPolicyUrl = default(string), string installmentPlanInfoUrl = default(string), string publicToken = default(string), string learnMoreUrl = default(string))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
+            this.GatewayTransactionResults = gatewayTransactionResults;
             this.CheckoutUrl = checkoutUrl;
             this.ApprovalUrl = approvalUrl;
             this.TermsAndConditionsUrl = termsAndConditionsUrl;
@@ -65,6 +67,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="InstallmentPlan", EmitDefaultValue=false)]
         public InstallmentPlan InstallmentPlan { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GatewayTransactionResults
+        /// </summary>
+        [DataMember(Name="GatewayTransactionResults", EmitDefaultValue=false)]
+        public List<TransactionResult> GatewayTransactionResults { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckoutUrl
@@ -118,6 +126,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("class InitiateInstallmentsPlanResponse {\n");
             sb.Append("  ResponseHeader: ").Append(ResponseHeader).Append("\n");
             sb.Append("  InstallmentPlan: ").Append(InstallmentPlan).Append("\n");
+            sb.Append("  GatewayTransactionResults: ").Append(GatewayTransactionResults).Append("\n");
             sb.Append("  CheckoutUrl: ").Append(CheckoutUrl).Append("\n");
             sb.Append("  ApprovalUrl: ").Append(ApprovalUrl).Append("\n");
             sb.Append("  TermsAndConditionsUrl: ").Append(TermsAndConditionsUrl).Append("\n");
@@ -170,6 +179,11 @@ namespace Splitit.SDK.Client.Model
                     this.InstallmentPlan.Equals(input.InstallmentPlan))
                 ) && 
                 (
+                    this.GatewayTransactionResults == input.GatewayTransactionResults ||
+                    this.GatewayTransactionResults != null &&
+                    this.GatewayTransactionResults.SequenceEqual(input.GatewayTransactionResults)
+                ) && 
+                (
                     this.CheckoutUrl == input.CheckoutUrl ||
                     (this.CheckoutUrl != null &&
                     this.CheckoutUrl.Equals(input.CheckoutUrl))
@@ -219,6 +233,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ResponseHeader.GetHashCode();
                 if (this.InstallmentPlan != null)
                     hashCode = hashCode * 59 + this.InstallmentPlan.GetHashCode();
+                if (this.GatewayTransactionResults != null)
+                    hashCode = hashCode * 59 + this.GatewayTransactionResults.GetHashCode();
                 if (this.CheckoutUrl != null)
                     hashCode = hashCode * 59 + this.CheckoutUrl.GetHashCode();
                 if (this.ApprovalUrl != null)

@@ -33,11 +33,13 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="responseHeader">responseHeader.</param>
         /// <param name="installmentPlan">installmentPlan.</param>
+        /// <param name="gatewayTransactionResults">gatewayTransactionResults.</param>
         /// <param name="currentRefundAmount">currentRefundAmount.</param>
-        public RefundInstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), Money currentRefundAmount = default(Money))
+        public RefundInstallmentPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), List<TransactionResult> gatewayTransactionResults = default(List<TransactionResult>), Money currentRefundAmount = default(Money))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
+            this.GatewayTransactionResults = gatewayTransactionResults;
             this.CurrentRefundAmount = currentRefundAmount;
         }
 
@@ -55,6 +57,12 @@ namespace Splitit.SDK.Client.Model
         public InstallmentPlan InstallmentPlan { get; set; }
 
         /// <summary>
+        /// Gets or Sets GatewayTransactionResults
+        /// </summary>
+        [DataMember(Name="GatewayTransactionResults", EmitDefaultValue=false)]
+        public List<TransactionResult> GatewayTransactionResults { get; set; }
+
+        /// <summary>
         /// Gets or Sets CurrentRefundAmount
         /// </summary>
         [DataMember(Name="CurrentRefundAmount", EmitDefaultValue=false)]
@@ -70,6 +78,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("class RefundInstallmentPlanResponse {\n");
             sb.Append("  ResponseHeader: ").Append(ResponseHeader).Append("\n");
             sb.Append("  InstallmentPlan: ").Append(InstallmentPlan).Append("\n");
+            sb.Append("  GatewayTransactionResults: ").Append(GatewayTransactionResults).Append("\n");
             sb.Append("  CurrentRefundAmount: ").Append(CurrentRefundAmount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -116,6 +125,11 @@ namespace Splitit.SDK.Client.Model
                     this.InstallmentPlan.Equals(input.InstallmentPlan))
                 ) && 
                 (
+                    this.GatewayTransactionResults == input.GatewayTransactionResults ||
+                    this.GatewayTransactionResults != null &&
+                    this.GatewayTransactionResults.SequenceEqual(input.GatewayTransactionResults)
+                ) && 
+                (
                     this.CurrentRefundAmount == input.CurrentRefundAmount ||
                     (this.CurrentRefundAmount != null &&
                     this.CurrentRefundAmount.Equals(input.CurrentRefundAmount))
@@ -135,6 +149,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ResponseHeader.GetHashCode();
                 if (this.InstallmentPlan != null)
                     hashCode = hashCode * 59 + this.InstallmentPlan.GetHashCode();
+                if (this.GatewayTransactionResults != null)
+                    hashCode = hashCode * 59 + this.GatewayTransactionResults.GetHashCode();
                 if (this.CurrentRefundAmount != null)
                     hashCode = hashCode * 59 + this.CurrentRefundAmount.GetHashCode();
                 return hashCode;

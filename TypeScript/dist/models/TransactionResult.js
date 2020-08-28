@@ -32,6 +32,8 @@ function TransactionResultFromJSONTyped(json, ignoreDiscriminator) {
         'gatewayResult': json['GatewayResult'],
         'gatewayTransactionDate': (new Date(json['GatewayTransactionDate'])),
         'isChargeback': json['IsChargeback'],
+        'aVSResult': !runtime_1.exists(json, 'AVSResult') ? undefined : _1.CardResultFromJSON(json['AVSResult']),
+        'cVCResult': !runtime_1.exists(json, 'CVCResult') ? undefined : _1.CardResultFromJSON(json['CVCResult']),
     };
 }
 exports.TransactionResultFromJSONTyped = TransactionResultFromJSONTyped;
@@ -51,6 +53,8 @@ function TransactionResultToJSON(value) {
         'GatewayResult': value.gatewayResult,
         'GatewayTransactionDate': (value.gatewayTransactionDate.toISOString()),
         'IsChargeback': value.isChargeback,
+        'AVSResult': _1.CardResultToJSON(value.aVSResult),
+        'CVCResult': _1.CardResultToJSON(value.cVCResult),
     };
 }
 exports.TransactionResultToJSON = TransactionResultToJSON;

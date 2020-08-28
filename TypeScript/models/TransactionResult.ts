@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+    CardResult,
+    CardResultFromJSON,
+    CardResultFromJSONTyped,
+    CardResultToJSON,
     ReferenceEntityBase,
     ReferenceEntityBaseFromJSON,
     ReferenceEntityBaseFromJSONTyped,
@@ -74,6 +78,18 @@ export interface TransactionResult {
      * @memberof TransactionResult
      */
     isChargeback: boolean;
+    /**
+     * 
+     * @type {CardResult}
+     * @memberof TransactionResult
+     */
+    aVSResult?: CardResult;
+    /**
+     * 
+     * @type {CardResult}
+     * @memberof TransactionResult
+     */
+    cVCResult?: CardResult;
 }
 
 export function TransactionResultFromJSON(json: any): TransactionResult {
@@ -94,6 +110,8 @@ export function TransactionResultFromJSONTyped(json: any, ignoreDiscriminator: b
         'gatewayResult': json['GatewayResult'],
         'gatewayTransactionDate': (new Date(json['GatewayTransactionDate'])),
         'isChargeback': json['IsChargeback'],
+        'aVSResult': !exists(json, 'AVSResult') ? undefined : CardResultFromJSON(json['AVSResult']),
+        'cVCResult': !exists(json, 'CVCResult') ? undefined : CardResultFromJSON(json['CVCResult']),
     };
 }
 
@@ -114,6 +132,8 @@ export function TransactionResultToJSON(value?: TransactionResult | null): any {
         'GatewayResult': value.gatewayResult,
         'GatewayTransactionDate': (value.gatewayTransactionDate.toISOString()),
         'IsChargeback': value.isChargeback,
+        'AVSResult': CardResultToJSON(value.aVSResult),
+        'CVCResult': CardResultToJSON(value.cVCResult),
     };
 }
 

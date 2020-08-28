@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { ReferenceEntityBase } from './';
+import { CardResult, ReferenceEntityBase } from './';
 /**
  *
  * @export
@@ -64,6 +64,18 @@ export interface TransactionResult {
      * @memberof TransactionResult
      */
     isChargeback: boolean;
+    /**
+     *
+     * @type {CardResult}
+     * @memberof TransactionResult
+     */
+    aVSResult?: CardResult;
+    /**
+     *
+     * @type {CardResult}
+     * @memberof TransactionResult
+     */
+    cVCResult?: CardResult;
 }
 export declare function TransactionResultFromJSON(json: any): TransactionResult;
 export declare function TransactionResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransactionResult;

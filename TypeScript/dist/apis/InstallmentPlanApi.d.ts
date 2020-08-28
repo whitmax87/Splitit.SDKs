@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetFraudStatusDisplayRequest, GetFraudStatusDisplayResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, LearnMoreDetailsRequest, LearnMoreDetailsResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetFraudStatusDisplayRequest, GetFraudStatusDisplayResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInstallmentSchedulesRequest, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, GetInstallmentsScheduleResponse, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, LearnMoreDetailsRequest, LearnMoreDetailsResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
@@ -40,6 +40,9 @@ export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
 }
 export interface InstallmentPlanGetLearnMoreDetailsRequest {
     request: LearnMoreDetailsRequest;
+}
+export interface InstallmentPlanGetSchedulesRequest {
+    request: GetInstallmentSchedulesRequest;
 }
 export interface InstallmentPlanInitiateRequest {
     request: InitiateInstallmentPlanRequest;
@@ -123,6 +126,12 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     /**
      */
     installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse>;
+    /**
+     */
+    installmentPlanGetSchedulesRaw(requestParameters: InstallmentPlanGetSchedulesRequest): Promise<runtime.ApiResponse<GetInstallmentsScheduleResponse>>;
+    /**
+     */
+    installmentPlanGetSchedules(requestParameters: InstallmentPlanGetSchedulesRequest): Promise<GetInstallmentsScheduleResponse>;
     /**
      */
     installmentPlanInitiateRaw(requestParameters: InstallmentPlanInitiateRequest): Promise<runtime.ApiResponse<InitiateInstallmentsPlanResponse>>;

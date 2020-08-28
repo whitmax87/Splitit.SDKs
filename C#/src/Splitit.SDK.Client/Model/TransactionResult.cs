@@ -44,7 +44,9 @@ namespace Splitit.SDK.Client.Model
         /// <param name="gatewayResult">gatewayResult (required).</param>
         /// <param name="gatewayTransactionDate">gatewayTransactionDate (required).</param>
         /// <param name="isChargeback">isChargeback (required).</param>
-        public TransactionResult(string gatewayTransactionId = default(string), long? splititTransactionId = default(long?), string gatewayResultCode = default(string), string gatewayResultMessage = default(string), ReferenceEntityBase operationType = default(ReferenceEntityBase), bool? gatewayResult = default(bool?), DateTime? gatewayTransactionDate = default(DateTime?), bool? isChargeback = default(bool?))
+        /// <param name="aVSResult">aVSResult.</param>
+        /// <param name="cVCResult">cVCResult.</param>
+        public TransactionResult(string gatewayTransactionId = default(string), long? splititTransactionId = default(long?), string gatewayResultCode = default(string), string gatewayResultMessage = default(string), ReferenceEntityBase operationType = default(ReferenceEntityBase), bool? gatewayResult = default(bool?), DateTime? gatewayTransactionDate = default(DateTime?), bool? isChargeback = default(bool?), CardResult aVSResult = default(CardResult), CardResult cVCResult = default(CardResult))
         {
             this.SplititTransactionId = splititTransactionId;
             this.GatewayResult = gatewayResult;
@@ -54,6 +56,8 @@ namespace Splitit.SDK.Client.Model
             this.GatewayResultCode = gatewayResultCode;
             this.GatewayResultMessage = gatewayResultMessage;
             this.OperationType = operationType;
+            this.AVSResult = aVSResult;
+            this.CVCResult = cVCResult;
         }
 
         
@@ -106,6 +110,18 @@ namespace Splitit.SDK.Client.Model
         public bool? IsChargeback { get; set; }
 
         /// <summary>
+        /// Gets or Sets AVSResult
+        /// </summary>
+        [DataMember(Name="AVSResult", EmitDefaultValue=false)]
+        public CardResult AVSResult { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CVCResult
+        /// </summary>
+        [DataMember(Name="CVCResult", EmitDefaultValue=false)]
+        public CardResult CVCResult { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -121,6 +137,8 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  GatewayResult: ").Append(GatewayResult).Append("\n");
             sb.Append("  GatewayTransactionDate: ").Append(GatewayTransactionDate).Append("\n");
             sb.Append("  IsChargeback: ").Append(IsChargeback).Append("\n");
+            sb.Append("  AVSResult: ").Append(AVSResult).Append("\n");
+            sb.Append("  CVCResult: ").Append(CVCResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,6 +212,16 @@ namespace Splitit.SDK.Client.Model
                     this.IsChargeback == input.IsChargeback ||
                     (this.IsChargeback != null &&
                     this.IsChargeback.Equals(input.IsChargeback))
+                ) && 
+                (
+                    this.AVSResult == input.AVSResult ||
+                    (this.AVSResult != null &&
+                    this.AVSResult.Equals(input.AVSResult))
+                ) && 
+                (
+                    this.CVCResult == input.CVCResult ||
+                    (this.CVCResult != null &&
+                    this.CVCResult.Equals(input.CVCResult))
                 );
         }
 
@@ -222,6 +250,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.GatewayTransactionDate.GetHashCode();
                 if (this.IsChargeback != null)
                     hashCode = hashCode * 59 + this.IsChargeback.GetHashCode();
+                if (this.AVSResult != null)
+                    hashCode = hashCode * 59 + this.AVSResult.GetHashCode();
+                if (this.CVCResult != null)
+                    hashCode = hashCode * 59 + this.CVCResult.GetHashCode();
                 return hashCode;
             }
         }

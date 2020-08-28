@@ -16,10 +16,12 @@ import { InstallmentPlanResponse } from './installmentPlanResponse';
 import { Money } from './money';
 import { RefundInstallmentPlanResponseAllOf } from './refundInstallmentPlanResponseAllOf';
 import { ResponseHeader } from './responseHeader';
+import { TransactionResult } from './transactionResult';
 
 export class RefundInstallmentPlanResponse {
     'responseHeader'?: ResponseHeader;
     'installmentPlan'?: InstallmentPlan;
+    'gatewayTransactionResults'?: Array<TransactionResult>;
     'currentRefundAmount'?: Money;
 
     static discriminator: string | undefined = undefined;
@@ -34,6 +36,11 @@ export class RefundInstallmentPlanResponse {
             "name": "installmentPlan",
             "baseName": "InstallmentPlan",
             "type": "InstallmentPlan"
+        },
+        {
+            "name": "gatewayTransactionResults",
+            "baseName": "GatewayTransactionResults",
+            "type": "Array<TransactionResult>"
         },
         {
             "name": "currentRefundAmount",

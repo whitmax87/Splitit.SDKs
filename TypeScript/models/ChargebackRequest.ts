@@ -37,6 +37,12 @@ export interface ChargebackRequest {
      * @memberof ChargebackRequest
      */
     installmentPlanNumber?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ChargebackRequest
+     */
+    partialResponseMapping: boolean;
 }
 
 export function ChargebackRequestFromJSON(json: any): ChargebackRequest {
@@ -52,6 +58,7 @@ export function ChargebackRequestFromJSONTyped(json: any, ignoreDiscriminator: b
         'transactionIdsToMark': !exists(json, 'TransactionIdsToMark') ? undefined : json['TransactionIdsToMark'],
         'transactionIdsToUnmark': !exists(json, 'TransactionIdsToUnmark') ? undefined : json['TransactionIdsToUnmark'],
         'installmentPlanNumber': !exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
+        'partialResponseMapping': json['PartialResponseMapping'],
     };
 }
 
@@ -67,6 +74,7 @@ export function ChargebackRequestToJSON(value?: ChargebackRequest | null): any {
         'TransactionIdsToMark': value.transactionIdsToMark,
         'TransactionIdsToUnmark': value.transactionIdsToUnmark,
         'InstallmentPlanNumber': value.installmentPlanNumber,
+        'PartialResponseMapping': value.partialResponseMapping,
     };
 }
 

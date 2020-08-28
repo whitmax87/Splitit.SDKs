@@ -40,6 +40,12 @@ export interface CancelInstallmentPlanRequest {
      * @memberof CancelInstallmentPlanRequest
      */
     isExecutedUnattended: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CancelInstallmentPlanRequest
+     */
+    partialResponseMapping: boolean;
 }
 export declare function CancelInstallmentPlanRequestFromJSON(json: any): CancelInstallmentPlanRequest;
 export declare function CancelInstallmentPlanRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): CancelInstallmentPlanRequest;

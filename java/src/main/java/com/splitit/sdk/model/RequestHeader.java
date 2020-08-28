@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * RequestHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class RequestHeader   {
   @SerializedName("TouchPoint")
   private TouchPoint touchPoint = null;

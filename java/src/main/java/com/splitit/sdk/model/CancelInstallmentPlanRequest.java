@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * CancelInstallmentPlanRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-06T09:53:01.650Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
 public class CancelInstallmentPlanRequest   extends RequestWithHeader  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
@@ -42,6 +42,9 @@ public class CancelInstallmentPlanRequest   extends RequestWithHeader  {
 
   @SerializedName("IsExecutedUnattended")
   private Boolean isExecutedUnattended = null;
+
+  @SerializedName("PartialResponseMapping")
+  private Boolean partialResponseMapping = null;
 
   public CancelInstallmentPlanRequest installmentPlanNumber(String installmentPlanNumber) {
     this.installmentPlanNumber = installmentPlanNumber;
@@ -115,6 +118,24 @@ public class CancelInstallmentPlanRequest   extends RequestWithHeader  {
     this.isExecutedUnattended = isExecutedUnattended;
   }
 
+  public CancelInstallmentPlanRequest partialResponseMapping(Boolean partialResponseMapping) {
+    this.partialResponseMapping = partialResponseMapping;
+    return this;
+  }
+
+   /**
+   * Get partialResponseMapping
+   * @return partialResponseMapping
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isPartialResponseMapping() {
+    return partialResponseMapping;
+  }
+
+  public void setPartialResponseMapping(Boolean partialResponseMapping) {
+    this.partialResponseMapping = partialResponseMapping;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +149,13 @@ public class CancelInstallmentPlanRequest   extends RequestWithHeader  {
     return Objects.equals(this.installmentPlanNumber, cancelInstallmentPlanRequest.installmentPlanNumber) &&
         Objects.equals(this.refundUnderCancelation, cancelInstallmentPlanRequest.refundUnderCancelation) &&
         Objects.equals(this.cancelationReason, cancelInstallmentPlanRequest.cancelationReason) &&
-        Objects.equals(this.isExecutedUnattended, cancelInstallmentPlanRequest.isExecutedUnattended);
+        Objects.equals(this.isExecutedUnattended, cancelInstallmentPlanRequest.isExecutedUnattended) &&
+        Objects.equals(this.partialResponseMapping, cancelInstallmentPlanRequest.partialResponseMapping);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(installmentPlanNumber, refundUnderCancelation, cancelationReason, isExecutedUnattended);
+    return Objects.hash(installmentPlanNumber, refundUnderCancelation, cancelationReason, isExecutedUnattended, partialResponseMapping);
   }
 
 
@@ -146,6 +168,7 @@ public class CancelInstallmentPlanRequest   extends RequestWithHeader  {
     sb.append("    refundUnderCancelation: ").append(toIndentedString(refundUnderCancelation)).append("\n");
     sb.append("    cancelationReason: ").append(toIndentedString(cancelationReason)).append("\n");
     sb.append("    isExecutedUnattended: ").append(toIndentedString(isExecutedUnattended)).append("\n");
+    sb.append("    partialResponseMapping: ").append(toIndentedString(partialResponseMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }
