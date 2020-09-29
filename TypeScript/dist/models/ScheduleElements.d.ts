@@ -23,10 +23,10 @@ export interface ScheduleElements {
     installmentNumber: number;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof ScheduleElements
      */
-    chargeDate?: string;
+    chargeDate: Date;
     /**
      *
      * @type {number}

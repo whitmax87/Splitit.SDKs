@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **CreationDateTime** | **DateTime?** |  | 
 **Installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  | [optional] 
 **SecureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  | [optional] 
+**LogoUrl** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -33,7 +33,7 @@ export interface CancelInstallmentPlanRequest {
      * @type {InstallmentPlanCancelationReason}
      * @memberof CancelInstallmentPlanRequest
      */
-    cancelationReason: InstallmentPlanCancelationReason;
+    cancelationReason?: InstallmentPlanCancelationReason;
     /**
      *
      * @type {boolean}

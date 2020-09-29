@@ -8,8 +8,10 @@ export * from './amountDetails2';
 export * from './approveInstallmentPlanRequest';
 export * from './authenticationType';
 export * from './cancelInstallmentPlanRequest';
+export * from './cardBrand';
 export * from './cardData';
 export * from './cardResult';
+export * from './cardType';
 export * from './cartData';
 export * from './chargebackRequest';
 export * from './consumerData';
@@ -21,6 +23,8 @@ export * from './currency';
 export * from './currencyAllOf';
 export * from './delayResolution';
 export * from './eventsEndpoints';
+export * from './extendedCurrency';
+export * from './extendedCurrencyAllOf';
 export * from './externalAuth';
 export * from './fraudCheck';
 export * from './fraudCheckResult';
@@ -118,8 +122,10 @@ import { AmountDetails2 } from './amountDetails2';
 import { ApproveInstallmentPlanRequest } from './approveInstallmentPlanRequest';
 import { AuthenticationType } from './authenticationType';
 import { CancelInstallmentPlanRequest } from './cancelInstallmentPlanRequest';
+import { CardBrand } from './cardBrand';
 import { CardData } from './cardData';
 import { CardResult } from './cardResult';
+import { CardType } from './cardType';
 import { CartData } from './cartData';
 import { ChargebackRequest } from './chargebackRequest';
 import { ConsumerData } from './consumerData';
@@ -131,6 +137,8 @@ import { Currency } from './currency';
 import { CurrencyAllOf } from './currencyAllOf';
 import { DelayResolution } from './delayResolution';
 import { EventsEndpoints } from './eventsEndpoints';
+import { ExtendedCurrency } from './extendedCurrency';
+import { ExtendedCurrencyAllOf } from './extendedCurrencyAllOf';
 import { ExternalAuth } from './externalAuth';
 import { FraudCheck } from './fraudCheck';
 import { FraudCheckResult } from './fraudCheckResult';
@@ -233,6 +241,8 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AuthenticationType": AuthenticationType,
+        "CardBrand": CardBrand,
+        "CardType": CardType,
         "DelayResolution": DelayResolution,
         "FraudCheckResult": FraudCheckResult,
         "InstallmentPlanActivityStatus": InstallmentPlanActivityStatus,
@@ -269,6 +279,8 @@ let typeMap: {[index: string]: any} = {
     "Currency": Currency,
     "CurrencyAllOf": CurrencyAllOf,
     "EventsEndpoints": EventsEndpoints,
+    "ExtendedCurrency": ExtendedCurrency,
+    "ExtendedCurrencyAllOf": ExtendedCurrencyAllOf,
     "ExternalAuth": ExternalAuth,
     "FraudCheck": FraudCheck,
     "Get3DSecureParametersRequest": Get3DSecureParametersRequest,

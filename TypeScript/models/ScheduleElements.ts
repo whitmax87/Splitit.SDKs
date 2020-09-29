@@ -27,10 +27,10 @@ export interface ScheduleElements {
     installmentNumber: number;
     /**
      * 
-     * @type {string}
+     * @type {Date}
      * @memberof ScheduleElements
      */
-    chargeDate?: string;
+    chargeDate: Date;
     /**
      * 
      * @type {number}
@@ -56,7 +56,7 @@ export function ScheduleElementsFromJSONTyped(json: any, ignoreDiscriminator: bo
     return {
         
         'installmentNumber': json['InstallmentNumber'],
-        'chargeDate': !exists(json, 'ChargeDate') ? undefined : json['ChargeDate'],
+        'chargeDate': (new Date(json['ChargeDate'])),
         'chargeAmount': json['ChargeAmount'],
         'requiredCredit': json['RequiredCredit'],
     };
@@ -72,7 +72,7 @@ export function ScheduleElementsToJSON(value?: ScheduleElements | null): any {
     return {
         
         'InstallmentNumber': value.installmentNumber,
-        'ChargeDate': value.chargeDate,
+        'ChargeDate': (value.chargeDate.toISOString()),
         'ChargeAmount': value.chargeAmount,
         'RequiredCredit': value.requiredCredit,
     };

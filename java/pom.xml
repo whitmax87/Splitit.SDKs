@@ -5,7 +5,7 @@
     <artifactId>splitit-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>splitit-java-sdk</name>
-    <version>1.5.11</version>
+    <version>1.5.12</version>
     <url>https://www.splitit.com/developers/overview</url>
     <description>Splitit Java SDK</description>
     <scm>

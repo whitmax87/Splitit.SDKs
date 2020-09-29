@@ -37,7 +37,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets CancelationReason
         /// </summary>
         [DataMember(Name="CancelationReason", EmitDefaultValue=false)]
-        public InstallmentPlanCancelationReason CancelationReason { get; set; }
+        public InstallmentPlanCancelationReason? CancelationReason { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelInstallmentPlanRequest" /> class.
         /// </summary>
@@ -48,16 +48,16 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="installmentPlanNumber">installmentPlanNumber.</param>
         /// <param name="refundUnderCancelation">refundUnderCancelation (required).</param>
-        /// <param name="cancelationReason">cancelationReason (required).</param>
+        /// <param name="cancelationReason">cancelationReason.</param>
         /// <param name="isExecutedUnattended">isExecutedUnattended (required).</param>
         /// <param name="partialResponseMapping">partialResponseMapping (required).</param>
-        public CancelInstallmentPlanRequest(string installmentPlanNumber = default(string), RefundUnderCancelation refundUnderCancelation = default(RefundUnderCancelation), InstallmentPlanCancelationReason cancelationReason = default(InstallmentPlanCancelationReason), bool? isExecutedUnattended = default(bool?), bool? partialResponseMapping = default(bool?))
+        public CancelInstallmentPlanRequest(string installmentPlanNumber = default(string), RefundUnderCancelation refundUnderCancelation = default(RefundUnderCancelation), InstallmentPlanCancelationReason? cancelationReason = default(InstallmentPlanCancelationReason?), bool? isExecutedUnattended = default(bool?), bool? partialResponseMapping = default(bool?))
         {
             this.RefundUnderCancelation = refundUnderCancelation;
-            this.CancelationReason = cancelationReason;
             this.IsExecutedUnattended = isExecutedUnattended;
             this.PartialResponseMapping = partialResponseMapping;
             this.InstallmentPlanNumber = installmentPlanNumber;
+            this.CancelationReason = cancelationReason;
         }
 
         [DataMember(Name="RequestHeader", EmitDefaultValue=false)]

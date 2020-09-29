@@ -20,5 +20,9 @@
 
 * `DEFAULTEDCOLLECTEDFROMMERCHANT` (value: `"DefaultedCollectedFromMerchant"`)
 
+* `DEFAULTEDSPLITITLIABLEPAIDTOMERCHANT` (value: `"DefaultedSplititLiablePaidtoMerchant"`)
+
+* `DEFAULTEDCHARGEBACKCOLLECTEDFROMMERCHANT` (value: `"DefaultedChargebackCollectedFromMerchant"`)
+
 
 

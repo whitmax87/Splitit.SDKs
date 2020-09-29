@@ -37,15 +37,15 @@ namespace Splitit.SDK.Client.Model
         /// Initializes a new instance of the <see cref="ScheduleElements" /> class.
         /// </summary>
         /// <param name="installmentNumber">installmentNumber (required).</param>
-        /// <param name="chargeDate">chargeDate.</param>
+        /// <param name="chargeDate">chargeDate (required).</param>
         /// <param name="chargeAmount">chargeAmount (required).</param>
         /// <param name="requiredCredit">requiredCredit (required).</param>
-        public ScheduleElements(int? installmentNumber = default(int?), string chargeDate = default(string), decimal? chargeAmount = default(decimal?), decimal? requiredCredit = default(decimal?))
+        public ScheduleElements(int? installmentNumber = default(int?), DateTime? chargeDate = default(DateTime?), decimal? chargeAmount = default(decimal?), decimal? requiredCredit = default(decimal?))
         {
             this.InstallmentNumber = installmentNumber;
+            this.ChargeDate = chargeDate;
             this.ChargeAmount = chargeAmount;
             this.RequiredCredit = requiredCredit;
-            this.ChargeDate = chargeDate;
         }
 
         
@@ -59,7 +59,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets ChargeDate
         /// </summary>
         [DataMember(Name="ChargeDate", EmitDefaultValue=false)]
-        public string ChargeDate { get; set; }
+        public DateTime? ChargeDate { get; set; }
 
         /// <summary>
         /// Gets or Sets ChargeAmount

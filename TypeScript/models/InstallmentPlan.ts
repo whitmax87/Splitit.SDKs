@@ -208,6 +208,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     secureAuthorizations?: Array<ReAuthorization>;
+    /**
+     * 
+     * @type {string}
+     * @memberof InstallmentPlan
+     */
+    logoUrl?: string;
 }
 
 export function InstallmentPlanFromJSON(json: any): InstallmentPlan {
@@ -245,6 +251,7 @@ export function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boo
         'creationDateTime': (new Date(json['CreationDateTime'])),
         'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(Installment2FromJSON)),
         'secureAuthorizations': !exists(json, 'SecureAuthorizations') ? undefined : ((json['SecureAuthorizations'] as Array<any>).map(ReAuthorizationFromJSON)),
+        'logoUrl': !exists(json, 'LogoUrl') ? undefined : json['LogoUrl'],
     };
 }
 
@@ -282,6 +289,7 @@ export function InstallmentPlanToJSON(value?: InstallmentPlan | null): any {
         'CreationDateTime': (value.creationDateTime.toISOString()),
         'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : ((value.secureAuthorizations as Array<any>).map(ReAuthorizationToJSON)),
+        'LogoUrl': value.logoUrl,
     };
 }
 

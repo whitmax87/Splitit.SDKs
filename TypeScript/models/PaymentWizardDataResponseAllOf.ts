@@ -14,10 +14,18 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    Currency,
-    CurrencyFromJSON,
-    CurrencyFromJSONTyped,
-    CurrencyToJSON,
+    CardBrand,
+    CardBrandFromJSON,
+    CardBrandFromJSONTyped,
+    CardBrandToJSON,
+    CardType,
+    CardTypeFromJSON,
+    CardTypeFromJSONTyped,
+    CardTypeToJSON,
+    ExtendedCurrency,
+    ExtendedCurrencyFromJSON,
+    ExtendedCurrencyFromJSONTyped,
+    ExtendedCurrencyToJSON,
     PaymentFormMessage,
     PaymentFormMessageFromJSON,
     PaymentFormMessageFromJSONTyped,
@@ -42,10 +50,10 @@ export interface PaymentWizardDataResponseAllOf {
     showAddressElements?: string;
     /**
      * 
-     * @type {Currency}
+     * @type {ExtendedCurrency}
      * @memberof PaymentWizardDataResponseAllOf
      */
-    currencyDisplay?: Currency;
+    currencyDisplay?: ExtendedCurrency;
     /**
      * 
      * @type {boolean}
@@ -102,6 +110,18 @@ export interface PaymentWizardDataResponseAllOf {
     emailIsReadOnly: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    showLearnMore: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    showMobilePhone: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof PaymentWizardDataResponseAllOf
      */
@@ -124,6 +144,18 @@ export interface PaymentWizardDataResponseAllOf {
      * @memberof PaymentWizardDataResponseAllOf
      */
     learnMoreUrl?: string;
+    /**
+     * 
+     * @type {Array<CardType>}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    potentialCardTypes?: Array<CardType>;
+    /**
+     * 
+     * @type {Array<CardBrand>}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    potentialCardBrands?: Array<CardBrand>;
     /**
      * 
      * @type {Array<PaymentFormMessage>}
@@ -155,7 +187,7 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
     return {
         
         'showAddressElements': !exists(json, 'ShowAddressElements') ? undefined : json['ShowAddressElements'],
-        'currencyDisplay': !exists(json, 'CurrencyDisplay') ? undefined : CurrencyFromJSON(json['CurrencyDisplay']),
+        'currencyDisplay': !exists(json, 'CurrencyDisplay') ? undefined : ExtendedCurrencyFromJSON(json['CurrencyDisplay']),
         'forceDisplayImportantNotes': json['ForceDisplayImportantNotes'],
         'showShopperDetailsExpendedOnStart': json['ShowShopperDetailsExpendedOnStart'],
         'showPaymentScheduleRequiredCredit': json['ShowPaymentScheduleRequiredCredit'],
@@ -165,10 +197,14 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'addressIsReadonly': json['AddressIsReadonly'],
         'phoneIsReadOnly': json['PhoneIsReadOnly'],
         'emailIsReadOnly': json['EmailIsReadOnly'],
+        'showLearnMore': json['ShowLearnMore'],
+        'showMobilePhone': json['ShowMobilePhone'],
         'logoURL': !exists(json, 'LogoURL') ? undefined : json['LogoURL'],
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
         'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
+        'potentialCardTypes': !exists(json, 'PotentialCardTypes') ? undefined : ((json['PotentialCardTypes'] as Array<any>).map(CardTypeFromJSON)),
+        'potentialCardBrands': !exists(json, 'PotentialCardBrands') ? undefined : ((json['PotentialCardBrands'] as Array<any>).map(CardBrandFromJSON)),
         'paymentFormMessages': !exists(json, 'PaymentFormMessages') ? undefined : ((json['PaymentFormMessages'] as Array<any>).map(PaymentFormMessageFromJSON)),
         'displayProperties': !exists(json, 'DisplayProperties') ? undefined : json['DisplayProperties'],
         'termsAndConditions': !exists(json, 'TermsAndConditions') ? undefined : TermsAndConditionsFromJSON(json['TermsAndConditions']),
@@ -185,7 +221,7 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
     return {
         
         'ShowAddressElements': value.showAddressElements,
-        'CurrencyDisplay': CurrencyToJSON(value.currencyDisplay),
+        'CurrencyDisplay': ExtendedCurrencyToJSON(value.currencyDisplay),
         'ForceDisplayImportantNotes': value.forceDisplayImportantNotes,
         'ShowShopperDetailsExpendedOnStart': value.showShopperDetailsExpendedOnStart,
         'ShowPaymentScheduleRequiredCredit': value.showPaymentScheduleRequiredCredit,
@@ -195,10 +231,14 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'AddressIsReadonly': value.addressIsReadonly,
         'PhoneIsReadOnly': value.phoneIsReadOnly,
         'EmailIsReadOnly': value.emailIsReadOnly,
+        'ShowLearnMore': value.showLearnMore,
+        'ShowMobilePhone': value.showMobilePhone,
         'LogoURL': value.logoURL,
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
         'LearnMoreUrl': value.learnMoreUrl,
+        'PotentialCardTypes': value.potentialCardTypes === undefined ? undefined : ((value.potentialCardTypes as Array<any>).map(CardTypeToJSON)),
+        'PotentialCardBrands': value.potentialCardBrands === undefined ? undefined : ((value.potentialCardBrands as Array<any>).map(CardBrandToJSON)),
         'PaymentFormMessages': value.paymentFormMessages === undefined ? undefined : ((value.paymentFormMessages as Array<any>).map(PaymentFormMessageToJSON)),
         'DisplayProperties': value.displayProperties,
         'TermsAndConditions': TermsAndConditionsToJSON(value.termsAndConditions),

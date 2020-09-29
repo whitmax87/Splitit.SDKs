@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **isOpenedInIframe** | **Boolean** |  | 
 **paymentFormMessage** | **String** |  |  [optional]
 **showAddressElements** | **String** |  |  [optional]
-**currencyDisplay** | [**Currency**](Currency.md) |  |  [optional]
+**currencyDisplay** | [**ExtendedCurrency**](ExtendedCurrency.md) |  |  [optional]
 **forceDisplayImportantNotes** | **Boolean** |  | 
 **showShopperDetailsExpendedOnStart** | **Boolean** |  | 
 **showPaymentScheduleRequiredCredit** | **Boolean** |  | 
@@ -23,10 +23,14 @@ Name | Type | Description | Notes
 **addressIsReadonly** | **Boolean** |  | 
 **phoneIsReadOnly** | **Boolean** |  | 
 **emailIsReadOnly** | **Boolean** |  | 
+**showLearnMore** | **Boolean** |  | 
+**showMobilePhone** | **Boolean** |  | 
 **logoURL** | **String** |  |  [optional]
 **privacyPolicyUrl** | **String** |  |  [optional]
 **termsAndConditionsUrl** | **String** |  |  [optional]
 **learnMoreUrl** | **String** |  |  [optional]
+**potentialCardTypes** | [**List&lt;CardType&gt;**](CardType.md) |  |  [optional]
+**potentialCardBrands** | [**List&lt;CardBrand&gt;**](CardBrand.md) |  |  [optional]
 **paymentFormMessages** | [**List&lt;PaymentFormMessage&gt;**](PaymentFormMessage.md) |  |  [optional]
 **displayProperties** | **Map&lt;String, String&gt;** |  |  [optional]
 **termsAndConditions** | [**TermsAndConditions**](TermsAndConditions.md) |  |  [optional]

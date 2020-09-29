@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-08-28T08:56:41.151Z
-- SDK Version: 1.5.11
+  - Build date: 2020-09-29T14:12:31.625Z
+- SDK Version: 1.5.12
 
 ## Requirements
 
@@ -143,8 +143,10 @@ Class | Method | HTTP request | Description
  - [ApproveInstallmentPlanRequest](docs/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/AuthenticationType.md)
  - [CancelInstallmentPlanRequest](docs/CancelInstallmentPlanRequest.md)
+ - [CardBrand](docs/CardBrand.md)
  - [CardData](docs/CardData.md)
  - [CardResult](docs/CardResult.md)
+ - [CardType](docs/CardType.md)
  - [CartData](docs/CartData.md)
  - [ChargebackRequest](docs/ChargebackRequest.md)
  - [CreateInstallmentPlanLegacyResponse](docs/CreateInstallmentPlanLegacyResponse.md)
@@ -237,6 +239,7 @@ Class | Method | HTTP request | Description
  - [RefundInstallmentPlanResponse](docs/RefundInstallmentPlanResponse.md)
  - [UpdateInstallmentPlanRequest](docs/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/UpdateInstallmentsPlanResponse.md)
+ - [ExtendedCurrency](docs/ExtendedCurrency.md)
 
 
 ## Documentation for Authorization

@@ -17,7 +17,7 @@ import { RefundUnderCancelation } from './refundUnderCancelation';
 export class CancelInstallmentPlanRequest {
     'installmentPlanNumber'?: string;
     'refundUnderCancelation': RefundUnderCancelation;
-    'cancelationReason': InstallmentPlanCancelationReason;
+    'cancelationReason'?: InstallmentPlanCancelationReason;
     'isExecutedUnattended': boolean;
     'partialResponseMapping': boolean;
 

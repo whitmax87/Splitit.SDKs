@@ -77,7 +77,19 @@ namespace Splitit.SDK.Client.Model
         /// Enum DefaultedCollectedFromMerchant for value: DefaultedCollectedFromMerchant
         /// </summary>
         [EnumMember(Value = "DefaultedCollectedFromMerchant")]
-        DefaultedCollectedFromMerchant = 8
+        DefaultedCollectedFromMerchant = 8,
+        
+        /// <summary>
+        /// Enum DefaultedSplititLiablePaidtoMerchant for value: DefaultedSplititLiablePaidtoMerchant
+        /// </summary>
+        [EnumMember(Value = "DefaultedSplititLiablePaidtoMerchant")]
+        DefaultedSplititLiablePaidtoMerchant = 9,
+        
+        /// <summary>
+        /// Enum DefaultedChargebackCollectedFromMerchant for value: DefaultedChargebackCollectedFromMerchant
+        /// </summary>
+        [EnumMember(Value = "DefaultedChargebackCollectedFromMerchant")]
+        DefaultedChargebackCollectedFromMerchant = 10
     }
 
 }

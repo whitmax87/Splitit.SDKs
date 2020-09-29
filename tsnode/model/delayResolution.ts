@@ -23,5 +23,7 @@ export enum DelayResolution {
     PendingSuspiciousReview = <any> 'PendingSuspiciousReview',
     DefaultedInCollection = <any> 'DefaultedInCollection',
     DefaultedPermanently = <any> 'DefaultedPermanently',
-    DefaultedCollectedFromMerchant = <any> 'DefaultedCollectedFromMerchant'
+    DefaultedCollectedFromMerchant = <any> 'DefaultedCollectedFromMerchant',
+    DefaultedSplititLiablePaidtoMerchant = <any> 'DefaultedSplititLiablePaidtoMerchant',
+    DefaultedChargebackCollectedFromMerchant = <any> 'DefaultedChargebackCollectedFromMerchant'
 }

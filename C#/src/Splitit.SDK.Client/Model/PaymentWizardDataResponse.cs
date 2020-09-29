@@ -55,14 +55,18 @@ namespace Splitit.SDK.Client.Model
         /// <param name="addressIsReadonly">addressIsReadonly (required).</param>
         /// <param name="phoneIsReadOnly">phoneIsReadOnly (required).</param>
         /// <param name="emailIsReadOnly">emailIsReadOnly (required).</param>
+        /// <param name="showLearnMore">showLearnMore (required).</param>
+        /// <param name="showMobilePhone">showMobilePhone (required).</param>
         /// <param name="logoURL">logoURL.</param>
         /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
         /// <param name="termsAndConditionsUrl">termsAndConditionsUrl.</param>
         /// <param name="learnMoreUrl">learnMoreUrl.</param>
+        /// <param name="potentialCardTypes">potentialCardTypes.</param>
+        /// <param name="potentialCardBrands">potentialCardBrands.</param>
         /// <param name="paymentFormMessages">paymentFormMessages.</param>
         /// <param name="displayProperties">displayProperties.</param>
         /// <param name="termsAndConditions">termsAndConditions.</param>
-        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), Currency currencyDisplay = default(Currency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
+        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), ExtendedCurrency currencyDisplay = default(ExtendedCurrency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), bool? showLearnMore = default(bool?), bool? showMobilePhone = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<CardType> potentialCardTypes = default(List<CardType>), List<CardBrand> potentialCardBrands = default(List<CardBrand>), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
         {
             this.IsOpenedInIframe = isOpenedInIframe;
             this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
@@ -73,6 +77,8 @@ namespace Splitit.SDK.Client.Model
             this.AddressIsReadonly = addressIsReadonly;
             this.PhoneIsReadOnly = phoneIsReadOnly;
             this.EmailIsReadOnly = emailIsReadOnly;
+            this.ShowLearnMore = showLearnMore;
+            this.ShowMobilePhone = showMobilePhone;
             this.RequestedNumberOfInstallments = requestedNumberOfInstallments;
             this.SuccessExitURL = successExitURL;
             this.ErrorExitURL = errorExitURL;
@@ -87,6 +93,8 @@ namespace Splitit.SDK.Client.Model
             this.PrivacyPolicyUrl = privacyPolicyUrl;
             this.TermsAndConditionsUrl = termsAndConditionsUrl;
             this.LearnMoreUrl = learnMoreUrl;
+            this.PotentialCardTypes = potentialCardTypes;
+            this.PotentialCardBrands = potentialCardBrands;
             this.PaymentFormMessages = paymentFormMessages;
             this.DisplayProperties = displayProperties;
             this.TermsAndConditions = termsAndConditions;
@@ -151,7 +159,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets CurrencyDisplay
         /// </summary>
         [DataMember(Name="CurrencyDisplay", EmitDefaultValue=false)]
-        public Currency CurrencyDisplay { get; set; }
+        public ExtendedCurrency CurrencyDisplay { get; set; }
 
         /// <summary>
         /// Gets or Sets ForceDisplayImportantNotes
@@ -208,6 +216,18 @@ namespace Splitit.SDK.Client.Model
         public bool? EmailIsReadOnly { get; set; }
 
         /// <summary>
+        /// Gets or Sets ShowLearnMore
+        /// </summary>
+        [DataMember(Name="ShowLearnMore", EmitDefaultValue=false)]
+        public bool? ShowLearnMore { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShowMobilePhone
+        /// </summary>
+        [DataMember(Name="ShowMobilePhone", EmitDefaultValue=false)]
+        public bool? ShowMobilePhone { get; set; }
+
+        /// <summary>
         /// Gets or Sets LogoURL
         /// </summary>
         [DataMember(Name="LogoURL", EmitDefaultValue=false)]
@@ -230,6 +250,18 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="LearnMoreUrl", EmitDefaultValue=false)]
         public string LearnMoreUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PotentialCardTypes
+        /// </summary>
+        [DataMember(Name="PotentialCardTypes", EmitDefaultValue=false)]
+        public List<CardType> PotentialCardTypes { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PotentialCardBrands
+        /// </summary>
+        [DataMember(Name="PotentialCardBrands", EmitDefaultValue=false)]
+        public List<CardBrand> PotentialCardBrands { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentFormMessages
@@ -276,10 +308,14 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  AddressIsReadonly: ").Append(AddressIsReadonly).Append("\n");
             sb.Append("  PhoneIsReadOnly: ").Append(PhoneIsReadOnly).Append("\n");
             sb.Append("  EmailIsReadOnly: ").Append(EmailIsReadOnly).Append("\n");
+            sb.Append("  ShowLearnMore: ").Append(ShowLearnMore).Append("\n");
+            sb.Append("  ShowMobilePhone: ").Append(ShowMobilePhone).Append("\n");
             sb.Append("  LogoURL: ").Append(LogoURL).Append("\n");
             sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  TermsAndConditionsUrl: ").Append(TermsAndConditionsUrl).Append("\n");
             sb.Append("  LearnMoreUrl: ").Append(LearnMoreUrl).Append("\n");
+            sb.Append("  PotentialCardTypes: ").Append(PotentialCardTypes).Append("\n");
+            sb.Append("  PotentialCardBrands: ").Append(PotentialCardBrands).Append("\n");
             sb.Append("  PaymentFormMessages: ").Append(PaymentFormMessages).Append("\n");
             sb.Append("  DisplayProperties: ").Append(DisplayProperties).Append("\n");
             sb.Append("  TermsAndConditions: ").Append(TermsAndConditions).Append("\n");
@@ -413,6 +449,16 @@ namespace Splitit.SDK.Client.Model
                     this.EmailIsReadOnly.Equals(input.EmailIsReadOnly))
                 ) && 
                 (
+                    this.ShowLearnMore == input.ShowLearnMore ||
+                    (this.ShowLearnMore != null &&
+                    this.ShowLearnMore.Equals(input.ShowLearnMore))
+                ) && 
+                (
+                    this.ShowMobilePhone == input.ShowMobilePhone ||
+                    (this.ShowMobilePhone != null &&
+                    this.ShowMobilePhone.Equals(input.ShowMobilePhone))
+                ) && 
+                (
                     this.LogoURL == input.LogoURL ||
                     (this.LogoURL != null &&
                     this.LogoURL.Equals(input.LogoURL))
@@ -431,6 +477,16 @@ namespace Splitit.SDK.Client.Model
                     this.LearnMoreUrl == input.LearnMoreUrl ||
                     (this.LearnMoreUrl != null &&
                     this.LearnMoreUrl.Equals(input.LearnMoreUrl))
+                ) && 
+                (
+                    this.PotentialCardTypes == input.PotentialCardTypes ||
+                    this.PotentialCardTypes != null &&
+                    this.PotentialCardTypes.SequenceEqual(input.PotentialCardTypes)
+                ) && 
+                (
+                    this.PotentialCardBrands == input.PotentialCardBrands ||
+                    this.PotentialCardBrands != null &&
+                    this.PotentialCardBrands.SequenceEqual(input.PotentialCardBrands)
                 ) && 
                 (
                     this.PaymentFormMessages == input.PaymentFormMessages ||
@@ -496,6 +552,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.PhoneIsReadOnly.GetHashCode();
                 if (this.EmailIsReadOnly != null)
                     hashCode = hashCode * 59 + this.EmailIsReadOnly.GetHashCode();
+                if (this.ShowLearnMore != null)
+                    hashCode = hashCode * 59 + this.ShowLearnMore.GetHashCode();
+                if (this.ShowMobilePhone != null)
+                    hashCode = hashCode * 59 + this.ShowMobilePhone.GetHashCode();
                 if (this.LogoURL != null)
                     hashCode = hashCode * 59 + this.LogoURL.GetHashCode();
                 if (this.PrivacyPolicyUrl != null)
@@ -504,6 +564,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.TermsAndConditionsUrl.GetHashCode();
                 if (this.LearnMoreUrl != null)
                     hashCode = hashCode * 59 + this.LearnMoreUrl.GetHashCode();
+                if (this.PotentialCardTypes != null)
+                    hashCode = hashCode * 59 + this.PotentialCardTypes.GetHashCode();
+                if (this.PotentialCardBrands != null)
+                    hashCode = hashCode * 59 + this.PotentialCardBrands.GetHashCode();
                 if (this.PaymentFormMessages != null)
                     hashCode = hashCode * 59 + this.PaymentFormMessages.GetHashCode();
                 if (this.DisplayProperties != null)

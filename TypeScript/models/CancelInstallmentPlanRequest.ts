@@ -47,7 +47,7 @@ export interface CancelInstallmentPlanRequest {
      * @type {InstallmentPlanCancelationReason}
      * @memberof CancelInstallmentPlanRequest
      */
-    cancelationReason: InstallmentPlanCancelationReason;
+    cancelationReason?: InstallmentPlanCancelationReason;
     /**
      * 
      * @type {boolean}
@@ -74,7 +74,7 @@ export function CancelInstallmentPlanRequestFromJSONTyped(json: any, ignoreDiscr
         
         'installmentPlanNumber': !exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
         'refundUnderCancelation': RefundUnderCancelationFromJSON(json['RefundUnderCancelation']),
-        'cancelationReason': InstallmentPlanCancelationReasonFromJSON(json['CancelationReason']),
+        'cancelationReason': !exists(json, 'CancelationReason') ? undefined : InstallmentPlanCancelationReasonFromJSON(json['CancelationReason']),
         'isExecutedUnattended': json['IsExecutedUnattended'],
         'partialResponseMapping': json['PartialResponseMapping'],
     };

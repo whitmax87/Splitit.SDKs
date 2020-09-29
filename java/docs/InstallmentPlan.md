@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **creationDateTime** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  |  [optional]
 **secureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  |  [optional]
+**logoUrl** | **String** |  |  [optional]
 
 
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstallmentNumber** | **int?** |  | 
-**ChargeDate** | **string** |  | [optional] 
+**ChargeDate** | **DateTime?** |  | 
 **ChargeAmount** | **decimal?** |  | 
 **RequiredCredit** | **decimal?** |  | 
 

@@ -44,7 +44,11 @@ public enum DelayResolution {
   
   DEFAULTEDPERMANENTLY("DefaultedPermanently"),
   
-  DEFAULTEDCOLLECTEDFROMMERCHANT("DefaultedCollectedFromMerchant");
+  DEFAULTEDCOLLECTEDFROMMERCHANT("DefaultedCollectedFromMerchant"),
+  
+  DEFAULTEDSPLITITLIABLEPAIDTOMERCHANT("DefaultedSplititLiablePaidtoMerchant"),
+  
+  DEFAULTEDCHARGEBACKCOLLECTEDFROMMERCHANT("DefaultedChargebackCollectedFromMerchant");
 
   private String value;
 

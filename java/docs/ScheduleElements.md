@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **installmentNumber** | **Integer** |  | 
-**chargeDate** | **String** |  |  [optional]
+**chargeDate** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **chargeAmount** | [**BigDecimal**](BigDecimal.md) |  | 
 **requiredCredit** | [**BigDecimal**](BigDecimal.md) |  | 
 

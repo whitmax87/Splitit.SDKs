@@ -168,6 +168,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     secureAuthorizations?: Array<ReAuthorization>;
+    /**
+     *
+     * @type {string}
+     * @memberof InstallmentPlan
+     */
+    logoUrl?: string;
 }
 export declare function InstallmentPlanFromJSON(json: any): InstallmentPlan;
 export declare function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boolean): InstallmentPlan;

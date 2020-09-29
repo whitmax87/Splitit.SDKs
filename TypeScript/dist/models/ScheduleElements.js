@@ -13,7 +13,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var runtime_1 = require("../runtime");
 function ScheduleElementsFromJSON(json) {
     return ScheduleElementsFromJSONTyped(json, false);
 }
@@ -24,7 +23,7 @@ function ScheduleElementsFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'installmentNumber': json['InstallmentNumber'],
-        'chargeDate': !runtime_1.exists(json, 'ChargeDate') ? undefined : json['ChargeDate'],
+        'chargeDate': (new Date(json['ChargeDate'])),
         'chargeAmount': json['ChargeAmount'],
         'requiredCredit': json['RequiredCredit'],
     };
@@ -39,7 +38,7 @@ function ScheduleElementsToJSON(value) {
     }
     return {
         'InstallmentNumber': value.installmentNumber,
-        'ChargeDate': value.chargeDate,
+        'ChargeDate': (value.chargeDate.toISOString()),
         'ChargeAmount': value.chargeAmount,
         'RequiredCredit': value.requiredCredit,
     };

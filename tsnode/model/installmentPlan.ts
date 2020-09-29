@@ -47,6 +47,7 @@ export class InstallmentPlan {
     'creationDateTime': Date;
     'installments'?: Array<Installment2>;
     'secureAuthorizations'?: Array<ReAuthorization>;
+    'logoUrl'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -175,6 +176,11 @@ export class InstallmentPlan {
             "name": "secureAuthorizations",
             "baseName": "SecureAuthorizations",
             "type": "Array<ReAuthorization>"
+        },
+        {
+            "name": "logoUrl",
+            "baseName": "LogoUrl",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

@@ -42,7 +42,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-29T14:12:31.625Z")
 public class InstallmentPlan   {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
@@ -118,6 +118,9 @@ public class InstallmentPlan   {
 
   @SerializedName("SecureAuthorizations")
   private List<ReAuthorization> secureAuthorizations = null;
+
+  @SerializedName("LogoUrl")
+  private String logoUrl = null;
 
   public InstallmentPlan installmentPlanNumber(String installmentPlanNumber) {
     this.installmentPlanNumber = installmentPlanNumber;
@@ -593,6 +596,24 @@ public class InstallmentPlan   {
     this.secureAuthorizations = secureAuthorizations;
   }
 
+  public InstallmentPlan logoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
+    return this;
+  }
+
+   /**
+   * Get logoUrl
+   * @return logoUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getLogoUrl() {
+    return logoUrl;
+  }
+
+  public void setLogoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -627,12 +648,13 @@ public class InstallmentPlan   {
         Objects.equals(this.testMode, installmentPlan.testMode) &&
         Objects.equals(this.creationDateTime, installmentPlan.creationDateTime) &&
         Objects.equals(this.installments, installmentPlan.installments) &&
-        Objects.equals(this.secureAuthorizations, installmentPlan.secureAuthorizations);
+        Objects.equals(this.secureAuthorizations, installmentPlan.secureAuthorizations) &&
+        Objects.equals(this.logoUrl, installmentPlan.logoUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, testMode, creationDateTime, installments, secureAuthorizations);
+    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, testMode, creationDateTime, installments, secureAuthorizations, logoUrl);
   }
 
 
@@ -666,6 +688,7 @@ public class InstallmentPlan   {
     sb.append("    creationDateTime: ").append(toIndentedString(creationDateTime)).append("\n");
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("    secureAuthorizations: ").append(toIndentedString(secureAuthorizations)).append("\n");
+    sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

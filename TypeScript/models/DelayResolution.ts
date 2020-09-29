@@ -25,7 +25,9 @@ export enum DelayResolution {
     PendingSuspiciousReview = 'PendingSuspiciousReview',
     DefaultedInCollection = 'DefaultedInCollection',
     DefaultedPermanently = 'DefaultedPermanently',
-    DefaultedCollectedFromMerchant = 'DefaultedCollectedFromMerchant'
+    DefaultedCollectedFromMerchant = 'DefaultedCollectedFromMerchant',
+    DefaultedSplititLiablePaidtoMerchant = 'DefaultedSplititLiablePaidtoMerchant',
+    DefaultedChargebackCollectedFromMerchant = 'DefaultedChargebackCollectedFromMerchant'
 }
 
 export function DelayResolutionFromJSON(json: any): DelayResolution {

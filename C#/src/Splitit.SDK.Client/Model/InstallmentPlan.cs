@@ -66,7 +66,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="creationDateTime">creationDateTime (required).</param>
         /// <param name="installments">installments.</param>
         /// <param name="secureAuthorizations">secureAuthorizations.</param>
-        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>))
+        /// <param name="logoUrl">logoUrl.</param>
+        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), string logoUrl = default(string))
         {
             this.NumberOfInstallments = numberOfInstallments;
             this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
@@ -93,6 +94,7 @@ namespace Splitit.SDK.Client.Model
             this.ExtendedParams = extendedParams;
             this.Installments = installments;
             this.SecureAuthorizations = secureAuthorizations;
+            this.LogoUrl = logoUrl;
         }
 
         
@@ -242,6 +244,12 @@ namespace Splitit.SDK.Client.Model
         public List<ReAuthorization> SecureAuthorizations { get; set; }
 
         /// <summary>
+        /// Gets or Sets LogoUrl
+        /// </summary>
+        [DataMember(Name="LogoUrl", EmitDefaultValue=false)]
+        public string LogoUrl { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -274,6 +282,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  CreationDateTime: ").Append(CreationDateTime).Append("\n");
             sb.Append("  Installments: ").Append(Installments).Append("\n");
             sb.Append("  SecureAuthorizations: ").Append(SecureAuthorizations).Append("\n");
+            sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -432,6 +441,11 @@ namespace Splitit.SDK.Client.Model
                     this.SecureAuthorizations == input.SecureAuthorizations ||
                     this.SecureAuthorizations != null &&
                     this.SecureAuthorizations.SequenceEqual(input.SecureAuthorizations)
+                ) && 
+                (
+                    this.LogoUrl == input.LogoUrl ||
+                    (this.LogoUrl != null &&
+                    this.LogoUrl.Equals(input.LogoUrl))
                 );
         }
 
@@ -494,6 +508,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Installments.GetHashCode();
                 if (this.SecureAuthorizations != null)
                     hashCode = hashCode * 59 + this.SecureAuthorizations.GetHashCode();
+                if (this.LogoUrl != null)
+                    hashCode = hashCode * 59 + this.LogoUrl.GetHashCode();
                 return hashCode;
             }
         }

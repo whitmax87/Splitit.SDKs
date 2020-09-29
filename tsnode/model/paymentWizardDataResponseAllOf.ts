@@ -11,13 +11,15 @@
  */
 
 import { RequestFile } from '../api';
-import { Currency } from './currency';
+import { CardBrand } from './cardBrand';
+import { CardType } from './cardType';
+import { ExtendedCurrency } from './extendedCurrency';
 import { PaymentFormMessage } from './paymentFormMessage';
 import { TermsAndConditions } from './termsAndConditions';
 
 export class PaymentWizardDataResponseAllOf {
     'showAddressElements'?: string;
-    'currencyDisplay'?: Currency;
+    'currencyDisplay'?: ExtendedCurrency;
     'forceDisplayImportantNotes': boolean;
     'showShopperDetailsExpendedOnStart': boolean;
     'showPaymentScheduleRequiredCredit': boolean;
@@ -27,10 +29,14 @@ export class PaymentWizardDataResponseAllOf {
     'addressIsReadonly': boolean;
     'phoneIsReadOnly': boolean;
     'emailIsReadOnly': boolean;
+    'showLearnMore': boolean;
+    'showMobilePhone': boolean;
     'logoURL'?: string;
     'privacyPolicyUrl'?: string;
     'termsAndConditionsUrl'?: string;
     'learnMoreUrl'?: string;
+    'potentialCardTypes'?: Array<CardType>;
+    'potentialCardBrands'?: Array<CardBrand>;
     'paymentFormMessages'?: Array<PaymentFormMessage>;
     'displayProperties'?: { [key: string]: string; };
     'termsAndConditions'?: TermsAndConditions;
@@ -46,7 +52,7 @@ export class PaymentWizardDataResponseAllOf {
         {
             "name": "currencyDisplay",
             "baseName": "CurrencyDisplay",
-            "type": "Currency"
+            "type": "ExtendedCurrency"
         },
         {
             "name": "forceDisplayImportantNotes",
@@ -94,6 +100,16 @@ export class PaymentWizardDataResponseAllOf {
             "type": "boolean"
         },
         {
+            "name": "showLearnMore",
+            "baseName": "ShowLearnMore",
+            "type": "boolean"
+        },
+        {
+            "name": "showMobilePhone",
+            "baseName": "ShowMobilePhone",
+            "type": "boolean"
+        },
+        {
             "name": "logoURL",
             "baseName": "LogoURL",
             "type": "string"
@@ -112,6 +128,16 @@ export class PaymentWizardDataResponseAllOf {
             "name": "learnMoreUrl",
             "baseName": "LearnMoreUrl",
             "type": "string"
+        },
+        {
+            "name": "potentialCardTypes",
+            "baseName": "PotentialCardTypes",
+            "type": "Array<CardType>"
+        },
+        {
+            "name": "potentialCardBrands",
+            "baseName": "PotentialCardBrands",
+            "type": "Array<CardBrand>"
         },
         {
             "name": "paymentFormMessages",

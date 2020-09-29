@@ -24,17 +24,18 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.threeten.bp.OffsetDateTime;
 
 /**
  * ScheduleElements
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-29T14:12:31.625Z")
 public class ScheduleElements   {
   @SerializedName("InstallmentNumber")
   private Integer installmentNumber = null;
 
   @SerializedName("ChargeDate")
-  private String chargeDate = null;
+  private OffsetDateTime chargeDate = null;
 
   @SerializedName("ChargeAmount")
   private BigDecimal chargeAmount = null;
@@ -60,7 +61,7 @@ public class ScheduleElements   {
     this.installmentNumber = installmentNumber;
   }
 
-  public ScheduleElements chargeDate(String chargeDate) {
+  public ScheduleElements chargeDate(OffsetDateTime chargeDate) {
     this.chargeDate = chargeDate;
     return this;
   }
@@ -69,12 +70,12 @@ public class ScheduleElements   {
    * Get chargeDate
    * @return chargeDate
   **/
-  @ApiModelProperty(value = "")
-  public String getChargeDate() {
+  @ApiModelProperty(required = true, value = "")
+  public OffsetDateTime getChargeDate() {
     return chargeDate;
   }
 
-  public void setChargeDate(String chargeDate) {
+  public void setChargeDate(OffsetDateTime chargeDate) {
     this.chargeDate = chargeDate;
   }
 

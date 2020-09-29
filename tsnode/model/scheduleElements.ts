@@ -14,7 +14,7 @@ import { RequestFile } from '../api';
 
 export class ScheduleElements {
     'installmentNumber': number;
-    'chargeDate'?: string;
+    'chargeDate': Date;
     'chargeAmount': number;
     'requiredCredit': number;
 
@@ -29,7 +29,7 @@ export class ScheduleElements {
         {
             "name": "chargeDate",
             "baseName": "ChargeDate",
-            "type": "string"
+            "type": "Date"
         },
         {
             "name": "chargeAmount",

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * StartInstallmentsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-08-28T08:56:41.151Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-09-29T14:12:31.625Z")
 public class StartInstallmentsRequest   extends RequestWithHeader  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;

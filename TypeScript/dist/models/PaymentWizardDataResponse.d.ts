@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Currency, PaymentFormMessage, TermsAndConditions } from './';
+import { CardBrand, CardType, ExtendedCurrency, PaymentFormMessage, TermsAndConditions } from './';
 /**
  *
  * @export
@@ -72,10 +72,10 @@ export interface PaymentWizardDataResponse {
     showAddressElements?: string;
     /**
      *
-     * @type {Currency}
+     * @type {ExtendedCurrency}
      * @memberof PaymentWizardDataResponse
      */
-    currencyDisplay?: Currency;
+    currencyDisplay?: ExtendedCurrency;
     /**
      *
      * @type {boolean}
@@ -132,6 +132,18 @@ export interface PaymentWizardDataResponse {
     emailIsReadOnly: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    showLearnMore: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    showMobilePhone: boolean;
+    /**
+     *
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
@@ -154,6 +166,18 @@ export interface PaymentWizardDataResponse {
      * @memberof PaymentWizardDataResponse
      */
     learnMoreUrl?: string;
+    /**
+     *
+     * @type {Array<CardType>}
+     * @memberof PaymentWizardDataResponse
+     */
+    potentialCardTypes?: Array<CardType>;
+    /**
+     *
+     * @type {Array<CardBrand>}
+     * @memberof PaymentWizardDataResponse
+     */
+    potentialCardBrands?: Array<CardBrand>;
     /**
      *
      * @type {Array<PaymentFormMessage>}
