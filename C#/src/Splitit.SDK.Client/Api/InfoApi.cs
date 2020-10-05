@@ -145,7 +145,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LearnMoreDetailsResponse</returns>
         public LearnMoreDetailsResponse InfoGetLearnMoreDetails (LearnMoreDetailsRequest request)
         {
-            return InfoGetLearnMoreDetailsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InfoGetLearnMoreDetailsAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>

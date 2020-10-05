@@ -192,7 +192,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetResourcesResponse</returns>
         public GetResourcesResponse InfrastructureGetResources (GetResourcesRequest request)
         {
-            return InfrastructureGetResourcesAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InfrastructureGetResourcesAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetResourcesResponse</returns>
         public GetResourcesResponse InfrastructureGetResources2 (string apiKey = null, string sessionId = null, string merchantCode = null, string cultureName = null, string touchPointCode = null, List<SystemTextCategory> systemTextCategories = null)
         {
-            return InfrastructureGetResources2Async(apiKey, sessionId, merchantCode, cultureName, touchPointCode, systemTextCategories).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InfrastructureGetResources2Async(apiKey, sessionId, merchantCode, cultureName, touchPointCode, systemTextCategories)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>

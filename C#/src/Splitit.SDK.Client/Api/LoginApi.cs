@@ -181,7 +181,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LoginResponse</returns>
         public LoginResponse LoginGet (string userName = null, string password = null)
         {
-            return LoginGetAsync(userName, password).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await LoginGetAsync(userName, password)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LoginResponse</returns>
         public LoginResponse LoginPost (LoginRequest request)
         {
-            return LoginPostAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await LoginPostAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>

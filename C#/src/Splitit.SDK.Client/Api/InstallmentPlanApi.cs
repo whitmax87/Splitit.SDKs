@@ -657,7 +657,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanApprove (ApproveInstallmentPlanRequest request)
         {
-            return InstallmentPlanApproveAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanApproveAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -738,7 +738,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanCancel (CancelInstallmentPlanRequest request)
         {
-            return InstallmentPlanCancelAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanCancelAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -819,7 +819,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanChargeBack (ChargebackRequest request)
         {
-            return InstallmentPlanChargeBackAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanChargeBackAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -900,7 +900,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>CreateInstallmentsPlanResponse</returns>
         public CreateInstallmentsPlanResponse InstallmentPlanCreate (CreateInstallmentPlanRequest request)
         {
-            return InstallmentPlanCreateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanCreateAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -981,7 +981,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInstallmentsPlanResponse</returns>
         public GetInstallmentsPlanResponse InstallmentPlanGet (GetInstallmentsPlanSearchCriteriaRequest request)
         {
-            return InstallmentPlanGetAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1062,7 +1062,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>Get3DSecureParametersResponse</returns>
         public Get3DSecureParametersResponse InstallmentPlanGet3DSecureParameters (Get3DSecureParametersRequest request)
         {
-            return InstallmentPlanGet3DSecureParametersAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGet3DSecureParametersAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1143,7 +1143,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInstallmentsPlanExtendedResponse</returns>
         public GetInstallmentsPlanExtendedResponse InstallmentPlanGetExtended (GetInstallmentsPlanSearchCriteriaRequest request)
         {
-            return InstallmentPlanGetExtendedAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetExtendedAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1224,7 +1224,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetFraudStatusDisplayResponse</returns>
         public GetFraudStatusDisplayResponse InstallmentPlanGetFraudStatusDisplay (GetFraudStatusDisplayRequest request)
         {
-            return InstallmentPlanGetFraudStatusDisplayAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetFraudStatusDisplayAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1305,7 +1305,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInitiatedInstallmentPlanResponse</returns>
         public GetInitiatedInstallmentPlanResponse InstallmentPlanGetInitiatedInstallmentPlanRequest (GetInitiatedInstallmentPlanRequest request)
         {
-            return InstallmentPlanGetInitiatedInstallmentPlanRequestAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetInitiatedInstallmentPlanRequestAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1386,7 +1386,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>LearnMoreDetailsResponse</returns>
         public LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request)
         {
-            return InstallmentPlanGetLearnMoreDetailsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetLearnMoreDetailsAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1467,7 +1467,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>GetInstallmentsScheduleResponse</returns>
         public GetInstallmentsScheduleResponse InstallmentPlanGetSchedules (GetInstallmentSchedulesRequest request)
         {
-            return InstallmentPlanGetSchedulesAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetSchedulesAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1548,7 +1548,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InitiateInstallmentsPlanResponse</returns>
         public InitiateInstallmentsPlanResponse InstallmentPlanInitiate (InitiateInstallmentPlanRequest request)
         {
-            return InstallmentPlanInitiateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanInitiateAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1629,7 +1629,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>RefundInstallmentPlanResponse</returns>
         public RefundInstallmentPlanResponse InstallmentPlanRefund (RefundPlanRequest request)
         {
-            return InstallmentPlanRefundAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanRefundAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1710,7 +1710,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>InstallmentPlanResponse</returns>
         public InstallmentPlanResponse InstallmentPlanStartInstallments (StartInstallmentsRequest request)
         {
-            return InstallmentPlanStartInstallmentsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanStartInstallmentsAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1791,7 +1791,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>TermsAndConditionsGetResponse</returns>
         public TermsAndConditionsGetResponse InstallmentPlanTermsAndConditions (TermsAndConditionsGetRequest request)
         {
-            return InstallmentPlanTermsAndConditionsAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanTermsAndConditionsAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1872,7 +1872,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>UpdateInstallmentsPlanResponse</returns>
         public UpdateInstallmentsPlanResponse InstallmentPlanUpdate (UpdateInstallmentPlanRequest request)
         {
-            return InstallmentPlanUpdateAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanUpdateAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -1953,7 +1953,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>VerifyPaymentResponse</returns>
         public VerifyPaymentResponse InstallmentPlanVerifyPayment (VerifyPaymentRequest request)
         {
-            return InstallmentPlanVerifyPaymentAsync(request).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanVerifyPaymentAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>

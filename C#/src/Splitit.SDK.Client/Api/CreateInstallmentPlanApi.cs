@@ -205,7 +205,7 @@ namespace Splitit.SDK.Client.Api
         /// <returns>CreateInstallmentPlanLegacyResponse</returns>
         public CreateInstallmentPlanLegacyResponse CreateInstallmentPlanGet (decimal? amountBeforeFees = null, string apiKey = null, string avsAddress = null, string avsZip = null, string cardCvv = null, string cardExpMonth = null, string cardExpYear = null, string cardHolder = null, string cardNumber = null, int? cardTypeId = null, string consumerFullName = null, int? countryId = null, string email = null, int? installmentNumber = null, string paramX = null, string sessionId = null)
         {
-            return CreateInstallmentPlanGetAsync(amountBeforeFees, apiKey, avsAddress, avsZip, cardCvv, cardExpMonth, cardExpYear, cardHolder, cardNumber, cardTypeId, consumerFullName, countryId, email, installmentNumber, paramX, sessionId).ConfigureAwait(false).GetAwaiter().GetResult();
+            return System.Threading.Tasks.Task.Run(async () => await CreateInstallmentPlanGetAsync(amountBeforeFees, apiKey, avsAddress, avsZip, cardCvv, cardExpMonth, cardExpYear, cardHolder, cardNumber, cardTypeId, consumerFullName, countryId, email, installmentNumber, paramX, sessionId)).ConfigureAwait(true).GetAwaiter().GetResult();
         }
 
         /// <summary>
