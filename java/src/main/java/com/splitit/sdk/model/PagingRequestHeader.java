@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * PagingRequestHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class PagingRequestHeader   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class PagingRequestHeader  {
   @SerializedName("Skip")
   private Integer skip = null;
 
@@ -95,6 +95,7 @@ public class PagingRequestHeader   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PagingRequestHeader {\n");
+    
     
     sb.append("    skip: ").append(toIndentedString(skip)).append("\n");
     sb.append("    take: ").append(toIndentedString(take)).append("\n");

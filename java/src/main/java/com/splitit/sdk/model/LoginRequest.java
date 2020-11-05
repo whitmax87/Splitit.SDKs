@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * LoginRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class LoginRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class LoginRequest extends ModelWithHeader {
   @SerializedName("UserName")
   private String userName = null;
 
@@ -118,6 +118,7 @@ public class LoginRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoginRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");

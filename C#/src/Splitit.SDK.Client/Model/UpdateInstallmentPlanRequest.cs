@@ -57,6 +57,8 @@ namespace Splitit.SDK.Client.Model
             this.ExternalAuth = externalAuth;
         }
 
+        [DataMember(Name="RequestHeader", EmitDefaultValue=false)]
+        internal RequestHeader RequestHeader { get; set; }
         
         /// <summary>
         /// Gets or Sets InstallmentPlanNumber

@@ -28,8 +28,8 @@ import java.math.BigDecimal;
 /**
  * AmountDetails2
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class AmountDetails2   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class AmountDetails2  {
   @SerializedName("SubTotal")
   private BigDecimal subTotal = null;
 
@@ -118,6 +118,7 @@ public class AmountDetails2   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AmountDetails2 {\n");
+    
     
     sb.append("    subTotal: ").append(toIndentedString(subTotal)).append("\n");
     sb.append("    tax: ").append(toIndentedString(tax)).append("\n");

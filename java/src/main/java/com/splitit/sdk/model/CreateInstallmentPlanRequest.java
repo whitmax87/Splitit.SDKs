@@ -37,8 +37,8 @@ import java.io.IOException;
 /**
  * CreateInstallmentPlanRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class CreateInstallmentPlanRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class CreateInstallmentPlanRequest extends ModelWithHeader {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
 
@@ -303,6 +303,7 @@ public class CreateInstallmentPlanRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInstallmentPlanRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    installmentPlanNumber: ").append(toIndentedString(installmentPlanNumber)).append("\n");
     sb.append("    planData: ").append(toIndentedString(planData)).append("\n");

@@ -1,4 +1,4 @@
-# splitit_sdk_client.InstallmentPlanApi
+# splitit.InstallmentPlanApi
 
 All URIs are relative to *https://webapi.production.splitit.com*
 
@@ -6,10 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**installment_plan_approve**](InstallmentPlanApi.md#installment_plan_approve) | **POST** /api/InstallmentPlan/Approve | 
 [**installment_plan_cancel**](InstallmentPlanApi.md#installment_plan_cancel) | **POST** /api/InstallmentPlan/Cancel | 
+[**installment_plan_charge_back**](InstallmentPlanApi.md#installment_plan_charge_back) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**installment_plan_create**](InstallmentPlanApi.md#installment_plan_create) | **POST** /api/InstallmentPlan/Create | 
 [**installment_plan_get**](InstallmentPlanApi.md#installment_plan_get) | **POST** /api/InstallmentPlan/Get | 
 [**installment_plan_get3_d_secure_parameters**](InstallmentPlanApi.md#installment_plan_get3_d_secure_parameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installment_plan_get_extended**](InstallmentPlanApi.md#installment_plan_get_extended) | **POST** /api/InstallmentPlan/GetExtended | 
+[**installment_plan_get_fraud_status_display**](InstallmentPlanApi.md#installment_plan_get_fraud_status_display) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
+[**installment_plan_get_initiated_installment_plan_request**](InstallmentPlanApi.md#installment_plan_get_initiated_installment_plan_request) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**installment_plan_get_learn_more_details**](InstallmentPlanApi.md#installment_plan_get_learn_more_details) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+[**installment_plan_get_schedules**](InstallmentPlanApi.md#installment_plan_get_schedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installment_plan_initiate**](InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installment_plan_refund**](InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
 [**installment_plan_start_installments**](InstallmentPlanApi.md#installment_plan_start_installments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -27,13 +32,13 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.ApproveInstallmentPlanRequest() # ApproveInstallmentPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.ApproveInstallmentPlanRequest() # ApproveInstallmentPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_approve(request)
@@ -72,13 +77,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.CancelInstallmentPlanRequest() # CancelInstallmentPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.CancelInstallmentPlanRequest() # CancelInstallmentPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_cancel(request)
@@ -108,6 +113,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **installment_plan_charge_back**
+> InstallmentPlanResponse installment_plan_charge_back(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.ChargebackRequest() # ChargebackRequest | 
+
+try:
+    api_response = api_instance.installment_plan_charge_back(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_charge_back: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**ChargebackRequest**](ChargebackRequest.md)|  | 
+
+### Return type
+
+[**InstallmentPlanResponse**](InstallmentPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **installment_plan_create**
 > CreateInstallmentsPlanResponse installment_plan_create(request)
 
@@ -117,13 +167,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.CreateInstallmentPlanRequest() # CreateInstallmentPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.CreateInstallmentPlanRequest() # CreateInstallmentPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_create(request)
@@ -162,13 +212,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.GetInstallmentsPlanSearchCriteriaRequest() # GetInstallmentsPlanSearchCriteriaRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.GetInstallmentsPlanSearchCriteriaRequest() # GetInstallmentsPlanSearchCriteriaRequest | 
 
 try:
     api_response = api_instance.installment_plan_get(request)
@@ -207,13 +257,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.Get3DSecureParametersRequest() # Get3DSecureParametersRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.Get3DSecureParametersRequest() # Get3DSecureParametersRequest | 
 
 try:
     api_response = api_instance.installment_plan_get3_d_secure_parameters(request)
@@ -252,13 +302,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.GetInstallmentsPlanSearchCriteriaRequest() # GetInstallmentsPlanSearchCriteriaRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.GetInstallmentsPlanSearchCriteriaRequest() # GetInstallmentsPlanSearchCriteriaRequest | 
 
 try:
     api_response = api_instance.installment_plan_get_extended(request)
@@ -288,6 +338,186 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **installment_plan_get_fraud_status_display**
+> GetFraudStatusDisplayResponse installment_plan_get_fraud_status_display(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.GetFraudStatusDisplayRequest() # GetFraudStatusDisplayRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get_fraud_status_display(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_fraud_status_display: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetFraudStatusDisplayRequest**](GetFraudStatusDisplayRequest.md)|  | 
+
+### Return type
+
+[**GetFraudStatusDisplayResponse**](GetFraudStatusDisplayResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_get_initiated_installment_plan_request**
+> GetInitiatedInstallmentPlanResponse installment_plan_get_initiated_installment_plan_request(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.GetInitiatedInstallmentPlanRequest() # GetInitiatedInstallmentPlanRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get_initiated_installment_plan_request(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_initiated_installment_plan_request: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetInitiatedInstallmentPlanRequest**](GetInitiatedInstallmentPlanRequest.md)|  | 
+
+### Return type
+
+[**GetInitiatedInstallmentPlanResponse**](GetInitiatedInstallmentPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_get_learn_more_details**
+> LearnMoreDetailsResponse installment_plan_get_learn_more_details(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.LearnMoreDetailsRequest() # LearnMoreDetailsRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get_learn_more_details(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_learn_more_details: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**LearnMoreDetailsRequest**](LearnMoreDetailsRequest.md)|  | 
+
+### Return type
+
+[**LearnMoreDetailsResponse**](LearnMoreDetailsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_get_schedules**
+> GetInstallmentsScheduleResponse installment_plan_get_schedules(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.GetInstallmentSchedulesRequest() # GetInstallmentSchedulesRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get_schedules(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_schedules: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetInstallmentSchedulesRequest**](GetInstallmentSchedulesRequest.md)|  | 
+
+### Return type
+
+[**GetInstallmentsScheduleResponse**](GetInstallmentsScheduleResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **installment_plan_initiate**
 > InitiateInstallmentsPlanResponse installment_plan_initiate(request)
 
@@ -297,13 +527,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.InitiateInstallmentPlanRequest() # InitiateInstallmentPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.InitiateInstallmentPlanRequest() # InitiateInstallmentPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_initiate(request)
@@ -342,13 +572,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.RefundPlanRequest() # RefundPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.RefundPlanRequest() # RefundPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_refund(request)
@@ -387,13 +617,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.StartInstallmentsRequest() # StartInstallmentsRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.StartInstallmentsRequest() # StartInstallmentsRequest | 
 
 try:
     api_response = api_instance.installment_plan_start_installments(request)
@@ -432,13 +662,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.TermsAndConditionsGetRequest() # TermsAndConditionsGetRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.TermsAndConditionsGetRequest() # TermsAndConditionsGetRequest | 
 
 try:
     api_response = api_instance.installment_plan_terms_and_conditions(request)
@@ -477,13 +707,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.UpdateInstallmentPlanRequest() # UpdateInstallmentPlanRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.UpdateInstallmentPlanRequest() # UpdateInstallmentPlanRequest | 
 
 try:
     api_response = api_instance.installment_plan_update(request)
@@ -522,13 +752,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.InstallmentPlanApi()
-request = splitit_sdk_client.VerifyPaymentRequest() # VerifyPaymentRequest | 
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.VerifyPaymentRequest() # VerifyPaymentRequest | 
 
 try:
     api_response = api_instance.installment_plan_verify_payment(request)

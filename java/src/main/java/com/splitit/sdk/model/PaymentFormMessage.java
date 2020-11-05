@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * PaymentFormMessage
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class PaymentFormMessage   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class PaymentFormMessage  {
   @SerializedName("Type")
   private PaymentFormMessageType type = null;
 
@@ -140,6 +140,7 @@ public class PaymentFormMessage   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentFormMessage {\n");
+    
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

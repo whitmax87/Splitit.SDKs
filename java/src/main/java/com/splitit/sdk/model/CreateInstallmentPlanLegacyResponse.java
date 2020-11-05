@@ -29,8 +29,8 @@ import java.math.BigDecimal;
 /**
  * CreateInstallmentPlanLegacyResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class CreateInstallmentPlanLegacyResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class CreateInstallmentPlanLegacyResponse  {
   @SerializedName("ApiKey")
   private String apiKey = null;
 
@@ -339,6 +339,7 @@ public class CreateInstallmentPlanLegacyResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInstallmentPlanLegacyResponse {\n");
+    
     
     sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
     sb.append("    installmentPlanStatus: ").append(toIndentedString(installmentPlanStatus)).append("\n");

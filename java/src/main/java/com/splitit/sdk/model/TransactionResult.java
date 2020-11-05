@@ -30,8 +30,8 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TransactionResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class TransactionResult   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class TransactionResult  {
   @SerializedName("GatewayTransactionId")
   private String gatewayTransactionId = null;
 
@@ -274,6 +274,7 @@ public class TransactionResult   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransactionResult {\n");
+    
     
     sb.append("    gatewayTransactionId: ").append(toIndentedString(gatewayTransactionId)).append("\n");
     sb.append("    splititTransactionId: ").append(toIndentedString(splititTransactionId)).append("\n");

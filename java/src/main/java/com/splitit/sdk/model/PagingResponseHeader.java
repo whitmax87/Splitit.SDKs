@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * PagingResponseHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class PagingResponseHeader   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class PagingResponseHeader  {
   @SerializedName("TotalNumber")
   private Long totalNumber = null;
 
@@ -73,6 +73,7 @@ public class PagingResponseHeader   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PagingResponseHeader {\n");
+    
     
     sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
     sb.append("}");

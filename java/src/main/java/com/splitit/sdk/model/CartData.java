@@ -31,8 +31,8 @@ import java.util.List;
 /**
  * CartData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class CartData   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class CartData  {
   @SerializedName("Items")
   private List<ItemData> items = null;
 
@@ -107,6 +107,7 @@ public class CartData   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CartData {\n");
+    
     
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    amountDetails: ").append(toIndentedString(amountDetails)).append("\n");

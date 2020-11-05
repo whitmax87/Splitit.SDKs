@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * ResponseError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ResponseError   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ResponseError  {
   @SerializedName("ErrorCode")
   private String errorCode = null;
 
@@ -117,6 +117,7 @@ public class ResponseError   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponseError {\n");
+    
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");

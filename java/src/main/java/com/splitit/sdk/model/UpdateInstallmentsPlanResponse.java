@@ -33,8 +33,8 @@ import java.util.List;
 /**
  * UpdateInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class UpdateInstallmentsPlanResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class UpdateInstallmentsPlanResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
@@ -153,6 +153,7 @@ public class UpdateInstallmentsPlanResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateInstallmentsPlanResponse {\n");
+    
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");

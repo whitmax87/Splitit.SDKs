@@ -30,8 +30,8 @@ import java.io.IOException;
 /**
  * GetInstallmentsPlanSearchCriteriaRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class GetInstallmentsPlanSearchCriteriaRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class GetInstallmentsPlanSearchCriteriaRequest extends ModelWithHeader {
   @SerializedName("QueryCriteria")
   private InstallmentPlanQueryCriteria queryCriteria = null;
 
@@ -120,6 +120,7 @@ public class GetInstallmentsPlanSearchCriteriaRequest   extends RequestWithHeade
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetInstallmentsPlanSearchCriteriaRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    queryCriteria: ").append(toIndentedString(queryCriteria)).append("\n");
     sb.append("    loadRelated: ").append(toIndentedString(loadRelated)).append("\n");

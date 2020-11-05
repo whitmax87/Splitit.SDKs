@@ -29,8 +29,8 @@ import java.math.BigDecimal;
 /**
  * ItemData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ItemData   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ItemData  {
   @SerializedName("Name")
   private String name = null;
 
@@ -163,6 +163,7 @@ public class ItemData   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ItemData {\n");
+    
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    sku: ").append(toIndentedString(sku)).append("\n");

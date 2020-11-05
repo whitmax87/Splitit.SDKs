@@ -31,8 +31,8 @@ import java.util.List;
 /**
  * GetResourcesRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class GetResourcesRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class GetResourcesRequest extends ModelWithHeader {
   @SerializedName("SystemTextCategories")
   private List<SystemTextCategory> systemTextCategories = null;
 
@@ -107,6 +107,7 @@ public class GetResourcesRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetResourcesRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    systemTextCategories: ").append(toIndentedString(systemTextCategories)).append("\n");
     sb.append("    requestContext: ").append(toIndentedString(requestContext)).append("\n");

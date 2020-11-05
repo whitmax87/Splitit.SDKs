@@ -21,7 +21,6 @@ import com.splitit.Configuration;
 import com.splitit.Pair;
 import com.splitit.ProgressRequestBody;
 import com.splitit.ProgressResponseBody;
-import com.splitit.sdk.model.RequestWithHeader;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -38,25 +37,22 @@ import java.util.List;
 import java.util.Map;
 
 public class LoginApi {
-    private ApiClient apiClient;
-    private String sessionId;
-    private String culture;
+    protected ApiClient apiClient;
 
     public LoginApi() {
-        this(Configuration.production());
+        this(Configuration.getDefaultApiClient());
     }
 
     public LoginApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
-    public LoginApi withSessionId(String sessionId){
-        this.sessionId = sessionId;
-        return this;
+    public ApiClient getApiClient() {
+        return apiClient;
     }
 
-    public void setCulture(String culture) {
-        this.culture = culture;
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
     }
 
     /**
@@ -71,7 +67,6 @@ public class LoginApi {
      */
     @Deprecated
     public com.squareup.okhttp.Call loginGetCall(String userName, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -152,9 +147,26 @@ public class LoginApi {
      */
     @Deprecated
     public ApiResponse<LoginResponse> loginGetWithHttpInfo(String userName, String password) throws ApiException {
+        if ("loginGet" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = loginGetValidateBeforeCall(userName, password, null, null);
         Type localVarReturnType = new TypeToken<LoginResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("loginGet" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = loginGetValidateBeforeCall(userName, password, null, null);
+                localVarReturnType = new TypeToken<LoginResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -203,8 +215,6 @@ public class LoginApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call loginPostCall(LoginRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -279,9 +289,26 @@ public class LoginApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LoginResponse> loginPostWithHttpInfo(LoginRequest request) throws ApiException {
+        if ("loginPost" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = loginPostValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<LoginResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("loginPost" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = loginPostValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<LoginResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**

@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * GetFraudStatusDisplayResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class GetFraudStatusDisplayResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class GetFraudStatusDisplayResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
@@ -184,6 +184,7 @@ public class GetFraudStatusDisplayResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetFraudStatusDisplayResponse {\n");
+    
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

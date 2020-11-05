@@ -28,8 +28,8 @@ import java.math.BigDecimal;
 /**
  * MoneyWithCurrencyCode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class MoneyWithCurrencyCode   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class MoneyWithCurrencyCode  {
   @SerializedName("Value")
   private BigDecimal value = null;
 
@@ -96,6 +96,7 @@ public class MoneyWithCurrencyCode   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MoneyWithCurrencyCode {\n");
+    
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");

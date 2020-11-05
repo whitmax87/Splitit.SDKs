@@ -29,8 +29,8 @@ import java.io.IOException;
 /**
  * TransactionInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class TransactionInfo   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class TransactionInfo  {
   @SerializedName("TransactionId")
   private String transactionId = null;
 
@@ -119,6 +119,7 @@ public class TransactionInfo   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransactionInfo {\n");
+    
     
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");

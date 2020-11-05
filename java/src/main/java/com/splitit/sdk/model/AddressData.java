@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * AddressData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class AddressData   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class AddressData  {
   @SerializedName("AddressLine")
   private String addressLine = null;
 
@@ -206,6 +206,7 @@ public class AddressData   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddressData {\n");
+    
     
     sb.append("    addressLine: ").append(toIndentedString(addressLine)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");

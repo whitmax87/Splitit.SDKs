@@ -37,8 +37,8 @@ import java.util.Map;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class PaymentWizardDataResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class PaymentWizardDataResponse  {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
 
@@ -753,6 +753,7 @@ public class PaymentWizardDataResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentWizardDataResponse {\n");
+    
     
     sb.append("    requestedNumberOfInstallments: ").append(toIndentedString(requestedNumberOfInstallments)).append("\n");
     sb.append("    successExitURL: ").append(toIndentedString(successExitURL)).append("\n");

@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * TermsAndConditions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class TermsAndConditions   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class TermsAndConditions  {
   @SerializedName("Agreement")
   private String agreement = null;
 
@@ -205,6 +205,7 @@ public class TermsAndConditions   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TermsAndConditions {\n");
+    
     
     sb.append("    agreement: ").append(toIndentedString(agreement)).append("\n");
     sb.append("    importantNote: ").append(toIndentedString(importantNote)).append("\n");

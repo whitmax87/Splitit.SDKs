@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * InstallmentPlanDateInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class InstallmentPlanDateInfo   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class InstallmentPlanDateInfo  {
   @SerializedName("InstallmentsPlanDateType")
   private InstallmentsPlanDateType installmentsPlanDateType = null;
 
@@ -140,6 +140,7 @@ public class InstallmentPlanDateInfo   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InstallmentPlanDateInfo {\n");
+    
     
     sb.append("    installmentsPlanDateType: ").append(toIndentedString(installmentsPlanDateType)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");

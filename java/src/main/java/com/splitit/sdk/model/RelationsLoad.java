@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * RelationsLoad
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class RelationsLoad   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class RelationsLoad  {
   @SerializedName("Installments")
   private InstallmentPlanActivityStatus installments = null;
 
@@ -96,6 +96,7 @@ public class RelationsLoad   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RelationsLoad {\n");
+    
     
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("    secureAuthorizations: ").append(toIndentedString(secureAuthorizations)).append("\n");

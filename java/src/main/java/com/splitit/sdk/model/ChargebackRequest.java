@@ -29,8 +29,8 @@ import java.util.List;
 /**
  * ChargebackRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ChargebackRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ChargebackRequest extends ModelWithHeader {
   @SerializedName("TransactionIdsToMark")
   private List<Long> transactionIdsToMark = null;
 
@@ -157,6 +157,7 @@ public class ChargebackRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChargebackRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    transactionIdsToMark: ").append(toIndentedString(transactionIdsToMark)).append("\n");
     sb.append("    transactionIdsToUnmark: ").append(toIndentedString(transactionIdsToUnmark)).append("\n");

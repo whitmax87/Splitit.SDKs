@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-10-05T09:09:58.136Z
-- SDK Version: 1.5.13
+  - Build date: 2020-11-05T04:46:38.670Z
+- SDK Version: 1.5.14
 
 ## Requirements
 
@@ -24,7 +24,6 @@ mvn clean install
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
 import com.splitit.sdk.model.*;
 
 import java.math.BigDecimal;
@@ -35,26 +34,17 @@ import com.splitit.sdk.api.*;
 public class SimpleFlowExample {
 
     public static void main(String[] args) {
-        
-        Configuration.addSandboxApiKey("_YOUR_API_KEY_");
-
-        LoginApi loginApi = new LoginApi(Configuration.sandbox());
-        LoginRequest request = new LoginRequest()
-            .userName("_YOUR_USERNAME_")
-            .password("_YOUR_PASSWORD_");
+        ApiClient apiClient = new ApiClient()
+            .sandbox(true)
+            .username("_YOUR_USERNAME_")
+            .password("_YOUR_PASSWORD_")
+            .apiKey("_YOUR_API_KEY_");
 
         try{
-            System.out.println("Invoking loginPost...");
-            LoginResponse loginResult = loginApi.loginPost(request);
-            System.out.println("Login completed. Result:");
-            System.out.println(loginResult.toString());
-            System.out.println("");
+            // apiClient.cultureName("de-DE"); // optionally set culture for subsequent API calls.
 
-            InstallmentPlanApi installmentPlanApi = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResult.getSessionId());
-            //installmentPlanApi.setCulture("de-DE"); -> optionally set culture for subsequent API calls.
-            
             System.out.println("Invoking installmentPlanInitiate...");
-            InitiateInstallmentsPlanResponse initResponse = installmentPlanApi.installmentPlanInitiate(new InitiateInstallmentPlanRequest()
+            InitiateInstallmentsPlanResponse initResponse = apiClient.getInstallmentPlanApi().installmentPlanInitiate(new InitiateInstallmentPlanRequest()
                 .planData(new PlanData()
                     .numberOfInstallments(3)
                     .amount(new MoneyWithCurrencyCode()
@@ -83,7 +73,7 @@ public class SimpleFlowExample {
             System.out.println("");
 
             System.out.println("Invoking installmentPlanCreate...");
-            CreateInstallmentsPlanResponse createResponse = installmentPlanApi.installmentPlanCreate(new CreateInstallmentPlanRequest()
+            CreateInstallmentsPlanResponse createResponse = apiClient.getInstallmentPlanApi().installmentPlanCreate(new CreateInstallmentPlanRequest()
                 .creditCardDetails(new CardData()
                     .cardNumber("411111111111111")
                     .cardCvv("123")
@@ -113,6 +103,7 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CreateInstallmentPlanApi* | [**createInstallmentPlanGet**](docs/CreateInstallmentPlanApi.md#createInstallmentPlanGet) | **GET** /api/CreateInstallmentPlan | 
 *InfoApi* | [**infoGetLearnMoreDetails**](docs/InfoApi.md#infoGetLearnMoreDetails) | **POST** /api/Merchant/GetLearnMoreDetails | 
 *InfrastructureApi* | [**infrastructureGetResources**](docs/InfrastructureApi.md#infrastructureGetResources) | **POST** /api/Infrastructure/GetResources | 
 *InfrastructureApi* | [**infrastructureGetResources2**](docs/InfrastructureApi.md#infrastructureGetResources2) | **GET** /api/Infrastructure/GetResources | 

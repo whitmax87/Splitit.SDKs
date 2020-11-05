@@ -21,7 +21,6 @@ import com.splitit.Configuration;
 import com.splitit.Pair;
 import com.splitit.ProgressRequestBody;
 import com.splitit.ProgressResponseBody;
-import com.splitit.sdk.model.RequestWithHeader;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -38,25 +37,22 @@ import java.util.List;
 import java.util.Map;
 
 public class InfoApi {
-    private ApiClient apiClient;
-    private String sessionId;
-    private String culture;
+    protected ApiClient apiClient;
 
     public InfoApi() {
-        this(Configuration.production());
+        this(Configuration.getDefaultApiClient());
     }
 
     public InfoApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
-    public InfoApi withSessionId(String sessionId){
-        this.sessionId = sessionId;
-        return this;
+    public ApiClient getApiClient() {
+        return apiClient;
     }
 
-    public void setCulture(String culture) {
-        this.culture = culture;
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
     }
 
     /**
@@ -68,8 +64,6 @@ public class InfoApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call infoGetLearnMoreDetailsCall(LearnMoreDetailsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -144,9 +138,26 @@ public class InfoApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LearnMoreDetailsResponse> infoGetLearnMoreDetailsWithHttpInfo(LearnMoreDetailsRequest request) throws ApiException {
+        if ("infoGetLearnMoreDetails" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = infoGetLearnMoreDetailsValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("infoGetLearnMoreDetails" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = infoGetLearnMoreDetailsValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**

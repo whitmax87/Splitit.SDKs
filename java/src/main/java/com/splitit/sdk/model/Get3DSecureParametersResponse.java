@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * Get3DSecureParametersResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class Get3DSecureParametersResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class Get3DSecureParametersResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
@@ -162,6 +162,7 @@ public class Get3DSecureParametersResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Get3DSecureParametersResponse {\n");
+    
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    issuerRedirectUrl: ").append(toIndentedString(issuerRedirectUrl)).append("\n");

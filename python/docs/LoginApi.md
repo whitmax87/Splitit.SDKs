@@ -1,4 +1,4 @@
-# splitit_sdk_client.LoginApi
+# splitit.LoginApi
 
 All URIs are relative to *https://webapi.production.splitit.com*
 
@@ -17,12 +17,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.LoginApi()
+api_instance = splitit.LoginApi()
 user_name = 'user_name_example' # str |  (optional)
 password = 'password_example' # str |  (optional)
 
@@ -64,13 +64,13 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.LoginApi()
-request = splitit_sdk_client.LoginRequest() # LoginRequest | 
+api_instance = splitit.LoginApi()
+request = splitit.LoginRequest() # LoginRequest | 
 
 try:
     api_response = api_instance.login_post(request)

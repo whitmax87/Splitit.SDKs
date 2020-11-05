@@ -46,16 +46,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.lang.reflect.Method;
 import com.splitit.sdk.model.ResponseHeader;
+import com.splitit.sdk.model.LoginResponse;
+import com.splitit.sdk.model.LoginRequest;
 
 import com.splitit.auth.Authentication;
 import com.splitit.auth.HttpBasicAuth;
 import com.splitit.auth.ApiKeyAuth;
 import com.splitit.auth.OAuth;
 
+import com.splitit.sdk.api.*;
+import com.splitit.sdk.model.RequestHeader;
+import com.splitit.sdk.model.ModelWithHeader;
+//import com.splitit.sdk.api.CreateInstallmentPlanApi;
+//import com.splitit.sdk.api.InfoApi;
+//import com.splitit.sdk.api.InfrastructureApi;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+//import com.splitit.sdk.api.LoginApi;
+
 public class ApiClient {
 
-    private String apiKey;
-    private String basePath = "https://webapi.production.splitit.com";
+    private String basePath;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -73,30 +83,199 @@ public class ApiClient {
     private JSON json;
 
     private HttpLoggingInterceptor loggingInterceptor;
+    private RequestHeader requestHeader;
+    private boolean autologin = true;
+    private String username, password;
+
+    private CreateInstallmentPlanApi createInstallmentPlan;
+    /**
+     * Get createInstallmentPlan API
+     *
+     * @return An instance of CreateInstallmentPlanApi
+     */
+    public CreateInstallmentPlanApi getCreateInstallmentPlanApi() {
+        if (this.createInstallmentPlan == null){
+            this.createInstallmentPlan = new CreateInstallmentPlanApi(this);
+        }
+        return this.createInstallmentPlan;
+    }
+    private InfoApi info;
+    /**
+     * Get info API
+     *
+     * @return An instance of InfoApi
+     */
+    public InfoApi getInfoApi() {
+        if (this.info == null){
+            this.info = new InfoApi(this);
+        }
+        return this.info;
+    }
+    private InfrastructureApi infrastructure;
+    /**
+     * Get infrastructure API
+     *
+     * @return An instance of InfrastructureApi
+     */
+    public InfrastructureApi getInfrastructureApi() {
+        if (this.infrastructure == null){
+            this.infrastructure = new InfrastructureApi(this);
+        }
+        return this.infrastructure;
+    }
+    private InstallmentPlanApi installmentPlan;
+    /**
+     * Get installmentPlan API
+     *
+     * @return An instance of InstallmentPlanApi
+     */
+    public InstallmentPlanApi getInstallmentPlanApi() {
+        if (this.installmentPlan == null){
+            this.installmentPlan = new InstallmentPlanApi(this);
+        }
+        return this.installmentPlan;
+    }
+    private LoginApi login;
+    /**
+     * Get login API
+     *
+     * @return An instance of LoginApi
+     */
+    public LoginApi getLoginApi() {
+        if (this.login == null){
+            this.login = new LoginApi(this);
+        }
+        return this.login;
+    }
+
+    public void performAutologin(boolean resetSessionId) throws ApiException {
+        if (resetSessionId){
+            requestHeader.setSessionId(null);
+        }
+        if (requestHeader.getSessionId() == null && autologin && username != null && password != null){
+            this.getLoginApi().loginPost(
+                new LoginRequest()
+                .userName(username)
+                .password(password)
+            );
+        }
+    }
 
     /*
      * Constructor for ApiClient
      */
-    public ApiClient(String basePath) {
-        this.basePath = basePath;
-        
+    public ApiClient() {
         httpClient = new OkHttpClient();
+        this.login = new LoginApiAutologin(this);
+        requestHeader = new RequestHeader()
+        .cultureName("en-US");
 
 
         verifyingSsl = true;
 
         json = new JSON();
 
-        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.5.13");
-        this.defaultHeaderMap.put("User-Agent", "Splitit-SDK-Java");        
+        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.5.14");
+        this.defaultHeaderMap.put("User-Agent", "Splitit-SDK-Java");
     }
 
-    public void addApiKey(String apiKey){
-        this.apiKey = apiKey;
+    public ApiClient sandbox(boolean sandbox){
+        return setBasePath(sandbox ? "https://webapi.sandbox.splitit.com" : "https://webapi.production.splitit.com");
     }
 
-    public String getApiKey(){
-        return this.apiKey;
+    public ApiClient apiKey(String apiKey){
+        requestHeader.setApiKey(apiKey);
+        return this;
+    }
+
+    public ApiClient autologin(boolean autologin){
+        this.autologin = autologin;
+        return this;
+    }
+
+    public boolean isAutologin(){
+        return this.autologin;
+    }
+
+    //For auto session
+    public ApiClient username(String username){
+        this.username = username;
+        return this;
+    }
+
+    public ApiClient password(String password){
+        this.password = password;
+        return this;
+    }
+
+    public ApiClient cultureName(String cultureName){
+        requestHeader.setCultureName(cultureName);
+        return this;
+    }
+
+    public ApiClient setSessionId(String sessionId){
+        requestHeader.setSessionId(sessionId);
+        return this;
+    }
+
+    /**
+     * Get base path
+     *
+     * @return Baes path
+     */
+    public String getBasePath() {
+        return basePath;
+    }
+
+    /**
+     * Set base path
+     *
+     * @param basePath Base path of the URL (e.g https://webapi.production.splitit.com
+     * @return An instance of OkHttpClient
+     */
+    public ApiClient setBasePath(String basePath) {
+        this.basePath = basePath;
+        return this;
+    }
+
+    /**
+     * Get HTTP client
+     *
+     * @return An instance of OkHttpClient
+     */
+    public OkHttpClient getHttpClient() {
+        return httpClient;
+    }
+
+    /**
+     * Set HTTP client
+     *
+     * @param httpClient An instance of OkHttpClient
+     * @return Api Client
+     */
+    public ApiClient setHttpClient(OkHttpClient httpClient) {
+        this.httpClient = httpClient;
+        return this;
+    }
+
+    /**
+     * Get JSON
+     *
+     * @return JSON object
+     */
+    public JSON getJSON() {
+        return json;
+    }
+
+    /**
+     * Set JSON
+     *
+     * @param json JSON object
+     * @return Api client
+     */
+    public ApiClient setJSON(JSON json) {
+        this.json = json;
+        return this;
     }
 
     /**
@@ -129,10 +308,6 @@ public class ApiClient {
      */
     public InputStream getSslCaCert() {
         return sslCaCert;
-    }
-
-    public OkHttpClient getHttpClient() {
-        return httpClient;
     }
 
     /**
@@ -805,6 +980,16 @@ public class ApiClient {
      * @throws ApiException If fail to serialize the request body object
      */
     public Call buildCall(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        if (body instanceof ModelWithHeader){
+            ModelWithHeader mwh = (ModelWithHeader)body;
+            // User can take manual control over the header if it's needed
+            // Don't interfere if the header was alerady set.
+            if (!mwh.isRequestHeaderSet()){
+                mwh.setRequestHeader(this.requestHeader);
+                body = mwh;
+            }
+
+        }
         Request request = buildRequest(path, method, queryParams, collectionQueryParams, body, headerParams, formParams, authNames, progressRequestListener);
 
         return httpClient.newCall(request);
@@ -822,11 +1007,11 @@ public class ApiClient {
      * @param formParams The form parameters
      * @param authNames The authentications to apply
      * @param progressRequestListener Progress request listener
-     * @return The HTTP request 
+     * @return The HTTP request
      * @throws ApiException If fail to serialize the request body object
      */
     public Request buildRequest(String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String[] authNames, ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
         final String url = buildUrl(path, queryParams, collectionQueryParams);
         final Request.Builder reqBuilder = new Request.Builder().url(url);
         processHeaderParams(headerParams, reqBuilder);

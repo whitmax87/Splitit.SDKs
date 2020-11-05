@@ -33,8 +33,8 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ReAuthorization
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ReAuthorization   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ReAuthorization  {
   @SerializedName("ProcessingDate")
   private OffsetDateTime processingDate = null;
 
@@ -175,6 +175,7 @@ public class ReAuthorization   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReAuthorization {\n");
+    
     
     sb.append("    processingDate: ").append(toIndentedString(processingDate)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

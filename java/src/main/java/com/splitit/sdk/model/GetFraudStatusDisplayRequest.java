@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * GetFraudStatusDisplayRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class GetFraudStatusDisplayRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class GetFraudStatusDisplayRequest extends ModelWithHeader {
   @SerializedName("ProviderReferenceId")
   private String providerReferenceId = null;
 
@@ -117,6 +117,7 @@ public class GetFraudStatusDisplayRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetFraudStatusDisplayRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    providerReferenceId: ").append(toIndentedString(providerReferenceId)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");

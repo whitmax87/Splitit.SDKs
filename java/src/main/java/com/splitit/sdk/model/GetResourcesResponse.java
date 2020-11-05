@@ -31,8 +31,8 @@ import java.util.Map;
 /**
  * GetResourcesResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class GetResourcesResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class GetResourcesResponse  {
   @SerializedName("Logos")
   private Map<String, String> logos = null;
 
@@ -167,6 +167,7 @@ public class GetResourcesResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetResourcesResponse {\n");
+    
     
     sb.append("    logos: ").append(toIndentedString(logos)).append("\n");
     sb.append("    touchPointColors: ").append(toIndentedString(touchPointColors)).append("\n");

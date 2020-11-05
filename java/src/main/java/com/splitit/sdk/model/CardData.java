@@ -29,8 +29,8 @@ import java.io.IOException;
 /**
  * CardData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class CardData   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class CardData  {
   @SerializedName("CardId")
   private String cardId = null;
 
@@ -295,6 +295,7 @@ public class CardData   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardData {\n");
+    
     
     sb.append("    cardId: ").append(toIndentedString(cardId)).append("\n");
     sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");

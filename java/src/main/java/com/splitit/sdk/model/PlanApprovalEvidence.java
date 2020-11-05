@@ -28,8 +28,8 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * PlanApprovalEvidence
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class PlanApprovalEvidence   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class PlanApprovalEvidence  {
   @SerializedName("CustomerSignaturePngAsBase64")
   private String customerSignaturePngAsBase64 = null;
 
@@ -118,6 +118,7 @@ public class PlanApprovalEvidence   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PlanApprovalEvidence {\n");
+    
     
     sb.append("    customerSignaturePngAsBase64: ").append(toIndentedString(customerSignaturePngAsBase64)).append("\n");
     sb.append("    areTermsAndConditionsApproved: ").append(toIndentedString(areTermsAndConditionsApproved)).append("\n");

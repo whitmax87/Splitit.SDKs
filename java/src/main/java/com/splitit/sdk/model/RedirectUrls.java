@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * RedirectUrls
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class RedirectUrls   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class RedirectUrls  {
   @SerializedName("Succeeded")
   private String succeeded = null;
 
@@ -117,6 +117,7 @@ public class RedirectUrls   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RedirectUrls {\n");
+    
     
     sb.append("    succeeded: ").append(toIndentedString(succeeded)).append("\n");
     sb.append("    canceled: ").append(toIndentedString(canceled)).append("\n");

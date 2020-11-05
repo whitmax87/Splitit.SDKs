@@ -13,38 +13,27 @@
 
 package com.splitit;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
 public class Configuration {
-    private static String _sandboxApiKey;
-    private static String _productionApiKey;
+    private static ApiClient defaultApiClient = new ApiClient();
 
-    public static void addSandboxApiKey(String apiKey){
-        _sandboxApiKey = apiKey;
-    }
-
-    public static void addProductionApiKey(String apiKey){
-        _productionApiKey = apiKey;
+    /**
+     * Get the default API client, which would be used when creating API
+     * instances without providing an API client.
+     *
+     * @return Default API client
+     */
+    public static ApiClient getDefaultApiClient() {
+        return defaultApiClient;
     }
 
     /**
-     * Get the sandbox API client.
+     * Set the default API client, which would be used when creating API
+     * instances without providing an API client.
      *
-     * @return API client connecting to Splitit Sandbox environment.
+     * @param apiClient API client
      */
-    public static ApiClient sandbox() {
-        ApiClient client = new ApiClient("https://webapi.sandbox.splitit.com");
-        client.addApiKey(Configuration._sandboxApiKey);
-        return client;
-    }
-
-    /**
-     * Get the production API client.
-     *
-     * @return API client connecting to Splitit Production environment.
-     */
-    public static ApiClient production() {
-        ApiClient client = new ApiClient("https://webapi.production.splitit.com");
-        client.addApiKey(Configuration._productionApiKey);
-        return client;
+    public static void setDefaultApiClient(ApiClient apiClient) {
+        defaultApiClient = apiClient;
     }
 }

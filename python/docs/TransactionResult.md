@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **gateway_result** | **bool** |  | 
 **gateway_transaction_date** | **datetime** |  | 
 **is_chargeback** | **bool** |  | 
+**avs_result** | [**CardResult**](CardResult.md) |  | [optional] 
+**cvc_result** | [**CardResult**](CardResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

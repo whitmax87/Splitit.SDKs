@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * FraudCheck
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class FraudCheck   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class FraudCheck  {
   @SerializedName("FraudCheckResult")
   private ReferenceEntityBase fraudCheckResult = null;
 
@@ -140,6 +140,7 @@ public class FraudCheck   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FraudCheck {\n");
+    
     
     sb.append("    fraudCheckResult: ").append(toIndentedString(fraudCheckResult)).append("\n");
     sb.append("    providerResultCode: ").append(toIndentedString(providerResultCode)).append("\n");

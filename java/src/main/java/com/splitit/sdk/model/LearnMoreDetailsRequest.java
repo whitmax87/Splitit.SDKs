@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * LearnMoreDetailsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class LearnMoreDetailsRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class LearnMoreDetailsRequest extends ModelWithHeader {
   @SerializedName("Amount")
   private MoneyWithCurrencyCode amount = null;
 
@@ -96,6 +96,7 @@ public class LearnMoreDetailsRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LearnMoreDetailsRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    numberOfInstallments: ").append(toIndentedString(numberOfInstallments)).append("\n");

@@ -1,4 +1,4 @@
-# splitit_sdk_client.CreateInstallmentPlanApi
+# splitit.CreateInstallmentPlanApi
 
 All URIs are relative to *https://webapi.production.splitit.com*
 
@@ -16,12 +16,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import splitit_sdk_client
-from splitit_sdk_client.rest import ApiException
+import splitit
+from splitit.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = splitit_sdk_client.CreateInstallmentPlanApi()
+api_instance = splitit.CreateInstallmentPlanApi()
 amount_before_fees = 8.14 # float |  (optional)
 api_key = 'api_key_example' # str |  (optional)
 avs_address = 'avs_address_example' # str |  (optional)

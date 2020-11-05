@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * InstallmentPlanInitiatedStatuses
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class InstallmentPlanInitiatedStatuses   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class InstallmentPlanInitiatedStatuses  {
   @SerializedName("ShowInitiatedPlansPaymentRequestSent")
   private Boolean showInitiatedPlansPaymentRequestSent = null;
 
@@ -73,6 +73,7 @@ public class InstallmentPlanInitiatedStatuses   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InstallmentPlanInitiatedStatuses {\n");
+    
     
     sb.append("    showInitiatedPlansPaymentRequestSent: ").append(toIndentedString(showInitiatedPlansPaymentRequestSent)).append("\n");
     sb.append("}");

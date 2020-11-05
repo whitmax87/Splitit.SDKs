@@ -30,8 +30,8 @@ import java.util.List;
 /**
  * ResponseHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ResponseHeader   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ResponseHeader  {
   @SerializedName("Succeeded")
   private Boolean succeeded = null;
 
@@ -128,6 +128,7 @@ public class ResponseHeader   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponseHeader {\n");
+    
     
     sb.append("    succeeded: ").append(toIndentedString(succeeded)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");

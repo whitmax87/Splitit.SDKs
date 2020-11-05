@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * Error
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class Error   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class Error  {
   @SerializedName("ErrorCode")
   private String errorCode = null;
 
@@ -117,6 +117,7 @@ public class Error   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Error {\n");
+    
     
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

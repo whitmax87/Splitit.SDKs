@@ -28,8 +28,8 @@ import java.io.IOException;
 /**
  * MerchantRef
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class MerchantRef   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class MerchantRef  {
   @SerializedName("Id")
   private Long id = null;
 
@@ -140,6 +140,7 @@ public class MerchantRef   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MerchantRef {\n");
+    
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

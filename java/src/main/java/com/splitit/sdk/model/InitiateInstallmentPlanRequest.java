@@ -35,8 +35,8 @@ import java.io.IOException;
 /**
  * InitiateInstallmentPlanRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class InitiateInstallmentPlanRequest   extends RequestWithHeader  {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class InitiateInstallmentPlanRequest extends ModelWithHeader {
   @SerializedName("PlanData")
   private PlanData planData = null;
 
@@ -257,6 +257,7 @@ public class InitiateInstallmentPlanRequest   extends RequestWithHeader  {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InitiateInstallmentPlanRequest {\n");
+    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
     
     sb.append("    planData: ").append(toIndentedString(planData)).append("\n");
     sb.append("    cartData: ").append(toIndentedString(cartData)).append("\n");

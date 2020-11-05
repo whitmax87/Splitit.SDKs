@@ -42,8 +42,8 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class InstallmentPlan   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class InstallmentPlan  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
 
@@ -662,6 +662,7 @@ public class InstallmentPlan   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InstallmentPlan {\n");
+    
     
     sb.append("    installmentPlanNumber: ").append(toIndentedString(installmentPlanNumber)).append("\n");
     sb.append("    installmentPlanStatus: ").append(toIndentedString(installmentPlanStatus)).append("\n");

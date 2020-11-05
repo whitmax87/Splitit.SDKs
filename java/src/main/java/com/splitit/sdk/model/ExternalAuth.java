@@ -29,8 +29,8 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ExternalAuth
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ExternalAuth   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ExternalAuth  {
   @SerializedName("UniqueGatewayAuthID")
   private String uniqueGatewayAuthID = null;
 
@@ -141,6 +141,7 @@ public class ExternalAuth   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExternalAuth {\n");
+    
     
     sb.append("    uniqueGatewayAuthID: ").append(toIndentedString(uniqueGatewayAuthID)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");

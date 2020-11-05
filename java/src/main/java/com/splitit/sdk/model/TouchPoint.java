@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * TouchPoint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class TouchPoint   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class TouchPoint  {
   @SerializedName("Code")
   private String code = null;
 
@@ -139,6 +139,7 @@ public class TouchPoint   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TouchPoint {\n");
+    
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");

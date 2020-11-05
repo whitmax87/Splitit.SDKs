@@ -29,8 +29,8 @@ import java.io.IOException;
 /**
  * RequestHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class RequestHeader   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class RequestHeader  {
   @SerializedName("TouchPoint")
   private TouchPoint touchPoint = null;
 
@@ -163,6 +163,7 @@ public class RequestHeader   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestHeader {\n");
+    
     
     sb.append("    touchPoint: ").append(toIndentedString(touchPoint)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**plans_list** | [**list[ExtendedInstallmentPlan]**](ExtendedInstallmentPlan.md) |  | [optional] 
+**plans_list** | [**list[InstallmentPlan]**](InstallmentPlan.md) |  | [optional] 
 **response_header** | [**ResponseHeader**](ResponseHeader.md) |  | [optional] 
 **paging_response_header** | [**PagingResponseHeader**](PagingResponseHeader.md) |  | [optional] 
 

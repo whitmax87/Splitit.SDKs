@@ -26,8 +26,9 @@ Name | Type | Description | Notes
 **scp_funding_percent** | **float** |  | 
 **test_mode** | [**TestModes**](TestModes.md) |  | 
 **creation_date_time** | **datetime** |  | 
-**installments** | [**list[Installment]**](Installment.md) |  | [optional] 
+**installments** | [**list[Installment2]**](Installment2.md) |  | [optional] 
 **secure_authorizations** | [**list[ReAuthorization]**](ReAuthorization.md) |  | [optional] 
+**logo_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

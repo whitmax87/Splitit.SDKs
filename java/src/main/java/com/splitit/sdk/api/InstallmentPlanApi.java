@@ -21,7 +21,6 @@ import com.splitit.Configuration;
 import com.splitit.Pair;
 import com.splitit.ProgressRequestBody;
 import com.splitit.ProgressResponseBody;
-import com.splitit.sdk.model.RequestWithHeader;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -66,25 +65,22 @@ import java.util.List;
 import java.util.Map;
 
 public class InstallmentPlanApi {
-    private ApiClient apiClient;
-    private String sessionId;
-    private String culture;
+    protected ApiClient apiClient;
 
     public InstallmentPlanApi() {
-        this(Configuration.production());
+        this(Configuration.getDefaultApiClient());
     }
 
     public InstallmentPlanApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
-    public InstallmentPlanApi withSessionId(String sessionId){
-        this.sessionId = sessionId;
-        return this;
+    public ApiClient getApiClient() {
+        return apiClient;
     }
 
-    public void setCulture(String culture) {
-        this.culture = culture;
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
     }
 
     /**
@@ -96,8 +92,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanApproveCall(ApproveInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -172,9 +166,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InstallmentPlanResponse> installmentPlanApproveWithHttpInfo(ApproveInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanApprove" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanApproveValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanApprove" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanApproveValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -220,8 +231,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanCancelCall(CancelInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -296,9 +305,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InstallmentPlanResponse> installmentPlanCancelWithHttpInfo(CancelInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanCancel" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanCancelValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanCancel" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanCancelValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -344,8 +370,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanChargeBackCall(ChargebackRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -420,9 +444,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InstallmentPlanResponse> installmentPlanChargeBackWithHttpInfo(ChargebackRequest request) throws ApiException {
+        if ("installmentPlanChargeBack" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanChargeBackValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanChargeBack" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanChargeBackValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -468,8 +509,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanCreateCall(CreateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -544,9 +583,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CreateInstallmentsPlanResponse> installmentPlanCreateWithHttpInfo(CreateInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanCreate" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanCreateValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<CreateInstallmentsPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanCreate" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanCreateValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<CreateInstallmentsPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -592,8 +648,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetCall(GetInstallmentsPlanSearchCriteriaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -668,9 +722,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetInstallmentsPlanResponse> installmentPlanGetWithHttpInfo(GetInstallmentsPlanSearchCriteriaRequest request) throws ApiException {
+        if ("installmentPlanGet" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<GetInstallmentsPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGet" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<GetInstallmentsPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -716,8 +787,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGet3DSecureParametersCall(Get3DSecureParametersRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -792,9 +861,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Get3DSecureParametersResponse> installmentPlanGet3DSecureParametersWithHttpInfo(Get3DSecureParametersRequest request) throws ApiException {
+        if ("installmentPlanGet3DSecureParameters" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGet3DSecureParametersValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<Get3DSecureParametersResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGet3DSecureParameters" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGet3DSecureParametersValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<Get3DSecureParametersResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -840,8 +926,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetExtendedCall(GetInstallmentsPlanSearchCriteriaRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -916,9 +1000,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetInstallmentsPlanExtendedResponse> installmentPlanGetExtendedWithHttpInfo(GetInstallmentsPlanSearchCriteriaRequest request) throws ApiException {
+        if ("installmentPlanGetExtended" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetExtendedValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<GetInstallmentsPlanExtendedResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetExtended" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetExtendedValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<GetInstallmentsPlanExtendedResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -964,8 +1065,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetFraudStatusDisplayCall(GetFraudStatusDisplayRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1040,9 +1139,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetFraudStatusDisplayResponse> installmentPlanGetFraudStatusDisplayWithHttpInfo(GetFraudStatusDisplayRequest request) throws ApiException {
+        if ("installmentPlanGetFraudStatusDisplay" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetFraudStatusDisplayValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<GetFraudStatusDisplayResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetFraudStatusDisplay" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetFraudStatusDisplayValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<GetFraudStatusDisplayResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1088,8 +1204,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetInitiatedInstallmentPlanRequestCall(GetInitiatedInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1164,9 +1278,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetInitiatedInstallmentPlanResponse> installmentPlanGetInitiatedInstallmentPlanRequestWithHttpInfo(GetInitiatedInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanGetInitiatedInstallmentPlanRequest" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<GetInitiatedInstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetInitiatedInstallmentPlanRequest" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetInitiatedInstallmentPlanRequestValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<GetInitiatedInstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1212,8 +1343,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetLearnMoreDetailsCall(LearnMoreDetailsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1288,9 +1417,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LearnMoreDetailsResponse> installmentPlanGetLearnMoreDetailsWithHttpInfo(LearnMoreDetailsRequest request) throws ApiException {
+        if ("installmentPlanGetLearnMoreDetails" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetLearnMoreDetailsValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetLearnMoreDetails" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetLearnMoreDetailsValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<LearnMoreDetailsResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1336,8 +1482,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanGetSchedulesCall(GetInstallmentSchedulesRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1412,9 +1556,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetInstallmentsScheduleResponse> installmentPlanGetSchedulesWithHttpInfo(GetInstallmentSchedulesRequest request) throws ApiException {
+        if ("installmentPlanGetSchedules" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanGetSchedulesValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<GetInstallmentsScheduleResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetSchedules" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetSchedulesValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<GetInstallmentsScheduleResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1460,8 +1621,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanInitiateCall(InitiateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1536,9 +1695,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InitiateInstallmentsPlanResponse> installmentPlanInitiateWithHttpInfo(InitiateInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanInitiate" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanInitiateValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InitiateInstallmentsPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanInitiate" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanInitiateValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InitiateInstallmentsPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1584,8 +1760,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanRefundCall(RefundPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1660,9 +1834,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RefundInstallmentPlanResponse> installmentPlanRefundWithHttpInfo(RefundPlanRequest request) throws ApiException {
+        if ("installmentPlanRefund" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanRefundValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<RefundInstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanRefund" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanRefundValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<RefundInstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1708,8 +1899,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanStartInstallmentsCall(StartInstallmentsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1784,9 +1973,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InstallmentPlanResponse> installmentPlanStartInstallmentsWithHttpInfo(StartInstallmentsRequest request) throws ApiException {
+        if ("installmentPlanStartInstallments" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanStartInstallmentsValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanStartInstallments" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanStartInstallmentsValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1832,8 +2038,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanTermsAndConditionsCall(TermsAndConditionsGetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -1908,9 +2112,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TermsAndConditionsGetResponse> installmentPlanTermsAndConditionsWithHttpInfo(TermsAndConditionsGetRequest request) throws ApiException {
+        if ("installmentPlanTermsAndConditions" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanTermsAndConditionsValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<TermsAndConditionsGetResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanTermsAndConditions" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanTermsAndConditionsValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<TermsAndConditionsGetResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -1956,8 +2177,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanUpdateCall(UpdateInstallmentPlanRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -2032,9 +2251,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UpdateInstallmentsPlanResponse> installmentPlanUpdateWithHttpInfo(UpdateInstallmentPlanRequest request) throws ApiException {
+        if ("installmentPlanUpdate" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanUpdateValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<UpdateInstallmentsPlanResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanUpdate" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanUpdateValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<UpdateInstallmentsPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**
@@ -2080,8 +2316,6 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to serialize the request body object
      */
     public com.squareup.okhttp.Call installmentPlanVerifyPaymentCall(VerifyPaymentRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        RequestWithHeader.setAuthFor(request, this.sessionId, this.apiClient.getApiKey(), this.culture);
-        
         Object localVarPostBody = request;
 
         // create path and map variables
@@ -2156,9 +2390,26 @@ public class InstallmentPlanApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<VerifyPaymentResponse> installmentPlanVerifyPaymentWithHttpInfo(VerifyPaymentRequest request) throws ApiException {
+        if ("installmentPlanVerifyPayment" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
         com.squareup.okhttp.Call call = installmentPlanVerifyPaymentValidateBeforeCall(request, null, null);
         Type localVarReturnType = new TypeToken<VerifyPaymentResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanVerifyPayment" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanVerifyPaymentValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<VerifyPaymentResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
     }
 
     /**

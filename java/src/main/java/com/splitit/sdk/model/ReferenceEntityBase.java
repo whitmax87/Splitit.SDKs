@@ -27,8 +27,8 @@ import java.io.IOException;
 /**
  * ReferenceEntityBase
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class ReferenceEntityBase   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class ReferenceEntityBase  {
   @SerializedName("Id")
   private Long id = null;
 
@@ -117,6 +117,7 @@ public class ReferenceEntityBase   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReferenceEntityBase {\n");
+    
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

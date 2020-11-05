@@ -29,8 +29,8 @@ import java.io.IOException;
 /**
  * LoginResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class LoginResponse   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class LoginResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
@@ -141,6 +141,7 @@ public class LoginResponse   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoginResponse {\n");
+    
     
     sb.append("    responseHeader: ").append(toIndentedString(responseHeader)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");

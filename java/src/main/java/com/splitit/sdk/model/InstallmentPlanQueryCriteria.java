@@ -37,8 +37,8 @@ import java.util.List;
 /**
  * InstallmentPlanQueryCriteria
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-05T09:09:58.136Z")
-public class InstallmentPlanQueryCriteria   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T04:46:38.670Z")
+public class InstallmentPlanQueryCriteria  {
   @SerializedName("MerchantId")
   private Long merchantId = null;
 
@@ -547,6 +547,7 @@ public class InstallmentPlanQueryCriteria   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InstallmentPlanQueryCriteria {\n");
+    
     
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    currencyId: ").append(toIndentedString(currencyId)).append("\n");
