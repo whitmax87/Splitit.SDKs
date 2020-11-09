@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * MerchantRef
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-05T08:02:38.616Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-09T08:07:08.367Z")
 public class MerchantRef  {
   @SerializedName("Id")
   private Long id = null;
