@@ -7,4 +7,3 @@ __export(require("./CreateInstallmentPlanApi"));
 __export(require("./InfoApi"));
 __export(require("./InfrastructureApi"));
 __export(require("./InstallmentPlanApi"));
-__export(require("./LoginApi"));

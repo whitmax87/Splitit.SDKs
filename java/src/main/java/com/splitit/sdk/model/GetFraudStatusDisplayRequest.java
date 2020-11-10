@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetFraudStatusDisplayRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-09T08:07:08.367Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-10T15:14:48.736Z")
 public class GetFraudStatusDisplayRequest extends ModelWithHeader {
   @SerializedName("ProviderReferenceId")
   private String providerReferenceId = null;

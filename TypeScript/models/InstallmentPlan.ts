@@ -186,6 +186,12 @@ export interface InstallmentPlan {
     scpFundingPercent: number;
     /**
      * 
+     * @type {boolean}
+     * @memberof InstallmentPlan
+     */
+    isFunded: boolean;
+    /**
+     * 
      * @type {TestModes}
      * @memberof InstallmentPlan
      */
@@ -247,6 +253,7 @@ export function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boo
         'isChargedBack': json['IsChargedBack'],
         'arePaymentsOnHold': json['ArePaymentsOnHold'],
         'scpFundingPercent': json['ScpFundingPercent'],
+        'isFunded': json['IsFunded'],
         'testMode': TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
         'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(Installment2FromJSON)),
@@ -285,6 +292,7 @@ export function InstallmentPlanToJSON(value?: InstallmentPlan | null): any {
         'IsChargedBack': value.isChargedBack,
         'ArePaymentsOnHold': value.arePaymentsOnHold,
         'ScpFundingPercent': value.scpFundingPercent,
+        'IsFunded': value.isFunded,
         'TestMode': TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
         'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(Installment2ToJSON)),

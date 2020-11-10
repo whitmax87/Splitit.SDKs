@@ -59,10 +59,6 @@ export * from './installmentsPlanDateType';
 export * from './itemData';
 export * from './learnMoreDetailsRequest';
 export * from './learnMoreDetailsResponse';
-export * from './loginRequest';
-export * from './loginResponse';
-export * from './loginResponse2';
-export * from './loginResponseAllOf';
 export * from './merchantRef';
 export * from './merchantRefAllOf';
 export * from './modelError';
@@ -90,9 +86,7 @@ export * from './refundStrategy';
 export * from './refundUnderCancelation';
 export * from './relationsLoad';
 export * from './requestHeader';
-export * from './responseError';
 export * from './responseHeader';
-export * from './responseStatus';
 export * from './schedule';
 export * from './scheduleElements';
 export * from './startInstallmentsRequest';
@@ -173,10 +167,6 @@ import { InstallmentsPlanDateType } from './installmentsPlanDateType';
 import { ItemData } from './itemData';
 import { LearnMoreDetailsRequest } from './learnMoreDetailsRequest';
 import { LearnMoreDetailsResponse } from './learnMoreDetailsResponse';
-import { LoginRequest } from './loginRequest';
-import { LoginResponse } from './loginResponse';
-import { LoginResponse2 } from './loginResponse2';
-import { LoginResponseAllOf } from './loginResponseAllOf';
 import { MerchantRef } from './merchantRef';
 import { MerchantRefAllOf } from './merchantRefAllOf';
 import { ModelError } from './modelError';
@@ -204,9 +194,7 @@ import { RefundStrategy } from './refundStrategy';
 import { RefundUnderCancelation } from './refundUnderCancelation';
 import { RelationsLoad } from './relationsLoad';
 import { RequestHeader } from './requestHeader';
-import { ResponseError } from './responseError';
 import { ResponseHeader } from './responseHeader';
-import { ResponseStatus } from './responseStatus';
 import { Schedule } from './schedule';
 import { ScheduleElements } from './scheduleElements';
 import { StartInstallmentsRequest } from './startInstallmentsRequest';
@@ -310,10 +298,6 @@ let typeMap: {[index: string]: any} = {
     "ItemData": ItemData,
     "LearnMoreDetailsRequest": LearnMoreDetailsRequest,
     "LearnMoreDetailsResponse": LearnMoreDetailsResponse,
-    "LoginRequest": LoginRequest,
-    "LoginResponse": LoginResponse,
-    "LoginResponse2": LoginResponse2,
-    "LoginResponseAllOf": LoginResponseAllOf,
     "MerchantRef": MerchantRef,
     "MerchantRefAllOf": MerchantRefAllOf,
     "ModelError": ModelError,
@@ -336,9 +320,7 @@ let typeMap: {[index: string]: any} = {
     "RefundPlanRequest": RefundPlanRequest,
     "RelationsLoad": RelationsLoad,
     "RequestHeader": RequestHeader,
-    "ResponseError": ResponseError,
     "ResponseHeader": ResponseHeader,
-    "ResponseStatus": ResponseStatus,
     "Schedule": Schedule,
     "ScheduleElements": ScheduleElements,
     "StartInstallmentsRequest": StartInstallmentsRequest,

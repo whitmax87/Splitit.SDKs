@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-11-09T08:07:08.367Z
-- SDK Version: 1.5.16
+  - Build date: 2020-11-10T15:14:48.736Z
+- SDK Version: 1.5.-56
 
 ## Requirements
 
@@ -124,7 +124,6 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
-*LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /api/Login | 
 
 
 ## Documentation for Models
@@ -176,8 +175,6 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/ItemData.md)
  - [LearnMoreDetailsRequest](docs/LearnMoreDetailsRequest.md)
  - [LearnMoreDetailsResponse](docs/LearnMoreDetailsResponse.md)
- - [LoginRequest](docs/LoginRequest.md)
- - [LoginResponse2](docs/LoginResponse2.md)
  - [Money](docs/Money.md)
  - [MoneyWithCurrencyCode](docs/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/PagingRequestHeader.md)
@@ -198,9 +195,7 @@ Class | Method | HTTP request | Description
  - [RefundUnderCancelation](docs/RefundUnderCancelation.md)
  - [RelationsLoad](docs/RelationsLoad.md)
  - [RequestHeader](docs/RequestHeader.md)
- - [ResponseError](docs/ResponseError.md)
  - [ResponseHeader](docs/ResponseHeader.md)
- - [ResponseStatus](docs/ResponseStatus.md)
  - [Schedule](docs/Schedule.md)
  - [ScheduleElements](docs/ScheduleElements.md)
  - [StartInstallmentsRequest](docs/StartInstallmentsRequest.md)
@@ -224,7 +219,6 @@ Class | Method | HTTP request | Description
  - [Currency](docs/Currency.md)
  - [GetInstallmentsPlanExtendedResponse](docs/GetInstallmentsPlanExtendedResponse.md)
  - [InitiateInstallmentsPlanResponse](docs/InitiateInstallmentsPlanResponse.md)
- - [LoginResponse](docs/LoginResponse.md)
  - [MerchantRef](docs/MerchantRef.md)
  - [PaymentWizardDataResponse](docs/PaymentWizardDataResponse.md)
  - [RefundInstallmentPlanResponse](docs/RefundInstallmentPlanResponse.md)

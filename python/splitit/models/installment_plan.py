@@ -52,6 +52,7 @@ class InstallmentPlan(object):
         'is_charged_back': 'bool',
         'are_payments_on_hold': 'bool',
         'scp_funding_percent': 'float',
+        'is_funded': 'bool',
         'test_mode': 'TestModes',
         'creation_date_time': 'datetime',
         'installments': 'list[Installment2]',
@@ -81,6 +82,7 @@ class InstallmentPlan(object):
         'is_charged_back': 'IsChargedBack',
         'are_payments_on_hold': 'ArePaymentsOnHold',
         'scp_funding_percent': 'ScpFundingPercent',
+        'is_funded': 'IsFunded',
         'test_mode': 'TestMode',
         'creation_date_time': 'CreationDateTime',
         'installments': 'Installments',
@@ -88,7 +90,7 @@ class InstallmentPlan(object):
         'logo_url': 'LogoUrl'
     }
 
-    def __init__(self, installment_plan_number=None, installment_plan_status=None, amount=None, outstanding_amount=None, number_of_installments=None, number_of_processed_installments=None, original_amount=None, refund_amount=None, consumer=None, active_card=None, fraud_check=None, merchant=None, ref_order_number=None, purchase_method=None, strategy=None, delay_resolution=None, extended_params=None, is_full_captured=None, is_charged_back=None, are_payments_on_hold=None, scp_funding_percent=None, test_mode=None, creation_date_time=None, installments=None, secure_authorizations=None, logo_url=None):  # noqa: E501
+    def __init__(self, installment_plan_number=None, installment_plan_status=None, amount=None, outstanding_amount=None, number_of_installments=None, number_of_processed_installments=None, original_amount=None, refund_amount=None, consumer=None, active_card=None, fraud_check=None, merchant=None, ref_order_number=None, purchase_method=None, strategy=None, delay_resolution=None, extended_params=None, is_full_captured=None, is_charged_back=None, are_payments_on_hold=None, scp_funding_percent=None, is_funded=None, test_mode=None, creation_date_time=None, installments=None, secure_authorizations=None, logo_url=None):  # noqa: E501
         """InstallmentPlan - a model defined in Swagger"""  # noqa: E501
 
         self._installment_plan_number = None
@@ -112,6 +114,7 @@ class InstallmentPlan(object):
         self._is_charged_back = None
         self._are_payments_on_hold = None
         self._scp_funding_percent = None
+        self._is_funded = None
         self._test_mode = None
         self._creation_date_time = None
         self._installments = None
@@ -155,6 +158,7 @@ class InstallmentPlan(object):
         self.is_charged_back = is_charged_back
         self.are_payments_on_hold = are_payments_on_hold
         self.scp_funding_percent = scp_funding_percent
+        self.is_funded = is_funded
         self.test_mode = test_mode
         self.creation_date_time = creation_date_time
         if installments is not None:
@@ -622,6 +626,30 @@ class InstallmentPlan(object):
             raise ValueError("Invalid value for `scp_funding_percent`, must not be `None`")  # noqa: E501
 
         self._scp_funding_percent = scp_funding_percent
+
+    @property
+    def is_funded(self):
+        """Gets the is_funded of this InstallmentPlan.  # noqa: E501
+
+
+        :return: The is_funded of this InstallmentPlan.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_funded
+
+    @is_funded.setter
+    def is_funded(self, is_funded):
+        """Sets the is_funded of this InstallmentPlan.
+
+
+        :param is_funded: The is_funded of this InstallmentPlan.  # noqa: E501
+        :type: bool
+        """
+        is_funded = bool(is_funded)
+        if is_funded is None:
+            raise ValueError("Invalid value for `is_funded`, must not be `None`")  # noqa: E501
+
+        self._is_funded = is_funded
 
     @property
     def test_mode(self):

@@ -62,8 +62,6 @@ from splitit.models.installments_plan_date_type import InstallmentsPlanDateType
 from splitit.models.item_data import ItemData
 from splitit.models.learn_more_details_request import LearnMoreDetailsRequest
 from splitit.models.learn_more_details_response import LearnMoreDetailsResponse
-from splitit.models.login_request import LoginRequest
-from splitit.models.login_response2 import LoginResponse2
 from splitit.models.money import Money
 from splitit.models.money_with_currency_code import MoneyWithCurrencyCode
 from splitit.models.paging_request_header import PagingRequestHeader
@@ -84,9 +82,7 @@ from splitit.models.refund_strategy import RefundStrategy
 from splitit.models.refund_under_cancelation import RefundUnderCancelation
 from splitit.models.relations_load import RelationsLoad
 from splitit.models.request_header import RequestHeader
-from splitit.models.response_error import ResponseError
 from splitit.models.response_header import ResponseHeader
-from splitit.models.response_status import ResponseStatus
 from splitit.models.schedule import Schedule
 from splitit.models.schedule_elements import ScheduleElements
 from splitit.models.start_installments_request import StartInstallmentsRequest
@@ -110,7 +106,6 @@ from splitit.models.create_installments_plan_response import CreateInstallmentsP
 from splitit.models.currency import Currency
 from splitit.models.get_installments_plan_extended_response import GetInstallmentsPlanExtendedResponse
 from splitit.models.initiate_installments_plan_response import InitiateInstallmentsPlanResponse
-from splitit.models.login_response import LoginResponse
 from splitit.models.merchant_ref import MerchantRef
 from splitit.models.payment_wizard_data_response import PaymentWizardDataResponse
 from splitit.models.refund_installment_plan_response import RefundInstallmentPlanResponse

@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "splitit"
-VERSION = "1.5.16"
+VERSION = "1.5.-56"
 # To install the library, run the following
 #
 # python setup.py install

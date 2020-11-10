@@ -42,7 +42,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-09T08:07:08.367Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-10T15:14:48.736Z")
 public class InstallmentPlan  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
@@ -106,6 +106,9 @@ public class InstallmentPlan  {
 
   @SerializedName("ScpFundingPercent")
   private BigDecimal scpFundingPercent = null;
+
+  @SerializedName("IsFunded")
+  private Boolean isFunded = null;
 
   @SerializedName("TestMode")
   private TestModes testMode = null;
@@ -508,6 +511,24 @@ public class InstallmentPlan  {
     this.scpFundingPercent = scpFundingPercent;
   }
 
+  public InstallmentPlan isFunded(Boolean isFunded) {
+    this.isFunded = isFunded;
+    return this;
+  }
+
+   /**
+   * Get isFunded
+   * @return isFunded
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsFunded() {
+    return isFunded;
+  }
+
+  public void setIsFunded(Boolean isFunded) {
+    this.isFunded = isFunded;
+  }
+
   public InstallmentPlan testMode(TestModes testMode) {
     this.testMode = testMode;
     return this;
@@ -645,6 +666,7 @@ public class InstallmentPlan  {
         Objects.equals(this.isChargedBack, installmentPlan.isChargedBack) &&
         Objects.equals(this.arePaymentsOnHold, installmentPlan.arePaymentsOnHold) &&
         Objects.equals(this.scpFundingPercent, installmentPlan.scpFundingPercent) &&
+        Objects.equals(this.isFunded, installmentPlan.isFunded) &&
         Objects.equals(this.testMode, installmentPlan.testMode) &&
         Objects.equals(this.creationDateTime, installmentPlan.creationDateTime) &&
         Objects.equals(this.installments, installmentPlan.installments) &&
@@ -654,7 +676,7 @@ public class InstallmentPlan  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, testMode, creationDateTime, installments, secureAuthorizations, logoUrl);
+    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, isFunded, testMode, creationDateTime, installments, secureAuthorizations, logoUrl);
   }
 
 
@@ -685,6 +707,7 @@ public class InstallmentPlan  {
     sb.append("    isChargedBack: ").append(toIndentedString(isChargedBack)).append("\n");
     sb.append("    arePaymentsOnHold: ").append(toIndentedString(arePaymentsOnHold)).append("\n");
     sb.append("    scpFundingPercent: ").append(toIndentedString(scpFundingPercent)).append("\n");
+    sb.append("    isFunded: ").append(toIndentedString(isFunded)).append("\n");
     sb.append("    testMode: ").append(toIndentedString(testMode)).append("\n");
     sb.append("    creationDateTime: ").append(toIndentedString(creationDateTime)).append("\n");
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");

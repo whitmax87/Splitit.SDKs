@@ -43,6 +43,7 @@ export class InstallmentPlan {
     'isChargedBack': boolean;
     'arePaymentsOnHold': boolean;
     'scpFundingPercent': number;
+    'isFunded': boolean;
     'testMode': TestModes;
     'creationDateTime': Date;
     'installments'?: Array<Installment2>;
@@ -156,6 +157,11 @@ export class InstallmentPlan {
             "name": "scpFundingPercent",
             "baseName": "ScpFundingPercent",
             "type": "number"
+        },
+        {
+            "name": "isFunded",
+            "baseName": "IsFunded",
+            "type": "boolean"
         },
         {
             "name": "testMode",

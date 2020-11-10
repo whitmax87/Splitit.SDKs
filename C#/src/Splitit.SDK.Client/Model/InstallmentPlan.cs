@@ -62,12 +62,13 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isChargedBack">isChargedBack (required).</param>
         /// <param name="arePaymentsOnHold">arePaymentsOnHold (required).</param>
         /// <param name="scpFundingPercent">scpFundingPercent (required).</param>
+        /// <param name="isFunded">isFunded (required).</param>
         /// <param name="testMode">testMode (required).</param>
         /// <param name="creationDateTime">creationDateTime (required).</param>
         /// <param name="installments">installments.</param>
         /// <param name="secureAuthorizations">secureAuthorizations.</param>
         /// <param name="logoUrl">logoUrl.</param>
-        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), string logoUrl = default(string))
+        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), bool? isFunded = default(bool?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), string logoUrl = default(string))
         {
             this.NumberOfInstallments = numberOfInstallments;
             this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
@@ -75,6 +76,7 @@ namespace Splitit.SDK.Client.Model
             this.IsChargedBack = isChargedBack;
             this.ArePaymentsOnHold = arePaymentsOnHold;
             this.ScpFundingPercent = scpFundingPercent;
+            this.IsFunded = isFunded;
             this.TestMode = testMode;
             this.CreationDateTime = creationDateTime;
             this.InstallmentPlanNumber = installmentPlanNumber;
@@ -224,6 +226,12 @@ namespace Splitit.SDK.Client.Model
         [DataMember(Name="ScpFundingPercent", EmitDefaultValue=false)]
         public decimal? ScpFundingPercent { get; set; }
 
+        /// <summary>
+        /// Gets or Sets IsFunded
+        /// </summary>
+        [DataMember(Name="IsFunded", EmitDefaultValue=false)]
+        public bool? IsFunded { get; set; }
+
 
         /// <summary>
         /// Gets or Sets CreationDateTime
@@ -278,6 +286,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  IsChargedBack: ").Append(IsChargedBack).Append("\n");
             sb.Append("  ArePaymentsOnHold: ").Append(ArePaymentsOnHold).Append("\n");
             sb.Append("  ScpFundingPercent: ").Append(ScpFundingPercent).Append("\n");
+            sb.Append("  IsFunded: ").Append(IsFunded).Append("\n");
             sb.Append("  TestMode: ").Append(TestMode).Append("\n");
             sb.Append("  CreationDateTime: ").Append(CreationDateTime).Append("\n");
             sb.Append("  Installments: ").Append(Installments).Append("\n");
@@ -423,6 +432,11 @@ namespace Splitit.SDK.Client.Model
                     this.ScpFundingPercent.Equals(input.ScpFundingPercent))
                 ) && 
                 (
+                    this.IsFunded == input.IsFunded ||
+                    (this.IsFunded != null &&
+                    this.IsFunded.Equals(input.IsFunded))
+                ) && 
+                (
                     this.TestMode == input.TestMode ||
                     (this.TestMode != null &&
                     this.TestMode.Equals(input.TestMode))
@@ -500,6 +514,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ArePaymentsOnHold.GetHashCode();
                 if (this.ScpFundingPercent != null)
                     hashCode = hashCode * 59 + this.ScpFundingPercent.GetHashCode();
+                if (this.IsFunded != null)
+                    hashCode = hashCode * 59 + this.IsFunded.GetHashCode();
                 if (this.TestMode != null)
                     hashCode = hashCode * 59 + this.TestMode.GetHashCode();
                 if (this.CreationDateTime != null)

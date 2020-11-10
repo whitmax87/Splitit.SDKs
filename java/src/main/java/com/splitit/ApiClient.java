@@ -61,7 +61,6 @@ import com.splitit.sdk.model.ModelWithHeader;
 //import com.splitit.sdk.api.InfoApi;
 //import com.splitit.sdk.api.InfrastructureApi;
 //import com.splitit.sdk.api.InstallmentPlanApi;
-//import com.splitit.sdk.api.LoginApi;
 
 public class ApiClient {
 
@@ -135,18 +134,6 @@ public class ApiClient {
         }
         return this.installmentPlan;
     }
-    private LoginApi login;
-    /**
-     * Get login API
-     *
-     * @return An instance of LoginApi
-     */
-    public LoginApi getLoginApi() {
-        if (this.login == null){
-            this.login = new LoginApi(this);
-        }
-        return this.login;
-    }
 
     public void performAutologin(boolean resetSessionId) throws ApiException {
         if (resetSessionId){
@@ -175,7 +162,7 @@ public class ApiClient {
 
         json = new JSON();
 
-        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.5.16");
+        this.defaultHeaderMap.put("Splitit-SDK", "Java-1.5.-56");
         this.defaultHeaderMap.put("User-Agent", "Splitit-SDK-Java");
     }
 

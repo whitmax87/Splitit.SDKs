@@ -146,6 +146,12 @@ export interface InstallmentPlan {
     scpFundingPercent: number;
     /**
      *
+     * @type {boolean}
+     * @memberof InstallmentPlan
+     */
+    isFunded: boolean;
+    /**
+     *
      * @type {TestModes}
      * @memberof InstallmentPlan
      */
