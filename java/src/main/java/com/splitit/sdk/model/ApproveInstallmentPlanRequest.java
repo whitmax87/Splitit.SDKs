@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ApproveInstallmentPlanRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-10T15:14:48.736Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:38:48.509Z")
 public class ApproveInstallmentPlanRequest extends ModelWithHeader {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;

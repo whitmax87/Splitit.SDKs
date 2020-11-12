@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ReAuthorization
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-10T15:14:48.736Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:38:48.509Z")
 public class ReAuthorization  {
   @SerializedName("ProcessingDate")
   private OffsetDateTime processingDate = null;
