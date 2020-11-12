@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * RefundPlanRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:38:48.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:54:03.881Z")
 public class RefundPlanRequest extends ModelWithHeader {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;

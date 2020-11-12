@@ -42,7 +42,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:38:48.509Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:54:03.881Z")
 public class InstallmentPlan  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
