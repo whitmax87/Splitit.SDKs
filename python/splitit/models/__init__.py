@@ -62,6 +62,10 @@ from splitit.models.installments_plan_date_type import InstallmentsPlanDateType
 from splitit.models.item_data import ItemData
 from splitit.models.learn_more_details_request import LearnMoreDetailsRequest
 from splitit.models.learn_more_details_response import LearnMoreDetailsResponse
+from splitit.models.login_request import LoginRequest
+from splitit.models.login_response import LoginResponse
+from splitit.models.logout_request import LogoutRequest
+from splitit.models.logout_response import LogoutResponse
 from splitit.models.money import Money
 from splitit.models.money_with_currency_code import MoneyWithCurrencyCode
 from splitit.models.paging_request_header import PagingRequestHeader

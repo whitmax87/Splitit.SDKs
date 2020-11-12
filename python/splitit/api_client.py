@@ -32,6 +32,8 @@ from splitit.api import (
     InfoApi,
     InfrastructureApi,
     InstallmentPlanApi,
+    LoginApi,
+    LogoutApi,
 )
 
 class ApiClient(object):
@@ -77,15 +79,17 @@ class ApiClient(object):
         self._pool_threads = pool_threads
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {
-            'Splitit-SDK': 'Python-1.5.18',
+            'Splitit-SDK': 'Python-1.5.31',
         }
 
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.5.18/python'
+        self.user_agent = 'Swagger-Codegen/1.5.31/python'
         self.CreateInstallmentPlanApi = CreateInstallmentPlanApi(self)
         self.InfoApi = InfoApi(self)
         self.InfrastructureApi = InfrastructureApi(self)
         self.InstallmentPlanApi = InstallmentPlanApi(self)
+        self.LoginApi = LoginApi(self)
+        self.LogoutApi = LogoutApi(self)
         self._sessionID = ""
 
     def __del__(self):

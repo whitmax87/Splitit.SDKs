@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-11-12T07:54:03.881Z
-- SDK Version: 1.5.18
+  - Build date: 2020-11-12T16:25:05.667Z
+- SDK Version: 1.5.31
 
 ## Requirements
 
@@ -124,6 +124,8 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
+*LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /api/login | 
+*LogoutApi* | [**logoutPost**](docs/LogoutApi.md#logoutPost) | **POST** /api/logout | 
 
 
 ## Documentation for Models
@@ -175,6 +177,10 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/ItemData.md)
  - [LearnMoreDetailsRequest](docs/LearnMoreDetailsRequest.md)
  - [LearnMoreDetailsResponse](docs/LearnMoreDetailsResponse.md)
+ - [LoginRequest](docs/LoginRequest.md)
+ - [LoginResponse](docs/LoginResponse.md)
+ - [LogoutRequest](docs/LogoutRequest.md)
+ - [LogoutResponse](docs/LogoutResponse.md)
  - [Money](docs/Money.md)
  - [MoneyWithCurrencyCode](docs/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/PagingRequestHeader.md)

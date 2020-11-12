@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * AmountDetails2
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T07:54:03.881Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T16:25:05.667Z")
 public class AmountDetails2  {
   @SerializedName("SubTotal")
   private BigDecimal subTotal = null;

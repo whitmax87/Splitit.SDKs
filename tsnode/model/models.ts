@@ -59,6 +59,9 @@ export * from './installmentsPlanDateType';
 export * from './itemData';
 export * from './learnMoreDetailsRequest';
 export * from './learnMoreDetailsResponse';
+export * from './loginRequest';
+export * from './loginResponse';
+export * from './logoutResponse';
 export * from './merchantRef';
 export * from './merchantRefAllOf';
 export * from './modelError';
@@ -167,6 +170,9 @@ import { InstallmentsPlanDateType } from './installmentsPlanDateType';
 import { ItemData } from './itemData';
 import { LearnMoreDetailsRequest } from './learnMoreDetailsRequest';
 import { LearnMoreDetailsResponse } from './learnMoreDetailsResponse';
+import { LoginRequest } from './loginRequest';
+import { LoginResponse } from './loginResponse';
+import { LogoutResponse } from './logoutResponse';
 import { MerchantRef } from './merchantRef';
 import { MerchantRefAllOf } from './merchantRefAllOf';
 import { ModelError } from './modelError';
@@ -298,6 +304,9 @@ let typeMap: {[index: string]: any} = {
     "ItemData": ItemData,
     "LearnMoreDetailsRequest": LearnMoreDetailsRequest,
     "LearnMoreDetailsResponse": LearnMoreDetailsResponse,
+    "LoginRequest": LoginRequest,
+    "LoginResponse": LoginResponse,
+    "LogoutResponse": LogoutResponse,
     "MerchantRef": MerchantRef,
     "MerchantRefAllOf": MerchantRefAllOf,
     "ModelError": ModelError,
