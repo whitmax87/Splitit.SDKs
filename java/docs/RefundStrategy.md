@@ -10,5 +10,7 @@
 
 * `FUTUREINSTALLMENTSNOTALLOWED` (value: `"FutureInstallmentsNotAllowed"`)
 
+* `REDUCEFROMLASTINSTALLMENT` (value: `"ReduceFromLastInstallment"`)
+
 
 

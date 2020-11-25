@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetResourcesRequestContext
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T16:25:05.667Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-25T08:42:14.391Z")
 public class GetResourcesRequestContext  {
   @SerializedName("MerchantCode")
   private String merchantCode = null;

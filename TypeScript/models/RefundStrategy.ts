@@ -20,7 +20,8 @@
 export enum RefundStrategy {
     FutureInstallmentsFirst = 'FutureInstallmentsFirst',
     FutureInstallmentsLast = 'FutureInstallmentsLast',
-    FutureInstallmentsNotAllowed = 'FutureInstallmentsNotAllowed'
+    FutureInstallmentsNotAllowed = 'FutureInstallmentsNotAllowed',
+    ReduceFromLastInstallment = 'ReduceFromLastInstallment'
 }
 
 export function RefundStrategyFromJSON(json: any): RefundStrategy {

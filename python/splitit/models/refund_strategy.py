@@ -29,6 +29,7 @@ class RefundStrategy(object):
     FUTUREINSTALLMENTSFIRST = "FutureInstallmentsFirst"
     FUTUREINSTALLMENTSLAST = "FutureInstallmentsLast"
     FUTUREINSTALLMENTSNOTALLOWED = "FutureInstallmentsNotAllowed"
+    REDUCEFROMLASTINSTALLMENT = "ReduceFromLastInstallment"
 
     """
     Attributes:

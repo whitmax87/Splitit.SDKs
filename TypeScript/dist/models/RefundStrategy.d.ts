@@ -17,7 +17,8 @@
 export declare enum RefundStrategy {
     FutureInstallmentsFirst = "FutureInstallmentsFirst",
     FutureInstallmentsLast = "FutureInstallmentsLast",
-    FutureInstallmentsNotAllowed = "FutureInstallmentsNotAllowed"
+    FutureInstallmentsNotAllowed = "FutureInstallmentsNotAllowed",
+    ReduceFromLastInstallment = "ReduceFromLastInstallment"
 }
 export declare function RefundStrategyFromJSON(json: any): RefundStrategy;
 export declare function RefundStrategyFromJSONTyped(json: any, ignoreDiscriminator: boolean): RefundStrategy;

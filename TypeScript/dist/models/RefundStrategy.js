@@ -23,6 +23,7 @@ var RefundStrategy;
     RefundStrategy["FutureInstallmentsFirst"] = "FutureInstallmentsFirst";
     RefundStrategy["FutureInstallmentsLast"] = "FutureInstallmentsLast";
     RefundStrategy["FutureInstallmentsNotAllowed"] = "FutureInstallmentsNotAllowed";
+    RefundStrategy["ReduceFromLastInstallment"] = "ReduceFromLastInstallment";
 })(RefundStrategy = exports.RefundStrategy || (exports.RefundStrategy = {}));
 function RefundStrategyFromJSON(json) {
     return RefundStrategyFromJSONTyped(json, false);

@@ -18,5 +18,6 @@ import { RequestFile } from '../api';
 export enum RefundStrategy {
     FutureInstallmentsFirst = <any> 'FutureInstallmentsFirst',
     FutureInstallmentsLast = <any> 'FutureInstallmentsLast',
-    FutureInstallmentsNotAllowed = <any> 'FutureInstallmentsNotAllowed'
+    FutureInstallmentsNotAllowed = <any> 'FutureInstallmentsNotAllowed',
+    ReduceFromLastInstallment = <any> 'ReduceFromLastInstallment'
 }

@@ -34,7 +34,9 @@ public enum RefundStrategy {
   
   FUTUREINSTALLMENTSLAST("FutureInstallmentsLast"),
   
-  FUTUREINSTALLMENTSNOTALLOWED("FutureInstallmentsNotAllowed");
+  FUTUREINSTALLMENTSNOTALLOWED("FutureInstallmentsNotAllowed"),
+  
+  REDUCEFROMLASTINSTALLMENT("ReduceFromLastInstallment");
 
   private String value;
 

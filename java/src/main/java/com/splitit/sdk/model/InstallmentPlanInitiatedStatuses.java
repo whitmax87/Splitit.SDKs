@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InstallmentPlanInitiatedStatuses
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-12T16:25:05.667Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-11-25T08:42:14.391Z")
 public class InstallmentPlanInitiatedStatuses  {
   @SerializedName("ShowInitiatedPlansPaymentRequestSent")
   private Boolean showInitiatedPlansPaymentRequestSent = null;

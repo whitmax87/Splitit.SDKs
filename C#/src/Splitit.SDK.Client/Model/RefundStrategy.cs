@@ -47,7 +47,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum FutureInstallmentsNotAllowed for value: FutureInstallmentsNotAllowed
         /// </summary>
         [EnumMember(Value = "FutureInstallmentsNotAllowed")]
-        FutureInstallmentsNotAllowed = 3
+        FutureInstallmentsNotAllowed = 3,
+        
+        /// <summary>
+        /// Enum ReduceFromLastInstallment for value: ReduceFromLastInstallment
+        /// </summary>
+        [EnumMember(Value = "ReduceFromLastInstallment")]
+        ReduceFromLastInstallment = 4
     }
 
 }
