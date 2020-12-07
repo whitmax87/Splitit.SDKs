@@ -39,7 +39,7 @@ export class InfrastructureApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.5.32"
+            "Splitit-SDK": "NodeJS-1.5.33"
         };
         this._sessionId = sessionId;
     }
