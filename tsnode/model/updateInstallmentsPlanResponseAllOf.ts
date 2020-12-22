@@ -12,9 +12,8 @@
 
 import { RequestFile } from '../api';
 
-export class CreateInstallmentsPlanResponseAllOf {
+export class UpdateInstallmentsPlanResponseAllOf {
     'approvalUrl'?: string;
-    'threeDRedirectUrl'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -23,15 +22,10 @@ export class CreateInstallmentsPlanResponseAllOf {
             "name": "approvalUrl",
             "baseName": "ApprovalUrl",
             "type": "string"
-        },
-        {
-            "name": "threeDRedirectUrl",
-            "baseName": "ThreeDRedirectUrl",
-            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return CreateInstallmentsPlanResponseAllOf.attributeTypeMap;
+        return UpdateInstallmentsPlanResponseAllOf.attributeTypeMap;
     }
 }
 

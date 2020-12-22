@@ -24,11 +24,14 @@ import com.splitit.sdk.model.ResponseHeader;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Get3DSecureParametersResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-07T05:29:56.188Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T14:52:42.698Z")
 public class Get3DSecureParametersResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -44,6 +47,9 @@ public class Get3DSecureParametersResponse  {
 
   @SerializedName("TermUrl")
   private String termUrl = null;
+
+  @SerializedName("ThreeDSecureParams")
+  private Map<String, String> threeDSecureParams = null;
 
   public Get3DSecureParametersResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -135,6 +141,32 @@ public class Get3DSecureParametersResponse  {
     this.termUrl = termUrl;
   }
 
+  public Get3DSecureParametersResponse threeDSecureParams(Map<String, String> threeDSecureParams) {
+    this.threeDSecureParams = threeDSecureParams;
+    return this;
+  }
+
+  public Get3DSecureParametersResponse putThreeDSecureParamsItem(String key, String threeDSecureParamsItem) {
+    if (this.threeDSecureParams == null) {
+      this.threeDSecureParams = new HashMap<String, String>();
+    }
+    this.threeDSecureParams.put(key, threeDSecureParamsItem);
+    return this;
+  }
+
+   /**
+   * Get threeDSecureParams
+   * @return threeDSecureParams
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, String> getThreeDSecureParams() {
+    return threeDSecureParams;
+  }
+
+  public void setThreeDSecureParams(Map<String, String> threeDSecureParams) {
+    this.threeDSecureParams = threeDSecureParams;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +181,13 @@ public class Get3DSecureParametersResponse  {
         Objects.equals(this.issuerRedirectUrl, get3DSecureParametersResponse.issuerRedirectUrl) &&
         Objects.equals(this.paReq, get3DSecureParametersResponse.paReq) &&
         Objects.equals(this.md, get3DSecureParametersResponse.md) &&
-        Objects.equals(this.termUrl, get3DSecureParametersResponse.termUrl);
+        Objects.equals(this.termUrl, get3DSecureParametersResponse.termUrl) &&
+        Objects.equals(this.threeDSecureParams, get3DSecureParametersResponse.threeDSecureParams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, issuerRedirectUrl, paReq, md, termUrl);
+    return Objects.hash(responseHeader, issuerRedirectUrl, paReq, md, termUrl, threeDSecureParams);
   }
 
 
@@ -169,6 +202,7 @@ public class Get3DSecureParametersResponse  {
     sb.append("    paReq: ").append(toIndentedString(paReq)).append("\n");
     sb.append("    md: ").append(toIndentedString(md)).append("\n");
     sb.append("    termUrl: ").append(toIndentedString(termUrl)).append("\n");
+    sb.append("    threeDSecureParams: ").append(toIndentedString(threeDSecureParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }

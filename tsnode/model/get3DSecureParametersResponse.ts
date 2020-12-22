@@ -19,6 +19,7 @@ export class Get3DSecureParametersResponse {
     'paReq'?: string;
     'md'?: string;
     'termUrl'?: string;
+    'threeDSecureParams'?: { [key: string]: string; };
 
     static discriminator: string | undefined = undefined;
 
@@ -47,6 +48,11 @@ export class Get3DSecureParametersResponse {
             "name": "termUrl",
             "baseName": "TermUrl",
             "type": "string"
+        },
+        {
+            "name": "threeDSecureParams",
+            "baseName": "ThreeDSecureParams",
+            "type": "{ [key: string]: string; }"
         }    ];
 
     static getAttributeTypeMap() {

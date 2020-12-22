@@ -11,11 +11,11 @@
  */
 
 import { RequestFile } from '../api';
-import { CreateInstallmentsPlanResponseAllOf } from './createInstallmentsPlanResponseAllOf';
 import { InstallmentPlan } from './installmentPlan';
 import { InstallmentPlanResponse } from './installmentPlanResponse';
 import { ResponseHeader } from './responseHeader';
 import { TransactionResult } from './transactionResult';
+import { UpdateInstallmentsPlanResponseAllOf } from './updateInstallmentsPlanResponseAllOf';
 
 export class UpdateInstallmentsPlanResponse {
     'responseHeader'?: ResponseHeader;

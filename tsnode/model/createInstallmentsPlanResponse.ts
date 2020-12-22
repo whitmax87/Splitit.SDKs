@@ -22,6 +22,7 @@ export class CreateInstallmentsPlanResponse {
     'installmentPlan'?: InstallmentPlan;
     'gatewayTransactionResults'?: Array<TransactionResult>;
     'approvalUrl'?: string;
+    'threeDRedirectUrl'?: string;
 
     static discriminator: string | undefined = undefined;
 
@@ -44,6 +45,11 @@ export class CreateInstallmentsPlanResponse {
         {
             "name": "approvalUrl",
             "baseName": "ApprovalUrl",
+            "type": "string"
+        },
+        {
+            "name": "threeDRedirectUrl",
+            "baseName": "ThreeDRedirectUrl",
             "type": "string"
         }    ];
 

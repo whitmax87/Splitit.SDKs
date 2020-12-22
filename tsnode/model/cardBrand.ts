@@ -22,6 +22,7 @@ export enum CardBrand {
     Maestro = <any> 'Maestro',
     JCB = <any> 'JCB',
     CUP = <any> 'CUP',
+    UPI = <any> 'UPI',
     Discover = <any> 'Discover',
     Other = <any> 'Other'
 }

@@ -66,6 +66,12 @@ export interface CreateInstallmentsPlanResponse {
      * @memberof CreateInstallmentsPlanResponse
      */
     approvalUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateInstallmentsPlanResponse
+     */
+    threeDRedirectUrl?: string;
 }
 
 export function CreateInstallmentsPlanResponseFromJSON(json: any): CreateInstallmentsPlanResponse {
@@ -82,6 +88,7 @@ export function CreateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreDis
         'installmentPlan': !exists(json, 'InstallmentPlan') ? undefined : InstallmentPlanFromJSON(json['InstallmentPlan']),
         'gatewayTransactionResults': !exists(json, 'GatewayTransactionResults') ? undefined : ((json['GatewayTransactionResults'] as Array<any>).map(TransactionResultFromJSON)),
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
+        'threeDRedirectUrl': !exists(json, 'ThreeDRedirectUrl') ? undefined : json['ThreeDRedirectUrl'],
     };
 }
 
@@ -98,6 +105,7 @@ export function CreateInstallmentsPlanResponseToJSON(value?: CreateInstallmentsP
         'InstallmentPlan': InstallmentPlanToJSON(value.installmentPlan),
         'GatewayTransactionResults': value.gatewayTransactionResults === undefined ? undefined : ((value.gatewayTransactionResults as Array<any>).map(TransactionResultToJSON)),
         'ApprovalUrl': value.approvalUrl,
+        'ThreeDRedirectUrl': value.threeDRedirectUrl,
     };
 }
 

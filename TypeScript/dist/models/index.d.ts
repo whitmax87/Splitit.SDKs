@@ -103,6 +103,7 @@ export * from './TransactionType';
 export * from './UpdateInstallmentPlanRequest';
 export * from './UpdateInstallmentPlanRequestAllOf';
 export * from './UpdateInstallmentsPlanResponse';
+export * from './UpdateInstallmentsPlanResponseAllOf';
 export * from './User';
 export * from './VerifyPaymentRequest';
 export * from './VerifyPaymentResponse';

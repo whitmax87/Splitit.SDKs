@@ -14,10 +14,6 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    CreateInstallmentsPlanResponseAllOf,
-    CreateInstallmentsPlanResponseAllOfFromJSON,
-    CreateInstallmentsPlanResponseAllOfFromJSONTyped,
-    CreateInstallmentsPlanResponseAllOfToJSON,
     InstallmentPlan,
     InstallmentPlanFromJSON,
     InstallmentPlanFromJSONTyped,
@@ -34,6 +30,10 @@ import {
     TransactionResultFromJSON,
     TransactionResultFromJSONTyped,
     TransactionResultToJSON,
+    UpdateInstallmentsPlanResponseAllOf,
+    UpdateInstallmentsPlanResponseAllOfFromJSON,
+    UpdateInstallmentsPlanResponseAllOfFromJSONTyped,
+    UpdateInstallmentsPlanResponseAllOfToJSON,
 } from './';
 
 /**

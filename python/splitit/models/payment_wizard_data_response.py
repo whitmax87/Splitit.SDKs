@@ -47,6 +47,8 @@ class PaymentWizardDataResponse(object):
         'is_shopper_email_mandatory': 'bool',
         'is_shopper_phone_mandatory': 'bool',
         'number_of_installments_selections_option': 'str',
+        'is3ds2_supported': 'bool',
+        'processor_name': 'str',
         'address_is_readonly': 'bool',
         'phone_is_read_only': 'bool',
         'email_is_read_only': 'bool',
@@ -80,6 +82,8 @@ class PaymentWizardDataResponse(object):
         'is_shopper_email_mandatory': 'IsShopperEmailMandatory',
         'is_shopper_phone_mandatory': 'IsShopperPhoneMandatory',
         'number_of_installments_selections_option': 'NumberOfInstallmentsSelectionsOption',
+        'is3ds2_supported': 'Is3ds2Supported',
+        'processor_name': 'ProcessorName',
         'address_is_readonly': 'AddressIsReadonly',
         'phone_is_read_only': 'PhoneIsReadOnly',
         'email_is_read_only': 'EmailIsReadOnly',
@@ -96,7 +100,7 @@ class PaymentWizardDataResponse(object):
         'terms_and_conditions': 'TermsAndConditions'
     }
 
-    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, payment_form_message=None, show_address_elements=None, currency_display=None, force_display_important_notes=None, show_shopper_details_expended_on_start=None, show_payment_schedule_required_credit=None, is_shopper_email_mandatory=None, is_shopper_phone_mandatory=None, number_of_installments_selections_option=None, address_is_readonly=None, phone_is_read_only=None, email_is_read_only=None, show_learn_more=None, show_mobile_phone=None, logo_url=None, privacy_policy_url=None, terms_and_conditions_url=None, learn_more_url=None, potential_card_types=None, potential_card_brands=None, payment_form_messages=None, display_properties=None, terms_and_conditions=None):  # noqa: E501
+    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, payment_form_message=None, show_address_elements=None, currency_display=None, force_display_important_notes=None, show_shopper_details_expended_on_start=None, show_payment_schedule_required_credit=None, is_shopper_email_mandatory=None, is_shopper_phone_mandatory=None, number_of_installments_selections_option=None, is3ds2_supported=None, processor_name=None, address_is_readonly=None, phone_is_read_only=None, email_is_read_only=None, show_learn_more=None, show_mobile_phone=None, logo_url=None, privacy_policy_url=None, terms_and_conditions_url=None, learn_more_url=None, potential_card_types=None, potential_card_brands=None, payment_form_messages=None, display_properties=None, terms_and_conditions=None):  # noqa: E501
         """PaymentWizardDataResponse - a model defined in Swagger"""  # noqa: E501
 
         self._requested_number_of_installments = None
@@ -115,6 +119,8 @@ class PaymentWizardDataResponse(object):
         self._is_shopper_email_mandatory = None
         self._is_shopper_phone_mandatory = None
         self._number_of_installments_selections_option = None
+        self._is3ds2_supported = None
+        self._processor_name = None
         self._address_is_readonly = None
         self._phone_is_read_only = None
         self._email_is_read_only = None
@@ -157,6 +163,9 @@ class PaymentWizardDataResponse(object):
         self.is_shopper_phone_mandatory = is_shopper_phone_mandatory
         if number_of_installments_selections_option is not None:
             self.number_of_installments_selections_option = number_of_installments_selections_option
+        self.is3ds2_supported = is3ds2_supported
+        if processor_name is not None:
+            self.processor_name = processor_name
         self.address_is_readonly = address_is_readonly
         self.phone_is_read_only = phone_is_read_only
         self.email_is_read_only = email_is_read_only
@@ -534,6 +543,51 @@ class PaymentWizardDataResponse(object):
         """
 
         self._number_of_installments_selections_option = number_of_installments_selections_option
+
+    @property
+    def is3ds2_supported(self):
+        """Gets the is3ds2_supported of this PaymentWizardDataResponse.  # noqa: E501
+
+
+        :return: The is3ds2_supported of this PaymentWizardDataResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is3ds2_supported
+
+    @is3ds2_supported.setter
+    def is3ds2_supported(self, is3ds2_supported):
+        """Sets the is3ds2_supported of this PaymentWizardDataResponse.
+
+
+        :param is3ds2_supported: The is3ds2_supported of this PaymentWizardDataResponse.  # noqa: E501
+        :type: bool
+        """
+        is3ds2_supported = bool(is3ds2_supported)
+        if is3ds2_supported is None:
+            raise ValueError("Invalid value for `is3ds2_supported`, must not be `None`")  # noqa: E501
+
+        self._is3ds2_supported = is3ds2_supported
+
+    @property
+    def processor_name(self):
+        """Gets the processor_name of this PaymentWizardDataResponse.  # noqa: E501
+
+
+        :return: The processor_name of this PaymentWizardDataResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._processor_name
+
+    @processor_name.setter
+    def processor_name(self, processor_name):
+        """Sets the processor_name of this PaymentWizardDataResponse.
+
+
+        :param processor_name: The processor_name of this PaymentWizardDataResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._processor_name = processor_name
 
     @property
     def address_is_readonly(self):

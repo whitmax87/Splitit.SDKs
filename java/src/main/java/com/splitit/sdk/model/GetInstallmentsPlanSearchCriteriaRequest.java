@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * GetInstallmentsPlanSearchCriteriaRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-07T05:29:56.188Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T14:52:42.698Z")
 public class GetInstallmentsPlanSearchCriteriaRequest extends ModelWithHeader {
   @SerializedName("QueryCriteria")
   private InstallmentPlanQueryCriteria queryCriteria = null;

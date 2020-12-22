@@ -28,6 +28,7 @@ function CreateInstallmentsPlanResponseFromJSONTyped(json, ignoreDiscriminator) 
         'installmentPlan': !runtime_1.exists(json, 'InstallmentPlan') ? undefined : _1.InstallmentPlanFromJSON(json['InstallmentPlan']),
         'gatewayTransactionResults': !runtime_1.exists(json, 'GatewayTransactionResults') ? undefined : (json['GatewayTransactionResults'].map(_1.TransactionResultFromJSON)),
         'approvalUrl': !runtime_1.exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
+        'threeDRedirectUrl': !runtime_1.exists(json, 'ThreeDRedirectUrl') ? undefined : json['ThreeDRedirectUrl'],
     };
 }
 exports.CreateInstallmentsPlanResponseFromJSONTyped = CreateInstallmentsPlanResponseFromJSONTyped;
@@ -43,6 +44,7 @@ function CreateInstallmentsPlanResponseToJSON(value) {
         'InstallmentPlan': _1.InstallmentPlanToJSON(value.installmentPlan),
         'GatewayTransactionResults': value.gatewayTransactionResults === undefined ? undefined : (value.gatewayTransactionResults.map(_1.TransactionResultToJSON)),
         'ApprovalUrl': value.approvalUrl,
+        'ThreeDRedirectUrl': value.threeDRedirectUrl,
     };
 }
 exports.CreateInstallmentsPlanResponseToJSON = CreateInstallmentsPlanResponseToJSON;

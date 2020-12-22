@@ -21,6 +21,12 @@ export interface CreateInstallmentsPlanResponseAllOf {
      * @memberof CreateInstallmentsPlanResponseAllOf
      */
     approvalUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInstallmentsPlanResponseAllOf
+     */
+    threeDRedirectUrl?: string;
 }
 export declare function CreateInstallmentsPlanResponseAllOfFromJSON(json: any): CreateInstallmentsPlanResponseAllOf;
 export declare function CreateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInstallmentsPlanResponseAllOf;

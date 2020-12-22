@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **isShopperEmailMandatory** | **Boolean** |  | 
 **isShopperPhoneMandatory** | **Boolean** |  | 
 **numberOfInstallmentsSelectionsOption** | **String** |  |  [optional]
+**is3ds2Supported** | **Boolean** |  | 
+**processorName** | **String** |  |  [optional]
 **addressIsReadonly** | **Boolean** |  | 
 **phoneIsReadOnly** | **Boolean** |  | 
 **emailIsReadOnly** | **Boolean** |  | 

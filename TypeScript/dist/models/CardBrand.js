@@ -26,6 +26,7 @@ var CardBrand;
     CardBrand["Maestro"] = "Maestro";
     CardBrand["JCB"] = "JCB";
     CardBrand["CUP"] = "CUP";
+    CardBrand["UPI"] = "UPI";
     CardBrand["Discover"] = "Discover";
     CardBrand["Other"] = "Other";
 })(CardBrand = exports.CardBrand || (exports.CardBrand = {}));

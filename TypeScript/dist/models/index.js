@@ -108,6 +108,7 @@ __export(require("./TransactionType"));
 __export(require("./UpdateInstallmentPlanRequest"));
 __export(require("./UpdateInstallmentPlanRequestAllOf"));
 __export(require("./UpdateInstallmentsPlanResponse"));
+__export(require("./UpdateInstallmentsPlanResponseAllOf"));
 __export(require("./User"));
 __export(require("./VerifyPaymentRequest"));
 __export(require("./VerifyPaymentResponse"));

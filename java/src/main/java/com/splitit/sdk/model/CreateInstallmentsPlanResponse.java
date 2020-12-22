@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * CreateInstallmentsPlanResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-07T05:29:56.188Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T14:52:42.698Z")
 public class CreateInstallmentsPlanResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
@@ -46,6 +46,9 @@ public class CreateInstallmentsPlanResponse  {
 
   @SerializedName("ApprovalUrl")
   private String approvalUrl = null;
+
+  @SerializedName("ThreeDRedirectUrl")
+  private String threeDRedirectUrl = null;
 
   public CreateInstallmentsPlanResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -127,6 +130,24 @@ public class CreateInstallmentsPlanResponse  {
     this.approvalUrl = approvalUrl;
   }
 
+  public CreateInstallmentsPlanResponse threeDRedirectUrl(String threeDRedirectUrl) {
+    this.threeDRedirectUrl = threeDRedirectUrl;
+    return this;
+  }
+
+   /**
+   * Get threeDRedirectUrl
+   * @return threeDRedirectUrl
+  **/
+  @ApiModelProperty(value = "")
+  public String getThreeDRedirectUrl() {
+    return threeDRedirectUrl;
+  }
+
+  public void setThreeDRedirectUrl(String threeDRedirectUrl) {
+    this.threeDRedirectUrl = threeDRedirectUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +161,13 @@ public class CreateInstallmentsPlanResponse  {
     return Objects.equals(this.responseHeader, createInstallmentsPlanResponse.responseHeader) &&
         Objects.equals(this.installmentPlan, createInstallmentsPlanResponse.installmentPlan) &&
         Objects.equals(this.gatewayTransactionResults, createInstallmentsPlanResponse.gatewayTransactionResults) &&
-        Objects.equals(this.approvalUrl, createInstallmentsPlanResponse.approvalUrl);
+        Objects.equals(this.approvalUrl, createInstallmentsPlanResponse.approvalUrl) &&
+        Objects.equals(this.threeDRedirectUrl, createInstallmentsPlanResponse.threeDRedirectUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults, approvalUrl);
+    return Objects.hash(responseHeader, installmentPlan, gatewayTransactionResults, approvalUrl, threeDRedirectUrl);
   }
 
 
@@ -159,6 +181,7 @@ public class CreateInstallmentsPlanResponse  {
     sb.append("    installmentPlan: ").append(toIndentedString(installmentPlan)).append("\n");
     sb.append("    gatewayTransactionResults: ").append(toIndentedString(gatewayTransactionResults)).append("\n");
     sb.append("    approvalUrl: ").append(toIndentedString(approvalUrl)).append("\n");
+    sb.append("    threeDRedirectUrl: ").append(toIndentedString(threeDRedirectUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

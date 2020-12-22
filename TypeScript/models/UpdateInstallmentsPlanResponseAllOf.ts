@@ -16,39 +16,32 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface CreateInstallmentsPlanResponseAllOf
+ * @interface UpdateInstallmentsPlanResponseAllOf
  */
-export interface CreateInstallmentsPlanResponseAllOf {
+export interface UpdateInstallmentsPlanResponseAllOf {
     /**
      * 
      * @type {string}
-     * @memberof CreateInstallmentsPlanResponseAllOf
+     * @memberof UpdateInstallmentsPlanResponseAllOf
      */
     approvalUrl?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateInstallmentsPlanResponseAllOf
-     */
-    threeDRedirectUrl?: string;
 }
 
-export function CreateInstallmentsPlanResponseAllOfFromJSON(json: any): CreateInstallmentsPlanResponseAllOf {
-    return CreateInstallmentsPlanResponseAllOfFromJSONTyped(json, false);
+export function UpdateInstallmentsPlanResponseAllOfFromJSON(json: any): UpdateInstallmentsPlanResponseAllOf {
+    return UpdateInstallmentsPlanResponseAllOfFromJSONTyped(json, false);
 }
 
-export function CreateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInstallmentsPlanResponseAllOf {
+export function UpdateInstallmentsPlanResponseAllOfFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateInstallmentsPlanResponseAllOf {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
         'approvalUrl': !exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
-        'threeDRedirectUrl': !exists(json, 'ThreeDRedirectUrl') ? undefined : json['ThreeDRedirectUrl'],
     };
 }
 
-export function CreateInstallmentsPlanResponseAllOfToJSON(value?: CreateInstallmentsPlanResponseAllOf | null): any {
+export function UpdateInstallmentsPlanResponseAllOfToJSON(value?: UpdateInstallmentsPlanResponseAllOf | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -58,7 +51,6 @@ export function CreateInstallmentsPlanResponseAllOfToJSON(value?: CreateInstallm
     return {
         
         'ApprovalUrl': value.approvalUrl,
-        'ThreeDRedirectUrl': value.threeDRedirectUrl,
     };
 }
 

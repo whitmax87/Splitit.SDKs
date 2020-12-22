@@ -26,6 +26,8 @@ export class PaymentWizardDataResponseAllOf {
     'isShopperEmailMandatory': boolean;
     'isShopperPhoneMandatory': boolean;
     'numberOfInstallmentsSelectionsOption'?: string;
+    'is3ds2Supported': boolean;
+    'processorName'?: string;
     'addressIsReadonly': boolean;
     'phoneIsReadOnly': boolean;
     'emailIsReadOnly': boolean;
@@ -82,6 +84,16 @@ export class PaymentWizardDataResponseAllOf {
         {
             "name": "numberOfInstallmentsSelectionsOption",
             "baseName": "NumberOfInstallmentsSelectionsOption",
+            "type": "string"
+        },
+        {
+            "name": "is3ds2Supported",
+            "baseName": "Is3ds2Supported",
+            "type": "boolean"
+        },
+        {
+            "name": "processorName",
+            "baseName": "ProcessorName",
             "type": "string"
         },
         {

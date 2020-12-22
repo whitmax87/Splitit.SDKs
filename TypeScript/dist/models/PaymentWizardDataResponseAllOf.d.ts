@@ -69,6 +69,18 @@ export interface PaymentWizardDataResponseAllOf {
      * @type {boolean}
      * @memberof PaymentWizardDataResponseAllOf
      */
+    is3ds2Supported: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    processorName?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
     addressIsReadonly: boolean;
     /**
      *

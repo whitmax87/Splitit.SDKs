@@ -7,8 +7,8 @@ VERBOSE="$1"
 cd "/tests"
 export CLASSPATH="/src/target/*:/src/target/lib/*:/examples/:."
 
-rm /examples/*.class
-rm *.class
+rm /examples/*.class 2> /dev/null
+rm *.class 2> /dev/null
 
 javac *.java
 
@@ -20,4 +20,8 @@ else
     java TestExamples >/dev/null 2>&1 || exit_code=1
     java FlexFieldsTest >/dev/null 2>&1 || exit_code=1
 fi
+
+rm /examples/*.class 2> /dev/null
+rm *.class 2> /dev/null
+
 exit $exit_code

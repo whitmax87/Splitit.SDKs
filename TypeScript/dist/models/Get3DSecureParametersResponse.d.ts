@@ -46,6 +46,14 @@ export interface Get3DSecureParametersResponse {
      * @memberof Get3DSecureParametersResponse
      */
     termUrl?: string;
+    /**
+     *
+     * @type {{ [key: string]: string; }}
+     * @memberof Get3DSecureParametersResponse
+     */
+    threeDSecureParams?: {
+        [key: string]: string;
+    };
 }
 export declare function Get3DSecureParametersResponseFromJSON(json: any): Get3DSecureParametersResponse;
 export declare function Get3DSecureParametersResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): Get3DSecureParametersResponse;

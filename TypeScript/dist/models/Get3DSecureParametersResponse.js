@@ -29,6 +29,7 @@ function Get3DSecureParametersResponseFromJSONTyped(json, ignoreDiscriminator) {
         'paReq': !runtime_1.exists(json, 'PaReq') ? undefined : json['PaReq'],
         'md': !runtime_1.exists(json, 'Md') ? undefined : json['Md'],
         'termUrl': !runtime_1.exists(json, 'TermUrl') ? undefined : json['TermUrl'],
+        'threeDSecureParams': !runtime_1.exists(json, 'ThreeDSecureParams') ? undefined : json['ThreeDSecureParams'],
     };
 }
 exports.Get3DSecureParametersResponseFromJSONTyped = Get3DSecureParametersResponseFromJSONTyped;
@@ -45,6 +46,7 @@ function Get3DSecureParametersResponseToJSON(value) {
         'PaReq': value.paReq,
         'Md': value.md,
         'TermUrl': value.termUrl,
+        'ThreeDSecureParams': value.threeDSecureParams,
     };
 }
 exports.Get3DSecureParametersResponseToJSON = Get3DSecureParametersResponseToJSON;

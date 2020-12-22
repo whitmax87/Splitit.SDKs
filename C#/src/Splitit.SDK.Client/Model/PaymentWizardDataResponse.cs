@@ -52,6 +52,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isShopperEmailMandatory">isShopperEmailMandatory (required).</param>
         /// <param name="isShopperPhoneMandatory">isShopperPhoneMandatory (required).</param>
         /// <param name="numberOfInstallmentsSelectionsOption">numberOfInstallmentsSelectionsOption.</param>
+        /// <param name="is3ds2Supported">is3ds2Supported (required).</param>
+        /// <param name="processorName">processorName.</param>
         /// <param name="addressIsReadonly">addressIsReadonly (required).</param>
         /// <param name="phoneIsReadOnly">phoneIsReadOnly (required).</param>
         /// <param name="emailIsReadOnly">emailIsReadOnly (required).</param>
@@ -66,7 +68,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="paymentFormMessages">paymentFormMessages.</param>
         /// <param name="displayProperties">displayProperties.</param>
         /// <param name="termsAndConditions">termsAndConditions.</param>
-        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), ExtendedCurrency currencyDisplay = default(ExtendedCurrency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), bool? showLearnMore = default(bool?), bool? showMobilePhone = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<CardType> potentialCardTypes = default(List<CardType>), List<CardBrand> potentialCardBrands = default(List<CardBrand>), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
+        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), ExtendedCurrency currencyDisplay = default(ExtendedCurrency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? is3ds2Supported = default(bool?), string processorName = default(string), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), bool? showLearnMore = default(bool?), bool? showMobilePhone = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<CardType> potentialCardTypes = default(List<CardType>), List<CardBrand> potentialCardBrands = default(List<CardBrand>), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
         {
             this.IsOpenedInIframe = isOpenedInIframe;
             this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
@@ -74,6 +76,7 @@ namespace Splitit.SDK.Client.Model
             this.ShowPaymentScheduleRequiredCredit = showPaymentScheduleRequiredCredit;
             this.IsShopperEmailMandatory = isShopperEmailMandatory;
             this.IsShopperPhoneMandatory = isShopperPhoneMandatory;
+            this.Is3ds2Supported = is3ds2Supported;
             this.AddressIsReadonly = addressIsReadonly;
             this.PhoneIsReadOnly = phoneIsReadOnly;
             this.EmailIsReadOnly = emailIsReadOnly;
@@ -89,6 +92,7 @@ namespace Splitit.SDK.Client.Model
             this.ShowAddressElements = showAddressElements;
             this.CurrencyDisplay = currencyDisplay;
             this.NumberOfInstallmentsSelectionsOption = numberOfInstallmentsSelectionsOption;
+            this.ProcessorName = processorName;
             this.LogoURL = logoURL;
             this.PrivacyPolicyUrl = privacyPolicyUrl;
             this.TermsAndConditionsUrl = termsAndConditionsUrl;
@@ -198,6 +202,18 @@ namespace Splitit.SDK.Client.Model
         public string NumberOfInstallmentsSelectionsOption { get; set; }
 
         /// <summary>
+        /// Gets or Sets Is3ds2Supported
+        /// </summary>
+        [DataMember(Name="Is3ds2Supported", EmitDefaultValue=false)]
+        public bool? Is3ds2Supported { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorName
+        /// </summary>
+        [DataMember(Name="ProcessorName", EmitDefaultValue=false)]
+        public string ProcessorName { get; set; }
+
+        /// <summary>
         /// Gets or Sets AddressIsReadonly
         /// </summary>
         [DataMember(Name="AddressIsReadonly", EmitDefaultValue=false)]
@@ -305,6 +321,8 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  IsShopperEmailMandatory: ").Append(IsShopperEmailMandatory).Append("\n");
             sb.Append("  IsShopperPhoneMandatory: ").Append(IsShopperPhoneMandatory).Append("\n");
             sb.Append("  NumberOfInstallmentsSelectionsOption: ").Append(NumberOfInstallmentsSelectionsOption).Append("\n");
+            sb.Append("  Is3ds2Supported: ").Append(Is3ds2Supported).Append("\n");
+            sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
             sb.Append("  AddressIsReadonly: ").Append(AddressIsReadonly).Append("\n");
             sb.Append("  PhoneIsReadOnly: ").Append(PhoneIsReadOnly).Append("\n");
             sb.Append("  EmailIsReadOnly: ").Append(EmailIsReadOnly).Append("\n");
@@ -434,6 +452,16 @@ namespace Splitit.SDK.Client.Model
                     this.NumberOfInstallmentsSelectionsOption.Equals(input.NumberOfInstallmentsSelectionsOption))
                 ) && 
                 (
+                    this.Is3ds2Supported == input.Is3ds2Supported ||
+                    (this.Is3ds2Supported != null &&
+                    this.Is3ds2Supported.Equals(input.Is3ds2Supported))
+                ) && 
+                (
+                    this.ProcessorName == input.ProcessorName ||
+                    (this.ProcessorName != null &&
+                    this.ProcessorName.Equals(input.ProcessorName))
+                ) && 
+                (
                     this.AddressIsReadonly == input.AddressIsReadonly ||
                     (this.AddressIsReadonly != null &&
                     this.AddressIsReadonly.Equals(input.AddressIsReadonly))
@@ -546,6 +574,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.IsShopperPhoneMandatory.GetHashCode();
                 if (this.NumberOfInstallmentsSelectionsOption != null)
                     hashCode = hashCode * 59 + this.NumberOfInstallmentsSelectionsOption.GetHashCode();
+                if (this.Is3ds2Supported != null)
+                    hashCode = hashCode * 59 + this.Is3ds2Supported.GetHashCode();
+                if (this.ProcessorName != null)
+                    hashCode = hashCode * 59 + this.ProcessorName.GetHashCode();
                 if (this.AddressIsReadonly != null)
                     hashCode = hashCode * 59 + this.AddressIsReadonly.GetHashCode();
                 if (this.PhoneIsReadOnly != null)

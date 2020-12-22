@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **installmentPlan** | [**InstallmentPlan**](InstallmentPlan.md) |  |  [optional]
 **gatewayTransactionResults** | [**List&lt;TransactionResult&gt;**](TransactionResult.md) |  |  [optional]
 **approvalUrl** | **String** |  |  [optional]
+**threeDRedirectUrl** | **String** |  |  [optional]
 
 
 

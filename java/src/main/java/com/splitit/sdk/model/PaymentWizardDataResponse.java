@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-07T05:29:56.188Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T14:52:42.698Z")
 public class PaymentWizardDataResponse  {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -86,6 +86,12 @@ public class PaymentWizardDataResponse  {
 
   @SerializedName("NumberOfInstallmentsSelectionsOption")
   private String numberOfInstallmentsSelectionsOption = null;
+
+  @SerializedName("Is3ds2Supported")
+  private Boolean is3ds2Supported = null;
+
+  @SerializedName("ProcessorName")
+  private String processorName = null;
 
   @SerializedName("AddressIsReadonly")
   private Boolean addressIsReadonly = null;
@@ -417,6 +423,42 @@ public class PaymentWizardDataResponse  {
     this.numberOfInstallmentsSelectionsOption = numberOfInstallmentsSelectionsOption;
   }
 
+  public PaymentWizardDataResponse is3ds2Supported(Boolean is3ds2Supported) {
+    this.is3ds2Supported = is3ds2Supported;
+    return this;
+  }
+
+   /**
+   * Get is3ds2Supported
+   * @return is3ds2Supported
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIs3ds2Supported() {
+    return is3ds2Supported;
+  }
+
+  public void setIs3ds2Supported(Boolean is3ds2Supported) {
+    this.is3ds2Supported = is3ds2Supported;
+  }
+
+  public PaymentWizardDataResponse processorName(String processorName) {
+    this.processorName = processorName;
+    return this;
+  }
+
+   /**
+   * Get processorName
+   * @return processorName
+  **/
+  @ApiModelProperty(value = "")
+  public String getProcessorName() {
+    return processorName;
+  }
+
+  public void setProcessorName(String processorName) {
+    this.processorName = processorName;
+  }
+
   public PaymentWizardDataResponse addressIsReadonly(Boolean addressIsReadonly) {
     this.addressIsReadonly = addressIsReadonly;
     return this;
@@ -727,6 +769,8 @@ public class PaymentWizardDataResponse  {
         Objects.equals(this.isShopperEmailMandatory, paymentWizardDataResponse.isShopperEmailMandatory) &&
         Objects.equals(this.isShopperPhoneMandatory, paymentWizardDataResponse.isShopperPhoneMandatory) &&
         Objects.equals(this.numberOfInstallmentsSelectionsOption, paymentWizardDataResponse.numberOfInstallmentsSelectionsOption) &&
+        Objects.equals(this.is3ds2Supported, paymentWizardDataResponse.is3ds2Supported) &&
+        Objects.equals(this.processorName, paymentWizardDataResponse.processorName) &&
         Objects.equals(this.addressIsReadonly, paymentWizardDataResponse.addressIsReadonly) &&
         Objects.equals(this.phoneIsReadOnly, paymentWizardDataResponse.phoneIsReadOnly) &&
         Objects.equals(this.emailIsReadOnly, paymentWizardDataResponse.emailIsReadOnly) &&
@@ -745,7 +789,7 @@ public class PaymentWizardDataResponse  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, is3ds2Supported, processorName, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
   }
 
 
@@ -771,6 +815,8 @@ public class PaymentWizardDataResponse  {
     sb.append("    isShopperEmailMandatory: ").append(toIndentedString(isShopperEmailMandatory)).append("\n");
     sb.append("    isShopperPhoneMandatory: ").append(toIndentedString(isShopperPhoneMandatory)).append("\n");
     sb.append("    numberOfInstallmentsSelectionsOption: ").append(toIndentedString(numberOfInstallmentsSelectionsOption)).append("\n");
+    sb.append("    is3ds2Supported: ").append(toIndentedString(is3ds2Supported)).append("\n");
+    sb.append("    processorName: ").append(toIndentedString(processorName)).append("\n");
     sb.append("    addressIsReadonly: ").append(toIndentedString(addressIsReadonly)).append("\n");
     sb.append("    phoneIsReadOnly: ").append(toIndentedString(phoneIsReadOnly)).append("\n");
     sb.append("    emailIsReadOnly: ").append(toIndentedString(emailIsReadOnly)).append("\n");

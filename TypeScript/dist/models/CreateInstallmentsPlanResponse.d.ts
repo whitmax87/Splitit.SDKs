@@ -40,6 +40,12 @@ export interface CreateInstallmentsPlanResponse {
      * @memberof CreateInstallmentsPlanResponse
      */
     approvalUrl?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateInstallmentsPlanResponse
+     */
+    threeDRedirectUrl?: string;
 }
 export declare function CreateInstallmentsPlanResponseFromJSON(json: any): CreateInstallmentsPlanResponse;
 export declare function CreateInstallmentsPlanResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreateInstallmentsPlanResponse;

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **paReq** | **String** |  |  [optional]
 **md** | **String** |  |  [optional]
 **termUrl** | **String** |  |  [optional]
+**threeDSecureParams** | **Map&lt;String, String&gt;** |  |  [optional]
 
 
 

@@ -106,6 +106,7 @@ export * from './transactionType';
 export * from './updateInstallmentPlanRequest';
 export * from './updateInstallmentPlanRequestAllOf';
 export * from './updateInstallmentsPlanResponse';
+export * from './updateInstallmentsPlanResponseAllOf';
 export * from './user';
 export * from './verifyPaymentRequest';
 export * from './verifyPaymentResponse';
@@ -217,6 +218,7 @@ import { TransactionType } from './transactionType';
 import { UpdateInstallmentPlanRequest } from './updateInstallmentPlanRequest';
 import { UpdateInstallmentPlanRequestAllOf } from './updateInstallmentPlanRequestAllOf';
 import { UpdateInstallmentsPlanResponse } from './updateInstallmentsPlanResponse';
+import { UpdateInstallmentsPlanResponseAllOf } from './updateInstallmentsPlanResponseAllOf';
 import { User } from './user';
 import { VerifyPaymentRequest } from './verifyPaymentRequest';
 import { VerifyPaymentResponse } from './verifyPaymentResponse';
@@ -342,6 +344,7 @@ let typeMap: {[index: string]: any} = {
     "UpdateInstallmentPlanRequest": UpdateInstallmentPlanRequest,
     "UpdateInstallmentPlanRequestAllOf": UpdateInstallmentPlanRequestAllOf,
     "UpdateInstallmentsPlanResponse": UpdateInstallmentsPlanResponse,
+    "UpdateInstallmentsPlanResponseAllOf": UpdateInstallmentsPlanResponseAllOf,
     "User": User,
     "VerifyPaymentRequest": VerifyPaymentRequest,
     "VerifyPaymentResponse": VerifyPaymentResponse,

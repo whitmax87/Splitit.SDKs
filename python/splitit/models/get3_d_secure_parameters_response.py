@@ -35,7 +35,8 @@ class Get3DSecureParametersResponse(object):
         'issuer_redirect_url': 'str',
         'pa_req': 'str',
         'md': 'str',
-        'term_url': 'str'
+        'term_url': 'str',
+        'three_d_secure_params': 'dict(str, str)'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class Get3DSecureParametersResponse(object):
         'issuer_redirect_url': 'IssuerRedirectUrl',
         'pa_req': 'PaReq',
         'md': 'Md',
-        'term_url': 'TermUrl'
+        'term_url': 'TermUrl',
+        'three_d_secure_params': 'ThreeDSecureParams'
     }
 
-    def __init__(self, response_header=None, issuer_redirect_url=None, pa_req=None, md=None, term_url=None):  # noqa: E501
+    def __init__(self, response_header=None, issuer_redirect_url=None, pa_req=None, md=None, term_url=None, three_d_secure_params=None):  # noqa: E501
         """Get3DSecureParametersResponse - a model defined in Swagger"""  # noqa: E501
 
         self._response_header = None
@@ -54,6 +56,7 @@ class Get3DSecureParametersResponse(object):
         self._pa_req = None
         self._md = None
         self._term_url = None
+        self._three_d_secure_params = None
         self.discriminator = None
 
         if response_header is not None:
@@ -66,6 +69,8 @@ class Get3DSecureParametersResponse(object):
             self.md = md
         if term_url is not None:
             self.term_url = term_url
+        if three_d_secure_params is not None:
+            self.three_d_secure_params = three_d_secure_params
 
     @property
     def response_header(self):
@@ -171,6 +176,27 @@ class Get3DSecureParametersResponse(object):
         """
 
         self._term_url = term_url
+
+    @property
+    def three_d_secure_params(self):
+        """Gets the three_d_secure_params of this Get3DSecureParametersResponse.  # noqa: E501
+
+
+        :return: The three_d_secure_params of this Get3DSecureParametersResponse.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._three_d_secure_params
+
+    @three_d_secure_params.setter
+    def three_d_secure_params(self, three_d_secure_params):
+        """Sets the three_d_secure_params of this Get3DSecureParametersResponse.
+
+
+        :param three_d_secure_params: The three_d_secure_params of this Get3DSecureParametersResponse.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._three_d_secure_params = three_d_secure_params
 
     def to_dict(self):
         """Returns the model properties as a dict"""

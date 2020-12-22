@@ -34,23 +34,26 @@ class CreateInstallmentsPlanResponse(object):
         'response_header': 'ResponseHeader',
         'installment_plan': 'InstallmentPlan',
         'gateway_transaction_results': 'list[TransactionResult]',
-        'approval_url': 'str'
+        'approval_url': 'str',
+        'three_d_redirect_url': 'str'
     }
 
     attribute_map = {
         'response_header': 'ResponseHeader',
         'installment_plan': 'InstallmentPlan',
         'gateway_transaction_results': 'GatewayTransactionResults',
-        'approval_url': 'ApprovalUrl'
+        'approval_url': 'ApprovalUrl',
+        'three_d_redirect_url': 'ThreeDRedirectUrl'
     }
 
-    def __init__(self, response_header=None, installment_plan=None, gateway_transaction_results=None, approval_url=None):  # noqa: E501
+    def __init__(self, response_header=None, installment_plan=None, gateway_transaction_results=None, approval_url=None, three_d_redirect_url=None):  # noqa: E501
         """CreateInstallmentsPlanResponse - a model defined in Swagger"""  # noqa: E501
 
         self._response_header = None
         self._installment_plan = None
         self._gateway_transaction_results = None
         self._approval_url = None
+        self._three_d_redirect_url = None
         self.discriminator = None
 
         if response_header is not None:
@@ -61,6 +64,8 @@ class CreateInstallmentsPlanResponse(object):
             self.gateway_transaction_results = gateway_transaction_results
         if approval_url is not None:
             self.approval_url = approval_url
+        if three_d_redirect_url is not None:
+            self.three_d_redirect_url = three_d_redirect_url
 
     @property
     def response_header(self):
@@ -145,6 +150,27 @@ class CreateInstallmentsPlanResponse(object):
         """
 
         self._approval_url = approval_url
+
+    @property
+    def three_d_redirect_url(self):
+        """Gets the three_d_redirect_url of this CreateInstallmentsPlanResponse.  # noqa: E501
+
+
+        :return: The three_d_redirect_url of this CreateInstallmentsPlanResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._three_d_redirect_url
+
+    @three_d_redirect_url.setter
+    def three_d_redirect_url(self, three_d_redirect_url):
+        """Sets the three_d_redirect_url of this CreateInstallmentsPlanResponse.
+
+
+        :param three_d_redirect_url: The three_d_redirect_url of this CreateInstallmentsPlanResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._three_d_redirect_url = three_d_redirect_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

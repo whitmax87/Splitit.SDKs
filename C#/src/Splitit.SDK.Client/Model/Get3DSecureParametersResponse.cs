@@ -36,13 +36,15 @@ namespace Splitit.SDK.Client.Model
         /// <param name="paReq">paReq.</param>
         /// <param name="md">md.</param>
         /// <param name="termUrl">termUrl.</param>
-        public Get3DSecureParametersResponse(ResponseHeader responseHeader = default(ResponseHeader), string issuerRedirectUrl = default(string), string paReq = default(string), string md = default(string), string termUrl = default(string))
+        /// <param name="threeDSecureParams">threeDSecureParams.</param>
+        public Get3DSecureParametersResponse(ResponseHeader responseHeader = default(ResponseHeader), string issuerRedirectUrl = default(string), string paReq = default(string), string md = default(string), string termUrl = default(string), Dictionary<string, string> threeDSecureParams = default(Dictionary<string, string>))
         {
             this.ResponseHeader = responseHeader;
             this.IssuerRedirectUrl = issuerRedirectUrl;
             this.PaReq = paReq;
             this.Md = md;
             this.TermUrl = termUrl;
+            this.ThreeDSecureParams = threeDSecureParams;
         }
 
         
@@ -77,6 +79,12 @@ namespace Splitit.SDK.Client.Model
         public string TermUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets ThreeDSecureParams
+        /// </summary>
+        [DataMember(Name="ThreeDSecureParams", EmitDefaultValue=false)]
+        public Dictionary<string, string> ThreeDSecureParams { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +97,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  PaReq: ").Append(PaReq).Append("\n");
             sb.Append("  Md: ").Append(Md).Append("\n");
             sb.Append("  TermUrl: ").Append(TermUrl).Append("\n");
+            sb.Append("  ThreeDSecureParams: ").Append(ThreeDSecureParams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +156,11 @@ namespace Splitit.SDK.Client.Model
                     this.TermUrl == input.TermUrl ||
                     (this.TermUrl != null &&
                     this.TermUrl.Equals(input.TermUrl))
+                ) && 
+                (
+                    this.ThreeDSecureParams == input.ThreeDSecureParams ||
+                    this.ThreeDSecureParams != null &&
+                    this.ThreeDSecureParams.SequenceEqual(input.ThreeDSecureParams)
                 );
         }
 
@@ -169,6 +183,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Md.GetHashCode();
                 if (this.TermUrl != null)
                     hashCode = hashCode * 59 + this.TermUrl.GetHashCode();
+                if (this.ThreeDSecureParams != null)
+                    hashCode = hashCode * 59 + this.ThreeDSecureParams.GetHashCode();
                 return hashCode;
             }
         }

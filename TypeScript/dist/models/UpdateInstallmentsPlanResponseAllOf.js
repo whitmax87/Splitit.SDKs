@@ -14,21 +14,20 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var runtime_1 = require("../runtime");
-function CreateInstallmentsPlanResponseAllOfFromJSON(json) {
-    return CreateInstallmentsPlanResponseAllOfFromJSONTyped(json, false);
+function UpdateInstallmentsPlanResponseAllOfFromJSON(json) {
+    return UpdateInstallmentsPlanResponseAllOfFromJSONTyped(json, false);
 }
-exports.CreateInstallmentsPlanResponseAllOfFromJSON = CreateInstallmentsPlanResponseAllOfFromJSON;
-function CreateInstallmentsPlanResponseAllOfFromJSONTyped(json, ignoreDiscriminator) {
+exports.UpdateInstallmentsPlanResponseAllOfFromJSON = UpdateInstallmentsPlanResponseAllOfFromJSON;
+function UpdateInstallmentsPlanResponseAllOfFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'approvalUrl': !runtime_1.exists(json, 'ApprovalUrl') ? undefined : json['ApprovalUrl'],
-        'threeDRedirectUrl': !runtime_1.exists(json, 'ThreeDRedirectUrl') ? undefined : json['ThreeDRedirectUrl'],
     };
 }
-exports.CreateInstallmentsPlanResponseAllOfFromJSONTyped = CreateInstallmentsPlanResponseAllOfFromJSONTyped;
-function CreateInstallmentsPlanResponseAllOfToJSON(value) {
+exports.UpdateInstallmentsPlanResponseAllOfFromJSONTyped = UpdateInstallmentsPlanResponseAllOfFromJSONTyped;
+function UpdateInstallmentsPlanResponseAllOfToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -37,7 +36,6 @@ function CreateInstallmentsPlanResponseAllOfToJSON(value) {
     }
     return {
         'ApprovalUrl': value.approvalUrl,
-        'ThreeDRedirectUrl': value.threeDRedirectUrl,
     };
 }
-exports.CreateInstallmentsPlanResponseAllOfToJSON = CreateInstallmentsPlanResponseAllOfToJSON;
+exports.UpdateInstallmentsPlanResponseAllOfToJSON = UpdateInstallmentsPlanResponseAllOfToJSON;

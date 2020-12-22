@@ -95,6 +95,18 @@ export interface PaymentWizardDataResponseAllOf {
      * @type {boolean}
      * @memberof PaymentWizardDataResponseAllOf
      */
+    is3ds2Supported: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    processorName?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
     addressIsReadonly: boolean;
     /**
      * 
@@ -194,6 +206,8 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'isShopperEmailMandatory': json['IsShopperEmailMandatory'],
         'isShopperPhoneMandatory': json['IsShopperPhoneMandatory'],
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
+        'is3ds2Supported': json['Is3ds2Supported'],
+        'processorName': !exists(json, 'ProcessorName') ? undefined : json['ProcessorName'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'phoneIsReadOnly': json['PhoneIsReadOnly'],
         'emailIsReadOnly': json['EmailIsReadOnly'],
@@ -228,6 +242,8 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'IsShopperEmailMandatory': value.isShopperEmailMandatory,
         'IsShopperPhoneMandatory': value.isShopperPhoneMandatory,
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
+        'Is3ds2Supported': value.is3ds2Supported,
+        'ProcessorName': value.processorName,
         'AddressIsReadonly': value.addressIsReadonly,
         'PhoneIsReadOnly': value.phoneIsReadOnly,
         'EmailIsReadOnly': value.emailIsReadOnly,

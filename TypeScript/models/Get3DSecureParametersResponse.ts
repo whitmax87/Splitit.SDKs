@@ -56,6 +56,12 @@ export interface Get3DSecureParametersResponse {
      * @memberof Get3DSecureParametersResponse
      */
     termUrl?: string;
+    /**
+     * 
+     * @type {{ [key: string]: string; }}
+     * @memberof Get3DSecureParametersResponse
+     */
+    threeDSecureParams?: { [key: string]: string; };
 }
 
 export function Get3DSecureParametersResponseFromJSON(json: any): Get3DSecureParametersResponse {
@@ -73,6 +79,7 @@ export function Get3DSecureParametersResponseFromJSONTyped(json: any, ignoreDisc
         'paReq': !exists(json, 'PaReq') ? undefined : json['PaReq'],
         'md': !exists(json, 'Md') ? undefined : json['Md'],
         'termUrl': !exists(json, 'TermUrl') ? undefined : json['TermUrl'],
+        'threeDSecureParams': !exists(json, 'ThreeDSecureParams') ? undefined : json['ThreeDSecureParams'],
     };
 }
 
@@ -90,6 +97,7 @@ export function Get3DSecureParametersResponseToJSON(value?: Get3DSecureParameter
         'PaReq': value.paReq,
         'Md': value.md,
         'TermUrl': value.termUrl,
+        'ThreeDSecureParams': value.threeDSecureParams,
     };
 }
 

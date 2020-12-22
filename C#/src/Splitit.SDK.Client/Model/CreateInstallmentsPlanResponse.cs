@@ -35,12 +35,14 @@ namespace Splitit.SDK.Client.Model
         /// <param name="installmentPlan">installmentPlan.</param>
         /// <param name="gatewayTransactionResults">gatewayTransactionResults.</param>
         /// <param name="approvalUrl">approvalUrl.</param>
-        public CreateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), List<TransactionResult> gatewayTransactionResults = default(List<TransactionResult>), string approvalUrl = default(string))
+        /// <param name="threeDRedirectUrl">threeDRedirectUrl.</param>
+        public CreateInstallmentsPlanResponse(ResponseHeader responseHeader = default(ResponseHeader), InstallmentPlan installmentPlan = default(InstallmentPlan), List<TransactionResult> gatewayTransactionResults = default(List<TransactionResult>), string approvalUrl = default(string), string threeDRedirectUrl = default(string))
         {
             this.ResponseHeader = responseHeader;
             this.InstallmentPlan = installmentPlan;
             this.GatewayTransactionResults = gatewayTransactionResults;
             this.ApprovalUrl = approvalUrl;
+            this.ThreeDRedirectUrl = threeDRedirectUrl;
         }
 
         
@@ -69,6 +71,12 @@ namespace Splitit.SDK.Client.Model
         public string ApprovalUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets ThreeDRedirectUrl
+        /// </summary>
+        [DataMember(Name="ThreeDRedirectUrl", EmitDefaultValue=false)]
+        public string ThreeDRedirectUrl { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -80,6 +88,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  InstallmentPlan: ").Append(InstallmentPlan).Append("\n");
             sb.Append("  GatewayTransactionResults: ").Append(GatewayTransactionResults).Append("\n");
             sb.Append("  ApprovalUrl: ").Append(ApprovalUrl).Append("\n");
+            sb.Append("  ThreeDRedirectUrl: ").Append(ThreeDRedirectUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +142,11 @@ namespace Splitit.SDK.Client.Model
                     this.ApprovalUrl == input.ApprovalUrl ||
                     (this.ApprovalUrl != null &&
                     this.ApprovalUrl.Equals(input.ApprovalUrl))
+                ) && 
+                (
+                    this.ThreeDRedirectUrl == input.ThreeDRedirectUrl ||
+                    (this.ThreeDRedirectUrl != null &&
+                    this.ThreeDRedirectUrl.Equals(input.ThreeDRedirectUrl))
                 );
         }
 
@@ -153,6 +167,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.GatewayTransactionResults.GetHashCode();
                 if (this.ApprovalUrl != null)
                     hashCode = hashCode * 59 + this.ApprovalUrl.GetHashCode();
+                if (this.ThreeDRedirectUrl != null)
+                    hashCode = hashCode * 59 + this.ThreeDRedirectUrl.GetHashCode();
                 return hashCode;
             }
         }
