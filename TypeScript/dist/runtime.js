@@ -202,7 +202,7 @@ var BaseAPI = /** @class */ (function () {
         var body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
-        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.6.0" });
+        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.6.1" });
         var init = {
             method: context.method,
             headers: headers,
@@ -416,7 +416,7 @@ var JSONApiResponse = /** @class */ (function () {
                     case 1:
                         result = _a.apply(this, [_b.sent()]);
                         if (result.responseHeader && !result.responseHeader.succeeded) {
-                            throw result.responseHeader.errors;
+                            throw result;
                         }
                         return [2 /*return*/, result];
                 }

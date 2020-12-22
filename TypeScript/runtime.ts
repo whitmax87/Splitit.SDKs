@@ -94,7 +94,7 @@ export class BaseAPI {
 	    ? context.body
 	    : JSON.stringify(context.body);
 
-        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.6.0"});
+        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.6.1"});
         const init = {
             method: context.method,
             headers: headers,
@@ -355,7 +355,7 @@ export class JSONApiResponse<T> {
         let result = this.transformer(await this.raw.json());
 
         if ((result as any).responseHeader && !(result as any).responseHeader.succeeded){
-            throw (result as any).responseHeader.errors;
+            throw (result as any);
         }
 
         return result;

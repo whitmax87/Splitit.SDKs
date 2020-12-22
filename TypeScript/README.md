@@ -16,6 +16,11 @@ Install via node package manager:
 npm install splitit-sdk --save
 ```
 
+## Breaking changes
+
+### 1.6.0
+Breaking change is introduced in version 1.6. Previous behaviour: catching error from API calls would return only list of errors. Now it returns entire response object, and list of errors can be found in err.responseHeader.errors.
+
 ## Getting Started
 
 Note: this library is intended for browser use only, therefore call to login and initiate API must be done server-side to keep your credentials safe.
