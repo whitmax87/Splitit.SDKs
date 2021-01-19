@@ -56,5 +56,7 @@
 
 * `ONBOARDING` (value: `"Onboarding"`)
 
+* `UPDATECARDFORM` (value: `"UpdateCardForm"`)
+
 
 

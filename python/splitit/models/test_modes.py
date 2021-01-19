@@ -29,6 +29,7 @@ class TestModes(object):
     NONE = "None"
     REGULAR = "Regular"
     FAST = "Fast"
+    AUTOMATION = "Automation"
 
     """
     Attributes:

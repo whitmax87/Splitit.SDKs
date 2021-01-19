@@ -13,12 +13,14 @@ Method | HTTP request | Description
 [**InstallmentPlanGetExtended**](InstallmentPlanApi.md#installmentplangetextended) | **POST** /api/InstallmentPlan/GetExtended | 
 [**InstallmentPlanGetFraudStatusDisplay**](InstallmentPlanApi.md#installmentplangetfraudstatusdisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**InstallmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**InstallmentPlanGetInitiatedUpdatePaymentData**](InstallmentPlanApi.md#installmentplangetinitiatedupdatepaymentdata) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 [**InstallmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentplangetlearnmoredetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 [**InstallmentPlanGetSchedules**](InstallmentPlanApi.md#installmentplangetschedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 [**InstallmentPlanStartInstallments**](InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**InstallmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
+[**InstallmentPlanTestCard**](InstallmentPlanApi.md#installmentplantestcard) | **POST** /api/InstallmentPlan/TestCard | 
 [**InstallmentPlanUpdate**](InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 [**InstallmentPlanVerifyPayment**](InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 
@@ -617,6 +619,68 @@ Authorization is done through SessionId obtained from LoginApi and ApiKey.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="installmentplangetinitiatedupdatepaymentdata"></a>
+# **InstallmentPlanGetInitiatedUpdatePaymentData**
+> GetInitiatedUpdatePaymentDataResponse InstallmentPlanGetInitiatedUpdatePaymentData ()
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanGetInitiatedUpdatePaymentDataExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+
+            try
+            {
+                GetInitiatedUpdatePaymentDataResponse result = apiInstance.InstallmentPlanGetInitiatedUpdatePaymentData();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanGetInitiatedUpdatePaymentData: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetInitiatedUpdatePaymentDataResponse**](GetInitiatedUpdatePaymentDataResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="installmentplangetlearnmoredetails"></a>
 # **InstallmentPlanGetLearnMoreDetails**
 > LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request)
@@ -1001,6 +1065,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TermsAndConditionsGetResponse**](TermsAndConditionsGetResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplantestcard"></a>
+# **InstallmentPlanTestCard**
+> InstallmentPlanResponse InstallmentPlanTestCard (TestCardRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanTestCardExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new TestCardRequest(); // TestCardRequest | 
+
+            try
+            {
+                InstallmentPlanResponse result = apiInstance.InstallmentPlanTestCard(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanTestCard: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**TestCardRequest**](TestCardRequest.md)|  | 
+
+### Return type
+
+[**InstallmentPlanResponse**](InstallmentPlanResponse.md)
 
 ### Authorization
 

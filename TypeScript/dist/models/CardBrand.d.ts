@@ -21,7 +21,6 @@ export declare enum CardBrand {
     Maestro = "Maestro",
     JCB = "JCB",
     CUP = "CUP",
-    UPI = "UPI",
     Discover = "Discover",
     Other = "Other"
 }

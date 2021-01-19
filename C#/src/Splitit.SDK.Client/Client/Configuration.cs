@@ -31,7 +31,7 @@ namespace Splitit.SDK.Client.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.6.1";
+        public const string Version = "1.6.2";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -102,10 +102,10 @@ namespace Splitit.SDK.Client.Client
         /// </summary>
         private Configuration(string basePath = null)
         {
-            UserAgent = "Swagger-Codegen/1.6.1/csharp";
+            UserAgent = "Swagger-Codegen/1.6.2/csharp";
             BasePath = basePath ?? "https://webapi.production.splitit.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
-            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.6.1";
+            DefaultHeader["Splitit-SDK"] = "CSharp-NetCore-1.6.2";
             ApiKey = null;
 
             // Setting Timeout has side effects (forces ApiClient creation).
@@ -265,7 +265,7 @@ namespace Splitit.SDK.Client.Client
         {
             String report = "C# SDK (Splitit.SDK.Client) Debug Report:\n";
             report += "    Version of the API: 1.0.0\n";
-            report += "    SDK Package Version: 1.6.1\n";
+            report += "    SDK Package Version: 1.6.2\n";
 
             return report;
         }

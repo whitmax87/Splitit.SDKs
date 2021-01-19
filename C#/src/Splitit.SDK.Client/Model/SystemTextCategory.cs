@@ -185,7 +185,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum Onboarding for value: Onboarding
         /// </summary>
         [EnumMember(Value = "Onboarding")]
-        Onboarding = 26
+        Onboarding = 26,
+        
+        /// <summary>
+        /// Enum UpdateCardForm for value: UpdateCardForm
+        /// </summary>
+        [EnumMember(Value = "UpdateCardForm")]
+        UpdateCardForm = 27
     }
 
 }

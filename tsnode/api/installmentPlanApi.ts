@@ -25,6 +25,7 @@ import { GetFraudStatusDisplayRequest } from '../model/getFraudStatusDisplayRequ
 import { GetFraudStatusDisplayResponse } from '../model/getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from '../model/getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from '../model/getInitiatedInstallmentPlanResponse';
+import { GetInitiatedUpdatePaymentDataResponse } from '../model/getInitiatedUpdatePaymentDataResponse';
 import { GetInstallmentSchedulesRequest } from '../model/getInstallmentSchedulesRequest';
 import { GetInstallmentsPlanExtendedResponse } from '../model/getInstallmentsPlanExtendedResponse';
 import { GetInstallmentsPlanResponse } from '../model/getInstallmentsPlanResponse';
@@ -40,6 +41,7 @@ import { RefundPlanRequest } from '../model/refundPlanRequest';
 import { StartInstallmentsRequest } from '../model/startInstallmentsRequest';
 import { TermsAndConditionsGetRequest } from '../model/termsAndConditionsGetRequest';
 import { TermsAndConditionsGetResponse } from '../model/termsAndConditionsGetResponse';
+import { TestCardRequest } from '../model/testCardRequest';
 import { UpdateInstallmentPlanRequest } from '../model/updateInstallmentPlanRequest';
 import { UpdateInstallmentsPlanResponse } from '../model/updateInstallmentsPlanResponse';
 import { VerifyPaymentRequest } from '../model/verifyPaymentRequest';
@@ -66,7 +68,7 @@ export class InstallmentPlanApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.6.1"
+            "Splitit-SDK": "NodeJS-1.6.2"
         };
         this._sessionId = sessionId;
     }
@@ -863,6 +865,85 @@ export class InstallmentPlanApi {
     }
     /**
      * 
+     */
+    public async installmentPlanGetInitiatedUpdatePaymentData (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetInitiatedUpdatePaymentDataResponse;  }> {
+        const localVarPath = this.basePath + '/api/InstallmentPlan/GetInitiatedUpdatePaymentData';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['text/plain', 'application/json', 'text/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: false,
+            json: true,
+        };
+
+        if (this._config.touchPoint || this._sessionId){
+            localVarRequestOptions.body.requestHeader = {};
+            if (this._config.touchPoint){
+                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
+            }
+
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
+                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
+            }
+
+            if (this._culture){
+                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
+            }
+        }
+
+        let interceptorPromise = Promise.resolve();
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: GetInitiatedUpdatePaymentDataResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "GetInitiatedUpdatePaymentDataResponse");
+
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            if (body && body.responseHeader && !body.responseHeader.succeeded){
+                                reject(body.responseHeader);
+                            } else {
+                                resolve({ response: response, body: body });
+                            }                            
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
      * @param request 
      */
     public async installmentPlanGetLearnMoreDetails (request: LearnMoreDetailsRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LearnMoreDetailsResponse;  }> {
@@ -1362,6 +1443,92 @@ export class InstallmentPlanApi {
                         reject(error);
                     } else {
                         body = ObjectSerializer.deserialize(body, "TermsAndConditionsGetResponse");
+
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            if (body && body.responseHeader && !body.responseHeader.succeeded){
+                                reject(body.responseHeader);
+                            } else {
+                                resolve({ response: response, body: body });
+                            }                            
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * 
+     * @param request 
+     */
+    public async installmentPlanTestCard (request: TestCardRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: InstallmentPlanResponse;  }> {
+        const localVarPath = this.basePath + '/api/InstallmentPlan/TestCard';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['text/plain', 'application/json', 'text/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new Error('Required parameter request was null or undefined when calling installmentPlanTestCard.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: false,
+            json: true,
+            body: ObjectSerializer.serialize(request, "TestCardRequest")
+        };
+
+        if (this._config.touchPoint || this._sessionId){
+            localVarRequestOptions.body.requestHeader = {};
+            if (this._config.touchPoint){
+                localVarRequestOptions.body.requestHeader.touchPoint = this._config.touchPoint;
+            }
+
+            if (this._sessionId){
+                localVarRequestOptions.body.requestHeader.sessionId = this._sessionId;
+                localVarRequestOptions.body.requestHeader.apiKey = this._config.apiKey;
+            }
+
+            if (this._culture){
+                localVarRequestOptions.body.requestHeader.cultureName = this._culture;
+            }
+        }
+
+        let interceptorPromise = Promise.resolve();
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: InstallmentPlanResponse;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        body = ObjectSerializer.deserialize(body, "InstallmentPlanResponse");
 
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             if (body && body.responseHeader && !body.responseHeader.succeeded){

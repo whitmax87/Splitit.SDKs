@@ -48,6 +48,9 @@ import {
     GetInitiatedInstallmentPlanResponse,
     GetInitiatedInstallmentPlanResponseFromJSON,
     GetInitiatedInstallmentPlanResponseToJSON,
+    GetInitiatedUpdatePaymentDataResponse,
+    GetInitiatedUpdatePaymentDataResponseFromJSON,
+    GetInitiatedUpdatePaymentDataResponseToJSON,
     GetInstallmentSchedulesRequest,
     GetInstallmentSchedulesRequestFromJSON,
     GetInstallmentSchedulesRequestToJSON,
@@ -93,6 +96,9 @@ import {
     TermsAndConditionsGetResponse,
     TermsAndConditionsGetResponseFromJSON,
     TermsAndConditionsGetResponseToJSON,
+    TestCardRequest,
+    TestCardRequestFromJSON,
+    TestCardRequestToJSON,
     UpdateInstallmentPlanRequest,
     UpdateInstallmentPlanRequestFromJSON,
     UpdateInstallmentPlanRequestToJSON,
@@ -165,6 +171,10 @@ export interface InstallmentPlanStartInstallmentsRequest {
 
 export interface InstallmentPlanTermsAndConditionsRequest {
     request: TermsAndConditionsGetRequest;
+}
+
+export interface InstallmentPlanTestCardRequest {
+    request: TestCardRequest;
 }
 
 export interface InstallmentPlanUpdateRequest {
@@ -461,6 +471,30 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
 
     /**
      */
+    async installmentPlanGetInitiatedUpdatePaymentDataRaw(): Promise<runtime.ApiResponse<GetInitiatedUpdatePaymentDataResponse>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetInitiatedUpdatePaymentData`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetInitiatedUpdatePaymentDataResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetInitiatedUpdatePaymentData(): Promise<GetInitiatedUpdatePaymentDataResponse> {
+        const response = await this.installmentPlanGetInitiatedUpdatePaymentDataRaw();
+        return await response.value();
+    }
+
+    /**
+     */
     async installmentPlanGetLearnMoreDetailsRaw(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<runtime.ApiResponse<LearnMoreDetailsResponse>> {
         if (requestParameters.request === null || requestParameters.request === undefined) {
             throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetLearnMoreDetails.');
@@ -642,6 +676,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanTermsAndConditions(requestParameters: InstallmentPlanTermsAndConditionsRequest): Promise<TermsAndConditionsGetResponse> {
         const response = await this.installmentPlanTermsAndConditionsRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanTestCardRaw(requestParameters: InstallmentPlanTestCardRequest): Promise<runtime.ApiResponse<InstallmentPlanResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanTestCard.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/TestCard`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TestCardRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InstallmentPlanResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanTestCard(requestParameters: InstallmentPlanTestCardRequest): Promise<InstallmentPlanResponse> {
+        const response = await this.installmentPlanTestCardRaw(requestParameters);
         return await response.value();
     }
 

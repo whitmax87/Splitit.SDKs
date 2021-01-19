@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2020-12-22T17:14:32.762Z
-- SDK Version: 1.6.1
+  - Build date: 2021-01-19T13:05:00.713Z
+- SDK Version: 1.6.2
 
 ## Requirements
 
@@ -116,12 +116,14 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
 *InstallmentPlanApi* | [**installmentPlanGetFraudStatusDisplay**](docs/InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 *InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+*InstallmentPlanApi* | [**installmentPlanGetInitiatedUpdatePaymentData**](docs/InstallmentPlanApi.md#installmentPlanGetInitiatedUpdatePaymentData) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 *InstallmentPlanApi* | [**installmentPlanGetLearnMoreDetails**](docs/InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 *InstallmentPlanApi* | [**installmentPlanGetSchedules**](docs/InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
+*InstallmentPlanApi* | [**installmentPlanTestCard**](docs/InstallmentPlanApi.md#installmentPlanTestCard) | **POST** /api/InstallmentPlan/TestCard | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 *LoginApi* | [**loginPost**](docs/LoginApi.md#loginPost) | **POST** /api/login | 
@@ -155,6 +157,7 @@ Class | Method | HTTP request | Description
  - [GetFraudStatusDisplayResponse](docs/GetFraudStatusDisplayResponse.md)
  - [GetInitiatedInstallmentPlanRequest](docs/GetInitiatedInstallmentPlanRequest.md)
  - [GetInitiatedInstallmentPlanResponse](docs/GetInitiatedInstallmentPlanResponse.md)
+ - [GetInitiatedUpdatePaymentDataResponse](docs/GetInitiatedUpdatePaymentDataResponse.md)
  - [GetInstallmentSchedulesRequest](docs/GetInstallmentSchedulesRequest.md)
  - [GetInstallmentsPlanResponse](docs/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/GetInstallmentsPlanSearchCriteriaRequest.md)
@@ -209,6 +212,7 @@ Class | Method | HTTP request | Description
  - [TermsAndConditions](docs/TermsAndConditions.md)
  - [TermsAndConditionsGetRequest](docs/TermsAndConditionsGetRequest.md)
  - [TermsAndConditionsGetResponse](docs/TermsAndConditionsGetResponse.md)
+ - [TestCardRequest](docs/TestCardRequest.md)
  - [TestModes](docs/TestModes.md)
  - [TouchPoint](docs/TouchPoint.md)
  - [TransactionInfo](docs/TransactionInfo.md)

@@ -38,6 +38,7 @@ import com.splitit.sdk.model.GetFraudStatusDisplayRequest;
 import com.splitit.sdk.model.GetFraudStatusDisplayResponse;
 import com.splitit.sdk.model.GetInitiatedInstallmentPlanRequest;
 import com.splitit.sdk.model.GetInitiatedInstallmentPlanResponse;
+import com.splitit.sdk.model.GetInitiatedUpdatePaymentDataResponse;
 import com.splitit.sdk.model.GetInstallmentSchedulesRequest;
 import com.splitit.sdk.model.GetInstallmentsPlanExtendedResponse;
 import com.splitit.sdk.model.GetInstallmentsPlanResponse;
@@ -53,6 +54,7 @@ import com.splitit.sdk.model.RefundPlanRequest;
 import com.splitit.sdk.model.StartInstallmentsRequest;
 import com.splitit.sdk.model.TermsAndConditionsGetRequest;
 import com.splitit.sdk.model.TermsAndConditionsGetResponse;
+import com.splitit.sdk.model.TestCardRequest;
 import com.splitit.sdk.model.UpdateInstallmentPlanRequest;
 import com.splitit.sdk.model.UpdateInstallmentsPlanResponse;
 import com.splitit.sdk.model.VerifyPaymentRequest;
@@ -1335,6 +1337,136 @@ public class InstallmentPlanApi {
         return call;
     }
     /**
+     * Build call for installmentPlanGetInitiatedUpdatePaymentData
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetInitiatedUpdatePaymentDataCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/InstallmentPlan/GetInitiatedUpdatePaymentData";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/plain", "application/json", "text/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call installmentPlanGetInitiatedUpdatePaymentDataValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedUpdatePaymentDataCall(progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * 
+     * 
+     * @return GetInitiatedUpdatePaymentDataResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetInitiatedUpdatePaymentDataResponse installmentPlanGetInitiatedUpdatePaymentData() throws ApiException {
+        ApiResponse<GetInitiatedUpdatePaymentDataResponse> resp = installmentPlanGetInitiatedUpdatePaymentDataWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @return ApiResponse&lt;GetInitiatedUpdatePaymentDataResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetInitiatedUpdatePaymentDataResponse> installmentPlanGetInitiatedUpdatePaymentDataWithHttpInfo() throws ApiException {
+        if ("installmentPlanGetInitiatedUpdatePaymentData" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedUpdatePaymentDataValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<GetInitiatedUpdatePaymentDataResponse>(){}.getType();
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanGetInitiatedUpdatePaymentData" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanGetInitiatedUpdatePaymentDataValidateBeforeCall(null, null);
+                localVarReturnType = new TypeToken<GetInitiatedUpdatePaymentDataResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanGetInitiatedUpdatePaymentDataAsync(final ApiCallback<GetInitiatedUpdatePaymentDataResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanGetInitiatedUpdatePaymentDataValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetInitiatedUpdatePaymentDataResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for installmentPlanGetLearnMoreDetails
      * @param request  (required)
      * @param progressListener Progress listener
@@ -2165,6 +2297,145 @@ public class InstallmentPlanApi {
 
         com.squareup.okhttp.Call call = installmentPlanTermsAndConditionsValidateBeforeCall(request, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TermsAndConditionsGetResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for installmentPlanTestCard
+     * @param request  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanTestCardCall(TestCardRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/api/InstallmentPlan/TestCard";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/plain", "application/json", "text/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json-patch+json", "application/json", "text/json", "application/_*+json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call installmentPlanTestCardValidateBeforeCall(TestCardRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling installmentPlanTestCard(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = installmentPlanTestCardCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return InstallmentPlanResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public InstallmentPlanResponse installmentPlanTestCard(TestCardRequest request) throws ApiException {
+        ApiResponse<InstallmentPlanResponse> resp = installmentPlanTestCardWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param request  (required)
+     * @return ApiResponse&lt;InstallmentPlanResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<InstallmentPlanResponse> installmentPlanTestCardWithHttpInfo(TestCardRequest request) throws ApiException {
+        if ("installmentPlanTestCard" != "loginPost") {
+            apiClient.performAutologin(false);
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanTestCardValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+        try{
+            return apiClient.execute(call, localVarReturnType);
+        } catch (ApiException e) {
+            if (("installmentPlanTestCard" != "loginPost") && (e.getCode() == 704)){
+                // Stale session, force-relogin
+                apiClient.performAutologin(true);
+                // Re-generate the request (to include updated sessionID)
+                call = installmentPlanTestCardValidateBeforeCall(request, null, null);
+                localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
+                return apiClient.execute(call, localVarReturnType);
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call installmentPlanTestCardAsync(TestCardRequest request, final ApiCallback<InstallmentPlanResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = installmentPlanTestCardValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<InstallmentPlanResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

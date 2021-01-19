@@ -13,12 +13,14 @@ Method | HTTP request | Description
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
 [**installmentPlanGetFraudStatusDisplay**](InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**installmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**installmentPlanGetInitiatedUpdatePaymentData**](InstallmentPlanApi.md#installmentPlanGetInitiatedUpdatePaymentData) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 [**installmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 [**installmentPlanGetSchedules**](InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**installmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
+[**installmentPlanTestCard**](InstallmentPlanApi.md#installmentPlanTestCard) | **POST** /api/InstallmentPlan/TestCard | 
 [**installmentPlanUpdate**](InstallmentPlanApi.md#installmentPlanUpdate) | **POST** /api/InstallmentPlan/Update | 
 [**installmentPlanVerifyPayment**](InstallmentPlanApi.md#installmentPlanVerifyPayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 
@@ -500,6 +502,55 @@ No authorization required
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
+<a name="installmentPlanGetInitiatedUpdatePaymentData"></a>
+# **installmentPlanGetInitiatedUpdatePaymentData**
+> GetInitiatedUpdatePaymentDataResponse installmentPlanGetInitiatedUpdatePaymentData()
+
+
+
+### Example
+```java
+// Import classes:
+//import com.splitit.ApiException;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
+
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
+
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
+try {
+    GetInitiatedUpdatePaymentDataResponse result = apiInstance.installmentPlanGetInitiatedUpdatePaymentData();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstallmentPlanApi#installmentPlanGetInitiatedUpdatePaymentData");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetInitiatedUpdatePaymentDataResponse**](GetInitiatedUpdatePaymentDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
 <a name="installmentPlanGetLearnMoreDetails"></a>
 # **installmentPlanGetLearnMoreDetails**
 > LearnMoreDetailsResponse installmentPlanGetLearnMoreDetails(request)
@@ -808,6 +859,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TermsAndConditionsGetResponse**](TermsAndConditionsGetResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+<a name="installmentPlanTestCard"></a>
+# **installmentPlanTestCard**
+> InstallmentPlanResponse installmentPlanTestCard(request)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.splitit.ApiException;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
+
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
+
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
+TestCardRequest request = new TestCardRequest(); // TestCardRequest | 
+try {
+    InstallmentPlanResponse result = apiInstance.installmentPlanTestCard(request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstallmentPlanApi#installmentPlanTestCard");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**TestCardRequest**](TestCardRequest.md)|  |
+
+### Return type
+
+[**InstallmentPlanResponse**](InstallmentPlanResponse.md)
 
 ### Authorization
 

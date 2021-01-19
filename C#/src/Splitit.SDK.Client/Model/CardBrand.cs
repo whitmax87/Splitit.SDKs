@@ -68,22 +68,16 @@ namespace Splitit.SDK.Client.Model
         CUP = 6,
         
         /// <summary>
-        /// Enum UPI for value: UPI
-        /// </summary>
-        [EnumMember(Value = "UPI")]
-        UPI = 7,
-        
-        /// <summary>
         /// Enum Discover for value: Discover
         /// </summary>
         [EnumMember(Value = "Discover")]
-        Discover = 8,
+        Discover = 7,
         
         /// <summary>
         /// Enum Other for value: Other
         /// </summary>
         [EnumMember(Value = "Other")]
-        Other = 9
+        Other = 8
     }
 
 }

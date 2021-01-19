@@ -13,12 +13,14 @@ Method | HTTP request | Description
 [**installment_plan_get_extended**](InstallmentPlanApi.md#installment_plan_get_extended) | **POST** /api/InstallmentPlan/GetExtended | 
 [**installment_plan_get_fraud_status_display**](InstallmentPlanApi.md#installment_plan_get_fraud_status_display) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**installment_plan_get_initiated_installment_plan_request**](InstallmentPlanApi.md#installment_plan_get_initiated_installment_plan_request) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**installment_plan_get_initiated_update_payment_data**](InstallmentPlanApi.md#installment_plan_get_initiated_update_payment_data) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 [**installment_plan_get_learn_more_details**](InstallmentPlanApi.md#installment_plan_get_learn_more_details) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 [**installment_plan_get_schedules**](InstallmentPlanApi.md#installment_plan_get_schedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installment_plan_initiate**](InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installment_plan_refund**](InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
 [**installment_plan_start_installments**](InstallmentPlanApi.md#installment_plan_start_installments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**installment_plan_terms_and_conditions**](InstallmentPlanApi.md#installment_plan_terms_and_conditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
+[**installment_plan_test_card**](InstallmentPlanApi.md#installment_plan_test_card) | **POST** /api/InstallmentPlan/TestCard | 
 [**installment_plan_update**](InstallmentPlanApi.md#installment_plan_update) | **POST** /api/InstallmentPlan/Update | 
 [**installment_plan_verify_payment**](InstallmentPlanApi.md#installment_plan_verify_payment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 
@@ -428,6 +430,47 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **installment_plan_get_initiated_update_payment_data**
+> GetInitiatedUpdatePaymentDataResponse installment_plan_get_initiated_update_payment_data()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+
+try:
+    api_response = api_instance.installment_plan_get_initiated_update_payment_data()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_initiated_update_payment_data: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetInitiatedUpdatePaymentDataResponse**](GetInitiatedUpdatePaymentDataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **installment_plan_get_learn_more_details**
 > LearnMoreDetailsResponse installment_plan_get_learn_more_details(request)
 
@@ -686,6 +729,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TermsAndConditionsGetResponse**](TermsAndConditionsGetResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_test_card**
+> InstallmentPlanResponse installment_plan_test_card(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit
+from splitit.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit.InstallmentPlanApi()
+request = splitit.TestCardRequest() # TestCardRequest | 
+
+try:
+    api_response = api_instance.installment_plan_test_card(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_test_card: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**TestCardRequest**](TestCardRequest.md)|  | 
+
+### Return type
+
+[**InstallmentPlanResponse**](InstallmentPlanResponse.md)
 
 ### Authorization
 

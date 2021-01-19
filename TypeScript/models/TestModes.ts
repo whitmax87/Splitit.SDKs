@@ -20,7 +20,8 @@
 export enum TestModes {
     None = 'None',
     Regular = 'Regular',
-    Fast = 'Fast'
+    Fast = 'Fast',
+    Automation = 'Automation'
 }
 
 export function TestModesFromJSON(json: any): TestModes {

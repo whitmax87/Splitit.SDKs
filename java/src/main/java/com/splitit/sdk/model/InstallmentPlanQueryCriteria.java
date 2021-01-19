@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * InstallmentPlanQueryCriteria
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T17:14:32.762Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T13:05:00.713Z")
 public class InstallmentPlanQueryCriteria  {
   @SerializedName("MerchantId")
   private Long merchantId = null;

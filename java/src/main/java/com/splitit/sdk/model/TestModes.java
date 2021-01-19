@@ -34,7 +34,9 @@ public enum TestModes {
   
   REGULAR("Regular"),
   
-  FAST("Fast");
+  FAST("Fast"),
+  
+  AUTOMATION("Automation");
 
   private String value;
 

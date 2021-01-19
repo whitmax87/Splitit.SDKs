@@ -129,6 +129,16 @@ namespace Splitit.SDK.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>GetInitiatedUpdatePaymentDataResponse</returns>
+        GetInitiatedUpdatePaymentDataResponse InstallmentPlanGetInitiatedUpdatePaymentData ();
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>LearnMoreDetailsResponse</returns>
         LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request);
@@ -187,6 +197,17 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>TermsAndConditionsGetResponse</returns>
         TermsAndConditionsGetResponse InstallmentPlanTermsAndConditions (TermsAndConditionsGetRequest request);
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>InstallmentPlanResponse</returns>
+        InstallmentPlanResponse InstallmentPlanTestCard (TestCardRequest request);
        
         /// <summary>
         /// 
@@ -408,6 +429,25 @@ namespace Splitit.SDK.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of GetInitiatedUpdatePaymentDataResponse</returns>
+        System.Threading.Tasks.Task<GetInitiatedUpdatePaymentDataResponse> InstallmentPlanGetInitiatedUpdatePaymentDataAsync ();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (GetInitiatedUpdatePaymentDataResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetInitiatedUpdatePaymentDataResponse>> InstallmentPlanGetInitiatedUpdatePaymentDataAsyncWithHttpInfo ();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>Task of LearnMoreDetailsResponse</returns>
         System.Threading.Tasks.Task<LearnMoreDetailsResponse> InstallmentPlanGetLearnMoreDetailsAsync (LearnMoreDetailsRequest request);
@@ -527,6 +567,27 @@ namespace Splitit.SDK.Client.Api
         /// <param name="request"></param>
         /// <returns>Task of ApiResponse (TermsAndConditionsGetResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<TermsAndConditionsGetResponse>> InstallmentPlanTermsAndConditionsAsyncWithHttpInfo (TermsAndConditionsGetRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of InstallmentPlanResponse</returns>
+        System.Threading.Tasks.Task<InstallmentPlanResponse> InstallmentPlanTestCardAsync (TestCardRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (InstallmentPlanResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstallmentPlanResponse>> InstallmentPlanTestCardAsyncWithHttpInfo (TestCardRequest request);
         /// <summary>
         /// 
         /// </summary>
@@ -1382,6 +1443,70 @@ namespace Splitit.SDK.Client.Api
         ///  
         /// </summary>
         /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>GetInitiatedUpdatePaymentDataResponse</returns>
+        public GetInitiatedUpdatePaymentDataResponse InstallmentPlanGetInitiatedUpdatePaymentData ()
+        {
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanGetInitiatedUpdatePaymentDataAsync()).ConfigureAwait(true).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of GetInitiatedUpdatePaymentDataResponse</returns>
+        public async System.Threading.Tasks.Task<GetInitiatedUpdatePaymentDataResponse> InstallmentPlanGetInitiatedUpdatePaymentDataAsync ()
+        {
+             ApiResponse<GetInitiatedUpdatePaymentDataResponse> localVarResponse = await InstallmentPlanGetInitiatedUpdatePaymentDataAsyncWithHttpInfo();
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (GetInitiatedUpdatePaymentDataResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetInitiatedUpdatePaymentDataResponse>> InstallmentPlanGetInitiatedUpdatePaymentDataAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/InstallmentPlan/GetInitiatedUpdatePaymentData";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+
+            // make the HTTP request
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<GetInitiatedUpdatePaymentDataResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
+                localVarPathParams, localVarHttpContentType);
+
+          
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
         /// <returns>LearnMoreDetailsResponse</returns>
         public LearnMoreDetailsResponse InstallmentPlanGetLearnMoreDetails (LearnMoreDetailsRequest request)
@@ -1857,6 +1982,87 @@ namespace Splitit.SDK.Client.Api
 
             // make the HTTP request
             var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<TermsAndConditionsGetResponse>(localVarPath,
+                System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
+                localVarPathParams, localVarHttpContentType);
+
+          
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>InstallmentPlanResponse</returns>
+        public InstallmentPlanResponse InstallmentPlanTestCard (TestCardRequest request)
+        {
+            return System.Threading.Tasks.Task.Run(async () => await InstallmentPlanTestCardAsync(request)).ConfigureAwait(true).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of InstallmentPlanResponse</returns>
+        public async System.Threading.Tasks.Task<InstallmentPlanResponse> InstallmentPlanTestCardAsync (TestCardRequest request)
+        {
+             ApiResponse<InstallmentPlanResponse> localVarResponse = await InstallmentPlanTestCardAsyncWithHttpInfo(request);
+             localVarResponse.Validate();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="Splitit.SDK.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request"></param>
+        /// <returns>Task of ApiResponse (InstallmentPlanResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InstallmentPlanResponse>> InstallmentPlanTestCardAsyncWithHttpInfo (TestCardRequest request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling InstallmentPlanApi->InstallmentPlanTestCard");
+
+            var localVarPath = "./api/InstallmentPlan/TestCard";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+				this.Configuration.ApiClient.InjectAuthIfNotExists(apiKey: this._apiKey, sessionId: this._sessionId, culture: this.Culture, request: request);
+            }
+
+            localVarPostBody = request;
+
+
+
+            // make the HTTP request
+            var localVarResponse = await this.Configuration.ApiClient.CallApiAsync<InstallmentPlanResponse>(localVarPath,
                 System.Net.Http.HttpMethod.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, 
                 localVarPathParams, localVarHttpContentType);
 

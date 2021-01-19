@@ -10,5 +10,7 @@
 
 * `FAST` (value: `"Fast"`)
 
+* `AUTOMATION` (value: `"Automation"`)
+
 
 

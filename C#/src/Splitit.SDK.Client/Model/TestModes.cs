@@ -47,7 +47,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum Fast for value: Fast
         /// </summary>
         [EnumMember(Value = "Fast")]
-        Fast = 3
+        Fast = 3,
+        
+        /// <summary>
+        /// Enum Automation for value: Automation
+        /// </summary>
+        [EnumMember(Value = "Automation")]
+        Automation = 4
     }
 
 }

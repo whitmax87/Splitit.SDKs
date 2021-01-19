@@ -129,6 +129,12 @@ export interface PaymentWizardDataResponse {
      * @type {boolean}
      * @memberof PaymentWizardDataResponse
      */
+    is3dSecureInPopup: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
     addressIsReadonly: boolean;
     /**
      *
@@ -156,10 +162,22 @@ export interface PaymentWizardDataResponse {
     showMobilePhone: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    showCloseDialogBeforeAbandon: boolean;
+    /**
+     *
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
     logoURL?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof PaymentWizardDataResponse
+     */
+    defaultNumOfInstallments: number;
     /**
      *
      * @type {string}

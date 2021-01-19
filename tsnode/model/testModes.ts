@@ -18,5 +18,6 @@ import { RequestFile } from '../api';
 export enum TestModes {
     None = <any> 'None',
     Regular = <any> 'Regular',
-    Fast = <any> 'Fast'
+    Fast = <any> 'Fast',
+    Automation = <any> 'Automation'
 }

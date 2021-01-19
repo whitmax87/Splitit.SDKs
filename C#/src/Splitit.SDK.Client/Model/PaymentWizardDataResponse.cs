@@ -54,12 +54,15 @@ namespace Splitit.SDK.Client.Model
         /// <param name="numberOfInstallmentsSelectionsOption">numberOfInstallmentsSelectionsOption.</param>
         /// <param name="is3ds2Supported">is3ds2Supported (required).</param>
         /// <param name="processorName">processorName.</param>
+        /// <param name="is3dSecureInPopup">is3dSecureInPopup (required).</param>
         /// <param name="addressIsReadonly">addressIsReadonly (required).</param>
         /// <param name="phoneIsReadOnly">phoneIsReadOnly (required).</param>
         /// <param name="emailIsReadOnly">emailIsReadOnly (required).</param>
         /// <param name="showLearnMore">showLearnMore (required).</param>
         /// <param name="showMobilePhone">showMobilePhone (required).</param>
+        /// <param name="showCloseDialogBeforeAbandon">showCloseDialogBeforeAbandon (required).</param>
         /// <param name="logoURL">logoURL.</param>
+        /// <param name="defaultNumOfInstallments">defaultNumOfInstallments (required).</param>
         /// <param name="privacyPolicyUrl">privacyPolicyUrl.</param>
         /// <param name="termsAndConditionsUrl">termsAndConditionsUrl.</param>
         /// <param name="learnMoreUrl">learnMoreUrl.</param>
@@ -68,7 +71,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="paymentFormMessages">paymentFormMessages.</param>
         /// <param name="displayProperties">displayProperties.</param>
         /// <param name="termsAndConditions">termsAndConditions.</param>
-        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), ExtendedCurrency currencyDisplay = default(ExtendedCurrency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? is3ds2Supported = default(bool?), string processorName = default(string), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), bool? showLearnMore = default(bool?), bool? showMobilePhone = default(bool?), string logoURL = default(string), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<CardType> potentialCardTypes = default(List<CardType>), List<CardBrand> potentialCardBrands = default(List<CardBrand>), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
+        public PaymentWizardDataResponse(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string), string showAddressElements = default(string), ExtendedCurrency currencyDisplay = default(ExtendedCurrency), bool? forceDisplayImportantNotes = default(bool?), bool? showShopperDetailsExpendedOnStart = default(bool?), bool? showPaymentScheduleRequiredCredit = default(bool?), bool? isShopperEmailMandatory = default(bool?), bool? isShopperPhoneMandatory = default(bool?), string numberOfInstallmentsSelectionsOption = default(string), bool? is3ds2Supported = default(bool?), string processorName = default(string), bool? is3dSecureInPopup = default(bool?), bool? addressIsReadonly = default(bool?), bool? phoneIsReadOnly = default(bool?), bool? emailIsReadOnly = default(bool?), bool? showLearnMore = default(bool?), bool? showMobilePhone = default(bool?), bool? showCloseDialogBeforeAbandon = default(bool?), string logoURL = default(string), int? defaultNumOfInstallments = default(int?), string privacyPolicyUrl = default(string), string termsAndConditionsUrl = default(string), string learnMoreUrl = default(string), List<CardType> potentialCardTypes = default(List<CardType>), List<CardBrand> potentialCardBrands = default(List<CardBrand>), List<PaymentFormMessage> paymentFormMessages = default(List<PaymentFormMessage>), Dictionary<string, string> displayProperties = default(Dictionary<string, string>), TermsAndConditions termsAndConditions = default(TermsAndConditions))
         {
             this.IsOpenedInIframe = isOpenedInIframe;
             this.ForceDisplayImportantNotes = forceDisplayImportantNotes;
@@ -77,11 +80,14 @@ namespace Splitit.SDK.Client.Model
             this.IsShopperEmailMandatory = isShopperEmailMandatory;
             this.IsShopperPhoneMandatory = isShopperPhoneMandatory;
             this.Is3ds2Supported = is3ds2Supported;
+            this.Is3dSecureInPopup = is3dSecureInPopup;
             this.AddressIsReadonly = addressIsReadonly;
             this.PhoneIsReadOnly = phoneIsReadOnly;
             this.EmailIsReadOnly = emailIsReadOnly;
             this.ShowLearnMore = showLearnMore;
             this.ShowMobilePhone = showMobilePhone;
+            this.ShowCloseDialogBeforeAbandon = showCloseDialogBeforeAbandon;
+            this.DefaultNumOfInstallments = defaultNumOfInstallments;
             this.RequestedNumberOfInstallments = requestedNumberOfInstallments;
             this.SuccessExitURL = successExitURL;
             this.ErrorExitURL = errorExitURL;
@@ -214,6 +220,12 @@ namespace Splitit.SDK.Client.Model
         public string ProcessorName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Is3dSecureInPopup
+        /// </summary>
+        [DataMember(Name="Is3dSecureInPopup", EmitDefaultValue=false)]
+        public bool? Is3dSecureInPopup { get; set; }
+
+        /// <summary>
         /// Gets or Sets AddressIsReadonly
         /// </summary>
         [DataMember(Name="AddressIsReadonly", EmitDefaultValue=false)]
@@ -244,10 +256,22 @@ namespace Splitit.SDK.Client.Model
         public bool? ShowMobilePhone { get; set; }
 
         /// <summary>
+        /// Gets or Sets ShowCloseDialogBeforeAbandon
+        /// </summary>
+        [DataMember(Name="ShowCloseDialogBeforeAbandon", EmitDefaultValue=false)]
+        public bool? ShowCloseDialogBeforeAbandon { get; set; }
+
+        /// <summary>
         /// Gets or Sets LogoURL
         /// </summary>
         [DataMember(Name="LogoURL", EmitDefaultValue=false)]
         public string LogoURL { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DefaultNumOfInstallments
+        /// </summary>
+        [DataMember(Name="DefaultNumOfInstallments", EmitDefaultValue=false)]
+        public int? DefaultNumOfInstallments { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivacyPolicyUrl
@@ -323,12 +347,15 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  NumberOfInstallmentsSelectionsOption: ").Append(NumberOfInstallmentsSelectionsOption).Append("\n");
             sb.Append("  Is3ds2Supported: ").Append(Is3ds2Supported).Append("\n");
             sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
+            sb.Append("  Is3dSecureInPopup: ").Append(Is3dSecureInPopup).Append("\n");
             sb.Append("  AddressIsReadonly: ").Append(AddressIsReadonly).Append("\n");
             sb.Append("  PhoneIsReadOnly: ").Append(PhoneIsReadOnly).Append("\n");
             sb.Append("  EmailIsReadOnly: ").Append(EmailIsReadOnly).Append("\n");
             sb.Append("  ShowLearnMore: ").Append(ShowLearnMore).Append("\n");
             sb.Append("  ShowMobilePhone: ").Append(ShowMobilePhone).Append("\n");
+            sb.Append("  ShowCloseDialogBeforeAbandon: ").Append(ShowCloseDialogBeforeAbandon).Append("\n");
             sb.Append("  LogoURL: ").Append(LogoURL).Append("\n");
+            sb.Append("  DefaultNumOfInstallments: ").Append(DefaultNumOfInstallments).Append("\n");
             sb.Append("  PrivacyPolicyUrl: ").Append(PrivacyPolicyUrl).Append("\n");
             sb.Append("  TermsAndConditionsUrl: ").Append(TermsAndConditionsUrl).Append("\n");
             sb.Append("  LearnMoreUrl: ").Append(LearnMoreUrl).Append("\n");
@@ -462,6 +489,11 @@ namespace Splitit.SDK.Client.Model
                     this.ProcessorName.Equals(input.ProcessorName))
                 ) && 
                 (
+                    this.Is3dSecureInPopup == input.Is3dSecureInPopup ||
+                    (this.Is3dSecureInPopup != null &&
+                    this.Is3dSecureInPopup.Equals(input.Is3dSecureInPopup))
+                ) && 
+                (
                     this.AddressIsReadonly == input.AddressIsReadonly ||
                     (this.AddressIsReadonly != null &&
                     this.AddressIsReadonly.Equals(input.AddressIsReadonly))
@@ -487,9 +519,19 @@ namespace Splitit.SDK.Client.Model
                     this.ShowMobilePhone.Equals(input.ShowMobilePhone))
                 ) && 
                 (
+                    this.ShowCloseDialogBeforeAbandon == input.ShowCloseDialogBeforeAbandon ||
+                    (this.ShowCloseDialogBeforeAbandon != null &&
+                    this.ShowCloseDialogBeforeAbandon.Equals(input.ShowCloseDialogBeforeAbandon))
+                ) && 
+                (
                     this.LogoURL == input.LogoURL ||
                     (this.LogoURL != null &&
                     this.LogoURL.Equals(input.LogoURL))
+                ) && 
+                (
+                    this.DefaultNumOfInstallments == input.DefaultNumOfInstallments ||
+                    (this.DefaultNumOfInstallments != null &&
+                    this.DefaultNumOfInstallments.Equals(input.DefaultNumOfInstallments))
                 ) && 
                 (
                     this.PrivacyPolicyUrl == input.PrivacyPolicyUrl ||
@@ -578,6 +620,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Is3ds2Supported.GetHashCode();
                 if (this.ProcessorName != null)
                     hashCode = hashCode * 59 + this.ProcessorName.GetHashCode();
+                if (this.Is3dSecureInPopup != null)
+                    hashCode = hashCode * 59 + this.Is3dSecureInPopup.GetHashCode();
                 if (this.AddressIsReadonly != null)
                     hashCode = hashCode * 59 + this.AddressIsReadonly.GetHashCode();
                 if (this.PhoneIsReadOnly != null)
@@ -588,8 +632,12 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ShowLearnMore.GetHashCode();
                 if (this.ShowMobilePhone != null)
                     hashCode = hashCode * 59 + this.ShowMobilePhone.GetHashCode();
+                if (this.ShowCloseDialogBeforeAbandon != null)
+                    hashCode = hashCode * 59 + this.ShowCloseDialogBeforeAbandon.GetHashCode();
                 if (this.LogoURL != null)
                     hashCode = hashCode * 59 + this.LogoURL.GetHashCode();
+                if (this.DefaultNumOfInstallments != null)
+                    hashCode = hashCode * 59 + this.DefaultNumOfInstallments.GetHashCode();
                 if (this.PrivacyPolicyUrl != null)
                     hashCode = hashCode * 59 + this.PrivacyPolicyUrl.GetHashCode();
                 if (this.TermsAndConditionsUrl != null)

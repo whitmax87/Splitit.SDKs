@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-22T17:14:32.762Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T13:05:00.713Z")
 public class PaymentWizardDataResponse  {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -93,6 +93,9 @@ public class PaymentWizardDataResponse  {
   @SerializedName("ProcessorName")
   private String processorName = null;
 
+  @SerializedName("Is3dSecureInPopup")
+  private Boolean is3dSecureInPopup = null;
+
   @SerializedName("AddressIsReadonly")
   private Boolean addressIsReadonly = null;
 
@@ -108,8 +111,14 @@ public class PaymentWizardDataResponse  {
   @SerializedName("ShowMobilePhone")
   private Boolean showMobilePhone = null;
 
+  @SerializedName("ShowCloseDialogBeforeAbandon")
+  private Boolean showCloseDialogBeforeAbandon = null;
+
   @SerializedName("LogoURL")
   private String logoURL = null;
+
+  @SerializedName("DefaultNumOfInstallments")
+  private Integer defaultNumOfInstallments = null;
 
   @SerializedName("PrivacyPolicyUrl")
   private String privacyPolicyUrl = null;
@@ -459,6 +468,24 @@ public class PaymentWizardDataResponse  {
     this.processorName = processorName;
   }
 
+  public PaymentWizardDataResponse is3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
+    return this;
+  }
+
+   /**
+   * Get is3dSecureInPopup
+   * @return is3dSecureInPopup
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIs3dSecureInPopup() {
+    return is3dSecureInPopup;
+  }
+
+  public void setIs3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
+  }
+
   public PaymentWizardDataResponse addressIsReadonly(Boolean addressIsReadonly) {
     this.addressIsReadonly = addressIsReadonly;
     return this;
@@ -549,6 +576,24 @@ public class PaymentWizardDataResponse  {
     this.showMobilePhone = showMobilePhone;
   }
 
+  public PaymentWizardDataResponse showCloseDialogBeforeAbandon(Boolean showCloseDialogBeforeAbandon) {
+    this.showCloseDialogBeforeAbandon = showCloseDialogBeforeAbandon;
+    return this;
+  }
+
+   /**
+   * Get showCloseDialogBeforeAbandon
+   * @return showCloseDialogBeforeAbandon
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isShowCloseDialogBeforeAbandon() {
+    return showCloseDialogBeforeAbandon;
+  }
+
+  public void setShowCloseDialogBeforeAbandon(Boolean showCloseDialogBeforeAbandon) {
+    this.showCloseDialogBeforeAbandon = showCloseDialogBeforeAbandon;
+  }
+
   public PaymentWizardDataResponse logoURL(String logoURL) {
     this.logoURL = logoURL;
     return this;
@@ -565,6 +610,24 @@ public class PaymentWizardDataResponse  {
 
   public void setLogoURL(String logoURL) {
     this.logoURL = logoURL;
+  }
+
+  public PaymentWizardDataResponse defaultNumOfInstallments(Integer defaultNumOfInstallments) {
+    this.defaultNumOfInstallments = defaultNumOfInstallments;
+    return this;
+  }
+
+   /**
+   * Get defaultNumOfInstallments
+   * @return defaultNumOfInstallments
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getDefaultNumOfInstallments() {
+    return defaultNumOfInstallments;
+  }
+
+  public void setDefaultNumOfInstallments(Integer defaultNumOfInstallments) {
+    this.defaultNumOfInstallments = defaultNumOfInstallments;
   }
 
   public PaymentWizardDataResponse privacyPolicyUrl(String privacyPolicyUrl) {
@@ -771,12 +834,15 @@ public class PaymentWizardDataResponse  {
         Objects.equals(this.numberOfInstallmentsSelectionsOption, paymentWizardDataResponse.numberOfInstallmentsSelectionsOption) &&
         Objects.equals(this.is3ds2Supported, paymentWizardDataResponse.is3ds2Supported) &&
         Objects.equals(this.processorName, paymentWizardDataResponse.processorName) &&
+        Objects.equals(this.is3dSecureInPopup, paymentWizardDataResponse.is3dSecureInPopup) &&
         Objects.equals(this.addressIsReadonly, paymentWizardDataResponse.addressIsReadonly) &&
         Objects.equals(this.phoneIsReadOnly, paymentWizardDataResponse.phoneIsReadOnly) &&
         Objects.equals(this.emailIsReadOnly, paymentWizardDataResponse.emailIsReadOnly) &&
         Objects.equals(this.showLearnMore, paymentWizardDataResponse.showLearnMore) &&
         Objects.equals(this.showMobilePhone, paymentWizardDataResponse.showMobilePhone) &&
+        Objects.equals(this.showCloseDialogBeforeAbandon, paymentWizardDataResponse.showCloseDialogBeforeAbandon) &&
         Objects.equals(this.logoURL, paymentWizardDataResponse.logoURL) &&
+        Objects.equals(this.defaultNumOfInstallments, paymentWizardDataResponse.defaultNumOfInstallments) &&
         Objects.equals(this.privacyPolicyUrl, paymentWizardDataResponse.privacyPolicyUrl) &&
         Objects.equals(this.termsAndConditionsUrl, paymentWizardDataResponse.termsAndConditionsUrl) &&
         Objects.equals(this.learnMoreUrl, paymentWizardDataResponse.learnMoreUrl) &&
@@ -789,7 +855,7 @@ public class PaymentWizardDataResponse  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, is3ds2Supported, processorName, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, logoURL, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, is3ds2Supported, processorName, is3dSecureInPopup, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, showCloseDialogBeforeAbandon, logoURL, defaultNumOfInstallments, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
   }
 
 
@@ -817,12 +883,15 @@ public class PaymentWizardDataResponse  {
     sb.append("    numberOfInstallmentsSelectionsOption: ").append(toIndentedString(numberOfInstallmentsSelectionsOption)).append("\n");
     sb.append("    is3ds2Supported: ").append(toIndentedString(is3ds2Supported)).append("\n");
     sb.append("    processorName: ").append(toIndentedString(processorName)).append("\n");
+    sb.append("    is3dSecureInPopup: ").append(toIndentedString(is3dSecureInPopup)).append("\n");
     sb.append("    addressIsReadonly: ").append(toIndentedString(addressIsReadonly)).append("\n");
     sb.append("    phoneIsReadOnly: ").append(toIndentedString(phoneIsReadOnly)).append("\n");
     sb.append("    emailIsReadOnly: ").append(toIndentedString(emailIsReadOnly)).append("\n");
     sb.append("    showLearnMore: ").append(toIndentedString(showLearnMore)).append("\n");
     sb.append("    showMobilePhone: ").append(toIndentedString(showMobilePhone)).append("\n");
+    sb.append("    showCloseDialogBeforeAbandon: ").append(toIndentedString(showCloseDialogBeforeAbandon)).append("\n");
     sb.append("    logoURL: ").append(toIndentedString(logoURL)).append("\n");
+    sb.append("    defaultNumOfInstallments: ").append(toIndentedString(defaultNumOfInstallments)).append("\n");
     sb.append("    privacyPolicyUrl: ").append(toIndentedString(privacyPolicyUrl)).append("\n");
     sb.append("    termsAndConditionsUrl: ").append(toIndentedString(termsAndConditionsUrl)).append("\n");
     sb.append("    learnMoreUrl: ").append(toIndentedString(learnMoreUrl)).append("\n");

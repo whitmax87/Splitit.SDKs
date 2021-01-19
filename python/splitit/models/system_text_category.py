@@ -52,6 +52,7 @@ class SystemTextCategory(object):
     HOWSPLITITWORKS = "HowSplititWorks"
     UPSTREAMMESSAGING = "UpstreamMessaging"
     ONBOARDING = "Onboarding"
+    UPDATECARDFORM = "UpdateCardForm"
 
     """
     Attributes:

@@ -23,6 +23,7 @@ var TestModes;
     TestModes["None"] = "None";
     TestModes["Regular"] = "Regular";
     TestModes["Fast"] = "Fast";
+    TestModes["Automation"] = "Automation";
 })(TestModes = exports.TestModes || (exports.TestModes = {}));
 function TestModesFromJSON(json) {
     return TestModesFromJSONTyped(json, false);

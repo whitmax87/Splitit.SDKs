@@ -17,7 +17,8 @@
 export declare enum TestModes {
     None = "None",
     Regular = "Regular",
-    Fast = "Fast"
+    Fast = "Fast",
+    Automation = "Automation"
 }
 export declare function TestModesFromJSON(json: any): TestModes;
 export declare function TestModesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestModes;

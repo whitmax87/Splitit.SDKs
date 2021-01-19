@@ -22,12 +22,15 @@ Name | Type | Description | Notes
 **numberOfInstallmentsSelectionsOption** | **String** |  |  [optional]
 **is3ds2Supported** | **Boolean** |  | 
 **processorName** | **String** |  |  [optional]
+**is3dSecureInPopup** | **Boolean** |  | 
 **addressIsReadonly** | **Boolean** |  | 
 **phoneIsReadOnly** | **Boolean** |  | 
 **emailIsReadOnly** | **Boolean** |  | 
 **showLearnMore** | **Boolean** |  | 
 **showMobilePhone** | **Boolean** |  | 
+**showCloseDialogBeforeAbandon** | **Boolean** |  | 
 **logoURL** | **String** |  |  [optional]
+**defaultNumOfInstallments** | **Integer** |  | 
 **privacyPolicyUrl** | **String** |  |  [optional]
 **termsAndConditionsUrl** | **String** |  |  [optional]
 **learnMoreUrl** | **String** |  |  [optional]

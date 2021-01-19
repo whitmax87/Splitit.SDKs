@@ -41,5 +41,6 @@ export enum SystemTextCategory {
     PaymentFormV3 = <any> 'PaymentFormV3',
     HowSplititWorks = <any> 'HowSplititWorks',
     UpstreamMessaging = <any> 'UpstreamMessaging',
-    Onboarding = <any> 'Onboarding'
+    Onboarding = <any> 'Onboarding',
+    UpdateCardForm = <any> 'UpdateCardForm'
 }

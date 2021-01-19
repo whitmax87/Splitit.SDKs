@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'com.splitit'
-version = '1.6.1'
+version = '1.6.2'
 
 buildscript {
     repositories {

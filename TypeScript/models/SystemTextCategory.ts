@@ -43,7 +43,8 @@ export enum SystemTextCategory {
     PaymentFormV3 = 'PaymentFormV3',
     HowSplititWorks = 'HowSplititWorks',
     UpstreamMessaging = 'UpstreamMessaging',
-    Onboarding = 'Onboarding'
+    Onboarding = 'Onboarding',
+    UpdateCardForm = 'UpdateCardForm'
 }
 
 export function SystemTextCategoryFromJSON(json: any): SystemTextCategory {

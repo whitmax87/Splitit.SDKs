@@ -28,12 +28,15 @@ export class PaymentWizardDataResponseAllOf {
     'numberOfInstallmentsSelectionsOption'?: string;
     'is3ds2Supported': boolean;
     'processorName'?: string;
+    'is3dSecureInPopup': boolean;
     'addressIsReadonly': boolean;
     'phoneIsReadOnly': boolean;
     'emailIsReadOnly': boolean;
     'showLearnMore': boolean;
     'showMobilePhone': boolean;
+    'showCloseDialogBeforeAbandon': boolean;
     'logoURL'?: string;
+    'defaultNumOfInstallments': number;
     'privacyPolicyUrl'?: string;
     'termsAndConditionsUrl'?: string;
     'learnMoreUrl'?: string;
@@ -97,6 +100,11 @@ export class PaymentWizardDataResponseAllOf {
             "type": "string"
         },
         {
+            "name": "is3dSecureInPopup",
+            "baseName": "Is3dSecureInPopup",
+            "type": "boolean"
+        },
+        {
             "name": "addressIsReadonly",
             "baseName": "AddressIsReadonly",
             "type": "boolean"
@@ -122,9 +130,19 @@ export class PaymentWizardDataResponseAllOf {
             "type": "boolean"
         },
         {
+            "name": "showCloseDialogBeforeAbandon",
+            "baseName": "ShowCloseDialogBeforeAbandon",
+            "type": "boolean"
+        },
+        {
             "name": "logoURL",
             "baseName": "LogoURL",
             "type": "string"
+        },
+        {
+            "name": "defaultNumOfInstallments",
+            "baseName": "DefaultNumOfInstallments",
+            "type": "number"
         },
         {
             "name": "privacyPolicyUrl",

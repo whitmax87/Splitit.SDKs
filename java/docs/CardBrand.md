@@ -16,8 +16,6 @@
 
 * `CUP` (value: `"CUP"`)
 
-* `UPI` (value: `"UPI"`)
-
 * `DISCOVER` (value: `"Discover"`)
 
 * `OTHER` (value: `"Other"`)

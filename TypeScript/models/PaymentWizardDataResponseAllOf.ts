@@ -107,6 +107,12 @@ export interface PaymentWizardDataResponseAllOf {
      * @type {boolean}
      * @memberof PaymentWizardDataResponseAllOf
      */
+    is3dSecureInPopup: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
     addressIsReadonly: boolean;
     /**
      * 
@@ -134,10 +140,22 @@ export interface PaymentWizardDataResponseAllOf {
     showMobilePhone: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    showCloseDialogBeforeAbandon: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof PaymentWizardDataResponseAllOf
      */
     logoURL?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof PaymentWizardDataResponseAllOf
+     */
+    defaultNumOfInstallments: number;
     /**
      * 
      * @type {string}
@@ -208,12 +226,15 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'is3ds2Supported': json['Is3ds2Supported'],
         'processorName': !exists(json, 'ProcessorName') ? undefined : json['ProcessorName'],
+        'is3dSecureInPopup': json['Is3dSecureInPopup'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'phoneIsReadOnly': json['PhoneIsReadOnly'],
         'emailIsReadOnly': json['EmailIsReadOnly'],
         'showLearnMore': json['ShowLearnMore'],
         'showMobilePhone': json['ShowMobilePhone'],
+        'showCloseDialogBeforeAbandon': json['ShowCloseDialogBeforeAbandon'],
         'logoURL': !exists(json, 'LogoURL') ? undefined : json['LogoURL'],
+        'defaultNumOfInstallments': json['DefaultNumOfInstallments'],
         'privacyPolicyUrl': !exists(json, 'PrivacyPolicyUrl') ? undefined : json['PrivacyPolicyUrl'],
         'termsAndConditionsUrl': !exists(json, 'TermsAndConditionsUrl') ? undefined : json['TermsAndConditionsUrl'],
         'learnMoreUrl': !exists(json, 'LearnMoreUrl') ? undefined : json['LearnMoreUrl'],
@@ -244,12 +265,15 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'Is3ds2Supported': value.is3ds2Supported,
         'ProcessorName': value.processorName,
+        'Is3dSecureInPopup': value.is3dSecureInPopup,
         'AddressIsReadonly': value.addressIsReadonly,
         'PhoneIsReadOnly': value.phoneIsReadOnly,
         'EmailIsReadOnly': value.emailIsReadOnly,
         'ShowLearnMore': value.showLearnMore,
         'ShowMobilePhone': value.showMobilePhone,
+        'ShowCloseDialogBeforeAbandon': value.showCloseDialogBeforeAbandon,
         'LogoURL': value.logoURL,
+        'DefaultNumOfInstallments': value.defaultNumOfInstallments,
         'PrivacyPolicyUrl': value.privacyPolicyUrl,
         'TermsAndConditionsUrl': value.termsAndConditionsUrl,
         'LearnMoreUrl': value.learnMoreUrl,

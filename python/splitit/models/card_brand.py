@@ -32,7 +32,6 @@ class CardBrand(object):
     MAESTRO = "Maestro"
     JCB = "JCB"
     CUP = "CUP"
-    UPI = "UPI"
     DISCOVER = "Discover"
     OTHER = "Other"
 

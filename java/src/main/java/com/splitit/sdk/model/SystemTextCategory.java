@@ -80,7 +80,9 @@ public enum SystemTextCategory {
   
   UPSTREAMMESSAGING("UpstreamMessaging"),
   
-  ONBOARDING("Onboarding");
+  ONBOARDING("Onboarding"),
+  
+  UPDATECARDFORM("UpdateCardForm");
 
   private String value;
 

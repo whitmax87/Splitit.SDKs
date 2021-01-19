@@ -34,6 +34,7 @@ export * from './getFraudStatusDisplayRequest';
 export * from './getFraudStatusDisplayResponse';
 export * from './getInitiatedInstallmentPlanRequest';
 export * from './getInitiatedInstallmentPlanResponse';
+export * from './getInitiatedUpdatePaymentDataResponse';
 export * from './getInstallmentSchedulesRequest';
 export * from './getInstallmentsPlanExtendedResponse';
 export * from './getInstallmentsPlanResponse';
@@ -97,6 +98,7 @@ export * from './systemTextCategory';
 export * from './termsAndConditions';
 export * from './termsAndConditionsGetRequest';
 export * from './termsAndConditionsGetResponse';
+export * from './testCardRequest';
 export * from './testModes';
 export * from './touchPoint';
 export * from './transactionInfo';
@@ -146,6 +148,7 @@ import { GetFraudStatusDisplayRequest } from './getFraudStatusDisplayRequest';
 import { GetFraudStatusDisplayResponse } from './getFraudStatusDisplayResponse';
 import { GetInitiatedInstallmentPlanRequest } from './getInitiatedInstallmentPlanRequest';
 import { GetInitiatedInstallmentPlanResponse } from './getInitiatedInstallmentPlanResponse';
+import { GetInitiatedUpdatePaymentDataResponse } from './getInitiatedUpdatePaymentDataResponse';
 import { GetInstallmentSchedulesRequest } from './getInstallmentSchedulesRequest';
 import { GetInstallmentsPlanExtendedResponse } from './getInstallmentsPlanExtendedResponse';
 import { GetInstallmentsPlanResponse } from './getInstallmentsPlanResponse';
@@ -209,6 +212,7 @@ import { SystemTextCategory } from './systemTextCategory';
 import { TermsAndConditions } from './termsAndConditions';
 import { TermsAndConditionsGetRequest } from './termsAndConditionsGetRequest';
 import { TermsAndConditionsGetResponse } from './termsAndConditionsGetResponse';
+import { TestCardRequest } from './testCardRequest';
 import { TestModes } from './testModes';
 import { TouchPoint } from './touchPoint';
 import { TransactionInfo } from './transactionInfo';
@@ -285,6 +289,7 @@ let typeMap: {[index: string]: any} = {
     "GetFraudStatusDisplayResponse": GetFraudStatusDisplayResponse,
     "GetInitiatedInstallmentPlanRequest": GetInitiatedInstallmentPlanRequest,
     "GetInitiatedInstallmentPlanResponse": GetInitiatedInstallmentPlanResponse,
+    "GetInitiatedUpdatePaymentDataResponse": GetInitiatedUpdatePaymentDataResponse,
     "GetInstallmentSchedulesRequest": GetInstallmentSchedulesRequest,
     "GetInstallmentsPlanExtendedResponse": GetInstallmentsPlanExtendedResponse,
     "GetInstallmentsPlanResponse": GetInstallmentsPlanResponse,
@@ -338,6 +343,7 @@ let typeMap: {[index: string]: any} = {
     "TermsAndConditions": TermsAndConditions,
     "TermsAndConditionsGetRequest": TermsAndConditionsGetRequest,
     "TermsAndConditionsGetResponse": TermsAndConditionsGetResponse,
+    "TestCardRequest": TestCardRequest,
     "TouchPoint": TouchPoint,
     "TransactionInfo": TransactionInfo,
     "TransactionResult": TransactionResult,
