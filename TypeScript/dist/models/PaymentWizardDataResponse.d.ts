@@ -60,6 +60,12 @@ export interface PaymentWizardDataResponse {
     isOpenedInIframe: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    is3dSecureInPopup?: boolean;
+    /**
+     *
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
@@ -124,12 +130,6 @@ export interface PaymentWizardDataResponse {
      * @memberof PaymentWizardDataResponse
      */
     processorName?: string;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PaymentWizardDataResponse
-     */
-    is3dSecureInPopup: boolean;
     /**
      *
      * @type {boolean}

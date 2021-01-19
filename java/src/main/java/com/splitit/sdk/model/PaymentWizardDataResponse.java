@@ -37,7 +37,7 @@ import java.util.Map;
 /**
  * PaymentWizardDataResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T13:05:00.713Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T15:46:09.732Z")
 public class PaymentWizardDataResponse  {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -59,6 +59,9 @@ public class PaymentWizardDataResponse  {
 
   @SerializedName("IsOpenedInIframe")
   private Boolean isOpenedInIframe = null;
+
+  @SerializedName("Is3dSecureInPopup")
+  private Boolean is3dSecureInPopup = null;
 
   @SerializedName("PaymentFormMessage")
   private String paymentFormMessage = null;
@@ -92,9 +95,6 @@ public class PaymentWizardDataResponse  {
 
   @SerializedName("ProcessorName")
   private String processorName = null;
-
-  @SerializedName("Is3dSecureInPopup")
-  private Boolean is3dSecureInPopup = null;
 
   @SerializedName("AddressIsReadonly")
   private Boolean addressIsReadonly = null;
@@ -268,6 +268,24 @@ public class PaymentWizardDataResponse  {
 
   public void setIsOpenedInIframe(Boolean isOpenedInIframe) {
     this.isOpenedInIframe = isOpenedInIframe;
+  }
+
+  public PaymentWizardDataResponse is3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
+    return this;
+  }
+
+   /**
+   * Get is3dSecureInPopup
+   * @return is3dSecureInPopup
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIs3dSecureInPopup() {
+    return is3dSecureInPopup;
+  }
+
+  public void setIs3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
   }
 
   public PaymentWizardDataResponse paymentFormMessage(String paymentFormMessage) {
@@ -466,24 +484,6 @@ public class PaymentWizardDataResponse  {
 
   public void setProcessorName(String processorName) {
     this.processorName = processorName;
-  }
-
-  public PaymentWizardDataResponse is3dSecureInPopup(Boolean is3dSecureInPopup) {
-    this.is3dSecureInPopup = is3dSecureInPopup;
-    return this;
-  }
-
-   /**
-   * Get is3dSecureInPopup
-   * @return is3dSecureInPopup
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Boolean isIs3dSecureInPopup() {
-    return is3dSecureInPopup;
-  }
-
-  public void setIs3dSecureInPopup(Boolean is3dSecureInPopup) {
-    this.is3dSecureInPopup = is3dSecureInPopup;
   }
 
   public PaymentWizardDataResponse addressIsReadonly(Boolean addressIsReadonly) {
@@ -823,6 +823,7 @@ public class PaymentWizardDataResponse  {
         Objects.equals(this.successAsyncUrl, paymentWizardDataResponse.successAsyncUrl) &&
         Objects.equals(this.viewName, paymentWizardDataResponse.viewName) &&
         Objects.equals(this.isOpenedInIframe, paymentWizardDataResponse.isOpenedInIframe) &&
+        Objects.equals(this.is3dSecureInPopup, paymentWizardDataResponse.is3dSecureInPopup) &&
         Objects.equals(this.paymentFormMessage, paymentWizardDataResponse.paymentFormMessage) &&
         Objects.equals(this.showAddressElements, paymentWizardDataResponse.showAddressElements) &&
         Objects.equals(this.currencyDisplay, paymentWizardDataResponse.currencyDisplay) &&
@@ -834,7 +835,6 @@ public class PaymentWizardDataResponse  {
         Objects.equals(this.numberOfInstallmentsSelectionsOption, paymentWizardDataResponse.numberOfInstallmentsSelectionsOption) &&
         Objects.equals(this.is3ds2Supported, paymentWizardDataResponse.is3ds2Supported) &&
         Objects.equals(this.processorName, paymentWizardDataResponse.processorName) &&
-        Objects.equals(this.is3dSecureInPopup, paymentWizardDataResponse.is3dSecureInPopup) &&
         Objects.equals(this.addressIsReadonly, paymentWizardDataResponse.addressIsReadonly) &&
         Objects.equals(this.phoneIsReadOnly, paymentWizardDataResponse.phoneIsReadOnly) &&
         Objects.equals(this.emailIsReadOnly, paymentWizardDataResponse.emailIsReadOnly) &&
@@ -855,7 +855,7 @@ public class PaymentWizardDataResponse  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, is3ds2Supported, processorName, is3dSecureInPopup, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, showCloseDialogBeforeAbandon, logoURL, defaultNumOfInstallments, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, is3dSecureInPopup, paymentFormMessage, showAddressElements, currencyDisplay, forceDisplayImportantNotes, showShopperDetailsExpendedOnStart, showPaymentScheduleRequiredCredit, isShopperEmailMandatory, isShopperPhoneMandatory, numberOfInstallmentsSelectionsOption, is3ds2Supported, processorName, addressIsReadonly, phoneIsReadOnly, emailIsReadOnly, showLearnMore, showMobilePhone, showCloseDialogBeforeAbandon, logoURL, defaultNumOfInstallments, privacyPolicyUrl, termsAndConditionsUrl, learnMoreUrl, potentialCardTypes, potentialCardBrands, paymentFormMessages, displayProperties, termsAndConditions);
   }
 
 
@@ -872,6 +872,7 @@ public class PaymentWizardDataResponse  {
     sb.append("    successAsyncUrl: ").append(toIndentedString(successAsyncUrl)).append("\n");
     sb.append("    viewName: ").append(toIndentedString(viewName)).append("\n");
     sb.append("    isOpenedInIframe: ").append(toIndentedString(isOpenedInIframe)).append("\n");
+    sb.append("    is3dSecureInPopup: ").append(toIndentedString(is3dSecureInPopup)).append("\n");
     sb.append("    paymentFormMessage: ").append(toIndentedString(paymentFormMessage)).append("\n");
     sb.append("    showAddressElements: ").append(toIndentedString(showAddressElements)).append("\n");
     sb.append("    currencyDisplay: ").append(toIndentedString(currencyDisplay)).append("\n");
@@ -883,7 +884,6 @@ public class PaymentWizardDataResponse  {
     sb.append("    numberOfInstallmentsSelectionsOption: ").append(toIndentedString(numberOfInstallmentsSelectionsOption)).append("\n");
     sb.append("    is3ds2Supported: ").append(toIndentedString(is3ds2Supported)).append("\n");
     sb.append("    processorName: ").append(toIndentedString(processorName)).append("\n");
-    sb.append("    is3dSecureInPopup: ").append(toIndentedString(is3dSecureInPopup)).append("\n");
     sb.append("    addressIsReadonly: ").append(toIndentedString(addressIsReadonly)).append("\n");
     sb.append("    phoneIsReadOnly: ").append(toIndentedString(phoneIsReadOnly)).append("\n");
     sb.append("    emailIsReadOnly: ").append(toIndentedString(emailIsReadOnly)).append("\n");

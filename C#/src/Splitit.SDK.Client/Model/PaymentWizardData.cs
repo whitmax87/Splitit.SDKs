@@ -43,8 +43,9 @@ namespace Splitit.SDK.Client.Model
         /// <param name="successAsyncUrl">successAsyncUrl.</param>
         /// <param name="viewName">viewName.</param>
         /// <param name="isOpenedInIframe">isOpenedInIframe (required).</param>
+        /// <param name="is3dSecureInPopup">is3dSecureInPopup.</param>
         /// <param name="paymentFormMessage">paymentFormMessage.</param>
-        public PaymentWizardData(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), string paymentFormMessage = default(string))
+        public PaymentWizardData(string requestedNumberOfInstallments = default(string), string successExitURL = default(string), string errorExitURL = default(string), string cancelExitURL = default(string), string successAsyncUrl = default(string), string viewName = default(string), bool? isOpenedInIframe = default(bool?), bool? is3dSecureInPopup = default(bool?), string paymentFormMessage = default(string))
         {
             this.IsOpenedInIframe = isOpenedInIframe;
             this.RequestedNumberOfInstallments = requestedNumberOfInstallments;
@@ -53,6 +54,7 @@ namespace Splitit.SDK.Client.Model
             this.CancelExitURL = cancelExitURL;
             this.SuccessAsyncUrl = successAsyncUrl;
             this.ViewName = viewName;
+            this.Is3dSecureInPopup = is3dSecureInPopup;
             this.PaymentFormMessage = paymentFormMessage;
         }
 
@@ -100,6 +102,12 @@ namespace Splitit.SDK.Client.Model
         public bool? IsOpenedInIframe { get; set; }
 
         /// <summary>
+        /// Gets or Sets Is3dSecureInPopup
+        /// </summary>
+        [DataMember(Name="Is3dSecureInPopup", EmitDefaultValue=false)]
+        public bool? Is3dSecureInPopup { get; set; }
+
+        /// <summary>
         /// Gets or Sets PaymentFormMessage
         /// </summary>
         [DataMember(Name="PaymentFormMessage", EmitDefaultValue=false)]
@@ -120,6 +128,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  SuccessAsyncUrl: ").Append(SuccessAsyncUrl).Append("\n");
             sb.Append("  ViewName: ").Append(ViewName).Append("\n");
             sb.Append("  IsOpenedInIframe: ").Append(IsOpenedInIframe).Append("\n");
+            sb.Append("  Is3dSecureInPopup: ").Append(Is3dSecureInPopup).Append("\n");
             sb.Append("  PaymentFormMessage: ").Append(PaymentFormMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -191,6 +200,11 @@ namespace Splitit.SDK.Client.Model
                     this.IsOpenedInIframe.Equals(input.IsOpenedInIframe))
                 ) && 
                 (
+                    this.Is3dSecureInPopup == input.Is3dSecureInPopup ||
+                    (this.Is3dSecureInPopup != null &&
+                    this.Is3dSecureInPopup.Equals(input.Is3dSecureInPopup))
+                ) && 
+                (
                     this.PaymentFormMessage == input.PaymentFormMessage ||
                     (this.PaymentFormMessage != null &&
                     this.PaymentFormMessage.Equals(input.PaymentFormMessage))
@@ -220,6 +234,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ViewName.GetHashCode();
                 if (this.IsOpenedInIframe != null)
                     hashCode = hashCode * 59 + this.IsOpenedInIframe.GetHashCode();
+                if (this.Is3dSecureInPopup != null)
+                    hashCode = hashCode * 59 + this.Is3dSecureInPopup.GetHashCode();
                 if (this.PaymentFormMessage != null)
                     hashCode = hashCode * 59 + this.PaymentFormMessage.GetHashCode();
                 return hashCode;

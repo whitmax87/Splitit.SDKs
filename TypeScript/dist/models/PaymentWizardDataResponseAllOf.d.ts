@@ -81,12 +81,6 @@ export interface PaymentWizardDataResponseAllOf {
      * @type {boolean}
      * @memberof PaymentWizardDataResponseAllOf
      */
-    is3dSecureInPopup: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof PaymentWizardDataResponseAllOf
-     */
     addressIsReadonly: boolean;
     /**
      *

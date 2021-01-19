@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **successAsyncUrl** | **String** |  |  [optional]
 **viewName** | **String** |  |  [optional]
 **isOpenedInIframe** | **Boolean** |  | 
+**is3dSecureInPopup** | **Boolean** |  |  [optional]
 **paymentFormMessage** | **String** |  |  [optional]
 **showAddressElements** | **String** |  |  [optional]
 **currencyDisplay** | [**ExtendedCurrency**](ExtendedCurrency.md) |  |  [optional]
@@ -22,7 +23,6 @@ Name | Type | Description | Notes
 **numberOfInstallmentsSelectionsOption** | **String** |  |  [optional]
 **is3ds2Supported** | **Boolean** |  | 
 **processorName** | **String** |  |  [optional]
-**is3dSecureInPopup** | **Boolean** |  | 
 **addressIsReadonly** | **Boolean** |  | 
 **phoneIsReadOnly** | **Boolean** |  | 
 **emailIsReadOnly** | **Boolean** |  | 

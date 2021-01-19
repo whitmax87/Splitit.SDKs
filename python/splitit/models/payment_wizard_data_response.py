@@ -38,6 +38,7 @@ class PaymentWizardDataResponse(object):
         'success_async_url': 'str',
         'view_name': 'str',
         'is_opened_in_iframe': 'bool',
+        'is3d_secure_in_popup': 'bool',
         'payment_form_message': 'str',
         'show_address_elements': 'str',
         'currency_display': 'ExtendedCurrency',
@@ -49,7 +50,6 @@ class PaymentWizardDataResponse(object):
         'number_of_installments_selections_option': 'str',
         'is3ds2_supported': 'bool',
         'processor_name': 'str',
-        'is3d_secure_in_popup': 'bool',
         'address_is_readonly': 'bool',
         'phone_is_read_only': 'bool',
         'email_is_read_only': 'bool',
@@ -76,6 +76,7 @@ class PaymentWizardDataResponse(object):
         'success_async_url': 'SuccessAsyncUrl',
         'view_name': 'ViewName',
         'is_opened_in_iframe': 'IsOpenedInIframe',
+        'is3d_secure_in_popup': 'Is3dSecureInPopup',
         'payment_form_message': 'PaymentFormMessage',
         'show_address_elements': 'ShowAddressElements',
         'currency_display': 'CurrencyDisplay',
@@ -87,7 +88,6 @@ class PaymentWizardDataResponse(object):
         'number_of_installments_selections_option': 'NumberOfInstallmentsSelectionsOption',
         'is3ds2_supported': 'Is3ds2Supported',
         'processor_name': 'ProcessorName',
-        'is3d_secure_in_popup': 'Is3dSecureInPopup',
         'address_is_readonly': 'AddressIsReadonly',
         'phone_is_read_only': 'PhoneIsReadOnly',
         'email_is_read_only': 'EmailIsReadOnly',
@@ -106,7 +106,7 @@ class PaymentWizardDataResponse(object):
         'terms_and_conditions': 'TermsAndConditions'
     }
 
-    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, payment_form_message=None, show_address_elements=None, currency_display=None, force_display_important_notes=None, show_shopper_details_expended_on_start=None, show_payment_schedule_required_credit=None, is_shopper_email_mandatory=None, is_shopper_phone_mandatory=None, number_of_installments_selections_option=None, is3ds2_supported=None, processor_name=None, is3d_secure_in_popup=None, address_is_readonly=None, phone_is_read_only=None, email_is_read_only=None, show_learn_more=None, show_mobile_phone=None, show_close_dialog_before_abandon=None, logo_url=None, default_num_of_installments=None, privacy_policy_url=None, terms_and_conditions_url=None, learn_more_url=None, potential_card_types=None, potential_card_brands=None, payment_form_messages=None, display_properties=None, terms_and_conditions=None):  # noqa: E501
+    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, is3d_secure_in_popup=None, payment_form_message=None, show_address_elements=None, currency_display=None, force_display_important_notes=None, show_shopper_details_expended_on_start=None, show_payment_schedule_required_credit=None, is_shopper_email_mandatory=None, is_shopper_phone_mandatory=None, number_of_installments_selections_option=None, is3ds2_supported=None, processor_name=None, address_is_readonly=None, phone_is_read_only=None, email_is_read_only=None, show_learn_more=None, show_mobile_phone=None, show_close_dialog_before_abandon=None, logo_url=None, default_num_of_installments=None, privacy_policy_url=None, terms_and_conditions_url=None, learn_more_url=None, potential_card_types=None, potential_card_brands=None, payment_form_messages=None, display_properties=None, terms_and_conditions=None):  # noqa: E501
         """PaymentWizardDataResponse - a model defined in Swagger"""  # noqa: E501
 
         self._requested_number_of_installments = None
@@ -116,6 +116,7 @@ class PaymentWizardDataResponse(object):
         self._success_async_url = None
         self._view_name = None
         self._is_opened_in_iframe = None
+        self._is3d_secure_in_popup = None
         self._payment_form_message = None
         self._show_address_elements = None
         self._currency_display = None
@@ -127,7 +128,6 @@ class PaymentWizardDataResponse(object):
         self._number_of_installments_selections_option = None
         self._is3ds2_supported = None
         self._processor_name = None
-        self._is3d_secure_in_popup = None
         self._address_is_readonly = None
         self._phone_is_read_only = None
         self._email_is_read_only = None
@@ -159,6 +159,8 @@ class PaymentWizardDataResponse(object):
         if view_name is not None:
             self.view_name = view_name
         self.is_opened_in_iframe = is_opened_in_iframe
+        if is3d_secure_in_popup is not None:
+            self.is3d_secure_in_popup = is3d_secure_in_popup
         if payment_form_message is not None:
             self.payment_form_message = payment_form_message
         if show_address_elements is not None:
@@ -175,7 +177,6 @@ class PaymentWizardDataResponse(object):
         self.is3ds2_supported = is3ds2_supported
         if processor_name is not None:
             self.processor_name = processor_name
-        self.is3d_secure_in_popup = is3d_secure_in_popup
         self.address_is_readonly = address_is_readonly
         self.phone_is_read_only = phone_is_read_only
         self.email_is_read_only = email_is_read_only
@@ -351,6 +352,27 @@ class PaymentWizardDataResponse(object):
             raise ValueError("Invalid value for `is_opened_in_iframe`, must not be `None`")  # noqa: E501
 
         self._is_opened_in_iframe = is_opened_in_iframe
+
+    @property
+    def is3d_secure_in_popup(self):
+        """Gets the is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
+
+
+        :return: The is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is3d_secure_in_popup
+
+    @is3d_secure_in_popup.setter
+    def is3d_secure_in_popup(self, is3d_secure_in_popup):
+        """Sets the is3d_secure_in_popup of this PaymentWizardDataResponse.
+
+
+        :param is3d_secure_in_popup: The is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._is3d_secure_in_popup = is3d_secure_in_popup
 
     @property
     def payment_form_message(self):
@@ -600,30 +622,6 @@ class PaymentWizardDataResponse(object):
         """
 
         self._processor_name = processor_name
-
-    @property
-    def is3d_secure_in_popup(self):
-        """Gets the is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
-
-
-        :return: The is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is3d_secure_in_popup
-
-    @is3d_secure_in_popup.setter
-    def is3d_secure_in_popup(self, is3d_secure_in_popup):
-        """Sets the is3d_secure_in_popup of this PaymentWizardDataResponse.
-
-
-        :param is3d_secure_in_popup: The is3d_secure_in_popup of this PaymentWizardDataResponse.  # noqa: E501
-        :type: bool
-        """
-        is3d_secure_in_popup = bool(is3d_secure_in_popup)
-        if is3d_secure_in_popup is None:
-            raise ValueError("Invalid value for `is3d_secure_in_popup`, must not be `None`")  # noqa: E501
-
-        self._is3d_secure_in_popup = is3d_secure_in_popup
 
     @property
     def address_is_readonly(self):

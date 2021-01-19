@@ -107,12 +107,6 @@ export interface PaymentWizardDataResponseAllOf {
      * @type {boolean}
      * @memberof PaymentWizardDataResponseAllOf
      */
-    is3dSecureInPopup: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PaymentWizardDataResponseAllOf
-     */
     addressIsReadonly: boolean;
     /**
      * 
@@ -226,7 +220,6 @@ export function PaymentWizardDataResponseAllOfFromJSONTyped(json: any, ignoreDis
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'is3ds2Supported': json['Is3ds2Supported'],
         'processorName': !exists(json, 'ProcessorName') ? undefined : json['ProcessorName'],
-        'is3dSecureInPopup': json['Is3dSecureInPopup'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'phoneIsReadOnly': json['PhoneIsReadOnly'],
         'emailIsReadOnly': json['EmailIsReadOnly'],
@@ -265,7 +258,6 @@ export function PaymentWizardDataResponseAllOfToJSON(value?: PaymentWizardDataRe
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'Is3ds2Supported': value.is3ds2Supported,
         'ProcessorName': value.processorName,
-        'Is3dSecureInPopup': value.is3dSecureInPopup,
         'AddressIsReadonly': value.addressIsReadonly,
         'PhoneIsReadOnly': value.phoneIsReadOnly,
         'EmailIsReadOnly': value.emailIsReadOnly,

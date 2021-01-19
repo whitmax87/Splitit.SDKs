@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PaymentWizardData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T13:05:00.713Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T15:46:09.732Z")
 public class PaymentWizardData  {
   @SerializedName("RequestedNumberOfInstallments")
   private String requestedNumberOfInstallments = null;
@@ -49,6 +49,9 @@ public class PaymentWizardData  {
 
   @SerializedName("IsOpenedInIframe")
   private Boolean isOpenedInIframe = null;
+
+  @SerializedName("Is3dSecureInPopup")
+  private Boolean is3dSecureInPopup = null;
 
   @SerializedName("PaymentFormMessage")
   private String paymentFormMessage = null;
@@ -179,6 +182,24 @@ public class PaymentWizardData  {
     this.isOpenedInIframe = isOpenedInIframe;
   }
 
+  public PaymentWizardData is3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
+    return this;
+  }
+
+   /**
+   * Get is3dSecureInPopup
+   * @return is3dSecureInPopup
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIs3dSecureInPopup() {
+    return is3dSecureInPopup;
+  }
+
+  public void setIs3dSecureInPopup(Boolean is3dSecureInPopup) {
+    this.is3dSecureInPopup = is3dSecureInPopup;
+  }
+
   public PaymentWizardData paymentFormMessage(String paymentFormMessage) {
     this.paymentFormMessage = paymentFormMessage;
     return this;
@@ -214,12 +235,13 @@ public class PaymentWizardData  {
         Objects.equals(this.successAsyncUrl, paymentWizardData.successAsyncUrl) &&
         Objects.equals(this.viewName, paymentWizardData.viewName) &&
         Objects.equals(this.isOpenedInIframe, paymentWizardData.isOpenedInIframe) &&
+        Objects.equals(this.is3dSecureInPopup, paymentWizardData.is3dSecureInPopup) &&
         Objects.equals(this.paymentFormMessage, paymentWizardData.paymentFormMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, paymentFormMessage);
+    return Objects.hash(requestedNumberOfInstallments, successExitURL, errorExitURL, cancelExitURL, successAsyncUrl, viewName, isOpenedInIframe, is3dSecureInPopup, paymentFormMessage);
   }
 
 
@@ -236,6 +258,7 @@ public class PaymentWizardData  {
     sb.append("    successAsyncUrl: ").append(toIndentedString(successAsyncUrl)).append("\n");
     sb.append("    viewName: ").append(toIndentedString(viewName)).append("\n");
     sb.append("    isOpenedInIframe: ").append(toIndentedString(isOpenedInIframe)).append("\n");
+    sb.append("    is3dSecureInPopup: ").append(toIndentedString(is3dSecureInPopup)).append("\n");
     sb.append("    paymentFormMessage: ").append(toIndentedString(paymentFormMessage)).append("\n");
     sb.append("}");
     return sb.toString();

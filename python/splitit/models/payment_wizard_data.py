@@ -38,6 +38,7 @@ class PaymentWizardData(object):
         'success_async_url': 'str',
         'view_name': 'str',
         'is_opened_in_iframe': 'bool',
+        'is3d_secure_in_popup': 'bool',
         'payment_form_message': 'str'
     }
 
@@ -49,10 +50,11 @@ class PaymentWizardData(object):
         'success_async_url': 'SuccessAsyncUrl',
         'view_name': 'ViewName',
         'is_opened_in_iframe': 'IsOpenedInIframe',
+        'is3d_secure_in_popup': 'Is3dSecureInPopup',
         'payment_form_message': 'PaymentFormMessage'
     }
 
-    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, payment_form_message=None):  # noqa: E501
+    def __init__(self, requested_number_of_installments=None, success_exit_url=None, error_exit_url=None, cancel_exit_url=None, success_async_url=None, view_name=None, is_opened_in_iframe=None, is3d_secure_in_popup=None, payment_form_message=None):  # noqa: E501
         """PaymentWizardData - a model defined in Swagger"""  # noqa: E501
 
         self._requested_number_of_installments = None
@@ -62,6 +64,7 @@ class PaymentWizardData(object):
         self._success_async_url = None
         self._view_name = None
         self._is_opened_in_iframe = None
+        self._is3d_secure_in_popup = None
         self._payment_form_message = None
         self.discriminator = None
 
@@ -78,6 +81,8 @@ class PaymentWizardData(object):
         if view_name is not None:
             self.view_name = view_name
         self.is_opened_in_iframe = is_opened_in_iframe
+        if is3d_secure_in_popup is not None:
+            self.is3d_secure_in_popup = is3d_secure_in_popup
         if payment_form_message is not None:
             self.payment_form_message = payment_form_message
 
@@ -230,6 +235,27 @@ class PaymentWizardData(object):
             raise ValueError("Invalid value for `is_opened_in_iframe`, must not be `None`")  # noqa: E501
 
         self._is_opened_in_iframe = is_opened_in_iframe
+
+    @property
+    def is3d_secure_in_popup(self):
+        """Gets the is3d_secure_in_popup of this PaymentWizardData.  # noqa: E501
+
+
+        :return: The is3d_secure_in_popup of this PaymentWizardData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is3d_secure_in_popup
+
+    @is3d_secure_in_popup.setter
+    def is3d_secure_in_popup(self, is3d_secure_in_popup):
+        """Sets the is3d_secure_in_popup of this PaymentWizardData.
+
+
+        :param is3d_secure_in_popup: The is3d_secure_in_popup of this PaymentWizardData.  # noqa: E501
+        :type: bool
+        """
+
+        self._is3d_secure_in_popup = is3d_secure_in_popup
 
     @property
     def payment_form_message(self):

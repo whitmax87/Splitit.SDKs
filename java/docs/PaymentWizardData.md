@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **successAsyncUrl** | **String** |  |  [optional]
 **viewName** | **String** |  |  [optional]
 **isOpenedInIframe** | **Boolean** |  | 
+**is3dSecureInPopup** | **Boolean** |  |  [optional]
 **paymentFormMessage** | **String** |  |  [optional]
 
 

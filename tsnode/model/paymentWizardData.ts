@@ -20,6 +20,7 @@ export class PaymentWizardData {
     'successAsyncUrl'?: string;
     'viewName'?: string;
     'isOpenedInIframe': boolean;
+    'is3dSecureInPopup'?: boolean;
     'paymentFormMessage'?: string;
 
     static discriminator: string | undefined = undefined;
@@ -58,6 +59,11 @@ export class PaymentWizardData {
         {
             "name": "isOpenedInIframe",
             "baseName": "IsOpenedInIframe",
+            "type": "boolean"
+        },
+        {
+            "name": "is3dSecureInPopup",
+            "baseName": "Is3dSecureInPopup",
             "type": "boolean"
         },
         {

@@ -28,7 +28,6 @@ export class PaymentWizardDataResponseAllOf {
     'numberOfInstallmentsSelectionsOption'?: string;
     'is3ds2Supported': boolean;
     'processorName'?: string;
-    'is3dSecureInPopup': boolean;
     'addressIsReadonly': boolean;
     'phoneIsReadOnly': boolean;
     'emailIsReadOnly': boolean;
@@ -98,11 +97,6 @@ export class PaymentWizardDataResponseAllOf {
             "name": "processorName",
             "baseName": "ProcessorName",
             "type": "string"
-        },
-        {
-            "name": "is3dSecureInPopup",
-            "baseName": "Is3dSecureInPopup",
-            "type": "boolean"
         },
         {
             "name": "addressIsReadonly",

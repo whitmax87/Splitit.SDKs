@@ -30,6 +30,7 @@ function PaymentWizardDataFromJSONTyped(json, ignoreDiscriminator) {
         'successAsyncUrl': !runtime_1.exists(json, 'SuccessAsyncUrl') ? undefined : json['SuccessAsyncUrl'],
         'viewName': !runtime_1.exists(json, 'ViewName') ? undefined : json['ViewName'],
         'isOpenedInIframe': json['IsOpenedInIframe'],
+        'is3dSecureInPopup': !runtime_1.exists(json, 'Is3dSecureInPopup') ? undefined : json['Is3dSecureInPopup'],
         'paymentFormMessage': !runtime_1.exists(json, 'PaymentFormMessage') ? undefined : json['PaymentFormMessage'],
     };
 }
@@ -49,6 +50,7 @@ function PaymentWizardDataToJSON(value) {
         'SuccessAsyncUrl': value.successAsyncUrl,
         'ViewName': value.viewName,
         'IsOpenedInIframe': value.isOpenedInIframe,
+        'Is3dSecureInPopup': value.is3dSecureInPopup,
         'PaymentFormMessage': value.paymentFormMessage,
     };
 }

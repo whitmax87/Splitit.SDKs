@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * Get3DSecureParametersResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T13:05:00.713Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T15:46:09.732Z")
 public class Get3DSecureParametersResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;

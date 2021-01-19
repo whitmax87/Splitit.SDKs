@@ -94,6 +94,12 @@ export interface PaymentWizardDataResponse {
     isOpenedInIframe: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof PaymentWizardDataResponse
+     */
+    is3dSecureInPopup?: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof PaymentWizardDataResponse
      */
@@ -158,12 +164,6 @@ export interface PaymentWizardDataResponse {
      * @memberof PaymentWizardDataResponse
      */
     processorName?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof PaymentWizardDataResponse
-     */
-    is3dSecureInPopup: boolean;
     /**
      * 
      * @type {boolean}
@@ -279,6 +279,7 @@ export function PaymentWizardDataResponseFromJSONTyped(json: any, ignoreDiscrimi
         'successAsyncUrl': !exists(json, 'SuccessAsyncUrl') ? undefined : json['SuccessAsyncUrl'],
         'viewName': !exists(json, 'ViewName') ? undefined : json['ViewName'],
         'isOpenedInIframe': json['IsOpenedInIframe'],
+        'is3dSecureInPopup': !exists(json, 'Is3dSecureInPopup') ? undefined : json['Is3dSecureInPopup'],
         'paymentFormMessage': !exists(json, 'PaymentFormMessage') ? undefined : json['PaymentFormMessage'],
         'showAddressElements': !exists(json, 'ShowAddressElements') ? undefined : json['ShowAddressElements'],
         'currencyDisplay': !exists(json, 'CurrencyDisplay') ? undefined : ExtendedCurrencyFromJSON(json['CurrencyDisplay']),
@@ -290,7 +291,6 @@ export function PaymentWizardDataResponseFromJSONTyped(json: any, ignoreDiscrimi
         'numberOfInstallmentsSelectionsOption': !exists(json, 'NumberOfInstallmentsSelectionsOption') ? undefined : json['NumberOfInstallmentsSelectionsOption'],
         'is3ds2Supported': json['Is3ds2Supported'],
         'processorName': !exists(json, 'ProcessorName') ? undefined : json['ProcessorName'],
-        'is3dSecureInPopup': json['Is3dSecureInPopup'],
         'addressIsReadonly': json['AddressIsReadonly'],
         'phoneIsReadOnly': json['PhoneIsReadOnly'],
         'emailIsReadOnly': json['EmailIsReadOnly'],
@@ -326,6 +326,7 @@ export function PaymentWizardDataResponseToJSON(value?: PaymentWizardDataRespons
         'SuccessAsyncUrl': value.successAsyncUrl,
         'ViewName': value.viewName,
         'IsOpenedInIframe': value.isOpenedInIframe,
+        'Is3dSecureInPopup': value.is3dSecureInPopup,
         'PaymentFormMessage': value.paymentFormMessage,
         'ShowAddressElements': value.showAddressElements,
         'CurrencyDisplay': ExtendedCurrencyToJSON(value.currencyDisplay),
@@ -337,7 +338,6 @@ export function PaymentWizardDataResponseToJSON(value?: PaymentWizardDataRespons
         'NumberOfInstallmentsSelectionsOption': value.numberOfInstallmentsSelectionsOption,
         'Is3ds2Supported': value.is3ds2Supported,
         'ProcessorName': value.processorName,
-        'Is3dSecureInPopup': value.is3dSecureInPopup,
         'AddressIsReadonly': value.addressIsReadonly,
         'PhoneIsReadOnly': value.phoneIsReadOnly,
         'EmailIsReadOnly': value.emailIsReadOnly,

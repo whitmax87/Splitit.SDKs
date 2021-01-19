@@ -59,6 +59,12 @@ export interface PaymentWizardData {
     isOpenedInIframe: boolean;
     /**
      *
+     * @type {boolean}
+     * @memberof PaymentWizardData
+     */
+    is3dSecureInPopup?: boolean;
+    /**
+     *
      * @type {string}
      * @memberof PaymentWizardData
      */
