@@ -14,5 +14,7 @@
 
 * `SINGLEPAYMENT` (value: `"SinglePayment"`)
 
+* `EXTERNALINSTALLMENTPROVIDER` (value: `"ExternalInstallmentProvider"`)
+
 
 

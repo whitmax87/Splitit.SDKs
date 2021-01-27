@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2021-01-19T15:46:09.732Z
-- SDK Version: 1.6.3
+  - Build date: 2021-01-27T08:24:13.061Z
+- SDK Version: 1.6.5
 
 ## Requirements
 

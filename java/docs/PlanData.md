@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **autoCapture** | **Boolean** |  |  [optional]
 **isFunded** | **Boolean** |  |  [optional]
 **attempt3DSecure** | **Boolean** |  |  [optional]
+**externalProviderSupported** | **Boolean** |  | 
 
 
 

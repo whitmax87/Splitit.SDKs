@@ -110,6 +110,12 @@ export interface PlanData {
      * @memberof PlanData
      */
     attempt3DSecure?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof PlanData
+     */
+    externalProviderSupported: boolean;
 }
 
 export function PlanDataFromJSON(json: any): PlanData {
@@ -134,6 +140,7 @@ export function PlanDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): 
         'autoCapture': !exists(json, 'AutoCapture') ? undefined : json['AutoCapture'],
         'isFunded': !exists(json, 'IsFunded') ? undefined : json['IsFunded'],
         'attempt3DSecure': !exists(json, 'Attempt3DSecure') ? undefined : json['Attempt3DSecure'],
+        'externalProviderSupported': json['ExternalProviderSupported'],
     };
 }
 
@@ -158,6 +165,7 @@ export function PlanDataToJSON(value?: PlanData | null): any {
         'AutoCapture': value.autoCapture,
         'IsFunded': value.isFunded,
         'Attempt3DSecure': value.attempt3DSecure,
+        'ExternalProviderSupported': value.externalProviderSupported,
     };
 }
 

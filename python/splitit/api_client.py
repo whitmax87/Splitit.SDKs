@@ -79,11 +79,11 @@ class ApiClient(object):
         self._pool_threads = pool_threads
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {
-            'Splitit-SDK': 'Python-1.6.3',
+            'Splitit-SDK': 'Python-asyncio-1.6.5',
         }
 
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.6.3/python'
+        self.user_agent = 'Swagger-Codegen/1.6.5/python'
         self.CreateInstallmentPlanApi = CreateInstallmentPlanApi(self)
         self.InfoApi = InfoApi(self)
         self.InfrastructureApi = InfrastructureApi(self)
@@ -96,6 +96,7 @@ class ApiClient(object):
         if self._pool is not None:
             self._pool.close()
             self._pool.join()
+
 
     @property
     def pool(self):
@@ -135,7 +136,6 @@ class ApiClient(object):
             files=None, response_type=None, auth_settings=None,
             _return_http_data_only=None, collection_formats=None,
             _preload_content=True, _request_timeout=None, _requires_session=True, culture=None, _request_retry=False):
-
         config = self.configuration
 
         if _requires_session and method in ('POST', 'PUT'):

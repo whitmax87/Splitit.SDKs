@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * PlanData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T15:46:09.732Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-27T08:24:13.061Z")
 public class PlanData  {
   @SerializedName("NumberOfInstallments")
   private Integer numberOfInstallments = null;
@@ -72,6 +72,9 @@ public class PlanData  {
 
   @SerializedName("Attempt3DSecure")
   private Boolean attempt3DSecure = null;
+
+  @SerializedName("ExternalProviderSupported")
+  private Boolean externalProviderSupported = null;
 
   public PlanData numberOfInstallments(Integer numberOfInstallments) {
     this.numberOfInstallments = numberOfInstallments;
@@ -297,6 +300,24 @@ public class PlanData  {
     this.attempt3DSecure = attempt3DSecure;
   }
 
+  public PlanData externalProviderSupported(Boolean externalProviderSupported) {
+    this.externalProviderSupported = externalProviderSupported;
+    return this;
+  }
+
+   /**
+   * Get externalProviderSupported
+   * @return externalProviderSupported
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isExternalProviderSupported() {
+    return externalProviderSupported;
+  }
+
+  public void setExternalProviderSupported(Boolean externalProviderSupported) {
+    this.externalProviderSupported = externalProviderSupported;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -318,12 +339,13 @@ public class PlanData  {
         Objects.equals(this.firstChargeDate, planData.firstChargeDate) &&
         Objects.equals(this.autoCapture, planData.autoCapture) &&
         Objects.equals(this.isFunded, planData.isFunded) &&
-        Objects.equals(this.attempt3DSecure, planData.attempt3DSecure);
+        Objects.equals(this.attempt3DSecure, planData.attempt3DSecure) &&
+        Objects.equals(this.externalProviderSupported, planData.externalProviderSupported);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(numberOfInstallments, amount, firstInstallmentAmount, refOrderNumber, testMode, purchaseMethod, strategy, extendedParams, firstChargeDate, autoCapture, isFunded, attempt3DSecure);
+    return Objects.hash(numberOfInstallments, amount, firstInstallmentAmount, refOrderNumber, testMode, purchaseMethod, strategy, extendedParams, firstChargeDate, autoCapture, isFunded, attempt3DSecure, externalProviderSupported);
   }
 
 
@@ -345,6 +367,7 @@ public class PlanData  {
     sb.append("    autoCapture: ").append(toIndentedString(autoCapture)).append("\n");
     sb.append("    isFunded: ").append(toIndentedString(isFunded)).append("\n");
     sb.append("    attempt3DSecure: ").append(toIndentedString(attempt3DSecure)).append("\n");
+    sb.append("    externalProviderSupported: ").append(toIndentedString(externalProviderSupported)).append("\n");
     sb.append("}");
     return sb.toString();
   }

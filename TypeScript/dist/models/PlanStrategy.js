@@ -25,6 +25,7 @@ var PlanStrategy;
     PlanStrategy["SecuredPlanCaptureExistingSecurityAuth"] = "SecuredPlanCaptureExistingSecurityAuth";
     PlanStrategy["SecuredPlan3"] = "SecuredPlan3";
     PlanStrategy["SinglePayment"] = "SinglePayment";
+    PlanStrategy["ExternalInstallmentProvider"] = "ExternalInstallmentProvider";
 })(PlanStrategy = exports.PlanStrategy || (exports.PlanStrategy = {}));
 function PlanStrategyFromJSON(json) {
     return PlanStrategyFromJSONTyped(json, false);

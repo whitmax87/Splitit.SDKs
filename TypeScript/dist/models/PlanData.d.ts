@@ -90,6 +90,12 @@ export interface PlanData {
      * @memberof PlanData
      */
     attempt3DSecure?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PlanData
+     */
+    externalProviderSupported: boolean;
 }
 export declare function PlanDataFromJSON(json: any): PlanData;
 export declare function PlanDataFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlanData;

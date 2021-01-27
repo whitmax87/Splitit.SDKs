@@ -59,7 +59,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum SinglePayment for value: SinglePayment
         /// </summary>
         [EnumMember(Value = "SinglePayment")]
-        SinglePayment = 5
+        SinglePayment = 5,
+        
+        /// <summary>
+        /// Enum ExternalInstallmentProvider for value: ExternalInstallmentProvider
+        /// </summary>
+        [EnumMember(Value = "ExternalInstallmentProvider")]
+        ExternalInstallmentProvider = 6
     }
 
 }

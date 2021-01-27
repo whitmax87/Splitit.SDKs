@@ -46,6 +46,11 @@ namespace Splitit.SDK.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanData" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected PlanData() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlanData" /> class.
+        /// </summary>
         /// <param name="numberOfInstallments">numberOfInstallments.</param>
         /// <param name="amount">amount.</param>
         /// <param name="firstInstallmentAmount">firstInstallmentAmount.</param>
@@ -58,8 +63,10 @@ namespace Splitit.SDK.Client.Model
         /// <param name="autoCapture">autoCapture.</param>
         /// <param name="isFunded">isFunded.</param>
         /// <param name="attempt3DSecure">attempt3DSecure.</param>
-        public PlanData(int? numberOfInstallments = default(int?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), MoneyWithCurrencyCode firstInstallmentAmount = default(MoneyWithCurrencyCode), string refOrderNumber = default(string), TestModes? testMode = default(TestModes?), PurchaseMethod? purchaseMethod = default(PurchaseMethod?), PlanStrategy? strategy = default(PlanStrategy?), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), DateTime? firstChargeDate = default(DateTime?), bool? autoCapture = default(bool?), bool? isFunded = default(bool?), bool? attempt3DSecure = default(bool?))
+        /// <param name="externalProviderSupported">externalProviderSupported (required).</param>
+        public PlanData(int? numberOfInstallments = default(int?), MoneyWithCurrencyCode amount = default(MoneyWithCurrencyCode), MoneyWithCurrencyCode firstInstallmentAmount = default(MoneyWithCurrencyCode), string refOrderNumber = default(string), TestModes? testMode = default(TestModes?), PurchaseMethod? purchaseMethod = default(PurchaseMethod?), PlanStrategy? strategy = default(PlanStrategy?), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), DateTime? firstChargeDate = default(DateTime?), bool? autoCapture = default(bool?), bool? isFunded = default(bool?), bool? attempt3DSecure = default(bool?), bool? externalProviderSupported = default(bool?))
         {
+            this.ExternalProviderSupported = externalProviderSupported;
             this.NumberOfInstallments = numberOfInstallments;
             this.Amount = amount;
             this.FirstInstallmentAmount = firstInstallmentAmount;
@@ -133,6 +140,12 @@ namespace Splitit.SDK.Client.Model
         public bool? Attempt3DSecure { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExternalProviderSupported
+        /// </summary>
+        [DataMember(Name="ExternalProviderSupported", EmitDefaultValue=false)]
+        public bool? ExternalProviderSupported { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -152,6 +165,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  AutoCapture: ").Append(AutoCapture).Append("\n");
             sb.Append("  IsFunded: ").Append(IsFunded).Append("\n");
             sb.Append("  Attempt3DSecure: ").Append(Attempt3DSecure).Append("\n");
+            sb.Append("  ExternalProviderSupported: ").Append(ExternalProviderSupported).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -245,6 +259,11 @@ namespace Splitit.SDK.Client.Model
                     this.Attempt3DSecure == input.Attempt3DSecure ||
                     (this.Attempt3DSecure != null &&
                     this.Attempt3DSecure.Equals(input.Attempt3DSecure))
+                ) && 
+                (
+                    this.ExternalProviderSupported == input.ExternalProviderSupported ||
+                    (this.ExternalProviderSupported != null &&
+                    this.ExternalProviderSupported.Equals(input.ExternalProviderSupported))
                 );
         }
 
@@ -281,6 +300,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.IsFunded.GetHashCode();
                 if (this.Attempt3DSecure != null)
                     hashCode = hashCode * 59 + this.Attempt3DSecure.GetHashCode();
+                if (this.ExternalProviderSupported != null)
+                    hashCode = hashCode * 59 + this.ExternalProviderSupported.GetHashCode();
                 return hashCode;
             }
         }

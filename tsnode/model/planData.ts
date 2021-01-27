@@ -29,6 +29,7 @@ export class PlanData {
     'autoCapture'?: boolean;
     'isFunded'?: boolean;
     'attempt3DSecure'?: boolean;
+    'externalProviderSupported': boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -91,6 +92,11 @@ export class PlanData {
         {
             "name": "attempt3DSecure",
             "baseName": "Attempt3DSecure",
+            "type": "boolean"
+        },
+        {
+            "name": "externalProviderSupported",
+            "baseName": "ExternalProviderSupported",
             "type": "boolean"
         }    ];
 

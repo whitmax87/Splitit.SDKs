@@ -36,6 +36,7 @@ function PlanDataFromJSONTyped(json, ignoreDiscriminator) {
         'autoCapture': !runtime_1.exists(json, 'AutoCapture') ? undefined : json['AutoCapture'],
         'isFunded': !runtime_1.exists(json, 'IsFunded') ? undefined : json['IsFunded'],
         'attempt3DSecure': !runtime_1.exists(json, 'Attempt3DSecure') ? undefined : json['Attempt3DSecure'],
+        'externalProviderSupported': json['ExternalProviderSupported'],
     };
 }
 exports.PlanDataFromJSONTyped = PlanDataFromJSONTyped;
@@ -59,6 +60,7 @@ function PlanDataToJSON(value) {
         'AutoCapture': value.autoCapture,
         'IsFunded': value.isFunded,
         'Attempt3DSecure': value.attempt3DSecure,
+        'ExternalProviderSupported': value.externalProviderSupported,
     };
 }
 exports.PlanDataToJSON = PlanDataToJSON;

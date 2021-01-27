@@ -37,7 +37,7 @@ export class LogoutApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.6.3"
+            "Splitit-SDK": "NodeJS-1.6.5"
         };
         this._sessionId = sessionId;
     }
