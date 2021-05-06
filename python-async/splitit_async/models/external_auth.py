@@ -54,12 +54,12 @@ class ExternalAuth(object):
         self.discriminator = None
 
         if unique_gateway_auth_id is not None:
-            self.unique_gateway_auth_id = unique_gateway_auth_id
-        self._date = _date
+            self._unique_gateway_auth_id = unique_gateway_auth_id
+        self.__date = _date
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if transaction_full_log is not None:
-            self.transaction_full_log = transaction_full_log
+            self._transaction_full_log = transaction_full_log
 
     @property
     def unique_gateway_auth_id(self):

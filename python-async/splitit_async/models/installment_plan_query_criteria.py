@@ -104,41 +104,41 @@ class InstallmentPlanQueryCriteria(object):
         self._date_info = None
         self.discriminator = None
 
-        self.merchant_id = merchant_id
-        self.currency_id = currency_id
-        self.installment_plan_id = installment_plan_id
+        self._merchant_id = merchant_id
+        self._currency_id = currency_id
+        self._installment_plan_id = installment_plan_id
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if ref_order_number is not None:
-            self.ref_order_number = ref_order_number
-        self.installment_plan_amount = installment_plan_amount
+            self._ref_order_number = ref_order_number
+        self._installment_plan_amount = installment_plan_amount
         if card_number is not None:
-            self.card_number = card_number
+            self._card_number = card_number
         if consumer_name is not None:
-            self.consumer_name = consumer_name
+            self._consumer_name = consumer_name
         if consumer_email is not None:
-            self.consumer_email = consumer_email
+            self._consumer_email = consumer_email
         if card_holder is not None:
-            self.card_holder = card_holder
-        self.pis_member_id = pis_member_id
+            self._card_holder = card_holder
+        self._pis_member_id = pis_member_id
         if any_filter is not None:
-            self.any_filter = any_filter
-        self.eula = eula
-        self.show_chargeback_plans = show_chargeback_plans
+            self._any_filter = any_filter
+        self._eula = eula
+        self._show_chargeback_plans = show_chargeback_plans
         if initiated_statuses is not None:
-            self.initiated_statuses = initiated_statuses
+            self._initiated_statuses = initiated_statuses
         if fraud_check_result is not None:
-            self.fraud_check_result = fraud_check_result
+            self._fraud_check_result = fraud_check_result
         if installments_plan_statuses is not None:
-            self.installments_plan_statuses = installments_plan_statuses
+            self._installments_plan_statuses = installments_plan_statuses
         if test_modes is not None:
-            self.test_modes = test_modes
+            self._test_modes = test_modes
         if delay_resolutions is not None:
-            self.delay_resolutions = delay_resolutions
+            self._delay_resolutions = delay_resolutions
         if transaction_information is not None:
-            self.transaction_information = transaction_information
+            self._transaction_information = transaction_information
         if date_info is not None:
-            self.date_info = date_info
+            self._date_info = date_info
 
     @property
     def merchant_id(self):

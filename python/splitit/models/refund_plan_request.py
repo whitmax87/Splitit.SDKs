@@ -51,11 +51,11 @@ class RefundPlanRequest(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if refund_strategy is not None:
-            self.refund_strategy = refund_strategy
+            self._refund_strategy = refund_strategy
 
     @property
     def installment_plan_number(self):

@@ -48,9 +48,9 @@ class LoginResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if session_id is not None:
-            self.session_id = session_id
+            self._session_id = session_id
 
     @property
     def response_header(self):

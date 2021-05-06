@@ -63,19 +63,19 @@ class AddressData2(object):
         self.discriminator = None
 
         if address_line is not None:
-            self.address_line = address_line
+            self._address_line = address_line
         if address_line2 is not None:
-            self.address_line2 = address_line2
+            self._address_line2 = address_line2
         if city is not None:
-            self.city = city
+            self._city = city
         if country is not None:
-            self.country = country
+            self._country = country
         if state is not None:
-            self.state = state
+            self._state = state
         if zip is not None:
-            self.zip = zip
+            self._zip = zip
         if full_address_line is not None:
-            self.full_address_line = full_address_line
+            self._full_address_line = full_address_line
 
     @property
     def address_line(self):

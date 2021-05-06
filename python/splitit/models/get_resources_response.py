@@ -54,13 +54,13 @@ class GetResourcesResponse(object):
         self.discriminator = None
 
         if logos is not None:
-            self.logos = logos
+            self._logos = logos
         if touch_point_colors is not None:
-            self.touch_point_colors = touch_point_colors
+            self._touch_point_colors = touch_point_colors
         if resources_grouped_by_categories is not None:
-            self.resources_grouped_by_categories = resources_grouped_by_categories
+            self._resources_grouped_by_categories = resources_grouped_by_categories
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
 
     @property
     def logos(self):

@@ -75,27 +75,27 @@ class CardData(object):
         self.discriminator = None
 
         if card_id is not None:
-            self.card_id = card_id
+            self._card_id = card_id
         if card_number is not None:
-            self.card_number = card_number
+            self._card_number = card_number
         if card_exp_month is not None:
-            self.card_exp_month = card_exp_month
+            self._card_exp_month = card_exp_month
         if card_exp_year is not None:
-            self.card_exp_year = card_exp_year
+            self._card_exp_year = card_exp_year
         if card_brand is not None:
-            self.card_brand = card_brand
+            self._card_brand = card_brand
         if card_type is not None:
-            self.card_type = card_type
+            self._card_type = card_type
         if bin is not None:
-            self.bin = bin
+            self._bin = bin
         if card_holder_full_name is not None:
-            self.card_holder_full_name = card_holder_full_name
+            self._card_holder_full_name = card_holder_full_name
         if card_cvv is not None:
-            self.card_cvv = card_cvv
+            self._card_cvv = card_cvv
         if address is not None:
-            self.address = address
+            self._address = address
         if token is not None:
-            self.token = token
+            self._token = token
 
     @property
     def card_id(self):

@@ -51,10 +51,10 @@ class PlanApprovalEvidence(object):
         self.discriminator = None
 
         if customer_signature_png_as_base64 is not None:
-            self.customer_signature_png_as_base64 = customer_signature_png_as_base64
-        self.are_terms_and_conditions_approved = are_terms_and_conditions_approved
+            self._customer_signature_png_as_base64 = customer_signature_png_as_base64
+        self._are_terms_and_conditions_approved = are_terms_and_conditions_approved
         if shopper_approval_date_time is not None:
-            self.shopper_approval_date_time = shopper_approval_date_time
+            self._shopper_approval_date_time = shopper_approval_date_time
 
     @property
     def customer_signature_png_as_base64(self):

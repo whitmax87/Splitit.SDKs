@@ -51,10 +51,10 @@ class Installment(object):
         self.discriminator = None
 
         if _date is not None:
-            self._date = _date
+            self.__date = _date
         if amount is not None:
-            self.amount = amount
-        self.held_amount = held_amount
+            self._amount = amount
+        self._held_amount = held_amount
 
     @property
     def _date(self):

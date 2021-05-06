@@ -8,6 +8,5 @@ from splitit_async.api.info_api import InfoApi
 from splitit_async.api.infrastructure_api import InfrastructureApi
 from splitit_async.api.installment_plan_api import InstallmentPlanApi
 from splitit_async.api.login_api import LoginApi
-from splitit_async.api.logout_api import LogoutApi
 
 

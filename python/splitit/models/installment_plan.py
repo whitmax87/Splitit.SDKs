@@ -123,50 +123,50 @@ class InstallmentPlan(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if installment_plan_status is not None:
-            self.installment_plan_status = installment_plan_status
+            self._installment_plan_status = installment_plan_status
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if outstanding_amount is not None:
-            self.outstanding_amount = outstanding_amount
-        self.number_of_installments = number_of_installments
-        self.number_of_processed_installments = number_of_processed_installments
+            self._outstanding_amount = outstanding_amount
+        self._number_of_installments = number_of_installments
+        self._number_of_processed_installments = number_of_processed_installments
         if original_amount is not None:
-            self.original_amount = original_amount
+            self._original_amount = original_amount
         if refund_amount is not None:
-            self.refund_amount = refund_amount
+            self._refund_amount = refund_amount
         if consumer is not None:
-            self.consumer = consumer
+            self._consumer = consumer
         if active_card is not None:
-            self.active_card = active_card
+            self._active_card = active_card
         if fraud_check is not None:
-            self.fraud_check = fraud_check
+            self._fraud_check = fraud_check
         if merchant is not None:
-            self.merchant = merchant
+            self._merchant = merchant
         if ref_order_number is not None:
-            self.ref_order_number = ref_order_number
+            self._ref_order_number = ref_order_number
         if purchase_method is not None:
-            self.purchase_method = purchase_method
+            self._purchase_method = purchase_method
         if strategy is not None:
-            self.strategy = strategy
+            self._strategy = strategy
         if delay_resolution is not None:
-            self.delay_resolution = delay_resolution
+            self._delay_resolution = delay_resolution
         if extended_params is not None:
-            self.extended_params = extended_params
-        self.is_full_captured = is_full_captured
-        self.is_charged_back = is_charged_back
-        self.are_payments_on_hold = are_payments_on_hold
-        self.scp_funding_percent = scp_funding_percent
-        self.is_funded = is_funded
-        self.test_mode = test_mode
-        self.creation_date_time = creation_date_time
+            self._extended_params = extended_params
+        self._is_full_captured = is_full_captured
+        self._is_charged_back = is_charged_back
+        self._are_payments_on_hold = are_payments_on_hold
+        self._scp_funding_percent = scp_funding_percent
+        self._is_funded = is_funded
+        self._test_mode = test_mode
+        self._creation_date_time = creation_date_time
         if installments is not None:
-            self.installments = installments
+            self._installments = installments
         if secure_authorizations is not None:
-            self.secure_authorizations = secure_authorizations
+            self._secure_authorizations = secure_authorizations
         if logo_url is not None:
-            self.logo_url = logo_url
+            self._logo_url = logo_url
 
     @property
     def installment_plan_number(self):

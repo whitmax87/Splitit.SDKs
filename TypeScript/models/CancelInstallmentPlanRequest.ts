@@ -53,12 +53,6 @@ export interface CancelInstallmentPlanRequest {
      * @type {boolean}
      * @memberof CancelInstallmentPlanRequest
      */
-    isExecutedUnattended: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CancelInstallmentPlanRequest
-     */
     partialResponseMapping: boolean;
 }
 
@@ -75,7 +69,6 @@ export function CancelInstallmentPlanRequestFromJSONTyped(json: any, ignoreDiscr
         'installmentPlanNumber': !exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
         'refundUnderCancelation': RefundUnderCancelationFromJSON(json['RefundUnderCancelation']),
         'cancelationReason': !exists(json, 'CancelationReason') ? undefined : InstallmentPlanCancelationReasonFromJSON(json['CancelationReason']),
-        'isExecutedUnattended': json['IsExecutedUnattended'],
         'partialResponseMapping': json['PartialResponseMapping'],
     };
 }
@@ -92,7 +85,6 @@ export function CancelInstallmentPlanRequestToJSON(value?: CancelInstallmentPlan
         'InstallmentPlanNumber': value.installmentPlanNumber,
         'RefundUnderCancelation': RefundUnderCancelationToJSON(value.refundUnderCancelation),
         'CancelationReason': InstallmentPlanCancelationReasonToJSON(value.cancelationReason),
-        'IsExecutedUnattended': value.isExecutedUnattended,
         'PartialResponseMapping': value.partialResponseMapping,
     };
 }

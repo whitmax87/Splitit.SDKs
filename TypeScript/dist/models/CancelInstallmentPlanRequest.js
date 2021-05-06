@@ -27,7 +27,6 @@ function CancelInstallmentPlanRequestFromJSONTyped(json, ignoreDiscriminator) {
         'installmentPlanNumber': !runtime_1.exists(json, 'InstallmentPlanNumber') ? undefined : json['InstallmentPlanNumber'],
         'refundUnderCancelation': _1.RefundUnderCancelationFromJSON(json['RefundUnderCancelation']),
         'cancelationReason': !runtime_1.exists(json, 'CancelationReason') ? undefined : _1.InstallmentPlanCancelationReasonFromJSON(json['CancelationReason']),
-        'isExecutedUnattended': json['IsExecutedUnattended'],
         'partialResponseMapping': json['PartialResponseMapping'],
     };
 }
@@ -43,7 +42,6 @@ function CancelInstallmentPlanRequestToJSON(value) {
         'InstallmentPlanNumber': value.installmentPlanNumber,
         'RefundUnderCancelation': _1.RefundUnderCancelationToJSON(value.refundUnderCancelation),
         'CancelationReason': _1.InstallmentPlanCancelationReasonToJSON(value.cancelationReason),
-        'IsExecutedUnattended': value.isExecutedUnattended,
         'PartialResponseMapping': value.partialResponseMapping,
     };
 }

@@ -48,9 +48,9 @@ class PaymentToken(object):
         self.discriminator = None
 
         if token is not None:
-            self.token = token
+            self._token = token
         if type is not None:
-            self.type = type
+            self._type = type
 
     @property
     def token(self):

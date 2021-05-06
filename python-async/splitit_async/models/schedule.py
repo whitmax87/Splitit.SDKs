@@ -50,10 +50,10 @@ class Schedule(object):
         self._elements = None
         self.discriminator = None
 
-        self.number_of_installments = number_of_installments
-        self.deposit = deposit
+        self._number_of_installments = number_of_installments
+        self._deposit = deposit
         if elements is not None:
-            self.elements = elements
+            self._elements = elements
 
     @property
     def number_of_installments(self):

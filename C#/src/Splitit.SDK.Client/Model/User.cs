@@ -37,6 +37,7 @@ namespace Splitit.SDK.Client.Model
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
         /// <param name="id">id.</param>
+        /// <param name="uniqueId">uniqueId.</param>
         /// <param name="userName">userName.</param>
         /// <param name="fullName">fullName.</param>
         /// <param name="email">email.</param>
@@ -45,11 +46,12 @@ namespace Splitit.SDK.Client.Model
         /// <param name="roleName">roleName.</param>
         /// <param name="isLocked">isLocked (required).</param>
         /// <param name="isDataRestricted">isDataRestricted (required).</param>
-        public User(string id = default(string), string userName = default(string), string fullName = default(string), string email = default(string), string phoneNumber = default(string), string cultureName = default(string), string roleName = default(string), bool? isLocked = default(bool?), bool? isDataRestricted = default(bool?))
+        public User(string id = default(string), string uniqueId = default(string), string userName = default(string), string fullName = default(string), string email = default(string), string phoneNumber = default(string), string cultureName = default(string), string roleName = default(string), bool? isLocked = default(bool?), bool? isDataRestricted = default(bool?))
         {
             this.IsLocked = isLocked;
             this.IsDataRestricted = isDataRestricted;
             this.Id = id;
+            this.UniqueId = uniqueId;
             this.UserName = userName;
             this.FullName = fullName;
             this.Email = email;
@@ -64,6 +66,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="Id", EmitDefaultValue=false)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UniqueId
+        /// </summary>
+        [DataMember(Name="UniqueId", EmitDefaultValue=false)]
+        public string UniqueId { get; set; }
 
         /// <summary>
         /// Gets or Sets UserName
@@ -122,6 +130,7 @@ namespace Splitit.SDK.Client.Model
             var sb = new StringBuilder();
             sb.Append("class User {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  UniqueId: ").Append(UniqueId).Append("\n");
             sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("  FullName: ").Append(FullName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
@@ -168,6 +177,11 @@ namespace Splitit.SDK.Client.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.UniqueId == input.UniqueId ||
+                    (this.UniqueId != null &&
+                    this.UniqueId.Equals(input.UniqueId))
                 ) && 
                 (
                     this.UserName == input.UserName ||
@@ -222,6 +236,8 @@ namespace Splitit.SDK.Client.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UniqueId != null)
+                    hashCode = hashCode * 59 + this.UniqueId.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.FullName != null)

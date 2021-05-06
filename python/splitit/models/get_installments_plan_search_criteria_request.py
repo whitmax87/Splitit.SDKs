@@ -51,11 +51,11 @@ class GetInstallmentsPlanSearchCriteriaRequest(object):
         self.discriminator = None
 
         if query_criteria is not None:
-            self.query_criteria = query_criteria
+            self._query_criteria = query_criteria
         if load_related is not None:
-            self.load_related = load_related
+            self._load_related = load_related
         if paging_request is not None:
-            self.paging_request = paging_request
+            self._paging_request = paging_request
 
     @property
     def query_criteria(self):

@@ -53,11 +53,11 @@ class PaymentFormMessage(object):
         self._is_empty = None
         self.discriminator = None
 
-        self.type = type
-        self.code = code
+        self._type = type
+        self._code = code
         if message is not None:
-            self.message = message
-        self.is_empty = is_empty
+            self._message = message
+        self._is_empty = is_empty
 
     @property
     def type(self):

@@ -37,7 +37,6 @@ class CancelInstallmentPlanRequest(object):
         'installment_plan_number': 'str',
         'refund_under_cancelation': 'RefundUnderCancelation',
         'cancelation_reason': 'InstallmentPlanCancelationReason',
-        'is_executed_unattended': 'bool',
         'partial_response_mapping': 'bool'
     }
 
@@ -45,27 +44,24 @@ class CancelInstallmentPlanRequest(object):
         'installment_plan_number': 'InstallmentPlanNumber',
         'refund_under_cancelation': 'RefundUnderCancelation',
         'cancelation_reason': 'CancelationReason',
-        'is_executed_unattended': 'IsExecutedUnattended',
         'partial_response_mapping': 'PartialResponseMapping'
     }
 
-    def __init__(self, installment_plan_number=None, refund_under_cancelation=None, cancelation_reason=InstallmentPlanCancelationReason.OTHER, is_executed_unattended=None, partial_response_mapping=None):  # noqa: E501
+    def __init__(self, installment_plan_number=None, refund_under_cancelation=None, cancelation_reason=InstallmentPlanCancelationReason.OTHER, partial_response_mapping=None):  # noqa: E501
         """CancelInstallmentPlanRequest - a model defined in Swagger"""  # noqa: E501
 
         self._installment_plan_number = None
         self._refund_under_cancelation = None
         self._cancelation_reason = None
-        self._is_executed_unattended = None
         self._partial_response_mapping = None
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
-        self.refund_under_cancelation = refund_under_cancelation
+            self._installment_plan_number = installment_plan_number
+        self._refund_under_cancelation = refund_under_cancelation
         if cancelation_reason is not None:
-            self.cancelation_reason = cancelation_reason
-        self.is_executed_unattended = is_executed_unattended
-        self.partial_response_mapping = partial_response_mapping
+            self._cancelation_reason = cancelation_reason
+        self._partial_response_mapping = partial_response_mapping
 
     @property
     def installment_plan_number(self):
@@ -132,30 +128,6 @@ class CancelInstallmentPlanRequest(object):
         """
 
         self._cancelation_reason = cancelation_reason
-
-    @property
-    def is_executed_unattended(self):
-        """Gets the is_executed_unattended of this CancelInstallmentPlanRequest.  # noqa: E501
-
-
-        :return: The is_executed_unattended of this CancelInstallmentPlanRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_executed_unattended
-
-    @is_executed_unattended.setter
-    def is_executed_unattended(self, is_executed_unattended):
-        """Sets the is_executed_unattended of this CancelInstallmentPlanRequest.
-
-
-        :param is_executed_unattended: The is_executed_unattended of this CancelInstallmentPlanRequest.  # noqa: E501
-        :type: bool
-        """
-        is_executed_unattended = bool(is_executed_unattended)
-        if is_executed_unattended is None:
-            raise ValueError("Invalid value for `is_executed_unattended`, must not be `None`")  # noqa: E501
-
-        self._is_executed_unattended = is_executed_unattended
 
     @property
     def partial_response_mapping(self):

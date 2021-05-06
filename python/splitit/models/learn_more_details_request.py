@@ -48,9 +48,9 @@ class LearnMoreDetailsRequest(object):
         self.discriminator = None
 
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if number_of_installments is not None:
-            self.number_of_installments = number_of_installments
+            self._number_of_installments = number_of_installments
 
     @property
     def amount(self):

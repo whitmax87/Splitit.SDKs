@@ -51,9 +51,9 @@ class TransactionInfo(object):
         self.discriminator = None
 
         if transaction_id is not None:
-            self.transaction_id = transaction_id
-        self.transaction_type = transaction_type
-        self.transaction_status = transaction_status
+            self._transaction_id = transaction_id
+        self._transaction_type = transaction_type
+        self._transaction_status = transaction_status
 
     @property
     def transaction_id(self):

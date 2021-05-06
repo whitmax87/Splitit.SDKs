@@ -44,7 +44,7 @@ class PagingResponseHeader(object):
         self._total_number = None
         self.discriminator = None
 
-        self.total_number = total_number
+        self._total_number = total_number
 
     @property
     def total_number(self):

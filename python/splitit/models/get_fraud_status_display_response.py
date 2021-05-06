@@ -60,16 +60,16 @@ class GetFraudStatusDisplayResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if provider is not None:
-            self.provider = provider
+            self._provider = provider
         if full_log is not None:
-            self.full_log = full_log
+            self._full_log = full_log
         if provider_result_description is not None:
-            self.provider_result_description = provider_result_description
-        self.installment_plan_id = installment_plan_id
+            self._provider_result_description = provider_result_description
+        self._installment_plan_id = installment_plan_id
         if provider_result_code is not None:
-            self.provider_result_code = provider_result_code
+            self._provider_result_code = provider_result_code
 
     @property
     def response_header(self):

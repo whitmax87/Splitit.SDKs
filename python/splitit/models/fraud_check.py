@@ -54,13 +54,13 @@ class FraudCheck(object):
         self.discriminator = None
 
         if fraud_check_result is not None:
-            self.fraud_check_result = fraud_check_result
+            self._fraud_check_result = fraud_check_result
         if provider_result_code is not None:
-            self.provider_result_code = provider_result_code
+            self._provider_result_code = provider_result_code
         if provider_result_desc is not None:
-            self.provider_result_desc = provider_result_desc
+            self._provider_result_desc = provider_result_desc
         if provider_reference_id is not None:
-            self.provider_reference_id = provider_reference_id
+            self._provider_reference_id = provider_reference_id
 
     @property
     def fraud_check_result(self):

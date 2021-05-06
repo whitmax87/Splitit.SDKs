@@ -51,11 +51,11 @@ class GetInstallmentsPlanExtendedResponse(object):
         self.discriminator = None
 
         if plans_list is not None:
-            self.plans_list = plans_list
+            self._plans_list = plans_list
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if paging_response_header is not None:
-            self.paging_response_header = paging_response_header
+            self._paging_response_header = paging_response_header
 
     @property
     def plans_list(self):

@@ -45,7 +45,7 @@ class EventsEndpoints(object):
         self.discriminator = None
 
         if create_succeeded is not None:
-            self.create_succeeded = create_succeeded
+            self._create_succeeded = create_succeeded
 
     @property
     def create_succeeded(self):

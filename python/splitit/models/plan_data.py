@@ -81,30 +81,30 @@ class PlanData(object):
         self.discriminator = None
 
         if number_of_installments is not None:
-            self.number_of_installments = number_of_installments
+            self._number_of_installments = number_of_installments
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if first_installment_amount is not None:
-            self.first_installment_amount = first_installment_amount
+            self._first_installment_amount = first_installment_amount
         if ref_order_number is not None:
-            self.ref_order_number = ref_order_number
+            self._ref_order_number = ref_order_number
         if test_mode is not None:
-            self.test_mode = test_mode
+            self._test_mode = test_mode
         if purchase_method is not None:
-            self.purchase_method = purchase_method
+            self._purchase_method = purchase_method
         if strategy is not None:
-            self.strategy = strategy
+            self._strategy = strategy
         if extended_params is not None:
-            self.extended_params = extended_params
+            self._extended_params = extended_params
         if first_charge_date is not None:
-            self.first_charge_date = first_charge_date
+            self._first_charge_date = first_charge_date
         if auto_capture is not None:
-            self.auto_capture = auto_capture
+            self._auto_capture = auto_capture
         if is_funded is not None:
-            self.is_funded = is_funded
+            self._is_funded = is_funded
         if attempt3_d_secure is not None:
-            self.attempt3_d_secure = attempt3_d_secure
-        self.external_provider_supported = external_provider_supported
+            self._attempt3_d_secure = attempt3_d_secure
+        self._external_provider_supported = external_provider_supported
 
     @property
     def number_of_installments(self):

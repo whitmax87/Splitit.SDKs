@@ -48,9 +48,9 @@ class TestCardRequest(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if do_void is not None:
-            self.do_void = do_void
+            self._do_void = do_void
 
     @property
     def installment_plan_number(self):

@@ -54,13 +54,13 @@ class TouchPoint(object):
         self.discriminator = None
 
         if code is not None:
-            self.code = code
+            self._code = code
         if version is not None:
-            self.version = version
+            self._version = version
         if sub_version is not None:
-            self.sub_version = sub_version
+            self._sub_version = sub_version
         if versioned_touchpoint_id is not None:
-            self.versioned_touchpoint_id = versioned_touchpoint_id
+            self._versioned_touchpoint_id = versioned_touchpoint_id
 
     @property
     def code(self):

@@ -48,9 +48,9 @@ class CartData(object):
         self.discriminator = None
 
         if items is not None:
-            self.items = items
+            self._items = items
         if amount_details is not None:
-            self.amount_details = amount_details
+            self._amount_details = amount_details
 
     @property
     def items(self):

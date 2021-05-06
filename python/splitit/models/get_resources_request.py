@@ -48,9 +48,9 @@ class GetResourcesRequest(object):
         self.discriminator = None
 
         if system_text_categories is not None:
-            self.system_text_categories = system_text_categories
+            self._system_text_categories = system_text_categories
         if request_context is not None:
-            self.request_context = request_context
+            self._request_context = request_context
 
     @property
     def system_text_categories(self):

@@ -147,61 +147,61 @@ class PaymentWizardDataResponse(object):
         self.discriminator = None
 
         if requested_number_of_installments is not None:
-            self.requested_number_of_installments = requested_number_of_installments
+            self._requested_number_of_installments = requested_number_of_installments
         if success_exit_url is not None:
-            self.success_exit_url = success_exit_url
+            self._success_exit_url = success_exit_url
         if error_exit_url is not None:
-            self.error_exit_url = error_exit_url
+            self._error_exit_url = error_exit_url
         if cancel_exit_url is not None:
-            self.cancel_exit_url = cancel_exit_url
+            self._cancel_exit_url = cancel_exit_url
         if success_async_url is not None:
-            self.success_async_url = success_async_url
+            self._success_async_url = success_async_url
         if view_name is not None:
-            self.view_name = view_name
-        self.is_opened_in_iframe = is_opened_in_iframe
+            self._view_name = view_name
+        self._is_opened_in_iframe = is_opened_in_iframe
         if is3d_secure_in_popup is not None:
-            self.is3d_secure_in_popup = is3d_secure_in_popup
+            self._is3d_secure_in_popup = is3d_secure_in_popup
         if payment_form_message is not None:
-            self.payment_form_message = payment_form_message
+            self._payment_form_message = payment_form_message
         if show_address_elements is not None:
-            self.show_address_elements = show_address_elements
+            self._show_address_elements = show_address_elements
         if currency_display is not None:
-            self.currency_display = currency_display
-        self.force_display_important_notes = force_display_important_notes
-        self.show_shopper_details_expended_on_start = show_shopper_details_expended_on_start
-        self.show_payment_schedule_required_credit = show_payment_schedule_required_credit
-        self.is_shopper_email_mandatory = is_shopper_email_mandatory
-        self.is_shopper_phone_mandatory = is_shopper_phone_mandatory
+            self._currency_display = currency_display
+        self._force_display_important_notes = force_display_important_notes
+        self._show_shopper_details_expended_on_start = show_shopper_details_expended_on_start
+        self._show_payment_schedule_required_credit = show_payment_schedule_required_credit
+        self._is_shopper_email_mandatory = is_shopper_email_mandatory
+        self._is_shopper_phone_mandatory = is_shopper_phone_mandatory
         if number_of_installments_selections_option is not None:
-            self.number_of_installments_selections_option = number_of_installments_selections_option
-        self.is3ds2_supported = is3ds2_supported
+            self._number_of_installments_selections_option = number_of_installments_selections_option
+        self._is3ds2_supported = is3ds2_supported
         if processor_name is not None:
-            self.processor_name = processor_name
-        self.address_is_readonly = address_is_readonly
-        self.phone_is_read_only = phone_is_read_only
-        self.email_is_read_only = email_is_read_only
-        self.show_learn_more = show_learn_more
-        self.show_mobile_phone = show_mobile_phone
-        self.show_close_dialog_before_abandon = show_close_dialog_before_abandon
+            self._processor_name = processor_name
+        self._address_is_readonly = address_is_readonly
+        self._phone_is_read_only = phone_is_read_only
+        self._email_is_read_only = email_is_read_only
+        self._show_learn_more = show_learn_more
+        self._show_mobile_phone = show_mobile_phone
+        self._show_close_dialog_before_abandon = show_close_dialog_before_abandon
         if logo_url is not None:
-            self.logo_url = logo_url
-        self.default_num_of_installments = default_num_of_installments
+            self._logo_url = logo_url
+        self._default_num_of_installments = default_num_of_installments
         if privacy_policy_url is not None:
-            self.privacy_policy_url = privacy_policy_url
+            self._privacy_policy_url = privacy_policy_url
         if terms_and_conditions_url is not None:
-            self.terms_and_conditions_url = terms_and_conditions_url
+            self._terms_and_conditions_url = terms_and_conditions_url
         if learn_more_url is not None:
-            self.learn_more_url = learn_more_url
+            self._learn_more_url = learn_more_url
         if potential_card_types is not None:
-            self.potential_card_types = potential_card_types
+            self._potential_card_types = potential_card_types
         if potential_card_brands is not None:
-            self.potential_card_brands = potential_card_brands
+            self._potential_card_brands = potential_card_brands
         if payment_form_messages is not None:
-            self.payment_form_messages = payment_form_messages
+            self._payment_form_messages = payment_form_messages
         if display_properties is not None:
-            self.display_properties = display_properties
+            self._display_properties = display_properties
         if terms_and_conditions is not None:
-            self.terms_and_conditions = terms_and_conditions
+            self._terms_and_conditions = terms_and_conditions
 
     @property
     def requested_number_of_installments(self):

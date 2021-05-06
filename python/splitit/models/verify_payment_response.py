@@ -51,10 +51,10 @@ class VerifyPaymentResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
-        self.is_paid = is_paid
+            self._response_header = response_header
+        self._is_paid = is_paid
         if original_amount_paid is not None:
-            self.original_amount_paid = original_amount_paid
+            self._original_amount_paid = original_amount_paid
 
     @property
     def response_header(self):

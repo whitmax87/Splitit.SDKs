@@ -67,7 +67,7 @@ public class LoginApi {
         Object localVarPostBody = request;
 
         // create path and map variables
-        String localVarPath = "/api/login";
+        String localVarPath = "/api/Login";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

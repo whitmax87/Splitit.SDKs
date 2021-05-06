@@ -53,13 +53,13 @@ class MerchantRef(object):
         self._name = None
         self.discriminator = None
 
-        self.id = id
+        self._id = id
         if code is not None:
-            self.code = code
+            self._code = code
         if description is not None:
-            self.description = description
+            self._description = description
         if name is not None:
-            self.name = name
+            self._name = name
 
     @property
     def id(self):

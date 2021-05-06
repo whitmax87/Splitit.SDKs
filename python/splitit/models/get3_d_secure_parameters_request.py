@@ -45,7 +45,7 @@ class Get3DSecureParametersRequest(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
 
     @property
     def installment_plan_number(self):

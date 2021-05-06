@@ -81,27 +81,27 @@ class CreateInstallmentPlanLegacyResponse(object):
         self.discriminator = None
 
         if api_key is not None:
-            self.api_key = api_key
-        self.installment_plan_status = installment_plan_status
-        self.result = result
+            self._api_key = api_key
+        self._installment_plan_status = installment_plan_status
+        self._result = result
         if payment_gateway is not None:
-            self.payment_gateway = payment_gateway
+            self._payment_gateway = payment_gateway
         if email is not None:
-            self.email = email
+            self._email = email
         if consumer_full_name is not None:
-            self.consumer_full_name = consumer_full_name
+            self._consumer_full_name = consumer_full_name
         if param_x is not None:
-            self.param_x = param_x
-        self.installment_number = installment_number
-        self.amount = amount
+            self._param_x = param_x
+        self._installment_number = installment_number
+        self._amount = amount
         if currency_name is not None:
-            self.currency_name = currency_name
+            self._currency_name = currency_name
         if currency_symbol is not None:
-            self.currency_symbol = currency_symbol
+            self._currency_symbol = currency_symbol
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
 
     @property
     def api_key(self):

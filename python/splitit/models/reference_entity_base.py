@@ -50,11 +50,11 @@ class ReferenceEntityBase(object):
         self._description = None
         self.discriminator = None
 
-        self.id = id
+        self._id = id
         if code is not None:
-            self.code = code
+            self._code = code
         if description is not None:
-            self.description = description
+            self._description = description
 
     @property
     def id(self):

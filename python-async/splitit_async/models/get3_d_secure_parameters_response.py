@@ -60,17 +60,17 @@ class Get3DSecureParametersResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if issuer_redirect_url is not None:
-            self.issuer_redirect_url = issuer_redirect_url
+            self._issuer_redirect_url = issuer_redirect_url
         if pa_req is not None:
-            self.pa_req = pa_req
+            self._pa_req = pa_req
         if md is not None:
-            self.md = md
+            self._md = md
         if term_url is not None:
-            self.term_url = term_url
+            self._term_url = term_url
         if three_d_secure_params is not None:
-            self.three_d_secure_params = three_d_secure_params
+            self._three_d_secure_params = three_d_secure_params
 
     @property
     def response_header(self):

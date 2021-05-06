@@ -28,10 +28,13 @@ import java.io.IOException;
 /**
  * ConsumerData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-27T08:24:13.061Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-06T07:48:08.244Z")
 public class ConsumerData  {
   @SerializedName("Id")
   private String id = null;
+
+  @SerializedName("UniqueId")
+  private String uniqueId = null;
 
   @SerializedName("UserName")
   private String userName = null;
@@ -73,6 +76,24 @@ public class ConsumerData  {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public ConsumerData uniqueId(String uniqueId) {
+    this.uniqueId = uniqueId;
+    return this;
+  }
+
+   /**
+   * Get uniqueId
+   * @return uniqueId
+  **/
+  @ApiModelProperty(value = "")
+  public String getUniqueId() {
+    return uniqueId;
+  }
+
+  public void setUniqueId(String uniqueId) {
+    this.uniqueId = uniqueId;
   }
 
   public ConsumerData userName(String userName) {
@@ -230,6 +251,7 @@ public class ConsumerData  {
     }
     ConsumerData consumerData = (ConsumerData) o;
     return Objects.equals(this.id, consumerData.id) &&
+        Objects.equals(this.uniqueId, consumerData.uniqueId) &&
         Objects.equals(this.userName, consumerData.userName) &&
         Objects.equals(this.fullName, consumerData.fullName) &&
         Objects.equals(this.email, consumerData.email) &&
@@ -242,7 +264,7 @@ public class ConsumerData  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted);
+    return Objects.hash(id, uniqueId, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted);
   }
 
 
@@ -253,6 +275,7 @@ public class ConsumerData  {
     
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    uniqueId: ").append(toIndentedString(uniqueId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");

@@ -69,23 +69,23 @@ class InitiateInstallmentPlanRequest(object):
         self.discriminator = None
 
         if plan_data is not None:
-            self.plan_data = plan_data
+            self._plan_data = plan_data
         if cart_data is not None:
-            self.cart_data = cart_data
+            self._cart_data = cart_data
         if consumer_data is not None:
-            self.consumer_data = consumer_data
+            self._consumer_data = consumer_data
         if billing_address is not None:
-            self.billing_address = billing_address
+            self._billing_address = billing_address
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if payment_wizard_data is not None:
-            self.payment_wizard_data = payment_wizard_data
+            self._payment_wizard_data = payment_wizard_data
         if redirect_urls is not None:
-            self.redirect_urls = redirect_urls
+            self._redirect_urls = redirect_urls
         if events_endpoints is not None:
-            self.events_endpoints = events_endpoints
+            self._events_endpoints = events_endpoints
         if credit_card_details is not None:
-            self.credit_card_details = credit_card_details
+            self._credit_card_details = credit_card_details
 
     @property
     def plan_data(self):

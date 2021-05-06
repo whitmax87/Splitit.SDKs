@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**installment_plan_get_initiated_installment_plan_request**](InstallmentPlanApi.md#installment_plan_get_initiated_installment_plan_request) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 [**installment_plan_get_initiated_update_payment_data**](InstallmentPlanApi.md#installment_plan_get_initiated_update_payment_data) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 [**installment_plan_get_learn_more_details**](InstallmentPlanApi.md#installment_plan_get_learn_more_details) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+[**installment_plan_get_pgtl**](InstallmentPlanApi.md#installment_plan_get_pgtl) | **POST** /api/InstallmentPlan/GetPGTL | 
 [**installment_plan_get_schedules**](InstallmentPlanApi.md#installment_plan_get_schedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installment_plan_initiate**](InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installment_plan_refund**](InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
@@ -504,6 +505,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LearnMoreDetailsResponse**](LearnMoreDetailsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_get_pgtl**
+> GetPGTLResponse installment_plan_get_pgtl(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit_async
+from splitit_async.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit_async.InstallmentPlanApi()
+request = splitit_async.GetPGTLRequest() # GetPGTLRequest | 
+
+try:
+    api_response = api_instance.installment_plan_get_pgtl(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_get_pgtl: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetPGTLRequest**](GetPGTLRequest.md)|  | 
+
+### Return type
+
+[**GetPGTLResponse**](GetPGTLResponse.md)
 
 ### Authorization
 

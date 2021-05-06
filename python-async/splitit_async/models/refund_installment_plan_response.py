@@ -54,13 +54,13 @@ class RefundInstallmentPlanResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if installment_plan is not None:
-            self.installment_plan = installment_plan
+            self._installment_plan = installment_plan
         if gateway_transaction_results is not None:
-            self.gateway_transaction_results = gateway_transaction_results
+            self._gateway_transaction_results = gateway_transaction_results
         if current_refund_amount is not None:
-            self.current_refund_amount = current_refund_amount
+            self._current_refund_amount = current_refund_amount
 
     @property
     def response_header(self):

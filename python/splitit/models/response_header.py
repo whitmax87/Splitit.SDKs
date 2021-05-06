@@ -50,11 +50,11 @@ class ResponseHeader(object):
         self._trace_id = None
         self.discriminator = None
 
-        self.succeeded = succeeded
+        self._succeeded = succeeded
         if errors is not None:
-            self.errors = errors
+            self._errors = errors
         if trace_id is not None:
-            self.trace_id = trace_id
+            self._trace_id = trace_id
 
     @property
     def succeeded(self):

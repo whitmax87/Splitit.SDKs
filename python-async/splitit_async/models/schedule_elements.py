@@ -53,10 +53,10 @@ class ScheduleElements(object):
         self._required_credit = None
         self.discriminator = None
 
-        self.installment_number = installment_number
-        self.charge_date = charge_date
-        self.charge_amount = charge_amount
-        self.required_credit = required_credit
+        self._installment_number = installment_number
+        self._charge_date = charge_date
+        self._charge_amount = charge_amount
+        self._required_credit = required_credit
 
     @property
     def installment_number(self):

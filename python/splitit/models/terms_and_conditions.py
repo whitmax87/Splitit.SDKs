@@ -63,19 +63,19 @@ class TermsAndConditions(object):
         self.discriminator = None
 
         if agreement is not None:
-            self.agreement = agreement
+            self._agreement = agreement
         if important_note is not None:
-            self.important_note = important_note
+            self._important_note = important_note
         if full_content is not None:
-            self.full_content = full_content
+            self._full_content = full_content
         if privacy_policy is not None:
-            self.privacy_policy = privacy_policy
+            self._privacy_policy = privacy_policy
         if what_you_need_to_know_auth_hold_define is not None:
-            self.what_you_need_to_know_auth_hold_define = what_you_need_to_know_auth_hold_define
+            self._what_you_need_to_know_auth_hold_define = what_you_need_to_know_auth_hold_define
         if what_you_need_to_know_budget_management is not None:
-            self.what_you_need_to_know_budget_management = what_you_need_to_know_budget_management
+            self._what_you_need_to_know_budget_management = what_you_need_to_know_budget_management
         if what_you_need_to_know_card_type_details is not None:
-            self.what_you_need_to_know_card_type_details = what_you_need_to_know_card_type_details
+            self._what_you_need_to_know_card_type_details = what_you_need_to_know_card_type_details
 
     @property
     def agreement(self):

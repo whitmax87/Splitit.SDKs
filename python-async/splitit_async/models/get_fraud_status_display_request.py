@@ -51,11 +51,11 @@ class GetFraudStatusDisplayRequest(object):
         self.discriminator = None
 
         if provider_reference_id is not None:
-            self.provider_reference_id = provider_reference_id
+            self._provider_reference_id = provider_reference_id
         if merchant_id is not None:
-            self.merchant_id = merchant_id
+            self._merchant_id = merchant_id
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
 
     @property
     def provider_reference_id(self):

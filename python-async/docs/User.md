@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**unique_id** | **str** |  | [optional] 
 **user_name** | **str** |  | [optional] 
 **full_name** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 

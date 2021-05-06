@@ -51,11 +51,11 @@ class GetInstallmentSchedulesRequest(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if card_number is not None:
-            self.card_number = card_number
+            self._card_number = card_number
 
     @property
     def installment_plan_number(self):

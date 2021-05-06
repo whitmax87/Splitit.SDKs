@@ -66,6 +66,12 @@ import {
     GetInstallmentsScheduleResponse,
     GetInstallmentsScheduleResponseFromJSON,
     GetInstallmentsScheduleResponseToJSON,
+    GetPGTLRequest,
+    GetPGTLRequestFromJSON,
+    GetPGTLRequestToJSON,
+    GetPGTLResponse,
+    GetPGTLResponseFromJSON,
+    GetPGTLResponseToJSON,
     InitiateInstallmentPlanRequest,
     InitiateInstallmentPlanRequestFromJSON,
     InitiateInstallmentPlanRequestToJSON,
@@ -151,6 +157,10 @@ export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
 
 export interface InstallmentPlanGetLearnMoreDetailsRequest {
     request: LearnMoreDetailsRequest;
+}
+
+export interface InstallmentPlanGetPGTLRequest {
+    request: GetPGTLRequest;
 }
 
 export interface InstallmentPlanGetSchedulesRequest {
@@ -521,6 +531,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse> {
         const response = await this.installmentPlanGetLearnMoreDetailsRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanGetPGTLRaw(requestParameters: InstallmentPlanGetPGTLRequest): Promise<runtime.ApiResponse<GetPGTLResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanGetPGTL.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/GetPGTL`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: GetPGTLRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPGTLResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanGetPGTL(requestParameters: InstallmentPlanGetPGTLRequest): Promise<GetPGTLResponse> {
+        const response = await this.installmentPlanGetPGTLRaw(requestParameters);
         return await response.value();
     }
 

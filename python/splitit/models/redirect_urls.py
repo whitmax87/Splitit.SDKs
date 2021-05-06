@@ -51,11 +51,11 @@ class RedirectUrls(object):
         self.discriminator = None
 
         if succeeded is not None:
-            self.succeeded = succeeded
+            self._succeeded = succeeded
         if canceled is not None:
-            self.canceled = canceled
+            self._canceled = canceled
         if failed is not None:
-            self.failed = failed
+            self._failed = failed
 
     @property
     def succeeded(self):

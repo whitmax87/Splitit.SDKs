@@ -4,7 +4,7 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**login_post**](LoginApi.md#login_post) | **POST** /api/login | 
+[**login_post**](LoginApi.md#login_post) | **POST** /api/Login | 
 
 
 # **login_post**

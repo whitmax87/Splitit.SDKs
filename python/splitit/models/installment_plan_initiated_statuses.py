@@ -44,7 +44,7 @@ class InstallmentPlanInitiatedStatuses(object):
         self._show_initiated_plans_payment_request_sent = None
         self.discriminator = None
 
-        self.show_initiated_plans_payment_request_sent = show_initiated_plans_payment_request_sent
+        self._show_initiated_plans_payment_request_sent = show_initiated_plans_payment_request_sent
 
     @property
     def show_initiated_plans_payment_request_sent(self):

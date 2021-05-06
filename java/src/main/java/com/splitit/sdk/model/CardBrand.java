@@ -42,6 +42,8 @@ public enum CardBrand {
   
   CUP("CUP"),
   
+  UPI("UPI"),
+  
   DISCOVER("Discover"),
   
   OTHER("Other");

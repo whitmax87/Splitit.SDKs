@@ -72,21 +72,21 @@ class TransactionResult(object):
         self.discriminator = None
 
         if gateway_transaction_id is not None:
-            self.gateway_transaction_id = gateway_transaction_id
-        self.splitit_transaction_id = splitit_transaction_id
+            self._gateway_transaction_id = gateway_transaction_id
+        self._splitit_transaction_id = splitit_transaction_id
         if gateway_result_code is not None:
-            self.gateway_result_code = gateway_result_code
+            self._gateway_result_code = gateway_result_code
         if gateway_result_message is not None:
-            self.gateway_result_message = gateway_result_message
+            self._gateway_result_message = gateway_result_message
         if operation_type is not None:
-            self.operation_type = operation_type
-        self.gateway_result = gateway_result
-        self.gateway_transaction_date = gateway_transaction_date
-        self.is_chargeback = is_chargeback
+            self._operation_type = operation_type
+        self._gateway_result = gateway_result
+        self._gateway_transaction_date = gateway_transaction_date
+        self._is_chargeback = is_chargeback
         if avs_result is not None:
-            self.avs_result = avs_result
+            self._avs_result = avs_result
         if cvc_result is not None:
-            self.cvc_result = cvc_result
+            self._cvc_result = cvc_result
 
     @property
     def gateway_transaction_id(self):

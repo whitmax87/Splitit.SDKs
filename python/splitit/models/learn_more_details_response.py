@@ -66,16 +66,16 @@ class LearnMoreDetailsResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
-        self.supports_credit_card = supports_credit_card
-        self.supports_debit_card = supports_debit_card
-        self.show_secure_strategy_info = show_secure_strategy_info
-        self.show_non_secure_strategy_info = show_non_secure_strategy_info
+            self._response_header = response_header
+        self._supports_credit_card = supports_credit_card
+        self._supports_debit_card = supports_debit_card
+        self._show_secure_strategy_info = show_secure_strategy_info
+        self._show_non_secure_strategy_info = show_non_secure_strategy_info
         if total is not None:
-            self.total = total
+            self._total = total
         if installments is not None:
-            self.installments = installments
-        self.number_of_installments = number_of_installments
+            self._installments = installments
+        self._number_of_installments = number_of_installments
 
     @property
     def response_header(self):

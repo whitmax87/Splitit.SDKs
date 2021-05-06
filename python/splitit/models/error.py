@@ -51,11 +51,11 @@ class Error(object):
         self.discriminator = None
 
         if error_code is not None:
-            self.error_code = error_code
+            self._error_code = error_code
         if message is not None:
-            self.message = message
+            self._message = message
         if additional_info is not None:
-            self.additional_info = additional_info
+            self._additional_info = additional_info
 
     @property
     def error_code(self):

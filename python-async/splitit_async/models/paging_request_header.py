@@ -47,8 +47,8 @@ class PagingRequestHeader(object):
         self._take = None
         self.discriminator = None
 
-        self.skip = skip
-        self.take = take
+        self._skip = skip
+        self._take = take
 
     @property
     def skip(self):

@@ -32,6 +32,7 @@ class User(object):
     """
     swagger_types = {
         'id': 'str',
+        'unique_id': 'str',
         'user_name': 'str',
         'full_name': 'str',
         'email': 'str',
@@ -44,6 +45,7 @@ class User(object):
 
     attribute_map = {
         'id': 'Id',
+        'unique_id': 'UniqueId',
         'user_name': 'UserName',
         'full_name': 'FullName',
         'email': 'Email',
@@ -54,10 +56,11 @@ class User(object):
         'is_data_restricted': 'IsDataRestricted'
     }
 
-    def __init__(self, id=None, user_name=None, full_name=None, email=None, phone_number=None, culture_name=None, role_name=None, is_locked=None, is_data_restricted=None):  # noqa: E501
+    def __init__(self, id=None, unique_id=None, user_name=None, full_name=None, email=None, phone_number=None, culture_name=None, role_name=None, is_locked=None, is_data_restricted=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
+        self._unique_id = None
         self._user_name = None
         self._full_name = None
         self._email = None
@@ -69,21 +72,23 @@ class User(object):
         self.discriminator = None
 
         if id is not None:
-            self.id = id
+            self._id = id
+        if unique_id is not None:
+            self._unique_id = unique_id
         if user_name is not None:
-            self.user_name = user_name
+            self._user_name = user_name
         if full_name is not None:
-            self.full_name = full_name
+            self._full_name = full_name
         if email is not None:
-            self.email = email
+            self._email = email
         if phone_number is not None:
-            self.phone_number = phone_number
+            self._phone_number = phone_number
         if culture_name is not None:
-            self.culture_name = culture_name
+            self._culture_name = culture_name
         if role_name is not None:
-            self.role_name = role_name
-        self.is_locked = is_locked
-        self.is_data_restricted = is_data_restricted
+            self._role_name = role_name
+        self._is_locked = is_locked
+        self._is_data_restricted = is_data_restricted
 
     @property
     def id(self):
@@ -105,6 +110,27 @@ class User(object):
         """
 
         self._id = id
+
+    @property
+    def unique_id(self):
+        """Gets the unique_id of this User.  # noqa: E501
+
+
+        :return: The unique_id of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_id
+
+    @unique_id.setter
+    def unique_id(self, unique_id):
+        """Sets the unique_id of this User.
+
+
+        :param unique_id: The unique_id of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_id = unique_id
 
     @property
     def user_name(self):

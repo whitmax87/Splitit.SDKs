@@ -46,7 +46,7 @@ export class LoginApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json-patch+json';
 
         const response = await this.request({
-            path: `/api/login`,
+            path: `/api/Login`,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,

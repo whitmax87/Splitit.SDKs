@@ -47,9 +47,9 @@ class MoneyWithCurrencyCode(object):
         self._currency_code = None
         self.discriminator = None
 
-        self.value = value
+        self._value = value
         if currency_code is not None:
-            self.currency_code = currency_code
+            self._currency_code = currency_code
 
     @property
     def value(self):

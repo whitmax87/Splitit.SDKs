@@ -75,26 +75,26 @@ class GetInitiatedUpdatePaymentDataResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if card_data is not None:
-            self.card_data = card_data
+            self._card_data = card_data
         if merchant is not None:
-            self.merchant = merchant
+            self._merchant = merchant
         if redirect_urls is not None:
-            self.redirect_urls = redirect_urls
+            self._redirect_urls = redirect_urls
         if outstanding_amount is not None:
-            self.outstanding_amount = outstanding_amount
+            self._outstanding_amount = outstanding_amount
         if terms_and_conditions is not None:
-            self.terms_and_conditions = terms_and_conditions
+            self._terms_and_conditions = terms_and_conditions
         if processor_name is not None:
-            self.processor_name = processor_name
-        self.is3_ds_required = is3_ds_required
+            self._processor_name = processor_name
+        self._is3_ds_required = is3_ds_required
         if last_error is not None:
-            self.last_error = last_error
+            self._last_error = last_error
         if logo is not None:
-            self.logo = logo
+            self._logo = logo
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
 
     @property
     def response_header(self):

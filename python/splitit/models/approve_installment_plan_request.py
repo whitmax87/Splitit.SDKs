@@ -51,10 +51,10 @@ class ApproveInstallmentPlanRequest(object):
         self.discriminator = None
 
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if customer_signature_png_as_base64 is not None:
-            self.customer_signature_png_as_base64 = customer_signature_png_as_base64
-        self.are_terms_and_conditions_approved = are_terms_and_conditions_approved
+            self._customer_signature_png_as_base64 = customer_signature_png_as_base64
+        self._are_terms_and_conditions_approved = are_terms_and_conditions_approved
 
     @property
     def installment_plan_number(self):

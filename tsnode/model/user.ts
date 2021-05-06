@@ -14,6 +14,7 @@ import { RequestFile } from '../api';
 
 export class User {
     'id'?: string;
+    'uniqueId'?: string;
     'userName'?: string;
     'fullName'?: string;
     'email'?: string;
@@ -29,6 +30,11 @@ export class User {
         {
             "name": "id",
             "baseName": "Id",
+            "type": "string"
+        },
+        {
+            "name": "uniqueId",
+            "baseName": "UniqueId",
             "type": "string"
         },
         {

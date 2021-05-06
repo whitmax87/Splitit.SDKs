@@ -24,6 +24,7 @@ function UserFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'id': !runtime_1.exists(json, 'Id') ? undefined : json['Id'],
+        'uniqueId': !runtime_1.exists(json, 'UniqueId') ? undefined : json['UniqueId'],
         'userName': !runtime_1.exists(json, 'UserName') ? undefined : json['UserName'],
         'fullName': !runtime_1.exists(json, 'FullName') ? undefined : json['FullName'],
         'email': !runtime_1.exists(json, 'Email') ? undefined : json['Email'],
@@ -44,6 +45,7 @@ function UserToJSON(value) {
     }
     return {
         'Id': value.id,
+        'UniqueId': value.uniqueId,
         'UserName': value.userName,
         'FullName': value.fullName,
         'Email': value.email,

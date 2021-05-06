@@ -30,6 +30,12 @@ export interface User {
      * @type {string}
      * @memberof User
      */
+    uniqueId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
     userName?: string;
     /**
      * 
@@ -86,6 +92,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
     return {
         
         'id': !exists(json, 'Id') ? undefined : json['Id'],
+        'uniqueId': !exists(json, 'UniqueId') ? undefined : json['UniqueId'],
         'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
         'fullName': !exists(json, 'FullName') ? undefined : json['FullName'],
         'email': !exists(json, 'Email') ? undefined : json['Email'],
@@ -107,6 +114,7 @@ export function UserToJSON(value?: User | null): any {
     return {
         
         'Id': value.id,
+        'UniqueId': value.uniqueId,
         'UserName': value.userName,
         'FullName': value.fullName,
         'Email': value.email,

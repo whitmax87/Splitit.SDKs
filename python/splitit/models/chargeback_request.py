@@ -54,12 +54,12 @@ class ChargebackRequest(object):
         self.discriminator = None
 
         if transaction_ids_to_mark is not None:
-            self.transaction_ids_to_mark = transaction_ids_to_mark
+            self._transaction_ids_to_mark = transaction_ids_to_mark
         if transaction_ids_to_unmark is not None:
-            self.transaction_ids_to_unmark = transaction_ids_to_unmark
+            self._transaction_ids_to_unmark = transaction_ids_to_unmark
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
-        self.partial_response_mapping = partial_response_mapping
+            self._installment_plan_number = installment_plan_number
+        self._partial_response_mapping = partial_response_mapping
 
     @property
     def transaction_ids_to_mark(self):

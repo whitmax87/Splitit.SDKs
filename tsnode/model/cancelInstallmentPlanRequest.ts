@@ -18,7 +18,6 @@ export class CancelInstallmentPlanRequest {
     'installmentPlanNumber'?: string;
     'refundUnderCancelation': RefundUnderCancelation;
     'cancelationReason'?: InstallmentPlanCancelationReason;
-    'isExecutedUnattended': boolean;
     'partialResponseMapping': boolean;
 
     static discriminator: string | undefined = undefined;
@@ -38,11 +37,6 @@ export class CancelInstallmentPlanRequest {
             "name": "cancelationReason",
             "baseName": "CancelationReason",
             "type": "InstallmentPlanCancelationReason"
-        },
-        {
-            "name": "isExecutedUnattended",
-            "baseName": "IsExecutedUnattended",
-            "type": "boolean"
         },
         {
             "name": "partialResponseMapping",

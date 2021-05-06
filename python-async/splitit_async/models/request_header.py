@@ -57,15 +57,15 @@ class RequestHeader(object):
         self.discriminator = None
 
         if touch_point is not None:
-            self.touch_point = touch_point
+            self._touch_point = touch_point
         if session_id is not None:
-            self.session_id = session_id
+            self._session_id = session_id
         if api_key is not None:
-            self.api_key = api_key
+            self._api_key = api_key
         if culture_name is not None:
-            self.culture_name = culture_name
+            self._culture_name = culture_name
         if authentication_type is not None:
-            self.authentication_type = authentication_type
+            self._authentication_type = authentication_type
 
     @property
     def touch_point(self):

@@ -51,11 +51,11 @@ class LoginRequest(object):
         self.discriminator = None
 
         if user_name is not None:
-            self.user_name = user_name
+            self._user_name = user_name
         if password is not None:
-            self.password = password
+            self._password = password
         if touch_point is not None:
-            self.touch_point = touch_point
+            self._touch_point = touch_point
 
     @property
     def user_name(self):

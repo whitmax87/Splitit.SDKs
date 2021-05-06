@@ -50,9 +50,9 @@ class AmountDetails2(object):
         self._shipping = None
         self.discriminator = None
 
-        self.sub_total = sub_total
-        self.tax = tax
-        self.shipping = shipping
+        self._sub_total = sub_total
+        self._tax = tax
+        self._shipping = shipping
 
     @property
     def sub_total(self):

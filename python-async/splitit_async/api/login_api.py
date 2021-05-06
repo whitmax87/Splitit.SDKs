@@ -117,7 +117,7 @@ class LoginApi(object):
         auth_settings = []  # noqa: E501
 
         return self._api_client.call_api(
-            '/api/login', 'POST',
+            '/api/Login', 'POST',
             path_params,
             query_params,
             header_params,

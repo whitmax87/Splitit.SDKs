@@ -72,25 +72,25 @@ class InitiateInstallmentsPlanResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if installment_plan is not None:
-            self.installment_plan = installment_plan
+            self._installment_plan = installment_plan
         if gateway_transaction_results is not None:
-            self.gateway_transaction_results = gateway_transaction_results
+            self._gateway_transaction_results = gateway_transaction_results
         if checkout_url is not None:
-            self.checkout_url = checkout_url
+            self._checkout_url = checkout_url
         if approval_url is not None:
-            self.approval_url = approval_url
+            self._approval_url = approval_url
         if terms_and_conditions_url is not None:
-            self.terms_and_conditions_url = terms_and_conditions_url
+            self._terms_and_conditions_url = terms_and_conditions_url
         if privacy_policy_url is not None:
-            self.privacy_policy_url = privacy_policy_url
+            self._privacy_policy_url = privacy_policy_url
         if installment_plan_info_url is not None:
-            self.installment_plan_info_url = installment_plan_info_url
+            self._installment_plan_info_url = installment_plan_info_url
         if public_token is not None:
-            self.public_token = public_token
+            self._public_token = public_token
         if learn_more_url is not None:
-            self.learn_more_url = learn_more_url
+            self._learn_more_url = learn_more_url
 
     @property
     def response_header(self):

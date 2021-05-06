@@ -57,15 +57,15 @@ class ReAuthorization(object):
         self.discriminator = None
 
         if processing_date is not None:
-            self.processing_date = processing_date
+            self._processing_date = processing_date
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if transaction_results is not None:
-            self.transaction_results = transaction_results
+            self._transaction_results = transaction_results
         if card_details is not None:
-            self.card_details = card_details
+            self._card_details = card_details
         if result is not None:
-            self.result = result
+            self._result = result
 
     @property
     def processing_date(self):

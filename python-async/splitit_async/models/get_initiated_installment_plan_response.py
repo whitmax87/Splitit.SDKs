@@ -69,23 +69,23 @@ class GetInitiatedInstallmentPlanResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if installment_plan_number is not None:
-            self.installment_plan_number = installment_plan_number
+            self._installment_plan_number = installment_plan_number
         if plan_data is not None:
-            self.plan_data = plan_data
+            self._plan_data = plan_data
         if cart_data is not None:
-            self.cart_data = cart_data
+            self._cart_data = cart_data
         if consumer_data is not None:
-            self.consumer_data = consumer_data
+            self._consumer_data = consumer_data
         if merchant_data is not None:
-            self.merchant_data = merchant_data
+            self._merchant_data = merchant_data
         if billing_address is not None:
-            self.billing_address = billing_address
+            self._billing_address = billing_address
         if payment_wizard_data_response is not None:
-            self.payment_wizard_data_response = payment_wizard_data_response
+            self._payment_wizard_data_response = payment_wizard_data_response
         if error_indicator is not None:
-            self.error_indicator = error_indicator
+            self._error_indicator = error_indicator
 
     @property
     def response_header(self):

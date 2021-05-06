@@ -54,13 +54,13 @@ class GetInstallmentsScheduleResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if schedules is not None:
-            self.schedules = schedules
+            self._schedules = schedules
         if installments_picker is not None:
-            self.installments_picker = installments_picker
+            self._installments_picker = installments_picker
         if headline is not None:
-            self.headline = headline
+            self._headline = headline
 
     @property
     def response_header(self):

@@ -77,27 +77,27 @@ class Installment2(object):
         self._result = None
         self.discriminator = None
 
-        self.installment_number = installment_number
+        self._installment_number = installment_number
         if amount is not None:
-            self.amount = amount
+            self._amount = amount
         if original_amount is not None:
-            self.original_amount = original_amount
+            self._original_amount = original_amount
         if refund_amount is not None:
-            self.refund_amount = refund_amount
+            self._refund_amount = refund_amount
         if process_date_time is not None:
-            self.process_date_time = process_date_time
-        self.is_refund = is_refund
+            self._process_date_time = process_date_time
+        self._is_refund = is_refund
         if required_credit is not None:
-            self.required_credit = required_credit
-        self.created_date_time = created_date_time
+            self._required_credit = required_credit
+        self._created_date_time = created_date_time
         if status is not None:
-            self.status = status
+            self._status = status
         if transaction_results is not None:
-            self.transaction_results = transaction_results
+            self._transaction_results = transaction_results
         if card_details is not None:
-            self.card_details = card_details
+            self._card_details = card_details
         if result is not None:
-            self.result = result
+            self._result = result
 
     @property
     def installment_number(self):

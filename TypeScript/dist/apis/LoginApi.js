@@ -93,7 +93,7 @@ var LoginApi = /** @class */ (function (_super) {
                         headerParameters = {};
                         headerParameters['Content-Type'] = 'application/json-patch+json';
                         return [4 /*yield*/, this.request({
-                                path: "/api/login",
+                                path: "/api/Login",
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,

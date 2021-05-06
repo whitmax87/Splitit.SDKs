@@ -26,6 +26,12 @@ export interface User {
      * @type {string}
      * @memberof User
      */
+    uniqueId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof User
+     */
     userName?: string;
     /**
      *

@@ -53,12 +53,12 @@ class InstallmentPlanDateInfo(object):
         self._all_dates = None
         self.discriminator = None
 
-        self.installments_plan_date_type = installments_plan_date_type
+        self._installments_plan_date_type = installments_plan_date_type
         if start_date is not None:
-            self.start_date = start_date
+            self._start_date = start_date
         if end_date is not None:
-            self.end_date = end_date
-        self.all_dates = all_dates
+            self._end_date = end_date
+        self._all_dates = all_dates
 
     @property
     def installments_plan_date_type(self):

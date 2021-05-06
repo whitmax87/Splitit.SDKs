@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetFraudStatusDisplayRequest, GetFraudStatusDisplayResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInitiatedUpdatePaymentDataResponse, GetInstallmentSchedulesRequest, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, GetInstallmentsScheduleResponse, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, LearnMoreDetailsRequest, LearnMoreDetailsResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, TestCardRequest, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
+import { ApproveInstallmentPlanRequest, CancelInstallmentPlanRequest, ChargebackRequest, CreateInstallmentPlanRequest, CreateInstallmentsPlanResponse, Get3DSecureParametersRequest, Get3DSecureParametersResponse, GetFraudStatusDisplayRequest, GetFraudStatusDisplayResponse, GetInitiatedInstallmentPlanRequest, GetInitiatedInstallmentPlanResponse, GetInitiatedUpdatePaymentDataResponse, GetInstallmentSchedulesRequest, GetInstallmentsPlanExtendedResponse, GetInstallmentsPlanResponse, GetInstallmentsPlanSearchCriteriaRequest, GetInstallmentsScheduleResponse, GetPGTLRequest, GetPGTLResponse, InitiateInstallmentPlanRequest, InitiateInstallmentsPlanResponse, InstallmentPlanResponse, LearnMoreDetailsRequest, LearnMoreDetailsResponse, RefundInstallmentPlanResponse, RefundPlanRequest, StartInstallmentsRequest, TermsAndConditionsGetRequest, TermsAndConditionsGetResponse, TestCardRequest, UpdateInstallmentPlanRequest, UpdateInstallmentsPlanResponse, VerifyPaymentRequest, VerifyPaymentResponse } from '../models';
 export interface InstallmentPlanApproveRequest {
     request: ApproveInstallmentPlanRequest;
 }
@@ -40,6 +40,9 @@ export interface InstallmentPlanGetInitiatedInstallmentPlanRequestRequest {
 }
 export interface InstallmentPlanGetLearnMoreDetailsRequest {
     request: LearnMoreDetailsRequest;
+}
+export interface InstallmentPlanGetPGTLRequest {
+    request: GetPGTLRequest;
 }
 export interface InstallmentPlanGetSchedulesRequest {
     request: GetInstallmentSchedulesRequest;
@@ -135,6 +138,12 @@ export declare class InstallmentPlanApi extends runtime.BaseAPI {
     /**
      */
     installmentPlanGetLearnMoreDetails(requestParameters: InstallmentPlanGetLearnMoreDetailsRequest): Promise<LearnMoreDetailsResponse>;
+    /**
+     */
+    installmentPlanGetPGTLRaw(requestParameters: InstallmentPlanGetPGTLRequest): Promise<runtime.ApiResponse<GetPGTLResponse>>;
+    /**
+     */
+    installmentPlanGetPGTL(requestParameters: InstallmentPlanGetPGTLRequest): Promise<GetPGTLResponse>;
     /**
      */
     installmentPlanGetSchedulesRaw(requestParameters: InstallmentPlanGetSchedulesRequest): Promise<runtime.ApiResponse<GetInstallmentsScheduleResponse>>;

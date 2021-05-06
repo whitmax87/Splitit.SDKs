@@ -8,8 +8,6 @@ export * from './installmentPlanApi';
 import { InstallmentPlanApi } from './installmentPlanApi';
 export * from './loginApi';
 import { LoginApi } from './loginApi';
-export * from './logoutApi';
-import { LogoutApi } from './logoutApi';
 import * as fs from 'fs';
 import * as http from 'http';
 
@@ -30,4 +28,4 @@ export interface RequestDetailedFile {
 
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
-export const APIS = [CreateInstallmentPlanApi, InfoApi, InfrastructureApi, InstallmentPlanApi, LoginApi, LogoutApi];
+export const APIS = [CreateInstallmentPlanApi, InfoApi, InfrastructureApi, InstallmentPlanApi, LoginApi];

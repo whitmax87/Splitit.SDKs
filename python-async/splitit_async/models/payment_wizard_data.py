@@ -69,22 +69,22 @@ class PaymentWizardData(object):
         self.discriminator = None
 
         if requested_number_of_installments is not None:
-            self.requested_number_of_installments = requested_number_of_installments
+            self._requested_number_of_installments = requested_number_of_installments
         if success_exit_url is not None:
-            self.success_exit_url = success_exit_url
+            self._success_exit_url = success_exit_url
         if error_exit_url is not None:
-            self.error_exit_url = error_exit_url
+            self._error_exit_url = error_exit_url
         if cancel_exit_url is not None:
-            self.cancel_exit_url = cancel_exit_url
+            self._cancel_exit_url = cancel_exit_url
         if success_async_url is not None:
-            self.success_async_url = success_async_url
+            self._success_async_url = success_async_url
         if view_name is not None:
-            self.view_name = view_name
-        self.is_opened_in_iframe = is_opened_in_iframe
+            self._view_name = view_name
+        self._is_opened_in_iframe = is_opened_in_iframe
         if is3d_secure_in_popup is not None:
-            self.is3d_secure_in_popup = is3d_secure_in_popup
+            self._is3d_secure_in_popup = is3d_secure_in_popup
         if payment_form_message is not None:
-            self.payment_form_message = payment_form_message
+            self._payment_form_message = payment_form_message
 
     @property
     def requested_number_of_installments(self):

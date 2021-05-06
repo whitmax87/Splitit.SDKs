@@ -38,7 +38,7 @@ export class LoginApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.6.5"
+            "Splitit-SDK": "NodeJS-1.6.6"
         };
         this._sessionId = sessionId;
     }
@@ -64,7 +64,7 @@ export class LoginApi {
      * @param request 
      */
     public async loginPost (request: LoginRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: LoginResponse;  }> {
-        const localVarPath = this.basePath + '/api/login';
+        const localVarPath = this.basePath + '/api/Login';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];

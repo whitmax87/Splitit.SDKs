@@ -47,8 +47,8 @@ class RelationsLoad(object):
         self._secure_authorizations = None
         self.discriminator = None
 
-        self.installments = installments
-        self.secure_authorizations = secure_authorizations
+        self._installments = installments
+        self._secure_authorizations = secure_authorizations
 
     @property
     def installments(self):

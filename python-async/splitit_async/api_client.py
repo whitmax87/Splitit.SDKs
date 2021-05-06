@@ -33,7 +33,6 @@ from splitit_async.api import (
     InfrastructureApi,
     InstallmentPlanApi,
     LoginApi,
-    LogoutApi,
 )
 
 class ApiClient(object):
@@ -81,17 +80,16 @@ class ApiClient(object):
         self.rest_client = None
         self._ctx_manager_level = 0
         self.default_headers = {
-            'Splitit-SDK': 'Python-asyncio-1.6.5',
+            'Splitit-SDK': 'Python-asyncio-1.6.6',
         }
 
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.6.5/python'
+        self.user_agent = 'Swagger-Codegen/1.6.6/python'
         self.CreateInstallmentPlanApi = CreateInstallmentPlanApi(self)
         self.InfoApi = InfoApi(self)
         self.InfrastructureApi = InfrastructureApi(self)
         self.InstallmentPlanApi = InstallmentPlanApi(self)
         self.LoginApi = LoginApi(self)
-        self.LogoutApi = LogoutApi(self)
         self._sessionID = ""
 
     def __del__(self):

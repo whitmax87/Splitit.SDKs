@@ -48,9 +48,9 @@ class TermsAndConditionsGetResponse(object):
         self.discriminator = None
 
         if response_header is not None:
-            self.response_header = response_header
+            self._response_header = response_header
         if terms_and_conditions is not None:
-            self.terms_and_conditions = terms_and_conditions
+            self._terms_and_conditions = terms_and_conditions
 
     @property
     def response_header(self):

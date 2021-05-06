@@ -51,11 +51,11 @@ class GetResourcesRequestContext(object):
         self.discriminator = None
 
         if merchant_code is not None:
-            self.merchant_code = merchant_code
+            self._merchant_code = merchant_code
         if culture_name is not None:
-            self.culture_name = culture_name
+            self._culture_name = culture_name
         if touch_point_code is not None:
-            self.touch_point_code = touch_point_code
+            self._touch_point_code = touch_point_code
 
     @property
     def merchant_code(self):

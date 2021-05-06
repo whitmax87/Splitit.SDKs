@@ -48,9 +48,9 @@ class CardResult(object):
         self.discriminator = None
 
         if code is not None:
-            self.code = code
+            self._code = code
         if description is not None:
-            self.description = description
+            self._description = description
 
     @property
     def code(self):

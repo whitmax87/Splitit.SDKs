@@ -57,14 +57,14 @@ class ItemData(object):
         self.discriminator = None
 
         if name is not None:
-            self.name = name
+            self._name = name
         if sku is not None:
-            self.sku = sku
+            self._sku = sku
         if price is not None:
-            self.price = price
-        self.quantity = quantity
+            self._price = price
+        self._quantity = quantity
         if description is not None:
-            self.description = description
+            self._description = description
 
     @property
     def name(self):

@@ -1,0 +1,10 @@
+# Splitit.SDK.Client.Model.PaymentGatewayMessage
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**MessageCode** | **string** |  | [optional] 
+**MessageText** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

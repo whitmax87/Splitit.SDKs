@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**InstallmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 [**InstallmentPlanGetInitiatedUpdatePaymentData**](InstallmentPlanApi.md#installmentplangetinitiatedupdatepaymentdata) | **GET** /api/InstallmentPlan/GetInitiatedUpdatePaymentData | 
 [**InstallmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentplangetlearnmoredetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+[**InstallmentPlanGetPGTL**](InstallmentPlanApi.md#installmentplangetpgtl) | **POST** /api/InstallmentPlan/GetPGTL | 
 [**InstallmentPlanGetSchedules**](InstallmentPlanApi.md#installmentplangetschedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
@@ -735,6 +736,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LearnMoreDetailsResponse**](LearnMoreDetailsResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplangetpgtl"></a>
+# **InstallmentPlanGetPGTL**
+> GetPGTLResponse InstallmentPlanGetPGTL (GetPGTLRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanGetPGTLExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new GetPGTLRequest(); // GetPGTLRequest | 
+
+            try
+            {
+                GetPGTLResponse result = apiInstance.InstallmentPlanGetPGTL(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanGetPGTL: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**GetPGTLRequest**](GetPGTLRequest.md)|  | 
+
+### Return type
+
+[**GetPGTLResponse**](GetPGTLResponse.md)
 
 ### Authorization
 
