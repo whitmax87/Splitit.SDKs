@@ -20,7 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var MoneyFlows;
 (function (MoneyFlows) {
-    MoneyFlows["None"] = "None";
+    MoneyFlows["NotDetermined"] = "NotDetermined";
     MoneyFlows["Monthly"] = "Monthly";
     MoneyFlows["SCP"] = "SCP";
     MoneyFlows["Custom"] = "Custom";

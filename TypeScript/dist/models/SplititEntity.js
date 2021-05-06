@@ -29,6 +29,7 @@ var SplititEntity;
     SplititEntity["SplititPaymentsLtd"] = "SplititPaymentsLtd";
     SplititEntity["SplititAustraliaCapitalPtyLtd"] = "SplititAustraliaCapitalPtyLtd";
     SplititEntity["SplititAustraliaPtyLtd"] = "SplititAustraliaPtyLtd";
+    SplititEntity["SplititOperationsCALtd"] = "SplititOperationsCALtd";
 })(SplititEntity = exports.SplititEntity || (exports.SplititEntity = {}));
 function SplititEntityFromJSON(json) {
     return SplititEntityFromJSONTyped(json, false);

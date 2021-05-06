@@ -26,7 +26,7 @@ class MoneyFlows(object):
     """
     allowed enum values
     """
-    NONE = "None"
+    NOTDETERMINED = "NotDetermined"
     MONTHLY = "Monthly"
     SCP = "SCP"
     CUSTOM = "Custom"

@@ -16,7 +16,7 @@ import { RequestFile } from '../api';
 * 
 */
 export enum MoneyFlows {
-    None = <any> 'None',
+    NotDetermined = <any> 'NotDetermined',
     Monthly = <any> 'Monthly',
     SCP = <any> 'SCP',
     Custom = <any> 'Custom',

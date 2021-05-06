@@ -22,5 +22,7 @@
 
 * `SPLITITAUSTRALIAPTYLTD` (value: `"SplititAustraliaPtyLtd"`)
 
+* `SPLITITOPERATIONSCALTD` (value: `"SplititOperationsCALtd"`)
+
 
 

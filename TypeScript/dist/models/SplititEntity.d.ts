@@ -23,7 +23,8 @@ export declare enum SplititEntity {
     SplititCapitalUkLtd = "SplititCapitalUkLtd",
     SplititPaymentsLtd = "SplititPaymentsLtd",
     SplititAustraliaCapitalPtyLtd = "SplititAustraliaCapitalPtyLtd",
-    SplititAustraliaPtyLtd = "SplititAustraliaPtyLtd"
+    SplititAustraliaPtyLtd = "SplititAustraliaPtyLtd",
+    SplititOperationsCALtd = "SplititOperationsCALtd"
 }
 export declare function SplititEntityFromJSON(json: any): SplititEntity;
 export declare function SplititEntityFromJSONTyped(json: any, ignoreDiscriminator: boolean): SplititEntity;

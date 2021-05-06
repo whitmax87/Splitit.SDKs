@@ -46,7 +46,9 @@ public enum SplititEntity {
   
   SPLITITAUSTRALIACAPITALPTYLTD("SplititAustraliaCapitalPtyLtd"),
   
-  SPLITITAUSTRALIAPTYLTD("SplititAustraliaPtyLtd");
+  SPLITITAUSTRALIAPTYLTD("SplititAustraliaPtyLtd"),
+  
+  SPLITITOPERATIONSCALTD("SplititOperationsCALtd");
 
   private String value;
 

@@ -35,6 +35,7 @@ class SplititEntity(object):
     SPLITITPAYMENTSLTD = "SplititPaymentsLtd"
     SPLITITAUSTRALIACAPITALPTYLTD = "SplititAustraliaCapitalPtyLtd"
     SPLITITAUSTRALIAPTYLTD = "SplititAustraliaPtyLtd"
+    SPLITITOPERATIONSCALTD = "SplititOperationsCALtd"
 
     """
     Attributes:

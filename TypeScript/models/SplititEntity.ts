@@ -26,7 +26,8 @@ export enum SplititEntity {
     SplititCapitalUkLtd = 'SplititCapitalUkLtd',
     SplititPaymentsLtd = 'SplititPaymentsLtd',
     SplititAustraliaCapitalPtyLtd = 'SplititAustraliaCapitalPtyLtd',
-    SplititAustraliaPtyLtd = 'SplititAustraliaPtyLtd'
+    SplititAustraliaPtyLtd = 'SplititAustraliaPtyLtd',
+    SplititOperationsCALtd = 'SplititOperationsCALtd'
 }
 
 export function SplititEntityFromJSON(json: any): SplititEntity {

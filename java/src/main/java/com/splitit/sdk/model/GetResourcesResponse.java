@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * GetResourcesResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-06T07:48:08.244Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-06T09:33:27.783Z")
 public class GetResourcesResponse  {
   @SerializedName("Logos")
   private Map<String, String> logos = null;

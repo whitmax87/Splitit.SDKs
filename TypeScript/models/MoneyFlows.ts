@@ -18,7 +18,7 @@
  * @enum {string}
  */
 export enum MoneyFlows {
-    None = 'None',
+    NotDetermined = 'NotDetermined',
     Monthly = 'Monthly',
     SCP = 'SCP',
     Custom = 'Custom',

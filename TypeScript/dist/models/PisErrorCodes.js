@@ -167,6 +167,7 @@ var PisErrorCodes;
     PisErrorCodes["AmountExceededMaxAllowedForFundingOperation"] = "AmountExceededMaxAllowedForFundingOperation";
     PisErrorCodes["FundedPlansCannotBeCanceledWithoutRefund"] = "FundedPlansCannotBeCanceledWithoutRefund";
     PisErrorCodes["InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"] = "InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount";
+    PisErrorCodes["NoFundingSetupForBusinessUnit"] = "NoFundingSetupForBusinessUnit";
     PisErrorCodes["SalesforceOperationError"] = "SalesforceOperationError";
     PisErrorCodes["MultipleMessagingMeansProvided"] = "MultipleMessagingMeansProvided";
     PisErrorCodes["NoMessagingMeansWasProvided"] = "NoMessagingMeansWasProvided";

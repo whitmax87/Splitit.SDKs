@@ -32,10 +32,10 @@ namespace Splitit.SDK.Client.Model
     {
         
         /// <summary>
-        /// Enum None for value: None
+        /// Enum NotDetermined for value: NotDetermined
         /// </summary>
-        [EnumMember(Value = "None")]
-        None = 1,
+        [EnumMember(Value = "NotDetermined")]
+        NotDetermined = 1,
         
         /// <summary>
         /// Enum Monthly for value: Monthly

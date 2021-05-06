@@ -83,7 +83,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum SplititAustraliaPtyLtd for value: SplititAustraliaPtyLtd
         /// </summary>
         [EnumMember(Value = "SplititAustraliaPtyLtd")]
-        SplititAustraliaPtyLtd = 9
+        SplititAustraliaPtyLtd = 9,
+        
+        /// <summary>
+        /// Enum SplititOperationsCALtd for value: SplititOperationsCALtd
+        /// </summary>
+        [EnumMember(Value = "SplititOperationsCALtd")]
+        SplititOperationsCALtd = 10
     }
 
 }

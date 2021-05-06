@@ -30,7 +30,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(MoneyFlows.Adapter.class)
 public enum MoneyFlows {
   
-  NONE("None"),
+  NOTDETERMINED("NotDetermined"),
   
   MONTHLY("Monthly"),
   

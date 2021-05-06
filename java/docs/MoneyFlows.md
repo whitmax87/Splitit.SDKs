@@ -4,7 +4,7 @@
 ## Enum
 
 
-* `NONE` (value: `"None"`)
+* `NOTDETERMINED` (value: `"NotDetermined"`)
 
 * `MONTHLY` (value: `"Monthly"`)
 

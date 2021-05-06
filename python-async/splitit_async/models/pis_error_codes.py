@@ -173,6 +173,7 @@ class PisErrorCodes(object):
     AMOUNTEXCEEDEDMAXALLOWEDFORFUNDINGOPERATION = "AmountExceededMaxAllowedForFundingOperation"
     FUNDEDPLANSCANNOTBECANCELEDWITHOUTREFUND = "FundedPlansCannotBeCanceledWithoutRefund"
     INSTALLMENTSCANNOTBEUPDATEDONFUNDEDPLANWITHLOWERPLANAMOUNT = "InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"
+    NOFUNDINGSETUPFORBUSINESSUNIT = "NoFundingSetupForBusinessUnit"
     SALESFORCEOPERATIONERROR = "SalesforceOperationError"
     MULTIPLEMESSAGINGMEANSPROVIDED = "MultipleMessagingMeansProvided"
     NOMESSAGINGMEANSWASPROVIDED = "NoMessagingMeansWasProvided"

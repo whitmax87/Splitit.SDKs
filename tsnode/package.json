@@ -1,6 +1,6 @@
 {
     "name": "splitit-sdk-nodejs",
-    "version": "1.6.6",
+    "version": "1.6.7",
     "description": "Splitit SDK for NodeJS",
     "main": "dist/api.js",
     "types": "dist/api.d.ts",

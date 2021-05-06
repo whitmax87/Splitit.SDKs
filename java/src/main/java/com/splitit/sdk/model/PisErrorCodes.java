@@ -324,6 +324,8 @@ public enum PisErrorCodes {
   
   INSTALLMENTSCANNOTBEUPDATEDONFUNDEDPLANWITHLOWERPLANAMOUNT("InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"),
   
+  NOFUNDINGSETUPFORBUSINESSUNIT("NoFundingSetupForBusinessUnit"),
+  
   SALESFORCEOPERATIONERROR("SalesforceOperationError"),
   
   MULTIPLEMESSAGINGMEANSPROVIDED("MultipleMessagingMeansProvided"),

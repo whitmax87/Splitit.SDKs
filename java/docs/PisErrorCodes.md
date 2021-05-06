@@ -298,6 +298,8 @@
 
 * `INSTALLMENTSCANNOTBEUPDATEDONFUNDEDPLANWITHLOWERPLANAMOUNT` (value: `"InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"`)
 
+* `NOFUNDINGSETUPFORBUSINESSUNIT` (value: `"NoFundingSetupForBusinessUnit"`)
+
 * `SALESFORCEOPERATIONERROR` (value: `"SalesforceOperationError"`)
 
 * `MULTIPLEMESSAGINGMEANSPROVIDED` (value: `"MultipleMessagingMeansProvided"`)

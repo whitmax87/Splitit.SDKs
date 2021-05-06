@@ -24,5 +24,6 @@ export enum SplititEntity {
     SplititCapitalUkLtd = <any> 'SplititCapitalUkLtd',
     SplititPaymentsLtd = <any> 'SplititPaymentsLtd',
     SplititAustraliaCapitalPtyLtd = <any> 'SplititAustraliaCapitalPtyLtd',
-    SplititAustraliaPtyLtd = <any> 'SplititAustraliaPtyLtd'
+    SplititAustraliaPtyLtd = <any> 'SplititAustraliaPtyLtd',
+    SplititOperationsCALtd = <any> 'SplititOperationsCALtd'
 }

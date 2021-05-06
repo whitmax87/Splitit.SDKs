@@ -163,6 +163,7 @@ export enum PisErrorCodes {
     AmountExceededMaxAllowedForFundingOperation = <any> 'AmountExceededMaxAllowedForFundingOperation',
     FundedPlansCannotBeCanceledWithoutRefund = <any> 'FundedPlansCannotBeCanceledWithoutRefund',
     InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount = <any> 'InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount',
+    NoFundingSetupForBusinessUnit = <any> 'NoFundingSetupForBusinessUnit',
     SalesforceOperationError = <any> 'SalesforceOperationError',
     MultipleMessagingMeansProvided = <any> 'MultipleMessagingMeansProvided',
     NoMessagingMeansWasProvided = <any> 'NoMessagingMeansWasProvided',
