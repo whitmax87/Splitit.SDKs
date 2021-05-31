@@ -71,7 +71,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum CheckCaptureAsyncResponse for value: CheckCaptureAsyncResponse
         /// </summary>
         [EnumMember(Value = "CheckCaptureAsyncResponse")]
-        CheckCaptureAsyncResponse = 7
+        CheckCaptureAsyncResponse = 7,
+        
+        /// <summary>
+        /// Enum VerifyCard for value: VerifyCard
+        /// </summary>
+        [EnumMember(Value = "VerifyCard")]
+        VerifyCard = 8
     }
 
 }

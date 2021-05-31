@@ -18,5 +18,7 @@
 
 * `CHECKCAPTUREASYNCRESPONSE` (value: `"CheckCaptureAsyncResponse"`)
 
+* `VERIFYCARD` (value: `"VerifyCard"`)
+
 
 

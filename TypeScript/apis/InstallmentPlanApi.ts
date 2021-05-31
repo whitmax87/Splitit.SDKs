@@ -93,6 +93,12 @@ import {
     RefundPlanRequest,
     RefundPlanRequestFromJSON,
     RefundPlanRequestToJSON,
+    RequestPaymentRequest,
+    RequestPaymentRequestFromJSON,
+    RequestPaymentRequestToJSON,
+    RequestPaymentResponse,
+    RequestPaymentResponseFromJSON,
+    RequestPaymentResponseToJSON,
     StartInstallmentsRequest,
     StartInstallmentsRequestFromJSON,
     StartInstallmentsRequestToJSON,
@@ -173,6 +179,10 @@ export interface InstallmentPlanInitiateRequest {
 
 export interface InstallmentPlanRefundRequest {
     request: RefundPlanRequest;
+}
+
+export interface InstallmentPlanRequestPaymentRequest {
+    request: RequestPaymentRequest;
 }
 
 export interface InstallmentPlanStartInstallmentsRequest {
@@ -655,6 +665,37 @@ export class InstallmentPlanApi extends runtime.BaseAPI {
      */
     async installmentPlanRefund(requestParameters: InstallmentPlanRefundRequest): Promise<RefundInstallmentPlanResponse> {
         const response = await this.installmentPlanRefundRaw(requestParameters);
+        return await response.value();
+    }
+
+    /**
+     */
+    async installmentPlanRequestPaymentRaw(requestParameters: InstallmentPlanRequestPaymentRequest): Promise<runtime.ApiResponse<RequestPaymentResponse>> {
+        if (requestParameters.request === null || requestParameters.request === undefined) {
+            throw new runtime.RequiredError('request','Required parameter requestParameters.request was null or undefined when calling installmentPlanRequestPayment.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json-patch+json';
+
+        const response = await this.request({
+            path: `/api/InstallmentPlan/RequestPayment`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RequestPaymentRequestToJSON(requestParameters.request),
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RequestPaymentResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async installmentPlanRequestPayment(requestParameters: InstallmentPlanRequestPaymentRequest): Promise<RequestPaymentResponse> {
+        const response = await this.installmentPlanRequestPaymentRaw(requestParameters);
         return await response.value();
     }
 

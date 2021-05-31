@@ -16,5 +16,7 @@
 
 * `EXTERNALINSTALLMENTPROVIDER` (value: `"ExternalInstallmentProvider"`)
 
+* `SECUREDPLAN4` (value: `"SecuredPlan4"`)
+
 
 

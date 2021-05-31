@@ -914,130 +914,148 @@ namespace Splitit.SDK.Client.Model
         InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount = 147,
         
         /// <summary>
+        /// Enum NoFundingPlanInfoForInstallmentPlan for value: NoFundingPlanInfoForInstallmentPlan
+        /// </summary>
+        [EnumMember(Value = "NoFundingPlanInfoForInstallmentPlan")]
+        NoFundingPlanInfoForInstallmentPlan = 148,
+        
+        /// <summary>
         /// Enum NoFundingSetupForBusinessUnit for value: NoFundingSetupForBusinessUnit
         /// </summary>
         [EnumMember(Value = "NoFundingSetupForBusinessUnit")]
-        NoFundingSetupForBusinessUnit = 148,
+        NoFundingSetupForBusinessUnit = 149,
+        
+        /// <summary>
+        /// Enum MerchantIsNotFinancedYet for value: MerchantIsNotFinancedYet
+        /// </summary>
+        [EnumMember(Value = "MerchantIsNotFinancedYet")]
+        MerchantIsNotFinancedYet = 150,
         
         /// <summary>
         /// Enum SalesforceOperationError for value: SalesforceOperationError
         /// </summary>
         [EnumMember(Value = "SalesforceOperationError")]
-        SalesforceOperationError = 149,
+        SalesforceOperationError = 151,
         
         /// <summary>
         /// Enum MultipleMessagingMeansProvided for value: MultipleMessagingMeansProvided
         /// </summary>
         [EnumMember(Value = "MultipleMessagingMeansProvided")]
-        MultipleMessagingMeansProvided = 150,
+        MultipleMessagingMeansProvided = 152,
         
         /// <summary>
         /// Enum NoMessagingMeansWasProvided for value: NoMessagingMeansWasProvided
         /// </summary>
         [EnumMember(Value = "NoMessagingMeansWasProvided")]
-        NoMessagingMeansWasProvided = 151,
+        NoMessagingMeansWasProvided = 153,
         
         /// <summary>
         /// Enum LogoCannotBeRemoved for value: LogoCannotBeRemoved
         /// </summary>
         [EnumMember(Value = "LogoCannotBeRemoved")]
-        LogoCannotBeRemoved = 152,
+        LogoCannotBeRemoved = 154,
         
         /// <summary>
         /// Enum PlanIsLockedForChanges for value: PlanIsLockedForChanges
         /// </summary>
         [EnumMember(Value = "PlanIsLockedForChanges")]
-        PlanIsLockedForChanges = 153,
+        PlanIsLockedForChanges = 155,
         
         /// <summary>
         /// Enum CannotPerfromActionDueToActiveDelaydCharge for value: CannotPerfromActionDueToActiveDelaydCharge
         /// </summary>
         [EnumMember(Value = "CannotPerfromActionDueToActiveDelaydCharge")]
-        CannotPerfromActionDueToActiveDelaydCharge = 154,
+        CannotPerfromActionDueToActiveDelaydCharge = 156,
         
         /// <summary>
         /// Enum ExternalInstallmentProviderError for value: ExternalInstallmentProviderError
         /// </summary>
         [EnumMember(Value = "ExternalInstallmentProviderError")]
-        ExternalInstallmentProviderError = 155,
+        ExternalInstallmentProviderError = 157,
+        
+        /// <summary>
+        /// Enum CannotChangeAmountWhenStatusIsntInitialize for value: CannotChangeAmountWhenStatusIsntInitialize
+        /// </summary>
+        [EnumMember(Value = "CannotChangeAmountWhenStatusIsntInitialize")]
+        CannotChangeAmountWhenStatusIsntInitialize = 158,
         
         /// <summary>
         /// Enum InvalidCCCardTypeNotSupportedMoreThanXInstallments for value: InvalidCCCardTypeNotSupportedMoreThanXInstallments
         /// </summary>
         [EnumMember(Value = "InvalidCCCardTypeNotSupportedMoreThanXInstallments")]
-        InvalidCCCardTypeNotSupportedMoreThanXInstallments = 156,
+        InvalidCCCardTypeNotSupportedMoreThanXInstallments = 159,
         
         /// <summary>
         /// Enum InvalidCCCardTypeNotSupportedMoreThanXAmount for value: InvalidCCCardTypeNotSupportedMoreThanXAmount
         /// </summary>
         [EnumMember(Value = "InvalidCCCardTypeNotSupportedMoreThanXAmount")]
-        InvalidCCCardTypeNotSupportedMoreThanXAmount = 157,
+        InvalidCCCardTypeNotSupportedMoreThanXAmount = 160,
         
         /// <summary>
         /// Enum PlanAmountExceedsAllowedDecimalPlaces for value: PlanAmountExceedsAllowedDecimalPlaces
         /// </summary>
         [EnumMember(Value = "PlanAmountExceedsAllowedDecimalPlaces")]
-        PlanAmountExceedsAllowedDecimalPlaces = 158,
+        PlanAmountExceedsAllowedDecimalPlaces = 161,
         
         /// <summary>
         /// Enum InvalidCCCardBrandNotSupportedMoreThanXInstallments for value: InvalidCCCardBrandNotSupportedMoreThanXInstallments
         /// </summary>
         [EnumMember(Value = "InvalidCCCardBrandNotSupportedMoreThanXInstallments")]
-        InvalidCCCardBrandNotSupportedMoreThanXInstallments = 159,
+        InvalidCCCardBrandNotSupportedMoreThanXInstallments = 162,
         
         /// <summary>
         /// Enum InvalidCCCardBrandNotSupportedMoreThanXAmount for value: InvalidCCCardBrandNotSupportedMoreThanXAmount
         /// </summary>
         [EnumMember(Value = "InvalidCCCardBrandNotSupportedMoreThanXAmount")]
-        InvalidCCCardBrandNotSupportedMoreThanXAmount = 160,
+        InvalidCCCardBrandNotSupportedMoreThanXAmount = 163,
         
         /// <summary>
         /// Enum EmailNotVerified for value: EmailNotVerified
         /// </summary>
         [EnumMember(Value = "EmailNotVerified")]
-        EmailNotVerified = 161,
+        EmailNotVerified = 164,
         
         /// <summary>
         /// Enum InvalidCcPrepaidCardNotSupportedMoreThanXInstallments for value: InvalidCcPrepaidCardNotSupportedMoreThanXInstallments
         /// </summary>
         [EnumMember(Value = "InvalidCcPrepaidCardNotSupportedMoreThanXInstallments")]
-        InvalidCcPrepaidCardNotSupportedMoreThanXInstallments = 162,
+        InvalidCcPrepaidCardNotSupportedMoreThanXInstallments = 165,
         
         /// <summary>
         /// Enum InvalidCcPrepaidCardNotSupportedMoreThanXAmount for value: InvalidCcPrepaidCardNotSupportedMoreThanXAmount
         /// </summary>
         [EnumMember(Value = "InvalidCcPrepaidCardNotSupportedMoreThanXAmount")]
-        InvalidCcPrepaidCardNotSupportedMoreThanXAmount = 163,
+        InvalidCcPrepaidCardNotSupportedMoreThanXAmount = 166,
         
         /// <summary>
         /// Enum PlanContextNotValidForNumberOfInstallments for value: PlanContextNotValidForNumberOfInstallments
         /// </summary>
         [EnumMember(Value = "PlanContextNotValidForNumberOfInstallments")]
-        PlanContextNotValidForNumberOfInstallments = 164,
+        PlanContextNotValidForNumberOfInstallments = 167,
         
         /// <summary>
         /// Enum PlanContextNotValidForAmount for value: PlanContextNotValidForAmount
         /// </summary>
         [EnumMember(Value = "PlanContextNotValidForAmount")]
-        PlanContextNotValidForAmount = 165,
+        PlanContextNotValidForAmount = 168,
         
         /// <summary>
         /// Enum UserEmailAlreadyExists for value: UserEmailAlreadyExists
         /// </summary>
         [EnumMember(Value = "UserEmailAlreadyExists")]
-        UserEmailAlreadyExists = 166,
+        UserEmailAlreadyExists = 169,
         
         /// <summary>
         /// Enum UserNotFound for value: UserNotFound
         /// </summary>
         [EnumMember(Value = "UserNotFound")]
-        UserNotFound = 167,
+        UserNotFound = 170,
         
         /// <summary>
         /// Enum None for value: None
         /// </summary>
         [EnumMember(Value = "None")]
-        None = 168
+        None = 171
     }
 
 }

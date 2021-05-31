@@ -236,6 +236,8 @@ export * from './RefundStrategy';
 export * from './RefundUnderCancelation';
 export * from './RelationsLoad';
 export * from './RequestHeader';
+export * from './RequestPaymentRequest';
+export * from './RequestPaymentResponse';
 export * from './ResponseHeader';
 export * from './Roles';
 export * from './RolesAllOf';

@@ -119,6 +119,8 @@ from splitit.models.refund_strategy import RefundStrategy
 from splitit.models.refund_under_cancelation import RefundUnderCancelation
 from splitit.models.relations_load import RelationsLoad
 from splitit.models.request_header import RequestHeader
+from splitit.models.request_payment_request import RequestPaymentRequest
+from splitit.models.request_payment_response import RequestPaymentResponse
 from splitit.models.response_header import ResponseHeader
 from splitit.models.schedule import Schedule
 from splitit.models.schedule_elements import ScheduleElements

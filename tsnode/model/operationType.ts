@@ -22,5 +22,6 @@ export enum OperationType {
     Void = <any> 'Void',
     Refund = <any> 'Refund',
     Cancel = <any> 'Cancel',
-    CheckCaptureAsyncResponse = <any> 'CheckCaptureAsyncResponse'
+    CheckCaptureAsyncResponse = <any> 'CheckCaptureAsyncResponse',
+    VerifyCard = <any> 'VerifyCard'
 }

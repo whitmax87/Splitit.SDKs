@@ -21,7 +21,8 @@ export declare enum OperationType {
     Void = "Void",
     Refund = "Refund",
     Cancel = "Cancel",
-    CheckCaptureAsyncResponse = "CheckCaptureAsyncResponse"
+    CheckCaptureAsyncResponse = "CheckCaptureAsyncResponse",
+    VerifyCard = "VerifyCard"
 }
 export declare function OperationTypeFromJSON(json: any): OperationType;
 export declare function OperationTypeFromJSONTyped(json: any, ignoreDiscriminator: boolean): OperationType;

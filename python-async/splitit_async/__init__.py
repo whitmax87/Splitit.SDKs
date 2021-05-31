@@ -130,6 +130,8 @@ from splitit_async.models.refund_strategy import RefundStrategy
 from splitit_async.models.refund_under_cancelation import RefundUnderCancelation
 from splitit_async.models.relations_load import RelationsLoad
 from splitit_async.models.request_header import RequestHeader
+from splitit_async.models.request_payment_request import RequestPaymentRequest
+from splitit_async.models.request_payment_response import RequestPaymentResponse
 from splitit_async.models.response_header import ResponseHeader
 from splitit_async.models.schedule import Schedule
 from splitit_async.models.schedule_elements import ScheduleElements

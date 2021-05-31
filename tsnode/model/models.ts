@@ -239,6 +239,8 @@ export * from './refundStrategy';
 export * from './refundUnderCancelation';
 export * from './relationsLoad';
 export * from './requestHeader';
+export * from './requestPaymentRequest';
+export * from './requestPaymentResponse';
 export * from './responseHeader';
 export * from './roles';
 export * from './rolesAllOf';
@@ -548,6 +550,8 @@ import { RefundStrategy } from './refundStrategy';
 import { RefundUnderCancelation } from './refundUnderCancelation';
 import { RelationsLoad } from './relationsLoad';
 import { RequestHeader } from './requestHeader';
+import { RequestPaymentRequest } from './requestPaymentRequest';
+import { RequestPaymentResponse } from './requestPaymentResponse';
 import { ResponseHeader } from './responseHeader';
 import { Roles } from './roles';
 import { RolesAllOf } from './rolesAllOf';
@@ -881,6 +885,8 @@ let typeMap: {[index: string]: any} = {
     "RefundPlanRequest": RefundPlanRequest,
     "RelationsLoad": RelationsLoad,
     "RequestHeader": RequestHeader,
+    "RequestPaymentRequest": RequestPaymentRequest,
+    "RequestPaymentResponse": RequestPaymentResponse,
     "ResponseHeader": ResponseHeader,
     "Roles": Roles,
     "RolesAllOf": RolesAllOf,

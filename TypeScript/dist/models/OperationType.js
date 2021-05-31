@@ -27,6 +27,7 @@ var OperationType;
     OperationType["Refund"] = "Refund";
     OperationType["Cancel"] = "Cancel";
     OperationType["CheckCaptureAsyncResponse"] = "CheckCaptureAsyncResponse";
+    OperationType["VerifyCard"] = "VerifyCard";
 })(OperationType = exports.OperationType || (exports.OperationType = {}));
 function OperationTypeFromJSON(json) {
     return OperationTypeFromJSONTyped(json, false);

@@ -33,6 +33,7 @@ class OperationType(object):
     REFUND = "Refund"
     CANCEL = "Cancel"
     CHECKCAPTUREASYNCRESPONSE = "CheckCaptureAsyncResponse"
+    VERIFYCARD = "VerifyCard"
 
     """
     Attributes:

@@ -2,8 +2,8 @@
 
 splitit-web-api-public-sdk
 - API version: 1.0.0
-  - Build date: 2021-05-06T09:33:27.783Z
-- SDK Version: 1.6.7
+  - Build date: 2021-05-31T11:14:42.224Z
+- SDK Version: 1.6.8
 
 ## Requirements
 
@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGetSchedules**](docs/InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
+*InstallmentPlanApi* | [**installmentPlanRequestPayment**](docs/InstallmentPlanApi.md#installmentPlanRequestPayment) | **POST** /api/InstallmentPlan/RequestPayment | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanTestCard**](docs/InstallmentPlanApi.md#installmentPlanTestCard) | **POST** /api/InstallmentPlan/TestCard | 
@@ -236,6 +237,8 @@ Class | Method | HTTP request | Description
  - [RefundUnderCancelation](docs/RefundUnderCancelation.md)
  - [RelationsLoad](docs/RelationsLoad.md)
  - [RequestHeader](docs/RequestHeader.md)
+ - [RequestPaymentRequest](docs/RequestPaymentRequest.md)
+ - [RequestPaymentResponse](docs/RequestPaymentResponse.md)
  - [ResponseHeader](docs/ResponseHeader.md)
  - [Schedule](docs/Schedule.md)
  - [ScheduleElements](docs/ScheduleElements.md)

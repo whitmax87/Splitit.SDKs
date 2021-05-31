@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**InstallmentPlanGetSchedules**](InstallmentPlanApi.md#installmentplangetschedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**InstallmentPlanInitiate**](InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**InstallmentPlanRefund**](InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
+[**InstallmentPlanRequestPayment**](InstallmentPlanApi.md#installmentplanrequestpayment) | **POST** /api/InstallmentPlan/RequestPayment | 
 [**InstallmentPlanStartInstallments**](InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**InstallmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 [**InstallmentPlanTestCard**](InstallmentPlanApi.md#installmentplantestcard) | **POST** /api/InstallmentPlan/TestCard | 
@@ -1000,6 +1001,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RefundInstallmentPlanResponse**](RefundInstallmentPlanResponse.md)
+
+### Authorization
+
+Authorization is done through SessionId obtained from LoginApi and ApiKey.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="installmentplanrequestpayment"></a>
+# **InstallmentPlanRequestPayment**
+> RequestPaymentResponse InstallmentPlanRequestPayment (RequestPaymentRequest request)
+
+
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Splitit.SDK.Client.Api;
+using Splitit.SDK.Client.Client;
+using Splitit.SDK.Client.Model;
+
+namespace Example
+{
+    public class InstallmentPlanRequestPaymentExample
+    {
+        public void main()
+        {
+            Configuration.Sandbox.AddApiKey("_YOUR_API_KEY_");
+
+            var loginApi = new LoginApi(Configuration.Sandbox);
+            var request = new LoginRequest(userName: "_YOUR_USERNAME_", password: "_YOUR_PASSWORD_");
+
+            // Each method also has Async alternative, example: await loginApi.LoginPostAsync(...)
+            var loginResult = loginApi.LoginPost(request);
+            
+            var apiInstance = new InstallmentPlanApi(Configuration.Sandbox, sessionId: loginResult.SessionId);
+            var request = new RequestPaymentRequest(); // RequestPaymentRequest | 
+
+            try
+            {
+                RequestPaymentResponse result = apiInstance.InstallmentPlanRequestPayment(request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InstallmentPlanApi.InstallmentPlanRequestPayment: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**RequestPaymentRequest**](RequestPaymentRequest.md)|  | 
+
+### Return type
+
+[**RequestPaymentResponse**](RequestPaymentResponse.md)
 
 ### Authorization
 

@@ -32,6 +32,7 @@ class PlanStrategy(object):
     SECUREDPLAN3 = "SecuredPlan3"
     SINGLEPAYMENT = "SinglePayment"
     EXTERNALINSTALLMENTPROVIDER = "ExternalInstallmentProvider"
+    SECUREDPLAN4 = "SecuredPlan4"
 
     """
     Attributes:

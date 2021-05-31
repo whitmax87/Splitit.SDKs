@@ -298,7 +298,11 @@
 
 * `INSTALLMENTSCANNOTBEUPDATEDONFUNDEDPLANWITHLOWERPLANAMOUNT` (value: `"InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"`)
 
+* `NOFUNDINGPLANINFOFORINSTALLMENTPLAN` (value: `"NoFundingPlanInfoForInstallmentPlan"`)
+
 * `NOFUNDINGSETUPFORBUSINESSUNIT` (value: `"NoFundingSetupForBusinessUnit"`)
+
+* `MERCHANTISNOTFINANCEDYET` (value: `"MerchantIsNotFinancedYet"`)
 
 * `SALESFORCEOPERATIONERROR` (value: `"SalesforceOperationError"`)
 
@@ -313,6 +317,8 @@
 * `CANNOTPERFROMACTIONDUETOACTIVEDELAYDCHARGE` (value: `"CannotPerfromActionDueToActiveDelaydCharge"`)
 
 * `EXTERNALINSTALLMENTPROVIDERERROR` (value: `"ExternalInstallmentProviderError"`)
+
+* `CANNOTCHANGEAMOUNTWHENSTATUSISNTINITIALIZE` (value: `"CannotChangeAmountWhenStatusIsntInitialize"`)
 
 * `INVALIDCCCARDTYPENOTSUPPORTEDMORETHANXINSTALLMENTS` (value: `"InvalidCCCardTypeNotSupportedMoreThanXInstallments"`)
 

@@ -324,7 +324,11 @@ public enum PisErrorCodes {
   
   INSTALLMENTSCANNOTBEUPDATEDONFUNDEDPLANWITHLOWERPLANAMOUNT("InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount"),
   
+  NOFUNDINGPLANINFOFORINSTALLMENTPLAN("NoFundingPlanInfoForInstallmentPlan"),
+  
   NOFUNDINGSETUPFORBUSINESSUNIT("NoFundingSetupForBusinessUnit"),
+  
+  MERCHANTISNOTFINANCEDYET("MerchantIsNotFinancedYet"),
   
   SALESFORCEOPERATIONERROR("SalesforceOperationError"),
   
@@ -339,6 +343,8 @@ public enum PisErrorCodes {
   CANNOTPERFROMACTIONDUETOACTIVEDELAYDCHARGE("CannotPerfromActionDueToActiveDelaydCharge"),
   
   EXTERNALINSTALLMENTPROVIDERERROR("ExternalInstallmentProviderError"),
+  
+  CANNOTCHANGEAMOUNTWHENSTATUSISNTINITIALIZE("CannotChangeAmountWhenStatusIsntInitialize"),
   
   INVALIDCCCARDTYPENOTSUPPORTEDMORETHANXINSTALLMENTS("InvalidCCCardTypeNotSupportedMoreThanXInstallments"),
   

@@ -65,7 +65,13 @@ namespace Splitit.SDK.Client.Model
         /// Enum ExternalInstallmentProvider for value: ExternalInstallmentProvider
         /// </summary>
         [EnumMember(Value = "ExternalInstallmentProvider")]
-        ExternalInstallmentProvider = 6
+        ExternalInstallmentProvider = 6,
+        
+        /// <summary>
+        /// Enum SecuredPlan4 for value: SecuredPlan4
+        /// </summary>
+        [EnumMember(Value = "SecuredPlan4")]
+        SecuredPlan4 = 7
     }
 
 }

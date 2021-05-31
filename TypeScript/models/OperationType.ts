@@ -24,7 +24,8 @@ export enum OperationType {
     Void = 'Void',
     Refund = 'Refund',
     Cancel = 'Cancel',
-    CheckCaptureAsyncResponse = 'CheckCaptureAsyncResponse'
+    CheckCaptureAsyncResponse = 'CheckCaptureAsyncResponse',
+    VerifyCard = 'VerifyCard'
 }
 
 export function OperationTypeFromJSON(json: any): OperationType {

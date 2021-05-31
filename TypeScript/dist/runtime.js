@@ -202,7 +202,7 @@ var BaseAPI = /** @class */ (function () {
         var body = (context.body instanceof FormData || context.body instanceof URLSearchParams || isBlob(context.body))
             ? context.body
             : JSON.stringify(context.body);
-        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.6.7" });
+        var headers = Object.assign({}, this.configuration.headers, context.headers, { "Splitit-SDK": "TypeScript-1.6.8" });
         var init = {
             method: context.method,
             headers: headers,

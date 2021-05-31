@@ -42,7 +42,9 @@ public enum OperationType {
   
   CANCEL("Cancel"),
   
-  CHECKCAPTUREASYNCRESPONSE("CheckCaptureAsyncResponse");
+  CHECKCAPTUREASYNCRESPONSE("CheckCaptureAsyncResponse"),
+  
+  VERIFYCARD("VerifyCard");
 
   private String value;
 

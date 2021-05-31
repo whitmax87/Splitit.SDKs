@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**installmentPlanGetSchedules**](InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
+[**installmentPlanRequestPayment**](InstallmentPlanApi.md#installmentPlanRequestPayment) | **POST** /api/InstallmentPlan/RequestPayment | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**installmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 [**installmentPlanTestCard**](InstallmentPlanApi.md#installmentPlanTestCard) | **POST** /api/InstallmentPlan/TestCard | 
@@ -807,6 +808,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RefundInstallmentPlanResponse**](RefundInstallmentPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+<a name="installmentPlanRequestPayment"></a>
+# **installmentPlanRequestPayment**
+> RequestPaymentResponse installmentPlanRequestPayment(request)
+
+
+
+### Example
+```java
+// Import classes:
+//import com.splitit.ApiException;
+//import com.splitit.sdk.api.InstallmentPlanApi;
+import com.splitit.Configuration;
+import com.splitit.sdk.api.LoginApi;
+
+Configuration.addSandboxApiKey("_YOUR_API_KEY_");
+
+LoginApi loginApi = new LoginApi(Configuration.sandbox());
+LoginRequest loginReq = new LoginRequest()
+    .userName("_YOUR_USERNAME_")
+    .password("_YOUR_PASSWORD_");
+
+LoginResponse loginResponse = loginApi.loginPost(loginReq);
+
+InstallmentPlanApi apiInstance = new InstallmentPlanApi(Configuration.sandbox()).withSessionId(loginResponse.getSessionId());
+RequestPaymentRequest request = new RequestPaymentRequest(); // RequestPaymentRequest | 
+try {
+    RequestPaymentResponse result = apiInstance.installmentPlanRequestPayment(request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling InstallmentPlanApi#installmentPlanRequestPayment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**RequestPaymentRequest**](RequestPaymentRequest.md)|  |
+
+### Return type
+
+[**RequestPaymentResponse**](RequestPaymentResponse.md)
 
 ### Authorization
 

@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**installment_plan_get_schedules**](InstallmentPlanApi.md#installment_plan_get_schedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installment_plan_initiate**](InstallmentPlanApi.md#installment_plan_initiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installment_plan_refund**](InstallmentPlanApi.md#installment_plan_refund) | **POST** /api/InstallmentPlan/Refund | 
+[**installment_plan_request_payment**](InstallmentPlanApi.md#installment_plan_request_payment) | **POST** /api/InstallmentPlan/RequestPayment | 
 [**installment_plan_start_installments**](InstallmentPlanApi.md#installment_plan_start_installments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**installment_plan_terms_and_conditions**](InstallmentPlanApi.md#installment_plan_terms_and_conditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 [**installment_plan_test_card**](InstallmentPlanApi.md#installment_plan_test_card) | **POST** /api/InstallmentPlan/TestCard | 
@@ -685,6 +686,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RefundInstallmentPlanResponse**](RefundInstallmentPlanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **installment_plan_request_payment**
+> RequestPaymentResponse installment_plan_request_payment(request)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import splitit_async
+from splitit_async.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = splitit_async.InstallmentPlanApi()
+request = splitit_async.RequestPaymentRequest() # RequestPaymentRequest | 
+
+try:
+    api_response = api_instance.installment_plan_request_payment(request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InstallmentPlanApi->installment_plan_request_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**RequestPaymentRequest**](RequestPaymentRequest.md)|  | 
+
+### Return type
+
+[**RequestPaymentResponse**](RequestPaymentResponse.md)
 
 ### Authorization
 

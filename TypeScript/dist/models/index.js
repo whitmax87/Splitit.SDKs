@@ -241,6 +241,8 @@ __export(require("./RefundStrategy"));
 __export(require("./RefundUnderCancelation"));
 __export(require("./RelationsLoad"));
 __export(require("./RequestHeader"));
+__export(require("./RequestPaymentRequest"));
+__export(require("./RequestPaymentResponse"));
 __export(require("./ResponseHeader"));
 __export(require("./Roles"));
 __export(require("./RolesAllOf"));

@@ -40,7 +40,9 @@ public enum PlanStrategy {
   
   SINGLEPAYMENT("SinglePayment"),
   
-  EXTERNALINSTALLMENTPROVIDER("ExternalInstallmentProvider");
+  EXTERNALINSTALLMENTPROVIDER("ExternalInstallmentProvider"),
+  
+  SECUREDPLAN4("SecuredPlan4");
 
   private String value;
 

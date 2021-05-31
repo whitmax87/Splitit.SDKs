@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * Keks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-06T09:33:27.783Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
 public class Keks  {
   @SerializedName("Id")
   private Long id = null;
