@@ -30,6 +30,7 @@ class MoneyFlows(object):
     MONTHLY = "Monthly"
     SCP = "SCP"
     CUSTOM = "Custom"
+    PENDINGFUNDING = "PendingFunding"
     CHOOSE = "Choose"
 
     """

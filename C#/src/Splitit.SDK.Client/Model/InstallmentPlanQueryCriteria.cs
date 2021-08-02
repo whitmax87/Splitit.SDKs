@@ -29,6 +29,11 @@ namespace Splitit.SDK.Client.Model
     public partial class InstallmentPlanQueryCriteria :  IEquatable<InstallmentPlanQueryCriteria>
     {
         /// <summary>
+        /// Gets or Sets Strategy
+        /// </summary>
+        [DataMember(Name="Strategy", EmitDefaultValue=false)]
+        public PlanStrategy? Strategy { get; set; }
+        /// <summary>
         /// Gets or Sets FraudCheckResult
         /// </summary>
         [DataMember(Name="FraudCheckResult", EmitDefaultValue=false)]
@@ -55,6 +60,8 @@ namespace Splitit.SDK.Client.Model
         /// <param name="anyFilter">anyFilter.</param>
         /// <param name="eula">eula (required).</param>
         /// <param name="showChargebackPlans">showChargebackPlans (required).</param>
+        /// <param name="isInAutoRetry">isInAutoRetry.</param>
+        /// <param name="strategy">strategy.</param>
         /// <param name="initiatedStatuses">initiatedStatuses.</param>
         /// <param name="fraudCheckResult">fraudCheckResult.</param>
         /// <param name="installmentsPlanStatuses">installmentsPlanStatuses.</param>
@@ -62,7 +69,7 @@ namespace Splitit.SDK.Client.Model
         /// <param name="delayResolutions">delayResolutions.</param>
         /// <param name="transactionInformation">transactionInformation.</param>
         /// <param name="dateInfo">dateInfo.</param>
-        public InstallmentPlanQueryCriteria(long? merchantId = default(long?), long? currencyId = default(long?), long? installmentPlanId = default(long?), string installmentPlanNumber = default(string), string refOrderNumber = default(string), decimal? installmentPlanAmount = default(decimal?), string cardNumber = default(string), string consumerName = default(string), string consumerEmail = default(string), string cardHolder = default(string), long? pisMemberId = default(long?), string anyFilter = default(string), bool? eula = default(bool?), bool? showChargebackPlans = default(bool?), InstallmentPlanInitiatedStatuses initiatedStatuses = default(InstallmentPlanInitiatedStatuses), FraudCheckResult? fraudCheckResult = default(FraudCheckResult?), List<InstallmentPlanStatus> installmentsPlanStatuses = default(List<InstallmentPlanStatus>), List<TestModes> testModes = default(List<TestModes>), List<DelayResolution> delayResolutions = default(List<DelayResolution>), TransactionInfo transactionInformation = default(TransactionInfo), InstallmentPlanDateInfo dateInfo = default(InstallmentPlanDateInfo))
+        public InstallmentPlanQueryCriteria(long? merchantId = default(long?), long? currencyId = default(long?), long? installmentPlanId = default(long?), string installmentPlanNumber = default(string), string refOrderNumber = default(string), decimal? installmentPlanAmount = default(decimal?), string cardNumber = default(string), string consumerName = default(string), string consumerEmail = default(string), string cardHolder = default(string), long? pisMemberId = default(long?), string anyFilter = default(string), bool? eula = default(bool?), bool? showChargebackPlans = default(bool?), bool? isInAutoRetry = default(bool?), PlanStrategy? strategy = default(PlanStrategy?), InstallmentPlanInitiatedStatuses initiatedStatuses = default(InstallmentPlanInitiatedStatuses), FraudCheckResult? fraudCheckResult = default(FraudCheckResult?), List<InstallmentPlanStatus> installmentsPlanStatuses = default(List<InstallmentPlanStatus>), List<TestModes> testModes = default(List<TestModes>), List<DelayResolution> delayResolutions = default(List<DelayResolution>), TransactionInfo transactionInformation = default(TransactionInfo), InstallmentPlanDateInfo dateInfo = default(InstallmentPlanDateInfo))
         {
             this.MerchantId = merchantId;
             this.CurrencyId = currencyId;
@@ -78,6 +85,8 @@ namespace Splitit.SDK.Client.Model
             this.ConsumerEmail = consumerEmail;
             this.CardHolder = cardHolder;
             this.AnyFilter = anyFilter;
+            this.IsInAutoRetry = isInAutoRetry;
+            this.Strategy = strategy;
             this.InitiatedStatuses = initiatedStatuses;
             this.FraudCheckResult = fraudCheckResult;
             this.InstallmentsPlanStatuses = installmentsPlanStatuses;
@@ -173,6 +182,13 @@ namespace Splitit.SDK.Client.Model
         public bool? ShowChargebackPlans { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsInAutoRetry
+        /// </summary>
+        [DataMember(Name="IsInAutoRetry", EmitDefaultValue=false)]
+        public bool? IsInAutoRetry { get; set; }
+
+
+        /// <summary>
         /// Gets or Sets InitiatedStatuses
         /// </summary>
         [DataMember(Name="InitiatedStatuses", EmitDefaultValue=false)]
@@ -231,6 +247,8 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  AnyFilter: ").Append(AnyFilter).Append("\n");
             sb.Append("  Eula: ").Append(Eula).Append("\n");
             sb.Append("  ShowChargebackPlans: ").Append(ShowChargebackPlans).Append("\n");
+            sb.Append("  IsInAutoRetry: ").Append(IsInAutoRetry).Append("\n");
+            sb.Append("  Strategy: ").Append(Strategy).Append("\n");
             sb.Append("  InitiatedStatuses: ").Append(InitiatedStatuses).Append("\n");
             sb.Append("  FraudCheckResult: ").Append(FraudCheckResult).Append("\n");
             sb.Append("  InstallmentsPlanStatuses: ").Append(InstallmentsPlanStatuses).Append("\n");
@@ -343,6 +361,16 @@ namespace Splitit.SDK.Client.Model
                     this.ShowChargebackPlans.Equals(input.ShowChargebackPlans))
                 ) && 
                 (
+                    this.IsInAutoRetry == input.IsInAutoRetry ||
+                    (this.IsInAutoRetry != null &&
+                    this.IsInAutoRetry.Equals(input.IsInAutoRetry))
+                ) && 
+                (
+                    this.Strategy == input.Strategy ||
+                    (this.Strategy != null &&
+                    this.Strategy.Equals(input.Strategy))
+                ) && 
+                (
                     this.InitiatedStatuses == input.InitiatedStatuses ||
                     (this.InitiatedStatuses != null &&
                     this.InitiatedStatuses.Equals(input.InitiatedStatuses))
@@ -416,6 +444,10 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.Eula.GetHashCode();
                 if (this.ShowChargebackPlans != null)
                     hashCode = hashCode * 59 + this.ShowChargebackPlans.GetHashCode();
+                if (this.IsInAutoRetry != null)
+                    hashCode = hashCode * 59 + this.IsInAutoRetry.GetHashCode();
+                if (this.Strategy != null)
+                    hashCode = hashCode * 59 + this.Strategy.GetHashCode();
                 if (this.InitiatedStatuses != null)
                     hashCode = hashCode * 59 + this.InitiatedStatuses.GetHashCode();
                 if (this.FraudCheckResult != null)

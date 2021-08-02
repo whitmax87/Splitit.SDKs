@@ -12,6 +12,8 @@
 
 * `CUSTOM` (value: `"Custom"`)
 
+* `PENDINGFUNDING` (value: `"PendingFunding"`)
+
 * `CHOOSE` (value: `"Choose"`)
 
 

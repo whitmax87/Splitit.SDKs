@@ -42,7 +42,9 @@ public enum PlanStrategy {
   
   EXTERNALINSTALLMENTPROVIDER("ExternalInstallmentProvider"),
   
-  SECUREDPLAN4("SecuredPlan4");
+  SECUREDPLAN3A("SecuredPlan3A"),
+  
+  SECUREDPLAN3B("SecuredPlan3B");
 
   private String value;
 

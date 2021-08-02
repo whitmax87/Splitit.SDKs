@@ -52,12 +52,14 @@ class InstallmentPlan(object):
         'is_charged_back': 'bool',
         'are_payments_on_hold': 'bool',
         'scp_funding_percent': 'float',
-        'is_funded': 'bool',
+        'funding_status': 'MoneyFlows',
         'test_mode': 'TestModes',
         'creation_date_time': 'datetime',
+        'life_time_url_expiration_time': 'datetime',
         'installments': 'list[Installment2]',
         'secure_authorizations': 'list[ReAuthorization]',
-        'logo_url': 'str'
+        'logo_url': 'str',
+        'is_in_auto_retry': 'bool'
     }
 
     attribute_map = {
@@ -82,15 +84,17 @@ class InstallmentPlan(object):
         'is_charged_back': 'IsChargedBack',
         'are_payments_on_hold': 'ArePaymentsOnHold',
         'scp_funding_percent': 'ScpFundingPercent',
-        'is_funded': 'IsFunded',
+        'funding_status': 'FundingStatus',
         'test_mode': 'TestMode',
         'creation_date_time': 'CreationDateTime',
+        'life_time_url_expiration_time': 'LifeTimeUrlExpirationTime',
         'installments': 'Installments',
         'secure_authorizations': 'SecureAuthorizations',
-        'logo_url': 'LogoUrl'
+        'logo_url': 'LogoUrl',
+        'is_in_auto_retry': 'IsInAutoRetry'
     }
 
-    def __init__(self, installment_plan_number=None, installment_plan_status=None, amount=None, outstanding_amount=None, number_of_installments=None, number_of_processed_installments=None, original_amount=None, refund_amount=None, consumer=None, active_card=None, fraud_check=None, merchant=None, ref_order_number=None, purchase_method=None, strategy=None, delay_resolution=None, extended_params=None, is_full_captured=None, is_charged_back=None, are_payments_on_hold=None, scp_funding_percent=None, is_funded=None, test_mode=None, creation_date_time=None, installments=None, secure_authorizations=None, logo_url=None):  # noqa: E501
+    def __init__(self, installment_plan_number=None, installment_plan_status=None, amount=None, outstanding_amount=None, number_of_installments=None, number_of_processed_installments=None, original_amount=None, refund_amount=None, consumer=None, active_card=None, fraud_check=None, merchant=None, ref_order_number=None, purchase_method=None, strategy=None, delay_resolution=None, extended_params=None, is_full_captured=None, is_charged_back=None, are_payments_on_hold=None, scp_funding_percent=None, funding_status=None, test_mode=None, creation_date_time=None, life_time_url_expiration_time=None, installments=None, secure_authorizations=None, logo_url=None, is_in_auto_retry=None):  # noqa: E501
         """InstallmentPlan - a model defined in Swagger"""  # noqa: E501
 
         self._installment_plan_number = None
@@ -114,12 +118,14 @@ class InstallmentPlan(object):
         self._is_charged_back = None
         self._are_payments_on_hold = None
         self._scp_funding_percent = None
-        self._is_funded = None
+        self._funding_status = None
         self._test_mode = None
         self._creation_date_time = None
+        self._life_time_url_expiration_time = None
         self._installments = None
         self._secure_authorizations = None
         self._logo_url = None
+        self._is_in_auto_retry = None
         self.discriminator = None
 
         if installment_plan_number is not None:
@@ -158,15 +164,17 @@ class InstallmentPlan(object):
         self._is_charged_back = is_charged_back
         self._are_payments_on_hold = are_payments_on_hold
         self._scp_funding_percent = scp_funding_percent
-        self._is_funded = is_funded
+        self._funding_status = funding_status
         self._test_mode = test_mode
         self._creation_date_time = creation_date_time
+        self._life_time_url_expiration_time = life_time_url_expiration_time
         if installments is not None:
             self._installments = installments
         if secure_authorizations is not None:
             self._secure_authorizations = secure_authorizations
         if logo_url is not None:
             self._logo_url = logo_url
+        self._is_in_auto_retry = is_in_auto_retry
 
     @property
     def installment_plan_number(self):
@@ -628,28 +636,28 @@ class InstallmentPlan(object):
         self._scp_funding_percent = scp_funding_percent
 
     @property
-    def is_funded(self):
-        """Gets the is_funded of this InstallmentPlan.  # noqa: E501
+    def funding_status(self):
+        """Gets the funding_status of this InstallmentPlan.  # noqa: E501
 
 
-        :return: The is_funded of this InstallmentPlan.  # noqa: E501
-        :rtype: bool
+        :return: The funding_status of this InstallmentPlan.  # noqa: E501
+        :rtype: MoneyFlows
         """
-        return self._is_funded
+        return self._funding_status
 
-    @is_funded.setter
-    def is_funded(self, is_funded):
-        """Sets the is_funded of this InstallmentPlan.
+    @funding_status.setter
+    def funding_status(self, funding_status):
+        """Sets the funding_status of this InstallmentPlan.
 
 
-        :param is_funded: The is_funded of this InstallmentPlan.  # noqa: E501
-        :type: bool
+        :param funding_status: The funding_status of this InstallmentPlan.  # noqa: E501
+        :type: MoneyFlows
         """
-        is_funded = bool(is_funded)
-        if is_funded is None:
-            raise ValueError("Invalid value for `is_funded`, must not be `None`")  # noqa: E501
+        
+        if funding_status is None:
+            raise ValueError("Invalid value for `funding_status`, must not be `None`")  # noqa: E501
 
-        self._is_funded = is_funded
+        self._funding_status = funding_status
 
     @property
     def test_mode(self):
@@ -698,6 +706,30 @@ class InstallmentPlan(object):
             raise ValueError("Invalid value for `creation_date_time`, must not be `None`")  # noqa: E501
 
         self._creation_date_time = creation_date_time
+
+    @property
+    def life_time_url_expiration_time(self):
+        """Gets the life_time_url_expiration_time of this InstallmentPlan.  # noqa: E501
+
+
+        :return: The life_time_url_expiration_time of this InstallmentPlan.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._life_time_url_expiration_time
+
+    @life_time_url_expiration_time.setter
+    def life_time_url_expiration_time(self, life_time_url_expiration_time):
+        """Sets the life_time_url_expiration_time of this InstallmentPlan.
+
+
+        :param life_time_url_expiration_time: The life_time_url_expiration_time of this InstallmentPlan.  # noqa: E501
+        :type: datetime
+        """
+        
+        if life_time_url_expiration_time is None:
+            raise ValueError("Invalid value for `life_time_url_expiration_time`, must not be `None`")  # noqa: E501
+
+        self._life_time_url_expiration_time = life_time_url_expiration_time
 
     @property
     def installments(self):
@@ -761,6 +793,30 @@ class InstallmentPlan(object):
         """
 
         self._logo_url = logo_url
+
+    @property
+    def is_in_auto_retry(self):
+        """Gets the is_in_auto_retry of this InstallmentPlan.  # noqa: E501
+
+
+        :return: The is_in_auto_retry of this InstallmentPlan.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_in_auto_retry
+
+    @is_in_auto_retry.setter
+    def is_in_auto_retry(self, is_in_auto_retry):
+        """Sets the is_in_auto_retry of this InstallmentPlan.
+
+
+        :param is_in_auto_retry: The is_in_auto_retry of this InstallmentPlan.  # noqa: E501
+        :type: bool
+        """
+        is_in_auto_retry = bool(is_in_auto_retry)
+        if is_in_auto_retry is None:
+            raise ValueError("Invalid value for `is_in_auto_retry`, must not be `None`")  # noqa: E501
+
+        self._is_in_auto_retry = is_in_auto_retry
 
     def to_dict(self):
         """Returns the model properties as a dict"""

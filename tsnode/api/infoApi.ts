@@ -38,7 +38,7 @@ export class InfoApi {
     constructor(config: Configuration, sessionId?: string) {
         this._config = config;
         this._defaultHeaders = {
-            "Splitit-SDK": "NodeJS-1.6.8"
+            "Splitit-SDK": "NodeJS-1.6.9"
         };
         this._sessionId = sessionId;
     }

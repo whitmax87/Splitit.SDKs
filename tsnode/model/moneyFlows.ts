@@ -20,5 +20,6 @@ export enum MoneyFlows {
     Monthly = <any> 'Monthly',
     SCP = <any> 'SCP',
     Custom = <any> 'Custom',
+    PendingFunding = <any> 'PendingFunding',
     Choose = <any> 'Choose'
 }

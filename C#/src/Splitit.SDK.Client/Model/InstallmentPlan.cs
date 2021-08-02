@@ -29,6 +29,11 @@ namespace Splitit.SDK.Client.Model
     public partial class InstallmentPlan :  IEquatable<InstallmentPlan>
     {
         /// <summary>
+        /// Gets or Sets FundingStatus
+        /// </summary>
+        [DataMember(Name="FundingStatus", EmitDefaultValue=false)]
+        public MoneyFlows FundingStatus { get; set; }
+        /// <summary>
         /// Gets or Sets TestMode
         /// </summary>
         [DataMember(Name="TestMode", EmitDefaultValue=false)]
@@ -62,13 +67,15 @@ namespace Splitit.SDK.Client.Model
         /// <param name="isChargedBack">isChargedBack (required).</param>
         /// <param name="arePaymentsOnHold">arePaymentsOnHold (required).</param>
         /// <param name="scpFundingPercent">scpFundingPercent (required).</param>
-        /// <param name="isFunded">isFunded (required).</param>
+        /// <param name="fundingStatus">fundingStatus (required).</param>
         /// <param name="testMode">testMode (required).</param>
         /// <param name="creationDateTime">creationDateTime (required).</param>
+        /// <param name="lifeTimeUrlExpirationTime">lifeTimeUrlExpirationTime (required).</param>
         /// <param name="installments">installments.</param>
         /// <param name="secureAuthorizations">secureAuthorizations.</param>
         /// <param name="logoUrl">logoUrl.</param>
-        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), bool? isFunded = default(bool?), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), string logoUrl = default(string))
+        /// <param name="isInAutoRetry">isInAutoRetry (required).</param>
+        public InstallmentPlan(string installmentPlanNumber = default(string), ReferenceEntityBase installmentPlanStatus = default(ReferenceEntityBase), Money amount = default(Money), Money outstandingAmount = default(Money), int? numberOfInstallments = default(int?), int? numberOfProcessedInstallments = default(int?), Money originalAmount = default(Money), Money refundAmount = default(Money), ConsumerData consumer = default(ConsumerData), CardData activeCard = default(CardData), FraudCheck fraudCheck = default(FraudCheck), MerchantRef merchant = default(MerchantRef), string refOrderNumber = default(string), ReferenceEntityBase purchaseMethod = default(ReferenceEntityBase), ReferenceEntityBase strategy = default(ReferenceEntityBase), ReferenceEntityBase delayResolution = default(ReferenceEntityBase), Dictionary<string, string> extendedParams = default(Dictionary<string, string>), bool? isFullCaptured = default(bool?), bool? isChargedBack = default(bool?), bool? arePaymentsOnHold = default(bool?), decimal? scpFundingPercent = default(decimal?), MoneyFlows fundingStatus = default(MoneyFlows), TestModes testMode = default(TestModes), DateTime? creationDateTime = default(DateTime?), DateTime? lifeTimeUrlExpirationTime = default(DateTime?), List<Installment2> installments = default(List<Installment2>), List<ReAuthorization> secureAuthorizations = default(List<ReAuthorization>), string logoUrl = default(string), bool? isInAutoRetry = default(bool?))
         {
             this.NumberOfInstallments = numberOfInstallments;
             this.NumberOfProcessedInstallments = numberOfProcessedInstallments;
@@ -76,9 +83,11 @@ namespace Splitit.SDK.Client.Model
             this.IsChargedBack = isChargedBack;
             this.ArePaymentsOnHold = arePaymentsOnHold;
             this.ScpFundingPercent = scpFundingPercent;
-            this.IsFunded = isFunded;
+            this.FundingStatus = fundingStatus;
             this.TestMode = testMode;
             this.CreationDateTime = creationDateTime;
+            this.LifeTimeUrlExpirationTime = lifeTimeUrlExpirationTime;
+            this.IsInAutoRetry = isInAutoRetry;
             this.InstallmentPlanNumber = installmentPlanNumber;
             this.InstallmentPlanStatus = installmentPlanStatus;
             this.Amount = amount;
@@ -226,11 +235,6 @@ namespace Splitit.SDK.Client.Model
         [DataMember(Name="ScpFundingPercent", EmitDefaultValue=false)]
         public decimal? ScpFundingPercent { get; set; }
 
-        /// <summary>
-        /// Gets or Sets IsFunded
-        /// </summary>
-        [DataMember(Name="IsFunded", EmitDefaultValue=false)]
-        public bool? IsFunded { get; set; }
 
 
         /// <summary>
@@ -238,6 +242,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="CreationDateTime", EmitDefaultValue=false)]
         public DateTime? CreationDateTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LifeTimeUrlExpirationTime
+        /// </summary>
+        [DataMember(Name="LifeTimeUrlExpirationTime", EmitDefaultValue=false)]
+        public DateTime? LifeTimeUrlExpirationTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Installments
@@ -256,6 +266,12 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         [DataMember(Name="LogoUrl", EmitDefaultValue=false)]
         public string LogoUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsInAutoRetry
+        /// </summary>
+        [DataMember(Name="IsInAutoRetry", EmitDefaultValue=false)]
+        public bool? IsInAutoRetry { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -286,12 +302,14 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  IsChargedBack: ").Append(IsChargedBack).Append("\n");
             sb.Append("  ArePaymentsOnHold: ").Append(ArePaymentsOnHold).Append("\n");
             sb.Append("  ScpFundingPercent: ").Append(ScpFundingPercent).Append("\n");
-            sb.Append("  IsFunded: ").Append(IsFunded).Append("\n");
+            sb.Append("  FundingStatus: ").Append(FundingStatus).Append("\n");
             sb.Append("  TestMode: ").Append(TestMode).Append("\n");
             sb.Append("  CreationDateTime: ").Append(CreationDateTime).Append("\n");
+            sb.Append("  LifeTimeUrlExpirationTime: ").Append(LifeTimeUrlExpirationTime).Append("\n");
             sb.Append("  Installments: ").Append(Installments).Append("\n");
             sb.Append("  SecureAuthorizations: ").Append(SecureAuthorizations).Append("\n");
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
+            sb.Append("  IsInAutoRetry: ").Append(IsInAutoRetry).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -432,9 +450,9 @@ namespace Splitit.SDK.Client.Model
                     this.ScpFundingPercent.Equals(input.ScpFundingPercent))
                 ) && 
                 (
-                    this.IsFunded == input.IsFunded ||
-                    (this.IsFunded != null &&
-                    this.IsFunded.Equals(input.IsFunded))
+                    this.FundingStatus == input.FundingStatus ||
+                    (this.FundingStatus != null &&
+                    this.FundingStatus.Equals(input.FundingStatus))
                 ) && 
                 (
                     this.TestMode == input.TestMode ||
@@ -445,6 +463,11 @@ namespace Splitit.SDK.Client.Model
                     this.CreationDateTime == input.CreationDateTime ||
                     (this.CreationDateTime != null &&
                     this.CreationDateTime.Equals(input.CreationDateTime))
+                ) && 
+                (
+                    this.LifeTimeUrlExpirationTime == input.LifeTimeUrlExpirationTime ||
+                    (this.LifeTimeUrlExpirationTime != null &&
+                    this.LifeTimeUrlExpirationTime.Equals(input.LifeTimeUrlExpirationTime))
                 ) && 
                 (
                     this.Installments == input.Installments ||
@@ -460,6 +483,11 @@ namespace Splitit.SDK.Client.Model
                     this.LogoUrl == input.LogoUrl ||
                     (this.LogoUrl != null &&
                     this.LogoUrl.Equals(input.LogoUrl))
+                ) && 
+                (
+                    this.IsInAutoRetry == input.IsInAutoRetry ||
+                    (this.IsInAutoRetry != null &&
+                    this.IsInAutoRetry.Equals(input.IsInAutoRetry))
                 );
         }
 
@@ -514,18 +542,22 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.ArePaymentsOnHold.GetHashCode();
                 if (this.ScpFundingPercent != null)
                     hashCode = hashCode * 59 + this.ScpFundingPercent.GetHashCode();
-                if (this.IsFunded != null)
-                    hashCode = hashCode * 59 + this.IsFunded.GetHashCode();
+                if (this.FundingStatus != null)
+                    hashCode = hashCode * 59 + this.FundingStatus.GetHashCode();
                 if (this.TestMode != null)
                     hashCode = hashCode * 59 + this.TestMode.GetHashCode();
                 if (this.CreationDateTime != null)
                     hashCode = hashCode * 59 + this.CreationDateTime.GetHashCode();
+                if (this.LifeTimeUrlExpirationTime != null)
+                    hashCode = hashCode * 59 + this.LifeTimeUrlExpirationTime.GetHashCode();
                 if (this.Installments != null)
                     hashCode = hashCode * 59 + this.Installments.GetHashCode();
                 if (this.SecureAuthorizations != null)
                     hashCode = hashCode * 59 + this.SecureAuthorizations.GetHashCode();
                 if (this.LogoUrl != null)
                     hashCode = hashCode * 59 + this.LogoUrl.GetHashCode();
+                if (this.IsInAutoRetry != null)
+                    hashCode = hashCode * 59 + this.IsInAutoRetry.GetHashCode();
                 return hashCode;
             }
         }

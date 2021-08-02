@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ConsumerData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-02T10:18:45.756Z")
 public class ConsumerData  {
   @SerializedName("Id")
   private String id = null;
@@ -59,6 +59,9 @@ public class ConsumerData  {
 
   @SerializedName("IsDataRestricted")
   private Boolean isDataRestricted = null;
+
+  @SerializedName("IsDataPrivateRestricted")
+  private Boolean isDataPrivateRestricted = null;
 
   public ConsumerData id(String id) {
     this.id = id;
@@ -240,6 +243,24 @@ public class ConsumerData  {
     this.isDataRestricted = isDataRestricted;
   }
 
+  public ConsumerData isDataPrivateRestricted(Boolean isDataPrivateRestricted) {
+    this.isDataPrivateRestricted = isDataPrivateRestricted;
+    return this;
+  }
+
+   /**
+   * Get isDataPrivateRestricted
+   * @return isDataPrivateRestricted
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsDataPrivateRestricted() {
+    return isDataPrivateRestricted;
+  }
+
+  public void setIsDataPrivateRestricted(Boolean isDataPrivateRestricted) {
+    this.isDataPrivateRestricted = isDataPrivateRestricted;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,12 +280,13 @@ public class ConsumerData  {
         Objects.equals(this.cultureName, consumerData.cultureName) &&
         Objects.equals(this.roleName, consumerData.roleName) &&
         Objects.equals(this.isLocked, consumerData.isLocked) &&
-        Objects.equals(this.isDataRestricted, consumerData.isDataRestricted);
+        Objects.equals(this.isDataRestricted, consumerData.isDataRestricted) &&
+        Objects.equals(this.isDataPrivateRestricted, consumerData.isDataPrivateRestricted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uniqueId, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted);
+    return Objects.hash(id, uniqueId, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted, isDataPrivateRestricted);
   }
 
 
@@ -284,6 +306,7 @@ public class ConsumerData  {
     sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
     sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
     sb.append("    isDataRestricted: ").append(toIndentedString(isDataRestricted)).append("\n");
+    sb.append("    isDataPrivateRestricted: ").append(toIndentedString(isDataPrivateRestricted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

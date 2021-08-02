@@ -33,7 +33,7 @@ namespace Splitit.SDK.Client.Model
         /// </summary>
         /// <param name="responseHeader">responseHeader.</param>
         /// <param name="paymentGatewaytransactionResponses">paymentGatewaytransactionResponses.</param>
-        public GetPGTLResponse(ResponseHeader responseHeader = default(ResponseHeader), Dictionary<string, List<PaymentGatewayTransactionLogs>> paymentGatewaytransactionResponses = default(Dictionary<string, List<PaymentGatewayTransactionLogs>>))
+        public GetPGTLResponse(ResponseHeader responseHeader = default(ResponseHeader), Dictionary<string, List<PgtlDto>> paymentGatewaytransactionResponses = default(Dictionary<string, List<PgtlDto>>))
         {
             this.ResponseHeader = responseHeader;
             this.PaymentGatewaytransactionResponses = paymentGatewaytransactionResponses;
@@ -50,7 +50,7 @@ namespace Splitit.SDK.Client.Model
         /// Gets or Sets PaymentGatewaytransactionResponses
         /// </summary>
         [DataMember(Name="paymentGatewaytransactionResponses", EmitDefaultValue=false)]
-        public Dictionary<string, List<PaymentGatewayTransactionLogs>> PaymentGatewaytransactionResponses { get; set; }
+        public Dictionary<string, List<PgtlDto>> PaymentGatewaytransactionResponses { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

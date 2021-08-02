@@ -25,6 +25,7 @@ import com.splitit.sdk.model.FraudCheckResult;
 import com.splitit.sdk.model.InstallmentPlanDateInfo;
 import com.splitit.sdk.model.InstallmentPlanInitiatedStatuses;
 import com.splitit.sdk.model.InstallmentPlanStatus;
+import com.splitit.sdk.model.PlanStrategy;
 import com.splitit.sdk.model.TestModes;
 import com.splitit.sdk.model.TransactionInfo;
 import io.swagger.annotations.ApiModel;
@@ -37,7 +38,7 @@ import java.util.List;
 /**
  * InstallmentPlanQueryCriteria
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-02T10:18:45.756Z")
 public class InstallmentPlanQueryCriteria  {
   @SerializedName("MerchantId")
   private Long merchantId = null;
@@ -80,6 +81,12 @@ public class InstallmentPlanQueryCriteria  {
 
   @SerializedName("ShowChargebackPlans")
   private Boolean showChargebackPlans = null;
+
+  @SerializedName("IsInAutoRetry")
+  private Boolean isInAutoRetry = null;
+
+  @SerializedName("Strategy")
+  private PlanStrategy strategy = null;
 
   @SerializedName("InitiatedStatuses")
   private InstallmentPlanInitiatedStatuses initiatedStatuses = null;
@@ -354,6 +361,42 @@ public class InstallmentPlanQueryCriteria  {
     this.showChargebackPlans = showChargebackPlans;
   }
 
+  public InstallmentPlanQueryCriteria isInAutoRetry(Boolean isInAutoRetry) {
+    this.isInAutoRetry = isInAutoRetry;
+    return this;
+  }
+
+   /**
+   * Get isInAutoRetry
+   * @return isInAutoRetry
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsInAutoRetry() {
+    return isInAutoRetry;
+  }
+
+  public void setIsInAutoRetry(Boolean isInAutoRetry) {
+    this.isInAutoRetry = isInAutoRetry;
+  }
+
+  public InstallmentPlanQueryCriteria strategy(PlanStrategy strategy) {
+    this.strategy = strategy;
+    return this;
+  }
+
+   /**
+   * Get strategy
+   * @return strategy
+  **/
+  @ApiModelProperty(value = "")
+  public PlanStrategy getStrategy() {
+    return strategy;
+  }
+
+  public void setStrategy(PlanStrategy strategy) {
+    this.strategy = strategy;
+  }
+
   public InstallmentPlanQueryCriteria initiatedStatuses(InstallmentPlanInitiatedStatuses initiatedStatuses) {
     this.initiatedStatuses = initiatedStatuses;
     return this;
@@ -528,6 +571,8 @@ public class InstallmentPlanQueryCriteria  {
         Objects.equals(this.anyFilter, installmentPlanQueryCriteria.anyFilter) &&
         Objects.equals(this.eula, installmentPlanQueryCriteria.eula) &&
         Objects.equals(this.showChargebackPlans, installmentPlanQueryCriteria.showChargebackPlans) &&
+        Objects.equals(this.isInAutoRetry, installmentPlanQueryCriteria.isInAutoRetry) &&
+        Objects.equals(this.strategy, installmentPlanQueryCriteria.strategy) &&
         Objects.equals(this.initiatedStatuses, installmentPlanQueryCriteria.initiatedStatuses) &&
         Objects.equals(this.fraudCheckResult, installmentPlanQueryCriteria.fraudCheckResult) &&
         Objects.equals(this.installmentsPlanStatuses, installmentPlanQueryCriteria.installmentsPlanStatuses) &&
@@ -539,7 +584,7 @@ public class InstallmentPlanQueryCriteria  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, currencyId, installmentPlanId, installmentPlanNumber, refOrderNumber, installmentPlanAmount, cardNumber, consumerName, consumerEmail, cardHolder, pisMemberId, anyFilter, eula, showChargebackPlans, initiatedStatuses, fraudCheckResult, installmentsPlanStatuses, testModes, delayResolutions, transactionInformation, dateInfo);
+    return Objects.hash(merchantId, currencyId, installmentPlanId, installmentPlanNumber, refOrderNumber, installmentPlanAmount, cardNumber, consumerName, consumerEmail, cardHolder, pisMemberId, anyFilter, eula, showChargebackPlans, isInAutoRetry, strategy, initiatedStatuses, fraudCheckResult, installmentsPlanStatuses, testModes, delayResolutions, transactionInformation, dateInfo);
   }
 
 
@@ -563,6 +608,8 @@ public class InstallmentPlanQueryCriteria  {
     sb.append("    anyFilter: ").append(toIndentedString(anyFilter)).append("\n");
     sb.append("    eula: ").append(toIndentedString(eula)).append("\n");
     sb.append("    showChargebackPlans: ").append(toIndentedString(showChargebackPlans)).append("\n");
+    sb.append("    isInAutoRetry: ").append(toIndentedString(isInAutoRetry)).append("\n");
+    sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
     sb.append("    initiatedStatuses: ").append(toIndentedString(initiatedStatuses)).append("\n");
     sb.append("    fraudCheckResult: ").append(toIndentedString(fraudCheckResult)).append("\n");
     sb.append("    installmentsPlanStatuses: ").append(toIndentedString(installmentsPlanStatuses)).append("\n");

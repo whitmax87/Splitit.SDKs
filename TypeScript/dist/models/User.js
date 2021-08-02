@@ -33,6 +33,7 @@ function UserFromJSONTyped(json, ignoreDiscriminator) {
         'roleName': !runtime_1.exists(json, 'RoleName') ? undefined : json['RoleName'],
         'isLocked': json['IsLocked'],
         'isDataRestricted': json['IsDataRestricted'],
+        'isDataPrivateRestricted': json['IsDataPrivateRestricted'],
     };
 }
 exports.UserFromJSONTyped = UserFromJSONTyped;
@@ -54,6 +55,7 @@ function UserToJSON(value) {
         'RoleName': value.roleName,
         'IsLocked': value.isLocked,
         'IsDataRestricted': value.isDataRestricted,
+        'IsDataPrivateRestricted': value.isDataPrivateRestricted,
     };
 }
 exports.UserToJSON = UserToJSON;

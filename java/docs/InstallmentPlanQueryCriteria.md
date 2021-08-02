@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **anyFilter** | **String** |  |  [optional]
 **eula** | **Boolean** |  | 
 **showChargebackPlans** | **Boolean** |  | 
+**isInAutoRetry** | **Boolean** |  |  [optional]
+**strategy** | [**PlanStrategy**](PlanStrategy.md) |  |  [optional]
 **initiatedStatuses** | [**InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  |  [optional]
 **fraudCheckResult** | [**FraudCheckResult**](FraudCheckResult.md) |  |  [optional]
 **installmentsPlanStatuses** | [**List&lt;InstallmentPlanStatus&gt;**](InstallmentPlanStatus.md) |  |  [optional]

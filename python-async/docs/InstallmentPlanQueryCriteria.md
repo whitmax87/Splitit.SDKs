@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **any_filter** | **str** |  | [optional] 
 **eula** | **bool** |  | 
 **show_chargeback_plans** | **bool** |  | 
+**is_in_auto_retry** | **bool** |  | [optional] 
+**strategy** | [**PlanStrategy**](PlanStrategy.md) |  | [optional] 
 **initiated_statuses** | [**InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **fraud_check_result** | [**FraudCheckResult**](FraudCheckResult.md) |  | [optional] 
 **installments_plan_statuses** | [**list[InstallmentPlanStatus]**](InstallmentPlanStatus.md) |  | [optional] 

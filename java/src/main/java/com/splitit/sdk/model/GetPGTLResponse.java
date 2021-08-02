@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.splitit.sdk.model.PaymentGatewayTransactionLogs;
+import com.splitit.sdk.model.PgtlDto;
 import com.splitit.sdk.model.ResponseHeader;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,13 +32,13 @@ import java.util.Map;
 /**
  * GetPGTLResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-02T10:18:45.756Z")
 public class GetPGTLResponse  {
   @SerializedName("ResponseHeader")
   private ResponseHeader responseHeader = null;
 
   @SerializedName("paymentGatewaytransactionResponses")
-  private Map<String, List<PaymentGatewayTransactionLogs>> paymentGatewaytransactionResponses = null;
+  private Map<String, List<PgtlDto>> paymentGatewaytransactionResponses = null;
 
   public GetPGTLResponse responseHeader(ResponseHeader responseHeader) {
     this.responseHeader = responseHeader;
@@ -58,14 +58,14 @@ public class GetPGTLResponse  {
     this.responseHeader = responseHeader;
   }
 
-  public GetPGTLResponse paymentGatewaytransactionResponses(Map<String, List<PaymentGatewayTransactionLogs>> paymentGatewaytransactionResponses) {
+  public GetPGTLResponse paymentGatewaytransactionResponses(Map<String, List<PgtlDto>> paymentGatewaytransactionResponses) {
     this.paymentGatewaytransactionResponses = paymentGatewaytransactionResponses;
     return this;
   }
 
-  public GetPGTLResponse putPaymentGatewaytransactionResponsesItem(String key, List<PaymentGatewayTransactionLogs> paymentGatewaytransactionResponsesItem) {
+  public GetPGTLResponse putPaymentGatewaytransactionResponsesItem(String key, List<PgtlDto> paymentGatewaytransactionResponsesItem) {
     if (this.paymentGatewaytransactionResponses == null) {
-      this.paymentGatewaytransactionResponses = new HashMap<String, List<PaymentGatewayTransactionLogs>>();
+      this.paymentGatewaytransactionResponses = new HashMap<String, List<PgtlDto>>();
     }
     this.paymentGatewaytransactionResponses.put(key, paymentGatewaytransactionResponsesItem);
     return this;
@@ -76,11 +76,11 @@ public class GetPGTLResponse  {
    * @return paymentGatewaytransactionResponses
   **/
   @ApiModelProperty(value = "")
-  public Map<String, List<PaymentGatewayTransactionLogs>> getPaymentGatewaytransactionResponses() {
+  public Map<String, List<PgtlDto>> getPaymentGatewaytransactionResponses() {
     return paymentGatewaytransactionResponses;
   }
 
-  public void setPaymentGatewaytransactionResponses(Map<String, List<PaymentGatewayTransactionLogs>> paymentGatewaytransactionResponses) {
+  public void setPaymentGatewaytransactionResponses(Map<String, List<PgtlDto>> paymentGatewaytransactionResponses) {
     this.paymentGatewaytransactionResponses = paymentGatewaytransactionResponses;
   }
 

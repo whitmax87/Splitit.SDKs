@@ -11,12 +11,12 @@
  */
 
 import { RequestFile } from '../api';
-import { PaymentGatewayTransactionLogs } from './paymentGatewayTransactionLogs';
+import { PgtlDto } from './pgtlDto';
 import { ResponseHeader } from './responseHeader';
 
 export class GetPGTLResponse {
     'responseHeader'?: ResponseHeader;
-    'paymentGatewaytransactionResponses'?: { [key: string]: Array<PaymentGatewayTransactionLogs>; };
+    'paymentGatewaytransactionResponses'?: { [key: string]: Array<PgtlDto>; };
 
     static discriminator: string | undefined = undefined;
 
@@ -29,7 +29,7 @@ export class GetPGTLResponse {
         {
             "name": "paymentGatewaytransactionResponses",
             "baseName": "paymentGatewaytransactionResponses",
-            "type": "{ [key: string]: Array<PaymentGatewayTransactionLogs>; }"
+            "type": "{ [key: string]: Array<PgtlDto>; }"
         }    ];
 
     static getAttributeTypeMap() {

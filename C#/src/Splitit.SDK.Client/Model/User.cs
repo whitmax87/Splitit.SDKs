@@ -46,10 +46,12 @@ namespace Splitit.SDK.Client.Model
         /// <param name="roleName">roleName.</param>
         /// <param name="isLocked">isLocked (required).</param>
         /// <param name="isDataRestricted">isDataRestricted (required).</param>
-        public User(string id = default(string), string uniqueId = default(string), string userName = default(string), string fullName = default(string), string email = default(string), string phoneNumber = default(string), string cultureName = default(string), string roleName = default(string), bool? isLocked = default(bool?), bool? isDataRestricted = default(bool?))
+        /// <param name="isDataPrivateRestricted">isDataPrivateRestricted (required).</param>
+        public User(string id = default(string), string uniqueId = default(string), string userName = default(string), string fullName = default(string), string email = default(string), string phoneNumber = default(string), string cultureName = default(string), string roleName = default(string), bool? isLocked = default(bool?), bool? isDataRestricted = default(bool?), bool? isDataPrivateRestricted = default(bool?))
         {
             this.IsLocked = isLocked;
             this.IsDataRestricted = isDataRestricted;
+            this.IsDataPrivateRestricted = isDataPrivateRestricted;
             this.Id = id;
             this.UniqueId = uniqueId;
             this.UserName = userName;
@@ -122,6 +124,12 @@ namespace Splitit.SDK.Client.Model
         public bool? IsDataRestricted { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsDataPrivateRestricted
+        /// </summary>
+        [DataMember(Name="IsDataPrivateRestricted", EmitDefaultValue=false)]
+        public bool? IsDataPrivateRestricted { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -139,6 +147,7 @@ namespace Splitit.SDK.Client.Model
             sb.Append("  RoleName: ").Append(RoleName).Append("\n");
             sb.Append("  IsLocked: ").Append(IsLocked).Append("\n");
             sb.Append("  IsDataRestricted: ").Append(IsDataRestricted).Append("\n");
+            sb.Append("  IsDataPrivateRestricted: ").Append(IsDataPrivateRestricted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -222,6 +231,11 @@ namespace Splitit.SDK.Client.Model
                     this.IsDataRestricted == input.IsDataRestricted ||
                     (this.IsDataRestricted != null &&
                     this.IsDataRestricted.Equals(input.IsDataRestricted))
+                ) && 
+                (
+                    this.IsDataPrivateRestricted == input.IsDataPrivateRestricted ||
+                    (this.IsDataPrivateRestricted != null &&
+                    this.IsDataPrivateRestricted.Equals(input.IsDataPrivateRestricted))
                 );
         }
 
@@ -254,6 +268,8 @@ namespace Splitit.SDK.Client.Model
                     hashCode = hashCode * 59 + this.IsLocked.GetHashCode();
                 if (this.IsDataRestricted != null)
                     hashCode = hashCode * 59 + this.IsDataRestricted.GetHashCode();
+                if (this.IsDataPrivateRestricted != null)
+                    hashCode = hashCode * 59 + this.IsDataPrivateRestricted.GetHashCode();
                 return hashCode;
             }
         }

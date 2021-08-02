@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DelayResolution, FraudCheckResult, InstallmentPlanDateInfo, InstallmentPlanInitiatedStatuses, InstallmentPlanStatus, TestModes, TransactionInfo } from './';
+import { DelayResolution, FraudCheckResult, InstallmentPlanDateInfo, InstallmentPlanInitiatedStatuses, InstallmentPlanStatus, PlanStrategy, TestModes, TransactionInfo } from './';
 /**
  *
  * @export
@@ -100,6 +100,18 @@ export interface InstallmentPlanQueryCriteria {
      * @memberof InstallmentPlanQueryCriteria
      */
     showChargebackPlans: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof InstallmentPlanQueryCriteria
+     */
+    isInAutoRetry?: boolean;
+    /**
+     *
+     * @type {PlanStrategy}
+     * @memberof InstallmentPlanQueryCriteria
+     */
+    strategy?: PlanStrategy;
     /**
      *
      * @type {InstallmentPlanInitiatedStatuses}

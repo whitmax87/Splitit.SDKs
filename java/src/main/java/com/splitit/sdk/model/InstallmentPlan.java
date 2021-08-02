@@ -26,6 +26,7 @@ import com.splitit.sdk.model.FraudCheck;
 import com.splitit.sdk.model.Installment2;
 import com.splitit.sdk.model.MerchantRef;
 import com.splitit.sdk.model.Money;
+import com.splitit.sdk.model.MoneyFlows;
 import com.splitit.sdk.model.ReAuthorization;
 import com.splitit.sdk.model.ReferenceEntityBase;
 import com.splitit.sdk.model.TestModes;
@@ -42,7 +43,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * InstallmentPlan
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-02T10:18:45.756Z")
 public class InstallmentPlan  {
   @SerializedName("InstallmentPlanNumber")
   private String installmentPlanNumber = null;
@@ -107,14 +108,17 @@ public class InstallmentPlan  {
   @SerializedName("ScpFundingPercent")
   private BigDecimal scpFundingPercent = null;
 
-  @SerializedName("IsFunded")
-  private Boolean isFunded = null;
+  @SerializedName("FundingStatus")
+  private MoneyFlows fundingStatus = null;
 
   @SerializedName("TestMode")
   private TestModes testMode = null;
 
   @SerializedName("CreationDateTime")
   private OffsetDateTime creationDateTime = null;
+
+  @SerializedName("LifeTimeUrlExpirationTime")
+  private OffsetDateTime lifeTimeUrlExpirationTime = null;
 
   @SerializedName("Installments")
   private List<Installment2> installments = null;
@@ -124,6 +128,9 @@ public class InstallmentPlan  {
 
   @SerializedName("LogoUrl")
   private String logoUrl = null;
+
+  @SerializedName("IsInAutoRetry")
+  private Boolean isInAutoRetry = null;
 
   public InstallmentPlan installmentPlanNumber(String installmentPlanNumber) {
     this.installmentPlanNumber = installmentPlanNumber;
@@ -511,22 +518,22 @@ public class InstallmentPlan  {
     this.scpFundingPercent = scpFundingPercent;
   }
 
-  public InstallmentPlan isFunded(Boolean isFunded) {
-    this.isFunded = isFunded;
+  public InstallmentPlan fundingStatus(MoneyFlows fundingStatus) {
+    this.fundingStatus = fundingStatus;
     return this;
   }
 
    /**
-   * Get isFunded
-   * @return isFunded
+   * Get fundingStatus
+   * @return fundingStatus
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isIsFunded() {
-    return isFunded;
+  public MoneyFlows getFundingStatus() {
+    return fundingStatus;
   }
 
-  public void setIsFunded(Boolean isFunded) {
-    this.isFunded = isFunded;
+  public void setFundingStatus(MoneyFlows fundingStatus) {
+    this.fundingStatus = fundingStatus;
   }
 
   public InstallmentPlan testMode(TestModes testMode) {
@@ -563,6 +570,24 @@ public class InstallmentPlan  {
 
   public void setCreationDateTime(OffsetDateTime creationDateTime) {
     this.creationDateTime = creationDateTime;
+  }
+
+  public InstallmentPlan lifeTimeUrlExpirationTime(OffsetDateTime lifeTimeUrlExpirationTime) {
+    this.lifeTimeUrlExpirationTime = lifeTimeUrlExpirationTime;
+    return this;
+  }
+
+   /**
+   * Get lifeTimeUrlExpirationTime
+   * @return lifeTimeUrlExpirationTime
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public OffsetDateTime getLifeTimeUrlExpirationTime() {
+    return lifeTimeUrlExpirationTime;
+  }
+
+  public void setLifeTimeUrlExpirationTime(OffsetDateTime lifeTimeUrlExpirationTime) {
+    this.lifeTimeUrlExpirationTime = lifeTimeUrlExpirationTime;
   }
 
   public InstallmentPlan installments(List<Installment2> installments) {
@@ -635,6 +660,24 @@ public class InstallmentPlan  {
     this.logoUrl = logoUrl;
   }
 
+  public InstallmentPlan isInAutoRetry(Boolean isInAutoRetry) {
+    this.isInAutoRetry = isInAutoRetry;
+    return this;
+  }
+
+   /**
+   * Get isInAutoRetry
+   * @return isInAutoRetry
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsInAutoRetry() {
+    return isInAutoRetry;
+  }
+
+  public void setIsInAutoRetry(Boolean isInAutoRetry) {
+    this.isInAutoRetry = isInAutoRetry;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -666,17 +709,19 @@ public class InstallmentPlan  {
         Objects.equals(this.isChargedBack, installmentPlan.isChargedBack) &&
         Objects.equals(this.arePaymentsOnHold, installmentPlan.arePaymentsOnHold) &&
         Objects.equals(this.scpFundingPercent, installmentPlan.scpFundingPercent) &&
-        Objects.equals(this.isFunded, installmentPlan.isFunded) &&
+        Objects.equals(this.fundingStatus, installmentPlan.fundingStatus) &&
         Objects.equals(this.testMode, installmentPlan.testMode) &&
         Objects.equals(this.creationDateTime, installmentPlan.creationDateTime) &&
+        Objects.equals(this.lifeTimeUrlExpirationTime, installmentPlan.lifeTimeUrlExpirationTime) &&
         Objects.equals(this.installments, installmentPlan.installments) &&
         Objects.equals(this.secureAuthorizations, installmentPlan.secureAuthorizations) &&
-        Objects.equals(this.logoUrl, installmentPlan.logoUrl);
+        Objects.equals(this.logoUrl, installmentPlan.logoUrl) &&
+        Objects.equals(this.isInAutoRetry, installmentPlan.isInAutoRetry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, isFunded, testMode, creationDateTime, installments, secureAuthorizations, logoUrl);
+    return Objects.hash(installmentPlanNumber, installmentPlanStatus, amount, outstandingAmount, numberOfInstallments, numberOfProcessedInstallments, originalAmount, refundAmount, consumer, activeCard, fraudCheck, merchant, refOrderNumber, purchaseMethod, strategy, delayResolution, extendedParams, isFullCaptured, isChargedBack, arePaymentsOnHold, scpFundingPercent, fundingStatus, testMode, creationDateTime, lifeTimeUrlExpirationTime, installments, secureAuthorizations, logoUrl, isInAutoRetry);
   }
 
 
@@ -707,12 +752,14 @@ public class InstallmentPlan  {
     sb.append("    isChargedBack: ").append(toIndentedString(isChargedBack)).append("\n");
     sb.append("    arePaymentsOnHold: ").append(toIndentedString(arePaymentsOnHold)).append("\n");
     sb.append("    scpFundingPercent: ").append(toIndentedString(scpFundingPercent)).append("\n");
-    sb.append("    isFunded: ").append(toIndentedString(isFunded)).append("\n");
+    sb.append("    fundingStatus: ").append(toIndentedString(fundingStatus)).append("\n");
     sb.append("    testMode: ").append(toIndentedString(testMode)).append("\n");
     sb.append("    creationDateTime: ").append(toIndentedString(creationDateTime)).append("\n");
+    sb.append("    lifeTimeUrlExpirationTime: ").append(toIndentedString(lifeTimeUrlExpirationTime)).append("\n");
     sb.append("    installments: ").append(toIndentedString(installments)).append("\n");
     sb.append("    secureAuthorizations: ").append(toIndentedString(secureAuthorizations)).append("\n");
     sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
+    sb.append("    isInAutoRetry: ").append(toIndentedString(isInAutoRetry)).append("\n");
     sb.append("}");
     return sb.toString();
   }

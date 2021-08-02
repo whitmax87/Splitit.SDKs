@@ -14,10 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
-    PaymentGatewayTransactionLogs,
-    PaymentGatewayTransactionLogsFromJSON,
-    PaymentGatewayTransactionLogsFromJSONTyped,
-    PaymentGatewayTransactionLogsToJSON,
+    PgtlDto,
+    PgtlDtoFromJSON,
+    PgtlDtoFromJSONTyped,
+    PgtlDtoToJSON,
     ResponseHeader,
     ResponseHeaderFromJSON,
     ResponseHeaderFromJSONTyped,
@@ -38,10 +38,10 @@ export interface GetPGTLResponse {
     responseHeader?: ResponseHeader;
     /**
      * 
-     * @type {{ [key: string]: Array<PaymentGatewayTransactionLogs>; }}
+     * @type {{ [key: string]: Array<PgtlDto>; }}
      * @memberof GetPGTLResponse
      */
-    paymentGatewaytransactionResponses?: { [key: string]: Array<PaymentGatewayTransactionLogs>; };
+    paymentGatewaytransactionResponses?: { [key: string]: Array<PgtlDto>; };
 }
 
 export function GetPGTLResponseFromJSON(json: any): GetPGTLResponse {

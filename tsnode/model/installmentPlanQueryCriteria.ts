@@ -16,6 +16,7 @@ import { FraudCheckResult } from './fraudCheckResult';
 import { InstallmentPlanDateInfo } from './installmentPlanDateInfo';
 import { InstallmentPlanInitiatedStatuses } from './installmentPlanInitiatedStatuses';
 import { InstallmentPlanStatus } from './installmentPlanStatus';
+import { PlanStrategy } from './planStrategy';
 import { TestModes } from './testModes';
 import { TransactionInfo } from './transactionInfo';
 
@@ -34,6 +35,8 @@ export class InstallmentPlanQueryCriteria {
     'anyFilter'?: string;
     'eula': boolean;
     'showChargebackPlans': boolean;
+    'isInAutoRetry'?: boolean;
+    'strategy'?: PlanStrategy;
     'initiatedStatuses'?: InstallmentPlanInitiatedStatuses;
     'fraudCheckResult'?: FraudCheckResult;
     'installmentsPlanStatuses'?: Array<InstallmentPlanStatus>;
@@ -114,6 +117,16 @@ export class InstallmentPlanQueryCriteria {
             "name": "showChargebackPlans",
             "baseName": "ShowChargebackPlans",
             "type": "boolean"
+        },
+        {
+            "name": "isInAutoRetry",
+            "baseName": "IsInAutoRetry",
+            "type": "boolean"
+        },
+        {
+            "name": "strategy",
+            "baseName": "Strategy",
+            "type": "PlanStrategy"
         },
         {
             "name": "initiatedStatuses",

@@ -94,7 +94,7 @@ export class BaseAPI {
 	    ? context.body
 	    : JSON.stringify(context.body);
 
-        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.6.8"});
+        const headers = Object.assign({}, this.configuration.headers, context.headers, {"Splitit-SDK": "TypeScript-1.6.9"});
         const init = {
             method: context.method,
             headers: headers,

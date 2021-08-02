@@ -25,12 +25,14 @@ Name | Type | Description | Notes
 **isChargedBack** | **Boolean** |  | 
 **arePaymentsOnHold** | **Boolean** |  | 
 **scpFundingPercent** | [**BigDecimal**](BigDecimal.md) |  | 
-**isFunded** | **Boolean** |  | 
+**fundingStatus** | [**MoneyFlows**](MoneyFlows.md) |  | 
 **testMode** | [**TestModes**](TestModes.md) |  | 
 **creationDateTime** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**lifeTimeUrlExpirationTime** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
 **installments** | [**List&lt;Installment2&gt;**](Installment2.md) |  |  [optional]
 **secureAuthorizations** | [**List&lt;ReAuthorization&gt;**](ReAuthorization.md) |  |  [optional]
 **logoUrl** | **String** |  |  [optional]
+**isInAutoRetry** | **Boolean** |  | 
 
 
 

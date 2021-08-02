@@ -24,6 +24,7 @@ var MoneyFlows;
     MoneyFlows["Monthly"] = "Monthly";
     MoneyFlows["SCP"] = "SCP";
     MoneyFlows["Custom"] = "Custom";
+    MoneyFlows["PendingFunding"] = "PendingFunding";
     MoneyFlows["Choose"] = "Choose";
 })(MoneyFlows = exports.MoneyFlows || (exports.MoneyFlows = {}));
 function MoneyFlowsFromJSON(json) {

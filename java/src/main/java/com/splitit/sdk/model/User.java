@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * User
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-31T11:14:42.224Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-02T10:18:45.756Z")
 public class User  {
   @SerializedName("Id")
   private String id = null;
@@ -58,6 +58,9 @@ public class User  {
 
   @SerializedName("IsDataRestricted")
   private Boolean isDataRestricted = null;
+
+  @SerializedName("IsDataPrivateRestricted")
+  private Boolean isDataPrivateRestricted = null;
 
   public User id(String id) {
     this.id = id;
@@ -239,6 +242,24 @@ public class User  {
     this.isDataRestricted = isDataRestricted;
   }
 
+  public User isDataPrivateRestricted(Boolean isDataPrivateRestricted) {
+    this.isDataPrivateRestricted = isDataPrivateRestricted;
+    return this;
+  }
+
+   /**
+   * Get isDataPrivateRestricted
+   * @return isDataPrivateRestricted
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean isIsDataPrivateRestricted() {
+    return isDataPrivateRestricted;
+  }
+
+  public void setIsDataPrivateRestricted(Boolean isDataPrivateRestricted) {
+    this.isDataPrivateRestricted = isDataPrivateRestricted;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -258,12 +279,13 @@ public class User  {
         Objects.equals(this.cultureName, user.cultureName) &&
         Objects.equals(this.roleName, user.roleName) &&
         Objects.equals(this.isLocked, user.isLocked) &&
-        Objects.equals(this.isDataRestricted, user.isDataRestricted);
+        Objects.equals(this.isDataRestricted, user.isDataRestricted) &&
+        Objects.equals(this.isDataPrivateRestricted, user.isDataPrivateRestricted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uniqueId, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted);
+    return Objects.hash(id, uniqueId, userName, fullName, email, phoneNumber, cultureName, roleName, isLocked, isDataRestricted, isDataPrivateRestricted);
   }
 
 
@@ -283,6 +305,7 @@ public class User  {
     sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
     sb.append("    isLocked: ").append(toIndentedString(isLocked)).append("\n");
     sb.append("    isDataRestricted: ").append(toIndentedString(isDataRestricted)).append("\n");
+    sb.append("    isDataPrivateRestricted: ").append(toIndentedString(isDataPrivateRestricted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

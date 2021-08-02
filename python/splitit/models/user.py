@@ -40,7 +40,8 @@ class User(object):
         'culture_name': 'str',
         'role_name': 'str',
         'is_locked': 'bool',
-        'is_data_restricted': 'bool'
+        'is_data_restricted': 'bool',
+        'is_data_private_restricted': 'bool'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class User(object):
         'culture_name': 'CultureName',
         'role_name': 'RoleName',
         'is_locked': 'IsLocked',
-        'is_data_restricted': 'IsDataRestricted'
+        'is_data_restricted': 'IsDataRestricted',
+        'is_data_private_restricted': 'IsDataPrivateRestricted'
     }
 
-    def __init__(self, id=None, unique_id=None, user_name=None, full_name=None, email=None, phone_number=None, culture_name=None, role_name=None, is_locked=None, is_data_restricted=None):  # noqa: E501
+    def __init__(self, id=None, unique_id=None, user_name=None, full_name=None, email=None, phone_number=None, culture_name=None, role_name=None, is_locked=None, is_data_restricted=None, is_data_private_restricted=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -69,6 +71,7 @@ class User(object):
         self._role_name = None
         self._is_locked = None
         self._is_data_restricted = None
+        self._is_data_private_restricted = None
         self.discriminator = None
 
         if id is not None:
@@ -89,6 +92,7 @@ class User(object):
             self._role_name = role_name
         self._is_locked = is_locked
         self._is_data_restricted = is_data_restricted
+        self._is_data_private_restricted = is_data_private_restricted
 
     @property
     def id(self):
@@ -305,6 +309,30 @@ class User(object):
             raise ValueError("Invalid value for `is_data_restricted`, must not be `None`")  # noqa: E501
 
         self._is_data_restricted = is_data_restricted
+
+    @property
+    def is_data_private_restricted(self):
+        """Gets the is_data_private_restricted of this User.  # noqa: E501
+
+
+        :return: The is_data_private_restricted of this User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_data_private_restricted
+
+    @is_data_private_restricted.setter
+    def is_data_private_restricted(self, is_data_private_restricted):
+        """Sets the is_data_private_restricted of this User.
+
+
+        :param is_data_private_restricted: The is_data_private_restricted of this User.  # noqa: E501
+        :type: bool
+        """
+        is_data_private_restricted = bool(is_data_private_restricted)
+        if is_data_private_restricted is None:
+            raise ValueError("Invalid value for `is_data_private_restricted`, must not be `None`")  # noqa: E501
+
+        self._is_data_private_restricted = is_data_private_restricted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

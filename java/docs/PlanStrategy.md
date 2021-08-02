@@ -16,7 +16,9 @@
 
 * `EXTERNALINSTALLMENTPROVIDER` (value: `"ExternalInstallmentProvider"`)
 
-* `SECUREDPLAN4` (value: `"SecuredPlan4"`)
+* `SECUREDPLAN3A` (value: `"SecuredPlan3A"`)
+
+* `SECUREDPLAN3B` (value: `"SecuredPlan3B"`)
 
 
 

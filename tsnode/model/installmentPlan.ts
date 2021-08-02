@@ -17,6 +17,7 @@ import { FraudCheck } from './fraudCheck';
 import { Installment2 } from './installment2';
 import { MerchantRef } from './merchantRef';
 import { Money } from './money';
+import { MoneyFlows } from './moneyFlows';
 import { ReAuthorization } from './reAuthorization';
 import { ReferenceEntityBase } from './referenceEntityBase';
 import { TestModes } from './testModes';
@@ -43,12 +44,14 @@ export class InstallmentPlan {
     'isChargedBack': boolean;
     'arePaymentsOnHold': boolean;
     'scpFundingPercent': number;
-    'isFunded': boolean;
+    'fundingStatus': MoneyFlows;
     'testMode': TestModes;
     'creationDateTime': Date;
+    'lifeTimeUrlExpirationTime': Date;
     'installments'?: Array<Installment2>;
     'secureAuthorizations'?: Array<ReAuthorization>;
     'logoUrl'?: string;
+    'isInAutoRetry': boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -159,9 +162,9 @@ export class InstallmentPlan {
             "type": "number"
         },
         {
-            "name": "isFunded",
-            "baseName": "IsFunded",
-            "type": "boolean"
+            "name": "fundingStatus",
+            "baseName": "FundingStatus",
+            "type": "MoneyFlows"
         },
         {
             "name": "testMode",
@@ -171,6 +174,11 @@ export class InstallmentPlan {
         {
             "name": "creationDateTime",
             "baseName": "CreationDateTime",
+            "type": "Date"
+        },
+        {
+            "name": "lifeTimeUrlExpirationTime",
+            "baseName": "LifeTimeUrlExpirationTime",
             "type": "Date"
         },
         {
@@ -187,6 +195,11 @@ export class InstallmentPlan {
             "name": "logoUrl",
             "baseName": "LogoUrl",
             "type": "string"
+        },
+        {
+            "name": "isInAutoRetry",
+            "baseName": "IsInAutoRetry",
+            "type": "boolean"
         }    ];
 
     static getAttributeTypeMap() {

@@ -56,10 +56,16 @@ namespace Splitit.SDK.Client.Model
         Custom = 4,
         
         /// <summary>
+        /// Enum PendingFunding for value: PendingFunding
+        /// </summary>
+        [EnumMember(Value = "PendingFunding")]
+        PendingFunding = 5,
+        
+        /// <summary>
         /// Enum Choose for value: Choose
         /// </summary>
         [EnumMember(Value = "Choose")]
-        Choose = 5
+        Choose = 6
     }
 
 }

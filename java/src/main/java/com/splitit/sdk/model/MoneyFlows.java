@@ -38,6 +38,8 @@ public enum MoneyFlows {
   
   CUSTOM("Custom"),
   
+  PENDINGFUNDING("PendingFunding"),
+  
   CHOOSE("Choose");
 
   private String value;

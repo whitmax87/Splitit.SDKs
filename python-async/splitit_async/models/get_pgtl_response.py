@@ -32,7 +32,7 @@ class GetPGTLResponse(object):
     """
     swagger_types = {
         'response_header': 'ResponseHeader',
-        'payment_gatewaytransaction_responses': 'dict(str, list[PaymentGatewayTransactionLogs])'
+        'payment_gatewaytransaction_responses': 'dict(str, list[PgtlDto])'
     }
 
     attribute_map = {
@@ -79,7 +79,7 @@ class GetPGTLResponse(object):
 
 
         :return: The payment_gatewaytransaction_responses of this GetPGTLResponse.  # noqa: E501
-        :rtype: dict(str, list[PaymentGatewayTransactionLogs])
+        :rtype: dict(str, list[PgtlDto])
         """
         return self._payment_gatewaytransaction_responses
 
@@ -89,7 +89,7 @@ class GetPGTLResponse(object):
 
 
         :param payment_gatewaytransaction_responses: The payment_gatewaytransaction_responses of this GetPGTLResponse.  # noqa: E501
-        :type: dict(str, list[PaymentGatewayTransactionLogs])
+        :type: dict(str, list[PgtlDto])
         """
 
         self._payment_gatewaytransaction_responses = payment_gatewaytransaction_responses

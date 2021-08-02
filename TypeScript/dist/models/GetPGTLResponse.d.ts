@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PaymentGatewayTransactionLogs, ResponseHeader } from './';
+import { PgtlDto, ResponseHeader } from './';
 /**
  *
  * @export
@@ -24,11 +24,11 @@ export interface GetPGTLResponse {
     responseHeader?: ResponseHeader;
     /**
      *
-     * @type {{ [key: string]: Array<PaymentGatewayTransactionLogs>; }}
+     * @type {{ [key: string]: Array<PgtlDto>; }}
      * @memberof GetPGTLResponse
      */
     paymentGatewaytransactionResponses?: {
-        [key: string]: Array<PaymentGatewayTransactionLogs>;
+        [key: string]: Array<PgtlDto>;
     };
 }
 export declare function GetPGTLResponseFromJSON(json: any): GetPGTLResponse;

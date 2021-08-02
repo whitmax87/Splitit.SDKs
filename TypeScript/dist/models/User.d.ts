@@ -75,6 +75,12 @@ export interface User {
      * @memberof User
      */
     isDataRestricted: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof User
+     */
+    isDataPrivateRestricted: boolean;
 }
 export declare function UserFromJSON(json: any): User;
 export declare function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User;

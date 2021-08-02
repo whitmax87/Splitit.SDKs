@@ -38,6 +38,10 @@ import {
     MoneyFromJSON,
     MoneyFromJSONTyped,
     MoneyToJSON,
+    MoneyFlows,
+    MoneyFlowsFromJSON,
+    MoneyFlowsFromJSONTyped,
+    MoneyFlowsToJSON,
     ReAuthorization,
     ReAuthorizationFromJSON,
     ReAuthorizationFromJSONTyped,
@@ -186,10 +190,10 @@ export interface InstallmentPlan {
     scpFundingPercent: number;
     /**
      * 
-     * @type {boolean}
+     * @type {MoneyFlows}
      * @memberof InstallmentPlan
      */
-    isFunded: boolean;
+    fundingStatus: MoneyFlows;
     /**
      * 
      * @type {TestModes}
@@ -202,6 +206,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     creationDateTime: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof InstallmentPlan
+     */
+    lifeTimeUrlExpirationTime: Date;
     /**
      * 
      * @type {Array<Installment2>}
@@ -220,6 +230,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     logoUrl?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof InstallmentPlan
+     */
+    isInAutoRetry: boolean;
 }
 
 export function InstallmentPlanFromJSON(json: any): InstallmentPlan {
@@ -253,12 +269,14 @@ export function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boo
         'isChargedBack': json['IsChargedBack'],
         'arePaymentsOnHold': json['ArePaymentsOnHold'],
         'scpFundingPercent': json['ScpFundingPercent'],
-        'isFunded': json['IsFunded'],
+        'fundingStatus': MoneyFlowsFromJSON(json['FundingStatus']),
         'testMode': TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
+        'lifeTimeUrlExpirationTime': (new Date(json['LifeTimeUrlExpirationTime'])),
         'installments': !exists(json, 'Installments') ? undefined : ((json['Installments'] as Array<any>).map(Installment2FromJSON)),
         'secureAuthorizations': !exists(json, 'SecureAuthorizations') ? undefined : ((json['SecureAuthorizations'] as Array<any>).map(ReAuthorizationFromJSON)),
         'logoUrl': !exists(json, 'LogoUrl') ? undefined : json['LogoUrl'],
+        'isInAutoRetry': json['IsInAutoRetry'],
     };
 }
 
@@ -292,12 +310,14 @@ export function InstallmentPlanToJSON(value?: InstallmentPlan | null): any {
         'IsChargedBack': value.isChargedBack,
         'ArePaymentsOnHold': value.arePaymentsOnHold,
         'ScpFundingPercent': value.scpFundingPercent,
-        'IsFunded': value.isFunded,
+        'FundingStatus': MoneyFlowsToJSON(value.fundingStatus),
         'TestMode': TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
+        'LifeTimeUrlExpirationTime': (value.lifeTimeUrlExpirationTime.toISOString()),
         'Installments': value.installments === undefined ? undefined : ((value.installments as Array<any>).map(Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : ((value.secureAuthorizations as Array<any>).map(ReAuthorizationToJSON)),
         'LogoUrl': value.logoUrl,
+        'IsInAutoRetry': value.isInAutoRetry,
     };
 }
 

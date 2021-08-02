@@ -34,6 +34,10 @@ import {
     InstallmentPlanStatusFromJSON,
     InstallmentPlanStatusFromJSONTyped,
     InstallmentPlanStatusToJSON,
+    PlanStrategy,
+    PlanStrategyFromJSON,
+    PlanStrategyFromJSONTyped,
+    PlanStrategyToJSON,
     TestModes,
     TestModesFromJSON,
     TestModesFromJSONTyped,
@@ -136,6 +140,18 @@ export interface InstallmentPlanQueryCriteria {
     showChargebackPlans: boolean;
     /**
      * 
+     * @type {boolean}
+     * @memberof InstallmentPlanQueryCriteria
+     */
+    isInAutoRetry?: boolean;
+    /**
+     * 
+     * @type {PlanStrategy}
+     * @memberof InstallmentPlanQueryCriteria
+     */
+    strategy?: PlanStrategy;
+    /**
+     * 
      * @type {InstallmentPlanInitiatedStatuses}
      * @memberof InstallmentPlanQueryCriteria
      */
@@ -202,6 +218,8 @@ export function InstallmentPlanQueryCriteriaFromJSONTyped(json: any, ignoreDiscr
         'anyFilter': !exists(json, 'AnyFilter') ? undefined : json['AnyFilter'],
         'eula': json['Eula'],
         'showChargebackPlans': json['ShowChargebackPlans'],
+        'isInAutoRetry': !exists(json, 'IsInAutoRetry') ? undefined : json['IsInAutoRetry'],
+        'strategy': !exists(json, 'Strategy') ? undefined : PlanStrategyFromJSON(json['Strategy']),
         'initiatedStatuses': !exists(json, 'InitiatedStatuses') ? undefined : InstallmentPlanInitiatedStatusesFromJSON(json['InitiatedStatuses']),
         'fraudCheckResult': !exists(json, 'FraudCheckResult') ? undefined : FraudCheckResultFromJSON(json['FraudCheckResult']),
         'installmentsPlanStatuses': !exists(json, 'InstallmentsPlanStatuses') ? undefined : ((json['InstallmentsPlanStatuses'] as Array<any>).map(InstallmentPlanStatusFromJSON)),
@@ -235,6 +253,8 @@ export function InstallmentPlanQueryCriteriaToJSON(value?: InstallmentPlanQueryC
         'AnyFilter': value.anyFilter,
         'Eula': value.eula,
         'ShowChargebackPlans': value.showChargebackPlans,
+        'IsInAutoRetry': value.isInAutoRetry,
+        'Strategy': PlanStrategyToJSON(value.strategy),
         'InitiatedStatuses': InstallmentPlanInitiatedStatusesToJSON(value.initiatedStatuses),
         'FraudCheckResult': FraudCheckResultToJSON(value.fraudCheckResult),
         'InstallmentsPlanStatuses': value.installmentsPlanStatuses === undefined ? undefined : ((value.installmentsPlanStatuses as Array<any>).map(InstallmentPlanStatusToJSON)),

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **roleName** | **String** |  |  [optional]
 **isLocked** | **Boolean** |  | 
 **isDataRestricted** | **Boolean** |  | 
+**isDataPrivateRestricted** | **Boolean** |  | 
 
 
 

@@ -23,6 +23,7 @@ export class User {
     'roleName'?: string;
     'isLocked': boolean;
     'isDataRestricted': boolean;
+    'isDataPrivateRestricted': boolean;
 
     static discriminator: string | undefined = undefined;
 
@@ -75,6 +76,11 @@ export class User {
         {
             "name": "isDataRestricted",
             "baseName": "IsDataRestricted",
+            "type": "boolean"
+        },
+        {
+            "name": "isDataPrivateRestricted",
+            "baseName": "IsDataPrivateRestricted",
             "type": "boolean"
         }    ];
 

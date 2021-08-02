@@ -45,6 +45,8 @@ class InstallmentPlanQueryCriteria(object):
         'any_filter': 'str',
         'eula': 'bool',
         'show_chargeback_plans': 'bool',
+        'is_in_auto_retry': 'bool',
+        'strategy': 'PlanStrategy',
         'initiated_statuses': 'InstallmentPlanInitiatedStatuses',
         'fraud_check_result': 'FraudCheckResult',
         'installments_plan_statuses': 'list[InstallmentPlanStatus]',
@@ -69,6 +71,8 @@ class InstallmentPlanQueryCriteria(object):
         'any_filter': 'AnyFilter',
         'eula': 'Eula',
         'show_chargeback_plans': 'ShowChargebackPlans',
+        'is_in_auto_retry': 'IsInAutoRetry',
+        'strategy': 'Strategy',
         'initiated_statuses': 'InitiatedStatuses',
         'fraud_check_result': 'FraudCheckResult',
         'installments_plan_statuses': 'InstallmentsPlanStatuses',
@@ -78,7 +82,7 @@ class InstallmentPlanQueryCriteria(object):
         'date_info': 'DateInfo'
     }
 
-    def __init__(self, merchant_id=0, currency_id=0, installment_plan_id=0, installment_plan_number=None, ref_order_number=None, installment_plan_amount=0, card_number=None, consumer_name=None, consumer_email=None, card_holder=None, pis_member_id=0, any_filter=None, eula=False, show_chargeback_plans=False, initiated_statuses=None, fraud_check_result=None, installments_plan_statuses=None, test_modes=None, delay_resolutions=None, transaction_information=None, date_info=None):  # noqa: E501
+    def __init__(self, merchant_id=0, currency_id=0, installment_plan_id=0, installment_plan_number=None, ref_order_number=None, installment_plan_amount=0, card_number=None, consumer_name=None, consumer_email=None, card_holder=None, pis_member_id=0, any_filter=None, eula=False, show_chargeback_plans=False, is_in_auto_retry=None, strategy=None, initiated_statuses=None, fraud_check_result=None, installments_plan_statuses=None, test_modes=None, delay_resolutions=None, transaction_information=None, date_info=None):  # noqa: E501
         """InstallmentPlanQueryCriteria - a model defined in Swagger"""  # noqa: E501
 
         self._merchant_id = None
@@ -95,6 +99,8 @@ class InstallmentPlanQueryCriteria(object):
         self._any_filter = None
         self._eula = None
         self._show_chargeback_plans = None
+        self._is_in_auto_retry = None
+        self._strategy = None
         self._initiated_statuses = None
         self._fraud_check_result = None
         self._installments_plan_statuses = None
@@ -125,6 +131,10 @@ class InstallmentPlanQueryCriteria(object):
             self._any_filter = any_filter
         self._eula = eula
         self._show_chargeback_plans = show_chargeback_plans
+        if is_in_auto_retry is not None:
+            self._is_in_auto_retry = is_in_auto_retry
+        if strategy is not None:
+            self._strategy = strategy
         if initiated_statuses is not None:
             self._initiated_statuses = initiated_statuses
         if fraud_check_result is not None:
@@ -454,6 +464,48 @@ class InstallmentPlanQueryCriteria(object):
             raise ValueError("Invalid value for `show_chargeback_plans`, must not be `None`")  # noqa: E501
 
         self._show_chargeback_plans = show_chargeback_plans
+
+    @property
+    def is_in_auto_retry(self):
+        """Gets the is_in_auto_retry of this InstallmentPlanQueryCriteria.  # noqa: E501
+
+
+        :return: The is_in_auto_retry of this InstallmentPlanQueryCriteria.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_in_auto_retry
+
+    @is_in_auto_retry.setter
+    def is_in_auto_retry(self, is_in_auto_retry):
+        """Sets the is_in_auto_retry of this InstallmentPlanQueryCriteria.
+
+
+        :param is_in_auto_retry: The is_in_auto_retry of this InstallmentPlanQueryCriteria.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_in_auto_retry = is_in_auto_retry
+
+    @property
+    def strategy(self):
+        """Gets the strategy of this InstallmentPlanQueryCriteria.  # noqa: E501
+
+
+        :return: The strategy of this InstallmentPlanQueryCriteria.  # noqa: E501
+        :rtype: PlanStrategy
+        """
+        return self._strategy
+
+    @strategy.setter
+    def strategy(self, strategy):
+        """Sets the strategy of this InstallmentPlanQueryCriteria.
+
+
+        :param strategy: The strategy of this InstallmentPlanQueryCriteria.  # noqa: E501
+        :type: PlanStrategy
+        """
+
+        self._strategy = strategy
 
     @property
     def initiated_statuses(self):

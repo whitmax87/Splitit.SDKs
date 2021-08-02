@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { CardData, ConsumerData, FraudCheck, Installment2, MerchantRef, Money, ReAuthorization, ReferenceEntityBase, TestModes } from './';
+import { CardData, ConsumerData, FraudCheck, Installment2, MerchantRef, Money, MoneyFlows, ReAuthorization, ReferenceEntityBase, TestModes } from './';
 /**
  *
  * @export
@@ -146,10 +146,10 @@ export interface InstallmentPlan {
     scpFundingPercent: number;
     /**
      *
-     * @type {boolean}
+     * @type {MoneyFlows}
      * @memberof InstallmentPlan
      */
-    isFunded: boolean;
+    fundingStatus: MoneyFlows;
     /**
      *
      * @type {TestModes}
@@ -162,6 +162,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     creationDateTime: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof InstallmentPlan
+     */
+    lifeTimeUrlExpirationTime: Date;
     /**
      *
      * @type {Array<Installment2>}
@@ -180,6 +186,12 @@ export interface InstallmentPlan {
      * @memberof InstallmentPlan
      */
     logoUrl?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof InstallmentPlan
+     */
+    isInAutoRetry: boolean;
 }
 export declare function InstallmentPlanFromJSON(json: any): InstallmentPlan;
 export declare function InstallmentPlanFromJSONTyped(json: any, ignoreDiscriminator: boolean): InstallmentPlan;

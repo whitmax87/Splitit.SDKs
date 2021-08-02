@@ -24,12 +24,14 @@ Name | Type | Description | Notes
 **is_charged_back** | **bool** |  | 
 **are_payments_on_hold** | **bool** |  | 
 **scp_funding_percent** | **float** |  | 
-**is_funded** | **bool** |  | 
+**funding_status** | [**MoneyFlows**](MoneyFlows.md) |  | 
 **test_mode** | [**TestModes**](TestModes.md) |  | 
 **creation_date_time** | **datetime** |  | 
+**life_time_url_expiration_time** | **datetime** |  | 
 **installments** | [**list[Installment2]**](Installment2.md) |  | [optional] 
 **secure_authorizations** | [**list[ReAuthorization]**](ReAuthorization.md) |  | [optional] 
 **logo_url** | **str** |  | [optional] 
+**is_in_auto_retry** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

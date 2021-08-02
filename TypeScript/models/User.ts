@@ -79,6 +79,12 @@ export interface User {
      * @memberof User
      */
     isDataRestricted: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof User
+     */
+    isDataPrivateRestricted: boolean;
 }
 
 export function UserFromJSON(json: any): User {
@@ -101,6 +107,7 @@ export function UserFromJSONTyped(json: any, ignoreDiscriminator: boolean): User
         'roleName': !exists(json, 'RoleName') ? undefined : json['RoleName'],
         'isLocked': json['IsLocked'],
         'isDataRestricted': json['IsDataRestricted'],
+        'isDataPrivateRestricted': json['IsDataPrivateRestricted'],
     };
 }
 
@@ -123,6 +130,7 @@ export function UserToJSON(value?: User | null): any {
         'RoleName': value.roleName,
         'IsLocked': value.isLocked,
         'IsDataRestricted': value.isDataRestricted,
+        'IsDataPrivateRestricted': value.isDataPrivateRestricted,
     };
 }
 

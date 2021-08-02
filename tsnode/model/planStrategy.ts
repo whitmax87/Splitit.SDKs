@@ -22,5 +22,6 @@ export enum PlanStrategy {
     SecuredPlan3 = <any> 'SecuredPlan3',
     SinglePayment = <any> 'SinglePayment',
     ExternalInstallmentProvider = <any> 'ExternalInstallmentProvider',
-    SecuredPlan4 = <any> 'SecuredPlan4'
+    SecuredPlan3A = <any> 'SecuredPlan3A',
+    SecuredPlan3B = <any> 'SecuredPlan3B'
 }

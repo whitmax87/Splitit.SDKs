@@ -45,12 +45,14 @@ function InstallmentPlanFromJSONTyped(json, ignoreDiscriminator) {
         'isChargedBack': json['IsChargedBack'],
         'arePaymentsOnHold': json['ArePaymentsOnHold'],
         'scpFundingPercent': json['ScpFundingPercent'],
-        'isFunded': json['IsFunded'],
+        'fundingStatus': _1.MoneyFlowsFromJSON(json['FundingStatus']),
         'testMode': _1.TestModesFromJSON(json['TestMode']),
         'creationDateTime': (new Date(json['CreationDateTime'])),
+        'lifeTimeUrlExpirationTime': (new Date(json['LifeTimeUrlExpirationTime'])),
         'installments': !runtime_1.exists(json, 'Installments') ? undefined : (json['Installments'].map(_1.Installment2FromJSON)),
         'secureAuthorizations': !runtime_1.exists(json, 'SecureAuthorizations') ? undefined : (json['SecureAuthorizations'].map(_1.ReAuthorizationFromJSON)),
         'logoUrl': !runtime_1.exists(json, 'LogoUrl') ? undefined : json['LogoUrl'],
+        'isInAutoRetry': json['IsInAutoRetry'],
     };
 }
 exports.InstallmentPlanFromJSONTyped = InstallmentPlanFromJSONTyped;
@@ -83,12 +85,14 @@ function InstallmentPlanToJSON(value) {
         'IsChargedBack': value.isChargedBack,
         'ArePaymentsOnHold': value.arePaymentsOnHold,
         'ScpFundingPercent': value.scpFundingPercent,
-        'IsFunded': value.isFunded,
+        'FundingStatus': _1.MoneyFlowsToJSON(value.fundingStatus),
         'TestMode': _1.TestModesToJSON(value.testMode),
         'CreationDateTime': (value.creationDateTime.toISOString()),
+        'LifeTimeUrlExpirationTime': (value.lifeTimeUrlExpirationTime.toISOString()),
         'Installments': value.installments === undefined ? undefined : (value.installments.map(_1.Installment2ToJSON)),
         'SecureAuthorizations': value.secureAuthorizations === undefined ? undefined : (value.secureAuthorizations.map(_1.ReAuthorizationToJSON)),
         'LogoUrl': value.logoUrl,
+        'IsInAutoRetry': value.isInAutoRetry,
     };
 }
 exports.InstallmentPlanToJSON = InstallmentPlanToJSON;

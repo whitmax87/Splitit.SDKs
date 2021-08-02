@@ -19,6 +19,7 @@ export declare enum MoneyFlows {
     Monthly = "Monthly",
     SCP = "SCP",
     Custom = "Custom",
+    PendingFunding = "PendingFunding",
     Choose = "Choose"
 }
 export declare function MoneyFlowsFromJSON(json: any): MoneyFlows;
