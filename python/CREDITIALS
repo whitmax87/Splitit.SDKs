@@ -1,0 +1,7 @@
+curl --location -g --request POST '{{url}}/api/Login?format=json' \
+--header 'Content-Type: application/json' \
+--data-raw '{ 
+    "UserName":"{{APIUser000034440}}",
+    "Password":"{{xV2D5bC01nMUGPkTCFbvhxXeEfs0JXoJOkDHVeNNjOHmSdzESC}}"
+}
+'
